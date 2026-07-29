@@ -41,3 +41,10 @@ jobs:
         run: npm run smoke
         env:
           SMOKE_URL: http://localhost:4321
+
+      # The suite above runs with nothing published, so it only covers the seed
+      # fallback. This one stages a dataset and asserts the Atlas reads it.
+      - name: Smoke test — published data path
+        run: npm run smoke:published
+        env:
+          SMOKE_URL: http://localhost:4321

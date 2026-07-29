@@ -8,8 +8,7 @@ import { AtlasMap } from '../map/AtlasMap.jsx';
 import { CityLayer } from '../components/CityLayer.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS } from '../data/platforms.js';
-import { citiesForPlatform } from '../data/cities.js';
-import { CITY_PROFILES } from '../data/mesh.js';
+import { useCityCoverage, useCityPageIds } from '../data/useAtlasData.js';
 import './PlatformLanding.css';
 
 const PAPER_URL = 'https://doi.org/10.1140/epjds';
@@ -32,7 +31,8 @@ function PlatformScreen({ platform }) {
   const [welcomeOpen, setWelcomeOpen] = useState(true);
   const [query, setQuery] = useState('');
 
-  const cities = useMemo(() => citiesForPlatform(platform), [platform]);
+  const { cities } = useCityCoverage(platform);
+  const cityPageIds = useCityPageIds(platform.id);
   const legend = t(`platform.${platform.id}.legend`);
 
   const matches = useMemo(() => {
@@ -54,8 +54,7 @@ function PlatformScreen({ platform }) {
   }, []);
 
   const openCity = (city) => {
-    const profile = CITY_PROFILES[city.id];
-    if (platform.hasCityPages && profile) {
+    if (platform.hasCityPages && cityPageIds.has(city.id)) {
       navigate(`/platforms/${platform.slug}/${city.id}`);
       return;
     }

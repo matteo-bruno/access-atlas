@@ -6,9 +6,10 @@
 // CDI, P.O.V. zone) are deterministic pseudo-random stand-ins, seeded from the
 // city name so colours never flicker between renders.
 //
-// To replace with real data you should not need to touch this file: drop a
-// FeatureCollection at public/data/cities.geojson (see public/data/README.md)
-// and it is used instead — `loadCityCoverage()` prefers the file when present.
+// To replace with real data you should not need to touch this file: publish a
+// coverage FeatureCollection and list it in public/data/index.json (see
+// public/data/README.md). `useCityCoverage()` prefers it whenever the
+// catalogue offers one, and falls back to this list when it does not.
 // ─────────────────────────────────────────────────────────────────────────
 
 // The 19 cities studied by Car Dependency Index and Urban Accessibility P.O.V.

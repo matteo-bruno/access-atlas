@@ -35,6 +35,18 @@ export async function loadGeoJSON(url, { signal } = {}) {
 }
 
 /**
+ * Plain JSON — the data catalogue rather than a dataset, so it deliberately
+ * skips the FeatureCollection assertion the map layer needs.
+ */
+export async function loadJSON(url, { signal } = {}) {
+  const response = await fetch(url, { signal });
+  if (!response.ok) {
+    throw new DatasetError(`${response.status} ${response.statusText}`, { url });
+  }
+  return response.json();
+}
+
+/**
  * Load a shapefile — either a .zip bundle (shp + dbf + prj) or the base name of
  * a set of sibling files. shpjs is ~200 kB, so it is imported on demand and
  * never lands in the main bundle.
