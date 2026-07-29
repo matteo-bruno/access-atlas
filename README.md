@@ -1,25 +1,180 @@
-# CODING AGENTS: READ THIS FIRST
+# Access Atlas
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+An atlas of how cities give access — the public site for the Sustainable Cities
+team's research at **Sony CSL Rome**.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+It brings four open research platforms under one identity:
 
-## What you should do — IMPORTANT
+| Platform                       | Measures                                                 | Coverage |
+| ------------------------------ | -------------------------------------------------------- | -------- |
+| **15min-City**                 | Proximity — what is within walking distance               | 10,142 cities |
+| **CityChrone++**               | Opportunity — what public transport can reach             | 42 cities |
+| **Car Dependency Index**       | Comparison — how much further a car reaches than transit  | 19 cities |
+| **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access | 19 cities |
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+React + Vite, MapLibre for the maps, bilingual EN/IT.
 
-**Read `project/Access Atlas.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm run build        # → dist/
+npm run preview
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Status
 
-## About the design files
+**The site is complete; the measurements are not.** Every screen is built and
+working, but the numbers behind the maps are deterministic placeholders. City
+coordinates are real — proximity minutes, velocity scores, CDI values, P.O.V.
+zones and the Rome hex mesh are synthesised so the platform looks and behaves
+correctly ahead of publication. `src/data/cities.js` and `src/data/mesh.js` both
+say so at the top, and [`public/data/README.md`](public/data/README.md)
+documents how to swap in real outputs without touching component code.
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Also outstanding before launch:
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+- **The Italian is a first draft** and needs a native review (`src/i18n/it.js`).
+- **Citations in `src/data/research.js` are placeholders** — confirm authors,
+  venues and DOIs.
+- **The licence below needs confirming** with the lab.
 
-## Bundle contents
+## Screens
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Access Atlas` project files (HTML prototypes, assets, components)
+| Route                      | Screen |
+| -------------------------- | ------ |
+| `/`                        | Home — hero, metrics, coverage map, four platforms, table, quote, side projects |
+| `/platforms/:slug`         | Platform landing — full-bleed world map, welcome card, legend, city search |
+| `/platforms/:slug/:cityId` | City detail — zone panel, hex cartogram, scatter (Rome) |
+| `/research`                | Papers, datasets, citation |
+| `/faq`                     | Six questions |
+| `/contact`                 | Team, address, collaboration |
+
+Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,
+`accessibility-pov`.
+
+## Layout
+
+```
+src/
+  map/          MapLibre wrapper (AtlasMap), style construction, layer paint,
+                GeoJSON + shapefile loaders
+  data/         Platform definitions, seed cities, hex-mesh generator, content
+  workers/      Off-main-thread compute + the hook that drives it
+  i18n/         en.js · it.js · provider (t() and Intl number formatting)
+  components/   Nav, Footer, Subhead, Logo, Icon, map layers
+  pages/        One file per screen, each with its own stylesheet
+  styles/       Design tokens + shared primitives
+public/data/    Drop real datasets here — see public/data/README.md
+scripts/        End-to-end smoke test
+design/         The original Claude Design handoff — see below
+```
+
+## Maps
+
+The Atlas draws its **own basemap**: a paper background, a graticule and
+simplified Natural Earth land polygons bundled at
+`public/data/world-land.geojson`. No tile server, no API key, works offline, and
+it matches the design's palette exactly.
+
+To use a hosted basemap instead, set either variable and rebuild:
+
+```bash
+VITE_MAP_STYLE=https://…/style.json        # a full MapLibre style
+VITE_TILE_URL=https://…/{z}/{x}/{y}.png    # raster tiles, auto-tinted to paper
+VITE_TILE_ATTRIBUTION="© …"                # required with VITE_TILE_URL
+VITE_BASE=/access-atlas/                   # serve from a sub-path
+```
+
+Layers are declarative — `<AtlasMap>` owns the map, `<GeoJSONLayer>` children
+add a source and a layer and keep them in sync with props. A platform's colours,
+scale and the property it paints by all come from its entry in
+`src/data/platforms.js`, so adding a fifth platform needs no new component code.
+
+> **maplibre-gl v6 note.** v6 finds its worker with
+> `new URL('./maplibre-gl-worker.mjs', import.meta.url)`, which resolves beside
+> the *bundled* chunk — a path Vite doesn't emit. `src/map/AtlasMap.jsx` imports
+> it with `?worker&url` and calls `setWorkerUrl()`; `vite.config.js` sets
+> `worker.format: 'es'`. Without both, the worker 404s (behind an SPA fallback
+> it silently loads `index.html` instead) and every map hangs blank with its
+> style stuck loading. Keep them together if you upgrade.
+
+## Background computation
+
+`src/workers/mesh.worker.js` builds Rome's ~8,000-hexagon mesh, classifies it
+into P.O.V. zones and computes the summary statistics and scatter sample off the
+main thread; `useCityMesh` drives it and falls back to inline computation where
+Workers are unavailable. This is the seam for the heavier work to come —
+isochrones, scenario runs, CDI recomputation. Keep `buildCityMesh` a pure
+function of its arguments and it can move between contexts freely.
+
+## Language
+
+EN and IT ship in `src/i18n/`. The dictionaries share a key shape; `t()` falls
+back to English and warns in development when a key is missing. Numbers are
+never written into the copy — they are formatted with `Intl` from the active
+locale, so `10,142` becomes `10.142` in Italian. The choice persists to
+`localStorage` and sets `<html lang>`.
+
+## Deployment
+
+A static build; `dist/` can be served by anything. Two requirements:
+
+- **SPA fallback.** Deep links like `/platforms/citychrone` must serve
+  `index.html`. On Netlify/Vercel this is the default; on nginx use
+  `try_files $uri /index.html`; on GitHub Pages copy `dist/index.html` to
+  `dist/404.html` as part of the deploy.
+- **Sub-path hosting.** Set `VITE_BASE=/your-path/` at build time.
+
+## Verification
+
+`scripts/smoke.mjs` loads every route in a real browser and checks the pages
+render without console or network errors, the maps rasterise, the Rome mesh
+matches its published figures, search navigates, and EN ⇄ IT swaps copy and
+number formatting. Playwright is intentionally not a project dependency:
+
+```bash
+npm install --no-save playwright && npx playwright install chromium
+npm run build
+npm run preview -- --port 4321 &
+SMOKE_URL=http://localhost:4321 npm run smoke
+```
+
+CI runs exactly this on every push — see `.github/workflows/ci.yml`.
+
+## Design provenance
+
+`design/` holds the original Claude Design handoff this site was built from —
+the HTML/JS prototypes (`design/project/`), the conversation that produced them
+(`design/chats/`), and the agent brief (`design/HANDOFF.md`). The implemented
+direction is **B, "Cartographic Index" (smoothed)**, in
+`design/project/direction-b.jsx`. Direction A was not chosen.
+
+Three deliberate departures from the artboards:
+
+- **Home coverage map is 400 px tall, not 280.** The design's illustration
+  compressed the globe; a real Mercator map at page width needs the extra height
+  to show the same span, Helsinki to Melbourne.
+- **Cartogram caption reads "H3 resolution 9 · ~186 m cells"**, derived from the
+  mesh rather than the design's hard-coded "resolution 10 · scale 1:80 000" —
+  8,089 cells over Rome is resolution 9, and shipping a wrong number in a
+  research context seemed worse than editing the caption.
+- **`/research` had no artboard.** The nav has always listed it, so rather than
+  leave a dead link the page is assembled only from existing design patterns.
+
+Everything else keeps the design's dimensions, tokens and type scale. Footer
+link columns other than Platforms don't navigate — matching the design, which
+renders them as plain labels; they are ready for hrefs.
+
+## Assets
+
+Sony CSL marks in `src/assets/logos/` are the originals supplied with the
+handoff. `<Logo>` exposes `symbol` / `horizontal` / `twoLine` in `color`, `dark`
+and `light` — the nav and footer use the colour symbol; the others are wired up
+and ready for dark backgrounds and print.
+
+## Licence
+
+Code under **MIT** (see [LICENSE](LICENSE)); data and maps under
+**CC BY-NC 4.0**, matching what the site itself states in its FAQ and footer.
+
+⚠️ Added to match the design copy — **confirm with the lab before publishing.**
