@@ -18,7 +18,8 @@ export const PLATFORMS = [
     themeKey: 'proximity',
     accent: '#b94e3b',
     cityCount: 1,
-    published: false,
+    published: true,
+    hasCityPages: true,
     // Diverging scale: cool = close, warm = far. Index i covers stops[i].
     scale: [
       '#3b6e8f',

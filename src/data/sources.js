@@ -46,14 +46,47 @@ export function createStaticProvider() {
       return loadDataset({ url: dataUrl(entry.coverage) }, { signal });
     },
 
-    async cityMesh(platformId, cityId, catalogue, { signal } = {}) {
+    async cityMesh(platformId, cityId, catalogue, { signal, scenario } = {}) {
       const profile = publishedCity(catalogue, platformId, cityId);
-      if (!profile?.dataset) return null;
-      const collection = await loadDataset({ url: dataUrl(profile.dataset) }, { signal });
-      return { collection, profile };
+      if (!profile) return null;
+
+      // A scenario is an alternative dataset for the same city — the legacy
+      // 15minCity site's "ideal city" and Metro D runs are exactly this. A
+      // static host can only serve ones that were published ahead of time;
+      // user-authored scenarios are what a backend provider would add, and
+      // they arrive through this same argument.
+      const dataset = scenario
+        ? profile.scenarios?.find((s) => s.id === scenario)?.dataset
+        : profile.dataset;
+      if (!dataset) return null;
+
+      const collection = await loadDataset({ url: dataUrl(dataset) }, { signal });
+      return { collection, profile, scenario: scenario ?? null };
+    },
+
+    // Scenarios a static host can offer: whatever the catalogue lists. A
+    // backend provider would return ones computed on demand instead.
+    async scenarios(platformId, cityId, catalogue) {
+      return publishedCity(catalogue, platformId, cityId)?.scenarios ?? [];
     },
   };
 }
+
+/**
+ * The provider contract, for anyone writing a second one:
+ *
+ *   catalogue({ signal })                      → normalised catalogue
+ *   coverage(platformId, catalogue, opts)      → FeatureCollection | null
+ *   cityMesh(platformId, cityId, catalogue, opts)
+ *                                              → { collection, profile, scenario } | null
+ *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]
+ *
+ * `opts` carries `{ signal, scenario }`. Returning `null` means "not
+ * published" and is never an error: the caller falls back to seed data.
+ * Anything thrown is treated as a failure of *this* provider, and the caller
+ * falls back the same way — so a backend going down degrades to the static
+ * files rather than to a blank page.
+ */
 
 let provider = createStaticProvider();
 

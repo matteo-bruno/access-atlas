@@ -51,6 +51,14 @@ function normaliseCity(raw) {
     zoom: Number.isFinite(raw.zoom) ? raw.zoom : 10,
     population: Number.isFinite(raw.population) ? raw.population : null,
     dataset: typeof raw.dataset === 'string' ? raw.dataset : null,
+    // Alternative runs of the same city — the legacy site's "ideal city" and
+    // Metro D are these. A static host serves the ones published ahead of
+    // time; a backend provider can offer ones computed on demand.
+    scenarios: Array.isArray(raw.scenarios)
+      ? raw.scenarios
+          .filter((s) => s && typeof s.id === 'string' && typeof s.dataset === 'string')
+          .map((s) => ({ id: s.id, name: typeof s.name === 'string' ? s.name : s.id, dataset: s.dataset }))
+      : [],
     // Cell geometry is metadata the exporter knows and the file cannot state:
     // a population-scaled cartogram's polygons are not the true cell size.
     // Named `cell` rather than `mesh` so it never collides with the seed

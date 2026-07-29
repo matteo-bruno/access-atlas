@@ -18,6 +18,11 @@ jobs:
 
       - run: npm ci
 
+      # Validates every published dataset against the adapters that read it.
+      # No browser, so a malformed file fails here in seconds rather than as an
+      # empty panel further down.
+      - run: npm run test:data
+
       - run: npm run build
 
       # Playwright is deliberately not a project dependency — the smoke test is

@@ -14,8 +14,8 @@ export const ATLAS_METRICS = [
   { key: 'platforms', value: 4 },
   // AT CH DE ES FR IT PT SE US
   { key: 'countries', value: 9 },
-  // Cells across all 40 published city datasets, scenario variants included.
-  { key: 'cells', value: 144748 },
+  // Cells across all 41 published city datasets, scenario variants included.
+  { key: 'cells', value: 156627 },
   { key: 'researchers', value: 7 },
 ];
 

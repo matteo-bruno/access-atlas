@@ -38,7 +38,7 @@ export default {
       items: {
         pov: 'The dimensions of accessibility — EPJ Data Science',
         cdi: 'Car Dependency Index — {count} città pubblicate',
-        fifteen: 'Maglie esagonali P.O.V. — {count} città pubblicate',
+        fifteen: '15min-City — Roma pubblicata, dieci categorie di servizi',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Gen 2026' },
     },
@@ -177,6 +177,40 @@ export default {
         'Ogni cella riceve un punteggio su due assi — prossimità, i servizi quotidiani raggiungibili a piedi, e opportunità, le destinazioni di scala urbana raggiungibili in trasporto pubblico — e viene poi classificata rispetto alla mediana cittadina pesata sulla popolazione di ciascun asse. Un terzo asse, il valore di ciò che è raggiungibile, è definito nel quadro teorico ma non ancora quantificato.',
       legendUnit: 'Zona',
       legend: ['Inclusione', 'Isolamento spaziale', 'Isolamento sociale', 'Isolamento totale'],
+    },
+  },
+
+  // Vista città di 15minCity: dieci categorie × due modi, scelti a runtime.
+  fifteen: {
+    mapTitle: 'Tempo di viaggio verso i servizi',
+    minutes: 'min',
+    legendValue: 'Minuti per raggiungere',
+    legendDiff: 'Differenza rispetto alla città ideale',
+    statusHint:
+      'Scegli modo e categoria · passa su una fascia della legenda per isolarla · scorri e trascina per navigare',
+    controls: {
+      mode: 'Modo',
+      category: 'Categoria di servizi',
+      view: 'Vista',
+    },
+    modes: { foot: 'A piedi', bike: 'In bicicletta' },
+    views: { value: 'Misurato', diff: 'vs. città ideale' },
+    viewHint: {
+      value: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
+      diff: 'Minuti sopra o sotto lo scenario della città ideale. Negativo significa che la città reale fa già meglio.',
+    },
+    summary: { median: 'Tempo di viaggio mediano' },
+    categories: {
+      average: 'Media su tutti i servizi',
+      outdoor: 'Attività all’aperto',
+      learning: 'Istruzione',
+      supplies: 'Spesa',
+      eating: 'Ristorazione',
+      moving: 'Mobilità',
+      cultural: 'Attività culturali',
+      exercise: 'Attività fisica',
+      services: 'Servizi',
+      healthcare: 'Sanità',
     },
   },
 

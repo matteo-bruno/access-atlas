@@ -1,0 +1,105 @@
+/* 15minCity's city view has no scatter panel, so the map takes the space. */
+.aa-city--nochart {
+  grid-template-columns: 300px minmax(0, 1fr);
+}
+
+.aa-city__cartogram--wide {
+  min-width: 0;
+}
+
+/* ── Controls ─────────────────────────────────────────────────── */
+
+.aa-toggle {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+  margin: 8px 0 18px;
+}
+
+.aa-toggle__btn {
+  padding: 7px 10px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-2);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.aa-toggle__btn:hover {
+  border-color: var(--ink-4);
+}
+
+.aa-toggle__btn--active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--card);
+}
+
+.aa-field {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.aa-select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.aa-city__hint {
+  margin: -8px 0 18px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+/* ── Legend bands ─────────────────────────────────────────────── */
+
+.aa-bands {
+  display: grid;
+  gap: 2px;
+  margin: 8px 0 20px;
+}
+
+.aa-bands__row {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.aa-bands__row:hover,
+.aa-bands__row--active {
+  background: var(--paper-alt);
+}
+
+.aa-bands__label {
+  font-size: 11.5px;
+  color: var(--ink-2);
+}
+
+.aa-bands__pct {
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+@media (max-width: 1000px) {
+  .aa-city--nochart {
+    grid-template-columns: 1fr;
+  }
+}
