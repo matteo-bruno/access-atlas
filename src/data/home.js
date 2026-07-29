@@ -12,16 +12,16 @@ export const ATLAS_METRICS = [
   // 20 distinct cities across the P.O.V. and Car Dependency datasets.
   { key: 'cities', value: 20 },
   { key: 'platforms', value: 4 },
-  // AT, CH, DE, ES, FR, IT, PT, SE, US — plus Boston/Chicago/Seattle in the US.
-  { key: 'countries', value: 10 },
-  // 47,902 P.O.V. + 85,437 Car Dependency cells.
-  { key: 'cells', value: 133339 },
+  // AT CH DE ES FR IT PT SE US
+  { key: 'countries', value: 9 },
+  // Cells across all 40 published city datasets, scenario variants included.
+  { key: 'cells', value: 144748 },
   { key: 'researchers', value: 7 },
 ];
 
 export const NEWS = [
   { key: 'pov', kind: 'paper', color: BRAND.navy },
-  { key: 'cdi', kind: 'release', color: BRAND.magenta, count: 21 },
+  { key: 'cdi', kind: 'release', color: BRAND.magenta, count: 22 },
   { key: 'fifteen', kind: 'data', color: BRAND.cyan, count: 18 },
 ];
 

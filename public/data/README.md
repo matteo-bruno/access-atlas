@@ -8,18 +8,25 @@ entry, not a code change.
 
 | File                 | What it is                                                    |
 | -------------------- | ------------------------------------------------------------- |
-| `index.json`         | The **catalogue** — the one file that decides whether the Atlas draws measurements or seed data. Ships empty. |
+| `index.json`         | The **catalogue** — the one file that decides whether the Atlas draws measurements or seed data. |
+| `pov/`               | Accessibility P.O.V. — 18 cities, one GeoJSON each, plus `coverage.geojson`. Measured. |
+| `cardep/`            | Car Dependency Index — 22 city datasets (20 cities plus a Paris metro-area and a Rome Metro D scenario), plus `coverage.geojson`. Measured. |
 | `world-land.geojson` | Natural Earth 110m land polygons, simplified to 2 dp. Draws the paper basemap so the Atlas needs no tile server. Public domain. |
 
-Everything else the app renders today — the city markers, the Rome hex mesh —
-is **seed data generated in the browser**. It is deterministic and plausible,
-but it is not measurement. See `src/data/cities.js` and `src/data/mesh.js`.
+**15min-City and CityChrone are not published yet.** Those two platforms still
+render seed data generated in the browser — deterministic and plausible, but
+not measurement (see `src/data/cities.js` and `src/data/mesh.js`). The UI
+labels them as illustrative rather than presenting them as measured.
 
-The Rome page is a partial exception worth knowing about: its cell count and
-zone shares were calibrated to reproduce the published P.O.V. figures, so those
-*numbers* are real even though the hexagons' arrangement is synthetic. The
-walking-distance and jobs figures are not — they are invented units that do not
-exist in the published data.
+Regenerate everything under `pov/` and `cardep/` from the upstream repositories
+with:
+
+```bash
+npm run build:data -- --pov ../accessibility-pov --cdi ../CDI
+```
+
+It prints the counts `src/data/home.js` and `src/data/platforms.js` quote, so
+those stay in step with the data rather than drifting from it.
 
 ## The catalogue
 

@@ -54,7 +54,7 @@ export const PAPERS = [
 // src/data/platforms.js, which carries the same numbers for the maps.
 export const DATASETS = [
   { id: 'pov', platform: 'pov', coverage: 18, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
-  { id: 'cardep', platform: 'cardep', coverage: 21, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
+  { id: 'cardep', platform: 'cardep', coverage: 22, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
   { id: 'fifteen', platform: 'fifteen', coverage: 1, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
   { id: 'citychrone', platform: 'citychrone', coverage: 0, format: '—', licence: 'CC BY-NC 4.0' },
 ];

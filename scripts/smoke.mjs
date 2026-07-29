@@ -20,19 +20,26 @@ const ROUTES = [
   ['/platforms/citychrone', 'CityChrone landing'],
   ['/platforms/car-dependency-index', 'Car Dependency landing'],
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
-  ['/platforms/accessibility-pov/rome', 'Rome city page'],
+  ['/platforms/accessibility-pov/rome', 'Rome P.O.V. city page'],
+  ['/platforms/car-dependency-index/rome', 'Rome Car Dependency city page'],
   ['/research', 'Research'],
+  ['/blog', 'Blog index'],
+  ['/blog/what-the-atlas-measures', 'Blog post'],
+  ['/work-with-us', 'Work with us'],
   ['/faq', 'FAQ'],
   ['/contact', 'Contact'],
   ['/nope', '404 fallback'],
 ];
 
-// Rome's published figures — the mesh generator is calibrated to reproduce them.
+// Rome as published in public/data/pov/rome.geojson. Proximity and opportunity
+// are median scores — weighted counts of reachable points of interest — so
+// they carry no unit, which is why neither is asserted with one.
 const ROME_EXPECTED = {
   zones: ['12.9%', '2.7%', '1.4%', '83.0%'],
   hexagons: '8,089',
-  walk: '643 m',
-  jobs: '2.7 k',
+  proximity: '643.6',
+  opportunity: '2,656.6',
+  population: '2.6 M',
 };
 
 let failures = 0;
@@ -127,11 +134,35 @@ for (const [route, name] of ROUTES) {
   check(
     'Rome summary matches published figures',
     summary[0] === ROME_EXPECTED.hexagons &&
-      summary[1] === ROME_EXPECTED.walk &&
-      summary[2] === ROME_EXPECTED.jobs,
+      summary[1] === ROME_EXPECTED.proximity &&
+      summary[2] === ROME_EXPECTED.opportunity &&
+      summary[3] === ROME_EXPECTED.population,
     summary.join(' | '),
   );
   check('Rome scatter plotted', points > 400, `${points} points`);
+  await page.close();
+}
+
+// ── The Car Dependency city page reads the same city, differently ────
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/car-dependency-index/rome`, { waitUntil: 'load' });
+  await page.waitForTimeout(4000);
+
+  const bands = await page.$$eval('.aa-zones__pct', (els) => els.map((e) => e.textContent.trim()));
+  const summary = await page.$$eval('.aa-summary__row dd', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
+  const total = bands.reduce((sum, b) => sum + parseFloat(b), 0);
+
+  check('Car Dependency bands cover every cell', Math.abs(total - 100) < 0.5, bands.join(' / '));
+  check('Car Dependency cell count from the published file', summary[0] === '11,409', summary[0]);
+  // The index is signed; losing the sign would invert the reading entirely.
+  check(
+    'Car Dependency index keeps its sign',
+    /^[+−]/.test(summary[1]) && /^[+−]/.test(summary[2]),
+    `${summary[1]} | ${summary[2]}`,
+  );
   await page.close();
 }
 

@@ -166,6 +166,93 @@ export function meshFromPublished(collection, profile = {}) {
 }
 
 /**
+ * A published Car Dependency cartogram → the same city-page contract.
+ *
+ * The index is continuous in [−1, +1]; `stops` (from src/data/platforms.js)
+ * cuts it into the four bands the legend names, so one panel component serves
+ * both platforms — `zone` is a band here and a class there.
+ *
+ * Expected properties: `cdi`, `o_score_pt`, `o_score_car`, `population`.
+ */
+export function meshFromPublishedCdi(collection, profile = {}, stops = [-0.1, 0.1, 0.3, 1]) {
+  const input = collection?.features;
+  if (!Array.isArray(input) || input.length === 0) {
+    throw new AdapterError('Published mesh has no features');
+  }
+
+  const band = (value) => {
+    for (let i = 0; i < stops.length; i++) if (value <= stops[i]) return i;
+    return stops.length - 1;
+  };
+
+  const rows = input.map((feature) => {
+    const p = feature?.properties ?? {};
+    const cdi = Number(p.cdi);
+    if (!Number.isFinite(cdi)) throw new AdapterError('Feature is missing `cdi`');
+    return {
+      feature,
+      cdi,
+      pt: Number(p.o_score_pt),
+      car: Number(p.o_score_car),
+      population: Number(p.population) || 0,
+    };
+  });
+
+  // Both axes share one normaliser so the y = x diagonal — the line where a
+  // car and public transport reach the same amount — stays meaningful.
+  const both = rows.flatMap((row) => [row.pt, row.car]);
+  const norm = normaliser(both);
+
+  const counts = [0, 0, 0, 0];
+  const features = rows.map((row, i) => {
+    const zone = band(row.cdi);
+    counts[zone] = (counts[zone] ?? 0) + 1;
+    return {
+      type: 'Feature',
+      id: i,
+      geometry: row.feature.geometry,
+      properties: { ...row.feature.properties, zone, cdi: row.cdi },
+    };
+  });
+
+  const total = rows.length;
+  const population = rows.reduce((sum, row) => sum + row.population, 0);
+  const stride = Math.max(1, Math.floor(total / SCATTER_SAMPLE));
+  const scatter = [];
+  for (let i = 0; i < total; i += stride) {
+    const row = rows[i];
+    scatter.push({
+      i,
+      x: Math.round(norm(row.car) * 1000) / 1000,
+      y: Math.round(norm(row.pt) * 1000) / 1000,
+      z: features[i].properties.zone,
+    });
+  }
+
+  return {
+    geojson: { type: 'FeatureCollection', features },
+    stats: {
+      cellCount: total,
+      cellRadiusM: profile.cell?.cellRadiusM ?? null,
+      h3Resolution: profile.cell?.h3Resolution ?? null,
+      zoneShares: counts.map((n) => Math.round((n / total) * 1000) / 10),
+      zoneCounts: counts,
+      medianCdi: Math.round(median(rows.map((r) => r.cdi)) * 1000) / 1000,
+      // The index for the average resident, not the average cell.
+      weightedCdi: population
+        ? Math.round((rows.reduce((s, r) => s + r.cdi * r.population, 0) / population) * 1000) / 1000
+        : null,
+      population: population || null,
+      medianWalkMetres: null,
+      medianJobsK: null,
+    },
+    scatter,
+    // No quadrants: the reference for this platform is the diagonal.
+    thresholds: null,
+  };
+}
+
+/**
  * A published coverage file → the city objects the search and landing maps use.
  * Property names match what `citiesToGeoJSON` emits for the seed list, so the
  * two are interchangeable downstream.
