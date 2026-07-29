@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Access Atlas — Sony CSL Rome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+  .b-card { transition: transform .2s, box-shadow .2s, border-color .2s; }
+  .b-card:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(20,20,15,0.08); border-color: #c8c2af !important; }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary { user-select: none; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="shared.jsx"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="direction-b.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+  const { DesignCanvas, DCSection, DCArtboard, DCPostIt,
+          BHome, BLanding, BCity, BFAQ, BContact } = window;
+
+  const W = 1280;
+  const HomeH = 2520, ScreenH = 820, CityH = 820, FAQH = 980, ContactH = 940;
+
+  function App() {
+    return (
+      <DesignCanvas>
+        <DCSection id="home" title="Home" subtitle="The Access Atlas — Sony CSL Rome">
+          <DCArtboard id="home" label="Home" width={W} height={HomeH}>
+            <BHome/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="landings" title="Platform landings" subtitle="One full-bleed map per platform">
+          <DCArtboard id="l-fifteen" label="15min-City" width={W} height={ScreenH}>
+            <BLanding platform="fifteen"/>
+          </DCArtboard>
+          <DCArtboard id="l-citychrone" label="CityChrone++" width={W} height={ScreenH}>
+            <BLanding platform="citychrone"/>
+          </DCArtboard>
+          <DCArtboard id="l-cardep" label="Car Dependency Index" width={W} height={ScreenH}>
+            <BLanding platform="cardep"/>
+          </DCArtboard>
+          <DCArtboard id="l-pov" label="Urban Accessibility P.O.V." width={W} height={ScreenH}>
+            <BLanding platform="pov"/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="city" title="Sample city page · Rome" subtitle="P.O.V. detail view">
+          <DCArtboard id="city-rome" label="Rome — Urban Accessibility P.O.V." width={W} height={CityH}>
+            <BCity/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="faq" title="FAQ" subtitle="Six common questions">
+          <DCArtboard id="faq" label="FAQ" width={W} height={FAQH}>
+            <BFAQ/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="contact" title="Contact" subtitle="Team, address &amp; invite to collaborate">
+          <DCArtboard id="contact" label="Contact" width={W} height={ContactH}>
+            <BContact/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCPostIt x={48} y={56} w={280}>
+          Direction B — smoothed.{'\n\n'}
+          Warmer cool paper, IBM Plex Sans with mono only as a small caption / data label. Softer hairlines, gentle 6px corners, no coordinate chrome.{'\n\n'}
+          Click any artboard to open it fullscreen.
+        </DCPostIt>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
