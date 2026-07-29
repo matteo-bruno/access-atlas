@@ -7,7 +7,7 @@ import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
-import { CITY_PROFILES } from '../data/mesh.js';
+import { useCityProfile } from '../data/useAtlasData.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import './CityPage.css';
 
@@ -17,15 +17,20 @@ const GITHUB_URL = 'https://github.com/sony-csl-rome';
 export default function CityPage() {
   const { slug, cityId } = useParams();
   const platform = platformBySlug(slug);
-  const profile = CITY_PROFILES[cityId];
+  // Resolving the profile reads the catalogue, so a city that exists only as
+  // published data still gets a page. The hook runs before any early return —
+  // it must be called unconditionally.
+  const { status, profile } = useCityProfile(platform?.id, cityId);
 
-  if (!platform || !profile) return <Navigate to={`/platforms/${slug ?? ''}`} replace />;
+  if (!platform) return <Navigate to="/platforms" replace />;
+  if (status === 'pending') return <div className="aa-page" />;
+  if (status === 'missing' || !profile) return <Navigate to={`/platforms/${slug}`} replace />;
   return <CityScreen key={cityId} platform={platform} profile={profile} />;
 }
 
 function CityScreen({ platform, profile }) {
   const { t, n, lang } = useI18n();
-  const { status, data } = useCityMesh(profile);
+  const { status, data } = useCityMesh(profile, platform.id);
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
 
@@ -54,6 +59,9 @@ function CityScreen({ platform, profile }) {
   );
 
   const stats = data?.stats;
+  // A published file's own population sum is the better number when it exists;
+  // the profile's figure is editorial and may cover a different extent.
+  const population = stats?.population ?? profile.population ?? null;
 
   return (
     <div className="aa-page aa-page--fixed">
@@ -128,19 +136,30 @@ function CityScreen({ platform, profile }) {
               />
               <SummaryRow
                 label={t('city.summary.proximity')}
-                value={stats ? `${n(stats.medianWalkMetres)} m` : '—'}
+                value={
+                  stats?.medianWalkMetres != null
+                    ? `${n(stats.medianWalkMetres)} m`
+                    : formatMedian(stats?.medianProximity, n)
+                }
               />
               <SummaryRow
                 label={t('city.summary.opportunity')}
                 value={
-                  stats
+                  stats?.medianJobsK != null
                     ? `${n(stats.medianJobsK, { minimumFractionDigits: 1 })} k`
-                    : '—'
+                    : formatMedian(stats?.medianOpportunity, n)
                 }
               />
               <SummaryRow
                 label={t('city.summary.population')}
-                value={`${n(profile.population / 1e6, { minimumFractionDigits: 1 })} M`}
+                value={
+                  population == null
+                    ? '—'
+                    : `${n(population / 1e6, {
+                        minimumFractionDigits: 1,
+                        maximumFractionDigits: 1,
+                      })} M`
+                }
               />
             </dl>
           </div>
@@ -163,11 +182,7 @@ function CityScreen({ platform, profile }) {
                   type="fill"
                   paint={fillPaint}
                   onHover={(feature) => setHoverCell(feature ? feature.id : null)}
-                  tooltip={(feature) =>
-                    `${n(feature.properties.walkMetres)} m · ${n(feature.properties.jobsK, {
-                      minimumFractionDigits: 1,
-                    })} k`
-                  }
+                  tooltip={(feature) => formatCellTooltip(feature.properties, n)}
                 />
                 {hoverCell != null && (
                   <GeoJSONLayer
@@ -183,7 +198,9 @@ function CityScreen({ platform, profile }) {
             ) : (
               <div className="aa-city__loading">{t('city.computing')}</div>
             )}
-            {stats && (
+            {/* Cell geometry is metadata the catalogue supplies; a published
+                file that omits it gets no caption rather than a made-up one. */}
+            {stats?.h3Resolution != null && stats?.cellRadiusM != null && (
               <div className="aa-city__caption">
                 {t('city.cartogram.caption', {
                   res: stats.h3Resolution,
@@ -224,6 +241,25 @@ function CityScreen({ platform, profile }) {
       </div>
     </div>
   );
+}
+
+// Published P.O.V. files measure proximity and opportunity as weighted POI
+// counts, not the seed mesh's metres and thousands of jobs. Rather than invent
+// a unit, show the number the dataset actually states.
+function formatMedian(value, n) {
+  return value == null ? '—' : n(value, { maximumFractionDigits: 1 });
+}
+
+function formatCellTooltip(properties, n) {
+  if (properties.walkMetres != null && properties.jobsK != null) {
+    return `${n(properties.walkMetres)} m · ${n(properties.jobsK, {
+      minimumFractionDigits: 1,
+    })} k`;
+  }
+  return [properties.proximity, properties.opportunity]
+    .filter((value) => value != null)
+    .map((value) => n(value, { maximumFractionDigits: 1 }))
+    .join(' · ');
 }
 
 function SummaryRow({ label, value }) {

@@ -153,7 +153,17 @@ npm run preview -- --port 4321 &
 SMOKE_URL=http://localhost:4321 npm run smoke
 ```
 
-CI runs exactly this on every push — see `.github/workflows/ci.yml`.
+That suite runs with nothing published, so it exercises only the seed fallback.
+`npm run smoke:published` covers the other half: it stages a small dataset in
+the upstream schema, asserts the Atlas reads it instead of the seed, and
+removes it again. Both run in CI — see `.github/workflows/ci.yml`.
+
+## Data
+
+The Atlas renders published data when `public/data/index.json` lists it and
+generated seed data when it does not, one city at a time. The catalogue format,
+the upstream schemas for each platform, and the provider seam a scenario
+backend would plug into are documented in `public/data/README.md`.
 
 ## Design provenance
 
