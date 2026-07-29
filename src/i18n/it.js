@@ -13,6 +13,7 @@ export default {
     atlas: 'Atlante',
     platforms: 'Piattaforme',
     research: 'Ricerca',
+    blog: 'Blog',
     faq: 'FAQ',
     contact: 'Contatti',
     github: 'GitHub',
@@ -22,10 +23,10 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'Volume II · edizione 2026',
+      eyebrow: 'Piattaforme di ricerca aperte · Sony CSL Roma',
       headline: 'Un atlante di come le città',
       headlineAccent: 'danno accesso',
-      lede: 'Quattro piattaforme aperte, un unico quadro di riferimento. Misuriamo la {proximity} — ciò che si raggiunge a piedi. Misuriamo l’{opportunity} — ciò a cui arriva il trasporto pubblico. Le confrontiamo e troviamo il divario. Ogni città della Terra, dati aperti, codice aperto.',
+      lede: 'Quattro piattaforme aperte, un unico quadro di riferimento. Misuriamo la {proximity} — i servizi quotidiani raggiungibili a piedi. Misuriamo l’{opportunity} — ciò a cui arriva il trasporto pubblico entro un budget di tempo. La distanza fra le due è dove una città mantiene o tradisce la sua promessa.',
       ledeProximity: 'prossimità',
       ledeOpportunity: 'opportunità',
       ctaPrimary: 'Esplora le piattaforme',
@@ -35,24 +36,24 @@ export default {
       title: 'Novità dal laboratorio',
       kinds: { paper: 'Articolo', release: 'Rilascio', data: 'Dati' },
       items: {
-        pov: 'Bruno et al. — il framework P.O.V.',
-        cdi: 'Car Dependency Index v1.0 ({count} città)',
-        fifteen: '15min-City aggiornato — +{count} città',
+        pov: 'The dimensions of accessibility — EPJ Data Science',
+        cdi: 'Car Dependency Index — {count} città pubblicate',
+        fifteen: 'Maglie esagonali P.O.V. — {count} città pubblicate',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Gen 2026' },
     },
     metrics: {
-      cities: 'Città mappate',
-      platforms: 'Piattaforme attive',
-      countries: 'Paesi coperti',
+      cities: 'Città pubblicate',
+      platforms: 'Piattaforme',
+      countries: 'Paesi',
+      cells: 'Celle esagonali',
       researchers: 'Ricercatori',
-      founded: 'Fondato nel',
     },
     coverage: {
       tag: '01',
       title: 'Una sola mappa dell’accesso, quattro lenti.',
       hint: 'passa sopra una piattaforma per l’anteprima',
-      badge: 'Copertura globale · {count} città',
+      badge: 'Copertura pubblicata · {count} città',
       legend: {
         opportunity: 'Opportunità',
         proximity: 'Prossimità',
@@ -62,7 +63,7 @@ export default {
     platforms: {
       tag: '02',
       title: 'Le quattro piattaforme',
-      hint: 'prossimità → opportunità → valore',
+      hint: 'prossimità → opportunità → confronto',
       open: 'Apri',
       cityCount: '{count} città',
       themes: {
@@ -73,31 +74,32 @@ export default {
       },
       desc: {
         fifteen:
-          'Servizi raggiungibili a piedi, misurati sull’ideale dei 15 minuti — in ogni città della Terra.',
+          'Tempo a piedi e in bicicletta verso dieci categorie di servizi quotidiani, letto rispetto al riferimento dei 15 minuti.',
         citychrone:
-          'Geografia dei tempi di viaggio — guarda la città deformarsi mentre il trasporto pubblico ridisegna ciò che è raggiungibile.',
+          'Geografia dei tempi di viaggio — la città ridisegnata misurando la distanza in minuti di trasporto pubblico.',
         cardep:
-          'Quanti luoghi in più raggiunge l’auto rispetto al trasporto pubblico, cella per cella?',
-        pov: 'Prossimità × Opportunità, per dividere la città in quattro zone di accesso.',
+          'Di quanto l’accesso alle opportunità in automobile supera quello in trasporto pubblico, cella per cella.',
+        pov: 'Prossimità contro opportunità, dividendo la città in quattro zone di accesso.',
       },
     },
     table: {
       tag: '03',
       title: 'I numeri',
-      hint: 'sei città, tre misure',
+      hint: 'sei città · framework P.O.V.',
       headers: {
         city: 'Città',
-        proximity: 'Prossimità (min a piedi)',
-        opportunity: 'Opportunità (impieghi, mgl.)',
-        inclusion: 'Tasso di inclusione',
+        proximity: 'Punteggio mediano di prossimità',
+        opportunity: 'Punteggio mediano di opportunità',
+        inclusion: 'Zona di inclusione',
       },
+      note: 'Prossimità e opportunità sono conteggi pesati di punti di interesse raggiungibili, confrontabili fra città perché ogni città è misurata allo stesso modo. L’inclusione è la quota di celle sopra entrambe le mediane pesate sulla popolazione.',
     },
     quote: {
-      eyebrow: 'Dal gruppo di ricerca',
-      before: '«Una città è una promessa di ',
+      eyebrow: 'La premessa',
+      before: 'Una città è una promessa di ',
       accent: 'vicinanza',
-      after: ': che le cose di cui hai bisogno siano a portata di mano. L’Atlante chiede, per ogni luogo della Terra, se quella promessa venga mantenuta.»',
-      attribution: '— Gruppo Città Sostenibili · Sony CSL Roma',
+      after: ': che le cose di cui hai bisogno siano a portata. L’Atlante chiede, città per città e cella per cella, se quella promessa venga mantenuta — e per chi.',
+      attribution: '— Team Città Sostenibili · Sony CSL Roma',
     },
     side: {
       tag: '04',
@@ -109,18 +111,18 @@ export default {
         },
         heat: {
           name: 'Pedestrian Heat',
-          status: 'In arrivo · Q3 2026',
-          desc: 'Esposizione al calore di ogni percorso pedonale della città.',
+          status: 'In programma',
+          desc: 'Esposizione al calore lungo i percorsi pedonali.',
         },
         a11y: {
           name: 'Accessibility for All',
           status: 'In corso',
-          desc: 'Mappare la città dal punto di vista di chi usa la sedia a rotelle.',
+          desc: 'Raggiungibilità misurata per chi usa una sedia a rotelle, non per un pedone medio.',
         },
         sound: {
           name: 'Soundscapes',
           status: 'Concept',
-          desc: 'Accessibilità acustica — dove si riesce davvero ad ascoltare la città?',
+          desc: 'L’esposizione acustica come dimensione della qualità urbana.',
         },
       },
     },
@@ -131,114 +133,134 @@ export default {
     searchHint: '⌘K',
     paper: 'Articolo ↗',
     github: 'GitHub ↗',
-    welcome: 'Benvenuto su {name}',
+    welcome: 'Benvenuto in {name}',
     dismiss: 'Chiudi',
     ctaMap: 'Clicca una città sulla mappa',
     learnMore: 'Scopri di più →',
-    attribution: 'Tile © OpenStreetMap · Dati © Sony CSL Roma',
+    attribution: 'Cartografia di base: Natural Earth · Dati © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} città',
     zoomIn: 'Ingrandisci',
     zoomOut: 'Riduci',
     loading: 'Caricamento della copertura…',
     empty: 'Nessuna città corrisponde alla ricerca.',
+    seeded: 'Valori illustrativi — le misure di questa piattaforma non sono ancora pubblicate.',
 
     fifteen: {
       label: 'Accesso di prossimità',
       intro:
-        'Una piattaforma che misura quanto ogni quartiere si avvicina all’ideale della città in 15 minuti: servizi, scuole, cibo e sanità raggiungibili a piedi o in bicicletta. Clicca una città per entrare nella sua mappa di accessibilità.',
-      legendUnit: 'Tempo medio di prossimità',
+        'Tempo di viaggio a piedi e in bicicletta verso dieci categorie di servizi quotidiani — sanità, istruzione, spesa, ristorazione, cultura, spazi aperti, attività fisica, servizi, mobilità — calcolato per ogni cella della città e letto rispetto al riferimento dei 15 minuti.',
+      legendUnit: 'Tempo medio verso i servizi',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Accesso alle opportunità',
       intro:
-        'CityChrone++ sostituisce la distanza con il tempo di viaggio. Guarda la città deformarsi sotto le tue dita mentre il trasporto pubblico ridisegna ciò che è raggiungibile — e simula scenari con nuove linee e nuove fermate.',
+        'CityChrone sostituisce la distanza metrica con il tempo di viaggio: la mappa si deforma così che due luoghi risultino vicini quando il trasporto pubblico li collega rapidamente, per quanto distanti siano sul terreno.',
       legendUnit: 'Punteggio di velocità',
       legend: ['Lento', 'Medio', 'Veloce'],
     },
     cardep: {
-      label: 'Trasporto pubblico vs. auto privata',
+      label: 'Auto contro trasporto pubblico',
       intro:
-        'Una misura ad alta risoluzione di quanto le opportunità siano più raggiungibili in auto che con il trasporto pubblico. Le celle blu favoriscono il trasporto pubblico, quelle rosse richiedono l’auto. Basato su Campanelli et al., 2026.',
-      legendUnit: 'Rapporto CDI',
-      legend: ['Favorevole al TP', 'Misto', 'Dipendente dall’auto', 'Solo auto'],
+        'Il Car Dependency Index confronta le opportunità raggiungibili in automobile con quelle raggiungibili in trasporto pubblico nello stesso tempo: CDI = (O_auto − O_TP) / (O_auto + O_TP). Va da −1, dove il trasporto pubblico raggiunge di più, passando per 0 dove i due si equivalgono, fino a +1 dove l’auto raggiunge tutto e il trasporto pubblico quasi nulla.',
+      legendUnit: 'Car Dependency Index',
+      legend: [
+        'Favorevole al TP',
+        'In equilibrio',
+        'Dipendente dall’auto',
+        'Fortemente dipendente dall’auto',
+      ],
     },
     pov: {
       label: 'Prossimità · Opportunità · Valore',
       intro:
-        'Ogni città è mappata lungo due dimensioni: la Prossimità (i servizi locali raggiungibili a piedi) e l’Opportunità (ciò che il trasporto pubblico raggiunge rapidamente). Una terza dimensione, il Valore intrinseco dei luoghi, resta ancora da quantificare.',
-      legendUnit: 'Tipo di zona',
+        'Ogni cella riceve un punteggio su due assi — prossimità, i servizi quotidiani raggiungibili a piedi, e opportunità, le destinazioni di scala urbana raggiungibili in trasporto pubblico — e viene poi classificata rispetto alla mediana cittadina pesata sulla popolazione di ciascun asse. Un terzo asse, il valore di ciò che è raggiungibile, è definito nel quadro teorico ma non ancora quantificato.',
+      legendUnit: 'Zona',
       legend: ['Inclusione', 'Isolamento spaziale', 'Isolamento sociale', 'Isolamento totale'],
     },
   },
 
   city: {
-    region: '{region} · {count} esagoni',
+    region: '{region} · {count} celle',
     worldMap: 'Mappa mondiale',
-    compare: 'Confronta città',
-    zoneType: 'Tipo di zona',
+    compare: 'Confronta le città',
+    zoneType: 'Zona',
     zones: {
-      inclusion: { name: 'Inclusione', desc: 'Alta prossimità · Alta opportunità' },
-      spatial: { name: 'Isolamento spaziale', desc: 'Alta prossimità · Bassa opportunità' },
-      social: { name: 'Isolamento sociale', desc: 'Bassa prossimità · Alta opportunità' },
-      total: { name: 'Isolamento totale', desc: 'Bassa prossimità · Bassa opportunità' },
+      inclusion: {
+        name: 'Inclusione',
+        desc: 'Sopra la mediana su entrambi gli assi — servita localmente e collegata alla città',
+      },
+      spatial: {
+        name: 'Isolamento spaziale',
+        desc: 'Servizi vicini, ma debole collegamento verso il resto della città',
+      },
+      social: {
+        name: 'Isolamento sociale',
+        desc: 'Buon collegamento, ma pochi servizi a distanza pedonale',
+      },
+      total: {
+        name: 'Isolamento totale',
+        desc: 'Sotto la mediana su entrambi gli assi — tipicamente la periferia',
+      },
     },
     summary: {
       title: 'Sintesi della città',
-      hexagons: 'Esagoni',
-      proximity: 'Prossimità mediana',
-      opportunity: 'Opportunità mediana',
-      population: 'Popolazione',
+      hexagons: 'Celle',
+      proximity: 'Punteggio mediano di prossimità',
+      opportunity: 'Punteggio mediano di opportunità',
+      population: 'Popolazione coperta',
     },
     cartogram: {
-      title: 'Cartogramma · Maglia esagonale',
-      caption: 'Risoluzione H3 {res} · celle da ~{size} m',
+      title: 'Cartogramma · area della cella ∝ popolazione',
+      caption: 'Risoluzione H3 {res} · celle di ~{size} m',
     },
     scatter: {
-      title: 'Dispersione · Prossimità vs. opportunità',
+      title: 'Prossimità contro opportunità',
       xAxis: 'Punteggio di opportunità →',
       yAxis: 'Punteggio di prossimità →',
     },
     statusHint:
-      'Passa sopra o clicca un esagono o un punto per evidenziarli insieme · scorri e trascina per navigare',
-    computing: 'Calcolo della maglia…',
+      'Passa sopra o clicca una cella o un punto per evidenziarli · scorri e trascina per navigare',
+    computing: 'Caricamento della maglia…',
+    seeded:
+      'Maglia illustrativa — le misure di questa città non sono ancora pubblicate, quindi la disposizione delle celle è generata.',
   },
 
   faq: {
     eyebrow: 'Domande frequenti',
     headline: 'Sei domande\nricorrenti.',
-    lede: 'Risposte rapide a ciò che ci viene chiesto più spesso. Hai un’altra domanda? Scrivi a {email} — rispondiamo entro una settimana.',
+    lede: 'Risposte brevi a ciò che ci viene chiesto più spesso. Avete un’altra domanda? Scrivete a {email}.',
     meta: {
       updated: 'Ultimo aggiornamento',
-      updatedValue: '14 maggio 2026',
+      updatedValue: 'Luglio 2026',
       entries: 'Voci',
       languages: 'Lingue',
       languagesValue: 'EN · IT',
     },
     items: [
       {
-        q: 'Cosa significa «accesso» nell’Atlante?',
-        a: 'Usiamo la parola accesso come ombrello per tre cose misurabili: la prossimità (ciò che si raggiunge a piedi), l’opportunità (ciò a cui arriva il trasporto pubblico entro un tempo dato) e il valore (il peso qualitativo di quei luoghi raggiungibili). Ogni piattaforma ne misura una o più.',
+        q: 'Cosa significa “accesso” nell’Atlante?',
+        a: 'Tre cose misurabili, tenute deliberatamente separate. La prossimità è ciò che si raggiunge a piedi in pochi minuti — negozi, scuole, ambulatori, verde. L’opportunità è ciò che il trasporto pubblico rende raggiungibile entro un budget di tempo — lavoro, università, ospedali, luoghi di cultura. Il valore è la qualità di ciò che è raggiungibile: fa parte del quadro teorico ma non è ancora quantificato, e nulla in questo sito pretende di misurarlo.',
+      },
+      {
+        q: 'Come viene classificata una cella in una zona?',
+        a: 'Ogni cella ha un punteggio di prossimità e uno di opportunità. Una cella è considerata alta su un asse quando sta sopra la mediana cittadina pesata sulla popolazione per quell’asse — pesata, così che la soglia rifletta dove le persone vivono davvero e non la geometria della maglia. Le due risposte sì/no danno quattro zone: inclusione, isolamento spaziale, isolamento sociale, isolamento totale. Poiché le soglie sono specifiche di ogni città, le zone confrontano luoghi dentro una città, non fra città; a confrontare fra città sono i punteggi.',
       },
       {
         q: 'Da dove vengono i dati?',
-        a: 'Le reti stradali e i servizi vengono da OpenStreetMap. Le reti di trasporto pubblico da feed GTFS aperti. I dati di popolazione da WorldPop e dal JRC GHSL. Tutto ciò che usiamo per costruire le mappe è aperto e citabile.',
+        a: 'Rete stradale e punti di interesse vengono da OpenStreetMap. I tempi a piedi sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm invece che con una frequenza media. La popolazione viene dalle griglie WorldPop a 100 m riscalate sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, circa 200 m.',
       },
       {
         q: 'Perché la mia città non c’è?',
-        a: 'La copertura dipende dalla qualità di OSM e dalla disponibilità di un feed GTFS utilizzabile. 15min-City copre circa 10.000 città; le piattaforme di confronto si concentrano su un insieme più ristretto di città di studio ben documentate. Apri una issue su GitHub e valuteremo di aggiungere la tua.',
+        a: 'La copertura è limitata dai dati, non dall’interesse: servono una buona mappatura OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di puntare alla copertura globale, perché un feed mal specificato produce numeri sbagliati dall’aria affidabile. Se la vostra città ha entrambi e manca, aprite una issue su GitHub.',
       },
       {
         q: 'Posso citare questo lavoro?',
-        a: 'Sì — ogni piattaforma rimanda all’articolo che la descrive. Il riferimento del framework è Bruno et al., EPJ Data Science (2026); il Car Dependency Index è descritto in Campanelli et al., 2026.',
+        a: 'Sì. Il quadro teorico è Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. Il Car Dependency Index è Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. La pagina Ricerca li elenca insieme ai dataset.',
       },
       {
         q: 'L’Atlante è gratuito?',
-        a: 'Sì. I dati sono aperti con licenza CC BY-NC 4.0, il codice con licenza MIT. L’uso commerciale delle mappe richiede un’autorizzazione scritta.',
-      },
-      {
-        q: 'Ho trovato un bug / vorrei una funzionalità.',
-        a: 'Ogni piattaforma ha un tracker di issue su GitHub, linkato nel suo footer. Rispondiamo alle issue con cadenza settimanale durante l’anno accademico.',
+        a: 'Sì. Il codice di visualizzazione è sotto licenza MIT e i dataset pubblicati sono CC BY-NC 4.0 — liberi di usare, condividere e adattare con attribuzione, per scopi non commerciali. L’uso commerciale richiede autorizzazione scritta. Gli articoli sono open access con licenza CC BY 4.0.',
       },
     ],
   },
@@ -247,7 +269,7 @@ export default {
     eyebrow: 'Contatti e collaborazioni',
     headline: 'Roma, Italia.',
     headlineAccent: 'Aperti a collaborare.',
-    lede: 'Collaboriamo con amministrazioni comunali, ONG, università e cittadini curiosi. Se la tua città dovrebbe essere sull’Atlante, se vuoi usare le nostre mappe in un articolo, o se semplicemente hai un’idea — scrivici.',
+    lede: 'Lavoriamo con amministrazioni cittadine, gruppi di ricerca, associazioni e chiunque provi a sostenere una tesi sull’accesso con dei dati alle spalle. Se la vostra città dovrebbe essere nell’Atlante, se volete riusare le mappe in un articolo, o se qui qualcosa vi sembra sbagliato — scriveteci.',
     fields: {
       address: 'Indirizzo',
       general: 'Generale',
@@ -255,8 +277,9 @@ export default {
       code: 'Codice',
       phone: 'Telefono',
     },
-    addressValue: 'Sapienza Università di Roma\nPiazzale Aldo Moro, 5 — 00185 Roma, IT',
-    teamTitle: 'Il gruppo',
+    addressValue:
+      'Sony Computer Science Laboratories — Roma\nIniziativa congiunta con Sapienza Università di Roma\nPiazzale Aldo Moro, 5 — 00185 Roma, IT',
+    teamTitle: 'Il team',
     roles: {
       director: 'Direttore · Principal Investigator',
       senior: 'Ricercatore senior',
@@ -264,43 +287,87 @@ export default {
       fifteen: 'Ricercatore · 15min-City',
       citychrone: 'Ricercatore · CityChrone',
       cardep: 'Ricercatore · Car Dependency',
-      hiring: 'Stiamo assumendo.',
+      hiring: 'Lavora con noi',
     },
     joinName: 'Tu?',
   },
 
   research: {
-    eyebrow: 'Prodotti della ricerca',
+    eyebrow: 'Produzione scientifica',
     headline: 'Articoli, dati e codice.',
-    lede: 'Tutto ciò che sta dietro all’Atlante è pubblicato. Ogni piattaforma è documentata in un articolo sottoposto a revisione, distribuisce il suo dataset con licenza CC BY-NC 4.0 e mantiene il codice di analisi su GitHub con licenza MIT.',
+    lede: 'I metodi dietro l’Atlante sono pubblicati e i dataset sono scaricabili. Le piattaforme il cui articolo è ancora in preparazione sono indicate come tali — le mappe si mostrano, la citazione non si inventa.',
     papersTag: '01',
     papersTitle: 'Articoli',
-    papersHint: 'peer-reviewed, ad accesso aperto',
+    papersHint: 'peer-reviewed e preprint',
     datasetsTag: '02',
     datasetsTitle: 'Dataset e codice',
     datasetsHint: 'CC BY-NC 4.0 · MIT',
     citeTitle: 'Come citare l’Atlante',
+    inPreparation: 'In preparazione',
     columns: { dataset: 'Dataset', coverage: 'Copertura', format: 'Formato', licence: 'Licenza' },
+  },
+
+  blog: {
+    eyebrow: 'Blog',
+    headline: 'Appunti\ndall’Atlante.',
+    lede: 'Testi più lunghi su cosa misuriamo, come lo misuriamo, e cosa le mappe mostrano e non mostrano.',
+    readingTime: '{count} min di lettura',
+    backToBlog: '← Tutti gli articoli',
+    published: 'Pubblicato',
+    postsLabel: 'Articoli',
+  },
+
+  work: {
+    eyebrow: 'Lavora con noi',
+    headline: 'Nessuna posizione\naperta al momento.',
+    lede: 'Al momento non stiamo selezionando per un ruolo finanziato. Siamo però sempre contenti di sentire studenti e studentesse che vogliano lavorare seriamente sull’accessibilità urbana — e quelle conversazioni cominciano di solito molto prima che una posizione esista.',
+    openTitle: 'Cosa è aperto',
+    positionsTitle: 'Posizioni aperte',
+    noPositions: 'Nessuna posizione finanziata è aperta al momento.',
+    noPositionsDetail:
+      'Quando se ne aprirà una sarà pubblicata qui e sulla pagina careers di Sony CSL. Non esiste una lista d’attesa, e le candidature spontanee per ruoli inesistenti non vengono conservate.',
+    routes: {
+      phd: {
+        title: 'Dottorandi',
+        desc: 'Co-seguiamo lavori di dottorato con università italiane ed estere, di norma sulla misura dell’accessibilità, sull’analisi delle reti di trasporto o sulla fisica statistica delle città. Il finanziamento arriva normalmente dal programma di dottorato dell’università ospitante e non da noi, quindi conviene iniziare la conversazione qualche mese prima delle sue scadenze.',
+      },
+      thesis: {
+        title: 'Tesi magistrali',
+        desc: 'Ospitiamo tesi magistrali su una porzione ben definita dell’Atlante — una nuova città, un confronto metodologico, la validazione di uno degli indici con dati indipendenti. Aspettatevi circa sei mesi, dati veri, e un risultato che viene pubblicato se regge.',
+      },
+      internship: {
+        title: 'Tirocini',
+        desc: 'Periodi più brevi e mirati, di norma da tre a sei mesi: pipeline di dati, elaborazione geospaziale, o sviluppo front-end su queste piattaforme. Sono utili Python e strumenti geospaziali, oppure JavaScript moderno e rendering cartografico.',
+      },
+    },
+    howTitle: 'Come mettersi in contatto',
+    howBody:
+      'Scrivete a {email} con una breve descrizione di cosa vorreste fare e perché, un CV e — se ce l’avete — un link a qualcosa che avete costruito o scritto. Una proposta specifica, che parta da un articolo o da una piattaforma, vale molto più di una manifestazione di interesse generica.',
+    expectTitle: 'Cosa aspettarsi',
+    expectBody:
+      'Leggiamo tutto e rispondiamo alle proposte su cui possiamo agire. Siamo un gruppo piccolo, quindi non riusciamo a dare un riscontro dettagliato a ogni messaggio, e una risposta lenta non è un giudizio sulla candidatura.',
+    cta: 'Scrivici',
   },
 
   footer: {
     description:
-      'Ricerca aperta sull’accesso urbano dal gruppo Città Sostenibili di Sony CSL — Roma. Mappe, metodi e dati, liberamente utilizzabili.',
+      'Ricerca aperta sull’accesso urbano dal team Città Sostenibili di Sony CSL — Roma. Metodi, mappe e dati, pubblicati e liberamente riutilizzabili.',
     platforms: 'Piattaforme',
     research: 'Ricerca',
-    researchLinks: ['Articoli', 'Dataset', 'GitHub', 'Citazioni'],
-    about: 'Informazioni',
-    aboutLinks: ['Gruppo', 'Metodi', 'FAQ', 'Stampa'],
+    researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
+    about: 'Chi siamo',
+    aboutLinks: ['Team', 'Contatti', 'Lavora con noi'],
     touch: 'Resta in contatto',
-    touchLinks: ['Newsletter', 'Mastodon', 'Twitter / X', 'BlueSky'],
+    touchLinks: ['GitHub', 'Newsletter'],
+    workCta: 'Lavora con noi →',
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
-    version: 'v2.0 · Aggiornato maggio 2026 · CC BY-NC 4.0',
+    version: 'Codice MIT · Dati CC BY-NC 4.0',
   },
 
   notFound: {
     eyebrow: 'Errore 404',
-    headline: 'Fuori dalla mappa.',
-    lede: 'Questa pagina non fa parte dell’Atlante. Prova con le piattaforme, oppure torna alla home.',
+    headline: 'Fuori mappa.',
+    lede: 'Questa pagina non fa parte dell’Atlante. Prova le piattaforme, o torna alla home.',
     cta: 'Torna all’Atlante',
   },
 };

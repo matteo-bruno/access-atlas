@@ -17,6 +17,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
     { key: 'atlas', to: '/', label: t('nav.atlas') },
     { key: 'platforms', to: `/platforms/${PLATFORMS[0].slug}`, label: t('nav.platforms') },
     { key: 'research', to: '/research', label: t('nav.research') },
+    { key: 'blog', to: '/blog', label: t('nav.blog') },
     { key: 'faq', to: '/faq', label: t('nav.faq') },
     { key: 'contact', to: '/contact', label: t('nav.contact') },
   ];

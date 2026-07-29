@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
@@ -54,9 +55,17 @@ export default function Contact() {
                 <div key={member.email} className={`aa-team__row${member.isJoin ? ' aa-team__row--join' : ''}`}>
                   <div className="aa-team__name">{name}</div>
                   <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
-                  <a className="aa-mono aa-team__email" href={`mailto:${member.email}`}>
-                    {member.email}
-                  </a>
+                  {/* The join row points at the page that says what is
+                      actually open, rather than a mailto for no vacancy. */}
+                  {member.isJoin ? (
+                    <Link className="aa-mono aa-team__email" to="/work-with-us">
+                      {t('footer.workCta')}
+                    </Link>
+                  ) : (
+                    <a className="aa-mono aa-team__email" href={`mailto:${member.email}`}>
+                      {member.email}
+                    </a>
+                  )}
                 </div>
               );
             })}

@@ -73,7 +73,9 @@ function PlatformScreen({ platform }) {
         title={platform.name}
         meta={
           <span className="aa-mono aa-subhead__count">
-            {t('platform.cityCount', { count: n(platform.cityCount) })}
+            {platform.published
+              ? t('platform.cityCount', { count: n(platform.cityCount) })
+              : t('platform.seeded')}
           </span>
         }
       >

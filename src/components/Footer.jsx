@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo.jsx';
+import { Icon } from './Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
+import { CONTACT } from '../data/team.js';
 import './Footer.css';
 
-// The design shows four short link columns. Only the platform column has
-// destinations today; the rest stay as plain labels until those pages exist,
-// which is exactly how the approved design renders them.
+// The design shows four short link columns. A label with no destination is
+// rendered as plain text — the columns only promise what exists.
 export function Footer() {
   const { t } = useI18n();
+
+  // Destinations by position, so the dictionaries stay pure labels and the
+  // translations cannot drift away from the routes.
+  const researchTo = ['/research', '/research', '/blog', '/faq'];
+  const aboutTo = ['/contact', '/contact', '/work-with-us'];
+  const touchHref = [CONTACT.codeUrl, null];
 
   const columns = [
     {
@@ -22,17 +29,17 @@ export function Footer() {
     {
       key: 'research',
       heading: t('footer.research'),
-      links: t('footer.researchLinks').map((label) => ({ label })),
+      links: t('footer.researchLinks').map((label, i) => ({ label, to: researchTo[i] })),
     },
     {
       key: 'about',
       heading: t('footer.about'),
-      links: t('footer.aboutLinks').map((label) => ({ label })),
+      links: t('footer.aboutLinks').map((label, i) => ({ label, to: aboutTo[i] })),
     },
     {
       key: 'touch',
       heading: t('footer.touch'),
-      links: t('footer.touchLinks').map((label) => ({ label })),
+      links: t('footer.touchLinks').map((label, i) => ({ label, href: touchHref[i] })),
     },
   ];
 
@@ -45,23 +52,43 @@ export function Footer() {
             <span className="aa-footer__brandname">{t('nav.title')}</span>
           </div>
           <p className="aa-footer__desc">{t('footer.description')}</p>
+          <Link className="aa-footer__work" to="/work-with-us">
+            {t('footer.workCta')}
+            <Icon name="arrow" size={13} color="currentColor" />
+          </Link>
         </div>
 
         {columns.map((column) => (
           <div key={column.key} className="aa-footer__col">
             <div className="aa-eyebrow">{column.heading}</div>
             <div className="aa-footer__links">
-              {column.links.map((link) =>
-                link.to ? (
-                  <Link key={link.label} to={link.to} className="aa-footer__link">
-                    {link.label}
-                  </Link>
-                ) : (
+              {column.links.map((link) => {
+                if (link.to) {
+                  return (
+                    <Link key={link.label} to={link.to} className="aa-footer__link">
+                      {link.label}
+                    </Link>
+                  );
+                }
+                if (link.href) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="aa-footer__link"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
+                return (
                   <span key={link.label} className="aa-footer__link">
                     {link.label}
                   </span>
-                ),
-              )}
+                );
+              })}
             </div>
           </div>
         ))}

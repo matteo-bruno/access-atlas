@@ -1,0 +1,136 @@
+.aa-work__intro {
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+.aa-work__headline {
+  margin: 18px 0 20px;
+  max-width: 820px;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.aa-work__lede {
+  max-width: 640px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+/* The "nothing open" notice is stated plainly rather than dressed up. */
+.aa-work__notice {
+  padding: 24px 26px;
+}
+
+.aa-work__noticehead {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.aa-work__dot {
+  background: var(--ink-4);
+}
+
+.aa-work__noticetitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.aa-work__noticebody {
+  margin: 12px 0 0 21px;
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.aa-work__routes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.aa-work__route {
+  padding: 24px 26px;
+}
+
+.aa-work__routeindex {
+  font-size: 12px;
+  color: var(--ink-4);
+}
+
+.aa-work__routetitle {
+  margin: 10px 0 12px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.aa-work__routedesc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.aa-work__how {
+  max-width: 680px;
+}
+
+.aa-work__howbody {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.aa-work__email {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aa-work__expect {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hair);
+}
+
+.aa-work__expect .aa-work__howbody {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.aa-work__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 32px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: #fbfaf4;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.aa-work__cta:hover {
+  background: var(--navy-deep);
+}
+
+@media (max-width: 900px) {
+  .aa-work__headline {
+    font-size: 38px;
+  }
+
+  .aa-work__routes {
+    grid-template-columns: 1fr;
+  }
+}
