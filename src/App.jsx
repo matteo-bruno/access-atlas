@@ -10,6 +10,9 @@ const CityPage = lazy(() => import('./pages/CityPage.jsx'));
 const FAQ = lazy(() => import('./pages/FAQ.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const Research = lazy(() => import('./pages/Research.jsx'));
+const Blog = lazy(() => import('./pages/Blog.jsx'));
+const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
+const Work = lazy(() => import('./pages/Work.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 function ScrollToTop() {
@@ -30,6 +33,9 @@ export default function App() {
           <Route path="/platforms/:slug" element={<PlatformLanding />} />
           <Route path="/platforms/:slug/:cityId" element={<CityPage />} />
           <Route path="/research" element={<Research />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/work-with-us" element={<Work />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

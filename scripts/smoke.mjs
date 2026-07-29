@@ -155,12 +155,18 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
   await page.waitForTimeout(1200);
   const en = await page.$eval('h1', (e) => e.textContent.trim());
-  const enMetric = await page.$eval('.aa-metrics__value', (e) => e.textContent.trim());
+  // Read every metric, not just the first: only values above 999 pick up a
+  // thousands separator, and which metrics the home page shows can change.
+  const enMetric = await page.$$eval('.aa-metrics__value', (els) =>
+    els.map((e) => e.textContent.trim()).join(' '),
+  );
 
   await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
   await page.waitForTimeout(700);
   const it = await page.$eval('h1', (e) => e.textContent.trim());
-  const itMetric = await page.$eval('.aa-metrics__value', (e) => e.textContent.trim());
+  const itMetric = await page.$$eval('.aa-metrics__value', (els) =>
+    els.map((e) => e.textContent.trim()).join(' '),
+  );
   const lang = await page.evaluate(() => document.documentElement.lang);
 
   check('Locale swaps copy', en !== it, `${en} → ${it}`);

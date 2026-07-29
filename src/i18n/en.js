@@ -1,6 +1,12 @@
 // English source copy. `it.js` mirrors this shape exactly — if you add a key
 // here, add it there too (see i18n/index.jsx, which warns on missing keys in
 // development).
+//
+// Copy rule: every quantity on the site is either computed from the published
+// datasets (src/data/home.js, src/data/platforms.js) or omitted. Where a
+// measure has no unit — the P.O.V. axes are weighted counts of reachable
+// points of interest, not minutes or jobs — it is called a score, not a
+// distance or a headcount.
 
 export default {
   meta: {
@@ -14,6 +20,7 @@ export default {
     atlas: 'Atlas',
     platforms: 'Platforms',
     research: 'Research',
+    blog: 'Blog',
     faq: 'FAQ',
     contact: 'Contact',
     github: 'GitHub',
@@ -23,10 +30,10 @@ export default {
 
   home: {
     hero: {
-      eyebrow: 'Volume II · 2026 edition',
+      eyebrow: 'Open research platforms · Sony CSL Rome',
       headline: 'An atlas of how cities',
       headlineAccent: 'give access',
-      lede: 'Four open platforms, one framework. Measure {proximity} — what is within walking distance. Measure {opportunity} — what transit can reach. Compare them, find the gap. Every city on Earth, open data, open code.',
+      lede: 'Four open platforms, one framework. Measure {proximity} — the everyday services within walking distance. Measure {opportunity} — what public transport can reach within a time budget. The distance between the two is where a city keeps or breaks its promise.',
       ledeProximity: 'proximity',
       ledeOpportunity: 'opportunity',
       ctaPrimary: 'Explore the platforms',
@@ -36,24 +43,24 @@ export default {
       title: 'Latest from the lab',
       kinds: { paper: 'Paper', release: 'Release', data: 'Data' },
       items: {
-        pov: 'Bruno et al. — the P.O.V. framework',
-        cdi: 'Car Dependency Index v1.0 ({count} cities)',
-        fifteen: '15min-City refreshed — +{count} cities',
+        pov: 'The dimensions of accessibility — EPJ Data Science',
+        cdi: 'Car Dependency Index — {count} cities published',
+        fifteen: 'P.O.V. hex meshes — {count} cities published',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Jan 2026' },
     },
     metrics: {
-      cities: 'Cities mapped',
-      platforms: 'Active platforms',
-      countries: 'Countries covered',
+      cities: 'Cities published',
+      platforms: 'Platforms',
+      countries: 'Countries',
+      cells: 'Hexagonal cells',
       researchers: 'Researchers',
-      founded: 'Founded',
     },
     coverage: {
       tag: '01',
       title: 'A single map of access, four lenses.',
       hint: 'hover any platform to preview',
-      badge: 'Global coverage · {count} cities',
+      badge: 'Published coverage · {count} cities',
       legend: {
         opportunity: 'Opportunity',
         proximity: 'Proximity',
@@ -63,7 +70,7 @@ export default {
     platforms: {
       tag: '02',
       title: 'The four platforms',
-      hint: 'proximity → opportunity → value',
+      hint: 'proximity → opportunity → comparison',
       open: 'Open',
       cityCount: '{count} cities',
       themes: {
@@ -73,28 +80,32 @@ export default {
         pov: 'Synthesis',
       },
       desc: {
-        fifteen: 'Walkable services, scored against the 15-minute ideal — every city on Earth.',
-        citychrone: 'Travel-time geography — watch the city deform as transit reshapes reach.',
-        cardep: 'How many more places does a car reach than transit, cell by cell?',
-        pov: 'Proximity × Opportunity, splitting the city into four zones of access.',
+        fifteen:
+          'Walking and cycling time to ten categories of everyday service, read against the 15-minute reference.',
+        citychrone:
+          'Travel-time geography — the city redrawn so that distance is measured in minutes of public transport.',
+        cardep:
+          'How far opportunity access by car exceeds access by public transport, cell by cell.',
+        pov: 'Proximity against opportunity, splitting the city into four zones of access.',
       },
     },
     table: {
       tag: '03',
       title: 'By the numbers',
-      hint: 'six cities, three measures',
+      hint: 'six cities · P.O.V. framework',
       headers: {
         city: 'City',
-        proximity: 'Proximity (min walk)',
-        opportunity: 'Opportunity (jobs, k)',
-        inclusion: 'Inclusion rate',
+        proximity: 'Median proximity score',
+        opportunity: 'Median opportunity score',
+        inclusion: 'Inclusion zone',
       },
+      note: 'Proximity and opportunity are weighted counts of reachable points of interest, comparable between cities because every city is measured the same way. Inclusion is the share of cells above both population-weighted medians.',
     },
     quote: {
-      eyebrow: 'From the team',
-      before: '“A city is a promise of ',
+      eyebrow: 'The premise',
+      before: 'A city is a promise of ',
       accent: 'nearness',
-      after: ': that the things you need are within reach. The Atlas asks, for every place on Earth, whether that promise is being kept.”',
+      after: ': that the things you need are within reach. The Atlas asks, city by city and cell by cell, whether that promise is being kept — and for whom.',
       attribution: '— Sustainable Cities team · Sony CSL Rome',
     },
     side: {
@@ -107,18 +118,18 @@ export default {
         },
         heat: {
           name: 'Pedestrian Heat',
-          status: 'Upcoming · Q3 2026',
-          desc: 'Heat-exposure of every pedestrian route in the city.',
+          status: 'Planned',
+          desc: 'Heat exposure along pedestrian routes.',
         },
         a11y: {
           name: 'Accessibility for All',
           status: 'In progress',
-          desc: 'Mapping the city through a wheelchair user’s perspective.',
+          desc: 'Reachability measured for wheelchair users rather than an average pedestrian.',
         },
         sound: {
           name: 'Soundscapes',
           status: 'Concept',
-          desc: 'Acoustic accessibility — where can you simply hear the city?',
+          desc: 'Acoustic exposure as a dimension of urban quality.',
         },
       },
     },
@@ -133,82 +144,97 @@ export default {
     dismiss: 'Dismiss',
     ctaMap: 'Click a city on the map',
     learnMore: 'Learn more →',
-    attribution: 'Tiles © OpenStreetMap · Data © Sony CSL Rome',
+    attribution: 'Basemap: Natural Earth · Data © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} cities',
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     loading: 'Loading coverage…',
     empty: 'No cities match that search.',
+    seeded: 'Illustrative values — this platform’s measurements are not yet published.',
 
     fifteen: {
       label: 'Proximity access',
       intro:
-        'A platform that scores how close every neighbourhood is to the 15-minute-city ideal: services, schools, food, healthcare reachable on foot or by bike. Click any city to enter its accessibility map.',
-      legendUnit: 'Average proximity time',
+        'Travel time on foot and by bicycle to ten categories of everyday service — healthcare, learning, supplies, eating, culture, outdoor space, exercise, services, mobility — computed for every cell of the city and read against the 15-minute reference.',
+      legendUnit: 'Average time to services',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Opportunity access',
       intro:
-        'CityChrone++ replaces distance with travel time. Watch the city deform under your fingertips as public transport reshapes what is reachable — and run what-if scenarios on new lines and stations.',
+        'CityChrone replaces metric distance with travel time: the map deforms so that two places sit close together when public transport connects them quickly, however far apart they are on the ground.',
       legendUnit: 'Velocity score',
       legend: ['Slow', 'Medium', 'Fast'],
     },
     cardep: {
-      label: 'Transit vs. private car',
+      label: 'Car vs. public transport',
       intro:
-        'A high-resolution measure of how much more reachable opportunities are by car than by public transport. Blue cells favour transit; red cells require a car. Based on Campanelli et al., 2026.',
-      legendUnit: 'CDI ratio',
-      legend: ['Transit-friendly', 'Mixed', 'Car-dependent', 'Car-only'],
+        'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = (O_car − O_PT) / (O_car + O_PT). It runs from −1, where transit reaches more, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing.',
+      legendUnit: 'Car Dependency Index',
+      legend: ['Transit-favoured', 'Balanced', 'Car-dependent', 'Strongly car-dependent'],
     },
     pov: {
       label: 'Proximity · Opportunity · Value',
       intro:
-        'Each city is mapped across two dimensions: Proximity (walkable local services) and Opportunity (fast transit reach). A third dimension, the intrinsic Value of places, has yet to be quantified.',
-      legendUnit: 'Zone type',
+        'Each cell is scored on two axes — proximity, the everyday services reachable on foot, and opportunity, the city-scale destinations reachable by public transport — then classified against the city’s population-weighted median on each. A third axis, the value of what is reachable, is set out in the framework but not yet quantified.',
+      legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
     },
   },
 
   city: {
-    region: '{region} · {count} hexagons',
+    region: '{region} · {count} cells',
     worldMap: 'World map',
     compare: 'Compare cities',
-    zoneType: 'Zone type',
+    zoneType: 'Zone',
     zones: {
-      inclusion: { name: 'Inclusion', desc: 'High proximity · High opportunity' },
-      spatial: { name: 'Spatial isolation', desc: 'High proximity · Low opportunity' },
-      social: { name: 'Social isolation', desc: 'Low proximity · High opportunity' },
-      total: { name: 'Total isolation', desc: 'Low proximity · Low opportunity' },
+      inclusion: {
+        name: 'Inclusion',
+        desc: 'Above the median on both axes — served locally and connected city-wide',
+      },
+      spatial: {
+        name: 'Spatial isolation',
+        desc: 'Services nearby, but weak transit reach to the wider city',
+      },
+      social: {
+        name: 'Social isolation',
+        desc: 'Good transit reach, but few services within walking distance',
+      },
+      total: {
+        name: 'Total isolation',
+        desc: 'Below the median on both axes — typically the periphery',
+      },
     },
     summary: {
       title: 'City summary',
-      hexagons: 'Hexagons',
-      proximity: 'Median proximity',
-      opportunity: 'Median opportunity',
-      population: 'Population',
+      hexagons: 'Cells',
+      proximity: 'Median proximity score',
+      opportunity: 'Median opportunity score',
+      population: 'Population covered',
     },
     cartogram: {
-      title: 'Cartogram · Hexagonal mesh',
+      title: 'Cartogram · cell area ∝ population',
       caption: 'H3 resolution {res} · ~{size} m cells',
     },
     scatter: {
-      title: 'Scatter · Proximity vs. opportunity',
+      title: 'Proximity against opportunity',
       xAxis: 'Opportunity score →',
       yAxis: 'Proximity score →',
     },
     statusHint:
-      'Hover or click any hexagon or scatter point to cross-highlight · scroll & drag to navigate',
-    computing: 'Computing the mesh…',
+      'Hover or click any cell or point to cross-highlight · scroll & drag to navigate',
+    computing: 'Loading the mesh…',
+    seeded:
+      'Illustrative mesh — this city’s measurements are not yet published, so the arrangement of cells is generated.',
   },
 
   faq: {
     eyebrow: 'Frequently asked',
     headline: 'Six common\nquestions.',
-    lede: 'Quick answers to what people ask us most. Have a different question? Write to {email} — we reply within a week.',
+    lede: 'Short answers to what we are asked most. Something else on your mind? Write to {email}.',
     meta: {
       updated: 'Last updated',
-      updatedValue: 'May 14, 2026',
+      updatedValue: 'July 2026',
       entries: 'Entries',
       languages: 'Languages',
       languagesValue: 'EN · IT',
@@ -216,27 +242,27 @@ export default {
     items: [
       {
         q: 'What does “access” mean in the Atlas?',
-        a: 'We use access as an umbrella for three measurable things: proximity (what is within walking distance), opportunity (what transit can reach in a fixed time budget), and value (the qualitative weight of those reachable places). Each platform measures one or more.',
+        a: 'Three measurable things, kept deliberately separate. Proximity is what you can reach on foot in a few minutes — shops, schools, clinics, green space. Opportunity is what public transport puts within a time budget — jobs, universities, hospitals, cultural venues. Value is the quality and desirability of what is reachable; it is part of the framework but is not yet quantified, and nothing on this site claims to measure it.',
+      },
+      {
+        q: 'How is a cell classified into a zone?',
+        a: 'Each cell carries a proximity score and an opportunity score. A cell is counted as high on an axis when it sits above that city’s population-weighted median for the axis — weighted, so the threshold reflects where people actually live rather than the geometry of the mesh. The two yes/no answers give four zones: inclusion, spatial isolation, social isolation, total isolation. Because the thresholds are city-specific, zones compare places within a city, not between cities; the underlying scores are what compare across cities.',
       },
       {
         q: 'Where does the data come from?',
-        a: 'Street networks and amenities are from OpenStreetMap. Public-transport networks come from open GTFS feeds. Population data is from WorldPop and JRC GHSL. Everything used to build the maps is open and citable.',
+        a: 'Street networks and points of interest come from OpenStreetMap. Walking times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm rather than an average frequency. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
       },
       {
         q: 'Why isn’t my city included?',
-        a: 'Coverage depends on the quality of OSM and the availability of a usable GTFS feed. 15min-City covers ~10,000 cities; the comparison platforms focus on a smaller set of well-documented study cities. Open a GitHub issue and we will look into adding yours.',
+        a: 'Coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, open a GitHub issue.',
       },
       {
         q: 'Can I cite this work?',
-        a: 'Yes — each platform links to its underlying paper. The framework reference is Bruno et al., EPJ Data Science (2026); the Car Dependency Index is described in Campanelli et al., 2026.',
+        a: 'Yes. The framework is Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. The Car Dependency Index is Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. The Research page lists both alongside the datasets.',
       },
       {
         q: 'Is the Atlas free to use?',
-        a: 'Yes. The data is open under CC BY-NC 4.0; the code under MIT. Commercial use of the maps requires written permission.',
-      },
-      {
-        q: 'I found a bug / I want a feature.',
-        a: 'Each platform has a GitHub issue tracker linked in its footer. We respond to issues weekly during term time.',
+        a: 'Yes. The visualisation code is MIT-licensed and the published datasets are CC BY-NC 4.0 — free to use, share and adapt with attribution, for non-commercial purposes. Commercial use needs written permission. The papers themselves are open access under CC BY 4.0.',
       },
     ],
   },
@@ -245,7 +271,7 @@ export default {
     eyebrow: 'Contact & collaborations',
     headline: 'Rome, Italy.',
     headlineAccent: 'Open for collab.',
-    lede: 'We collaborate with city governments, NGOs, universities and curious citizens. If your city should be on the Atlas, if you want to use our maps in a paper, or if you simply have an idea — write to us.',
+    lede: 'We work with city administrations, research groups, NGOs and anyone trying to make an argument about access with evidence behind it. If your city should be on the Atlas, if you want to reuse the maps in a paper, or if something here looks wrong — write to us.',
     fields: {
       address: 'Address',
       general: 'General',
@@ -253,7 +279,7 @@ export default {
       code: 'Code',
       phone: 'Phone',
     },
-    addressValue: 'Sapienza Università di Roma\nPiazzale Aldo Moro, 5 — 00185 Roma, IT',
+    addressValue: 'Sony Computer Science Laboratories — Rome\nJoint Initiative with Sapienza Università di Roma\nPiazzale Aldo Moro, 5 — 00185 Roma, IT',
     teamTitle: 'The team',
     roles: {
       director: 'Director · Principal Investigator',
@@ -262,7 +288,7 @@ export default {
       fifteen: 'Researcher · 15min-City',
       citychrone: 'Researcher · CityChrone',
       cardep: 'Researcher · Car Dependency',
-      hiring: 'We are hiring.',
+      hiring: 'Work with us',
     },
     joinName: 'You?',
   },
@@ -270,29 +296,73 @@ export default {
   research: {
     eyebrow: 'Research output',
     headline: 'Papers, data and code.',
-    lede: 'Everything behind the Atlas is published. Each platform is documented in a peer-reviewed paper, ships its dataset under CC BY-NC 4.0, and keeps its analysis code on GitHub under MIT.',
+    lede: 'The methods behind the Atlas are published and the datasets are downloadable. Platforms whose paper is still in preparation are marked as such — the maps are shown, the citation is not invented.',
     papersTag: '01',
     papersTitle: 'Papers',
-    papersHint: 'peer-reviewed, open access',
+    papersHint: 'peer-reviewed & preprints',
     datasetsTag: '02',
     datasetsTitle: 'Datasets & code',
     datasetsHint: 'CC BY-NC 4.0 · MIT',
     citeTitle: 'How to cite the Atlas',
+    inPreparation: 'In preparation',
     columns: { dataset: 'Dataset', coverage: 'Coverage', format: 'Format', licence: 'Licence' },
+  },
+
+  blog: {
+    eyebrow: 'Blog',
+    headline: 'Notes from\nthe Atlas.',
+    lede: 'Longer-form writing about what we measure, how we measure it, and what the maps do and do not show.',
+    readingTime: '{count} min read',
+    backToBlog: '← All posts',
+    published: 'Published',
+    postsLabel: 'Posts',
+  },
+
+  work: {
+    eyebrow: 'Work with us',
+    headline: 'No open positions\nright now.',
+    lede: 'We are not recruiting for a funded role at the moment. We are, however, always glad to hear from students who want to do serious work on urban accessibility — and those conversations usually start long before a position exists.',
+    openTitle: 'What is open',
+    positionsTitle: 'Current openings',
+    noPositions: 'No funded positions are open at present.',
+    noPositionsDetail:
+      'When one opens it will be posted here and on the Sony CSL careers page. There is no waiting list, and speculative applications for roles that do not exist are not kept on file.',
+    routes: {
+      phd: {
+        title: 'PhD students',
+        desc: 'We co-supervise doctoral work with universities in Italy and abroad, usually on measurement of accessibility, transport network analysis, or the statistical physics of cities. Funding normally comes through the host university’s doctoral programme rather than from us, so the conversation is best started a few months before that programme’s deadlines.',
+      },
+      thesis: {
+        title: 'Master’s theses',
+        desc: 'We host master’s students working on a defined piece of the Atlas — a new city, a methodological comparison, a validation of one of the indices against independent data. Expect roughly six months, a real dataset, and a result that is published if it holds up.',
+      },
+      internship: {
+        title: 'Internships',
+        desc: 'Shorter, more focused placements, typically three to six months: data pipelines, geospatial processing, or front-end work on these platforms. Useful background is Python and geospatial tooling, or modern JavaScript and map rendering.',
+      },
+    },
+    howTitle: 'How to get in touch',
+    howBody:
+      'Write to {email} with a short description of what you want to work on and why, a CV, and — if you have one — a link to something you have built or written. A specific proposal that engages with a paper or a platform is worth far more than a general expression of interest.',
+    expectTitle: 'What to expect',
+    expectBody:
+      'We read everything and reply to proposals we can act on. We are a small team, so we cannot give detailed feedback on every message, and a slow reply is not a judgement on your application.',
+    cta: 'Write to us',
   },
 
   footer: {
     description:
-      'Open research on urban access from the Sustainable Cities team at Sony CSL — Rome. Maps, methods and data, free to use.',
+      'Open research on urban access from the Sustainable Cities team at Sony CSL — Rome. Methods, maps and data, published and free to reuse.',
     platforms: 'Platforms',
     research: 'Research',
-    researchLinks: ['Papers', 'Datasets', 'GitHub', 'Citations'],
+    researchLinks: ['Papers', 'Datasets', 'Blog', 'FAQ'],
     about: 'About',
-    aboutLinks: ['Team', 'Methods', 'FAQ', 'Press'],
+    aboutLinks: ['Team', 'Contact', 'Work with us'],
     touch: 'Stay in touch',
-    touchLinks: ['Newsletter', 'Mastodon', 'Twitter / X', 'BlueSky'],
+    touchLinks: ['GitHub', 'Newsletter'],
+    workCta: 'Work with us →',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: 'v2.0 · Updated May 2026 · CC BY-NC 4.0',
+    version: 'Code MIT · Data CC BY-NC 4.0',
   },
 
   notFound: {

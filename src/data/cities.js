@@ -153,8 +153,10 @@ export const CITIES = RAW.map(([name, lon, lat, country]) => {
     proximityMinutes: Math.round((3 + draw(name, 'prox') * 24) * 10) / 10,
     // CityChrone++ — normalised velocity score, 0 slow … 1 fast.
     velocityScore: Math.round(velocityRank * 1000) / 1000,
-    // Car Dependency Index — how many times more a car reaches than transit.
-    cdi: Math.round((1.1 + draw(name, 'cdi') * 4.4) * 100) / 100,
+    // Car Dependency Index — (O_car − O_PT) / (O_car + O_PT), in [−1, +1].
+    // Drawn over the range the published cities actually occupy, so the seed
+    // colours the map the way real values will.
+    cdi: Math.round((-0.15 + draw(name, 'cdi') * 0.6) * 1000) / 1000,
     // Urban Accessibility P.O.V. — dominant zone, index into ZONES.
     zone: [0, 1, 2, 3][Math.floor(draw(name, 'zone') * 4)],
   };

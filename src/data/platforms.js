@@ -1,5 +1,10 @@
-// The four Atlas platforms. Colours, legend scales and coverage counts are the
-// approved design values; `slug` drives routing, `i18n` points at the copy keys.
+// The four Atlas platforms. `slug` drives routing, `i18n` points at the copy
+// keys.
+//
+// `cityCount` counts cities whose data is actually published in public/data/,
+// not the coverage of the upstream research platform. `published: false` means
+// the map is still drawing generated stand-ins, and the UI says so rather than
+// presenting a count it cannot support.
 
 import { BRAND } from './brand.js';
 
@@ -12,7 +17,8 @@ export const PLATFORMS = [
     theme: 'Proximity',
     themeKey: 'proximity',
     accent: '#b94e3b',
-    cityCount: 10142,
+    cityCount: 1,
+    published: false,
     // Diverging scale: cool = close, warm = far. Index i covers stops[i].
     scale: [
       '#3b6e8f',
@@ -39,7 +45,8 @@ export const PLATFORMS = [
     theme: 'Opportunity',
     themeKey: 'opportunity',
     accent: BRAND.navy,
-    cityCount: 42,
+    cityCount: 0,
+    published: false,
     scale: ['#d9dfe9', BRAND.cyan, BRAND.navy],
     stops: [0.34, 0.67, 1],
     property: 'velocityScore',
@@ -54,9 +61,16 @@ export const PLATFORMS = [
     theme: 'Comparison',
     themeKey: 'comparison',
     accent: '#a04640',
-    cityCount: 19,
+    cityCount: 21,
+    published: true,
     scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
-    stops: [1.5, 2.5, 3.5, 6],
+    // CDI = (O_car − O_PT) / (O_car + O_PT), bounded in [−1, +1]: negative
+    // where transit reaches more, 0 where the two are balanced, positive where
+    // the car wins. It is a normalised difference, not a ratio — an earlier
+    // 1.5–6 scale here described a quantity the index does not measure.
+    // Breaks chosen against the published cities, whose population-weighted
+    // index runs from −0.11 (central Paris) to +0.41 (Florence).
+    stops: [-0.1, 0.1, 0.3, 1],
     property: 'cdi',
     markerStyle: 'ring',
     coversAllCities: false,
@@ -70,7 +84,8 @@ export const PLATFORMS = [
     theme: 'Synthesis',
     themeKey: 'synthesis',
     accent: BRAND.navy,
-    cityCount: 19,
+    cityCount: 18,
+    published: true,
     // Categorical, not a ramp — index matches ZONES below.
     scale: ['#3b8a4f', BRAND.cyan, '#e0a23a', '#c54a3a'],
     stops: null,

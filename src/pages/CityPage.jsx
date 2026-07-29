@@ -30,7 +30,7 @@ export default function CityPage() {
 
 function CityScreen({ platform, profile }) {
   const { t, n, lang } = useI18n();
-  const { status, data } = useCityMesh(profile, platform.id);
+  const { status, data, source } = useCityMesh(profile, platform.id);
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
 
@@ -234,7 +234,8 @@ function CityScreen({ platform, profile }) {
       </main>
 
       <div className="aa-statusbar">
-        <span>{t('city.statusHint')}</span>
+        {/* A generated mesh must never be mistaken for a measured one. */}
+        <span>{source === 'seed' ? t('city.seeded') : t('city.statusHint')}</span>
         <span className="aa-mono">
           {formatCoord(profile.center[1], 'NS')} {formatCoord(profile.center[0], 'EW')}
         </span>

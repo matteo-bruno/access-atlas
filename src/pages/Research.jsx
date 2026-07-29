@@ -1,7 +1,7 @@
 // The nav has always carried a Research entry; the handoff had no artboard for
 // it, so this page is assembled strictly from the approved design vocabulary
 // (section headings, cards, the by-the-numbers table) rather than inventing new
-// patterns. Content is placeholder — see data/research.js.
+// patterns. Bibliography and coverage counts come from data/research.js.
 
 import { Link } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
@@ -42,10 +42,29 @@ export default function Research() {
                     <span className="aa-dot" style={{ background: platform.accent }} />
                     <span>{platform.name}</span>
                   </div>
-                  <h3 className="aa-paper__title">{paper.title}</h3>
-                  <div className="aa-paper__meta">
-                    {paper.authors} · {paper.venue} · {paper.year}
-                  </div>
+                  {paper.inPreparation ? (
+                    <>
+                      <h3 className="aa-paper__title aa-paper__title--pending">
+                        {t('research.inPreparation')}
+                      </h3>
+                      <div className="aa-paper__meta">—</div>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="aa-paper__title">
+                        {paper.url ? (
+                          <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                            {paper.title}
+                          </a>
+                        ) : (
+                          paper.title
+                        )}
+                      </h3>
+                      <div className="aa-paper__meta">
+                        {paper.authors} · {paper.venue} · {paper.year}
+                      </div>
+                    </>
+                  )}
                 </article>
               );
             })}

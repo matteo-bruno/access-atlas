@@ -14,6 +14,7 @@ export const TEAM = [
 
 export const CONTACT = {
   general: 'access-atlas@sony.com',
+  careers: 'careers@sony.com',
   press: 'press@sony.com',
   code: 'github.com/sony-csl-rome',
   codeUrl: 'https://github.com/sony-csl-rome',
