@@ -209,12 +209,20 @@ export default {
       title: 'City summary',
       hexagons: 'Cells',
       proximity: 'Median proximity score',
+      medianCdi: 'Median CDI (per cell)',
+      weightedCdi: 'CDI for the average resident',
       opportunity: 'Median opportunity score',
       population: 'Population covered',
     },
     cartogram: {
       title: 'Cartogram · cell area ∝ population',
       caption: 'H3 resolution {res} · ~{size} m cells',
+    },
+    scatterCdi: {
+      title: 'Opportunity by car against by transit',
+      xAxis: 'Reachable by car →',
+      yAxis: 'Reachable by transit →',
+      diagonal: 'equal reach',
     },
     scatter: {
       title: 'Proximity against opportunity',

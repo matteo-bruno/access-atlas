@@ -61,7 +61,7 @@ export const PLATFORMS = [
     theme: 'Comparison',
     themeKey: 'comparison',
     accent: '#a04640',
-    cityCount: 21,
+    cityCount: 22,
     published: true,
     scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
     // CDI = (O_car − O_PT) / (O_car + O_PT), bounded in [−1, +1]: negative
@@ -75,6 +75,7 @@ export const PLATFORMS = [
     markerStyle: 'ring',
     coversAllCities: false,
     studyOnly: true,
+    hasCityPages: true,
   },
   {
     id: 'pov',

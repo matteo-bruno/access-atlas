@@ -37,13 +37,34 @@ function CityScreen({ platform, profile }) {
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
 
+  // P.O.V. classifies cells into named zones; Car Dependency cuts a continuous
+  // index into bands. Both arrive as `zone` 0–3, so one panel serves both —
+  // only the labels, colours and descriptions differ.
+  const bands = useMemo(() => {
+    if (platform.id === 'cardep') {
+      const labels = t('platform.cardep.legend');
+      return platform.scale.map((color, index) => ({
+        id: `cdi-${index}`,
+        color,
+        name: labels[index],
+        desc: bandRange(platform.stops, index),
+      }));
+    }
+    return ZONES.map((zone) => ({
+      id: zone.id,
+      color: zone.color,
+      name: t(`city.zones.${zone.key}.name`),
+      desc: t(`city.zones.${zone.key}.desc`),
+    }));
+  }, [platform, t]);
+
   const fillPaint = useMemo(
     () => ({
       'fill-color': [
         'match',
         ['get', 'zone'],
-        ...ZONES.flatMap((zone, index) => [index, zone.color]),
-        ZONES[3].color,
+        ...bands.flatMap((band, index) => [index, band.color]),
+        bands[bands.length - 1].color,
       ],
       'fill-opacity':
         activeZone == null
@@ -92,9 +113,11 @@ function CityScreen({ platform, profile }) {
       <main className="aa-main aa-city" id="main">
         {/* ── Zone panel ───────────────────────────────────────── */}
         <aside className="aa-city__panel">
-          <Eyebrow>{t('city.zoneType')}</Eyebrow>
+          <Eyebrow>
+            {platform.id === 'cardep' ? t('platform.cardep.legendUnit') : t('city.zoneType')}
+          </Eyebrow>
           <div className="aa-zones">
-            {ZONES.map((zone, index) => {
+            {bands.map((zone, index) => {
               const share = stats?.zoneShares[index];
               return (
                 <button
@@ -110,12 +133,12 @@ function CityScreen({ platform, profile }) {
                 >
                   <span className="aa-zones__head">
                     <span className="aa-swatch" style={{ background: zone.color }} />
-                    <span className="aa-zones__name">{t(`city.zones.${zone.key}.name`)}</span>
+                    <span className="aa-zones__name">{zone.name}</span>
                     <span className="aa-mono aa-zones__pct">
                       {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
                     </span>
                   </span>
-                  <span className="aa-zones__desc">{t(`city.zones.${zone.key}.desc`)}</span>
+                  <span className="aa-zones__desc">{zone.desc}</span>
                   <span className="aa-meter aa-zones__meter">
                     <span
                       className="aa-meter__fill"
@@ -134,22 +157,37 @@ function CityScreen({ platform, profile }) {
                 label={t('city.summary.hexagons')}
                 value={stats ? n(stats.cellCount) : '—'}
               />
-              <SummaryRow
-                label={t('city.summary.proximity')}
-                value={
-                  stats?.medianWalkMetres != null
-                    ? `${n(stats.medianWalkMetres)} m`
-                    : formatMedian(stats?.medianProximity, n)
-                }
-              />
-              <SummaryRow
-                label={t('city.summary.opportunity')}
-                value={
-                  stats?.medianJobsK != null
-                    ? `${n(stats.medianJobsK, { minimumFractionDigits: 1 })} k`
-                    : formatMedian(stats?.medianOpportunity, n)
-                }
-              />
+              {platform.id === 'cardep' ? (
+                <>
+                  <SummaryRow
+                    label={t('city.summary.medianCdi')}
+                    value={formatIndex(stats?.medianCdi, n)}
+                  />
+                  <SummaryRow
+                    label={t('city.summary.weightedCdi')}
+                    value={formatIndex(stats?.weightedCdi, n)}
+                  />
+                </>
+              ) : (
+                <>
+                  <SummaryRow
+                    label={t('city.summary.proximity')}
+                    value={
+                      stats?.medianWalkMetres != null
+                        ? `${n(stats.medianWalkMetres)} m`
+                        : formatMedian(stats?.medianProximity, n)
+                    }
+                  />
+                  <SummaryRow
+                    label={t('city.summary.opportunity')}
+                    value={
+                      stats?.medianJobsK != null
+                        ? `${n(stats.medianJobsK, { minimumFractionDigits: 1 })} k`
+                        : formatMedian(stats?.medianOpportunity, n)
+                    }
+                  />
+                </>
+              )}
               <SummaryRow
                 label={t('city.summary.population')}
                 value={
@@ -213,20 +251,32 @@ function CityScreen({ platform, profile }) {
 
         {/* ── Scatter ──────────────────────────────────────────── */}
         <section className="aa-city__scatter">
-          <Eyebrow>{t('city.scatter.title')}</Eyebrow>
+          <Eyebrow>
+            {platform.id === 'cardep' ? t('city.scatterCdi.title') : t('city.scatter.title')}
+          </Eyebrow>
           <div className="aa-city__plot">
             {status === 'ready' && (
               <ScatterPlot
                 points={data.scatter}
                 thresholds={data.thresholds}
+                colors={bands.map((band) => band.color)}
                 activeZone={activeZone}
                 hoverCell={hoverCell}
                 onHoverCell={setHoverCell}
-                labels={{
-                  x: t('city.scatter.xAxis'),
-                  y: t('city.scatter.yAxis'),
-                  zones: ZONES.map((zone) => t(`city.zones.${zone.key}.name`)),
-                }}
+                labels={
+                  platform.id === 'cardep'
+                    ? {
+                        x: t('city.scatterCdi.xAxis'),
+                        y: t('city.scatterCdi.yAxis'),
+                        diagonal: t('city.scatterCdi.diagonal'),
+                        zones: bands.map((band) => band.name),
+                      }
+                    : {
+                        x: t('city.scatter.xAxis'),
+                        y: t('city.scatter.yAxis'),
+                        zones: bands.map((band) => band.name),
+                      }
+                }
               />
             )}
           </div>
@@ -251,7 +301,25 @@ function formatMedian(value, n) {
   return value == null ? '—' : n(value, { maximumFractionDigits: 1 });
 }
 
+// The index is signed and small; the sign is the whole point, so keep it.
+function formatIndex(value, n) {
+  if (value == null) return '—';
+  const text = n(Math.abs(value), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return value < 0 ? `−${text}` : `+${text}`;
+}
+
+// Band label for the Car Dependency panel: the slice of the index it covers.
+function bandRange(stops, index) {
+  const lo = index === 0 ? -1 : stops[index - 1];
+  const hi = stops[index];
+  const fmt = (v) => (v < 0 ? `−${Math.abs(v)}` : `+${v}`);
+  return `${fmt(lo)} … ${fmt(hi)}`;
+}
+
 function formatCellTooltip(properties, n) {
+  if (properties.cdi != null) {
+    return `CDI ${formatIndex(properties.cdi, n)}`;
+  }
   if (properties.walkMetres != null && properties.jobsK != null) {
     return `${n(properties.walkMetres)} m · ${n(properties.jobsK, {
       minimumFractionDigits: 1,
@@ -272,9 +340,19 @@ function SummaryRow({ label, value }) {
   );
 }
 
-// Proximity (y) against opportunity (x), quadrants split on the same
-// thresholds the mesh classifier used.
-function ScatterPlot({ points, thresholds, activeZone, hoverCell, onHoverCell, labels }) {
+// Two references, one plot. P.O.V. splits the plane into quadrants on the same
+// thresholds the classifier used; Car Dependency has no quadrants — what
+// matters is the y = x line, where a car and public transport reach the same
+// amount, so `thresholds: null` switches to the diagonal.
+function ScatterPlot({
+  points,
+  thresholds,
+  colors,
+  activeZone,
+  hoverCell,
+  onHoverCell,
+  labels,
+}) {
   const W = 700;
   const H = 360;
   const PAD = { left: 40, right: 40, top: 20, bottom: 30 };
@@ -282,16 +360,18 @@ function ScatterPlot({ points, thresholds, activeZone, hoverCell, onHoverCell, l
   const x = (v) => PAD.left + v * (W - PAD.left - PAD.right);
   const y = (v) => H - PAD.bottom - v * (H - PAD.top - PAD.bottom);
 
-  const xCut = x(thresholds.opportunity);
-  const yCut = y(thresholds.proximity);
+  const xCut = thresholds ? x(thresholds.opportunity) : null;
+  const yCut = thresholds ? y(thresholds.proximity) : null;
 
-  const quadrants = [
-    // [x, y, w, h, color, opacity, labelIndex, labelAnchor]
-    [PAD.left, PAD.top, xCut - PAD.left, yCut - PAD.top, ZONES[1].color, 0.06, 1],
-    [xCut, PAD.top, W - PAD.right - xCut, yCut - PAD.top, ZONES[0].color, 0.08, 0],
-    [PAD.left, yCut, xCut - PAD.left, H - PAD.bottom - yCut, ZONES[3].color, 0.07, 3],
-    [xCut, yCut, W - PAD.right - xCut, H - PAD.bottom - yCut, ZONES[2].color, 0.06, 2],
-  ];
+  const quadrants = thresholds
+    ? [
+        // [x, y, w, h, color, opacity]
+        [PAD.left, PAD.top, xCut - PAD.left, yCut - PAD.top, colors[1], 0.06],
+        [xCut, PAD.top, W - PAD.right - xCut, yCut - PAD.top, colors[0], 0.08],
+        [PAD.left, yCut, xCut - PAD.left, H - PAD.bottom - yCut, colors[3], 0.07],
+        [xCut, yCut, W - PAD.right - xCut, H - PAD.bottom - yCut, colors[2], 0.06],
+      ]
+    : [];
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="aa-scatter" role="img" aria-label={labels.y}>
@@ -316,8 +396,27 @@ function ScatterPlot({ points, thresholds, activeZone, hoverCell, onHoverCell, l
         stroke="var(--ink-3)"
         strokeWidth="0.5"
       />
-      <line x1={PAD.left} y1={yCut} x2={W - PAD.right} y2={yCut} stroke="var(--ink-3)" strokeDasharray="3 3" strokeWidth="0.5" />
-      <line x1={xCut} y1={PAD.top} x2={xCut} y2={H - PAD.bottom} stroke="var(--ink-3)" strokeDasharray="3 3" strokeWidth="0.5" />
+      {thresholds ? (
+        <>
+          <line x1={PAD.left} y1={yCut} x2={W - PAD.right} y2={yCut} stroke="var(--ink-3)" strokeDasharray="3 3" strokeWidth="0.5" />
+          <line x1={xCut} y1={PAD.top} x2={xCut} y2={H - PAD.bottom} stroke="var(--ink-3)" strokeDasharray="3 3" strokeWidth="0.5" />
+        </>
+      ) : (
+        <>
+          <line
+            x1={x(0)}
+            y1={y(0)}
+            x2={x(1)}
+            y2={y(1)}
+            stroke="var(--ink-3)"
+            strokeDasharray="4 3"
+            strokeWidth="0.7"
+          />
+          <text x={x(0.62)} y={y(0.68)} className="aa-scatter__label">
+            {labels.diagonal}
+          </text>
+        </>
+      )}
 
       {points.map((point) => {
         const dimmed = activeZone != null && activeZone !== point.z;
@@ -327,7 +426,7 @@ function ScatterPlot({ points, thresholds, activeZone, hoverCell, onHoverCell, l
             cx={x(point.x)}
             cy={y(point.y)}
             r={hoverCell === point.i ? 4 : 2}
-            fill={ZONES[point.z].color}
+            fill={colors[point.z] ?? colors[colors.length - 1]}
             opacity={dimmed ? 0.12 : 0.85}
             onMouseEnter={() => onHoverCell(point.i)}
             onMouseLeave={() => onHoverCell(null)}
@@ -335,18 +434,23 @@ function ScatterPlot({ points, thresholds, activeZone, hoverCell, onHoverCell, l
         );
       })}
 
-      <text x={PAD.left + 20} y={PAD.top + 20} className="aa-scatter__label">
-        {labels.zones[1]}
-      </text>
-      <text x={xCut + 20} y={PAD.top + 20} className="aa-scatter__label">
-        {labels.zones[0]}
-      </text>
-      <text x={PAD.left + 20} y={H - PAD.bottom - 10} className="aa-scatter__label">
-        {labels.zones[3]}
-      </text>
-      <text x={xCut + 20} y={H - PAD.bottom - 10} className="aa-scatter__label">
-        {labels.zones[2]}
-      </text>
+      {/* Quadrant names only make sense where there are quadrants. */}
+      {thresholds && (
+        <>
+          <text x={PAD.left + 20} y={PAD.top + 20} className="aa-scatter__label">
+            {labels.zones[1]}
+          </text>
+          <text x={xCut + 20} y={PAD.top + 20} className="aa-scatter__label">
+            {labels.zones[0]}
+          </text>
+          <text x={PAD.left + 20} y={H - PAD.bottom - 10} className="aa-scatter__label">
+            {labels.zones[3]}
+          </text>
+          <text x={xCut + 20} y={H - PAD.bottom - 10} className="aa-scatter__label">
+            {labels.zones[2]}
+          </text>
+        </>
+      )}
 
       <text x={W / 2} y={H - 4} textAnchor="middle" className="aa-scatter__axis">
         {labels.x}

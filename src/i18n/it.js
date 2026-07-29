@@ -207,12 +207,20 @@ export default {
       title: 'Sintesi della città',
       hexagons: 'Celle',
       proximity: 'Punteggio mediano di prossimità',
+      medianCdi: 'CDI mediano (per cella)',
+      weightedCdi: 'CDI per il residente medio',
       opportunity: 'Punteggio mediano di opportunità',
       population: 'Popolazione coperta',
     },
     cartogram: {
       title: 'Cartogramma · area della cella ∝ popolazione',
       caption: 'Risoluzione H3 {res} · celle di ~{size} m',
+    },
+    scatterCdi: {
+      title: 'Opportunità in auto contro trasporto pubblico',
+      xAxis: 'Raggiungibile in auto →',
+      yAxis: 'Raggiungibile in TP →',
+      diagonal: 'pari raggiungibilità',
     },
     scatter: {
       title: 'Prossimità contro opportunità',

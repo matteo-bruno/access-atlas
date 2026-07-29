@@ -92,14 +92,14 @@ const catalogue = {
     citychrone: { coverage: null, cities: [] },
     cardep: { coverage: null, cities: [] },
     pov: {
-      coverage: 'pov/coverage.geojson',
+      coverage: '__smoke__/coverage.geojson',
       cities: [
         {
           id: 'rome',
           name: 'Rome',
           center: CENTER,
           zoom: 10.1,
-          dataset: 'pov/rome.geojson',
+          dataset: '__smoke__/rome.geojson',
           population: expected.population,
           cell: { h3Resolution: 9, cellRadiusM: 200 },
         },
@@ -109,7 +109,9 @@ const catalogue = {
 };
 
 const originalCatalogue = fs.readFileSync(path.join(DATA, 'index.json'), 'utf8');
-const povDir = path.join(DATA, 'pov');
+// A dedicated directory: staging into data/pov/ would overwrite — and on
+// cleanup delete — the real published datasets sitting in the same build.
+const povDir = path.join(DATA, '__smoke__');
 
 function stage() {
   fs.mkdirSync(povDir, { recursive: true });
@@ -160,7 +162,7 @@ try {
 
     check(
       'Catalogue and published mesh are fetched',
-      fetched.includes('index.json') && fetched.includes('pov/rome.geojson'),
+      fetched.includes('index.json') && fetched.includes('__smoke__/rome.geojson'),
       fetched.join(', ') || '(no /data/ requests)',
     );
     check(

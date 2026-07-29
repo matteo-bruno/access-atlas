@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import MeshWorker from './mesh.worker.js?worker';
 import { buildCityMesh } from '../data/mesh.js';
-import { meshFromPublished } from '../data/adapters.js';
+import { meshFromPublished, meshFromPublishedCdi } from '../data/adapters.js';
 import { getDataProvider } from '../data/sources.js';
+import { PLATFORMS_BY_ID } from '../data/platforms.js';
 
 // Returns { status, data, error, source } for a city's mesh.
 //
@@ -84,7 +85,16 @@ export function useCityMesh(profile, platformId) {
         });
         if (cancelled) return;
         if (published) {
-          const data = meshFromPublished(published.collection, published.profile);
+          // Each platform measures something different; the adapters bring
+          // them to one contract so the page renders either.
+          const data =
+            platformId === 'cardep'
+              ? meshFromPublishedCdi(
+                  published.collection,
+                  published.profile,
+                  PLATFORMS_BY_ID.cardep.stops,
+                )
+              : meshFromPublished(published.collection, published.profile);
           if (!cancelled) setState({ status: 'ready', data, error: null, source: 'published' });
           return;
         }
