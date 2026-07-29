@@ -121,9 +121,23 @@ A static build; `dist/` can be served by anything. Two requirements:
 
 - **SPA fallback.** Deep links like `/platforms/citychrone` must serve
   `index.html`. On Netlify/Vercel this is the default; on nginx use
-  `try_files $uri /index.html`; on GitHub Pages copy `dist/index.html` to
-  `dist/404.html` as part of the deploy.
+  `try_files $uri /index.html`. `vite build` also emits `dist/404.html` as a
+  copy of the shell, which is how static hosts without a rewrite rule —
+  GitHub Pages among them — end up serving the router for an unknown path.
+  Note the tradeoff: on such a host a deep link renders correctly but carries
+  an HTTP 404 *status*, since the host has no way to know the router resolved
+  it. Anything that reads the status rather than the page — crawlers, uptime
+  checks, link checkers — will see a 404. A host with a real rewrite rule, or
+  pre-rendering the routes, is the way out if that matters.
 - **Sub-path hosting.** Set `VITE_BASE=/your-path/` at build time.
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` builds the site with `VITE_BASE` set to the
+repository name and deploys `dist/`. It only takes effect once **Settings →
+Pages → Source** is set to **GitHub Actions** — the default "Deploy from a
+branch" publishes the repository source instead, which serves an `index.html`
+pointing at `/src/main.jsx` and renders a blank page.
 
 ## Verification
 
