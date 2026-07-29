@@ -5,12 +5,15 @@ team's research at **Sony CSL Rome**.
 
 It brings four open research platforms under one identity:
 
-| Platform                       | Measures                                                 | Coverage |
-| ------------------------------ | -------------------------------------------------------- | -------- |
-| **15min-City**                 | Proximity — what is within walking distance               | 10,142 cities |
-| **CityChrone++**               | Opportunity — what public transport can reach             | 42 cities |
-| **Car Dependency Index**       | Comparison — how much further a car reaches than transit  | 19 cities |
-| **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access | 19 cities |
+| Platform                       | Measures                                                  | Published here |
+| ------------------------------ | --------------------------------------------------------- | -------------- |
+| **15min-City**                 | Proximity — travel time to ten categories of service       | Rome |
+| **CityChrone++**               | Opportunity — what public transport can reach              | — |
+| **Car Dependency Index**       | Comparison — opportunity by car against by transit         | 22 datasets |
+| **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access  | 18 cities |
+
+"Published here" counts what is in `public/data/`, not the coverage of the
+upstream research platforms.
 
 React + Vite, MapLibre for the maps, bilingual EN/IT.
 
@@ -23,19 +26,20 @@ npm run preview
 
 ## Status
 
-**The site is complete; the measurements are not.** Every screen is built and
-working, but the numbers behind the maps are deterministic placeholders. City
-coordinates are real — proximity minutes, velocity scores, CDI values, P.O.V.
-zones and the Rome hex mesh are synthesised so the platform looks and behaves
-correctly ahead of publication. `src/data/cities.js` and `src/data/mesh.js` both
-say so at the top, and [`public/data/README.md`](public/data/README.md)
-documents how to swap in real outputs without touching component code.
+**Three of the four platforms render measurements.** 41 city datasets —
+156,627 cells — are published under `public/data/` and validated on every
+push. CityChrone is still drawing generated stand-ins, and the UI labels it as
+illustrative rather than presenting it as measured. `src/data/cities.js` and
+`src/data/mesh.js` say so at the top; [`public/data/README.md`](public/data/README.md)
+documents the catalogue that decides which is which.
 
-Also outstanding before launch:
+Outstanding before launch:
 
 - **The Italian is a first draft** and needs a native review (`src/i18n/it.js`).
-- **Citations in `src/data/research.js` are placeholders** — confirm authors,
-  venues and DOIs.
+- **CityChrone has no published data** and no paper on the Research page; both
+  are marked as pending rather than filled with a guess.
+- **Some editorial figures need the lab's confirmation** — the team headcount,
+  the contact addresses, and the dates on the home page's news items.
 - **The licence below needs confirming** with the lab.
 
 ## Screens
@@ -44,8 +48,10 @@ Also outstanding before launch:
 | -------------------------- | ------ |
 | `/`                        | Home — hero, metrics, coverage map, four platforms, table, quote, side projects |
 | `/platforms/:slug`         | Platform landing — full-bleed world map, welcome card, legend, city search |
-| `/platforms/:slug/:cityId` | City detail — zone panel, hex cartogram, scatter (Rome) |
+| `/platforms/:slug/:cityId` | City detail — P.O.V. zones, Car Dependency bands, or 15minCity's category/mode selectors |
 | `/research`                | Papers, datasets, citation |
+| `/blog`, `/blog/:slug`     | Long-form writing |
+| `/work-with-us`            | Open positions, PhD / thesis / internship routes |
 | `/faq`                     | Six questions |
 | `/contact`                 | Team, address, collaboration |
 
@@ -65,7 +71,7 @@ src/
   pages/        One file per screen, each with its own stylesheet
   styles/       Design tokens + shared primitives
 public/data/    Drop real datasets here — see public/data/README.md
-scripts/        End-to-end smoke test
+scripts/        Data build + browser and data test suites
 design/         The original Claude Design handoff — see below
 ```
 
