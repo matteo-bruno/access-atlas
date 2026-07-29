@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+# Publishing the repository *source* to Pages serves `index.html` as written,
+# which points at `/src/main.jsx` — raw JSX the browser can't execute. The site
+# has to be built first, which is what this workflow does. It requires
+# Settings → Pages → Source to be set to "GitHub Actions"; on the "Deploy from
+# a branch" setting this workflow's output is ignored.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # A project site lives at https://<owner>.github.io/<repo>/, so the
+          # build needs that prefix for its assets and for the router basename.
+          # On a custom domain or a <owner>.github.io repo, set this to `/`.
+          VITE_BASE: /${{ github.event.repository.name }}/
+
+      # Pages serves `404.html` for unknown paths; `vite.config.js` emits it as
+      # a copy of the shell so deep links like /faq reach the router. CI's
+      # `vite preview` has its own SPA fallback and so can't catch a missing
+      # one — check the file is really in the artifact.
+      - name: Check the SPA fallback was emitted
+        run: test -f dist/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
