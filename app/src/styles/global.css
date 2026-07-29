@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+strong {
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ── Shared primitives ───────────────────────────────────────────── */
+
+.aa-page {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+/* Screens whose map fills the remaining height (platform landings, city
+   detail) rather than scrolling. */
+.aa-page--fixed {
+  height: 100%;
+  overflow: hidden;
+}
+
+.aa-main {
+  flex: 1;
+  min-height: 0;
+}
+
+.aa-shell {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+.aa-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.aa-eyebrow--mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.aa-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.aa-card {
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+}
+
+/* Section heading: § tag · title · italic hint */
+.aa-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.aa-section-head__title {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.aa-section-head__hint {
+  flex: 1;
+  text-align: right;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+/* Buttons */
+.aa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.aa-btn--solid {
+  background: var(--ink);
+  color: var(--card);
+}
+
+.aa-btn--solid:hover {
+  background: #000;
+}
+
+.aa-btn--ghost {
+  background: transparent;
+  border-color: var(--hair);
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+.aa-btn--ghost:hover {
+  background: var(--card);
+  border-color: var(--ink-4);
+}
+
+/* Chip — the bordered pill used for Paper ↗ / GitHub ↗ style links */
+.aa-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.aa-chip:hover {
+  border-color: var(--ink-4);
+}
+
+.aa-chip--active {
+  background: var(--paper-alt);
+  color: var(--ink);
+}
+
+/* Hover lift shared by platform cards and side-project cards */
+.aa-lift {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.aa-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+  border-color: #c8c2af;
+}
+
+/* Meter — the thin bar used in the home table and city zone panel */
+.aa-meter {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  background: var(--hair-soft);
+  border-radius: 3px;
+}
+
+.aa-meter__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+}
+
+.aa-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+
+.aa-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.aa-dot--sm {
+  width: 6px;
+  height: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

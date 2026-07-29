@@ -1,0 +1,54 @@
+/* Design tokens — Direction B, "Cartographic Index" (smoothed).
+   Values are lifted verbatim from the approved design so the build stays
+   pixel-faithful; change them here and the whole Atlas follows. */
+
+:root {
+  /* Paper & ink */
+  --paper: #f3f0e8;
+  --paper-alt: #ebe7dc;
+  --card: #fbfaf4;
+  --ink: #15171a;
+  --ink-2: #3e4147;
+  --ink-3: #73767d;
+  --ink-4: #9d9fa4;
+  --hair: #e1dcce;
+  --hair-soft: #eae6da;
+
+  /* Sony CSL brand */
+  --navy: #1a1f4e;
+  --navy-deep: #0a1238;
+  --magenta: #e6007e;
+  --magenta-deep: #a8005e;
+  --cyan: #00a5de;
+  --cyan-deep: #007aa8;
+  --gray: #9ca0a6;
+
+  /* Map paper — a shade deeper than the page so the map reads as inset */
+  --map-paper: #efece3;
+  --map-land: #dbd5c5;
+  --map-land-line: #cdc6b3;
+  --map-graticule: rgba(0, 0, 0, 0.05);
+
+  /* Type */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  /* Geometry */
+  --radius: 6px;
+  --page-pad: 56px;
+  --chrome-pad: 32px;
+  --max-w: 1280px;
+
+  /* Elevation */
+  --shadow-float: 0 14px 40px rgba(20, 20, 15, 0.06);
+  --shadow-soft: 0 8px 20px rgba(20, 20, 15, 0.06);
+  --shadow-lift: 0 18px 44px rgba(20, 20, 15, 0.08);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-pad: 24px;
+    --chrome-pad: 20px;
+  }
+}

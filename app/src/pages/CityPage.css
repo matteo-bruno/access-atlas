@@ -1,0 +1,239 @@
+.aa-city {
+  display: grid;
+  grid-template-columns: 260px 1.1fr 1fr;
+  min-height: 0;
+}
+
+.aa-city__region {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* ── Zone panel ───────────────────────────────────────────────── */
+
+.aa-city__panel {
+  padding: 20px 22px;
+  background: var(--card);
+  border-right: 1px solid var(--hair);
+  overflow-y: auto;
+}
+
+.aa-zones {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.aa-zones__row {
+  display: block;
+  width: 100%;
+  padding: 4px 6px;
+  margin: -4px -6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.aa-zones__row:hover,
+.aa-zones__row--active {
+  background: var(--paper-alt);
+}
+
+.aa-zones__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aa-zones__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.aa-zones__pct {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.aa-zones__desc {
+  display: block;
+  margin: 3px 0 0 24px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.aa-zones__meter {
+  display: block;
+  margin: 8px 0 0 24px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.aa-city__summary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hair);
+}
+
+.aa-summary {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+
+.aa-summary__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.aa-summary__row dt {
+  color: var(--ink-3);
+}
+
+.aa-summary__row dd {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+/* ── Cartogram & scatter panels ───────────────────────────────── */
+
+.aa-city__cartogram,
+.aa-city__scatter {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px 22px;
+}
+
+.aa-city__cartogram {
+  border-right: 1px solid var(--hair);
+}
+
+.aa-city__canvas {
+  position: relative;
+  flex: 1;
+  margin-top: 12px;
+  min-height: 220px;
+  background: var(--map-paper);
+  border: 1px solid var(--hair-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.aa-city__caption {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ink-3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.aa-city__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.aa-city__plot {
+  flex: 1;
+  margin-top: 12px;
+  min-height: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Let the plot take the panel's full width and keep its 700:360 aspect —
+   stretching it to the panel height would letterbox it into a small strip. */
+.aa-scatter {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.aa-scatter circle {
+  transition: r 0.1s, opacity 0.15s;
+}
+
+.aa-scatter__label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-style: italic;
+  fill: var(--ink-3);
+}
+
+.aa-scatter__axis {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  fill: var(--ink-2);
+}
+
+/* ── Status bar ───────────────────────────────────────────────── */
+
+.aa-statusbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px var(--chrome-pad);
+  background: var(--paper-alt);
+  border-top: 1px solid var(--hair);
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+
+@media (max-width: 1080px) {
+  .aa-page--fixed:has(.aa-city) {
+    height: auto;
+    overflow: visible;
+  }
+
+  .aa-city {
+    grid-template-columns: 1fr;
+  }
+
+  .aa-city__panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .aa-city__cartogram {
+    border-right: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .aa-city__canvas {
+    min-height: 320px;
+  }
+
+  .aa-city__plot {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 720px) {
+  .aa-city__region {
+    display: none;
+  }
+
+  .aa-statusbar span:first-child {
+    display: none;
+  }
+}

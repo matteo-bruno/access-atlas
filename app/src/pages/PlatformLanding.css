@@ -1,0 +1,284 @@
+/* ── Platform landing ─────────────────────────────────────────── */
+
+/* City search */
+.aa-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 300px;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+}
+
+.aa-search:focus-within {
+  border-color: var(--ink-4);
+}
+
+.aa-search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+
+.aa-search__input::placeholder {
+  color: var(--ink-3);
+}
+
+/* Safari's search input decorations don't fit the chrome. */
+.aa-search__input::-webkit-search-decoration,
+.aa-search__input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.aa-search__kbd {
+  padding: 2px 7px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-search__results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+  z-index: 20;
+}
+
+.aa-search__result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.aa-search__result:hover {
+  background: var(--paper-alt);
+}
+
+.aa-search__country {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-search__empty {
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ── Map stage ────────────────────────────────────────────────── */
+
+.aa-mapstage {
+  position: relative;
+  background: var(--map-paper);
+  overflow: hidden;
+}
+
+.aa-mapstage__attribution {
+  position: absolute;
+  bottom: 14px;
+  left: var(--chrome-pad);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Welcome card */
+.aa-welcome {
+  position: absolute;
+  top: 24px;
+  left: var(--chrome-pad);
+  width: 360px;
+  max-width: calc(100% - var(--chrome-pad) * 2);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-float);
+  z-index: 3;
+}
+
+.aa-welcome__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.aa-welcome__close {
+  display: flex;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.aa-welcome__close:hover {
+  background: var(--paper-alt);
+}
+
+.aa-welcome__body {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.aa-welcome__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hair-soft);
+}
+
+.aa-welcome__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--card);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.aa-welcome__more {
+  padding: 9px 14px;
+  font-size: 13px;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+
+.aa-welcome__more:hover {
+  color: var(--ink);
+}
+
+/* Legend */
+.aa-legend {
+  position: absolute;
+  top: 24px;
+  right: var(--chrome-pad);
+  min-width: 200px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-float);
+  z-index: 3;
+}
+
+.aa-legend__items {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.aa-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+/* Zoom controls */
+.aa-zoom {
+  position: absolute;
+  right: var(--chrome-pad);
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  z-index: 3;
+}
+
+.aa-zoom button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.aa-zoom button:first-child {
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.aa-zoom button:hover {
+  background: var(--paper-alt);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+
+@media (max-width: 1080px) {
+  .aa-search {
+    order: 10;
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .aa-legend {
+    top: auto;
+    bottom: 84px;
+    right: var(--chrome-pad);
+    min-width: 0;
+    padding: 12px 14px;
+  }
+
+  .aa-legend__items {
+    gap: 5px;
+  }
+
+  .aa-legend__item {
+    font-size: 12px;
+  }
+
+  .aa-welcome {
+    top: auto;
+    bottom: 84px;
+    left: var(--chrome-pad);
+    width: auto;
+    right: var(--chrome-pad);
+    max-width: none;
+  }
+
+  /* Both floating cards at once would bury the map on a phone. */
+  .aa-welcome ~ .aa-legend {
+    display: none;
+  }
+}

@@ -1,0 +1,137 @@
+.aa-faq {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+}
+
+.aa-faq__aside {
+  padding: 52px 36px;
+  background: var(--card);
+  border-right: 1px solid var(--hair);
+}
+
+.aa-faq__headline {
+  margin: 18px 0 22px;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.aa-faq__lede {
+  max-width: 300px;
+  margin-bottom: 28px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.aa-faq__email {
+  color: var(--magenta);
+  border-bottom: 1px solid var(--magenta);
+}
+
+.aa-faq__meta {
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--hair);
+  font-size: 12.5px;
+  color: var(--ink-3);
+}
+
+.aa-faq__metarow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+}
+
+.aa-faq__metarow dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+.aa-faq__list {
+  padding: 30px 40px 60px;
+}
+
+.aa-faq__entry {
+  border-bottom: 1px solid var(--hair);
+}
+
+.aa-faq__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.aa-faq__qtext {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  min-width: 0;
+}
+
+.aa-faq__index {
+  font-size: 12px;
+  color: var(--ink-3);
+  flex: 0 0 auto;
+}
+
+.aa-faq__q {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.aa-faq__answer {
+  max-width: 680px;
+  margin: 0 0 22px;
+  padding-left: 42px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+@media (max-width: 960px) {
+  .aa-faq {
+    grid-template-columns: 1fr;
+  }
+
+  .aa-faq__aside {
+    padding: 36px var(--chrome-pad);
+    border-right: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .aa-faq__headline {
+    font-size: 40px;
+  }
+
+  .aa-faq__list {
+    padding: 12px var(--chrome-pad) 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .aa-faq__qtext {
+    gap: 12px;
+  }
+
+  .aa-faq__q {
+    font-size: 17px;
+  }
+
+  .aa-faq__answer {
+    padding-left: 32px;
+  }
+}

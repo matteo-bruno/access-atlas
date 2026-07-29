@@ -1,0 +1,181 @@
+.aa-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px var(--chrome-pad);
+  background: var(--card);
+  border-bottom: 1px solid var(--hair);
+  position: relative;
+  z-index: 20;
+}
+
+.aa-nav--sticky {
+  position: sticky;
+  top: 0;
+}
+
+.aa-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+  min-width: 0;
+}
+
+.aa-nav__brandtext {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.aa-nav__title {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.aa-nav__tagline {
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.aa-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aa-nav__link {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.aa-nav__link:hover {
+  color: var(--ink);
+  background: var(--paper-alt);
+}
+
+.aa-nav__link--active {
+  color: var(--ink);
+  background: var(--paper-alt);
+}
+
+.aa-nav__tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aa-nav__github {
+  margin-left: 2px;
+  padding: 8px 12px;
+}
+
+.aa-nav__lang {
+  display: flex;
+  align-items: center;
+  padding: 8px 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.aa-nav__langsep {
+  padding: 0 2px;
+  color: var(--ink-4);
+}
+
+.aa-nav__langbtn {
+  padding: 2px 4px;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--ink-3);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: color 0.15s;
+}
+
+.aa-nav__langbtn:hover {
+  color: var(--ink);
+}
+
+.aa-nav__langbtn--active {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Compact menu — hidden until the inline nav no longer fits. */
+.aa-nav__menu {
+  position: relative;
+  display: none;
+}
+
+.aa-nav__menubtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink-2);
+  cursor: pointer;
+}
+
+.aa-nav__drawer {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  padding: 6px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+  z-index: 30;
+}
+
+.aa-nav__draweritem {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.aa-nav__draweritem:hover {
+  background: var(--paper-alt);
+  color: var(--ink);
+}
+
+@media (max-width: 1080px) {
+  .aa-nav__links,
+  .aa-nav__github {
+    display: none;
+  }
+
+  .aa-nav__menu {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .aa-nav__tagline {
+    display: none;
+  }
+}
