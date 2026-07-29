@@ -9,6 +9,7 @@ import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
 import { useCityProfile } from '../data/useAtlasData.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
+import { FifteenCityPage } from './FifteenCityPage.jsx';
 import './CityPage.css';
 
 const PAPER_URL = 'https://doi.org/10.1140/epjds';
@@ -25,6 +26,11 @@ export default function CityPage() {
   if (!platform) return <Navigate to="/platforms" replace />;
   if (status === 'pending') return <div className="aa-page" />;
   if (status === 'missing' || !profile) return <Navigate to={`/platforms/${slug}`} replace />;
+  // 15minCity measures ten categories across two modes rather than
+  // classifying each cell once, so its city view is a different screen.
+  if (platform.id === 'fifteen') {
+    return <FifteenCityPage key={cityId} platform={platform} profile={profile} />;
+  }
   return <CityScreen key={cityId} platform={platform} profile={profile} />;
 }
 
@@ -71,7 +77,7 @@ function CityScreen({ platform, profile }) {
           ? 0.88
           : ['case', ['==', ['get', 'zone'], activeZone], 0.95, 0.14],
     }),
-    [activeZone],
+    [activeZone, bands],
   );
 
   const highlightPaint = useMemo(

@@ -45,7 +45,7 @@ export default {
       items: {
         pov: 'The dimensions of accessibility — EPJ Data Science',
         cdi: 'Car Dependency Index — {count} cities published',
-        fifteen: 'P.O.V. hex meshes — {count} cities published',
+        fifteen: '15min-City — Rome published, ten service categories',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Jan 2026' },
     },
@@ -179,6 +179,40 @@ export default {
         'Each cell is scored on two axes — proximity, the everyday services reachable on foot, and opportunity, the city-scale destinations reachable by public transport — then classified against the city’s population-weighted median on each. A third axis, the value of what is reachable, is set out in the framework but not yet quantified.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
+    },
+  },
+
+  // 15minCity's city view: ten categories × two modes, chosen at runtime.
+  fifteen: {
+    mapTitle: 'Travel time to services',
+    minutes: 'min',
+    legendValue: 'Minutes to reach',
+    legendDiff: 'Difference vs. ideal city',
+    statusHint:
+      'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
+    controls: {
+      mode: 'Mode',
+      category: 'Service category',
+      view: 'View',
+    },
+    modes: { foot: 'On foot', bike: 'By bicycle' },
+    views: { value: 'Measured', diff: 'vs. ideal city' },
+    viewHint: {
+      value: 'Average travel time from each cell to the nearest services in this category.',
+      diff: 'Minutes above or below the ideal-city scenario. Negative means the real city already does better.',
+    },
+    summary: { median: 'Median travel time' },
+    categories: {
+      average: 'Average across all services',
+      outdoor: 'Outdoor activities',
+      learning: 'Learning',
+      supplies: 'Supplies',
+      eating: 'Eating',
+      moving: 'Moving',
+      cultural: 'Cultural activities',
+      exercise: 'Physical exercise',
+      services: 'Services',
+      healthcare: 'Healthcare',
     },
   },
 

@@ -11,18 +11,20 @@ entry, not a code change.
 | `index.json`         | The **catalogue** — the one file that decides whether the Atlas draws measurements or seed data. |
 | `pov/`               | Accessibility P.O.V. — 18 cities, one GeoJSON each, plus `coverage.geojson`. Measured. |
 | `cardep/`            | Car Dependency Index — 22 city datasets (20 cities plus a Paris metro-area and a Rome Metro D scenario), plus `coverage.geojson`. Measured. |
+| `fifteen/`           | 15minCity — Rome, 20 measures per cell (10 service categories × foot/bike) plus their difference against the ideal-city scenario. Measured. |
 | `world-land.geojson` | Natural Earth 110m land polygons, simplified to 2 dp. Draws the paper basemap so the Atlas needs no tile server. Public domain. |
 
-**15min-City and CityChrone are not published yet.** Those two platforms still
-render seed data generated in the browser — deterministic and plausible, but
-not measurement (see `src/data/cities.js` and `src/data/mesh.js`). The UI
-labels them as illustrative rather than presenting them as measured.
+**CityChrone is not published yet.** It still renders seed data generated in
+the browser — deterministic and plausible, but not measurement (see
+`src/data/cities.js` and `src/data/mesh.js`). The UI labels it as illustrative
+rather than presenting it as measured. 15minCity is published for Rome only;
+its other cities live in the legacy site's database.
 
 Regenerate everything under `pov/` and `cardep/` from the upstream repositories
 with:
 
 ```bash
-npm run build:data -- --pov ../accessibility-pov --cdi ../CDI
+npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
 ```
 
 It prints the counts `src/data/home.js` and `src/data/platforms.js` quote, so

@@ -31,6 +31,7 @@ function arg(name, fallback) {
 
 const POV_DIR = arg('pov', process.env.ATLAS_SOURCE_POV ?? '../accessibility-pov');
 const CDI_DIR = arg('cdi', process.env.ATLAS_SOURCE_CDI ?? '../CDI');
+const FIFTEEN_DIR = arg('fifteen', process.env.ATLAS_SOURCE_FIFTEEN ?? '../15mincity');
 
 // ── City metadata the datasets do not carry ──────────────────────────
 // Country, localised name and region are editorial; everything numeric is
@@ -428,6 +429,105 @@ function buildCdi(dir) {
   return { cities, coverage: 'cardep/coverage.geojson', totalRaw, totalGz, totalCells };
 }
 
+// ── 15minCity ────────────────────────────────────────────────────────
+// The legacy site stores one hexes.geojson per city under data/<id>/hexes.zip.
+// This reads an unpacked tree: <dir>/hexes/hexes.geojson, which is Rome.
+//
+// Each cell carries 10 service categories × 2 modes in minutes, plus a
+// `d_<cat>_<mode>` difference against the "ideal city" scenario. All 40 are
+// kept — they are the whole point of the platform's controls — but rounded to
+// one decimal, which is well inside the precision of a travel-time model.
+const FIFTEEN_CATEGORIES = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'l'];
+const FIFTEEN_MODES = ['f', 'b'];
+
+function buildFifteen(dir, cityId = 'rome') {
+  const file = path.join(dir, 'hexes', 'hexes.geojson');
+  if (!fs.existsSync(file)) {
+    console.log(`15minCity source not found at ${file} — skipping`);
+    return null;
+  }
+  const meta = CITIES[cityId];
+  const input = JSON.parse(fs.readFileSync(file, 'utf8'));
+
+  let population = 0;
+  const rows = [];
+  const features = input.features.map((f, i) => {
+    const p = f.properties;
+    const props = { pop: Math.round(Number(p.population) || 0) };
+    for (const cat of FIFTEEN_CATEGORIES) {
+      for (const mode of FIFTEEN_MODES) {
+        const key = `${cat}_${mode}`;
+        if (Number.isFinite(Number(p[key]))) props[key] = r1(Number(p[key]));
+        const diff = `d_${cat}_${mode}`;
+        if (Number.isFinite(Number(p[diff]))) props[diff] = r1(Number(p[diff]));
+      }
+    }
+    population += props.pop;
+    rows.push({
+      lon: Number(p.centroid_lon),
+      lat: Number(p.centroid_lat),
+      population: props.pop,
+      value: Number(p.a_f),
+    });
+    return { type: 'Feature', id: i, geometry: trimRings(f.geometry), properties: props };
+  });
+
+  const size = writeJSON(path.join(OUT, 'fifteen', `${cityId}.geojson`), {
+    type: 'FeatureCollection',
+    features,
+  });
+  console.log(
+    `  fifteen/${cityId.padEnd(12)} ${String(features.length).padStart(6)} cells  ${mb(size.raw).padStart(8)} → ${mb(size.gz).padStart(8)} gz`,
+  );
+
+  const centre = weightedCentre(rows);
+  const [region, regionIt] = REGION[meta.country];
+  // Coverage colours cities by average walking time to all services, which is
+  // what the platform's legend measures.
+  const proximityMinutes = r1(
+    weightedMedian(rows.map((r) => r.value), rows.map((r) => r.population)),
+  );
+
+  writeJSON(path.join(OUT, 'fifteen', 'coverage.geojson'), {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: centre },
+        properties: {
+          id: cityId,
+          name: meta.name,
+          country: meta.country,
+          isStudy: true,
+          proximityMinutes,
+          population,
+        },
+      },
+    ],
+  });
+
+  return {
+    cities: [
+      {
+        id: cityId,
+        name: meta.name,
+        nameIt: meta.nameIt,
+        region,
+        regionIt,
+        center: centre,
+        zoom: zoomFor(rows),
+        population,
+        dataset: `fifteen/${cityId}.geojson`,
+        cell: { h3Resolution: 9, cellRadiusM: 200 },
+      },
+    ],
+    coverage: 'fifteen/coverage.geojson',
+    totalRaw: size.raw,
+    totalGz: size.gz,
+    totalCells: features.length,
+  };
+}
+
 // ── Run ──────────────────────────────────────────────────────────────
 console.log('Building published data\n');
 
@@ -435,6 +535,8 @@ console.log('P.O.V.');
 const pov = buildPov(POV_DIR);
 console.log('\nCar Dependency Index');
 const cdi = buildCdi(CDI_DIR);
+console.log('\n15minCity');
+const fifteen = buildFifteen(FIFTEEN_DIR);
 
 // Merge into the catalogue, leaving platforms this script did not touch alone.
 const cataloguePath = path.join(OUT, 'index.json');
@@ -448,16 +550,17 @@ const catalogue = {
     ...existing.platforms,
     ...(pov ? { pov: { coverage: pov.coverage, cities: pov.cities } } : {}),
     ...(cdi ? { cardep: { coverage: cdi.coverage, cities: cdi.cities } } : {}),
+    ...(fifteen ? { fifteen: { coverage: fifteen.coverage, cities: fifteen.cities } } : {}),
   },
 };
 fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`);
 
 // ── Derived figures, for src/data/home.js and platforms.js ───────────
-const all = [...(pov?.cities ?? []), ...(cdi?.cities ?? [])];
+const all = [...(pov?.cities ?? []), ...(cdi?.cities ?? []), ...(fifteen?.cities ?? [])];
 const distinct = new Set(all.filter((c) => !VARIANTS.has(c.id)).map((c) => c.id));
 const countries = new Set([...distinct].map((id) => CITIES[id].country));
-const cells = (pov?.totalCells ?? 0) + (cdi?.totalCells ?? 0);
+const cells = (pov?.totalCells ?? 0) + (cdi?.totalCells ?? 0) + (fifteen?.totalCells ?? 0);
 
 console.log('\n─────────────────────────────────────────────');
 console.log('Figures for src/data/home.js and platforms.js');
@@ -467,8 +570,11 @@ console.log(`  countries                         : ${countries.size}  [${[...cou
 console.log(`  hexagonal cells                   : ${cells.toLocaleString('en-GB')}`);
 console.log(`  pov.cityCount                     : ${pov?.cities.length ?? 0}`);
 console.log(`  cardep.cityCount                  : ${cdi?.cities.length ?? 0}`);
+console.log(`  fifteen.cityCount                 : ${fifteen?.cities.length ?? 0}`);
 console.log(
-  `\n  published bytes: ${mb((pov?.totalRaw ?? 0) + (cdi?.totalRaw ?? 0))} raw → ${mb(
-    (pov?.totalGz ?? 0) + (cdi?.totalGz ?? 0),
+  `\n  published bytes: ${mb(
+    (pov?.totalRaw ?? 0) + (cdi?.totalRaw ?? 0) + (fifteen?.totalRaw ?? 0),
+  )} raw → ${mb(
+    (pov?.totalGz ?? 0) + (cdi?.totalGz ?? 0) + (fifteen?.totalGz ?? 0),
   )} over the wire`,
 );

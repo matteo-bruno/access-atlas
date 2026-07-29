@@ -2,8 +2,27 @@
   "version": 1,
   "platforms": {
     "fifteen": {
-      "coverage": null,
-      "cities": []
+      "coverage": "fifteen/coverage.geojson",
+      "cities": [
+        {
+          "id": "rome",
+          "name": "Rome",
+          "nameIt": "Roma",
+          "region": "Italy",
+          "regionIt": "Italia",
+          "center": [
+            12.49337,
+            41.88199
+          ],
+          "zoom": 8.5,
+          "population": 2608159,
+          "dataset": "fifteen/rome.geojson",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 200
+          }
+        }
+      ]
     },
     "citychrone": {
       "coverage": null,

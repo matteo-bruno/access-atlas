@@ -22,6 +22,7 @@ const ROUTES = [
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
   ['/platforms/accessibility-pov/rome', 'Rome P.O.V. city page'],
   ['/platforms/car-dependency-index/rome', 'Rome Car Dependency city page'],
+  ['/platforms/15min-city/rome', 'Rome 15min-City city page'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
   ['/blog/what-the-atlas-measures', 'Blog post'],

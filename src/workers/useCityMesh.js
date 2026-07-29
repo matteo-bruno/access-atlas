@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import MeshWorker from './mesh.worker.js?worker';
 import { buildCityMesh } from '../data/mesh.js';
-import { meshFromPublished, meshFromPublishedCdi } from '../data/adapters.js';
+import {
+  meshFromPublished,
+  meshFromPublishedCdi,
+  meshFromPublishedFifteen,
+} from '../data/adapters.js';
 import { getDataProvider } from '../data/sources.js';
 import { PLATFORMS_BY_ID } from '../data/platforms.js';
 
@@ -94,7 +98,9 @@ export function useCityMesh(profile, platformId) {
                   published.profile,
                   PLATFORMS_BY_ID.cardep.stops,
                 )
-              : meshFromPublished(published.collection, published.profile);
+              : platformId === 'fifteen'
+                ? meshFromPublishedFifteen(published.collection, published.profile)
+                : meshFromPublished(published.collection, published.profile);
           if (!cancelled) setState({ status: 'ready', data, error: null, source: 'published' });
           return;
         }

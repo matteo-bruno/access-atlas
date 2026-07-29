@@ -153,10 +153,12 @@ npm run preview -- --port 4321 &
 SMOKE_URL=http://localhost:4321 npm run smoke
 ```
 
-That suite runs with nothing published, so it exercises only the seed fallback.
-`npm run smoke:published` covers the other half: it stages a small dataset in
-the upstream schema, asserts the Atlas reads it instead of the seed, and
-removes it again. Both run in CI — see `.github/workflows/ci.yml`.
+That suite runs against whatever is published. `npm run smoke:published`
+covers the fallback machinery from the other side: it stages a dataset in the
+upstream schema, asserts the Atlas reads it instead of the seed, and removes it
+again. `npm run test:data` needs no browser at all — it runs the real adapters
+over every file in `public/data/` and fails on a malformed one in seconds. All
+three run in CI — see `.github/workflows/ci.yml`.
 
 ## Data
 

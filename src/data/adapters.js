@@ -253,6 +253,65 @@ export function meshFromPublishedCdi(collection, profile = {}, stops = [-0.1, 0.
 }
 
 /**
+ * A published 15minCity mesh. Unlike the other two platforms nothing is
+ * classified here: the page picks a category, a mode and a view at runtime and
+ * colours the cells straight from the matching property, so the adapter's job
+ * is to hand back the collection and the figures that do not depend on that
+ * choice.
+ */
+export function meshFromPublishedFifteen(collection, profile = {}) {
+  const features = collection?.features;
+  if (!Array.isArray(features) || features.length === 0) {
+    throw new AdapterError('Published mesh has no features');
+  }
+
+  const population = features.reduce((sum, f) => sum + (Number(f.properties?.pop) || 0), 0);
+
+  return {
+    geojson: collection,
+    stats: {
+      cellCount: features.length,
+      cellRadiusM: profile.cell?.cellRadiusM ?? null,
+      h3Resolution: profile.cell?.h3Resolution ?? null,
+      population: population || null,
+    },
+    // No zones, no scatter — this platform measures a time, not a class.
+    zoneShares: null,
+    scatter: null,
+    thresholds: null,
+  };
+}
+
+/**
+ * Median and band shares for one 15minCity measure. Recomputed in the page
+ * whenever the category, mode or view changes — 12k cells is well inside a
+ * frame, so there is no reason to precompute all forty combinations.
+ */
+export function summariseMeasure(collection, key, bands) {
+  const values = [];
+  const counts = new Array(bands.length).fill(0);
+
+  for (const feature of collection.features ?? []) {
+    const value = Number(feature.properties?.[key]);
+    if (!Number.isFinite(value)) continue;
+    values.push(value);
+    let band = bands.findIndex((edge) => value <= edge);
+    if (band < 0) band = bands.length - 1;
+    counts[band]++;
+  }
+
+  if (!values.length) return { median: null, shares: counts.map(() => 0), total: 0 };
+
+  values.sort((a, b) => a - b);
+  const total = values.length;
+  return {
+    median: Math.round(values[Math.floor(total / 2)] * 10) / 10,
+    shares: counts.map((n) => Math.round((n / total) * 1000) / 10),
+    total,
+  };
+}
+
+/**
  * A published coverage file → the city objects the search and landing maps use.
  * Property names match what `citiesToGeoJSON` emits for the seed list, so the
  * two are interchangeable downstream.
