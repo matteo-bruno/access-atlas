@@ -42,6 +42,7 @@ export default function Home() {
                 values={{
                   proximity: <strong>{t('home.hero.ledeProximity')}</strong>,
                   opportunity: <strong>{t('home.hero.ledeOpportunity')}</strong>,
+                  cardep: <strong>{t('home.hero.ledeCardep')}</strong>,
                 }}
               />
             </p>
