@@ -24,8 +24,8 @@ export default {
   home: {
     hero: {
       eyebrow: 'Piattaforme di ricerca aperte · Sony CSL Roma',
-      headline: 'Un atlante di come le città',
-      headlineAccent: 'danno accesso',
+      headline: 'Un atlante per misurare',
+      headlineAccent: 'l’accesso delle città.',
       lede: 'Che cosa è a portata in una città? Misura la {proximity} — i servizi quotidiani raggiungibili a piedi. Misura l’{opportunity} — ciò a cui il trasporto pubblico può arrivare entro un budget di tempo. Misura la {cardep} — quanto serve l’automobile per accedere alle opportunità della città. Scopri come l’accesso propaga le disuguaglianze.',
       ledeProximity: 'prossimità',
       ledeOpportunity: 'opportunità',

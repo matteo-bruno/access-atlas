@@ -31,8 +31,8 @@ export default {
   home: {
     hero: {
       eyebrow: 'Open research platforms · Sony CSL Rome',
-      headline: 'An atlas of how cities',
-      headlineAccent: 'give access',
+      headline: 'An atlas to measure',
+      headlineAccent: 'cities’ access.',
       lede: 'What is within reach in a city? Measure {proximity} — the everyday services within walking distance. Measure {opportunity} — what public transport can reach within a time budget. Measure {cardep} — how much you need a car to access opportunities in the city. Discover how access propagates inequalities.',
       ledeProximity: 'proximity',
       ledeOpportunity: 'opportunity',
