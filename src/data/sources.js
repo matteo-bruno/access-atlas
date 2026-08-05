@@ -14,7 +14,16 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { loadDataset, loadJSON } from '../map/loaders.js';
-import { CATALOGUE_PATH, EMPTY_CATALOGUE, dataUrl, normaliseCatalogue, platformEntry, publishedCity } from './catalogue.js';
+import {
+  CATALOGUE_PATH,
+  EMPTY_CATALOGUE,
+  atlasCity,
+  dataUrl,
+  hourlyPath,
+  normaliseCatalogue,
+  platformEntry,
+  publishedCity,
+} from './catalogue.js';
 
 /** Static provider: plain files under public/data/, no backend required. */
 export function createStaticProvider() {
@@ -69,6 +78,43 @@ export function createStaticProvider() {
     async scenarios(platformId, cityId, catalogue) {
       return publishedCity(catalogue, platformId, cityId)?.scenarios ?? [];
     },
+
+    // The combined viewer's union mesh — every platform's values on one H3
+    // grid, built offline. Null when the city has no harmonised export yet;
+    // the viewer then swaps per-platform meshes instead of repainting one.
+    async atlasMesh(cityId, catalogue, { signal } = {}) {
+      const profile = atlasCity(catalogue, cityId);
+      if (!profile?.dataset) return null;
+      const collection = await loadDataset({ url: dataUrl(profile.dataset) }, { signal });
+      return { collection, profile };
+    },
+
+    // One hour of an hourly dataset (CityChrone's hexcovers). `hour` is
+    // clamped to what the catalogue declares rather than trusted.
+    async hourly(platformId, cityId, hour, catalogue, { signal } = {}) {
+      const profile = publishedCity(catalogue, platformId, cityId);
+      if (!profile?.hourly) return null;
+      const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
+      const collection = await loadDataset(
+        { url: dataUrl(hourlyPath(profile.hourly.hexcover, clamped)) },
+        { signal },
+      );
+      return { collection, profile, hour: clamped };
+    },
+
+    // The travel-time matrix behind one hour's isochrones: cells × cells,
+    // uint8 minutes. ~3 MB per hour, so it is only fetched when the isochrone
+    // view asks for it (and then cached by URL like everything else).
+    async travelTimes(platformId, cityId, hour, catalogue, { signal } = {}) {
+      const profile = publishedCity(catalogue, platformId, cityId);
+      if (!profile?.hourly?.times) return null;
+      const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
+      const matrix = await loadDataset(
+        { url: dataUrl(hourlyPath(profile.hourly.times, clamped)) },
+        { signal },
+      );
+      return { matrix, profile, hour: clamped };
+    },
   };
 }
 
@@ -80,6 +126,11 @@ export function createStaticProvider() {
  *   cityMesh(platformId, cityId, catalogue, opts)
  *                                              → { collection, profile, scenario } | null
  *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]
+ *   atlasMesh(cityId, catalogue, opts)         → { collection, profile } | null
+ *   hourly(platformId, cityId, hour, catalogue, opts)
+ *                                              → { collection, profile, hour } | null
+ *   travelTimes(platformId, cityId, hour, catalogue, opts)
+ *                                              → { matrix: { shape, data }, profile, hour } | null
  *
  * `opts` carries `{ signal, scenario }`. Returning `null` means "not
  * published" and is never an error: the caller falls back to seed data.
