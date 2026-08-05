@@ -113,6 +113,11 @@ export default {
       tag: '04',
       title: 'Side projects & future work',
       items: {
+        maps3d: {
+          name: '3D Maps',
+          status: 'Live',
+          desc: 'Interactive three-dimensional maps of urban structure.',
+        },
         whatif: {
           status: 'Archive',
           desc: 'The original modular platform that seeded the Atlas.',

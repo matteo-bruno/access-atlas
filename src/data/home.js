@@ -82,7 +82,14 @@ export const TABLE_SCALE = {
   inclusion: (v) => Math.min(v * 2.4, 100),
 };
 
+// A `url` marks a project that is live and opens in a new tab; the others are
+// described but have nothing to link to yet.
 export const SIDE_PROJECTS = [
+  {
+    key: 'maps3d',
+    color: BRAND.navy,
+    url: 'https://mat701.github.io/3D-maps/weight-urban.html',
+  },
   { key: 'whatif', name: 'whatif-machine', color: '#9CA0A6' },
   { key: 'heat', color: '#d57b66' },
   { key: 'a11y', color: BRAND.cyan },

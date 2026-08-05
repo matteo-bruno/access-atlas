@@ -5,6 +5,11 @@
 // not the coverage of the upstream research platform. `published: false` means
 // the map is still drawing generated stand-ins, and the UI says so rather than
 // presenting a count it cannot support.
+//
+// `url` is the platform's own live site. The home page sends visitors there
+// while the Atlas's combined viewer — one map with switchable visualisations —
+// is still being built. The internal /platforms/:slug routes stay in place for
+// that work; nothing here removes them.
 
 import { BRAND } from './brand.js';
 
@@ -17,6 +22,7 @@ export const PLATFORMS = [
     theme: 'Proximity',
     themeKey: 'proximity',
     accent: '#b94e3b',
+    url: 'https://whatif.sonycsl.it/15mincity',
     cityCount: 1,
     published: true,
     hasCityPages: true,
@@ -46,6 +52,7 @@ export const PLATFORMS = [
     theme: 'Opportunity',
     themeKey: 'opportunity',
     accent: BRAND.navy,
+    url: 'https://whatif.sonycsl.it/citychrone',
     cityCount: 0,
     published: false,
     scale: ['#d9dfe9', BRAND.cyan, BRAND.navy],
@@ -62,6 +69,7 @@ export const PLATFORMS = [
     theme: 'Comparison',
     themeKey: 'comparison',
     accent: '#a04640',
+    url: 'https://mat701.github.io/CDI',
     cityCount: 22,
     published: true,
     scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
@@ -86,6 +94,7 @@ export const PLATFORMS = [
     theme: 'Synthesis',
     themeKey: 'synthesis',
     accent: BRAND.navy,
+    url: 'https://mat701.github.io/accessibility-pov',
     cityCount: 18,
     published: true,
     // Categorical, not a ramp — index matches ZONES below.

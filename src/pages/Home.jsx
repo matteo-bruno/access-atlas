@@ -140,10 +140,15 @@ export default function Home() {
             hint={t('home.platforms.hint')}
           />
           <div className="aa-platforms">
+            {/* Each card opens the platform's own live site. The Atlas's
+                combined viewer is still being built; when it lands, these go
+                back to `/platforms/${slug}`. */}
             {PLATFORMS.map((platform) => (
-              <Link
+              <a
                 key={platform.id}
-                to={`/platforms/${platform.slug}`}
+                href={platform.url}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="aa-card aa-lift aa-platform"
               >
                 <div className="aa-platform__text">
@@ -175,7 +180,7 @@ export default function Home() {
                     />
                   </AtlasMap>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </section>
@@ -237,18 +242,38 @@ export default function Home() {
         <section className="aa-shell aa-block">
           <SectionHeading tag={t('home.side.tag')} title={t('home.side.title')} />
           <div className="aa-side">
-            {SIDE_PROJECTS.map((project) => (
-              <article key={project.key} className="aa-card aa-lift aa-side__card">
-                <div className="aa-side__meta">
-                  <span className="aa-dot aa-dot--sm" style={{ background: project.color }} />
-                  <span>{t(`home.side.items.${project.key}.status`)}</span>
-                </div>
-                <h3 className="aa-side__name">
-                  {project.name ?? t(`home.side.items.${project.key}.name`)}
-                </h3>
-                <p className="aa-side__desc">{t(`home.side.items.${project.key}.desc`)}</p>
-              </article>
-            ))}
+            {/* A project with a `url` is live and links out; the rest are
+                still cards, because there is nothing to open yet. */}
+            {SIDE_PROJECTS.map((project) => {
+              const body = (
+                <>
+                  <div className="aa-side__meta">
+                    <span className="aa-dot aa-dot--sm" style={{ background: project.color }} />
+                    <span>{t(`home.side.items.${project.key}.status`)}</span>
+                  </div>
+                  <h3 className="aa-side__name">
+                    {project.name ?? t(`home.side.items.${project.key}.name`)}
+                  </h3>
+                  <p className="aa-side__desc">{t(`home.side.items.${project.key}.desc`)}</p>
+                </>
+              );
+
+              return project.url ? (
+                <a
+                  key={project.key}
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="aa-card aa-lift aa-side__card aa-side__card--link"
+                >
+                  {body}
+                </a>
+              ) : (
+                <article key={project.key} className="aa-card aa-lift aa-side__card">
+                  {body}
+                </article>
+              );
+            })}
           </div>
         </section>
       </main>

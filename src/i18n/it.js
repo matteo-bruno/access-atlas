@@ -106,6 +106,11 @@ export default {
       tag: '04',
       title: 'Progetti collaterali e sviluppi futuri',
       items: {
+        maps3d: {
+          name: 'Mappe 3D',
+          status: 'Online',
+          desc: 'Mappe tridimensionali interattive della struttura urbana.',
+        },
         whatif: {
           status: 'Archivio',
           desc: 'La piattaforma modulare originale da cui è nato l’Atlante.',
