@@ -5,8 +5,8 @@
 //
 // Each image is a screenshot of that platform's own city view — the cartogram
 // a visitor sees after clicking through — rather than the world map, so the
-// card shows what the platform actually renders. CityChrone has no published
-// city, so its card falls back to a shot of its world coverage map.
+// card shows what the platform actually renders. CityChrone has no page of
+// its own; the combined viewer's CityChrone layer is its city view.
 //
 // Output goes to src/assets/platforms/<id>.jpg at 2× for retina. Home.jsx
 // picks them up by filename; delete one and that card reverts to a live map.
@@ -24,11 +24,10 @@ const H = 320;
 const SCALE = 2;
 
 const SHOTS = [
-  { id: 'fifteen', route: '/platforms/15min-city/rome', target: '.aa-city__canvas' },
+  { id: 'fifteen', route: '/platforms/15min-city/milan', target: '.aa-city__canvas' },
   { id: 'cardep', route: '/platforms/car-dependency-index/rome', target: '.aa-city__canvas' },
   { id: 'pov', route: '/platforms/accessibility-pov/rome', target: '.aa-city__canvas' },
-  // No published city for this platform yet — the world map is what it has.
-  { id: 'citychrone', route: '/platforms/citychrone', target: '.aa-mapstage' },
+  { id: 'citychrone', route: '/atlas/milan?layer=citychrone', target: '.aa-city__canvas' },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });

@@ -90,6 +90,37 @@ export function useCityPageIds(platformId) {
 }
 
 /**
+ * City ids with a combined-viewer (union mesh) entry in the catalogue. Used
+ * to decide whether to offer the /atlas/:cityId view for a city.
+ */
+export function useAtlasCityIds() {
+  const [ids, setIds] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        if (cancelled) return;
+        setIds((catalogue?.atlas?.cities ?? []).map((city) => city.id));
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, []);
+
+  return useMemo(() => new Set(ids ?? []), [ids]);
+}
+
+/**
  * Resolve a city page's profile from the catalogue, falling back to the
  * bundled seed profiles. Published entries win, so a city that exists only as
  * real data still gets a page.

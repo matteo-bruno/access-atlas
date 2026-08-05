@@ -39,9 +39,9 @@ export default {
       items: {
         pov: 'The dimensions of accessibility — EPJ Data Science',
         cdi: 'Car Dependency Index — {count} città pubblicate',
-        fifteen: '15min-City — Roma pubblicata, dieci categorie di servizi',
+        atlas: 'Vista combinata — Milano pubblicata su un’unica griglia, tutte e quattro le piattaforme',
       },
-      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Gen 2026' },
+      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', atlas: 'Ago 2026' },
     },
     metrics: {
       cities: 'Città pubblicate',

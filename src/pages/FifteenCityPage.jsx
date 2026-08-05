@@ -6,6 +6,7 @@ import { Subhead } from '../components/Subhead.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
+import { useAtlasCityIds } from '../data/useAtlasData.js';
 import { summariseMeasure } from '../data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import './CityPage.css';
@@ -23,6 +24,7 @@ const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
 export function FifteenCityPage({ platform, profile }) {
   const { t, n, lang } = useI18n();
   const { status, data, source } = useCityMesh(profile, platform.id);
+  const atlasCityIds = useAtlasCityIds();
 
   const [mode, setMode] = useState(MODES[0].key);
   const [category, setCategory] = useState(CATEGORIES[0].key);
@@ -79,6 +81,11 @@ export function FifteenCityPage({ platform, profile }) {
         <Link className="aa-chip aa-chip--active" to={`/platforms/${platform.slug}`}>
           {t('city.worldMap')}
         </Link>
+        {atlasCityIds.has(profile.id) && (
+          <Link className="aa-chip" to={`/atlas/${profile.id}?layer=${platform.id}`}>
+            {t('atlas.label')}
+          </Link>
+        )}
         <a className="aa-chip" href={PAPER_URL} target="_blank" rel="noreferrer noopener">
           {t('platform.paper')}
         </a>

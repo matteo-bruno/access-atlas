@@ -9,20 +9,21 @@
 import { BRAND } from './brand.js';
 
 export const ATLAS_METRICS = [
-  // 20 distinct cities across the P.O.V. and Car Dependency datasets.
+  // 20 distinct cities across the four platforms' datasets.
   { key: 'cities', value: 20 },
   { key: 'platforms', value: 4 },
   // AT CH DE ES FR IT PT SE US
   { key: 'countries', value: 9 },
-  // Cells across all 41 published city datasets, scenario variants included.
-  { key: 'cells', value: 156627 },
+  // Cells across all 42 published city datasets, scenario variants included
+  // (pov 47,902 · cardep 96,846 · fifteen 7,498 · citychrone 1,741).
+  { key: 'cells', value: 153987 },
   { key: 'researchers', value: 7 },
 ];
 
 export const NEWS = [
+  { key: 'atlas', kind: 'data', color: BRAND.navy },
   { key: 'pov', kind: 'paper', color: BRAND.navy },
   { key: 'cdi', kind: 'release', color: BRAND.magenta, count: 22 },
-  { key: 'fifteen', kind: 'data', color: BRAND.cyan, count: 18 },
 ];
 
 // "By the numbers" — six cities from the published P.O.V. datasets.

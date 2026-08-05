@@ -7,7 +7,7 @@ import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
-import { useCityProfile } from '../data/useAtlasData.js';
+import { useAtlasCityIds, useCityProfile } from '../data/useAtlasData.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { FifteenCityPage } from './FifteenCityPage.jsx';
 import './CityPage.css';
@@ -37,6 +37,7 @@ export default function CityPage() {
 function CityScreen({ platform, profile }) {
   const { t, n, lang } = useI18n();
   const { status, data, source } = useCityMesh(profile, platform.id);
+  const atlasCityIds = useAtlasCityIds();
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
 
@@ -107,6 +108,11 @@ function CityScreen({ platform, profile }) {
         <Link className="aa-chip aa-chip--active" to={`/platforms/${platform.slug}`}>
           {t('city.worldMap')}
         </Link>
+        {atlasCityIds.has(profile.id) && (
+          <Link className="aa-chip" to={`/atlas/${profile.id}?layer=${platform.id}`}>
+            {t('atlas.label')}
+          </Link>
+        )}
         <span className="aa-chip">{t('city.compare')}</span>
         <a className="aa-chip" href={PAPER_URL} target="_blank" rel="noreferrer noopener">
           {t('platform.paper')}
