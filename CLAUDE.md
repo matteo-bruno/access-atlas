@@ -212,10 +212,13 @@ missing keys in development, and the smoke suite fails if a locale drifts.
 Numbers never appear in the dictionaries; they are formatted with `Intl` from
 `src/data/*.js`, so `156,627` becomes `156.627` in Italian for free.
 
-Italian role labels in `contact.roles` name the **function** ("Dottorato",
-"Ricerca associata") rather than the person. Italian agent nouns agree in
-gender and a shared translation key cannot know anyone's — naming the function
-avoids guessing rather than defaulting to masculine forms.
+Italian role labels in `contact.roles` carry **a `M`/`F` key per gendered agent
+noun** — `sapienzaPhdM` is "Dottorando", `sapienzaPhdF` "Dottoranda", and both
+are "PhD student, Sapienza" in English, which does not inflect. `src/data/team.js`
+says which form each person takes, and the team stated them: a name is not
+evidence of anyone's gender, so a new member needs asking rather than guessing.
+Roles whose Italian is invariable ("Assistente di ricerca") or names a function
+("Amministrazione, senior") keep a single key.
 
 ## Regenerating things
 

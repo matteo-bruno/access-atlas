@@ -31,9 +31,6 @@ export default function Contact() {
               <DetailRow label={t('contact.fields.general')} strong>
                 <a href={`mailto:${CONTACT.general}`}>{CONTACT.general}</a>
               </DetailRow>
-              <DetailRow label={t('contact.fields.press')} strong>
-                <a href={`mailto:${CONTACT.press}`}>{CONTACT.press}</a>
-              </DetailRow>
               <DetailRow label={t('contact.fields.code')} strong>
                 <a href={CONTACT.codeUrl} target="_blank" rel="noreferrer noopener">
                   {CONTACT.code}
@@ -55,7 +52,13 @@ export default function Contact() {
                 className={`aa-team__row${member.isJoin ? ' aa-team__row--join' : ''}`}
               >
                 <div className="aa-team__name">
-                  {member.isJoin ? t('contact.joinName') : member.name}
+                  {member.isJoin ? (
+                    t('contact.joinName')
+                  ) : member.email ? (
+                    <a href={`mailto:${member.email}`}>{member.name}</a>
+                  ) : (
+                    member.name
+                  )}
                 </div>
                 <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
                 {/* The join row points at the page that says what is actually
