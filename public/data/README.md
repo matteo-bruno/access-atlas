@@ -11,14 +11,14 @@ entry, not a code change.
 | `index.json`         | The **catalogue** — the one file that decides whether the Atlas draws measurements or seed data. |
 | `pov/`               | Accessibility P.O.V. — 18 cities, one GeoJSON each, plus `coverage.geojson`. Measured. |
 | `cardep/`            | Car Dependency Index — 22 city datasets (20 cities plus a Paris metro-area and a Rome Metro D scenario), plus `coverage.geojson`. Measured. |
-| `fifteen/`           | 15minCity — Rome, 20 measures per cell (10 service categories × foot/bike) plus their difference against the ideal-city scenario. Measured. |
+| `fifteen/`           | 15minCity — Milan on the standard H3 grid, 20 measures per cell (10 service categories × foot/bicycle). Measured. |
+| `citychrone/`        | CityChrone — Milan, 24 hourly `hexcoverNN.json` score files plus 24 `timesNN.npy` travel-time matrices. Measured. |
+| `atlas/`             | The combined viewer's union meshes — one GeoJSON per harmonised city, every platform's values on the same H3 cells. Derived offline by `scripts/build-atlas.mjs`. |
 | `world-land.geojson` | Natural Earth 110m land polygons, simplified to 2 dp. Draws the paper basemap so the Atlas needs no tile server. Public domain. |
 
-**CityChrone is not published yet.** It still renders seed data generated in
-the browser — deterministic and plausible, but not measurement (see
-`src/data/cities.js` and `src/data/mesh.js`). The UI labels it as illustrative
-rather than presenting it as measured. 15minCity is published for Rome only;
-its other cities live in the legacy site's database.
+15minCity's legacy Rome export (letter-keyed, non-H3) has been retired; its
+other cities live in the legacy site's database until they are re-exported on
+the standard grid.
 
 Regenerate everything under `pov/` and `cardep/` from the upstream repositories
 with:
@@ -27,7 +27,14 @@ with:
 npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
 ```
 
-It prints the counts `src/data/home.js` and `src/data/platforms.js` quote, so
+Rebuild the union meshes and the fifteen/citychrone catalogue entries from the
+files already in this directory with:
+
+```bash
+npm run build:atlas
+```
+
+Both print the counts `src/data/home.js` and `src/data/platforms.js` quote, so
 those stay in step with the data rather than drifting from it.
 
 ## The catalogue
@@ -60,6 +67,24 @@ site works on a fresh checkout and picks up real outputs one city at a time.
 
 Platform keys are the `id` values in `src/data/platforms.js`: `fifteen`,
 `citychrone`, `cardep`, `pov`.
+
+Two additions beyond the per-platform lists:
+
+- **Hourly datasets** (CityChrone): a city carries `"hourly"` instead of a
+  single `dataset` — `{ "hours": 24, "cells": 1741, "hexcover":
+  "citychrone/milan/hexcover{hh}.json", "times":
+  "citychrone/milan/times{hh}.npy" }`, with `{hh}` standing for the
+  zero-padded hour. Each hexcover is a FeatureCollection with per-cell
+  `new_id`, `pop`, `v_score`, `s_score` (and `coord` as `[lat, lon]` — the one
+  upstream file on that order); each `times` file is a NumPy uint8 matrix of
+  minutes, `cells × cells`, row = origin `new_id`.
+- **The `atlas` section** (top level, beside `platforms`) lists cities with a
+  harmonised union mesh for the combined viewer, each with a `dataset`
+  pointing under `atlas/` and a `layers` array naming the platforms it
+  carries. A city absent here still gets a combined view — the viewer swaps
+  per-platform meshes instead of repainting one. Union meshes are **derived**:
+  regenerate them with `npm run build:atlas` after changing any Milan file,
+  and `npm run test:data` reconciles them against the per-platform files.
 
 - **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. The upstream CDI
   `index.json` uses `[lat, lon]` — flipping it is the exporter's job.
@@ -139,29 +164,26 @@ Values: `o_score_pt`, `o_score_car`, `CDI` (−1 PT-favoured → +1 car-dependen
 
 ### 15minCity
 
-The legacy site stores one `hexes.geojson` per city, carrying 20 accessibility
-metrics — 10 service categories × 2 travel modes, in minutes:
+The harmonised exports (Milan onward) key each measure as
+`<category>_<mode>`, in minutes, with full words: categories
+`proximity_time` (the average across all services), `outdoor`, `education`,
+`supplies`, `restaurant`, `transport`, `culture`, `physical`, `services`,
+`healthcare`; modes `foot` and `bicycle`. Each cell also carries
+`centroid_lon`/`centroid_lat`, `radius`, `population`, and `internal_id` —
+the cell's H3 index as a decimal integer (resolution 9).
 
-| Key | Category | | Suffix | Mode |
-| --- | -------- | - | ------ | ---- |
-| `a` | average accessibility | | `_f` | foot |
-| `b` | cultural activities | | `_b` | bike |
-| `c` | learning | | | |
-| `d` | healthcare | | | |
-| `e` | outdoor activities | | | |
-| `f` | physical exercise | | | |
-| `g` | eating | | | |
-| `h` | services | | | |
-| `i` | supplies | | | |
-| `l` | moving | | | |
+The legacy letter scheme (`a_f`, with `d_*` ideal-city differences) and its
+two conflicting letter→category tables are retired with the Rome export; no
+published file uses it and `src/data/fifteen.js` no longer knows the letters.
 
-A matching `d_<key>_<mode>` field holds the precomputed difference against the
-"ideal city" scenario.
+### CityChrone
 
-> **Careful with the legend.** The legacy `script.php` contains two conflicting
-> letter→category mappings; the stale one assigns different categories to the
-> same letters (`d` is Supplies there, Healthcare in the live one). The table
-> above matches the live dropdowns.
+Published as hourly file pairs rather than one dataset — see the `hourly`
+catalogue entry above. `v_score` is a km/h-like velocity score, `s_score` a
+sociality score (a weighted count of reachable people — a score, not a
+headcount); both are defined in the platform paper (doi:10.1098/rsos.190979).
+The `times` matrices power click-to-draw isochrones in the combined viewer;
+values are capped at 180 minutes upstream.
 
 ## Shapefiles
 

@@ -22,7 +22,10 @@ const ROUTES = [
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
   ['/platforms/accessibility-pov/rome', 'Rome P.O.V. city page'],
   ['/platforms/car-dependency-index/rome', 'Rome Car Dependency city page'],
-  ['/platforms/15min-city/rome', 'Rome 15min-City city page'],
+  ['/platforms/15min-city/rome', 'Rome 15min-City city page (seeded)'],
+  ['/platforms/15min-city/milan', 'Milan 15min-City city page'],
+  ['/atlas/milan', 'Milan combined viewer'],
+  ['/atlas/milan?layer=citychrone&view=isochrone', 'Milan combined viewer, CityChrone isochrones'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
   ['/blog/what-the-atlas-measures', 'Blog post'],
@@ -163,6 +166,45 @@ for (const [route, name] of ROUTES) {
     'Car Dependency index keeps its sign',
     /^[+−]/.test(summary[1]) && /^[+−]/.test(summary[2]),
     `${summary[1]} | ${summary[2]}`,
+  );
+  await page.close();
+}
+
+// ── The combined viewer: one mesh, four layers, state in the URL ─────
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(6000);
+
+  // 7,637 is the union mesh's cell count — a figure the seed data cannot
+  // produce, so its presence is provenance, not luck.
+  const summary = await page.$$eval('.aa-summary__row dd', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
+  check('Combined viewer reads the union mesh', summary[0] === '7,637', summary[0]);
+  check(
+    'P.O.V. layer states its mask honestly',
+    summary[1] === '1,636',
+    summary[1],
+  );
+
+  const layers = await page.$$eval('.aa-layers__row', (els) =>
+    els.map((e) => ({ text: e.textContent.trim(), disabled: e.disabled })),
+  );
+  check(
+    'All four layers are offered and enabled',
+    layers.length === 4 && layers.every((l) => !l.disabled),
+    layers.map((l) => `${l.text}${l.disabled ? ' (off)' : ''}`).join(' · '),
+  );
+
+  await page.click('.aa-layers__row:has-text("CityChrone")');
+  await page.waitForTimeout(4000);
+  const bands = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
+  const total = bands.reduce((sum, b) => sum + (parseFloat(b) || 0), 0);
+  check(
+    'CityChrone hourly layer renders with the layer in the URL',
+    page.url().includes('layer=citychrone') && Math.abs(total - 100) < 0.5,
+    `${page.url().split('/atlas/')[1]} · bands sum ${total.toFixed(1)}`,
   );
   await page.close();
 }

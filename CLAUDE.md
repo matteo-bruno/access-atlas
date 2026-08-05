@@ -36,7 +36,9 @@ src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
 src/data/adapters.js          published files → the shapes the UI consumes
 src/data/useAtlasData.js      React bindings (coverage, profile, city pages)
+src/data/useAtlasView.js      React bindings for the combined viewer
 src/workers/useCityMesh.js    published-first, seed fallback
+scripts/build-atlas.mjs       offline: joins platform files → atlas/ union meshes
 ```
 
 Anything the catalogue does not list falls back to generated seed data
@@ -48,37 +50,39 @@ caller changes.
 
 Adding a city is a file copy plus a catalogue entry. That is the whole design.
 
-## The grids — read this before building the unified viewer
+## The grids — read this before touching the combined viewer
 
 **Target state: one standard H3 grid per city, shared by every platform.**
 Harmonisation happens **offline**, in the export pipeline, not in the app.
-Milan is the first city being exported this way, across all four platforms.
 The app's job is to render whatever grid the catalogue describes — it does not
 reproject, resample or reconcile anything.
 
-The currently published data is the legacy state, and Rome shows what that
-costs. Measured cell by cell:
+**Milan is harmonised, and the combined viewer ships.** Verified by H3 index
+(not centroid rounding — `scripts/build-atlas.mjs` refuses any centroid more
+than 10 m off an H3 r9 cell centre): all four platforms sit on one grid, with
+nested masks — 15minCity covers 7,498 cells (the whole metro), Car Dependency
+and CityChrone an *identical* 1,741, P.O.V. a strict subset at 1,636.
+`build-atlas.mjs` joins them into `public/data/atlas/milan.geojson` (7,637
+union cells) and `/atlas/:cityId` repaints that one mesh per layer. Rerun
+`npm run build:atlas` after changing any Milan file — the union is derived,
+and `test:data` fails if it drifts from the per-platform files.
+
+Rome is the legacy state and shows what it costs. Measured cell by cell:
 
 | Platform | Rome cells | Grid |
 | --- | --- | --- |
 | P.O.V. | 8,089 | same H3 grid as CDI — 99.8% of its cells sit on a CDI cell |
 | Car Dependency | 11,409 | same grid, wider urban mask |
-| 15minCity | 11,879 | **a different tiling** — ~8% overlap, i.e. chance |
+| 15minCity (retired) | 11,879 | **a different tiling** — ~8% overlap, i.e. chance |
 
-So P.O.V. and CDI already share a grid: P.O.V. is a subset of CDI's cells, a
-tighter mask over identical hexagons. Those two can share one loaded mesh and
-switch by repainting. 15minCity's legacy meshes cannot — switching to them
-means swapping the mesh.
+**Both paths live in `src/pages/AtlasCityPage.jsx` from day one.** A city with
+an `atlas` catalogue entry loads one union mesh and repaints; a city without
+one swaps per-platform meshes. Do not assume one city implies one mesh; ask
+the catalogue.
 
-**What this means for the viewer.** Build it so that cities on the harmonised
-grid are the fast path — load one mesh, repaint per layer — and keep
-mesh-swapping as the fallback for legacy cities. Do not assume one city implies
-one mesh; ask the catalogue. Two cities will behave differently at the same
-time for a while, so the switcher has to handle both from day one rather than
-being retrofitted once Milan lands.
-
-A practical check when new data arrives: compare cell centroids between two
-platforms for the same city at 3 decimal places (~100 m). Above ~99% means one
+A practical check when new data arrives: map both platforms' cell centroids to
+H3 at the claimed resolution and compare the sets (`build-atlas.mjs` does this
+with a hard 10 m tolerance). Above ~99% overlap of the tighter mask means one
 grid; single digits means two.
 
 **The `cell` field is per-city and must stay honest.** `h3Resolution` is
@@ -102,9 +106,16 @@ and was wrong.
 - **The cartograms are population-scaled.** Cells sit in true positions; their
   *area* encodes population. Cell geometry therefore cannot be measured from
   the file and comes from the catalogue's `cell` field.
-- **15minCity's letter codes**: the legacy `script.php` contains two conflicting
-  letter→category tables. The live one is in `src/data/fifteen.js` (`d` is
-  Healthcare, not Supplies). Do not take a letter's meaning from that file.
+- **15minCity's letter codes are retired.** The harmonised exports key
+  measures with full words (`education_foot`, `proximity_time_bicycle`);
+  `src/data/fifteen.js` holds the live category list. The legacy `script.php`
+  contains two conflicting letter→category tables — if an old letter-keyed
+  file ever resurfaces, do not take a letter's meaning from that file.
+- **CityChrone's scores carry no verified unit conversion.** `v_score` is
+  described as km/h-like and labelled that way after the upstream site;
+  `s_score` is a weighted count of reachable people and is called a score,
+  never a headcount. Hexcover `coord` is `[lat, lon]` — the one published
+  file on that order.
 
 ## Traps that have already cost time
 
@@ -137,10 +148,13 @@ npm run smoke              # every route in a real browser
 npm run smoke:published    # stages a dataset, asserts it is read instead of seed
 ```
 
-`test:data` runs the real adapters over all 41 datasets and checks shares sum
-to 100, no CDI outside [−1, +1], every 15minCity category × mode present, and
-that Rome still reports the figures the copy quotes. Run it after any data
-change — it catches in seconds what the browser suites take minutes to reach.
+`test:data` runs the real adapters over every published dataset (all 24
+CityChrone hours included) and checks shares sum to 100, no CDI outside
+[−1, +1], every 15minCity category × mode present, that Rome still reports
+the figures the copy quotes, and that each `atlas/` union mesh reconciles —
+same counts, same shares, same weighted CDI — with the per-platform files it
+was built from. Run it after any data change — it catches in seconds what the
+browser suites take minutes to reach.
 
 Playwright is deliberately **not** a dependency; CI installs it on the fly.
 Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`.
@@ -161,6 +175,7 @@ avoids guessing rather than defaulting to masculine forms.
 
 ```bash
 npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
+npm run build:atlas        # union meshes + fifteen/citychrone catalogue entries
 npm run shoot:previews     # platform-card stills, from the running site
 ```
 
@@ -171,24 +186,21 @@ different owner.
 
 ## CityChrone
 
-The fourth platform, and the one with the least built. It has:
+The fourth platform, published for Milan and rendered **only through the
+combined viewer** — it has no `/platforms/citychrone/:cityId` page; its
+landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 
-- **A paper** — Biazzo, Monechi & Loreto, *General scores for accessibility and
-  inequality measures in urban areas*, R. Soc. Open Sci. 6(8) 190979 (2019),
-  `doi:10.1098/rsos.190979`. It is the isochrone-based scoring method, so it is
-  tagged to this platform on the Research page.
-- **No published data.** `published: false`, no `previewCity`, no city page.
-  Its home-page card art is a still of the world coverage map because there is
-  no city view to shoot.
-- **Data in preparation**: a single city, isochrones on an H3 grid.
-
-When that lands it is the same path as any other platform — convert in
-`scripts/build-data.mjs`, add catalogue entries, flip `published: true`, set
-`previewCity`, and shoot a card still. Two things will be new: isochrones are a
-*travel-time surface* rather than a per-cell classification or a bounded index,
-so it needs its own adapter and its own legend; and if it ships on the standard
-H3 grid it can share a mesh with whatever else exists for that city, which
-makes it the natural first test of the shared-grid path.
+- **The paper** — Biazzo, Monechi & Loreto, *General scores for accessibility
+  and inequality measures in urban areas*, R. Soc. Open Sci. 6(8) 190979
+  (2019), `doi:10.1098/rsos.190979` — defines both scores and the isochrone
+  method; it is tagged to this platform on the Research page.
+- **The published form is hourly**: 24 hexcover FeatureCollections (per-cell
+  `v_score`/`s_score`) plus 24 `times*.npy` matrices (uint8 minutes, row =
+  origin cell). The catalogue's `hourly` entry describes them as `{hh}` path
+  templates; hourly values are joined onto the mesh as MapLibre feature-state
+  at runtime, never baked into a GeoJSON.
+- Its card still is shot from the combined viewer's CityChrone layer
+  (`scripts/shoot-previews.mjs`).
 
 ## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review.

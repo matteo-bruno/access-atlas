@@ -7,10 +7,14 @@ It brings four open research platforms under one identity:
 
 | Platform                       | Measures                                                  | Published here |
 | ------------------------------ | --------------------------------------------------------- | -------------- |
-| **15min-City**                 | Proximity — travel time to ten categories of service       | Rome |
-| **CityChrone++**               | Opportunity — what public transport can reach              | — |
+| **15min-City**                 | Proximity — travel time to ten categories of service       | Milan |
+| **CityChrone++**               | Opportunity — hourly transit scores and isochrones         | Milan |
 | **Car Dependency Index**       | Comparison — opportunity by car against by transit         | 22 datasets |
 | **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access  | 18 cities |
+
+Milan is published on one shared H3 grid across all four platforms, and the
+**combined viewer** (`/atlas/milan`) reads them as switchable layers of a
+single mesh.
 
 "Published here" counts what is in `public/data/`, not the coverage of the
 upstream research platforms.
@@ -26,18 +30,15 @@ npm run preview
 
 ## Status
 
-**Three of the four platforms render measurements.** 41 city datasets —
-156,627 cells — are published under `public/data/` and validated on every
-push. CityChrone is still drawing generated stand-ins, and the UI labels it as
-illustrative rather than presenting it as measured. `src/data/cities.js` and
-`src/data/mesh.js` say so at the top; [`public/data/README.md`](public/data/README.md)
-documents the catalogue that decides which is which.
+**All four platforms render measurements.** 42 city datasets — 153,987 cells —
+are published under `public/data/` and validated on every push. Cities the
+catalogue does not list still fall back to generated stand-ins labelled as
+illustrative; [`public/data/README.md`](public/data/README.md) documents the
+catalogue that decides which is which.
 
 Outstanding before launch:
 
 - **The Italian is a first draft** and needs a native review (`src/i18n/it.js`).
-- **CityChrone has no published data** and no paper on the Research page; both
-  are marked as pending rather than filled with a guess.
 - **Some editorial figures need the lab's confirmation** — the team headcount,
   the contact addresses, and the dates on the home page's news items.
 - **The licence below needs confirming** with the lab.
@@ -49,6 +50,7 @@ Outstanding before launch:
 | `/`                        | Home — hero, metrics, coverage map, four platforms, table, quote, side projects |
 | `/platforms/:slug`         | Platform landing — full-bleed world map, welcome card, legend, city search |
 | `/platforms/:slug/:cityId` | City detail — P.O.V. zones, Car Dependency bands, or 15minCity's category/mode selectors |
+| `/atlas/:cityId`           | Combined viewer — one mesh, all four platforms as switchable layers; state in the query string |
 | `/research`                | Papers, datasets, citation |
 | `/blog`, `/blog/:slug`     | Long-form writing |
 | `/work-with-us`            | Open positions, PhD / thesis / internship routes |

@@ -27,7 +27,15 @@ const SHOTS = [
   { id: 'fifteen', route: '/platforms/15min-city/milan', target: '.aa-city__canvas' },
   { id: 'cardep', route: '/platforms/car-dependency-index/rome', target: '.aa-city__canvas' },
   { id: 'pov', route: '/platforms/accessibility-pov/rome', target: '.aa-city__canvas' },
-  { id: 'citychrone', route: '/atlas/milan?layer=citychrone', target: '.aa-city__canvas' },
+  // The camera centres on the metro-wide population centre; CityChrone's
+  // mask is the tighter core south-west of it, so the clip shifts to keep the
+  // mesh in frame. Fractions of the target's width/height.
+  {
+    id: 'citychrone',
+    route: '/atlas/milan?layer=citychrone',
+    target: '.aa-city__canvas',
+    shift: [-0.01, 0.08],
+  },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -62,9 +70,10 @@ for (const shot of SHOTS) {
     const scale = Math.min(box.width / W, box.height / H, 1);
     const w = W * scale;
     const h = H * scale;
+    const [shiftX, shiftY] = shot.shift ?? [0, 0];
     const clip = {
-      x: Math.round(box.x + (box.width - w) / 2),
-      y: Math.round(box.y + (box.height - h) / 2),
+      x: Math.round(box.x + (box.width - w) / 2 + box.width * shiftX),
+      y: Math.round(box.y + (box.height - h) / 2 + box.height * shiftY),
       width: Math.round(w),
       height: Math.round(h),
     };
