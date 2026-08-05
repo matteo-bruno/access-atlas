@@ -3,7 +3,7 @@ import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { CityLayer } from './CityLayer.jsx';
 import { useCityProfile } from '../data/useAtlasData.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
-import { BANDS, measureKey } from '../data/fifteen.js';
+import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 
 // Card art for a platform, in order of preference:
 //
@@ -71,8 +71,8 @@ function CityPreview({ platform, cityId, cities }) {
     // 15minCity has no classification — colour straight from the average
     // walking time, the measure its city page opens on.
     if (platform.id === 'fifteen') {
-      const bands = BANDS.f;
-      const key = measureKey('a', 'f');
+      const bands = BANDS[MODES[0].key];
+      const key = measureKey(CATEGORIES[0].key, MODES[0].key);
       const steps = [];
       for (let i = 1; i < bands.length; i++) steps.push(platform.scale[i], bands[i - 1]);
       return {

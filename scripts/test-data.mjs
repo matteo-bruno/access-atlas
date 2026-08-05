@@ -104,10 +104,11 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
         }
         if (missing.length) bad.push(`${city.id}: missing measures ${missing.join(', ')}`);
 
-        const summary = summariseMeasure(collection, 'a_f', BANDS.f);
-        if (summary.median == null) bad.push(`${city.id}: no median for a_f`);
+        const averageKey = measureKey(CATEGORIES[0].key, MODES[0].key);
+        const summary = summariseMeasure(collection, averageKey, BANDS[MODES[0].key]);
+        if (summary.median == null) bad.push(`${city.id}: no median for ${averageKey}`);
         const shareTotal = summary.shares.reduce((a, b) => a + b, 0);
-        if (!near(shareTotal, 100, 0.4)) bad.push(`${city.id}: a_f shares sum to ${shareTotal}`);
+        if (!near(shareTotal, 100, 0.4)) bad.push(`${city.id}: ${averageKey} shares sum to ${shareTotal}`);
       }
       cells += collection.features.length;
     } catch (error) {

@@ -191,20 +191,14 @@ export default {
     mapTitle: 'Tempo di viaggio verso i servizi',
     minutes: 'min',
     legendValue: 'Minuti per raggiungere',
-    legendDiff: 'Differenza rispetto alla città ideale',
     statusHint:
       'Scegli modo e categoria · passa su una fascia della legenda per isolarla · scorri e trascina per navigare',
     controls: {
       mode: 'Modo',
       category: 'Categoria di servizi',
-      view: 'Vista',
     },
     modes: { foot: 'A piedi', bike: 'In bicicletta' },
-    views: { value: 'Misurato', diff: 'vs. città ideale' },
-    viewHint: {
-      value: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
-      diff: 'Minuti sopra o sotto lo scenario della città ideale. Negativo significa che la città reale fa già meglio.',
-    },
+    hint: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
     summary: { median: 'Tempo di viaggio mediano' },
     categories: {
       average: 'Media su tutti i servizi',

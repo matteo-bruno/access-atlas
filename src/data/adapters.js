@@ -265,7 +265,11 @@ export function meshFromPublishedFifteen(collection, profile = {}) {
     throw new AdapterError('Published mesh has no features');
   }
 
-  const population = features.reduce((sum, f) => sum + (Number(f.properties?.pop) || 0), 0);
+  // Harmonised exports carry `population`; the legacy files wrote `pop`.
+  const population = features.reduce(
+    (sum, f) => sum + (Number(f.properties?.population ?? f.properties?.pop) || 0),
+    0,
+  );
 
   return {
     geojson: collection,

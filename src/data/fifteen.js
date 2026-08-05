@@ -1,48 +1,44 @@
 // 15minCity: the service categories and travel modes the platform measures.
 //
-// Upstream stores each measure as `<category>_<mode>` in minutes — `a_f` is
-// average accessibility on foot — with `d_<category>_<mode>` holding the
-// difference against the "ideal city" scenario.
+// The harmonised H3 exports (Milan onward) store each measure as
+// `<category>_<mode>` in minutes, with full-word keys: `services_foot`,
+// `education_bicycle`, … plus `proximity_time_<mode>`, the average across all
+// services. This replaced the legacy single-letter scheme (`a_f`, `d_a_f`),
+// whose letter→label tables conflicted between files; no letter-keyed city is
+// published any more, so the letters are gone rather than kept alongside.
 //
-// The single-letter keys are not mnemonic and the legacy `script.php` carries
-// two conflicting letter→label tables; the mapping below is the live one,
-// verified against the dropdowns the site actually rendered. The stale table
-// assigns different categories to the same letters — `d` is Supplies there and
-// Healthcare here — so do not take a letter's meaning from that file.
+// The legacy "difference vs. ideal city" fields (`d_*`) have no counterpart in
+// the new exports, so the diff view went with them.
 //
 // Order matches the legacy selector, which leads with the average and then
 // runs through the nine individual categories.
 
 export const CATEGORIES = [
-  { key: 'a', i18n: 'average' },
-  { key: 'e', i18n: 'outdoor' },
-  { key: 'c', i18n: 'learning' },
-  { key: 'i', i18n: 'supplies' },
-  { key: 'g', i18n: 'eating' },
-  { key: 'l', i18n: 'moving' },
-  { key: 'b', i18n: 'cultural' },
-  { key: 'f', i18n: 'exercise' },
-  { key: 'h', i18n: 'services' },
-  { key: 'd', i18n: 'healthcare' },
+  { key: 'proximity_time', i18n: 'average' },
+  { key: 'outdoor', i18n: 'outdoor' },
+  { key: 'education', i18n: 'learning' },
+  { key: 'supplies', i18n: 'supplies' },
+  { key: 'restaurant', i18n: 'eating' },
+  { key: 'transport', i18n: 'moving' },
+  { key: 'culture', i18n: 'cultural' },
+  { key: 'physical', i18n: 'exercise' },
+  { key: 'services', i18n: 'services' },
+  { key: 'healthcare', i18n: 'healthcare' },
 ];
 
 export const MODES = [
-  { key: 'f', i18n: 'foot' },
-  { key: 'b', i18n: 'bike' },
+  { key: 'foot', i18n: 'foot' },
+  { key: 'bicycle', i18n: 'bike' },
 ];
 
-/** Property name for a measure, or its difference against the ideal city. */
-export function measureKey(category, mode, view = 'value') {
-  return view === 'diff' ? `d_${category}_${mode}` : `${category}_${mode}`;
+/** Property name for a measure, e.g. `education_foot`. */
+export function measureKey(category, mode) {
+  return `${category}_${mode}`;
 }
 
 // Cycling is roughly three times walking speed, so one legend cannot serve
 // both modes. Bands are in minutes; the last is open-ended.
 export const BANDS = {
-  f: [3, 6, 9, 12, 15, 18, 21, 24, 30],
-  b: [1, 2, 3, 4, 5, 6, 7, 8, 10],
+  foot: [3, 6, 9, 12, 15, 18, 21, 24, 30],
+  bicycle: [1, 2, 3, 4, 5, 6, 7, 8, 10],
 };
-
-// Differences are signed: negative means the real city already beats the
-// ideal-city scenario at that cell.
-export const DIFF_BANDS = [-20, -10, -5, 0, 5, 10, 20, 40, 80];

@@ -193,20 +193,14 @@ export default {
     mapTitle: 'Travel time to services',
     minutes: 'min',
     legendValue: 'Minutes to reach',
-    legendDiff: 'Difference vs. ideal city',
     statusHint:
       'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
     controls: {
       mode: 'Mode',
       category: 'Service category',
-      view: 'View',
     },
     modes: { foot: 'On foot', bike: 'By bicycle' },
-    views: { value: 'Measured', diff: 'vs. ideal city' },
-    viewHint: {
-      value: 'Average travel time from each cell to the nearest services in this category.',
-      diff: 'Minutes above or below the ideal-city scenario. Negative means the real city already does better.',
-    },
+    hint: 'Average travel time from each cell to the nearest services in this category.',
     summary: { median: 'Median travel time' },
     categories: {
       average: 'Average across all services',
