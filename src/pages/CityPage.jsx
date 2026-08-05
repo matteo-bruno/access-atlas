@@ -73,9 +73,10 @@ function CityScreen({ platform, profile }) {
         ...bands.flatMap((band, index) => [index, band.color]),
         bands[bands.length - 1].color,
       ],
+      // Short of opaque, so the basemap reads through the cartogram.
       'fill-opacity':
         activeZone == null
-          ? 0.88
+          ? 0.8
           : ['case', ['==', ['get', 'zone'], activeZone], 0.95, 0.14],
     }),
     [activeZone, bands],
@@ -224,6 +225,7 @@ function CityScreen({ platform, profile }) {
                 center={profile.center}
                 zoom={profile.zoom}
                 graticule={false}
+                basemap
                 label={`${cityName} — ${t('city.cartogram.title')}`}
               >
                 <GeoJSONLayer

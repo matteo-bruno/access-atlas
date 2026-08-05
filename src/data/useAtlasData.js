@@ -90,11 +90,12 @@ export function useCityPageIds(platformId) {
 }
 
 /**
- * City ids with a combined-viewer (union mesh) entry in the catalogue. Used
- * to decide whether to offer the /atlas/:cityId view for a city.
+ * Cities with a combined-viewer (union mesh) entry in the catalogue — the ones
+ * exported on the shared H3 grid, which /atlas/:cityId can draw every platform
+ * from at once.
  */
-export function useAtlasCityIds() {
-  const [ids, setIds] = useState(null);
+export function useAtlasCities() {
+  const [cities, setCities] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -105,7 +106,7 @@ export function useAtlasCityIds() {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
         if (cancelled) return;
-        setIds((catalogue?.atlas?.cities ?? []).map((city) => city.id));
+        setCities(catalogue?.atlas?.cities ?? []);
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }
@@ -117,7 +118,16 @@ export function useAtlasCityIds() {
     };
   }, []);
 
-  return useMemo(() => new Set(ids ?? []), [ids]);
+  return cities ?? EMPTY_CITIES;
+}
+
+// Stable identity, so consumers can depend on the result without re-running.
+const EMPTY_CITIES = [];
+
+/** Just their ids — for deciding whether to offer the combined view. */
+export function useAtlasCityIds() {
+  const cities = useAtlasCities();
+  return useMemo(() => new Set(cities.map((city) => city.id)), [cities]);
 }
 
 /**

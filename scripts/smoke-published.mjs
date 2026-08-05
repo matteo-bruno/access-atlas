@@ -160,10 +160,18 @@ try {
     await page.goto(`${BASE}/platforms/accessibility-pov/rome`, { waitUntil: 'load' });
     await page.waitForTimeout(5000);
 
+    // The catalogue carries a `?v=<build id>` cache-buster, so match on the
+    // path rather than the whole tail.
     check(
       'Catalogue and published mesh are fetched',
-      fetched.includes('index.json') && fetched.includes('__smoke__/rome.geojson'),
+      fetched.some((url) => url.startsWith('index.json')) &&
+        fetched.includes('__smoke__/rome.geojson'),
       fetched.join(', ') || '(no /data/ requests)',
+    );
+    check(
+      'Catalogue is fetched with a cache-buster',
+      fetched.some((url) => /^index\.json\?v=.+/.test(url)),
+      fetched.find((url) => url.startsWith('index.json')) ?? '(catalogue not fetched)',
     );
     check(
       'No console or network errors',

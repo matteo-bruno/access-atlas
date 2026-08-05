@@ -15,9 +15,9 @@
 
 import { loadDataset, loadJSON } from '../map/loaders.js';
 import {
-  CATALOGUE_PATH,
   EMPTY_CATALOGUE,
   atlasCity,
+  catalogueUrl,
   dataUrl,
   hourlyPath,
   normaliseCatalogue,
@@ -36,7 +36,7 @@ export function createStaticProvider() {
       // Memoised rather than refetched: the catalogue is read on nearly every
       // route and never changes within a session.
       if (!cataloguePromise) {
-        cataloguePromise = loadJSON(dataUrl(CATALOGUE_PATH), { signal })
+        cataloguePromise = loadJSON(catalogueUrl(), { signal })
           .then(normaliseCatalogue)
           .catch((error) => {
             // No catalogue at all is the normal state before any data is

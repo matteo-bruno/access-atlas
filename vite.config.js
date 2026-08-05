@@ -27,6 +27,15 @@ const spaFallback = () => {
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
   plugins: [react(), spaFallback()],
+  define: {
+    // Stamped into the catalogue's URL so a returning visitor cannot be served
+    // a cached `index.json` from a previous deploy. The catalogue is the one
+    // file that decides what is published, and it lives at a stable path, so a
+    // stale copy silently mislabels published cities as unpublished — which is
+    // exactly the failure this guards against. The datasets it points at are
+    // free to stay cached.
+    __BUILD_ID__: JSON.stringify(Date.now().toString(36)),
+  },
   // MapLibre spawns its worker with `{ type: 'module' }`, so Vite must emit
   // workers as ES modules rather than the default IIFE.
   worker: { format: 'es' },

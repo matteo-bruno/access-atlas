@@ -37,6 +37,24 @@ export function dataUrl(path) {
   return `${import.meta.env.BASE_URL}data/${path}`;
 }
 
+// Build id, defined by vite.config.js. Falls back for consumers that run the
+// modules outside a Vite build — the Node test suites import these files
+// directly.
+const BUILD_ID = typeof __BUILD_ID__ === 'string' ? __BUILD_ID__ : 'dev';
+
+/**
+ * URL for the catalogue, tagged with the build id.
+ *
+ * Every other file is fetched by its plain path and may cache freely. The
+ * catalogue may not: it is what tells the app which cities are published, it
+ * never changes within a session, and it sits at a stable URL — so a copy
+ * cached from an earlier deploy makes newly published cities read as "not
+ * published" long after they went live.
+ */
+export function catalogueUrl() {
+  return `${dataUrl(CATALOGUE_PATH)}?v=${BUILD_ID}`;
+}
+
 // Coordinates are [lon, lat] throughout the Atlas, matching GeoJSON and
 // MapLibre. The upstream CDI manifest uses [lat, lon]; converting is the
 // exporter's job, not the reader's.

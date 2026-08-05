@@ -79,19 +79,31 @@ design/         The original Claude Design handoff — see below
 
 ## Maps
 
-The Atlas draws its **own basemap**: a paper background, a graticule and
-simplified Natural Earth land polygons bundled at
-`public/data/world-land.geojson`. No tile server, no API key, works offline, and
-it matches the design's palette exactly.
+**World maps** draw the Atlas's own basemap: a paper background, a graticule
+and simplified Natural Earth land polygons bundled at
+`public/data/world-land.geojson`. No tile server, no API key, works offline,
+and it matches the design's palette exactly.
 
-To use a hosted basemap instead, set either variable and rebuild:
+**City maps** draw raster tiles underneath instead — CARTO Positron by
+default, muted toward the paper palette. Natural Earth 110m has nothing to say
+at city zoom, so without them a cell mesh floats on a blank field with no
+streets or place names to locate it against. Attribution is rendered by
+MapLibre's own control, as the licence requires.
 
 ```bash
-VITE_MAP_STYLE=https://…/style.json        # a full MapLibre style
-VITE_TILE_URL=https://…/{z}/{x}/{y}.png    # raster tiles, auto-tinted to paper
-VITE_TILE_ATTRIBUTION="© …"                # required with VITE_TILE_URL
+VITE_TILE_URL=none                         # no third-party tiles anywhere
+VITE_TILE_URL=https://…/{z}/{x}/{y}.png    # a different raster provider
+VITE_TILE_ATTRIBUTION="© …"                # the credit shown with them
+VITE_MAP_STYLE=https://…/style.json        # a full MapLibre style, overrides both
 VITE_BASE=/access-atlas/                   # serve from a sub-path
 ```
+
+The deploy workflow sets `VITE_TILE_URL` explicitly, so switching provider or
+turning tiles off for the published site is a one-line change in
+`.github/workflows/pages.yml`. **CI builds with `VITE_TILE_URL=none`**: the
+browser suites assert on console and network errors, and a test that fails when
+a CDN is unreachable is testing the CDN. Build the same way before running them
+locally.
 
 Layers are declarative — `<AtlasMap>` owns the map, `<GeoJSONLayer>` children
 add a source and a layer and keep them in sync with props. A platform's colours,

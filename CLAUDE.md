@@ -125,6 +125,15 @@ data URL built as `/data/data/index.json`. Both produced a working-looking page
 that quietly rendered synthetic data. Never conclude a path is right because
 nothing 404'd — assert on what was *fetched*.
 
+**A cached catalogue mislabels published cities as unpublished.**
+`index.json` decides what is published and sits at a stable URL, so a returning
+visitor was served the previous deploy's copy — Milan's 15minCity and
+CityChrone layers read "Not published" on a site where both were live. It is
+now fetched as `index.json?v=<build id>` (`catalogueUrl()`, id defined in
+`vite.config.js`); the datasets it points at still cache freely. If a symptom
+is "the deployed site disagrees with `public/data/`", suspect the cache before
+the code.
+
 **The seed data reproduces the real Rome figures.** The generated mesh was
 calibrated to match 8,089 cells and 12.9/2.7/1.4/83.0. Any test that checks
 those values passes whether the real file loaded or not. Tests on this data
@@ -133,6 +142,20 @@ not values.
 
 **`pkill -f "vite preview"` kills the calling shell** (exit 144). Expected, not
 a failure.
+
+**A decorative source must never gate the data layers.** `AtlasMap` mounts its
+children only once the map is ready, and readiness used to wait on MapLibre's
+`load` — which waits for *every* source, including the raster basemap. With
+the tile host slow or blocked, `load` never fired, so the mesh was never added
+and the map rendered blank while the panel showed correct figures. Readiness
+now also fires on `styledata` once `isStyleLoaded()`, which is all a child
+needs. Check this whenever a new source joins the style.
+
+**The suites run with `VITE_TILE_URL=none`.** City maps draw third-party
+tiles, and a test that fails when a CDN is unreachable is testing the CDN. CI
+builds with tiles off; the Pages workflow builds with them on. Chromium's own
+`net::ERR_*` console errors are not something the app can suppress, so this is
+a build flag rather than a filter in `smoke.mjs`.
 
 **GitHub Pages deep links return HTTP 404 with a rendered page.** Inherent to
 the `404.html` fallback. Users see the right page; crawlers and uptime checks
@@ -157,7 +180,8 @@ was built from. Run it after any data change — it catches in seconds what the
 browser suites take minutes to reach.
 
 Playwright is deliberately **not** a dependency; CI installs it on the fly.
-Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`.
+Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
+`VITE_TILE_URL=none` first so no check depends on the tile CDN.
 
 ## Copy and i18n
 

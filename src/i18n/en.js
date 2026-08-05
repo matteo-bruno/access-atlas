@@ -62,6 +62,8 @@ export default {
       title: 'A single map of access, four lenses.',
       hint: 'hover any platform to preview',
       badge: 'Published coverage · {count} cities',
+      combined:
+        'Where every platform has been exported onto one shared grid, the four lenses become layers of a single map:',
       legend: {
         opportunity: 'Opportunity',
         proximity: 'Proximity',
