@@ -16,6 +16,9 @@ export const TEAM = [
   { name: 'Hygor P. M. Melo', roleKey: 'consultant' },
   { name: 'Federica Fanelli', roleKey: 'sapienzaPhd' },
   { name: 'Shirui Zhou', roleKey: 'visitingPhd' },
+  { name: 'Milena Di Canio', roleKey: 'communications' },
+  { name: 'Elisabetta Falivene', roleKey: 'developer' },
+  { name: 'Cinzia Di Salvio', roleKey: 'admin' },
   { name: null, roleKey: 'hiring', isJoin: true },
 ];
 
