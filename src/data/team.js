@@ -1,15 +1,34 @@
 // Sustainable Cities team, Sony CSL Rome. `roleKey` indexes contact.roles in
-// the dictionaries so job titles translate; names and addresses do not.
+// the dictionaries so job titles translate; names do not.
+//
+// The English role labels are agent nouns ("Researcher"); the Italian ones name
+// the function instead ("Ricerca", "Dottorato"). Italian agent nouns agree in
+// gender with the person, and a shared translation key cannot know anyone's
+// gender — naming the function sidesteps that rather than guessing.
 
 export const TEAM = [
-  { name: 'Vittorio Loreto', roleKey: 'director', email: 'vittorio.loreto@sony.com' },
-  { name: 'Bernardo Monechi', roleKey: 'senior', email: 'bernardo.monechi@sony.com' },
-  { name: 'Riccardo Di Clemente', roleKey: 'senior', email: 'riccardo.diclemente@sony.com' },
-  { name: 'Matteo Bruno', roleKey: 'pov', email: 'matteo.bruno@sony.com' },
-  { name: 'Hygor P. M. Melo', roleKey: 'fifteen', email: 'hygor.melo@sony.com' },
-  { name: 'Indaco Biazzo', roleKey: 'citychrone', email: 'indaco.biazzo@sony.com' },
-  { name: 'Lorenzo Campanelli', roleKey: 'cardep', email: 'lorenzo.campanelli@sony.com' },
-  { name: null, roleKey: 'hiring', email: 'careers@sony.com', isJoin: true },
+  { name: 'Vittorio Loreto', roleKey: 'director' },
+  { name: 'Lavinia Rossi Mori', roleKey: 'assistant' },
+  { name: 'Bruno Campanelli', roleKey: 'consultant' },
+  { name: 'Matteo Bruno', roleKey: 'associate' },
+  { name: 'Michele Avalle', roleKey: 'sapienzaResearcher' },
+  { name: 'Riccardo Basilone', roleKey: 'sapienzaPhd' },
+  { name: 'Hygor P. M. Melo', roleKey: 'consultant' },
+  { name: 'Federica Fanelli', roleKey: 'sapienzaPhd' },
+  { name: 'Shirui Zhou', roleKey: 'visitingPhd' },
+  { name: null, roleKey: 'hiring', isJoin: true },
+];
+
+export const FORMER_MEMBERS = [
+  { name: 'Francesco Marzolla', roleKey: 'phd' },
+  { name: 'Francesco Zimmaro', roleKey: 'master' },
+  { name: 'Bernardo Monechi', roleKey: 'researcher' },
+  { name: 'Claudio Chiappetta', roleKey: 'phd' },
+  { name: 'Gabriele Rossi', roleKey: 'master' },
+  { name: 'Andrea Guizzo', roleKey: 'visitingPhd' },
+  { name: 'Indaco Biazzo', roleKey: 'researcher' },
+  { name: 'Enrico Ubaldi', roleKey: 'researcher' },
+  { name: 'Riccardo Di Clemente', roleKey: 'visitingResearcher' },
 ];
 
 export const CONTACT = {

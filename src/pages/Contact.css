@@ -77,7 +77,7 @@
 
 .aa-team__row {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1.35fr;
+  grid-template-columns: 1.15fr 1fr auto;
   gap: 10px;
   align-items: center;
   padding: 14px 18px;
@@ -107,14 +107,14 @@
   color: var(--ink-3);
 }
 
-.aa-team__email {
+.aa-team__link {
   font-size: 11px;
   color: var(--ink-2);
   text-align: right;
   white-space: nowrap;
 }
 
-.aa-team__email:hover {
+.aa-team__link:hover {
   color: var(--magenta);
 }
 
@@ -153,9 +153,23 @@
     gap: 2px;
   }
 
-  .aa-team__email {
+  .aa-team__link {
     text-align: left;
     white-space: normal;
     overflow-wrap: anywhere;
   }
+}
+
+/* Former members: same table, quieter, so the current team reads first. */
+.aa-contact__former {
+  margin-top: 34px;
+}
+
+.aa-team--former .aa-team__name {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.aa-team--former .aa-team__row {
+  padding: 11px 18px;
 }

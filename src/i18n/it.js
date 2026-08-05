@@ -328,16 +328,24 @@ export default {
     addressValue:
       'Sony Computer Science Laboratories — Roma\nIniziativa congiunta con Sapienza Università di Roma\nPiazzale Aldo Moro, 5 — 00185 Roma, IT',
     teamTitle: 'Il team',
+    // Italian names the function rather than the person, so the label does
+    // not have to agree in gender with someone we cannot ask.
     roles: {
-      director: 'Direttore · Principal Investigator',
-      senior: 'Ricercatore senior',
-      pov: 'Ricercatore · P.O.V.',
-      fifteen: 'Ricercatore · 15min-City',
-      citychrone: 'Ricercatore · CityChrone',
-      cardep: 'Ricercatore · Car Dependency',
+      director: 'PI e direzione',
+      assistant: 'Assistente di ricerca',
+      associate: 'Ricerca associata',
+      consultant: 'Consulenza e ricerca',
+      sapienzaResearcher: 'Ricerca, Sapienza',
+      sapienzaPhd: 'Dottorato, Sapienza',
+      visitingPhd: 'Dottorato in visita',
+      phd: 'Dottorato',
+      master: 'Tesi magistrale',
+      researcher: 'Ricerca',
+      visitingResearcher: 'Ricerca in visita',
       hiring: 'Lavora con noi',
     },
     joinName: 'Tu?',
+    formerTitle: 'Membri passati',
   },
 
   research: {
@@ -352,6 +360,7 @@ export default {
     datasetsHint: 'CC BY-NC 4.0 · MIT',
     citeTitle: 'Come citare l’Atlante',
     inPreparation: 'In preparazione',
+    preprint: 'Preprint',
     columns: { dataset: 'Dataset', coverage: 'Copertura', format: 'Formato', licence: 'Licenza' },
   },
 

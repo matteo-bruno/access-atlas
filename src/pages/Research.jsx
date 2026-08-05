@@ -33,42 +33,46 @@ export default function Research() {
             title={t('research.papersTitle')}
             hint={t('research.papersHint')}
           />
-          <div className="aa-papers">
-            {PAPERS.map((paper) => {
-              const platform = PLATFORMS_BY_ID[paper.platform];
+          {/* Fifteen papers is a bibliography, not a card wall: a list reads
+              faster and keeps the year visible as the organising axis. */}
+          <ol className="aa-card aa-biblio">
+            {PAPERS.map((paper, index) => {
+              const platform = paper.platform ? PLATFORMS_BY_ID[paper.platform] : null;
+              const previous = PAPERS[index - 1];
+              const newYear = !previous || previous.year !== paper.year;
+
               return (
-                <article key={paper.id} className="aa-card aa-lift aa-paper">
-                  <div className="aa-paper__kicker">
-                    <span className="aa-dot" style={{ background: platform.accent }} />
-                    <span>{platform.name}</span>
+                <li key={paper.id} className="aa-biblio__row">
+                  <div className="aa-mono aa-biblio__year">{newYear ? paper.year : ''}</div>
+                  <div className="aa-biblio__body">
+                    <h3 className="aa-biblio__title">
+                      {paper.url ? (
+                        <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                          {paper.title}
+                        </a>
+                      ) : (
+                        paper.title
+                      )}
+                    </h3>
+                    <div className="aa-biblio__authors">{paper.authors}</div>
+                    <div className="aa-biblio__meta">
+                      <span>{paper.venue}</span>
+                      {paper.preprint && (
+                        <span className="aa-biblio__tag">{t('research.preprint')}</span>
+                      )}
+                      {platform && (
+                        <span className="aa-biblio__platform">
+                          <span className="aa-dot aa-dot--sm" style={{ background: platform.accent }} />
+                          {platform.name}
+                        </span>
+                      )}
+                      {paper.doi && <span className="aa-mono aa-biblio__doi">doi:{paper.doi}</span>}
+                    </div>
                   </div>
-                  {paper.inPreparation ? (
-                    <>
-                      <h3 className="aa-paper__title aa-paper__title--pending">
-                        {t('research.inPreparation')}
-                      </h3>
-                      <div className="aa-paper__meta">—</div>
-                    </>
-                  ) : (
-                    <>
-                      <h3 className="aa-paper__title">
-                        {paper.url ? (
-                          <a href={paper.url} target="_blank" rel="noreferrer noopener">
-                            {paper.title}
-                          </a>
-                        ) : (
-                          paper.title
-                        )}
-                      </h3>
-                      <div className="aa-paper__meta">
-                        {paper.authors} · {paper.venue} · {paper.year}
-                      </div>
-                    </>
-                  )}
-                </article>
+                </li>
               );
             })}
-          </div>
+          </ol>
         </section>
 
         <section className="aa-shell aa-block">

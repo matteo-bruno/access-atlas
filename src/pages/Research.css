@@ -130,3 +130,94 @@
     gap: 4px;
   }
 }
+
+/* ── Bibliography ─────────────────────────────────────────────── */
+
+.aa-biblio {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.aa-biblio__row {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.aa-biblio__row:last-child {
+  border-bottom: 0;
+}
+
+/* The year only prints on the first paper of each year, so the column reads
+   as a spine rather than a repeated column of identical numbers. */
+.aa-biblio__year {
+  font-size: 13px;
+  color: var(--ink-3);
+  padding-top: 2px;
+}
+
+.aa-biblio__title {
+  margin: 0 0 5px;
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.aa-biblio__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aa-biblio__title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aa-biblio__authors {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.aa-biblio__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-top: 7px;
+  font-size: 12.5px;
+  color: var(--ink-3);
+}
+
+.aa-biblio__platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aa-biblio__tag {
+  padding: 1px 7px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-biblio__doi {
+  font-size: 11.5px;
+  color: var(--ink-4);
+}
+
+@media (max-width: 700px) {
+  .aa-biblio__row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 18px;
+  }
+}

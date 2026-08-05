@@ -3,7 +3,7 @@ import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { useI18n } from '../i18n/index.jsx';
-import { CONTACT, TEAM } from '../data/team.js';
+import { CONTACT, FORMER_MEMBERS, TEAM } from '../data/team.js';
 import './Contact.css';
 
 export default function Contact() {
@@ -49,26 +49,36 @@ export default function Contact() {
         <section className="aa-contact__team">
           <Eyebrow>{t('contact.teamTitle')}</Eyebrow>
           <div className="aa-card aa-team">
-            {TEAM.map((member) => {
-              const name = member.isJoin ? t('contact.joinName') : member.name;
-              return (
-                <div key={member.email} className={`aa-team__row${member.isJoin ? ' aa-team__row--join' : ''}`}>
-                  <div className="aa-team__name">{name}</div>
-                  <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
-                  {/* The join row points at the page that says what is
-                      actually open, rather than a mailto for no vacancy. */}
-                  {member.isJoin ? (
-                    <Link className="aa-mono aa-team__email" to="/work-with-us">
-                      {t('footer.workCta')}
-                    </Link>
-                  ) : (
-                    <a className="aa-mono aa-team__email" href={`mailto:${member.email}`}>
-                      {member.email}
-                    </a>
-                  )}
+            {TEAM.map((member) => (
+              <div
+                key={member.name ?? 'join'}
+                className={`aa-team__row${member.isJoin ? ' aa-team__row--join' : ''}`}
+              >
+                <div className="aa-team__name">
+                  {member.isJoin ? t('contact.joinName') : member.name}
                 </div>
-              );
-            })}
+                <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
+                {/* The join row points at the page that says what is actually
+                    open, rather than a mailto for no vacancy. */}
+                {member.isJoin && (
+                  <Link className="aa-mono aa-team__link" to="/work-with-us">
+                    {t('footer.workCta')}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="aa-contact__former">
+            <Eyebrow>{t('contact.formerTitle')}</Eyebrow>
+            <div className="aa-card aa-team aa-team--former">
+              {FORMER_MEMBERS.map((member) => (
+                <div key={member.name} className="aa-team__row">
+                  <div className="aa-team__name">{member.name}</div>
+                  <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
