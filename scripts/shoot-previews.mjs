@@ -13,7 +13,21 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
+
+// Playwright is deliberately not a dependency — only this script and the smoke
+// suites need a browser. Imported dynamically so a missing install explains
+// itself rather than failing as a module-resolution error.
+let chromium;
+try {
+  ({ chromium } = await import('playwright'));
+} catch {
+  console.error(
+    '\n  Playwright is not installed. It is not a project dependency — only\n' +
+      '  this script and the smoke suites need a browser:\n\n' +
+      '      npm install --no-save playwright && npx playwright install chromium\n',
+  );
+  process.exit(1);
+}
 
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 const OUT = path.join(process.cwd(), 'src', 'assets', 'platforms');

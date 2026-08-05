@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { Icon } from './Icon.jsx';
 import { Logo } from './Logo.jsx';
 import { useI18n } from '../i18n/index.jsx';
-import { PLATFORMS } from '../data/platforms.js';
 import './Nav.css';
 
 const GITHUB_URL = 'https://github.com/sony-csl-rome';
@@ -15,7 +14,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
 
   const items = [
     { key: 'atlas', to: '/', label: t('nav.atlas') },
-    { key: 'platforms', to: `/platforms/${PLATFORMS[0].slug}`, label: t('nav.platforms') },
+    { key: 'platforms', to: '/platforms', label: t('nav.platforms') },
     { key: 'research', to: '/research', label: t('nav.research') },
     { key: 'blog', to: '/blog', label: t('nav.blog') },
     { key: 'faq', to: '/faq', label: t('nav.faq') },

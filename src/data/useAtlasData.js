@@ -7,7 +7,8 @@ import { citiesFromPublished } from './adapters.js';
 import { publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
-import { citiesForPlatform } from './cities.js';
+import { CITIES, citiesForPlatform } from './cities.js';
+import { PLATFORMS } from './platforms.js';
 
 /**
  * City coverage for a platform's world map and search.
@@ -50,6 +51,75 @@ export function useCityCoverage(platform) {
     cities: published ?? seed,
     source: published ? 'published' : 'seed',
   };
+}
+
+/**
+ * Every published city across all four platforms, merged by id, with the list
+ * of platforms that cover each. Drives the all-platforms world map, where the
+ * readable quantity is how many of the four lenses a city has.
+ *
+ * Falls back to the seed list only if no platform publishes coverage at all —
+ * a partially published Atlas shows what is real rather than mixing the two.
+ *
+ * @returns {{ cities: object[], source: 'published'|'seed' }}
+ */
+export function useAllCoverage() {
+  const [published, setPublished] = useState(null);
+  const seed = useMemo(
+    () => CITIES.map((city) => ({ ...city, platforms: [], platformCount: 1 })),
+    [],
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        const merged = new Map();
+
+        for (const platform of PLATFORMS) {
+          let collection = null;
+          try {
+            collection = await provider.coverage(platform.id, catalogue, {
+              signal: controller.signal,
+            });
+          } catch (error) {
+            if (error?.name === 'AbortError') return;
+          }
+          if (!collection) continue;
+          for (const city of citiesFromPublished(collection)) {
+            const existing = merged.get(city.id);
+            if (existing) {
+              // Keep the first platform's figures; only the platform list and
+              // the count are merged. Mixing per-platform measures into one
+              // record would invent a city-level number no file states.
+              existing.platforms.push(platform.id);
+              existing.platformCount = existing.platforms.length;
+            } else {
+              merged.set(city.id, { ...city, platforms: [platform.id], platformCount: 1 });
+            }
+          }
+        }
+
+        if (cancelled || merged.size === 0) return;
+        setPublished([...merged.values()]);
+      } catch (error) {
+        if (error?.name !== 'AbortError' && import.meta.env.DEV) {
+          console.info('[data] merged coverage unavailable', error.message);
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, []);
+
+  return { cities: published ?? seed, source: published ? 'published' : 'seed' };
 }
 
 /**

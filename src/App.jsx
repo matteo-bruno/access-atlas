@@ -31,6 +31,8 @@ export default function App() {
       <Suspense fallback={<div className="aa-page" />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* Without a slug: every published city across the four platforms. */}
+          <Route path="/platforms" element={<PlatformLanding />} />
           <Route path="/platforms/:slug" element={<PlatformLanding />} />
           <Route path="/platforms/:slug/:cityId" element={<CityPage />} />
           {/* The combined viewer: one city, all four visualisations. Layer

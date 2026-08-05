@@ -3,7 +3,9 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
+import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
+import { RAMPS, rampColor } from '../map/ramps.js';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
@@ -47,11 +49,15 @@ function CityScreen({ platform, profile }) {
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
 
-  // P.O.V. classifies cells into named zones; Car Dependency cuts a continuous
-  // index into bands. Both arrive as `zone` 0–3, so one panel serves both —
-  // only the labels, colours and descriptions differ.
+  // P.O.V. classifies cells into four named zones — genuinely categorical, so
+  // it keeps discrete colours, a share per zone and zone isolation. Car
+  // Dependency is a continuous index and is coloured by interpolation; its
+  // `zone` band survives only as the scatter's colouring, which needs a
+  // discrete hue per point.
+  const isCdi = platform.id === 'cardep';
+
   const bands = useMemo(() => {
-    if (platform.id === 'cardep') {
+    if (isCdi) {
       const labels = t('platform.cardep.legend');
       return platform.scale.map((color, index) => ({
         id: `cdi-${index}`,
@@ -66,24 +72,29 @@ function CityScreen({ platform, profile }) {
       name: t(`city.zones.${zone.key}.name`),
       desc: t(`city.zones.${zone.key}.desc`),
     }));
-  }, [platform, t]);
+  }, [isCdi, platform, t]);
 
-  const fillPaint = useMemo(
-    () => ({
+  const fillPaint = useMemo(() => {
+    if (isCdi) {
+      return {
+        'fill-color': rampColor(RAMPS.cdi, ['coalesce', ['get', 'cdi'], 0]),
+        // Short of opaque, so the basemap reads through the cartogram.
+        'fill-opacity': ['case', ['has', 'cdi'], 0.8, 0],
+      };
+    }
+    return {
       'fill-color': [
         'match',
         ['get', 'zone'],
         ...bands.flatMap((band, index) => [index, band.color]),
         bands[bands.length - 1].color,
       ],
-      // Short of opaque, so the basemap reads through the cartogram.
       'fill-opacity':
         activeZone == null
           ? 0.8
           : ['case', ['==', ['get', 'zone'], activeZone], 0.95, 0.14],
-    }),
-    [activeZone, bands],
-  );
+    };
+  }, [isCdi, activeZone, bands]);
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
@@ -131,9 +142,13 @@ function CityScreen({ platform, profile }) {
       <main className="aa-main aa-city" id="main">
         {/* ── Zone panel ───────────────────────────────────────── */}
         <aside className="aa-city__panel">
-          <Eyebrow>
-            {platform.id === 'cardep' ? t('platform.cardep.legendUnit') : t('city.zoneType')}
-          </Eyebrow>
+          <Eyebrow>{isCdi ? t('platform.cardep.legendUnit') : t('city.zoneType')}</Eyebrow>
+          {isCdi ? (
+            <>
+              <RampLegend ramp={RAMPS.cdi} format={(v) => (v === 0 ? '0' : formatIndex(v, n))} />
+              <p className="aa-city__hint">{t('city.cdiHint')}</p>
+            </>
+          ) : (
           <div className="aa-zones">
             {bands.map((zone, index) => {
               const share = stats?.zoneShares[index];
@@ -167,6 +182,7 @@ function CityScreen({ platform, profile }) {
               );
             })}
           </div>
+          )}
 
           <div className="aa-city__summary">
             <Eyebrow>{t('city.summary.title')}</Eyebrow>
@@ -175,7 +191,7 @@ function CityScreen({ platform, profile }) {
                 label={t('city.summary.hexagons')}
                 value={stats ? n(stats.cellCount) : '—'}
               />
-              {platform.id === 'cardep' ? (
+              {isCdi ? (
                 <>
                   <SummaryRow
                     label={t('city.summary.medianCdi')}
@@ -275,7 +291,7 @@ function CityScreen({ platform, profile }) {
         {/* ── Scatter ──────────────────────────────────────────── */}
         <section className="aa-city__scatter">
           <Eyebrow>
-            {platform.id === 'cardep' ? t('city.scatterCdi.title') : t('city.scatter.title')}
+            {isCdi ? t('city.scatterCdi.title') : t('city.scatter.title')}
           </Eyebrow>
           <div className="aa-city__plot">
             {status === 'ready' && (
@@ -287,7 +303,7 @@ function CityScreen({ platform, profile }) {
                 hoverCell={hoverCell}
                 onHoverCell={setHoverCell}
                 labels={
-                  platform.id === 'cardep'
+                  isCdi
                     ? {
                         x: t('city.scatterCdi.xAxis'),
                         y: t('city.scatterCdi.yAxis'),

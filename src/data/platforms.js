@@ -132,6 +132,10 @@ export const ZONE_COLORS = ZONES.map((z) => z.color);
 // Atlas-wide dot palette used on the home coverage map.
 export const ATLAS_SCALE = [BRAND.navy, BRAND.cyan, BRAND.magenta];
 
+// The all-platforms world map shades each city by how many of the four
+// platforms have published data for it: index i is a city covered by i + 1.
+export const COVERAGE_SCALE = ['#cfd9da', '#8fb0cc', BRAND.cyan, BRAND.navy];
+
 export function platformBySlug(slug) {
   return PLATFORMS_BY_SLUG[slug] ?? null;
 }
