@@ -5,28 +5,53 @@
       "coverage": "fifteen/coverage.geojson",
       "cities": [
         {
-          "id": "rome",
-          "name": "Rome",
-          "nameIt": "Roma",
+          "id": "milan",
+          "name": "Milan",
+          "nameIt": "Milano",
           "region": "Italy",
           "regionIt": "Italia",
           "center": [
-            12.49337,
-            41.88199
+            9.18876,
+            45.52519
           ],
-          "zoom": 8.5,
-          "population": 2608159,
-          "dataset": "fifteen/rome.geojson",
+          "zoom": 8.6,
+          "population": 3231186,
+          "dataset": "fifteen/milan.geojson",
           "cell": {
-            "h3Resolution": null,
-            "cellRadiusM": 201
+            "h3Resolution": 9,
+            "cellRadiusM": 198
           }
         }
       ]
     },
     "citychrone": {
-      "coverage": null,
-      "cities": []
+      "coverage": "citychrone/coverage.geojson",
+      "cities": [
+        {
+          "id": "milan",
+          "name": "Milan",
+          "nameIt": "Milano",
+          "region": "Italy",
+          "regionIt": "Italia",
+          "center": [
+            9.18876,
+            45.52519
+          ],
+          "zoom": 8.6,
+          "population": 1201023,
+          "dataset": null,
+          "hourly": {
+            "hours": 24,
+            "hexcover": "citychrone/milan/hexcover{hh}.json",
+            "times": "citychrone/milan/times{hh}.npy",
+            "cells": 1741
+          },
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 198
+          }
+        }
+      ]
     },
     "cardep": {
       "coverage": "cardep/coverage.geojson",
@@ -830,5 +855,33 @@
         }
       ]
     }
+  },
+  "atlas": {
+    "cities": [
+      {
+        "id": "milan",
+        "name": "Milan",
+        "nameIt": "Milano",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "center": [
+          9.18876,
+          45.52519
+        ],
+        "zoom": 8.6,
+        "population": 3067071,
+        "dataset": "atlas/milan.geojson",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "layers": [
+          "pov",
+          "cardep",
+          "fifteen",
+          "citychrone"
+        ]
+      }
+    ]
   }
 }

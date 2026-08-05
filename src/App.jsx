@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 // Contact pages entirely.
 const PlatformLanding = lazy(() => import('./pages/PlatformLanding.jsx'));
 const CityPage = lazy(() => import('./pages/CityPage.jsx'));
+const AtlasCityPage = lazy(() => import('./pages/AtlasCityPage.jsx'));
 const FAQ = lazy(() => import('./pages/FAQ.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const Research = lazy(() => import('./pages/Research.jsx'));
@@ -32,6 +33,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/platforms/:slug" element={<PlatformLanding />} />
           <Route path="/platforms/:slug/:cityId" element={<CityPage />} />
+          {/* The combined viewer: one city, all four visualisations. Layer
+              and options ride the query string so any view is linkable. */}
+          <Route path="/atlas/:cityId" element={<AtlasCityPage />} />
           <Route path="/research" element={<Research />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

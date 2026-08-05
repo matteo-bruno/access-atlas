@@ -191,6 +191,10 @@ export function AtlasMap({
  * @param {Function} [props.onClick] (feature, event) => void
  * @param {Function} [props.onHover] (feature | null, event) => void
  * @param {Function} [props.tooltip] feature => string, rendered in a popup
+ * @param {Map}      [props.featureState] feature id → state object, applied
+ *                   via setFeatureState so paint can read values the GeoJSON
+ *                   does not carry (e.g. hourly scores joined at runtime).
+ *                   Pass a new Map to swap the whole set; null clears it.
  */
 export function GeoJSONLayer({
   id,
@@ -204,6 +208,7 @@ export function GeoJSONLayer({
   tooltip,
   interactive = true,
   promoteId,
+  featureState,
 }) {
   const ctx = useAtlasMap();
   const map = ctx?.map;
@@ -259,6 +264,22 @@ export function GeoJSONLayer({
     map.setFilter(layerId, filter ?? null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, layerId, JSON.stringify(filter)]);
+
+  // Feature-state updates. State survives setData, so a repaint driven from
+  // here never forces the source to reload.
+  useEffect(() => {
+    if (!map || !map.getSource(sourceId)) return undefined;
+    if (featureState) {
+      for (const [featureId, state] of featureState) {
+        map.setFeatureState({ source: sourceId, id: featureId }, state);
+      }
+    }
+    return () => {
+      if (map.getStyle() && map.getSource(sourceId)) {
+        map.removeFeatureState({ source: sourceId });
+      }
+    };
+  }, [map, sourceId, featureState]);
 
   // Pointer interaction.
   useEffect(() => {

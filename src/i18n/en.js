@@ -46,9 +46,9 @@ export default {
       items: {
         pov: 'The dimensions of accessibility — EPJ Data Science',
         cdi: 'Car Dependency Index — {count} cities published',
-        fifteen: '15min-City — Rome published, ten service categories',
+        atlas: 'Combined viewer — Milan published on one shared grid, all four platforms',
       },
-      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Jan 2026' },
+      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', atlas: 'Aug 2026' },
     },
     metrics: {
       cities: 'Cities published',
@@ -193,20 +193,14 @@ export default {
     mapTitle: 'Travel time to services',
     minutes: 'min',
     legendValue: 'Minutes to reach',
-    legendDiff: 'Difference vs. ideal city',
     statusHint:
       'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
     controls: {
       mode: 'Mode',
       category: 'Service category',
-      view: 'View',
     },
     modes: { foot: 'On foot', bike: 'By bicycle' },
-    views: { value: 'Measured', diff: 'vs. ideal city' },
-    viewHint: {
-      value: 'Average travel time from each cell to the nearest services in this category.',
-      diff: 'Minutes above or below the ideal-city scenario. Negative means the real city already does better.',
-    },
+    hint: 'Average travel time from each cell to the nearest services in this category.',
     summary: { median: 'Median travel time' },
     categories: {
       average: 'Average across all services',
@@ -220,6 +214,46 @@ export default {
       services: 'Services',
       healthcare: 'Healthcare',
     },
+  },
+
+  // The combined viewer: one city, a switch between the four platforms'
+  // visualisations.
+  atlas: {
+    label: 'Combined view',
+    mapTitle: 'Measured by {name}',
+    controls: {
+      layer: 'Visualisation',
+      view: 'Measure',
+      hour: 'Time of day',
+    },
+    views: {
+      velocity: 'Velocity',
+      sociality: 'Sociality',
+      isochrone: 'Isochrones',
+    },
+    viewHint: {
+      velocity:
+        'How fast public transport moves you outward from each cell at this hour — a km/h-like score.',
+      sociality:
+        'How many people public transport puts within reach of each cell at this hour — a score, not a headcount.',
+      isochrone: 'Travel time by public transport from one chosen cell to everywhere else.',
+    },
+    legend: {
+      velocity: 'Velocity score (km/h)',
+      sociality: 'Sociality score',
+      isochrone: 'Minutes from the selected cell',
+    },
+    summary: { weightedV: 'Velocity for the average resident' },
+    layerCells: 'Cells measured by {name}',
+    isochroneEmpty: 'Click a cell to draw travel times from it',
+    unavailable: 'Not published',
+    noValue: 'Not measured for this cell',
+    openPlatform: '{name} page',
+    statusHint:
+      'One grid, four measurements — switching layers repaints the same cells · scroll & drag to navigate',
+    legacyHint:
+      'This city is not yet exported on the shared grid — each visualisation loads that platform’s own mesh.',
+    error: 'The published mesh could not be loaded.',
   },
 
   city: {

@@ -24,7 +24,7 @@ export const PLATFORMS = [
     accent: '#b94e3b',
     url: 'https://whatif.sonycsl.it/15mincity',
     // City whose mesh the home-page card falls back to when it has no still.
-    previewCity: 'rome',
+    previewCity: 'milan',
     cityCount: 1,
     published: true,
     hasCityPages: true,
@@ -55,10 +55,13 @@ export const PLATFORMS = [
     themeKey: 'opportunity',
     accent: BRAND.navy,
     url: 'https://whatif.sonycsl.it/citychrone',
-    cityCount: 0,
-    published: false,
+    cityCount: 1,
+    published: true,
+    // No per-platform city pages: the combined viewer (/atlas/:cityId) is
+    // CityChrone's city-level view, so its landing map routes there.
     scale: ['#d9dfe9', BRAND.cyan, BRAND.navy],
-    stops: [0.34, 0.67, 1],
+    // Published velocity scores are km/h-like, roughly 0–8 in Milan.
+    stops: [3, 5, 8],
     property: 'velocityScore',
     markerStyle: 'dot',
     coversAllCities: false,

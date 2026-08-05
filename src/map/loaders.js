@@ -1,8 +1,9 @@
 // Dataset loading for the Atlas maps.
 //
 // Everything downstream speaks GeoJSON, so this module is the single place that
-// knows about wire formats. Today that means GeoJSON and zipped shapefiles;
-// adding FlatGeobuf or PMTiles later means adding one branch here.
+// knows about wire formats. Today that means GeoJSON, zipped shapefiles and
+// NumPy .npy matrices (CityChrone's travel times); adding FlatGeobuf or
+// PMTiles later means adding one branch here.
 
 const cache = new Map();
 
@@ -69,25 +70,78 @@ export async function loadShapefile(url, { signal } = {}) {
   return assertFeatureCollection(parsed, url);
 }
 
+/**
+ * Load a NumPy .npy file — CityChrone publishes its hourly travel-time
+ * matrices this way (uint8 minutes, cells × cells). Only the formats those
+ * files actually use are read: version 1.0 headers, C order, uint8. Returns
+ * `{ shape, data }` with `data` a flat Uint8Array in row-major order.
+ */
+export async function loadNpy(url, { signal } = {}) {
+  const response = await fetch(url, { signal });
+  if (!response.ok) {
+    throw new DatasetError(`${response.status} ${response.statusText}`, { url });
+  }
+  const buffer = await response.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+
+  // Magic: \x93NUMPY, then major/minor version, then a little-endian header
+  // length (2 bytes in v1, 4 in v2+) and a Python-dict header padded to it.
+  const magic = String.fromCharCode(...bytes.slice(1, 6));
+  if (bytes[0] !== 0x93 || magic !== 'NUMPY') {
+    throw new DatasetError('Not a .npy file', { url });
+  }
+  const major = bytes[6];
+  const view = new DataView(buffer);
+  const headerLength = major >= 2 ? view.getUint32(8, true) : view.getUint16(8, true);
+  const headerStart = major >= 2 ? 12 : 10;
+  const header = new TextDecoder('latin1').decode(
+    bytes.slice(headerStart, headerStart + headerLength),
+  );
+
+  if (!/'descr':\s*'\|u1'/.test(header)) {
+    throw new DatasetError(`Unsupported .npy dtype in ${header}`, { url });
+  }
+  if (/'fortran_order':\s*True/.test(header)) {
+    throw new DatasetError('Fortran-ordered .npy is not supported', { url });
+  }
+  const shapeMatch = header.match(/'shape':\s*\(([^)]*)\)/);
+  if (!shapeMatch) throw new DatasetError('No shape in .npy header', { url });
+  const shape = shapeMatch[1]
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map(Number);
+
+  const expected = shape.reduce((a, b) => a * b, 1);
+  const data = bytes.slice(headerStart + headerLength);
+  if (data.length < expected) {
+    throw new DatasetError(`.npy holds ${data.length} bytes, shape needs ${expected}`, { url });
+  }
+  return { shape, data: data.subarray(0, expected) };
+}
+
 function formatFor(url, explicit) {
   if (explicit) return explicit;
   const path = url.split('?')[0].toLowerCase();
   if (path.endsWith('.zip') || path.endsWith('.shp')) return 'shapefile';
+  if (path.endsWith('.npy')) return 'npy';
   return 'geojson';
 }
+
+const LOADERS = { geojson: loadGeoJSON, shapefile: loadShapefile, npy: loadNpy };
 
 /**
  * Load a dataset by descriptor, with an in-memory cache keyed on the URL so
  * revisiting a platform does not refetch.
  *
- * @param {{ url: string, format?: 'geojson'|'shapefile' }} descriptor
+ * @param {{ url: string, format?: 'geojson'|'shapefile'|'npy' }} descriptor
  */
 export async function loadDataset(descriptor, { signal, cache: useCache = true } = {}) {
   const { url } = descriptor;
   if (useCache && cache.has(url)) return cache.get(url);
 
   const format = formatFor(url, descriptor.format);
-  const promise = (format === 'shapefile' ? loadShapefile : loadGeoJSON)(url, { signal }).catch(
+  const promise = (LOADERS[format] ?? loadGeoJSON)(url, { signal }).catch(
     (error) => {
       cache.delete(url);
       throw error instanceof DatasetError

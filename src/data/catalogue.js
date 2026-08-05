@@ -26,7 +26,11 @@
 // Relative to public/data/ — `dataUrl` supplies the directory.
 export const CATALOGUE_PATH = 'index.json';
 
-export const EMPTY_CATALOGUE = { version: 1, platforms: {} };
+export const EMPTY_CATALOGUE = {
+  version: 1,
+  platforms: {},
+  atlas: { cities: [], citiesById: {} },
+};
 
 /** Absolute URL for a path inside public/data/, honouring the deploy base. */
 export function dataUrl(path) {
@@ -40,6 +44,22 @@ function normaliseCity(raw) {
   if (!raw || typeof raw.id !== 'string') return null;
   const center = Array.isArray(raw.center) && raw.center.length === 2 ? raw.center.map(Number) : null;
   if (!center || center.some((v) => !Number.isFinite(v))) return null;
+
+  // Hourly data (CityChrone): one hexcover/times file pair per hour of day,
+  // referenced as path templates with `{hh}` standing for the zero-padded
+  // hour. `cells` is the row count shared by every hour's matrix.
+  const hourly =
+    raw.hourly &&
+    typeof raw.hourly.hexcover === 'string' &&
+    Number.isFinite(raw.hourly.hours) &&
+    Number.isFinite(raw.hourly.cells)
+      ? {
+          hours: raw.hourly.hours,
+          hexcover: raw.hourly.hexcover,
+          times: typeof raw.hourly.times === 'string' ? raw.hourly.times : null,
+          cells: raw.hourly.cells,
+        }
+      : null;
 
   return {
     id: raw.id,
@@ -59,6 +79,10 @@ function normaliseCity(raw) {
           .filter((s) => s && typeof s.id === 'string' && typeof s.dataset === 'string')
           .map((s) => ({ id: s.id, name: typeof s.name === 'string' ? s.name : s.id, dataset: s.dataset }))
       : [],
+    hourly,
+    // Atlas (combined-viewer) entries list which platform layers their union
+    // mesh carries values for.
+    layers: Array.isArray(raw.layers) ? raw.layers.filter((l) => typeof l === 'string') : null,
     // Cell geometry is metadata the exporter knows and the file cannot state:
     // a population-scaled cartogram's polygons are not the true cell size.
     // Named `cell` rather than `mesh` so it never collides with the seed
@@ -93,7 +117,22 @@ export function normaliseCatalogue(raw) {
     };
   }
 
-  return { version: Number.isFinite(raw.version) ? raw.version : 1, platforms };
+  // The atlas section describes the combined viewer's harmonised cities: one
+  // union mesh per city, every platform's values on the same H3 cells. A city
+  // absent here still gets a combined view — the viewer swaps per-platform
+  // meshes instead of repainting one (the legacy path).
+  const atlasCities = Array.isArray(raw.atlas?.cities)
+    ? raw.atlas.cities.map(normaliseCity).filter(Boolean)
+    : [];
+
+  return {
+    version: Number.isFinite(raw.version) ? raw.version : 1,
+    platforms,
+    atlas: {
+      cities: atlasCities,
+      citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
+    },
+  };
 }
 
 export function platformEntry(catalogue, platformId) {
@@ -103,4 +142,14 @@ export function platformEntry(catalogue, platformId) {
 /** The published profile for a city, or null when it has not been published. */
 export function publishedCity(catalogue, platformId, cityId) {
   return platformEntry(catalogue, platformId)?.citiesById?.[cityId] ?? null;
+}
+
+/** The combined-viewer (union mesh) entry for a city, or null. */
+export function atlasCity(catalogue, cityId) {
+  return catalogue?.atlas?.citiesById?.[cityId] ?? null;
+}
+
+/** Path inside public/data/ for one hour of an hourly dataset. */
+export function hourlyPath(template, hour) {
+  return template.replace('{hh}', String(hour).padStart(2, '0'));
 }

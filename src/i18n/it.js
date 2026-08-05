@@ -39,9 +39,9 @@ export default {
       items: {
         pov: 'The dimensions of accessibility — EPJ Data Science',
         cdi: 'Car Dependency Index — {count} città pubblicate',
-        fifteen: '15min-City — Roma pubblicata, dieci categorie di servizi',
+        atlas: 'Vista combinata — Milano pubblicata su un’unica griglia, tutte e quattro le piattaforme',
       },
-      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', fifteen: 'Gen 2026' },
+      dates: { pov: 'Apr 2026', cdi: 'Feb 2026', atlas: 'Ago 2026' },
     },
     metrics: {
       cities: 'Città pubblicate',
@@ -191,20 +191,14 @@ export default {
     mapTitle: 'Tempo di viaggio verso i servizi',
     minutes: 'min',
     legendValue: 'Minuti per raggiungere',
-    legendDiff: 'Differenza rispetto alla città ideale',
     statusHint:
       'Scegli modo e categoria · passa su una fascia della legenda per isolarla · scorri e trascina per navigare',
     controls: {
       mode: 'Modo',
       category: 'Categoria di servizi',
-      view: 'Vista',
     },
     modes: { foot: 'A piedi', bike: 'In bicicletta' },
-    views: { value: 'Misurato', diff: 'vs. città ideale' },
-    viewHint: {
-      value: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
-      diff: 'Minuti sopra o sotto lo scenario della città ideale. Negativo significa che la città reale fa già meglio.',
-    },
+    hint: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
     summary: { median: 'Tempo di viaggio mediano' },
     categories: {
       average: 'Media su tutti i servizi',
@@ -218,6 +212,47 @@ export default {
       services: 'Servizi',
       healthcare: 'Sanità',
     },
+  },
+
+  // La vista combinata: una città, un interruttore fra le visualizzazioni
+  // delle quattro piattaforme.
+  atlas: {
+    label: 'Vista combinata',
+    mapTitle: 'Misurato da {name}',
+    controls: {
+      layer: 'Visualizzazione',
+      view: 'Misura',
+      hour: 'Ora del giorno',
+    },
+    views: {
+      velocity: 'Velocità',
+      sociality: 'Socialità',
+      isochrone: 'Isocrone',
+    },
+    viewHint: {
+      velocity:
+        'Quanto velocemente il trasporto pubblico ti porta lontano da ogni cella a quest’ora — un punteggio simile a km/h.',
+      sociality:
+        'Quante persone il trasporto pubblico mette a portata di ogni cella a quest’ora — un punteggio, non un conteggio.',
+      isochrone:
+        'Tempo di viaggio in trasporto pubblico da una cella scelta verso tutte le altre.',
+    },
+    legend: {
+      velocity: 'Punteggio di velocità (km/h)',
+      sociality: 'Punteggio di socialità',
+      isochrone: 'Minuti dalla cella selezionata',
+    },
+    summary: { weightedV: 'Velocità per la persona media' },
+    layerCells: 'Celle misurate da {name}',
+    isochroneEmpty: 'Clicca una cella per disegnare i tempi di viaggio da lì',
+    unavailable: 'Non pubblicato',
+    noValue: 'Non misurato per questa cella',
+    openPlatform: 'Pagina {name}',
+    statusHint:
+      'Una griglia, quattro misure — cambiare visualizzazione ricolora le stesse celle · scorri e trascina per navigare',
+    legacyHint:
+      'Questa città non è ancora esportata sulla griglia condivisa — ogni visualizzazione carica la mesh della propria piattaforma.',
+    error: 'La mesh pubblicata non si è potuta caricare.',
   },
 
   city: {

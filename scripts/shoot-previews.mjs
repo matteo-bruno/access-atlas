@@ -5,8 +5,8 @@
 //
 // Each image is a screenshot of that platform's own city view — the cartogram
 // a visitor sees after clicking through — rather than the world map, so the
-// card shows what the platform actually renders. CityChrone has no published
-// city, so its card falls back to a shot of its world coverage map.
+// card shows what the platform actually renders. CityChrone has no page of
+// its own; the combined viewer's CityChrone layer is its city view.
 //
 // Output goes to src/assets/platforms/<id>.jpg at 2× for retina. Home.jsx
 // picks them up by filename; delete one and that card reverts to a live map.
@@ -24,11 +24,18 @@ const H = 320;
 const SCALE = 2;
 
 const SHOTS = [
-  { id: 'fifteen', route: '/platforms/15min-city/rome', target: '.aa-city__canvas' },
+  { id: 'fifteen', route: '/platforms/15min-city/milan', target: '.aa-city__canvas' },
   { id: 'cardep', route: '/platforms/car-dependency-index/rome', target: '.aa-city__canvas' },
   { id: 'pov', route: '/platforms/accessibility-pov/rome', target: '.aa-city__canvas' },
-  // No published city for this platform yet — the world map is what it has.
-  { id: 'citychrone', route: '/platforms/citychrone', target: '.aa-mapstage' },
+  // The camera centres on the metro-wide population centre; CityChrone's
+  // mask is the tighter core south-west of it, so the clip shifts to keep the
+  // mesh in frame. Fractions of the target's width/height.
+  {
+    id: 'citychrone',
+    route: '/atlas/milan?layer=citychrone',
+    target: '.aa-city__canvas',
+    shift: [-0.01, 0.08],
+  },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -63,9 +70,10 @@ for (const shot of SHOTS) {
     const scale = Math.min(box.width / W, box.height / H, 1);
     const w = W * scale;
     const h = H * scale;
+    const [shiftX, shiftY] = shot.shift ?? [0, 0];
     const clip = {
-      x: Math.round(box.x + (box.width - w) / 2),
-      y: Math.round(box.y + (box.height - h) / 2),
+      x: Math.round(box.x + (box.width - w) / 2 + box.width * shiftX),
+      y: Math.round(box.y + (box.height - h) / 2 + box.height * shiftY),
       width: Math.round(w),
       height: Math.round(h),
     };

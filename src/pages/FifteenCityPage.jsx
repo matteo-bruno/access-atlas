@@ -6,27 +6,14 @@ import { Subhead } from '../components/Subhead.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
+import { useAtlasCityIds } from '../data/useAtlasData.js';
 import { summariseMeasure } from '../data/adapters.js';
-import { BANDS, CATEGORIES, DIFF_BANDS, MODES, measureKey } from '../data/fifteen.js';
+import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import './CityPage.css';
 import './FifteenCityPage.css';
 
 const PAPER_URL = 'https://doi.org/10.1140/epjds/s13688-026-00623-8';
 const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
-
-// Diverging ramp for the difference view: blue where the real city already
-// beats the ideal-city scenario, red where it falls short.
-const DIFF_SCALE = [
-  '#2b5f86',
-  '#4a7fb8',
-  '#8fb0cc',
-  '#cfd9da',
-  '#e9c9a3',
-  '#e0a23a',
-  '#d57b66',
-  '#b94e3b',
-  '#8a2c1c',
-];
 
 /**
  * 15minCity's city view. The other two platforms classify each cell once and
@@ -37,18 +24,18 @@ const DIFF_SCALE = [
 export function FifteenCityPage({ platform, profile }) {
   const { t, n, lang } = useI18n();
   const { status, data, source } = useCityMesh(profile, platform.id);
+  const atlasCityIds = useAtlasCityIds();
 
-  const [mode, setMode] = useState('f');
-  const [category, setCategory] = useState('a');
-  const [view, setView] = useState('value');
+  const [mode, setMode] = useState(MODES[0].key);
+  const [category, setCategory] = useState(CATEGORIES[0].key);
   const [activeBand, setActiveBand] = useState(null);
 
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
 
-  const key = measureKey(category, mode, view);
-  const bands = view === 'diff' ? DIFF_BANDS : BANDS[mode];
-  const scale = view === 'diff' ? DIFF_SCALE : platform.scale;
+  const key = measureKey(category, mode);
+  const bands = BANDS[mode];
+  const scale = platform.scale;
 
   const measure = useMemo(
     () => (data?.geojson ? summariseMeasure(data.geojson, key, bands) : null),
@@ -94,6 +81,11 @@ export function FifteenCityPage({ platform, profile }) {
         <Link className="aa-chip aa-chip--active" to={`/platforms/${platform.slug}`}>
           {t('city.worldMap')}
         </Link>
+        {atlasCityIds.has(profile.id) && (
+          <Link className="aa-chip" to={`/atlas/${profile.id}?layer=${platform.id}`}>
+            {t('atlas.label')}
+          </Link>
+        )}
         <a className="aa-chip" href={PAPER_URL} target="_blank" rel="noreferrer noopener">
           {t('platform.paper')}
         </a>
@@ -135,27 +127,10 @@ export function FifteenCityPage({ platform, profile }) {
             </select>
           </label>
 
-          <Eyebrow>{t('fifteen.controls.view')}</Eyebrow>
-          <div className="aa-toggle" role="group" aria-label={t('fifteen.controls.view')}>
-            {['value', 'diff'].map((v) => (
-              <button
-                key={v}
-                type="button"
-                className={`aa-toggle__btn${view === v ? ' aa-toggle__btn--active' : ''}`}
-                aria-pressed={view === v}
-                onClick={() => {
-                  setView(v);
-                  setActiveBand(null);
-                }}
-              >
-                {t(`fifteen.views.${v}`)}
-              </button>
-            ))}
-          </div>
-          <p className="aa-city__hint">{t(`fifteen.viewHint.${view}`)}</p>
+          <p className="aa-city__hint">{t('fifteen.hint')}</p>
 
           {/* ── Legend with the share of cells in each band ───── */}
-          <Eyebrow>{view === 'diff' ? t('fifteen.legendDiff') : t('fifteen.legendValue')}</Eyebrow>
+          <Eyebrow>{t('fifteen.legendValue')}</Eyebrow>
           <div className="aa-bands">
             {bands.map((edge, index) => {
               const share = measure?.shares[index];
@@ -173,7 +148,7 @@ export function FifteenCityPage({ platform, profile }) {
                 >
                   <span className="aa-swatch" style={{ background: scale[index] }} />
                   <span className="aa-bands__label aa-mono">
-                    {bandLabel(bands, index, view, n)}
+                    {bandLabel(bands, index, n)}
                   </span>
                   <span className="aa-mono aa-bands__pct">
                     {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
@@ -284,11 +259,10 @@ function bandFilter(key, bands, index) {
   return ['all', ['>', value, lower], ['<=', value, upper]];
 }
 
-function bandLabel(bands, index, view, n) {
-  const fmt = (v) => (view === 'diff' && v > 0 ? `+${n(v)}` : n(v));
-  if (index === 0) return `≤ ${fmt(bands[0])}`;
-  if (index === bands.length - 1) return `> ${fmt(bands[bands.length - 2])}`;
-  return `${fmt(bands[index - 1])} – ${fmt(bands[index])}`;
+function bandLabel(bands, index, n) {
+  if (index === 0) return `≤ ${n(bands[0])}`;
+  if (index === bands.length - 1) return `> ${n(bands[bands.length - 2])}`;
+  return `${n(bands[index - 1])} – ${n(bands[index])}`;
 }
 
 function formatCoord(value, axes) {
