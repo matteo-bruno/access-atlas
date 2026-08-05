@@ -50,23 +50,43 @@ Adding a city is a file copy plus a catalogue entry. That is the whole design.
 
 ## The grids — read this before building the unified viewer
 
-Three platforms publish Rome. They do **not** share one mesh:
+**Target state: one standard H3 grid per city, shared by every platform.**
+Harmonisation happens **offline**, in the export pipeline, not in the app.
+Milan is the first city being exported this way, across all four platforms.
+The app's job is to render whatever grid the catalogue describes — it does not
+reproject, resample or reconcile anything.
+
+The currently published data is the legacy state, and Rome shows what that
+costs. Measured cell by cell:
 
 | Platform | Rome cells | Grid |
 | --- | --- | --- |
-| P.O.V. | 8,089 | same H3 grid as CDI (99.8% of its cells sit on a CDI cell) |
+| P.O.V. | 8,089 | same H3 grid as CDI — 99.8% of its cells sit on a CDI cell |
 | Car Dependency | 11,409 | same grid, wider urban mask |
-| 15minCity | 11,879 | **a different tiling** — ~8% overlap, i.e. coincidental |
+| 15minCity | 11,879 | **a different tiling** — ~8% overlap, i.e. chance |
 
-So P.O.V. and CDI can share one loaded mesh and switch by repainting. 15minCity
-cannot — switching to it means swapping the mesh. A viewer that toggles
-visualisations has to treat "same grid, different layer" and "different grid"
-as two distinct cases.
+So P.O.V. and CDI already share a grid: P.O.V. is a subset of CDI's cells, a
+tighter mask over identical hexagons. Those two can share one loaded mesh and
+switch by repainting. 15minCity's legacy meshes cannot — switching to them
+means swapping the mesh.
 
-**Unverified:** `scripts/build-data.mjs` records `h3Resolution: 9` for
-15minCity, inferred from its ~201 m cell radius. The non-alignment above
-suggests it is not H3 at all. The Rome 15minCity page currently captions "H3
-resolution 9" — confirm with the team before trusting it.
+**What this means for the viewer.** Build it so that cities on the harmonised
+grid are the fast path — load one mesh, repaint per layer — and keep
+mesh-swapping as the fallback for legacy cities. Do not assume one city implies
+one mesh; ask the catalogue. Two cities will behave differently at the same
+time for a while, so the switcher has to handle both from day one rather than
+being retrofitted once Milan lands.
+
+A practical check when new data arrives: compare cell centroids between two
+platforms for the same city at 3 decimal places (~100 m). Above ~99% means one
+grid; single digits means two.
+
+**The `cell` field is per-city and must stay honest.** `h3Resolution` is
+`null` for meshes we cannot confirm are H3 — the legacy 15minCity Rome data is
+one, and its map caption states the measured cell size (~201 m) without naming
+a grid. Cities exported onto the standard H3 grid should set the resolution.
+The build script no longer infers it from cell radius; an earlier version did,
+and was wrong.
 
 ## Facts that are easy to get wrong
 
@@ -149,10 +169,28 @@ back to them. `mat701/CDI` and `mat701/accessibility-pov` are public and can be
 cloned directly; `add_repo` refuses them when the session is scoped to a
 different owner.
 
-## Open, and needing the lab rather than more code
+## CityChrone
 
-- **CityChrone has no published data and no paper.** Both are marked pending
-  rather than filled with a guess.
+The fourth platform, and the one with the least built. It has:
+
+- **A paper** — Biazzo, Monechi & Loreto, *General scores for accessibility and
+  inequality measures in urban areas*, R. Soc. Open Sci. 6(8) 190979 (2019),
+  `doi:10.1098/rsos.190979`. It is the isochrone-based scoring method, so it is
+  tagged to this platform on the Research page.
+- **No published data.** `published: false`, no `previewCity`, no city page.
+  Its home-page card art is a still of the world coverage map because there is
+  no city view to shoot.
+- **Data in preparation**: a single city, isochrones on an H3 grid.
+
+When that lands it is the same path as any other platform — convert in
+`scripts/build-data.mjs`, add catalogue entries, flip `published: true`, set
+`previewCity`, and shoot a card still. Two things will be new: isochrones are a
+*travel-time surface* rather than a per-cell classification or a bounded index,
+so it needs its own adapter and its own legend; and if it ships on the standard
+H3 grid it can share a mesh with whatever else exists for that city, which
+makes it the natural first test of the shared-grid path.
+
+## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon
   intensity in urban transport" (Cities 176, 107202). Elsevier DOIs embed a

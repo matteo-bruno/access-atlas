@@ -255,6 +255,7 @@ export default {
     cartogram: {
       title: 'Cartogramma · area della cella ∝ popolazione',
       caption: 'Risoluzione H3 {res} · celle di ~{size} m',
+      captionSize: 'celle di ~{size} m',
     },
     scatterCdi: {
       title: 'Opportunità in auto contro trasporto pubblico',

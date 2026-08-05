@@ -257,6 +257,8 @@ export default {
     cartogram: {
       title: 'Cartogram · cell area ∝ population',
       caption: 'H3 resolution {res} · ~{size} m cells',
+      // Used when the cell size is known but the grid is not H3.
+      captionSize: '~{size} m cells',
     },
     scatterCdi: {
       title: 'Opportunity by car against by transit',

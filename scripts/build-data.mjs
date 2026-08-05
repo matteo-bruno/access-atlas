@@ -451,8 +451,10 @@ function buildFifteen(dir, cityId = 'rome') {
 
   let population = 0;
   const rows = [];
+  const radii = [];
   const features = input.features.map((f, i) => {
     const p = f.properties;
+    if (Number.isFinite(Number(p.radius))) radii.push(Number(p.radius));
     const props = { pop: Math.round(Number(p.population) || 0) };
     for (const cat of FIFTEEN_CATEGORIES) {
       for (const mode of FIFTEEN_MODES) {
@@ -518,7 +520,18 @@ function buildFifteen(dir, cityId = 'rome') {
         zoom: zoomFor(rows),
         population,
         dataset: `fifteen/${cityId}.geojson`,
-        cell: { h3Resolution: 9, cellRadiusM: 200 },
+        // The legacy meshes are NOT H3: their cell centroids share only ~8%
+        // of positions with the H3 r9 grid the other platforms use, which is
+        // chance rather than alignment. Claim the measured cell size and
+        // nothing more — a null resolution makes the map caption omit it
+        // rather than assert a grid this data is not on. Cities exported onto
+        // the standard H3 grid should set h3Resolution here.
+        cell: {
+          h3Resolution: null,
+          cellRadiusM: radii.length
+            ? Math.round(radii.sort((a, b) => a - b)[radii.length >> 1])
+            : null,
+        },
       },
     ],
     coverage: 'fifteen/coverage.geojson',

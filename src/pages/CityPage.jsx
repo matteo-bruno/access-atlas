@@ -244,12 +244,16 @@ function CityScreen({ platform, profile }) {
             )}
             {/* Cell geometry is metadata the catalogue supplies; a published
                 file that omits it gets no caption rather than a made-up one. */}
-            {stats?.h3Resolution != null && stats?.cellRadiusM != null && (
+            {/* Name the grid only when we know it; otherwise state the cell
+                size alone rather than assert a tiling the data is not on. */}
+            {stats?.cellRadiusM != null && (
               <div className="aa-city__caption">
-                {t('city.cartogram.caption', {
-                  res: stats.h3Resolution,
-                  size: n(stats.cellRadiusM),
-                })}
+                {stats.h3Resolution != null
+                  ? t('city.cartogram.caption', {
+                      res: stats.h3Resolution,
+                      size: n(stats.cellRadiusM),
+                    })
+                  : t('city.cartogram.captionSize', { size: n(stats.cellRadiusM) })}
               </div>
             )}
           </div>
