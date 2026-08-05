@@ -185,6 +185,12 @@ strong {
   color: var(--ink);
 }
 
+/* A chip that is a real <button> rather than a link — buttons do not inherit
+   the page font. */
+.aa-chip--icon {
+  font-family: inherit;
+}
+
 /* Hover lift shared by platform cards and side-project cards */
 .aa-lift {
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;

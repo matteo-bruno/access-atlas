@@ -65,6 +65,58 @@
   color: var(--ink-4);
 }
 
+/* Population sits apart from the four platform lenses. */
+.aa-layers__row--context {
+  margin-top: 4px;
+  border-style: dashed;
+}
+
+/* What the active layer measures, revealed by the info button. */
+.aa-atlas__info {
+  margin: -10px 0 18px;
+  padding: 11px 12px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.aa-atlas__info p {
+  margin: 0;
+}
+
+.aa-atlas__info a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+/* Fill opacity, so the basemap underneath can be read as much or as little
+   as the reader wants. */
+.aa-opacity {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px 10px;
+  margin-bottom: 18px;
+}
+
+.aa-opacity .aa-eyebrow {
+  grid-column: 1 / -1;
+}
+
+.aa-opacity__input {
+  width: 100%;
+  accent-color: var(--ink);
+}
+
+.aa-opacity__value {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
 /* Prompt shown over the map while the isochrone view waits for a click. */
 .aa-atlas__prompt {
   position: absolute;

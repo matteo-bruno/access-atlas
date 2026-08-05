@@ -1,0 +1,35 @@
+/* Continuous colour ramp legend: the gradient, its tick labels, and an
+   optional note for a tail the bar does not show. */
+
+.aa-ramp {
+  margin: 6px 0 16px;
+}
+
+.aa-ramp__bar {
+  height: 12px;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+}
+
+.aa-ramp__ticks {
+  position: relative;
+  height: 15px;
+  margin-top: 4px;
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+
+.aa-ramp__tick {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.aa-ramp__beyond {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}

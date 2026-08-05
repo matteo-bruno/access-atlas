@@ -227,6 +227,19 @@ export default {
       layer: 'Visualisation',
       view: 'Measure',
       hour: 'Time of day',
+      opacity: 'Layer opacity',
+    },
+    info: 'About this layer',
+    population: {
+      name: 'Population',
+      legend: 'Residents per cell',
+      tooltip: '{count} residents',
+      about:
+        'Residents per cell, from the 15minCity export. Coloured on a logarithmic scale: population is heavily skewed, so a linear scale would put nearly every cell in the lightest colour. This is the context the other four measures are read against — the same journey matters more where more people make it.',
+    },
+    beyond: {
+      fifteen: 'darkening to black at 120 min and beyond',
+      isochrone: 'darkening to black at 180 min, the published maximum',
     },
     views: {
       velocity: 'Velocity',

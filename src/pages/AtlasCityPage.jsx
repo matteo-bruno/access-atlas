@@ -3,16 +3,17 @@ import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
+import { Icon } from '../components/Icon.jsx';
+import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
+import { RAMPS, rampColor } from '../map/ramps.js';
+import { cityZoom } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
-import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
-import {
-  CITYCHRONE_BANDS,
-  CITYCHRONE_VIEWS,
-  DEFAULT_HOUR,
-  summariseCitychrone,
-} from '../data/citychrone.js';
+import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
+import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
+import { paperForPlatform } from '../data/research.js';
+import { BRAND } from '../data/brand.js';
 import { summariseMeasure } from '../data/adapters.js';
 import {
   useAtlasMesh,
@@ -25,14 +26,16 @@ import './CityPage.css';
 import './FifteenCityPage.css';
 import './AtlasCityPage.css';
 
-// Switcher order matches the platform numbering (§01–§04).
+// Switcher order matches the platform numbering (§01–§04). Population is not
+// a platform — it is the context the four are measured against — so it is
+// offered separately rather than as a fifth lens.
 const LAYER_ORDER = PLATFORMS.map((platform) => platform.id);
+const POPULATION_LAYER = 'population';
 
-// The P.O.V. cool→warm ramp doubles for the time-like layers; CityChrone's
-// scores read it reversed, so that cool = fast/most-reachable everywhere.
-const FIFTEEN_SCALE = PLATFORMS_BY_ID.fifteen.scale;
-const REVERSED_SCALE = [...FIFTEEN_SCALE].reverse();
-const CDI_STOPS = PLATFORMS_BY_ID.cardep.stops;
+// Every layer the URL may name, and where its values come from.
+const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
+
+const DEFAULT_OPACITY = 0.8;
 
 /**
  * The combined viewer: one city, one map, a switch between the four
@@ -54,16 +57,25 @@ function AtlasScreen({ cityId, view }) {
   const { t, n, lang } = useI18n();
   const { unified, profile, platformProfiles, available } = view;
   const [params, setParams] = useSearchParams();
-  const [activeBand, setActiveBand] = useState(null);
+  const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
+  const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
+  const [infoOpen, setInfoOpen] = useState(false);
+
+  // Population comes from the union mesh, so it is offered wherever that mesh
+  // is — it is not a platform and has no catalogue entry of its own.
+  const hasPopulation = unified;
 
   // ── URL state ──────────────────────────────────────────────────────
+  const layerAvailable = (id) => (id === POPULATION_LAYER ? hasPopulation : available.has(id));
+
   const layer = useMemo(() => {
     const requested = params.get('layer');
-    if (requested && available.has(requested)) return requested;
+    if (requested && ALL_LAYERS.includes(requested) && layerAvailable(requested)) return requested;
     if (available.has('pov')) return 'pov';
     return LAYER_ORDER.find((id) => available.has(id)) ?? 'pov';
-  }, [params, available]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params, available, hasPopulation]);
 
   const category = CATEGORIES.some((c) => c.key === params.get('cat'))
     ? params.get('cat')
@@ -88,14 +100,17 @@ function AtlasScreen({ cityId, view }) {
   };
 
   const pickLayer = (id) => {
-    setActiveBand(null);
+    setActiveZone(null);
     setParam('layer', id, { push: true });
   };
 
   // ── Data ───────────────────────────────────────────────────────────
   const atlas = useAtlasMesh(cityId, unified);
   // Legacy path: the active platform's own mesh, swapped on layer change.
-  const swapProfile = !unified && layer !== 'citychrone' ? platformProfiles[layer] : null;
+  const swapProfile =
+    !unified && layer !== 'citychrone' && layer !== POPULATION_LAYER
+      ? platformProfiles[layer]
+      : null;
   const swapMesh = useCityMesh(swapProfile ?? null, layer);
 
   const citychroneOn = layer === 'citychrone' && available.has('citychrone');
@@ -142,117 +157,111 @@ function AtlasScreen({ cityId, view }) {
     return states;
   }, [citychroneOn, ccHour.data, featureIdForCc, matrixRow]);
 
-  // ── Per-layer legend model ─────────────────────────────────────────
+  // ── What the active layer measures ─────────────────────────────────
+  // One description per layer: the value expression to colour by, the ramp
+  // that colours it, and how to read a number back out. Everything below —
+  // paint, legend, tooltip, summary — is driven from this rather than
+  // branching on the layer id in four separate places.
   const fifteenKey = measureKey(category, mode);
-  const fifteenMeasure = useMemo(
-    () =>
-      layer === 'fifteen' && geojson ? summariseMeasure(geojson, fifteenKey, BANDS[mode]) : null,
-    [layer, geojson, fifteenKey, mode],
-  );
 
-  const ccSummary = useMemo(() => {
-    if (!citychroneOn || !ccHour.data) return null;
-    if (ccView === 'isochrone') {
-      if (!matrixRow) return null;
-      return summariseCitychrone(Array.from(matrixRow), CITYCHRONE_BANDS.isochrone);
-    }
-    const key = ccView === 'velocity' ? 'v' : 's';
-    return summariseCitychrone(
-      [...ccHour.data.byCc.values()].map((scores) => scores[key]),
-      CITYCHRONE_BANDS[ccView],
-    );
-  }, [citychroneOn, ccHour.data, ccView, matrixRow]);
-
-  const legend = useMemo(() => {
-    if (layer === 'pov') {
-      const shares = unified
-        ? atlas.data?.layers.pov.zoneShares
-        : swapMesh.data?.stats?.zoneShares;
-      return ZONES.map((zone, index) => ({
-        color: zone.color,
-        label: t(`city.zones.${zone.key}.name`),
-        share: shares?.[index],
-      }));
-    }
+  const measure = useMemo(() => {
+    if (layer === 'pov') return null; // categorical — handled separately
     if (layer === 'cardep') {
-      const labels = t('platform.cardep.legend');
-      const shares = unified
-        ? atlas.data?.layers.cardep.zoneShares
-        : swapMesh.data?.stats?.zoneShares;
-      return PLATFORMS_BY_ID.cardep.scale.map((color, index) => ({
-        color,
-        label: labels[index],
-        share: shares?.[index],
-      }));
+      return { ramp: RAMPS.cdi, value: ['get', 'cdi'], format: (v) => signed(v, n) };
+    }
+    if (layer === POPULATION_LAYER) {
+      return {
+        ramp: RAMPS.population,
+        value: ['get', 'population'],
+        format: (v) => n(Math.round(v)),
+      };
     }
     if (layer === 'fifteen') {
-      return BANDS[mode].map((edge, index) => ({
-        color: FIFTEEN_SCALE[index],
-        label: rangeLabel(BANDS[mode], index, n),
-        share: fifteenMeasure?.shares[index],
-      }));
+      return {
+        ramp: RAMPS.fifteen,
+        value: ['get', fifteenKey],
+        format: (v) => `${n(v, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`,
+      };
     }
-    const bands = CITYCHRONE_BANDS[ccView];
-    const scale = ccView === 'isochrone' ? FIFTEEN_SCALE : REVERSED_SCALE;
-    const fmt =
-      ccView === 'sociality' ? (v) => `${n(Math.round(v / 1000))}k` : (v) => n(v);
-    return bands.map((edge, index) => ({
-      color: scale[index],
-      label: rangeLabel(bands, index, fmt),
-      share: ccSummary?.shares[index],
-    }));
-  }, [layer, unified, atlas.data, swapMesh.data, mode, fifteenMeasure, ccView, ccSummary, t, n]);
+    // CityChrone values are joined per hour as feature-state, never baked in.
+    const state = CITYCHRONE_VIEWS.find((v) => v.key === ccView).state;
+    if (ccView === 'isochrone') {
+      return {
+        ramp: RAMPS.isochrone,
+        value: ['feature-state', state],
+        format: (v) => `${n(Math.round(v))} ${t('fifteen.minutes')}`,
+      };
+    }
+    return ccView === 'velocity'
+      ? {
+          ramp: RAMPS.velocity,
+          value: ['feature-state', state],
+          format: (v) => `${n(v, { maximumFractionDigits: 1 })} km/h`,
+        }
+      : {
+          ramp: RAMPS.sociality,
+          value: ['feature-state', state],
+          format: (v) => n(Math.round(v)),
+        };
+  }, [layer, fifteenKey, ccView, n, t]);
+
+  // The one figure the legend no longer carries: a continuous ramp states the
+  // scale, not what the city sits at, so the median is quoted in the summary.
+  const fifteenMedian = useMemo(
+    () =>
+      layer === 'fifteen' && geojson
+        ? summariseMeasure(geojson, fifteenKey, RAMPS.fifteen.ticks).median
+        : null,
+    [layer, geojson, fifteenKey],
+  );
 
   // ── Paint ──────────────────────────────────────────────────────────
   const fillPaint = useMemo(() => {
+    // P.O.V. is the one genuinely categorical layer: four named classes, not a
+    // quantity, so it keeps discrete colours and band isolation.
     if (layer === 'pov') {
+      const zone = ['coalesce', ['get', 'zone'], -1];
+      const covered = ['>=', zone, 0];
       return {
         'fill-color': [
           'match',
-          ['coalesce', ['get', 'zone'], -1],
-          ...ZONES.flatMap((zone, index) => [index, zone.color]),
+          zone,
+          ...ZONES.flatMap((z, index) => [index, z.color]),
           'rgba(0,0,0,0)',
         ],
-        'fill-opacity': isolate(['coalesce', ['get', 'zone'], -1], null, activeBand, {
-          match: true,
-        }),
+        'fill-opacity':
+          activeZone == null
+            ? ['case', covered, opacity, 0]
+            : [
+                'case',
+                ['==', zone, activeZone],
+                Math.min(opacity + 0.12, 1),
+                covered,
+                opacity * 0.18,
+                0,
+              ],
       };
     }
-    if (layer === 'cardep') {
-      const value = ['coalesce', ['get', 'cdi'], -9999];
-      return {
-        'fill-color': stepColor(value, PLATFORMS_BY_ID.cardep.scale, CDI_STOPS.slice(0, -1)),
-        // The index is bounded at exactly −1, so the floor sits just below it.
-        'fill-opacity': isolate(value, bandRanges(CDI_STOPS.slice(0, -1), -1.001), activeBand),
-      };
-    }
-    if (layer === 'fifteen') {
-      const bands = BANDS[mode];
-      const value = ['coalesce', ['get', fifteenKey], -9999];
-      return {
-        'fill-color': stepColor(value, FIFTEEN_SCALE, bands.slice(0, -1)),
-        'fill-opacity': isolate(value, bandRanges(bands.slice(0, -1), -0.001), activeBand),
-      };
-    }
-    // CityChrone: values arrive as feature-state, joined per hour. Before an
-    // isochrone origin is picked there is nothing to band — show the covered
-    // cells faintly so there is something to click on.
-    if (ccView === 'isochrone' && !matrixRow) {
-      const covered = ['!=', ['coalesce', ['feature-state', 'v'], -9999], -9999];
+
+    // Before an isochrone origin is chosen there is no value to colour by —
+    // show the cells that *can* be chosen, faintly, so there is a target.
+    if (citychroneOn && ccView === 'isochrone' && !matrixRow) {
       return {
         'fill-color': '#cfd9da',
-        'fill-opacity': ['case', covered, 0.35, 0],
+        'fill-opacity': ['case', present('v', true), opacity * 0.45, 0],
       };
     }
-    const stateKey = CITYCHRONE_VIEWS.find((v) => v.key === ccView).state;
-    const bands = CITYCHRONE_BANDS[ccView];
-    const scale = ccView === 'isochrone' ? FIFTEEN_SCALE : REVERSED_SCALE;
-    const value = ['coalesce', ['feature-state', stateKey], -9999];
+
+    const { ramp, value } = measure;
+    // Cells a layer does not cover get no colour at all, rather than the
+    // ramp's first colour — absence of data is not a low value.
+    const covered =
+      value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false);
     return {
-      'fill-color': stepColor(value, scale, bands.slice(0, -1)),
-      'fill-opacity': isolate(value, bandRanges(bands.slice(0, -1), -0.001), activeBand),
+      'fill-color': rampColor(ramp, ['coalesce', value, 0]),
+      'fill-opacity': ['case', covered, opacity, 0],
     };
-  }, [layer, activeBand, mode, fifteenKey, ccView, matrixRow]);
+  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow]);
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
@@ -266,10 +275,19 @@ function AtlasScreen({ cityId, view }) {
   // ── Presentation helpers ───────────────────────────────────────────
   const cityName = lang === 'it' ? profile.nameIt ?? profile.name : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
-  const platform = PLATFORMS_BY_ID[layer];
+  // Population is not a platform; it borrows the Atlas's own accent and name.
+  const isPopulation = layer === POPULATION_LAYER;
+  const platform = isPopulation
+    ? { id: POPULATION_LAYER, name: t('atlas.population.name'), accent: BRAND.navy }
+    : PLATFORMS_BY_ID[layer];
+  const paper = isPopulation ? null : paperForPlatform(layer);
   const stats = meshData?.stats;
   const cellCount = unified ? atlas.data?.stats.cellCount : stats?.cellCount;
-  const layerCells = unified ? atlas.data?.layers[layer]?.cells : stats?.cellCount;
+  const layerCells = isPopulation
+    ? cellCount
+    : unified
+      ? atlas.data?.layers[layer]?.cells
+      : stats?.cellCount;
 
   const ccForFeature = (feature) =>
     unified ? feature.properties?.cc : feature.properties?.new_id;
@@ -285,11 +303,14 @@ function AtlasScreen({ cityId, view }) {
     if (layer === 'cardep') {
       return Number.isFinite(p.cdi) ? `CDI ${signed(p.cdi, n)}` : t('atlas.noValue');
     }
+    if (isPopulation) {
+      return Number.isFinite(p.population)
+        ? t('atlas.population.tooltip', { count: n(Math.round(p.population)) })
+        : t('atlas.noValue');
+    }
     if (layer === 'fifteen') {
       const value = p[fifteenKey];
-      return value == null
-        ? t('atlas.noValue')
-        : `${n(value, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`;
+      return value == null ? t('atlas.noValue') : measure.format(value);
     }
     const cc = ccForFeature(feature);
     const scores = cc != null ? ccHour.data?.byCc.get(cc) : null;
@@ -298,11 +319,9 @@ function AtlasScreen({ cityId, view }) {
       // No popup before an origin exists — the standing prompt instructs, and
       // a popup would freeze on the old text once the matrix arrives.
       if (!matrixRow) return null;
-      return `${n(matrixRow[cc])} ${t('fifteen.minutes')}`;
+      return measure.format(matrixRow[cc]);
     }
-    return ccView === 'velocity'
-      ? `${n(scores.v, { maximumFractionDigits: 1 })} km/h`
-      : n(Math.round(scores.s));
+    return measure.format(ccView === 'velocity' ? scores.v : scores.s);
   };
 
   const onCellClick = (feature) => {
@@ -311,8 +330,9 @@ function AtlasScreen({ cityId, view }) {
     if (Number.isFinite(cc)) setParam('from', cc);
   };
 
-  const legendTitle =
-    layer === 'pov'
+  const legendTitle = isPopulation
+    ? t('atlas.population.legend')
+    : layer === 'pov'
       ? t('city.zoneType')
       : layer === 'cardep'
         ? t('platform.cardep.legendUnit')
@@ -320,8 +340,24 @@ function AtlasScreen({ cityId, view }) {
           ? t('fifteen.legendValue')
           : t(`atlas.legend.${ccView}`);
 
+  // How to label the legend's tick values, per layer.
+  const tickFormat = isPopulation
+    ? (v) => (v >= 1000 ? `${n(v / 1000, { maximumFractionDigits: 1 })}k` : n(v))
+    : layer === 'cardep'
+      ? (v) => (v === 0 ? '0' : signed(v, n))
+      : ccView === 'sociality' && citychroneOn
+        ? (v) => (v === 0 ? '0' : `${n(Math.round(v / 1000))}k`)
+        : (v) => n(v, { maximumFractionDigits: 1 });
+
+  // What the info panel explains about the layer on screen.
+  const infoBody = isPopulation
+    ? t('atlas.population.about')
+    : layer === 'citychrone'
+      ? t(`atlas.viewHint.${ccView}`)
+      : t(`platform.${layer}.intro`);
+
   const platformPage =
-    platform.hasCityPages && platformProfiles[layer]?.dataset
+    !isPopulation && platform.hasCityPages && platformProfiles[layer]?.dataset
       ? `/platforms/${platform.slug}/${cityId}`
       : null;
 
@@ -339,10 +375,27 @@ function AtlasScreen({ cityId, view }) {
           </span>
         }
       >
+        <button
+          type="button"
+          className={`aa-chip aa-chip--icon${infoOpen ? ' aa-chip--active' : ''}`}
+          aria-pressed={infoOpen}
+          aria-label={t('atlas.info')}
+          onClick={() => setInfoOpen((open) => !open)}
+        >
+          <Icon name="info" size={13} color="currentColor" />
+          {t('atlas.info')}
+        </button>
         {platformPage && (
           <Link className="aa-chip" to={platformPage}>
             {t('atlas.openPlatform', { name: platform.name })}
           </Link>
+        )}
+        {/* The paper that defines this measure — resolved from the
+            bibliography, so it cannot drift from the Research page. */}
+        {paper && (
+          <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
+            {t('platform.paper')}
+          </a>
         )}
       </Subhead>
 
@@ -370,7 +423,33 @@ function AtlasScreen({ cityId, view }) {
                 </button>
               );
             })}
+            {/* Population is context rather than a fifth lens: it is what the
+                other four are measured for, so it sits apart from them. */}
+            {hasPopulation && (
+              <button
+                type="button"
+                className={`aa-layers__row aa-layers__row--context${
+                  isPopulation ? ' aa-layers__row--active' : ''
+                }`}
+                aria-pressed={isPopulation}
+                onClick={() => pickLayer(POPULATION_LAYER)}
+              >
+                <span className="aa-layers__dot" style={{ background: BRAND.navy }} />
+                <span className="aa-layers__name">{t('atlas.population.name')}</span>
+              </button>
+            )}
           </div>
+
+          {infoOpen && (
+            <div className="aa-atlas__info">
+              <p>{infoBody}</p>
+              {paper && (
+                <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                  {paper.title} ↗
+                </a>
+              )}
+            </div>
+          )}
 
           {/* ── Per-layer controls ───────────────────────────── */}
           {layer === 'fifteen' && (
@@ -422,7 +501,7 @@ function AtlasScreen({ cityId, view }) {
                     className={`aa-toggle__btn${ccView === option.key ? ' aa-toggle__btn--active' : ''}`}
                     aria-pressed={ccView === option.key}
                     onClick={() => {
-                      setActiveBand(null);
+                      setActiveZone(null);
                       setParam('view', option.key === CITYCHRONE_VIEWS[0].key ? null : option.key);
                     }}
                   >
@@ -455,27 +534,65 @@ function AtlasScreen({ cityId, view }) {
 
           {/* ── Legend ───────────────────────────────────────── */}
           <Eyebrow>{legendTitle}</Eyebrow>
-          <div className="aa-bands">
-            {legend.map((band, index) => (
-              <button
-                key={`${band.label}-${index}`}
-                type="button"
-                className={`aa-bands__row${activeBand === index ? ' aa-bands__row--active' : ''}`}
-                aria-pressed={activeBand === index}
-                onMouseEnter={() => setActiveBand(index)}
-                onMouseLeave={() => setActiveBand(null)}
-                onFocus={() => setActiveBand(index)}
-                onBlur={() => setActiveBand(null)}
-                onClick={() => setActiveBand((cur) => (cur === index ? null : index))}
-              >
-                <span className="aa-swatch" style={{ background: band.color }} />
-                <span className="aa-bands__label aa-mono">{band.label}</span>
-                <span className="aa-mono aa-bands__pct">
-                  {band.share == null ? '—' : `${n(band.share, { minimumFractionDigits: 1 })}%`}
-                </span>
-              </button>
-            ))}
-          </div>
+          {layer === 'pov' ? (
+            // The one categorical layer: four named classes, each with the
+            // share of covered cells that falls in it.
+            <div className="aa-bands">
+              {ZONES.map((zone, index) => {
+                const shares = unified
+                  ? atlas.data?.layers.pov.zoneShares
+                  : swapMesh.data?.stats?.zoneShares;
+                const share = shares?.[index];
+                return (
+                  <button
+                    key={zone.id}
+                    type="button"
+                    className={`aa-bands__row${activeZone === index ? ' aa-bands__row--active' : ''}`}
+                    aria-pressed={activeZone === index}
+                    onMouseEnter={() => setActiveZone(index)}
+                    onMouseLeave={() => setActiveZone(null)}
+                    onFocus={() => setActiveZone(index)}
+                    onBlur={() => setActiveZone(null)}
+                    onClick={() => setActiveZone((cur) => (cur === index ? null : index))}
+                  >
+                    <span className="aa-swatch" style={{ background: zone.color }} />
+                    <span className="aa-bands__label">{t(`city.zones.${zone.key}.name`)}</span>
+                    <span className="aa-mono aa-bands__pct">
+                      {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <RampLegend
+              ramp={measure.ramp}
+              format={tickFormat}
+              beyondLabel={
+                measure.ramp === RAMPS.fifteen
+                  ? t('atlas.beyond.fifteen')
+                  : measure.ramp === RAMPS.isochrone
+                    ? t('atlas.beyond.isochrone')
+                    : null
+              }
+            />
+          )}
+
+          {/* ── Opacity ──────────────────────────────────────── */}
+          <label className="aa-field aa-opacity">
+            <Eyebrow>{t('atlas.controls.opacity')}</Eyebrow>
+            <input
+              className="aa-opacity__input"
+              type="range"
+              min="0.15"
+              max="1"
+              step="0.05"
+              value={opacity}
+              aria-label={t('atlas.controls.opacity')}
+              onChange={(event) => setOpacity(Number(event.target.value))}
+            />
+            <span className="aa-mono aa-opacity__value">{Math.round(opacity * 100)}%</span>
+          </label>
 
           {/* ── Summary ──────────────────────────────────────── */}
           <div className="aa-city__summary">
@@ -504,9 +621,9 @@ function AtlasScreen({ cityId, view }) {
                 <SummaryRow
                   label={t('fifteen.summary.median')}
                   value={
-                    fifteenMeasure?.median == null
+                    fifteenMedian == null
                       ? '—'
-                      : `${n(fifteenMeasure.median, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`
+                      : `${n(fifteenMedian, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`
                   }
                 />
               )}
@@ -542,7 +659,7 @@ function AtlasScreen({ cityId, view }) {
             {meshReady && geojson ? (
               <AtlasMap
                 center={profile.center}
-                zoom={profile.zoom}
+                zoom={cityZoom(profile)}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${platform.name}`}
@@ -630,51 +747,18 @@ function SummaryRow({ label, value }) {
   );
 }
 
-// ── Paint expression helpers ─────────────────────────────────────────
-// All value expressions coalesce missing data to a sentinel below every real
-// band, so cells a layer does not cover paint fully transparent instead of
-// inheriting the first band's colour.
-
-function stepColor(value, scale, edges) {
-  const steps = [];
-  for (let i = 0; i < edges.length; i++) steps.push(edges[i], scale[i + 1]);
-  return ['step', value, scale[0], ...steps];
-}
-
-/** Band index → [lower, upper] pairs; `floor` is the value below band 0. */
-function bandRanges(edges, floor) {
-  const ranges = [];
-  for (let i = 0; i <= edges.length; i++) {
-    ranges.push([i === 0 ? floor : edges[i - 1], i === edges.length ? null : edges[i]]);
-  }
-  return ranges;
-}
-
 /**
- * Opacity expression: hide cells with no value, dim everything outside the
- * active band. `match: true` treats the value as a category equal to the band
- * index (P.O.V. zones) rather than a banded continuum.
+ * Expression that is true where a cell actually carries the measure — used to
+ * hide, rather than mis-colour, the cells a layer does not cover. A missing
+ * value is not a low one.
+ *
+ * @param {string}  key      property name, or feature-state key
+ * @param {boolean} fromState  read feature-state instead of a property
  */
-function isolate(value, ranges, activeBand, { match = false } = {}) {
-  const covered = match ? ['>=', value, 0] : ['>', value, -9000];
-  // Short of opaque, so the basemap's streets and place names read through and
-  // the mesh stays locatable.
-  if (activeBand == null) return ['case', covered, 0.8, 0];
-  const inBand = match
-    ? ['==', value, activeBand]
-    : (() => {
-        const [lower, upper] = ranges[activeBand];
-        const tests = [['>', value, lower]];
-        if (upper != null) tests.push(['<=', value, upper]);
-        return ['all', ...tests];
-      })();
-  return ['case', ['!', covered], 0, inBand, 0.95, 0.12];
-}
-
-function rangeLabel(bands, index, fmt) {
-  if (index === 0) return `≤ ${fmt(bands[0])}`;
-  if (index === bands.length - 1) return `> ${fmt(bands[bands.length - 2])}`;
-  return `${fmt(bands[index - 1])} – ${fmt(bands[index])}`;
+function present(key, fromState) {
+  return fromState
+    ? ['!=', ['coalesce', ['feature-state', key], -99999], -99999]
+    : ['has', key];
 }
 
 function signed(value, n) {

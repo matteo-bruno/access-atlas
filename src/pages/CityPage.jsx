@@ -8,12 +8,13 @@ import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
 import { useAtlasCityIds, useCityProfile } from '../data/useAtlasData.js';
+import { paperForPlatform } from '../data/research.js';
+import { cityZoom } from '../map/framing.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { FifteenCityPage } from './FifteenCityPage.jsx';
 import './CityPage.css';
 
-const PAPER_URL = 'https://doi.org/10.1140/epjds';
-const GITHUB_URL = 'https://github.com/sony-csl-rome';
+const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
 
 export default function CityPage() {
   const { slug, cityId } = useParams();
@@ -38,6 +39,8 @@ function CityScreen({ platform, profile }) {
   const { t, n, lang } = useI18n();
   const { status, data, source } = useCityMesh(profile, platform.id);
   const atlasCityIds = useAtlasCityIds();
+  // The paper that defines this platform's method, from the bibliography.
+  const paper = paperForPlatform(platform.id);
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
 
@@ -115,9 +118,11 @@ function CityScreen({ platform, profile }) {
           </Link>
         )}
         <span className="aa-chip">{t('city.compare')}</span>
-        <a className="aa-chip" href={PAPER_URL} target="_blank" rel="noreferrer noopener">
-          {t('platform.paper')}
-        </a>
+        {paper && (
+          <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
+            {t('platform.paper')}
+          </a>
+        )}
         <a className="aa-chip" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
           {t('platform.github')}
         </a>
@@ -223,7 +228,7 @@ function CityScreen({ platform, profile }) {
             {status === 'ready' ? (
               <AtlasMap
                 center={profile.center}
-                zoom={profile.zoom}
+                zoom={cityZoom(profile)}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${t('city.cartogram.title')}`}

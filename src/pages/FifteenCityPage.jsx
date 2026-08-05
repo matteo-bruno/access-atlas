@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
+import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
+import { RAMPS, rampColor } from '../map/ramps.js';
+import { cityZoom } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { useAtlasCityIds } from '../data/useAtlasData.js';
 import { summariseMeasure } from '../data/adapters.js';
-import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
+import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
+import { paperForPlatform } from '../data/research.js';
 import './CityPage.css';
 import './FifteenCityPage.css';
 
-const PAPER_URL = 'https://doi.org/10.1140/epjds/s13688-026-00623-8';
 const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
 
 /**
@@ -28,40 +31,31 @@ export function FifteenCityPage({ platform, profile }) {
 
   const [mode, setMode] = useState(MODES[0].key);
   const [category, setCategory] = useState(CATEGORIES[0].key);
-  const [activeBand, setActiveBand] = useState(null);
 
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
 
   const key = measureKey(category, mode);
-  const bands = BANDS[mode];
-  const scale = platform.scale;
+  const paper = paperForPlatform(platform.id);
 
+  // One scale for every category and mode (src/map/ramps.js), so a colour
+  // means the same number of minutes wherever it appears — including in the
+  // combined viewer, which paints this layer from the same ramp.
   const measure = useMemo(
-    () => (data?.geojson ? summariseMeasure(data.geojson, key, bands) : null),
-    [data, key, bands],
+    () => (data?.geojson ? summariseMeasure(data.geojson, key, RAMPS.fifteen.ticks) : null),
+    [data, key],
   );
 
-  // Colour straight from the selected property with a step expression, so
-  // switching category or mode is a paint change rather than a reload.
-  const fillPaint = useMemo(() => {
-    const steps = [];
-    for (let i = 0; i < bands.length - 1; i++) steps.push(scale[i], bands[i]);
-    steps.push(scale[bands.length - 1]);
-    return {
-      'fill-color': ['step', ['coalesce', ['get', key], -999], scale[0], ...steps.slice(1)],
+  // Colour straight from the selected property, so switching category or mode
+  // is a paint change rather than a reload.
+  const fillPaint = useMemo(
+    () => ({
+      'fill-color': rampColor(RAMPS.fifteen, ['coalesce', ['get', key], 0]),
       // Short of opaque, so the basemap reads through the mesh.
-      'fill-opacity':
-        activeBand == null
-          ? 0.8
-          : [
-              'case',
-              bandFilter(key, bands, activeBand),
-              0.95,
-              0.1,
-            ],
-    };
-  }, [key, bands, scale, activeBand]);
+      'fill-opacity': ['case', ['has', key], 0.8, 0],
+    }),
+    [key],
+  );
 
   const stats = data?.stats;
 
@@ -87,9 +81,11 @@ export function FifteenCityPage({ platform, profile }) {
             {t('atlas.label')}
           </Link>
         )}
-        <a className="aa-chip" href={PAPER_URL} target="_blank" rel="noreferrer noopener">
-          {t('platform.paper')}
-        </a>
+        {paper && (
+          <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
+            {t('platform.paper')}
+          </a>
+        )}
         <a className="aa-chip" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
           {t('platform.github')}
         </a>
@@ -130,34 +126,13 @@ export function FifteenCityPage({ platform, profile }) {
 
           <p className="aa-city__hint">{t('fifteen.hint')}</p>
 
-          {/* ── Legend with the share of cells in each band ───── */}
+          {/* ── Legend ───────────────────────────────────────── */}
           <Eyebrow>{t('fifteen.legendValue')}</Eyebrow>
-          <div className="aa-bands">
-            {bands.map((edge, index) => {
-              const share = measure?.shares[index];
-              return (
-                <button
-                  key={edge}
-                  type="button"
-                  className={`aa-bands__row${activeBand === index ? ' aa-bands__row--active' : ''}`}
-                  aria-pressed={activeBand === index}
-                  onMouseEnter={() => setActiveBand(index)}
-                  onMouseLeave={() => setActiveBand(null)}
-                  onFocus={() => setActiveBand(index)}
-                  onBlur={() => setActiveBand(null)}
-                  onClick={() => setActiveBand((cur) => (cur === index ? null : index))}
-                >
-                  <span className="aa-swatch" style={{ background: scale[index] }} />
-                  <span className="aa-bands__label aa-mono">
-                    {bandLabel(bands, index, n)}
-                  </span>
-                  <span className="aa-mono aa-bands__pct">
-                    {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+          <RampLegend
+            ramp={RAMPS.fifteen}
+            format={(v) => n(v, { maximumFractionDigits: 1 })}
+            beyondLabel={t('atlas.beyond.fifteen')}
+          />
 
           <div className="aa-city__summary">
             <Eyebrow>{t('city.summary.title')}</Eyebrow>
@@ -195,7 +170,7 @@ export function FifteenCityPage({ platform, profile }) {
             {status === 'ready' ? (
               <AtlasMap
                 center={profile.center}
-                zoom={profile.zoom}
+                zoom={cityZoom(profile)}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${t('fifteen.mapTitle')}`}
@@ -249,22 +224,6 @@ function SummaryRow({ label, value }) {
       <dd className="aa-mono">{value}</dd>
     </div>
   );
-}
-
-// MapLibre expression selecting the cells inside one legend band.
-function bandFilter(key, bands, index) {
-  const value = ['coalesce', ['get', key], -999];
-  const upper = bands[index];
-  if (index === 0) return ['<=', value, upper];
-  const lower = bands[index - 1];
-  if (index === bands.length - 1) return ['>', value, lower];
-  return ['all', ['>', value, lower], ['<=', value, upper]];
-}
-
-function bandLabel(bands, index, n) {
-  if (index === 0) return `≤ ${n(bands[0])}`;
-  if (index === bands.length - 1) return `> ${n(bands[bands.length - 2])}`;
-  return `${n(bands[index - 1])} – ${n(bands[index])}`;
 }
 
 function formatCoord(value, axes) {
