@@ -316,6 +316,151 @@ export function summariseMeasure(collection, key, bands) {
 }
 
 /**
+ * A combined-viewer union mesh → what /atlas/:cityId renders.
+ *
+ * One FeatureCollection on the standard H3 grid, every platform's values on
+ * the same cells; a cell simply lacks the properties of platforms whose mask
+ * it falls outside. Nothing is classified here — the page picks a layer at
+ * runtime and colours straight from the matching properties — but the
+ * per-layer figures that do not depend on that choice are computed once:
+ * which cells each layer covers, and the shares/medians its legend quotes.
+ *
+ * Expected properties per feature: `h3`, `population`, and per layer
+ *   pov      `zone` (0–3), `proximity`, `opportunity`
+ *   cardep   `cdi`, `o_score_pt`, `o_score_car`
+ *   fifteen  `<category>_<mode>` in minutes (summarised at runtime)
+ *   citychrone `cc` — row index into the hourly hexcover/times files
+ */
+export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0.3, 1]) {
+  const features = collection?.features;
+  if (!Array.isArray(features) || features.length === 0) {
+    throw new AdapterError('Atlas mesh has no features');
+  }
+
+  const cdiBand = (value) => {
+    for (let i = 0; i < cdiStops.length; i++) if (value <= cdiStops[i]) return i;
+    return cdiStops.length - 1;
+  };
+
+  const zoneCounts = [0, 0, 0, 0];
+  const cdiCounts = [0, 0, 0, 0];
+  const cdiValues = [];
+  let cdiPopulation = 0;
+  let cdiWeightedSum = 0;
+  let povCells = 0;
+  let cardepCells = 0;
+  let fifteenCells = 0;
+  let citychroneCells = 0;
+  let population = 0;
+  const ccToId = new Map();
+
+  const withIds = features.map((feature, i) => {
+    const p = feature?.properties ?? {};
+    const pop = Number(p.population) || 0;
+    population += pop;
+
+    if (Number.isFinite(p.zone)) {
+      if (p.zone < 0 || p.zone > 3) throw new AdapterError(`Cell ${i} has zone ${p.zone}`);
+      zoneCounts[p.zone]++;
+      povCells++;
+    }
+    if (Number.isFinite(p.cdi)) {
+      if (p.cdi < -1 || p.cdi > 1) throw new AdapterError(`Cell ${i} has CDI ${p.cdi}`);
+      cdiCounts[cdiBand(p.cdi)]++;
+      cdiValues.push(p.cdi);
+      cdiPopulation += pop;
+      cdiWeightedSum += p.cdi * pop;
+      cardepCells++;
+    }
+    if (Number.isFinite(p.proximity_time_foot)) fifteenCells++;
+    if (Number.isFinite(p.cc)) {
+      ccToId.set(p.cc, i);
+      citychroneCells++;
+    }
+
+    // The page filters highlights and applies feature-state by feature id, so
+    // it has to be the array index.
+    return feature.id === i ? feature : { ...feature, id: i };
+  });
+
+  const share = (counts, total) =>
+    total ? counts.map((c) => Math.round((c / total) * 1000) / 10) : null;
+
+  return {
+    geojson: { type: 'FeatureCollection', features: withIds },
+    stats: {
+      cellCount: features.length,
+      cellRadiusM: profile.cell?.cellRadiusM ?? null,
+      h3Resolution: profile.cell?.h3Resolution ?? null,
+      population: population || null,
+    },
+    layers: {
+      pov: {
+        cells: povCells,
+        zoneShares: share(zoneCounts, povCells),
+        zoneCounts,
+      },
+      cardep: {
+        cells: cardepCells,
+        zoneShares: share(cdiCounts, cardepCells),
+        zoneCounts: cdiCounts,
+        medianCdi: cdiValues.length ? Math.round(median(cdiValues) * 1000) / 1000 : null,
+        weightedCdi: cdiPopulation
+          ? Math.round((cdiWeightedSum / cdiPopulation) * 1000) / 1000
+          : null,
+      },
+      fifteen: { cells: fifteenCells },
+      citychrone: { cells: citychroneCells, ccToId },
+    },
+  };
+}
+
+/**
+ * One hour of a CityChrone hexcover → the values keyed the way the atlas mesh
+ * references them (`cc`), plus the population-weighted median the summary
+ * quotes. Works both against the union mesh (joined via feature-state) and
+ * standalone, when the hexcover itself is the drawn mesh.
+ */
+export function citychroneHour(collection) {
+  const features = collection?.features;
+  if (!Array.isArray(features) || features.length === 0) {
+    throw new AdapterError('Hexcover has no features');
+  }
+
+  const byCc = new Map();
+  const vValues = [];
+  const weights = [];
+  for (const feature of features) {
+    const p = feature?.properties ?? {};
+    if (!Number.isFinite(p.new_id)) throw new AdapterError('Hexcover feature has no new_id');
+    const v = Number(p.v_score);
+    const s = Number(p.s_score);
+    byCc.set(p.new_id, { v, s });
+    vValues.push(v);
+    weights.push(Number(p.pop) || 0);
+  }
+
+  let acc = 0;
+  const pairs = vValues.map((v, i) => [v, weights[i]]).sort((a, b) => a[0] - b[0]);
+  const totalWeight = pairs.reduce((s, [, w]) => s + w, 0);
+  let weightedMedianV = pairs[pairs.length - 1]?.[0] ?? null;
+  for (const [v, w] of pairs) {
+    acc += w;
+    if (acc >= totalWeight / 2) {
+      weightedMedianV = v;
+      break;
+    }
+  }
+
+  return {
+    byCc,
+    cells: features.length,
+    medianV: Math.round(median(vValues) * 100) / 100,
+    weightedMedianV: Math.round(weightedMedianV * 100) / 100,
+  };
+}
+
+/**
  * A published coverage file → the city objects the search and landing maps use.
  * Property names match what `citiesToGeoJSON` emits for the seed list, so the
  * two are interchangeable downstream.
