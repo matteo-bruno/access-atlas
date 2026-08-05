@@ -92,6 +92,28 @@ a grid. Cities exported onto the standard H3 grid should set the resolution.
 The build script no longer infers it from cell radius; an earlier version did,
 and was wrong.
 
+## Colour
+
+`src/map/ramps.js` holds one ramp per measure, and two rules keep them
+readable:
+
+- **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
+  categorical. A step scale invents boundaries the data does not have — two
+  cells either side of an edge look further apart than two at opposite ends of
+  one band. The legend is `RampLegend`, a gradient with its values under it;
+  it cannot show a share per band, so figures that mattered (the 15minCity
+  median) moved to the summary.
+- **Domains are fixed, never fitted.** A ramp rescaled per city or per hour
+  recolours the same value depending on what else is on screen, which is what
+  makes two maps uncomparable. Each domain is a round number covering the
+  published range, and the comment above it states the measurements it was
+  checked against — update both together. 15minCity shares one scale across
+  all ten categories and both modes for the same reason.
+
+The 15minCity ramp is centred on white at 15 minutes and keeps darkening past
+30 to black at 120; the legend bar stops at 30 and *names* the tail, because
+stretching it to 120 squashes the range nearly every cell sits in.
+
 ## Facts that are easy to get wrong
 
 - **CDI = (O_car − O_PT) / (O_car + O_PT)**, bounded in [−1, +1]. A normalised
