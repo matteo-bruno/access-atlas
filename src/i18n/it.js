@@ -214,6 +214,47 @@ export default {
     },
   },
 
+  // La vista combinata: una città, un interruttore fra le visualizzazioni
+  // delle quattro piattaforme.
+  atlas: {
+    label: 'Vista combinata',
+    mapTitle: 'Misurato da {name}',
+    controls: {
+      layer: 'Visualizzazione',
+      view: 'Misura',
+      hour: 'Ora del giorno',
+    },
+    views: {
+      velocity: 'Velocità',
+      sociality: 'Socialità',
+      isochrone: 'Isocrone',
+    },
+    viewHint: {
+      velocity:
+        'Quanto velocemente il trasporto pubblico ti porta lontano da ogni cella a quest’ora — un punteggio simile a km/h.',
+      sociality:
+        'Quante persone il trasporto pubblico mette a portata di ogni cella a quest’ora — un punteggio, non un conteggio.',
+      isochrone:
+        'Tempo di viaggio in trasporto pubblico da una cella scelta verso tutte le altre.',
+    },
+    legend: {
+      velocity: 'Punteggio di velocità (km/h)',
+      sociality: 'Punteggio di socialità',
+      isochrone: 'Minuti dalla cella selezionata',
+    },
+    summary: { weightedV: 'Velocità per la persona media' },
+    layerCells: 'Celle misurate da {name}',
+    isochroneEmpty: 'Clicca una cella per disegnare i tempi di viaggio da lì',
+    unavailable: 'Non pubblicato',
+    noValue: 'Non misurato per questa cella',
+    openPlatform: 'Pagina {name}',
+    statusHint:
+      'Una griglia, quattro misure — cambiare visualizzazione ricolora le stesse celle · scorri e trascina per navigare',
+    legacyHint:
+      'Questa città non è ancora esportata sulla griglia condivisa — ogni visualizzazione carica la mesh della propria piattaforma.',
+    error: 'La mesh pubblicata non si è potuta caricare.',
+  },
+
   city: {
     region: '{region} · {count} celle',
     worldMap: 'Mappa mondiale',

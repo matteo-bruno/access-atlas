@@ -216,6 +216,46 @@ export default {
     },
   },
 
+  // The combined viewer: one city, a switch between the four platforms'
+  // visualisations.
+  atlas: {
+    label: 'Combined view',
+    mapTitle: 'Measured by {name}',
+    controls: {
+      layer: 'Visualisation',
+      view: 'Measure',
+      hour: 'Time of day',
+    },
+    views: {
+      velocity: 'Velocity',
+      sociality: 'Sociality',
+      isochrone: 'Isochrones',
+    },
+    viewHint: {
+      velocity:
+        'How fast public transport moves you outward from each cell at this hour — a km/h-like score.',
+      sociality:
+        'How many people public transport puts within reach of each cell at this hour — a score, not a headcount.',
+      isochrone: 'Travel time by public transport from one chosen cell to everywhere else.',
+    },
+    legend: {
+      velocity: 'Velocity score (km/h)',
+      sociality: 'Sociality score',
+      isochrone: 'Minutes from the selected cell',
+    },
+    summary: { weightedV: 'Velocity for the average resident' },
+    layerCells: 'Cells measured by {name}',
+    isochroneEmpty: 'Click a cell to draw travel times from it',
+    unavailable: 'Not published',
+    noValue: 'Not measured for this cell',
+    openPlatform: '{name} page',
+    statusHint:
+      'One grid, four measurements — switching layers repaints the same cells · scroll & drag to navigate',
+    legacyHint:
+      'This city is not yet exported on the shared grid — each visualisation loads that platform’s own mesh.',
+    error: 'The published mesh could not be loaded.',
+  },
+
   city: {
     region: '{region} · {count} cells',
     worldMap: 'World map',
