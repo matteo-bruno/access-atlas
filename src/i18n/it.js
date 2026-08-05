@@ -225,6 +225,19 @@ export default {
       layer: 'Visualizzazione',
       view: 'Misura',
       hour: 'Ora del giorno',
+      opacity: 'Opacità del livello',
+    },
+    info: 'Su questo livello',
+    population: {
+      name: 'Popolazione',
+      legend: 'Residenti per cella',
+      tooltip: '{count} residenti',
+      about:
+        'Residenti per cella, dall’esportazione di 15minCity. Colorata su scala logaritmica: la popolazione è fortemente asimmetrica, quindi una scala lineare metterebbe quasi tutte le celle nel colore più chiaro. È il contesto in cui si leggono le altre quattro misure — lo stesso spostamento conta di più dove lo compiono più persone.',
+    },
+    beyond: {
+      fifteen: 'fino al nero a 120 min e oltre',
+      isochrone: 'fino al nero a 180 min, il massimo pubblicato',
     },
     views: {
       velocity: 'Velocità',

@@ -34,7 +34,7 @@ const SHOTS = [
     id: 'citychrone',
     route: '/atlas/milan?layer=citychrone',
     target: '.aa-city__canvas',
-    shift: [-0.01, 0.08],
+    shift: [-0.025, 0.11],
   },
 ];
 

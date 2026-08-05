@@ -191,20 +191,49 @@ for (const [route, name] of ROUTES) {
   const layers = await page.$$eval('.aa-layers__row', (els) =>
     els.map((e) => ({ text: e.textContent.trim(), disabled: e.disabled })),
   );
+  // The four platforms, plus population as context — all enabled for a city
+  // on the shared grid.
   check(
-    'All four layers are offered and enabled',
-    layers.length === 4 && layers.every((l) => !l.disabled),
+    'All four platform layers are offered and enabled, plus population',
+    layers.length === 5 && layers.every((l) => !l.disabled),
     layers.map((l) => `${l.text}${l.disabled ? ' (off)' : ''}`).join(' · '),
+  );
+
+  // P.O.V. is the categorical layer, so it is the one that still lists shares.
+  const shares = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
+  const total = shares.reduce((sum, b) => sum + (parseFloat(b) || 0), 0);
+  check(
+    'P.O.V. zone shares cover every measured cell',
+    shares.length === 4 && Math.abs(total - 100) < 0.5,
+    `${shares.join(' / ')} = ${total.toFixed(1)}`,
   );
 
   await page.click('.aa-layers__row:has-text("CityChrone")');
   await page.waitForTimeout(4000);
-  const bands = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
-  const total = bands.reduce((sum, b) => sum + (parseFloat(b) || 0), 0);
+  // Continuous layers state their scale as a ramp, not as bands: the hourly
+  // join has happened once the velocity figure is on the panel.
+  const ticks = await page.$$eval('.aa-ramp__tick', (els) => els.map((e) => e.textContent.trim()));
+  const ccSummary = await page.$$eval('.aa-summary__row dd', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
   check(
     'CityChrone hourly layer renders with the layer in the URL',
-    page.url().includes('layer=citychrone') && Math.abs(total - 100) < 0.5,
-    `${page.url().split('/atlas/')[1]} · bands sum ${total.toFixed(1)}`,
+    page.url().includes('layer=citychrone') &&
+      ticks.join(' ') === '0 3 6 9 12' &&
+      /km\/h/.test(ccSummary.join(' ')),
+    `${page.url().split('/atlas/')[1]} · ticks ${ticks.join(' ')} · ${ccSummary.join(' | ')}`,
+  );
+
+  // Population is drawn from the union mesh rather than a platform dataset.
+  await page.click('.aa-layers__row:has-text("Population")');
+  await page.waitForTimeout(3000);
+  const popTicks = await page.$$eval('.aa-ramp__tick', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
+  check(
+    'Population layer draws from the union mesh',
+    page.url().includes('layer=population') && popTicks.length > 0,
+    `${page.url().split('/atlas/')[1]} · ticks ${popTicks.join(' ')}`,
   );
   await page.close();
 }

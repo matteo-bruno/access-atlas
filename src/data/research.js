@@ -161,13 +161,26 @@ export const PAPERS = [
   },
 ];
 
+// The paper that defines each platform's method, keyed by platform id. The
+// maps link here rather than carrying their own URLs, so a "Paper" link and
+// the Research page can never drift apart — and a platform whose paper is
+// still in preparation gets no link instead of a wrong one.
+export const PAPER_BY_PLATFORM = Object.fromEntries(
+  PAPERS.filter((paper) => paper.platform).map((paper) => [paper.platform, paper]),
+);
+
+export function paperForPlatform(platformId) {
+  const paper = PAPER_BY_PLATFORM[platformId];
+  return paper?.url ? paper : null;
+}
+
 // Coverage counts match what is published under public/data/ — see
 // src/data/platforms.js, which carries the same numbers for the maps.
 export const DATASETS = [
   { id: 'pov', platform: 'pov', coverage: 18, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
   { id: 'cardep', platform: 'cardep', coverage: 22, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
   { id: 'fifteen', platform: 'fifteen', coverage: 1, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
-  { id: 'citychrone', platform: 'citychrone', coverage: 0, format: '—', licence: 'CC BY-NC 4.0' },
+  { id: 'citychrone', platform: 'citychrone', coverage: 1, format: 'GeoJSON + NPY', licence: 'CC BY-NC 4.0' },
 ];
 
 export const CITATION = `Sustainable Cities team, Sony Computer Science Laboratories — Rome.
