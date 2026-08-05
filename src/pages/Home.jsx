@@ -6,7 +6,8 @@ import { Eyebrow, SectionHeading } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
 import { AtlasMap } from '../map/AtlasMap.jsx';
-import { AtlasCityLayer, CityLayer } from '../components/CityLayer.jsx';
+import { AtlasCityLayer } from '../components/CityLayer.jsx';
+import { PlatformPreview } from '../components/PlatformPreview.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
 import { CITIES, citiesForPlatform } from '../data/cities.js';
@@ -172,13 +173,7 @@ export default function Home() {
                 </div>
 
                 <div className="aa-platform__map">
-                  <AtlasMap fitWorldWidth center={[10, 20]} interactive={false} label={platform.name}>
-                    <CityLayer
-                      platform={platform}
-                      cities={platformCities[platform.id]}
-                      interactive={false}
-                    />
-                  </AtlasMap>
+                  <PlatformPreview platform={platform} cities={platformCities[platform.id]} />
                 </div>
               </a>
             ))}

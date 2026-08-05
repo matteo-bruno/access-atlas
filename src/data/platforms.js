@@ -23,6 +23,8 @@ export const PLATFORMS = [
     themeKey: 'proximity',
     accent: '#b94e3b',
     url: 'https://whatif.sonycsl.it/15mincity',
+    // City whose mesh the home-page card falls back to when it has no still.
+    previewCity: 'rome',
     cityCount: 1,
     published: true,
     hasCityPages: true,
@@ -70,6 +72,7 @@ export const PLATFORMS = [
     themeKey: 'comparison',
     accent: '#a04640',
     url: 'https://mat701.github.io/CDI',
+    previewCity: 'rome',
     cityCount: 22,
     published: true,
     scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
@@ -95,6 +98,7 @@ export const PLATFORMS = [
     themeKey: 'synthesis',
     accent: BRAND.navy,
     url: 'https://mat701.github.io/accessibility-pov',
+    previewCity: 'rome',
     cityCount: 18,
     published: true,
     // Categorical, not a ramp — index matches ZONES below.
