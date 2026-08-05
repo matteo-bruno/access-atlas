@@ -69,6 +69,24 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
 }
 
 /** Multi-hue dot palette for the home coverage map. */
+/**
+ * Markers for the all-platforms world map, shaded by how many of the four
+ * lenses a city has published data for. That is the one thing worth reading
+ * off a map that mixes platforms: a decorative palette would say nothing, and
+ * any single platform's scale would be a category error there.
+ */
+export function coverageCountPaint(scale) {
+  // scale[i] is the colour for a city covered by i + 1 platforms.
+  const stops = scale.flatMap((color, i) => [i + 1, color]);
+  return {
+    'circle-radius': RADIUS_DENSE,
+    'circle-color': ['interpolate', ['linear'], ['get', 'platformCount'], ...stops],
+    'circle-opacity': 0.9,
+    'circle-stroke-color': 'rgba(255,255,255,0.55)',
+    'circle-stroke-width': 0.6,
+  };
+}
+
 export function atlasCirclePaint(scale) {
   return {
     'circle-radius': RADIUS_DENSE,

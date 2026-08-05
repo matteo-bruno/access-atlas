@@ -153,6 +153,17 @@ export default {
     empty: 'Nessuna città corrisponde alla ricerca.',
     seeded: 'Valori illustrativi — le misure di questa piattaforma non sono ancora pubblicate.',
 
+    all: {
+      name: 'Tutte le piattaforme',
+      label: 'Copertura pubblicata',
+      pick: 'Scegli una mappa',
+      intro:
+        'Tutte le città pubblicate dall’Atlante, sulle quattro piattaforme. Ogni piattaforma misura qualcosa di diverso e copre un insieme di città diverso — scegline una per vedere la sua mappa, la sua scala e le città che copre. Le città più scure hanno più misure pubblicate fra le quattro.',
+      legendUnit: 'Piattaforme pubblicate',
+      legend: ['Una', 'Due', 'Tre', 'Tutte e quattro'],
+      covered: '{count} piattaforme su 4',
+    },
+
     fifteen: {
       label: 'Accesso di prossimità',
       intro:
@@ -275,6 +286,8 @@ export default {
     worldMap: 'Mappa mondiale',
     compare: 'Confronta le città',
     zoneType: 'Zona',
+    cdiHint:
+      'Negativo dove il trasporto pubblico raggiunge più dell’auto, positivo dove è l’auto a raggiungere di più. L’indice è una differenza normalizzata limitata a ±1, non un rapporto.',
     zones: {
       inclusion: {
         name: 'Inclusione',

@@ -16,6 +16,7 @@ const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 
 const ROUTES = [
   ['/', 'Home'],
+  ['/platforms', 'All-platforms world map'],
   ['/platforms/15min-city', '15min-City landing'],
   ['/platforms/citychrone', 'CityChrone landing'],
   ['/platforms/car-dependency-index', 'Car Dependency landing'],
@@ -153,13 +154,17 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/platforms/car-dependency-index/rome`, { waitUntil: 'load' });
   await page.waitForTimeout(4000);
 
-  const bands = await page.$$eval('.aa-zones__pct', (els) => els.map((e) => e.textContent.trim()));
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
-  const total = bands.reduce((sum, b) => sum + parseFloat(b), 0);
-
-  check('Car Dependency bands cover every cell', Math.abs(total - 100) < 0.5, bands.join(' / '));
+  // The index is continuous, so the panel states its scale as a ramp rather
+  // than a share per band — ±1 are the bounds of the index's own definition.
+  const ticks = await page.$$eval('.aa-ramp__tick', (els) => els.map((e) => e.textContent.trim()));
+  check(
+    'Car Dependency states the bounded index as a ramp',
+    ticks.length === 5 && /^−1/.test(ticks[0]) && /^\+1/.test(ticks[4]),
+    ticks.join(' / '),
+  );
   check('Car Dependency cell count from the published file', summary[0] === '11,409', summary[0]);
   // The index is signed; losing the sign would invert the reading entirely.
   check(
@@ -234,6 +239,38 @@ for (const [route, name] of ROUTES) {
     'Population layer draws from the union mesh',
     page.url().includes('layer=population') && popTicks.length > 0,
     `${page.url().split('/atlas/')[1]} · ticks ${popTicks.join(' ')}`,
+  );
+  await page.close();
+}
+
+// ── The world map switches between platforms ─────────────────────────
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
+
+  const items = await page.$$eval('.aa-picker__item', (els) => els.map((e) => e.textContent.trim()));
+  const allLegend = await page.$$eval('.aa-legend__item', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
+  check(
+    'World map offers all four platforms plus the combined coverage',
+    items.length === 5,
+    items.join(' · '),
+  );
+
+  await page.click('.aa-picker__item:has-text("Car Dependency")');
+  await page.waitForTimeout(2500);
+  const cdiLegend = await page.$$eval('.aa-legend__item', (els) =>
+    els.map((e) => e.textContent.trim()),
+  );
+  // Picking a platform has to change both the URL and what the legend claims
+  // — the point of the switcher is that each map is on its own scale.
+  check(
+    'Picking a platform swaps the city set and its legend',
+    page.url().endsWith('/platforms/car-dependency-index') &&
+      cdiLegend.join(' ') !== allLegend.join(' '),
+    `${allLegend.join('/')} → ${cdiLegend.join('/')}`,
   );
   await page.close();
 }

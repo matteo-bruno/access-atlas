@@ -160,6 +160,17 @@ export default {
     empty: 'No cities match that search.',
     seeded: 'Illustrative values — this platform’s measurements are not yet published.',
 
+    all: {
+      name: 'All platforms',
+      label: 'Published coverage',
+      pick: 'Choose a map',
+      intro:
+        'Every city the Atlas has published, across all four platforms. Each platform measures something different and covers a different set of cities — pick one to see its own map, its own scale and the cities it covers. Cities shaded darker have more of the four measures published.',
+      legendUnit: 'Platforms published',
+      legend: ['One', 'Two', 'Three', 'All four'],
+      covered: '{count} of 4 platforms',
+    },
+
     fifteen: {
       label: 'Proximity access',
       intro:
@@ -276,6 +287,8 @@ export default {
     worldMap: 'World map',
     compare: 'Compare cities',
     zoneType: 'Zone',
+    cdiHint:
+      'Negative where public transport reaches more than a car, positive where the car reaches more. The index is a normalised difference bounded at ±1, not a ratio.',
     zones: {
       inclusion: {
         name: 'Inclusion',

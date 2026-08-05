@@ -21,11 +21,25 @@ upstream research platforms.
 
 React + Vite, MapLibre for the maps, bilingual EN/IT.
 
+**Node 20 or newer** — the scripts are ES modules and CI builds on Node 22. On
+an older Node the `.mjs` files are parsed as CommonJS and die on their first
+`import` with a bare `SyntaxError: Unexpected identifier`; `npm run` checks the
+version first and says so instead.
+
 ```bash
+nvm use 22           # or any Node ≥ 20
 npm install
 npm run dev          # http://localhost:5173
 npm run build        # → dist/
 npm run preview
+```
+
+The scripts that drive a browser — `smoke`, `smoke:published`,
+`shoot:previews` — also need Playwright, which is deliberately *not* a
+dependency:
+
+```bash
+npm install --no-save playwright && npx playwright install chromium
 ```
 
 ## Status

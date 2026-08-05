@@ -8,12 +8,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:data": "node scripts/build-data.mjs",
-    "build:atlas": "node scripts/build-atlas.mjs",
-    "test:data": "node scripts/test-data.mjs",
-    "shoot:previews": "node scripts/shoot-previews.mjs",
-    "smoke": "node scripts/smoke.mjs",
-    "smoke:published": "node scripts/smoke-published.mjs"
+    "build:data": "node scripts/check-node.cjs && node scripts/build-data.mjs",
+    "build:atlas": "node scripts/check-node.cjs && node scripts/build-atlas.mjs",
+    "test:data": "node scripts/check-node.cjs && node scripts/test-data.mjs",
+    "shoot:previews": "node scripts/check-node.cjs && node scripts/shoot-previews.mjs",
+    "smoke": "node scripts/check-node.cjs && node scripts/smoke.mjs",
+    "smoke:published": "node scripts/check-node.cjs && node scripts/smoke-published.mjs"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.5",
