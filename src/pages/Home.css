@@ -171,6 +171,49 @@
   gap: 6px;
 }
 
+/* Way in to the combined viewer, under the coverage map. */
+.aa-coverage__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--hair);
+}
+
+.aa-coverage__note {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.aa-coverage__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aa-coverage__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--card);
+  font-size: 13px;
+  text-decoration: none;
+  transition: opacity 120ms ease;
+}
+
+.aa-coverage__cta:hover {
+  opacity: 0.85;
+}
+
 /* ── Platform cards ───────────────────────────────────────────── */
 
 .aa-platforms {

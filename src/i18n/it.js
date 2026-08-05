@@ -55,6 +55,8 @@ export default {
       title: 'Una sola mappa dell’accesso, quattro lenti.',
       hint: 'passa sopra una piattaforma per l’anteprima',
       badge: 'Copertura pubblicata · {count} città',
+      combined:
+        'Dove tutte le piattaforme sono state esportate su un’unica griglia condivisa, le quattro prospettive diventano livelli di una sola mappa:',
       legend: {
         opportunity: 'Opportunità',
         proximity: 'Prossimità',

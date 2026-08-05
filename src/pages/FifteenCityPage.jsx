@@ -50,9 +50,10 @@ export function FifteenCityPage({ platform, profile }) {
     steps.push(scale[bands.length - 1]);
     return {
       'fill-color': ['step', ['coalesce', ['get', key], -999], scale[0], ...steps.slice(1)],
+      // Short of opaque, so the basemap reads through the mesh.
       'fill-opacity':
         activeBand == null
-          ? 0.85
+          ? 0.8
           : [
               'case',
               bandFilter(key, bands, activeBand),
@@ -196,6 +197,7 @@ export function FifteenCityPage({ platform, profile }) {
                 center={profile.center}
                 zoom={profile.zoom}
                 graticule={false}
+                basemap
                 label={`${cityName} — ${t('fifteen.mapTitle')}`}
               >
                 <GeoJSONLayer

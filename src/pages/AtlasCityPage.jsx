@@ -544,6 +544,7 @@ function AtlasScreen({ cityId, view }) {
                 center={profile.center}
                 zoom={profile.zoom}
                 graticule={false}
+                basemap
                 label={`${cityName} — ${platform.name}`}
               >
                 <GeoJSONLayer
@@ -656,7 +657,9 @@ function bandRanges(edges, floor) {
  */
 function isolate(value, ranges, activeBand, { match = false } = {}) {
   const covered = match ? ['>=', value, 0] : ['>', value, -9000];
-  if (activeBand == null) return ['case', covered, 0.88, 0];
+  // Short of opaque, so the basemap's streets and place names read through and
+  // the mesh stays locatable.
+  if (activeBand == null) return ['case', covered, 0.8, 0];
   const inBand = match
     ? ['==', value, activeBand]
     : (() => {

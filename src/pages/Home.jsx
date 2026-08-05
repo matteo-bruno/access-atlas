@@ -10,6 +10,7 @@ import { AtlasCityLayer } from '../components/CityLayer.jsx';
 import { PlatformPreview } from '../components/PlatformPreview.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
+import { useAtlasCities } from '../data/useAtlasData.js';
 import { CITIES, citiesForPlatform } from '../data/cities.js';
 import { ATLAS_METRICS, CITY_TABLE, NEWS, SIDE_PROJECTS, TABLE_SCALE } from '../data/home.js';
 import { BRAND } from '../data/brand.js';
@@ -18,6 +19,9 @@ import './Home.css';
 export default function Home() {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
+  // Cities published on the shared grid, so the combined viewer can draw every
+  // platform from one mesh. Empty until one is — the CTA appears with the data.
+  const atlasCities = useAtlasCities();
 
   const platformCities = useMemo(
     () => Object.fromEntries(PLATFORMS.map((p) => [p.id, citiesForPlatform(p)])),
@@ -130,6 +134,23 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            {/* The combined viewer is what this section's title describes, so
+                the way in belongs here. Listed per city, because being on the
+                shared grid is a property of the city, not of the site. */}
+            {atlasCities.length > 0 && (
+              <div className="aa-coverage__foot">
+                <p className="aa-coverage__note">{t('home.coverage.combined')}</p>
+                <div className="aa-coverage__links">
+                  {atlasCities.map((city) => (
+                    <Link key={city.id} className="aa-coverage__cta" to={`/atlas/${city.id}`}>
+                      {lang === 'it' ? (city.nameIt ?? city.name) : city.name}
+                      <Icon name="arrow" size={13} color="currentColor" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -141,9 +162,10 @@ export default function Home() {
             hint={t('home.platforms.hint')}
           />
           <div className="aa-platforms">
-            {/* Each card opens the platform's own live site. The Atlas's
-                combined viewer is still being built; when it lands, these go
-                back to `/platforms/${slug}`. */}
+            {/* Each card opens the platform's own live site — the upstream
+                platforms show more cities than the Atlas has republished. The
+                Atlas's own views are reached from §01 above (the combined
+                viewer) and from the Platforms nav. */}
             {PLATFORMS.map((platform) => (
               <a
                 key={platform.id}

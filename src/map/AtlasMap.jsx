@@ -18,7 +18,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 // and leave its `./maplibre-gl-shared.mjs` import dangling. Needs
 // `worker.format: 'es'` in vite.config.js, since MapLibre spawns it as a module.
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { resolveStyle } from './style.js';
+import { resolveStyle, usesTiles } from './style.js';
 import './AtlasMap.css';
 
 const MapCtx = createContext(null);
@@ -28,8 +28,6 @@ export function useAtlasMap() {
 }
 
 setWorkerUrl(maplibreWorkerUrl);
-
-const HAS_TILES = Boolean(import.meta.env.VITE_TILE_URL);
 
 // MapLibre renders the whole world across 512 px at zoom 0, so this is the
 // zoom at which 360° of longitude exactly spans the container. Short, wide
@@ -62,6 +60,9 @@ export function AtlasMap({
   maxZoom = 16,
   interactive = true,
   graticule = true,
+  // City views draw raster tiles under the mesh; world views keep the paper
+  // basemap, which is the approved design and self-contained.
+  basemap = false,
   bounds = null,
   fitPadding = 40,
   fitWorldWidth = false,
@@ -108,13 +109,15 @@ export function AtlasMap({
 
     const map = new MapLibreMap({
       container: containerRef.current,
-      style: resolveStyle({ graticule }),
+      style: resolveStyle({ graticule, basemap }),
       center,
       zoom,
       minZoom,
       maxZoom,
       interactive,
-      attributionControl: HAS_TILES ? { compact: true } : false,
+      // Third-party tiles must carry their attribution; the paper basemap is
+      // credited in the page chrome instead.
+      attributionControl: usesTiles({ basemap }) ? { compact: true } : false,
       dragRotate: false,
       pitchWithRotate: false,
       renderWorldCopies: true,
@@ -124,17 +127,42 @@ export function AtlasMap({
     map.touchZoomRotate?.disableRotation();
     mapRef.current = map;
     // MapLibre swallows style/source failures unless you listen for them.
-    map.on('error', (event) =>
-      console.error('[maplibre]', event?.error?.message ?? event?.error ?? event),
-    );
+    let basemapReported = false;
+    map.on('error', (event) => {
+      const message = event?.error?.message ?? event?.error ?? event;
+      // A basemap tile that will not load is an external resource being
+      // unavailable — offline, a blocked host, the provider down. The style
+      // keeps the paper background underneath, so the map still reads. Report
+      // it once per map rather than once per failed tile.
+      if (event?.sourceId === 'basemap') {
+        if (!basemapReported) {
+          basemapReported = true;
+          console.warn('[maplibre] basemap tiles unavailable — falling back to paper', message);
+        }
+        return;
+      }
+      console.error('[maplibre]', message);
+    });
 
+    let announced = false;
     const handleLoad = () => {
+      if (announced) return;
+      announced = true;
       if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
       else if (fitWorldWidth) applyWorldWidthZoom(map);
       setReady(true);
       onReady?.(map);
     };
     map.on('load', handleLoad);
+
+    // `load` waits for every source to settle, which a raster basemap on a
+    // slow or unreachable host may never do — and the data layers are the
+    // point of the map, so they must not wait on a decorative one. The style
+    // being parsed is all a child needs to add its source and layer.
+    const handleStyle = () => {
+      if (map.isStyleLoaded()) handleLoad();
+    };
+    map.on('styledata', handleStyle);
 
     // Re-fit on resize so a world view keeps spanning exactly 360° of
     // longitude at any breakpoint.
@@ -149,6 +177,7 @@ export function AtlasMap({
     return () => {
       observer?.disconnect();
       map.off('load', handleLoad);
+      map.off('styledata', handleStyle);
       map.remove();
       mapRef.current = null;
       setReady(false);
@@ -156,7 +185,7 @@ export function AtlasMap({
     // center/zoom are initial camera values only — changing them later should
     // move the camera (see below), not tear the map down.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, interactive, graticule]);
+  }, [visible, interactive, graticule, basemap]);
 
   // Keep the camera in sync when a parent drives it.
   useEffect(() => {
