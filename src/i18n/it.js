@@ -315,6 +315,24 @@ export default {
       opportunity: 'Punteggio mediano di opportunità',
       population: 'Popolazione coperta',
     },
+    // Le due geometrie su cui una città può essere pubblicata. Il passaggio
+    // cambia il significato del poligono, non i dati: la didascalia sotto la
+    // mappa dice quale delle due affermazioni è a schermo.
+    geometry: {
+      label: 'Geometria',
+      map: 'Mappa',
+      cartogram: 'Cartogramma',
+      mapTitle: 'Mappa · celle dove si trovano',
+      mapCaption: 'L’area della cella è il territorio che copre',
+      cartogramCaption: 'L’area della cella è la sua popolazione residente',
+      loading: 'Caricamento dell’altra geometria…',
+      unavailable: 'Nessun cartogramma pubblicato',
+      about: {
+        map: 'Ogni cella è l’esagono che è sul terreno, della stessa dimensione ovunque qualunque cosa contenga. L’area non dice nulla su quante persone una misura riguardi, quindi una periferia poco abitata occupa nell’immagine lo stesso spazio del centro denso.',
+        cartogram: 'Ogni cella sta dove si trova davvero, ma la sua area è la popolazione residente e non il territorio che copre: una cella con pochi abitanti si riduce a una frazione di esagono, una affollata lo riempie. Risponde a un’altra domanda — non dove una misura è bassa, ma per quante persone lo è.',
+        missing: 'Un cartogramma è una disposizione calcolata dai suoi autori, non una trasformazione della mappa: l’Atlante disegna quello che ogni piattaforma ha pubblicato invece di derivarne uno. {name} non ne pubblica.',
+      },
+    },
     cartogram: {
       title: 'Cartogramma · area della cella ∝ popolazione',
       caption: 'Risoluzione H3 {res} · celle di ~{size} m',

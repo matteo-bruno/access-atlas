@@ -9,7 +9,9 @@ import { RAMPS, rampColor } from '../map/ramps.js';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug } from '../data/platforms.js';
 import { ZONES } from '../data/platforms.js';
-import { useAtlasCityIds, useCityProfile } from '../data/useAtlasData.js';
+import { useAtlasCityIds, useCityGeometry, useCityProfile } from '../data/useAtlasData.js';
+import { withGeometry } from '../data/adapters.js';
+import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { paperForPlatform } from '../data/research.js';
 import { cityZoom } from '../map/framing.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
@@ -45,6 +47,30 @@ function CityScreen({ platform, profile }) {
   const paper = paperForPlatform(platform.id);
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
+
+  // ── Geometry ───────────────────────────────────────────────────────
+  // The published file is a cartogram, so that is what opens — the same
+  // default both upstream viewers use. The hexagons are a second file,
+  // fetched only if someone asks for them.
+  // What the published file's own polygons are — the view that opens, and
+  // the one that needs no second request.
+  const published = profile.geometry ?? 'cartogram';
+  const [geometry, setGeometry] = useState(published);
+  const other = useCityGeometry(platform.id, profile.id, geometry !== published);
+  const swapped = geometry !== published && other.status === 'ready';
+
+  const drawn = useMemo(() => {
+    if (!data?.geojson) return null;
+    if (!swapped) return data.geojson;
+    try {
+      return withGeometry(data.geojson, other.collection);
+    } catch (error) {
+      // A companion that does not line up is a broken file, not a broken
+      // page: keep drawing the geometry that does line up.
+      if (import.meta.env.DEV) console.warn('[data] geometry companion unusable', error.message);
+      return data.geojson;
+    }
+  }, [data, swapped, other.collection]);
 
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
@@ -184,6 +210,22 @@ function CityScreen({ platform, profile }) {
           </div>
           )}
 
+          {/* Only where the catalogue publishes a geometry to switch to. A
+              seed mesh is a generated arrangement of cells, and neither of
+              these two words would be true of it. */}
+          {profile.geometry && (
+            <GeometryToggle
+              value={geometry}
+              onChange={setGeometry}
+              available={{
+                geographic: published === 'geographic' || Boolean(profile.geoDataset),
+                cartogram: published === 'cartogram',
+              }}
+              missingName={platform.name}
+              loading={geometry !== published && other.status === 'pending'}
+            />
+          )}
+
           <div className="aa-city__summary">
             <Eyebrow>{t('city.summary.title')}</Eyebrow>
             <dl className="aa-summary">
@@ -239,9 +281,11 @@ function CityScreen({ platform, profile }) {
 
         {/* ── Cartogram ────────────────────────────────────────── */}
         <section className="aa-city__cartogram">
-          <Eyebrow>{t('city.cartogram.title')}</Eyebrow>
+          <Eyebrow>
+            {geometry === 'cartogram' ? t('city.cartogram.title') : t('city.geometry.mapTitle')}
+          </Eyebrow>
           <div className="aa-city__canvas">
-            {status === 'ready' ? (
+            {status === 'ready' && drawn ? (
               <AtlasMap
                 center={profile.center}
                 zoom={cityZoom(profile)}
@@ -251,7 +295,7 @@ function CityScreen({ platform, profile }) {
               >
                 <GeoJSONLayer
                   id="mesh"
-                  data={data.geojson}
+                  data={drawn}
                   type="fill"
                   paint={fillPaint}
                   onHover={(feature) => setHoverCell(feature ? feature.id : null)}
@@ -260,7 +304,7 @@ function CityScreen({ platform, profile }) {
                 {hoverCell != null && (
                   <GeoJSONLayer
                     id="mesh-highlight"
-                    data={data.geojson}
+                    data={drawn}
                     type="line"
                     paint={highlightPaint}
                     filter={['==', ['id'], hoverCell]}
@@ -283,6 +327,10 @@ function CityScreen({ platform, profile }) {
                       size: n(stats.cellRadiusM),
                     })
                   : t('city.cartogram.captionSize', { size: n(stats.cellRadiusM) })}
+                {' · '}
+                {geometry === 'cartogram'
+                  ? t('city.geometry.cartogramCaption')
+                  : t('city.geometry.mapCaption')}
               </div>
             )}
           </div>

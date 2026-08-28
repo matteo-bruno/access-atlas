@@ -17,6 +17,8 @@
 //         "cities": [{ "id": "rome", "name": "Rome", "center": [lon, lat],
 //                      "zoom": 10.1, "dataset": "pov/rome.geojson",
 //                      "population": 2610243,
+//                      "geometry": "cartogram",
+//                      "geoDataset": "pov/rome.geo.geojson",
 //                      "cell": { "h3Resolution": 9, "cellRadiusM": 200 } }]
 //       }
 //     }
@@ -98,6 +100,23 @@ function normaliseCity(raw) {
           .map((s) => ({ id: s.id, name: typeof s.name === 'string' ? s.name : s.id, dataset: s.dataset }))
       : [],
     hourly,
+    // A city can be published on two geometries: the values sit on one, and a
+    // companion file carries the other for the same cells. `geometry` says
+    // which one `dataset` itself is — a cartogram encodes population in the
+    // polygon, so it is a different claim about the cell than a hexagon is.
+    //
+    // `geoDataset` is the true geography beside a cartogram; `cartograms`
+    // maps a platform id to the cartogram beside an atlas city's geographic
+    // union mesh. Both are absent where nothing is published, and the viewer
+    // offers the switch exactly where one exists.
+    geometry: raw.geometry === 'cartogram' ? 'cartogram' : 'geographic',
+    geoDataset: typeof raw.geoDataset === 'string' ? raw.geoDataset : null,
+    cartograms:
+      raw.cartograms && typeof raw.cartograms === 'object'
+        ? Object.fromEntries(
+            Object.entries(raw.cartograms).filter(([, path]) => typeof path === 'string'),
+          )
+        : {},
     // Atlas (combined-viewer) entries list which platform layers their union
     // mesh carries values for.
     layers: Array.isArray(raw.layers) ? raw.layers.filter((l) => typeof l === 'string') : null,

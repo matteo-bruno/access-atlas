@@ -316,6 +316,24 @@ export default {
       opportunity: 'Median opportunity score',
       population: 'Population covered',
     },
+    // The two geometries a city can be published on. Switching is a change of
+    // what the polygon means, not a change of data, so the caption under the
+    // map states which claim is on screen.
+    geometry: {
+      label: 'Geometry',
+      map: 'Map',
+      cartogram: 'Cartogram',
+      mapTitle: 'Map · cells where they are',
+      mapCaption: 'Cell area is the ground it covers',
+      cartogramCaption: 'Cell area is its resident population',
+      loading: 'Loading the other geometry…',
+      unavailable: 'No cartogram published',
+      about: {
+        map: 'Every cell is the hexagon it is on the ground, the same size everywhere whatever lives in it. Area says nothing about how many people a measure affects, so a thinly populated edge of the city takes up as much of the picture as the dense centre does.',
+        cartogram: 'Every cell sits where it really is, but its area is its resident population rather than the ground it covers: a cell with few residents shrinks to a fraction of a hexagon, a crowded one fills it. It answers a different question — not where a measure is low, but how many people it is low for.',
+        missing: 'A cartogram is a layout its authors computed, not a transformation of the map, so the Atlas draws the one each platform published rather than deriving one. {name} publishes none.',
+      },
+    },
     cartogram: {
       title: 'Cartogram · cell area ∝ population',
       caption: 'H3 resolution {res} · ~{size} m cells',

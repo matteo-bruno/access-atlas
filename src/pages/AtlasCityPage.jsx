@@ -14,8 +14,10 @@ import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
-import { summariseMeasure } from '../data/adapters.js';
+import { summariseMeasure, withGeometry } from '../data/adapters.js';
+import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import {
+  useAtlasCartogram,
   useAtlasMesh,
   useAtlasView,
   useCitychroneHour,
@@ -61,6 +63,7 @@ function AtlasScreen({ cityId, view }) {
   const [hoverCell, setHoverCell] = useState(null);
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
+  const [geometry, setGeometry] = useState('geographic');
 
   // Population comes from the union mesh, so it is offered wherever that mesh
   // is — it is not a platform and has no catalogue entry of its own.
@@ -117,9 +120,32 @@ function AtlasScreen({ cityId, view }) {
   const ccHour = useCitychroneHour(cityId, hour, citychroneOn);
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone');
 
+  // ── Geometry ───────────────────────────────────────────────────────
+  // Reversed from the platform pages: the union mesh is already the cells
+  // where they are, and the cartogram is the companion. Only P.O.V. and Car
+  // Dependency publish one, and each publishes its own — the two disagree by
+  // up to 9.6 m on cells they share, so they are not interchangeable.
+  const cartogramLayer = unified && (layer === 'pov' || layer === 'cardep') ? layer : null;
+  const cartogramPublished = Boolean(profile.cartograms?.[cartogramLayer]);
+  const cartogramOn = geometry === 'cartogram' && cartogramPublished;
+  // The choice is remembered across layers but only honoured where that
+  // layer publishes a cartogram, so switching to 15minCity shows the map and
+  // switching back to P.O.V. returns to the cartogram.
+  const geometryValue = cartogramOn ? 'cartogram' : 'geographic';
+  const cartogram = useAtlasCartogram(cityId, cartogramLayer, cartogramOn);
+
   const meshData = unified ? atlas.data : swapMesh.data;
-  const geojson =
+  const baseGeojson =
     unified || layer !== 'citychrone' ? meshData?.geojson : ccHour.collection ?? null;
+  const geojson = useMemo(() => {
+    if (!baseGeojson || !cartogramOn || cartogram.status !== 'ready') return baseGeojson;
+    try {
+      return withGeometry(baseGeojson, cartogram.collection);
+    } catch (error) {
+      if (import.meta.env.DEV) console.warn('[data] cartogram companion unusable', error.message);
+      return baseGeojson;
+    }
+  }, [baseGeojson, cartogramOn, cartogram.status, cartogram.collection]);
   const meshReady = unified
     ? atlas.status === 'ready'
     : layer === 'citychrone'
@@ -209,10 +235,10 @@ function AtlasScreen({ cityId, view }) {
   // scale, not what the city sits at, so the median is quoted in the summary.
   const fifteenMedian = useMemo(
     () =>
-      layer === 'fifteen' && geojson
-        ? summariseMeasure(geojson, fifteenKey, RAMPS.fifteen.ticks).median
+      layer === 'fifteen' && baseGeojson
+        ? summariseMeasure(baseGeojson, fifteenKey, RAMPS.fifteen.ticks).median
         : null,
-    [layer, geojson, fifteenKey],
+    [layer, baseGeojson, fifteenKey],
   );
 
   // ── Paint ──────────────────────────────────────────────────────────
@@ -578,6 +604,17 @@ function AtlasScreen({ cityId, view }) {
             />
           )}
 
+          {/* ── Geometry ─────────────────────────────────────── */}
+          {unified && (
+            <GeometryToggle
+              value={geometryValue}
+              onChange={setGeometry}
+              available={{ geographic: true, cartogram: cartogramPublished }}
+              missingName={platform.name}
+              loading={cartogramOn && cartogram.status === 'pending'}
+            />
+          )}
+
           {/* ── Opacity ──────────────────────────────────────── */}
           <label className="aa-field aa-opacity">
             <Eyebrow>{t('atlas.controls.opacity')}</Eyebrow>
@@ -716,6 +753,10 @@ function AtlasScreen({ cityId, view }) {
                       size: n(stats.cellRadiusM),
                     })
                   : t('city.cartogram.captionSize', { size: n(stats.cellRadiusM) })}
+                {' · '}
+                {geometryValue === 'cartogram'
+                  ? t('city.geometry.cartogramCaption')
+                  : t('city.geometry.mapCaption')}
               </div>
             )}
           </div>

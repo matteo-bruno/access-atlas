@@ -1,0 +1,51 @@
+.aa-explain {
+  margin: 0;
+}
+.aa-explain__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* The button is the only interactive part of a heading, so it stays quiet
+   until it is wanted: hairline circle, ink only on hover or when open. */
+.aa-explain__btn {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-3);
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+}
+.aa-explain__btn:hover {
+  border-color: var(--ink-4);
+  color: var(--ink);
+}
+.aa-explain__btn--open {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--card);
+}
+.aa-explain__body {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-left: 2px solid var(--hair);
+  color: var(--ink-2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.aa-explain__body p {
+  margin: 0 0 8px;
+}
+.aa-explain__body p:last-child {
+  margin-bottom: 0;
+}
+.aa-explain__body strong {
+  color: var(--ink);
+  font-weight: 600;
+}

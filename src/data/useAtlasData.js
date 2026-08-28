@@ -2,7 +2,7 @@
 // immediately and upgrades to published data if the catalogue offers it, so a
 // slow or absent dataset never blocks a page — it just stays seeded.
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
 import { publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
@@ -257,6 +257,66 @@ export function useCityProfile(platformId, cityId) {
       controller.abort();
     };
   }, [platformId, cityId, seed]);
+
+  return state;
+}
+
+/**
+ * The other geometry published for a city's cells: the true hexagons beside a
+ * cartogram. Loaded on first ask rather than with the page — a visitor who
+ * never touches the switch should not pay for a second copy of the mesh — and
+ * kept once loaded, so switching back and forth costs nothing.
+ *
+ * @returns {{ status: 'idle'|'pending'|'ready'|'error', collection: object|null }}
+ */
+export function useCityGeometry(platformId, cityId, enabled) {
+  const [state, setState] = useState({ status: 'idle', collection: null });
+  const loaded = useRef(null);
+
+  // A companion belongs to one city's values. Drop it the moment those
+  // change, or the map would draw this city's cells at the last one's.
+  useEffect(() => {
+    loaded.current = null;
+    setState({ status: 'idle', collection: null });
+  }, [platformId, cityId]);
+
+  useEffect(() => {
+    const key = `${platformId}/${cityId}`;
+    if (!enabled || !platformId || !cityId || loaded.current === key) return undefined;
+
+    let cancelled = false;
+    const controller = new AbortController();
+    setState({ status: 'pending', collection: null });
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        const result = await provider.cityGeometry(platformId, cityId, catalogue, {
+          signal: controller.signal,
+        });
+        if (cancelled) return;
+        if (!result) {
+          // Not published is not an error: the page offers no switch.
+          setState({ status: 'idle', collection: null });
+          return;
+        }
+        loaded.current = key;
+        setState({ status: 'ready', collection: result.collection });
+      } catch (error) {
+        if (error?.name === 'AbortError' || cancelled) return;
+        if (import.meta.env.DEV) {
+          console.warn(`[data] geometry for ${key} unusable`, error.message);
+        }
+        setState({ status: 'error', collection: null });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [platformId, cityId, enabled]);
 
   return state;
 }

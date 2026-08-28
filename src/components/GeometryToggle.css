@@ -1,0 +1,43 @@
+/* The toggle carries its own copy of .aa-toggle: it is used on three screens,
+   and only one of them loads the page stylesheet that first defined it. */
+.aa-geometry .aa-toggle {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 6px;
+  margin: 8px 0 18px;
+}
+.aa-geometry .aa-toggle__btn {
+  padding: 7px 10px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-2);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.aa-geometry .aa-toggle__btn:hover:not(:disabled) {
+  border-color: var(--ink-4);
+}
+.aa-geometry .aa-toggle__btn--active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--card);
+}
+.aa-geometry .aa-toggle__btn:disabled {
+  color: var(--ink-4);
+  cursor: not-allowed;
+}
+/* Says why the option is off, in the option itself. */
+.aa-geometry__off {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.aa-geometry__loading {
+  margin: -10px 0 14px;
+  color: var(--ink-3);
+  font-size: 12px;
+}

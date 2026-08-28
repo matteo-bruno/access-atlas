@@ -289,6 +289,88 @@ for (const [route, name] of ROUTES) {
   await page.close();
 }
 
+// ── Map ⇄ cartogram ──────────────────────────────────────────────────
+// The switch is a change of what a polygon claims, not a display preference,
+// so what is asserted here is the claim: that the companion is fetched only
+// when asked for, that the caption says which of the two is on screen, and
+// that a platform publishing no cartogram says so instead of hiding the
+// option — an absent view and an unbuilt one look identical otherwise.
+{
+  const page = await context.newPage();
+  const requested = [];
+  page.on('request', (r) => requested.push(r.url()));
+
+  await page.goto(`${BASE}/platforms/accessibility-pov/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  check(
+    'The companion geometry is not fetched until it is asked for',
+    requested.filter((u) => u.includes('.geo.geojson')).length === 0,
+  );
+
+  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.waitForTimeout(2000);
+  const mapCaption = await page.$eval('.aa-city__caption', (e) => e.textContent);
+  check(
+    'Switching to the map loads the hexagons and says what they are',
+    requested.filter((u) => u.includes('pov/milan.geo.geojson')).length === 1 &&
+      /ground it covers/i.test(mapCaption),
+    mapCaption,
+  );
+
+  await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
+  await page.waitForTimeout(800);
+  const cartoCaption = await page.$eval('.aa-city__caption', (e) => e.textContent);
+  check(
+    'Switching back says the area is population again',
+    /resident population/i.test(cartoCaption),
+    cartoCaption,
+  );
+  await page.close();
+}
+
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/15min-city/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  const control = await page.$eval('.aa-geometry', (e) => e.textContent);
+  const disabled = await page.getByRole('button', { name: /Cartogram/ }).isDisabled();
+  check(
+    '15minCity states that it publishes no cartogram',
+    disabled && /No cartogram published/i.test(control),
+    control.replace(/\s+/g, ' ').trim(),
+  );
+  await page.close();
+}
+
+{
+  const page = await context.newPage();
+  const requested = [];
+  page.on('request', (r) => requested.push(r.url()));
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+
+  await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
+  await page.waitForTimeout(2000);
+  await page.getByRole('button', { name: '15min-City' }).click();
+  await page.waitForTimeout(1200);
+  const offForFifteen = await page.getByRole('button', { name: /Cartogram/ }).isDisabled();
+  await page.getByRole('button', { name: 'Car Dependency Index' }).click();
+  await page.waitForTimeout(2000);
+  const caption = await page.$eval('.aa-city__caption', (e) => e.textContent);
+
+  // Each platform publishes its own cartogram — they disagree on cells they
+  // share — so the viewer must fetch one per layer rather than reuse one.
+  check(
+    'The combined viewer switches geometry per layer',
+    offForFifteen &&
+      /resident population/i.test(caption) &&
+      requested.filter((u) => u.includes('cartogram-pov')).length === 1 &&
+      requested.filter((u) => u.includes('cartogram-cardep')).length === 1,
+    caption,
+  );
+  await page.close();
+}
+
 // ── EN ⇄ IT ──────────────────────────────────────────────────────────
 {
   const page = await context.newPage();

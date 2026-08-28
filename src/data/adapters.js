@@ -166,6 +166,40 @@ export function meshFromPublished(collection, profile = {}) {
 }
 
 /**
+ * Re-draw a mesh on the other geometry published for the same cells.
+ *
+ * A companion file carries one polygon per cell and states the row it belongs
+ * to, so the values are never re-read and never re-matched by position. Cells
+ * the companion omits are dropped: a cartogram covers only the cells its own
+ * platform measures, and drawing the rest on their hexagons would mix two
+ * geometries in one picture.
+ *
+ * @param {object} collection  the mesh being drawn, values and all
+ * @param {object} companion   FeatureCollection of `{ properties: { i } }`
+ */
+export function withGeometry(collection, companion) {
+  const source = collection?.features;
+  const rows = companion?.features;
+  if (!Array.isArray(source) || !Array.isArray(rows) || rows.length === 0) {
+    throw new AdapterError('Geometry companion has no features');
+  }
+
+  return {
+    type: 'FeatureCollection',
+    features: rows.map((row) => {
+      const i = row?.properties?.i;
+      if (!Number.isInteger(i) || i < 0 || i >= source.length) {
+        throw new AdapterError(`Geometry companion points at row ${i}`);
+      }
+      if (!row.geometry) throw new AdapterError(`Geometry companion row ${i} has no geometry`);
+      // Keep the feature's id: the page filters its highlight layer on it and
+      // applies feature-state by it, and neither should notice the swap.
+      return { ...source[i], geometry: row.geometry };
+    }),
+  };
+}
+
+/**
  * A published Car Dependency cartogram → the same city-page contract.
  *
  * The index is continuous in [−1, +1]; `stops` (from src/data/platforms.js)

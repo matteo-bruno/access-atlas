@@ -73,6 +73,27 @@ export function createStaticProvider() {
       return { collection, profile, scenario: scenario ?? null };
     },
 
+    // The other geometry for a city's cells: the true hexagons beside a
+    // published cartogram. Null where only one geometry is published, which
+    // is how the viewer knows not to offer the switch.
+    async cityGeometry(platformId, cityId, catalogue, { signal } = {}) {
+      const profile = publishedCity(catalogue, platformId, cityId);
+      if (!profile?.geoDataset) return null;
+      const collection = await loadDataset({ url: dataUrl(profile.geoDataset) }, { signal });
+      return { collection, profile, kind: 'geographic' };
+    },
+
+    // The same in reverse for the combined viewer, whose union mesh is
+    // already geographic: one platform's cartogram polygons, covering only
+    // the cells that platform measures.
+    async atlasGeometry(cityId, platformId, catalogue, { signal } = {}) {
+      const profile = atlasCity(catalogue, cityId);
+      const dataset = profile?.cartograms?.[platformId];
+      if (!dataset) return null;
+      const collection = await loadDataset({ url: dataUrl(dataset) }, { signal });
+      return { collection, profile, kind: 'cartogram' };
+    },
+
     // Scenarios a static host can offer: whatever the catalogue lists. A
     // backend provider would return ones computed on demand instead.
     async scenarios(platformId, cityId, catalogue) {
@@ -126,6 +147,10 @@ export function createStaticProvider() {
  *   cityMesh(platformId, cityId, catalogue, opts)
  *                                              → { collection, profile, scenario } | null
  *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]
+ *   cityGeometry(platformId, cityId, catalogue, opts)
+ *                                              → { collection, profile, kind } | null
+ *   atlasGeometry(cityId, platformId, catalogue, opts)
+ *                                              → { collection, profile, kind } | null
  *   atlasMesh(cityId, catalogue, opts)         → { collection, profile } | null
  *   hourly(platformId, cityId, hour, catalogue, opts)
  *                                              → { collection, profile, hour } | null

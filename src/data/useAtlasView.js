@@ -6,7 +6,7 @@
 // swapping per-platform meshes (the legacy path, handled by the page with
 // useCityMesh). Both are decided here so the page asks one hook one question.
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { citychroneHour, meshFromAtlas } from './adapters.js';
 import { atlasCity, publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
@@ -242,6 +242,58 @@ export function useTravelTimes(cityId, hour, enabled = false) {
       controller.abort();
     };
   }, [cityId, hour, enabled]);
+
+  return state;
+}
+
+/**
+ * One platform's cartogram polygons for a harmonised city — the combined
+ * viewer's union mesh is geographic, so this is the switch in the other
+ * direction. Null where that platform publishes no cartogram, which is how
+ * the viewer knows to say so rather than draw one.
+ *
+ * @returns {{ status: 'idle'|'pending'|'ready'|'error', collection: object|null }}
+ */
+export function useAtlasCartogram(cityId, platformId, enabled) {
+  const [state, setState] = useState({ status: 'idle', collection: null });
+  const loaded = useRef(null);
+
+  useEffect(() => {
+    const key = `${cityId}/${platformId}`;
+    if (!enabled || !cityId || !platformId) return undefined;
+    // Each layer has its own cartogram, so the key carries both — switching
+    // layer while in cartogram view has to fetch the new one.
+    if (loaded.current === key) return undefined;
+
+    let cancelled = false;
+    const controller = new AbortController();
+    setState({ status: 'pending', collection: null });
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        const result = await provider.atlasGeometry(cityId, platformId, catalogue, {
+          signal: controller.signal,
+        });
+        if (cancelled) return;
+        if (!result) {
+          setState({ status: 'idle', collection: null });
+          return;
+        }
+        loaded.current = key;
+        setState({ status: 'ready', collection: result.collection });
+      } catch (error) {
+        if (error?.name === 'AbortError' || cancelled) return;
+        setState({ status: 'error', collection: null });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [cityId, platformId, enabled]);
 
   return state;
 }

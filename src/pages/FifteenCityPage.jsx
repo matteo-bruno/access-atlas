@@ -10,6 +10,7 @@ import { cityZoom } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { useAtlasCityIds } from '../data/useAtlasData.js';
+import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { summariseMeasure } from '../data/adapters.js';
 import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import { paperForPlatform } from '../data/research.js';
@@ -134,6 +135,17 @@ export function FifteenCityPage({ platform, profile }) {
             beyondLabel={t('atlas.beyond.fifteen')}
           />
 
+          {/* 15minCity publishes its cells where they are and nothing else,
+              so the switch is here to say that rather than to offer it. */}
+          {profile.geometry && (
+            <GeometryToggle
+              value="geographic"
+              onChange={() => {}}
+              available={{ geographic: true, cartogram: false }}
+              missingName={platform.name}
+            />
+          )}
+
           <div className="aa-city__summary">
             <Eyebrow>{t('city.summary.title')}</Eyebrow>
             <dl className="aa-summary">
@@ -201,6 +213,8 @@ export function FifteenCityPage({ platform, profile }) {
                       size: n(stats.cellRadiusM),
                     })
                   : t('city.cartogram.captionSize', { size: n(stats.cellRadiusM) })}
+                {' · '}
+                {t('city.geometry.mapCaption')}
               </div>
             )}
           </div>
