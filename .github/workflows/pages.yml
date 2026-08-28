@@ -41,11 +41,12 @@ jobs:
           # build needs that prefix for its assets and for the router basename.
           # On a custom domain or a <owner>.github.io repo, set this to `/`.
           VITE_BASE: /${{ github.event.repository.name }}/
-          # City maps draw raster tiles under the mesh; world maps keep the
-          # paper basemap. Set this to `none` to publish without any
-          # third-party basemap, or to another {z}/{x}/{y} template to change
-          # provider — `VITE_TILE_ATTRIBUTION` sets the credit shown with it.
-          VITE_TILE_URL: https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png
+          # City maps draw a vector basemap under the mesh; world maps keep the
+          # paper basemap. OpenFreeMap serves it without an API key or an
+          # account. Set this to `none` to publish with no third-party basemap
+          # at all, or to another MapLibre style URL to change provider —
+          # attribution travels inside the style and is rendered from it.
+          VITE_BASEMAP_STYLE: https://tiles.openfreemap.org/styles/positron
 
       # Pages serves `404.html` for unknown paths; `vite.config.js` emits it as
       # a copy of the shell so deep links like /faq reach the router. CI's

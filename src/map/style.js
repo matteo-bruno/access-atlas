@@ -5,16 +5,16 @@
 // public/data/world-land.geojson). No tile server, no API key, no network — it
 // matches the approved design and works offline.
 //
-// City views ask for `basemap: true` and get raster tiles underneath instead.
-// Natural Earth 110m has nothing to say at city zoom — the whole viewport sits
-// inside a single land polygon — so a cell mesh would float on a blank field
-// with no streets or place names to locate it against.
+// City views ask for `basemap: true` and get a real basemap underneath
+// instead. Natural Earth 110m has nothing to say at city zoom — the whole
+// viewport sits inside a single land polygon — so a cell mesh would float on a
+// blank field with no streets or place names to locate it against.
 //
-// Tiles come from a third party, so they are a build-time decision rather than
-// something baked in: VITE_TILE_URL replaces the template, and
-// VITE_TILE_URL=none switches them off entirely, which is how the test suites
-// and any offline or air-gapped build run — city maps then fall back to paper.
-// VITE_MAP_STYLE (a full MapLibre style JSON) overrides everything.
+// The city basemap comes from a third party, so it is a build-time decision
+// rather than something baked in. One switch: VITE_BASEMAP_STYLE names a
+// MapLibre style, and `none` turns city basemaps off entirely — which is how
+// the test suites and any offline or air-gapped build run, city maps then
+// falling back to paper.
 
 import { PAPER } from '../data/brand.js';
 
@@ -22,25 +22,25 @@ const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 export const LAND_URL = asset('data/world-land.geojson');
 
-export const EXTERNAL_STYLE = import.meta.env.VITE_MAP_STYLE || null;
+// OpenFreeMap's Positron: a light, low-chroma OSM basemap that sits under the
+// Atlas's palette without competing with it. Vector rather than raster, and
+// served without an API key or an account — which is what the rest of this
+// codebase assumes, and what CARTO's basemaps stopped being. Attribution
+// travels inside the style's own sources and is rendered by MapLibre's
+// attribution control (see AtlasMap).
+const DEFAULT_STYLE_URL = 'https://tiles.openfreemap.org/styles/positron';
+const STYLE_OVERRIDE = import.meta.env.VITE_BASEMAP_STYLE || null;
 
-// CARTO Positron: a light, low-chroma OSM basemap that sits under the Atlas's
-// palette without competing with it. Attribution is required and rendered by
-// MapLibre's attribution control (see AtlasMap).
-const DEFAULT_TILE_URL = 'https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
-const TILE_OVERRIDE = import.meta.env.VITE_TILE_URL || null;
-const TILE_URL = TILE_OVERRIDE === 'none' ? null : (TILE_OVERRIDE ?? DEFAULT_TILE_URL);
-const TILE_ATTRIBUTION =
-  import.meta.env.VITE_TILE_ATTRIBUTION || '© OpenStreetMap contributors © CARTO';
+export const CITY_STYLE_URL =
+  STYLE_OVERRIDE === 'none' ? null : (STYLE_OVERRIDE ?? DEFAULT_STYLE_URL);
 
 /**
- * Whether a map with these options draws third-party tiles, and so must show
- * their attribution. World views never do: the paper basemap is the approved
- * design and reads correctly at that scale.
+ * Whether a map with these options draws a third-party basemap, and so must
+ * show its attribution. World views never do: the paper basemap is the
+ * approved design and reads correctly at that scale.
  */
 export function usesTiles({ basemap = false } = {}) {
-  if (EXTERNAL_STYLE) return true;
-  return basemap && Boolean(TILE_URL);
+  return basemap && Boolean(CITY_STYLE_URL);
 }
 
 // Meridians and parallels every `step` degrees, as a GeoJSON line collection.
@@ -68,49 +68,13 @@ function graticule(step = 30) {
 }
 
 /**
+ * The Atlas's own basemap — no network, no key, works offline.
+ *
  * @param {object} [options]
  * @param {boolean} [options.graticule] draw meridians/parallels (world views only)
  * @param {string}  [options.paper]     background colour override
- * @param {boolean} [options.basemap]   draw raster tiles (city views)
  */
-export function paperStyle({
-  graticule: withGraticule = true,
-  paper = PAPER.mapPaper,
-  basemap = false,
-} = {}) {
-  if (usesTiles({ basemap })) {
-    return {
-      version: 8,
-      sources: {
-        basemap: {
-          type: 'raster',
-          tiles: [TILE_URL],
-          tileSize: 256,
-          attribution: TILE_ATTRIBUTION,
-        },
-      },
-      layers: [
-        // Kept below the tiles: if they fail to load — offline, blocked host,
-        // provider down — the map degrades to the paper background with the
-        // mesh on top rather than to a void.
-        { id: 'paper', type: 'background', paint: { 'background-color': paper } },
-        {
-          id: 'basemap',
-          type: 'raster',
-          source: 'basemap',
-          paint: {
-            // Warm the tiles toward the Atlas paper palette and mute them, so
-            // the data layer stays the thing you read first.
-            'raster-saturation': -0.55,
-            'raster-contrast': -0.12,
-            'raster-brightness-min': 0.08,
-            'raster-opacity': 0.85,
-          },
-        },
-      ],
-    };
-  }
-
+export function paperStyle({ graticule: withGraticule = true, paper = PAPER.mapPaper } = {}) {
   const sources = {
     land: { type: 'geojson', data: LAND_URL },
   };
@@ -139,10 +103,36 @@ export function paperStyle({
   return { version: 8, sources, layers };
 }
 
-export function resolveStyle(options) {
-  return EXTERNAL_STYLE ?? paperStyle(options);
+/**
+ * The style a map should use, resolved before the map is built.
+ *
+ * City views fetch the basemap style themselves rather than handing MapLibre
+ * a URL, so that a style host which is slow, blocked or down degrades to the
+ * paper basemap instead of leaving the map with no style at all — and
+ * therefore no data layers, since children mount only once a style has
+ * loaded. The data is the point of the map; the basemap is context.
+ */
+export async function resolveStyle({ graticule = true, basemap = false, signal } = {}) {
+  const paper = paperStyle({ graticule });
+  if (!usesTiles({ basemap })) return paper;
+
+  try {
+    const response = await fetch(CITY_STYLE_URL, { signal });
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    return await response.json();
+  } catch (error) {
+    if (error?.name === 'AbortError') throw error;
+    console.warn('[map] basemap style unavailable — falling back to paper', error.message);
+    return paper;
+  }
 }
 
-// Layers added by components sit above the basemap; this is the id they are
-// inserted before when a style already carries its own overlays.
-export const OVERLAY_ANCHOR = undefined;
+/**
+ * The layer a component's own layers are inserted before: the style's first
+ * symbol layer, so place names and road labels stay legible above the data
+ * rather than under it. The paper basemap has no symbols and returns
+ * undefined, which appends as before.
+ */
+export function overlayAnchor(map) {
+  return map.getStyle()?.layers?.find((layer) => layer.type === 'symbol')?.id;
+}

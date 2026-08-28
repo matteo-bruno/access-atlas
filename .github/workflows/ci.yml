@@ -23,14 +23,14 @@ jobs:
       # empty panel further down.
       - run: npm run test:data
 
-      # City maps draw a third-party raster basemap in the deployed build. The
-      # suites must not depend on that host being reachable — a CDN outage is
-      # not a regression in this repository — so they run against a build with
-      # tiles off, which falls back to the paper basemap. The deploy workflow
-      # builds with them on.
+      # City maps draw a third-party basemap in the deployed build. The suites
+      # must not depend on that host being reachable — an outage there is not a
+      # regression in this repository — so they run against a build with the
+      # basemap off, which falls back to paper. The deploy workflow builds with
+      # it on.
       - run: npm run build
         env:
-          VITE_TILE_URL: none
+          VITE_BASEMAP_STYLE: none
 
       # Playwright is deliberately not a project dependency — the smoke test is
       # the only thing that needs a browser, so CI installs it on the fly.

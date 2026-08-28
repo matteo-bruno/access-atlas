@@ -101,6 +101,7 @@ function CityPreview({ platform, cityId, cities }) {
       center={profile.center}
       zoom={(profile.zoom ?? 10) - 0.9}
       graticule={false}
+      basemap
       interactive={false}
       label={platform.name}
     >

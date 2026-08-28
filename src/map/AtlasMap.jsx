@@ -18,7 +18,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 // and leave its `./maplibre-gl-shared.mjs` import dangling. Needs
 // `worker.format: 'es'` in vite.config.js, since MapLibre spawns it as a module.
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
-import { resolveStyle, usesTiles } from './style.js';
+import { overlayAnchor, resolveStyle, usesTiles } from './style.js';
 import './AtlasMap.css';
 
 const MapCtx = createContext(null);
@@ -74,7 +74,13 @@ export function AtlasMap({
 }) {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
+  // Teardown is registered from inside an async block, so it is held here
+  // rather than returned directly from the effect.
+  const cleanupRef = useRef(null);
   const [ready, setReady] = useState(false);
+  // The basemap's first symbol layer: data layers are inserted before it so
+  // place names stay readable above the mesh.
+  const [anchor, setAnchor] = useState(undefined);
   const [visible, setVisible] = useState(interactive);
 
   useImperativeHandle(ref, () => ({
@@ -107,80 +113,101 @@ export function AtlasMap({
   useEffect(() => {
     if (!visible || !containerRef.current || mapRef.current) return undefined;
 
-    const map = new MapLibreMap({
-      container: containerRef.current,
-      style: resolveStyle({ graticule, basemap }),
-      center,
-      zoom,
-      minZoom,
-      maxZoom,
-      interactive,
-      // Third-party tiles must carry their attribution; the paper basemap is
-      // credited in the page chrome instead.
-      attributionControl: usesTiles({ basemap }) ? { compact: true } : false,
-      dragRotate: false,
-      pitchWithRotate: false,
-      renderWorldCopies: true,
-      fadeDuration: 0,
-    });
+    // The style is resolved before the map exists: a city basemap is fetched
+    // from a third party, and handing MapLibre a URL that never answers would
+    // leave the map with no style, and so with no data layers at all.
+    const controller = new AbortController();
+    let disposed = false;
 
-    map.touchZoomRotate?.disableRotation();
-    mapRef.current = map;
-    // MapLibre swallows style/source failures unless you listen for them.
-    let basemapReported = false;
-    map.on('error', (event) => {
-      const message = event?.error?.message ?? event?.error ?? event;
-      // A basemap tile that will not load is an external resource being
-      // unavailable — offline, a blocked host, the provider down. The style
-      // keeps the paper background underneath, so the map still reads. Report
-      // it once per map rather than once per failed tile.
-      if (event?.sourceId === 'basemap') {
-        if (!basemapReported) {
-          basemapReported = true;
-          console.warn('[maplibre] basemap tiles unavailable — falling back to paper', message);
-        }
-        return;
-      }
-      console.error('[maplibre]', message);
-    });
+    (async () => {
+      const style = await resolveStyle({ graticule, basemap, signal: controller.signal }).catch(
+        () => null,
+      );
+      if (disposed || !style || !containerRef.current) return;
 
-    let announced = false;
-    const handleLoad = () => {
-      if (announced) return;
-      announced = true;
-      if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-      else if (fitWorldWidth) applyWorldWidthZoom(map);
-      setReady(true);
-      onReady?.(map);
-    };
-    map.on('load', handleLoad);
-
-    // `load` waits for every source to settle, which a raster basemap on a
-    // slow or unreachable host may never do — and the data layers are the
-    // point of the map, so they must not wait on a decorative one. The style
-    // being parsed is all a child needs to add its source and layer.
-    const handleStyle = () => {
-      if (map.isStyleLoaded()) handleLoad();
-    };
-    map.on('styledata', handleStyle);
-
-    // Re-fit on resize so a world view keeps spanning exactly 360° of
-    // longitude at any breakpoint.
-    let observer;
-    if (fitWorldWidth && typeof ResizeObserver !== 'undefined') {
-      observer = new ResizeObserver(() => {
-        if (map.loaded()) applyWorldWidthZoom(map);
+      const map = new MapLibreMap({
+        container: containerRef.current,
+        style,
+        center,
+        zoom,
+        minZoom,
+        maxZoom,
+        interactive,
+        // Third-party tiles must carry their attribution; the paper basemap is
+        // credited in the page chrome instead.
+        attributionControl: usesTiles({ basemap }) ? { compact: true } : false,
+        dragRotate: false,
+        pitchWithRotate: false,
+        renderWorldCopies: true,
+        fadeDuration: 0,
       });
-      observer.observe(containerRef.current);
-    }
+
+      map.touchZoomRotate?.disableRotation();
+      mapRef.current = map;
+      // MapLibre swallows style/source failures unless you listen for them.
+      let basemapReported = false;
+      map.on('error', (event) => {
+        const message = event?.error?.message ?? event?.error ?? event;
+        // A basemap tile that will not load is an external resource being
+        // unavailable — offline, a blocked host, the provider down. The data
+        // layers are ours and local; anything else is the basemap's, and the
+        // map still reads without it. Report it once rather than per tile.
+        if (event?.sourceId && !event.sourceId.includes('-src')) {
+          if (!basemapReported) {
+            basemapReported = true;
+            console.warn('[maplibre] basemap tiles unavailable — falling back to paper', message);
+          }
+          return;
+        }
+        console.error('[maplibre]', message);
+      });
+
+      let announced = false;
+      const handleLoad = () => {
+        if (announced) return;
+        announced = true;
+        setAnchor(overlayAnchor(map));
+        if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
+        else if (fitWorldWidth) applyWorldWidthZoom(map);
+        setReady(true);
+        onReady?.(map);
+      };
+      map.on('load', handleLoad);
+
+      // `load` waits for every source to settle, which a raster basemap on a
+      // slow or unreachable host may never do — and the data layers are the
+      // point of the map, so they must not wait on a decorative one. The style
+      // being parsed is all a child needs to add its source and layer.
+      const handleStyle = () => {
+        if (map.isStyleLoaded()) handleLoad();
+      };
+      map.on('styledata', handleStyle);
+
+      // Re-fit on resize so a world view keeps spanning exactly 360° of
+      // longitude at any breakpoint.
+      let observer;
+      if (fitWorldWidth && typeof ResizeObserver !== 'undefined') {
+        observer = new ResizeObserver(() => {
+          if (map.loaded()) applyWorldWidthZoom(map);
+        });
+        observer.observe(containerRef.current);
+      }
+
+      cleanupRef.current = () => {
+        observer?.disconnect();
+        map.off('load', handleLoad);
+        map.off('styledata', handleStyle);
+        map.remove();
+        mapRef.current = null;
+        setReady(false);
+      };
+    })();
 
     return () => {
-      observer?.disconnect();
-      map.off('load', handleLoad);
-      map.off('styledata', handleStyle);
-      map.remove();
-      mapRef.current = null;
-      setReady(false);
+      disposed = true;
+      controller.abort();
+      cleanupRef.current?.();
+      cleanupRef.current = null;
     };
     // center/zoom are initial camera values only — changing them later should
     // move the camera (see below), not tear the map down.
@@ -202,7 +229,7 @@ export function AtlasMap({
       role={interactive ? 'application' : 'img'}
       aria-label={label}
     >
-      <MapCtx.Provider value={ready ? { map: mapRef.current } : null}>
+      <MapCtx.Provider value={ready ? { map: mapRef.current, anchor } : null}>
         {ready && children}
       </MapCtx.Provider>
     </div>
@@ -241,6 +268,9 @@ export function GeoJSONLayer({
 }) {
   const ctx = useAtlasMap();
   const map = ctx?.map;
+  // Data goes under the basemap's labels, so the place names a reader locates
+  // the mesh by stay legible through it.
+  const anchor = ctx?.anchor;
   const uid = useId().replace(/:/g, '');
   const sourceId = `${id}-${uid}-src`;
   const layerId = `${id}-${uid}`;
@@ -254,14 +284,19 @@ export function GeoJSONLayer({
     if (!map) return undefined;
 
     map.addSource(sourceId, { type: 'geojson', data, promoteId });
-    map.addLayer({
-      id: layerId,
-      type,
-      source: sourceId,
-      ...(layout ? { layout } : {}),
-      ...(filter ? { filter } : {}),
-      paint,
-    });
+    map.addLayer(
+      {
+        id: layerId,
+        type,
+        source: sourceId,
+        ...(layout ? { layout } : {}),
+        ...(filter ? { filter } : {}),
+        paint,
+      },
+      // Undefined on the paper basemap, which has no symbols — appended, as
+      // it was before there was a basemap to sit under.
+      anchor,
+    );
 
     return () => {
       if (!map.getStyle()) return;
@@ -269,7 +304,7 @@ export function GeoJSONLayer({
       if (map.getSource(sourceId)) map.removeSource(sourceId);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, layerId, sourceId, type]);
+  }, [map, layerId, sourceId, type, anchor]);
 
   // Data updates.
   useEffect(() => {

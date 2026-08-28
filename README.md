@@ -98,26 +98,38 @@ and simplified Natural Earth land polygons bundled at
 `public/data/world-land.geojson`. No tile server, no API key, works offline,
 and it matches the design's palette exactly.
 
-**City maps** draw raster tiles underneath instead — CARTO Positron by
-default, muted toward the paper palette. Natural Earth 110m has nothing to say
-at city zoom, so without them a cell mesh floats on a blank field with no
-streets or place names to locate it against. Attribution is rendered by
-MapLibre's own control, as the licence requires.
+**City maps** draw a real basemap underneath instead — [OpenFreeMap][ofm]'s
+Positron, muted toward the paper palette. Natural Earth 110m has nothing to say
+at city zoom, so without it a cell mesh floats on a blank field with no streets
+or place names to locate it against. OpenFreeMap serves vector tiles with no
+API key and no account, which is what the rest of this repository assumes;
+attribution travels inside the style and is rendered by MapLibre's own control,
+as the licence requires.
+
+Data layers are inserted *below* the basemap's first symbol layer, so place
+names stay readable above the mesh rather than under it.
 
 ```bash
-VITE_TILE_URL=none                         # no third-party tiles anywhere
-VITE_TILE_URL=https://…/{z}/{x}/{y}.png    # a different raster provider
-VITE_TILE_ATTRIBUTION="© …"                # the credit shown with them
-VITE_MAP_STYLE=https://…/style.json        # a full MapLibre style, overrides both
+VITE_BASEMAP_STYLE=none                    # no third-party basemap anywhere
+VITE_BASEMAP_STYLE=https://…/style.json    # a different provider
 VITE_BASE=/access-atlas/                   # serve from a sub-path
 ```
 
-The deploy workflow sets `VITE_TILE_URL` explicitly, so switching provider or
-turning tiles off for the published site is a one-line change in
-`.github/workflows/pages.yml`. **CI builds with `VITE_TILE_URL=none`**: the
+The deploy workflow sets `VITE_BASEMAP_STYLE` explicitly, so switching provider
+or turning the basemap off for the published site is a one-line change in
+`.github/workflows/pages.yml`. **CI builds with `VITE_BASEMAP_STYLE=none`**: the
 browser suites assert on console and network errors, and a test that fails when
-a CDN is unreachable is testing the CDN. Build the same way before running them
-locally.
+a third-party host is unreachable is testing that host. Build the same way
+before running the suites locally. Reshooting the platform card stills is the
+opposite case: build with the basemap **on** (the default), or the cards come
+out on blank paper.
+
+The style is fetched before the map is constructed. A host that is slow,
+blocked or down therefore falls back to the paper basemap rather than leaving
+the map with no style at all — and so with no data layers, since children mount
+only once a style has loaded.
+
+[ofm]: https://openfreemap.org
 
 Layers are declarative — `<AtlasMap>` owns the map, `<GeoJSONLayer>` children
 add a source and a layer and keep them in sync with props. A platform's colours,

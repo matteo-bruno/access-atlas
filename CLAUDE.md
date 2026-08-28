@@ -173,11 +173,18 @@ and the map rendered blank while the panel showed correct figures. Readiness
 now also fires on `styledata` once `isStyleLoaded()`, which is all a child
 needs. Check this whenever a new source joins the style.
 
-**The suites run with `VITE_TILE_URL=none`.** City maps draw third-party
-tiles, and a test that fails when a CDN is unreachable is testing the CDN. CI
-builds with tiles off; the Pages workflow builds with them on. Chromium's own
-`net::ERR_*` console errors are not something the app can suppress, so this is
-a build flag rather than a filter in `smoke.mjs`.
+**The suites run with `VITE_BASEMAP_STYLE=none`.** City maps draw a
+third-party basemap, and a test that fails when that host is unreachable is
+testing the host. CI builds with it off; the Pages workflow builds with it on.
+Chromium's own `net::ERR_*` console errors are not something the app can
+suppress, so this is a build flag rather than a filter in `smoke.mjs`.
+
+**The basemap provider is one env var, and has changed once already.** CARTO's
+keyless raster tiles started requiring an API key, so the default moved to
+OpenFreeMap's vector Positron — keyless, accountless, and therefore consistent
+with a static build that cannot hold a secret. `resolveStyle` fetches the style
+itself rather than handing MapLibre a URL, so an unreachable provider degrades
+to paper instead of leaving the map style-less and, therefore, layer-less.
 
 **GitHub Pages deep links return HTTP 404 with a rendered page.** Inherent to
 the `404.html` fallback. Users see the right page; crawlers and uptime checks
@@ -203,7 +210,7 @@ browser suites take minutes to reach.
 
 Playwright is deliberately **not** a dependency; CI installs it on the fly.
 Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
-`VITE_TILE_URL=none` first so no check depends on the tile CDN.
+`VITE_BASEMAP_STYLE=none` first so no check depends on the basemap host.
 
 ## Copy and i18n
 
