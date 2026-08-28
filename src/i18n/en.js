@@ -427,7 +427,9 @@ export default {
   // viewers end on this screen, and the Atlas had the chip for it but no page.
   compare: {
     label: 'Compare cities',
-    title: '{name} across {count} cities',
+    // The subhead's title does not wrap — it is sized for city names — so the
+    // count travels with the lede underneath rather than in the title.
+    count: '{count} cities',
     lede: 'Every city this platform has published, side by side. Figures are computed from the same files the city pages draw, so a number here is the number there.',
     back: 'Back to the map',
     openCity: 'Open {name}',

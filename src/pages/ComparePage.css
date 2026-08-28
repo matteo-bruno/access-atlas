@@ -1,5 +1,13 @@
 .aa-compare {
   display: block;
+  /* Two things keep this inside the viewport. `min-width: 0` because a flex
+     item's automatic minimum is its min-content width, and the table's rows do
+     not wrap. `width: 100%` because auto cross-axis margins stop a flex item
+     stretching, so without a stated width it is sized to its content — the
+     charts' 720px viewBox — and the whole document scrolls sideways on a
+     phone. The table scrolls inside its own container instead. */
+  min-width: 0;
+  width: 100%;
   max-width: 1080px;
   margin: 0 auto;
   padding: 28px 32px 64px;
@@ -97,11 +105,15 @@
 }
 
 /* ── Charts ──────────────────────────────────────────────────────── */
+/* No overflow: visible here — a city label sticking out of the viewBox
+   widens the page itself, which on a phone turns the whole document into a
+   horizontal scroll. Labels clip at the edge instead; the viewBox carries
+   enough padding for them. */
 .aa-cityscatter,
 .aa-cdf {
+  display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
 }
 .aa-cityscatter__dot {
   cursor: pointer;

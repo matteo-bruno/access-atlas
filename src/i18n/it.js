@@ -426,7 +426,9 @@ export default {
   // il pulsante ma non la pagina.
   compare: {
     label: 'Confronta le città',
-    title: '{name} in {count} città',
+    // Il titolo del sottotitolo non va a capo — è dimensionato per i nomi di
+    // città — quindi il conteggio sta con l’occhiello sotto, non nel titolo.
+    count: '{count} città',
     lede: 'Tutte le città pubblicate da questa piattaforma, una accanto all’altra. I valori sono calcolati dagli stessi file che disegnano le pagine città: un numero qui è il numero lì.',
     back: 'Torna alla mappa',
     openCity: 'Apri {name}',

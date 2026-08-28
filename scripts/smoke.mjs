@@ -504,6 +504,39 @@ for (const [route, name] of ROUTES) {
   await page.close();
 }
 
+// ── Phone width ──────────────────────────────────────────────────────
+// A page that scrolls sideways on a phone is broken, and the ways to cause it
+// are subtle: a flex item's automatic minimum is its min-content width, auto
+// cross-axis margins stop it stretching so it takes its content's width
+// instead, and the subhead's title does not wrap. Wide content — the
+// comparison table, the charts — has to scroll inside its own box instead.
+{
+  const phone = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    isMobile: true,
+    hasTouch: true,
+  });
+  const wide = [];
+  for (const route of [
+    '/platforms/car-dependency-index/compare',
+    '/platforms/accessibility-pov/compare',
+    '/platforms/accessibility-pov/milan',
+    '/atlas/milan',
+  ]) {
+    const page = await phone.newPage();
+    await page.goto(BASE + route, { waitUntil: 'load' });
+    await page.waitForTimeout(2200);
+    const over = await page.evaluate(() => ({
+      doc: document.documentElement.scrollWidth,
+      view: window.innerWidth,
+    }));
+    if (over.doc > over.view + 1) wide.push(`${route} ${over.doc}px > ${over.view}px`);
+    await page.close();
+  }
+  await phone.close();
+  check('No page scrolls sideways on a phone', wide.length === 0, wide.join(' | '));
+}
+
 // ── EN ⇄ IT ──────────────────────────────────────────────────────────
 {
   const page = await context.newPage();

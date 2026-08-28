@@ -82,8 +82,12 @@ function CompareScreen({ platform, summary }) {
       <Subhead
         accent={platform.accent}
         label={t('compare.label')}
-        title={t('compare.title', { name: platform.name, count: n(summary.cities.length) })}
-        meta={<span className="aa-city__region">{t('compare.lede')}</span>}
+        title={platform.name}
+        meta={
+          <span className="aa-city__region">
+            {t('compare.count', { count: n(summary.cities.length) })} · {t('compare.lede')}
+          </span>
+        }
       >
         <Link className="aa-chip" to={`/platforms/${platform.slug}`}>
           {t('compare.back')}
