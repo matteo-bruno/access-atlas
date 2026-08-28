@@ -10,11 +10,24 @@ import './Explain.css';
  * touch screen. The explanation sits in the flow underneath rather than
  * floating over the map, so opening one never covers what it describes.
  *
- * @param {string} [props.label]  heading text; omitted for a bare "?"
- * @param {string} [props.body]   the explanation, or pass children
- * @param {boolean} [props.open]  open on first render
+ * The short text answers the question in front of the reader; anything longer
+ * belongs behind "more info", which opens the full account in a dialog rather
+ * than pushing the map off the screen.
+ *
+ * @param {string} [props.label]     heading text; omitted for a bare "?"
+ * @param {string} [props.body]      the explanation, or pass children
+ * @param {Function} [props.onMore]  opens the long form
+ * @param {boolean} [props.open]     open on first render
  */
-export function Explain({ label, body, children, defaultOpen = false, className = '' }) {
+export function Explain({
+  label,
+  body,
+  children,
+  onMore,
+  moreLabel,
+  defaultOpen = false,
+  className = '',
+}) {
   const [open, setOpen] = useState(defaultOpen);
   const id = useId();
   const content = children ?? body;
@@ -39,6 +52,11 @@ export function Explain({ label, body, children, defaultOpen = false, className 
       {open && (
         <div className="aa-explain__body" id={id} role="note">
           {typeof content === 'string' ? <p>{content}</p> : content}
+          {onMore && (
+            <button type="button" className="aa-explain__more" onClick={onMore}>
+              {moreLabel} →
+            </button>
+          )}
         </div>
       )}
     </div>

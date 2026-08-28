@@ -180,7 +180,9 @@ for (const [route, name] of ROUTES) {
 // ── The combined viewer: one mesh, four layers, state in the URL ─────
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  // The viewer opens on 15-minute city; this block is about P.O.V.'s mask and
+  // its shares, so it asks for that layer rather than assuming the default.
+  await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(6000);
 
   // 7,637 is the union mesh's cell count — a figure the seed data cannot
@@ -332,20 +334,6 @@ for (const [route, name] of ROUTES) {
 
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/15min-city/milan`, { waitUntil: 'load' });
-  await page.waitForTimeout(2500);
-  const control = await page.$eval('.aa-geometry', (e) => e.textContent);
-  const disabled = await page.getByRole('button', { name: /Cartogram/ }).isDisabled();
-  check(
-    '15minCity states that it publishes no cartogram',
-    disabled && /No cartogram published/i.test(control),
-    control.replace(/\s+/g, ' ').trim(),
-  );
-  await page.close();
-}
-
-{
-  const page = await context.newPage();
   const requested = [];
   page.on('request', (r) => requested.push(r.url()));
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
@@ -353,21 +341,81 @@ for (const [route, name] of ROUTES) {
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2000);
-  await page.getByRole('button', { name: '15min-City' }).click();
-  await page.waitForTimeout(1200);
-  const offForFifteen = await page.getByRole('button', { name: /Cartogram/ }).isDisabled();
   await page.getByRole('button', { name: 'Car Dependency Index' }).click();
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(2200);
   const caption = await page.$eval('.aa-city__caption', (e) => e.textContent);
 
-  // Each platform publishes its own cartogram — they disagree on cells they
-  // share — so the viewer must fetch one per layer rather than reuse one.
+  // No layer reuses another's cartogram: the two published ones disagree by
+  // up to 9.6 m on cells they share, and the derived ones are per platform
+  // too. Switching layer in cartogram view therefore fetches a second file.
   check(
     'The combined viewer switches geometry per layer',
-    offForFifteen &&
-      /resident population/i.test(caption) &&
-      requested.filter((u) => u.includes('cartogram-pov')).length === 1 &&
+    /resident population/i.test(caption) &&
+      requested.filter((u) => u.includes('cartogram-fifteen')).length === 1 &&
       requested.filter((u) => u.includes('cartogram-cardep')).length === 1,
+    caption,
+  );
+  await page.close();
+}
+
+// ── The combined viewer's defaults and detail ────────────────────────
+// Opens on proximity, offers the cartogram on every layer (two platforms
+// publish one, two are the Atlas's own), answers a click with all ten
+// categories at once, and keeps the long explanation behind "full
+// explanation" rather than in the panel.
+{
+  const page = await context.newPage();
+  const errors = [];
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  page.on('pageerror', (e) => errors.push(`PAGEERROR: ${e.message}`));
+
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(3200);
+  const opening = await page.locator('.aa-layers__row--active').innerText();
+  const cartogramOffered = !(await page.getByRole('button', { name: /^Cartogram/ }).isDisabled());
+  check(
+    'The combined viewer opens on 15-minute city, with a cartogram to switch to',
+    /15-minute city/.test(opening) && cartogramOffered,
+    opening.replace(/\s+/g, ' '),
+  );
+
+  const box = await page.locator('canvas').boundingBox();
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+  await page.waitForTimeout(900);
+  check(
+    'A selected cell answers every category at once',
+    (await page.locator('.aa-catbars__row').count()) === 10,
+  );
+
+  await page.locator('.aa-explain__btn').first().click();
+  await page.waitForTimeout(300);
+  await page.getByRole('button', { name: /Full explanation/ }).first().click();
+  await page.waitForTimeout(500);
+  const modal = (await page.locator('.aa-modal__body').innerText()).toLowerCase();
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  check(
+    'The full explanation opens in a dialog and Escape closes it',
+    /reading the map/.test(modal) &&
+      /data & methods/.test(modal) &&
+      (await page.locator('.aa-modal').count()) === 0,
+  );
+  check('No console errors in the combined viewer', errors.length === 0, errors.slice(0, 2).join(' | '));
+  await page.close();
+}
+
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/15min-city/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
+  await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
+  await page.waitForTimeout(2500);
+  const caption = await page.$eval('.aa-city__caption', (e) => e.textContent);
+  // The platform publishes no cartogram; this one is the Atlas's own, and the
+  // page has to be able to draw it as well as say so.
+  check(
+    '15-minute city can be drawn as a cartogram too',
+    /resident population/i.test(caption),
     caption,
   );
   await page.close();

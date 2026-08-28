@@ -51,17 +51,22 @@ exists. `withGeometry` in `adapters.js` re-draws the loaded features onto the
 other geometry, keeping each feature's id so highlights and feature-state do
 not notice.
 
-**The geographic side is derived; the cartogram side is not.** Every published
-cell sits on the standard H3 grid and the cartogram preserves its centroid, so
-the hexagon is recoverable — and `build-data.mjs` checks the derived hexagons
-against the ones CDI publishes in `hexes.geojson`, which they reproduce
-exactly. The cartogram cannot be derived in the other direction: its scale
-saturates at the full hexagon and has a floor for empty cells, so it is a
-layout its authors computed, not a transformation of the map. 15minCity and
-CityChrone publish none, and the UI says so rather than inventing one. P.O.V.'s
-and Car Dependency's own cartograms are **not** interchangeable either — their
-radii disagree by up to 9.6 m on cells they share, on a 9–201 m range — so the
-combined viewer fetches one per layer.
+**Geographic geometry is derived, and checked.** Every published cell sits on
+the standard H3 grid and the cartogram preserves its centroid, so the hexagon
+is recoverable — and `build-data.mjs` checks the derived hexagons against the
+ones CDI publishes in `hexes.geojson`, which they reproduce exactly.
+
+**Cartograms come from two places, and the catalogue says which.** P.O.V. and
+Car Dependency publish theirs. 15minCity and CityChrone publish none, so
+`build-atlas.mjs` derives one by a rule it states: a cell keeps its centre and
+its shape, and its **area is proportional to its resident population**,
+reaching the full hexagon at the city's median cell population. The median is
+not arbitrary — it is where the rule best reproduces the two published
+cartograms, which it matches to ~12 m on a ~200 m cell, and `build-atlas.mjs`
+fails if that drifts past 25 m. `cartogramSource` / `cartogramSources` mark a
+cartogram as `published` or `derived`, and the UI says which one is on screen.
+No layer reuses another's: even the two published ones disagree by up to 9.6 m
+on cells they share, on a 9–201 m range.
 
 Per-platform **summary files** (`<platform>/summary.json`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at

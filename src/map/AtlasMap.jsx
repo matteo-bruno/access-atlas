@@ -222,6 +222,22 @@ export function AtlasMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, center[0], center[1], zoom]);
 
+  // A parent that frames by extent rather than by zoom: refit when the extent
+  // changes, and when the panel is resized, since the fit depends on the shape
+  // of the space as much as on the data.
+  useEffect(() => {
+    const map = mapRef.current;
+    const container = containerRef.current;
+    if (!map || !ready || !bounds) return undefined;
+    const fit = () => map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
+    fit();
+    if (typeof ResizeObserver === 'undefined') return undefined;
+    const observer = new ResizeObserver(fit);
+    observer.observe(container);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, fitPadding, bounds?.[0]?.[0], bounds?.[0]?.[1], bounds?.[1]?.[0], bounds?.[1]?.[1]]);
+
   return (
     <div
       ref={containerRef}
@@ -291,7 +307,14 @@ export function GeoJSONLayer({
         source: sourceId,
         ...(layout ? { layout } : {}),
         ...(filter ? { filter } : {}),
-        paint,
+        paint: {
+          // A fill layer outlines itself in the fill colour unless told
+          // otherwise, and under fill-opacity that outline reads as a border
+          // on every cell — a mesh of 7,600 hexagons then looks like a grid
+          // rather than a surface. Callers can still ask for one.
+          ...(type === 'fill' ? { 'fill-outline-color': 'rgba(0,0,0,0)' } : {}),
+          ...paint,
+        },
       },
       // Undefined on the paper basemap, which has no symbols — appended, as
       // it was before there was a basemap to sit under.

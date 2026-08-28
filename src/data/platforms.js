@@ -18,7 +18,7 @@ export const PLATFORMS = [
     id: 'fifteen',
     slug: '15min-city',
     tag: '01',
-    name: '15min-City',
+    name: '15-minute city',
     theme: 'Proximity',
     themeKey: 'proximity',
     accent: '#b94e3b',

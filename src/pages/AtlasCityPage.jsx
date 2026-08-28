@@ -7,7 +7,7 @@ import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { RAMPS, rampColor } from '../map/ramps.js';
-import { cityZoom } from '../map/framing.js';
+import { cityZoom, meshBounds } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
@@ -18,6 +18,8 @@ import { summariseMeasure, withGeometry } from '../data/adapters.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
+import { CategoryBars } from '../components/CategoryBars.jsx';
+import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
 import {
   useAtlasCartogram,
@@ -68,6 +70,7 @@ function AtlasScreen({ cityId, view }) {
   const [infoOpen, setInfoOpen] = useState(false);
   const [geometry, setGeometry] = useState('geographic');
   const [selectedCell, setSelectedCell] = useState(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
   // Car Dependency's index filter, on the same bounds as its own viewer.
   // Whether it is actually filtering depends on the active layer, which is
   // resolved from the URL further down.
@@ -83,7 +86,9 @@ function AtlasScreen({ cityId, view }) {
   const layer = useMemo(() => {
     const requested = params.get('layer');
     if (requested && ALL_LAYERS.includes(requested) && layerAvailable(requested)) return requested;
-    if (available.has('pov')) return 'pov';
+    // LAYER_ORDER is the platform numbering, so this opens on 15-minute city:
+    // proximity is the measure that needs the least explaining, and the one
+    // with the widest coverage of the city.
     return LAYER_ORDER.find((id) => available.has(id)) ?? 'pov';
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params, available, hasPopulation]);
@@ -133,11 +138,13 @@ function AtlasScreen({ cityId, view }) {
 
   // ── Geometry ───────────────────────────────────────────────────────
   // Reversed from the platform pages: the union mesh is already the cells
-  // where they are, and the cartogram is the companion. Only P.O.V. and Car
-  // Dependency publish one, and each publishes its own — the two disagree by
-  // up to 9.6 m on cells they share, so they are not interchangeable.
-  const cartogramLayer = unified && (layer === 'pov' || layer === 'cardep') ? layer : null;
+  // where they are, and the cartogram is the companion. Every layer has one —
+  // P.O.V.'s and Car Dependency's as those platforms publish them, the other
+  // two derived by the Atlas — and each is its own, never shared: even the two
+  // published ones disagree by up to 9.6 m on cells they both cover.
+  const cartogramLayer = unified && layer !== POPULATION_LAYER ? layer : null;
   const cartogramPublished = Boolean(profile.cartograms?.[cartogramLayer]);
+  const cartogramDerived = profile.cartogramSources?.[cartogramLayer] === 'derived';
   const cartogramOn = geometry === 'cartogram' && cartogramPublished;
   // The choice is remembered across layers but only honoured where that
   // layer publishes a cartogram, so switching to 15minCity shows the map and
@@ -193,6 +200,11 @@ function AtlasScreen({ cityId, view }) {
     }
     return states;
   }, [citychroneOn, ccHour.data, featureIdForCc, matrixRow]);
+
+  // The union mesh's extent, so the frame is the city and not the layer:
+  // switching between a platform covering 7,498 cells and one covering 1,636
+  // must not move the camera.
+  const bounds = useMemo(() => meshBounds(baseGeojson), [baseGeojson]);
 
   // ── What the active layer measures ─────────────────────────────────
   // One description per layer: the value expression to colour by, the ramp
@@ -655,7 +667,14 @@ function AtlasScreen({ cityId, view }) {
           )}
 
           {/* ── Legend ───────────────────────────────────────── */}
-          <Explain label={legendTitle} body={legendExplain} />
+          <Explain
+            label={legendTitle}
+            body={legendExplain}
+            // Population is context rather than a platform; it has no paper
+            // and no method section of its own to open.
+            moreLabel={isPopulation ? undefined : t('city.explain.more')}
+            onMore={isPopulation ? undefined : () => setAboutOpen(true)}
+          />
           {layer === 'pov' ? (
             // The one categorical layer: four named classes, each with the
             // share of covered cells that falls in it.
@@ -722,6 +741,7 @@ function AtlasScreen({ cityId, view }) {
               value={geometryValue}
               onChange={setGeometry}
               available={{ geographic: true, cartogram: cartogramPublished }}
+              derived={cartogramDerived}
               missingName={platform.name}
               loading={cartogramOn && cartogram.status === 'pending'}
             />
@@ -745,7 +765,12 @@ function AtlasScreen({ cityId, view }) {
 
           {/* ── Summary ──────────────────────────────────────── */}
           <div className="aa-city__summary">
-            <Explain label={t('city.summary.title')} body={t('city.explain.summary.atlas')} />
+            <Explain
+              label={t('city.summary.title')}
+              body={t('city.explain.summary.atlas')}
+              moreLabel={isPopulation ? undefined : t('city.explain.more')}
+              onMore={isPopulation ? undefined : () => setAboutOpen(true)}
+            />
             <dl className="aa-summary">
               <SummaryRow
                 label={t('city.summary.hexagons')}
@@ -806,7 +831,19 @@ function AtlasScreen({ cityId, view }) {
             rows={selectedRows}
             clearLabel={t('city.selected.clear')}
             onClear={() => setSelectedCell(null)}
-          />
+          >
+            {layer === 'fifteen' &&
+              selectedCell != null &&
+              baseGeojson?.features?.[selectedCell] && (
+                <>
+                  <p className="aa-catbars__title">{t('fifteen.barsTitle')}</p>
+                  <CategoryBars
+                    properties={baseGeojson.features[selectedCell].properties}
+                    mode={mode}
+                  />
+                </>
+              )}
+          </CellInspector>
 
           {/* Population is context rather than a platform, so it has no
               method of its own to describe here. */}
@@ -833,6 +870,8 @@ function AtlasScreen({ cityId, view }) {
               <AtlasMap
                 center={profile.center}
                 zoom={cityZoom(profile)}
+                bounds={bounds}
+                fitPadding={24}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${platform.name}`}
@@ -908,6 +947,14 @@ function AtlasScreen({ cityId, view }) {
           </div>
         </section>
       </main>
+
+      {aboutOpen && !isPopulation && (
+        <PlatformAbout
+          platformId={layer}
+          name={platform.name}
+          onClose={() => setAboutOpen(false)}
+        />
+      )}
 
       <div className="aa-statusbar">
         <span>

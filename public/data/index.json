@@ -18,6 +18,8 @@
           "population": 3231186,
           "dataset": "fifteen/milan.geojson",
           "geometry": "geographic",
+          "cartogramDataset": "fifteen/milan.cartogram.geojson",
+          "cartogramSource": "derived",
           "cell": {
             "h3Resolution": 9,
             "cellRadiusM": 198
@@ -958,7 +960,15 @@
         "geometry": "geographic",
         "cartograms": {
           "pov": "atlas/milan.cartogram-pov.geojson",
-          "cardep": "atlas/milan.cartogram-cardep.geojson"
+          "cardep": "atlas/milan.cartogram-cardep.geojson",
+          "fifteen": "atlas/milan.cartogram-fifteen.geojson",
+          "citychrone": "atlas/milan.cartogram-citychrone.geojson"
+        },
+        "cartogramSources": {
+          "pov": "published",
+          "cardep": "published",
+          "fifteen": "derived",
+          "citychrone": "derived"
         },
         "cell": {
           "h3Resolution": 9,

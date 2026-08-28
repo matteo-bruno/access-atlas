@@ -104,6 +104,13 @@ Two additions beyond the per-platform lists:
   `build-data.mjs` refuses a centroid more than 10 m off a cell centre, and
   checks the result against the true hexagons CDI publishes in
   `hexes.geojson` — they reproduce them exactly.
+
+  Cartograms are derived too where a platform publishes none — 15minCity and
+  CityChrone — by the rule in `build-atlas.mjs`: area proportional to resident
+  population, full hexagon at the city's median cell population.
+  `"cartogramSource"` (and `"cartogramSources"` on an atlas entry) marks each
+  as `published` or `derived`; `"cartogramDataset"` points at the cartogram
+  beside a city published on true geography, the mirror of `geoDataset`.
 - **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. The upstream CDI
   `index.json` uses `[lat, lon]` — flipping it is the exporter's job.
 - **`cell`** describes the real cell geometry. It cannot be measured from a

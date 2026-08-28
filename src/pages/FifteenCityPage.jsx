@@ -6,13 +6,16 @@ import { Subhead } from '../components/Subhead.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { RAMPS, rampColor } from '../map/ramps.js';
-import { cityZoom } from '../map/framing.js';
+import { cityZoom, meshBounds } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
-import { useAtlasCityIds } from '../data/useAtlasData.js';
+import { useAtlasCityIds, useCityGeometry } from '../data/useAtlasData.js';
+import { withGeometry } from '../data/adapters.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
+import { CategoryBars } from '../components/CategoryBars.jsx';
+import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { summariseMeasure } from '../data/adapters.js';
 import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import { paperForPlatform } from '../data/research.js';
@@ -36,6 +39,25 @@ export function FifteenCityPage({ platform, profile }) {
   const [category, setCategory] = useState(CATEGORIES[0].key);
   const [hoverCell, setHoverCell] = useState(null);
   const [selectedCell, setSelectedCell] = useState(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+
+  // This platform publishes its cells where they are; the cartogram beside
+  // them is the Atlas's own, by the rule build-atlas.mjs states.
+  const published = profile.geometry ?? 'geographic';
+  const [geometry, setGeometry] = useState(published);
+  const other = useCityGeometry(platform.id, profile.id, geometry !== published);
+  const swapped = geometry !== published && other.status === 'ready';
+
+  const drawn = useMemo(() => {
+    if (!data?.geojson) return null;
+    if (!swapped) return data.geojson;
+    try {
+      return withGeometry(data.geojson, other.collection);
+    } catch (error) {
+      if (import.meta.env.DEV) console.warn('[data] geometry companion unusable', error.message);
+      return data.geojson;
+    }
+  }, [data, swapped, other.collection]);
 
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
@@ -85,6 +107,8 @@ export function FifteenCityPage({ platform, profile }) {
       },
     ];
   }, [selectedCell, data, key, category, mode, t, n]);
+
+  const bounds = useMemo(() => meshBounds(data?.geojson), [data]);
 
   const stats = data?.stats;
 
@@ -156,21 +180,29 @@ export function FifteenCityPage({ platform, profile }) {
           <p className="aa-city__hint">{t('fifteen.hint')}</p>
 
           {/* ── Legend ───────────────────────────────────────── */}
-          <Explain label={t('fifteen.legendValue')} body={t('city.explain.map.fifteen')} />
+          <Explain
+            label={t('fifteen.legendValue')}
+            body={t('city.explain.map.fifteen')}
+            moreLabel={t('city.explain.more')}
+            onMore={() => setAboutOpen(true)}
+          />
           <RampLegend
             ramp={RAMPS.fifteen}
             format={(v) => n(v, { maximumFractionDigits: 1 })}
             beyondLabel={t('atlas.beyond.fifteen')}
           />
 
-          {/* 15minCity publishes its cells where they are and nothing else,
-              so the switch is here to say that rather than to offer it. */}
           {profile.geometry && (
             <GeometryToggle
-              value="geographic"
-              onChange={() => {}}
-              available={{ geographic: true, cartogram: false }}
+              value={geometry}
+              onChange={setGeometry}
+              available={{
+                geographic: published === 'geographic' || Boolean(profile.geoDataset),
+                cartogram: published === 'cartogram' || Boolean(profile.cartogramDataset),
+              }}
+              derived={profile.cartogramSource === 'derived'}
               missingName={platform.name}
+              loading={geometry !== published && other.status === 'pending'}
             />
           )}
 
@@ -178,6 +210,8 @@ export function FifteenCityPage({ platform, profile }) {
             <Explain
               label={t('city.summary.title')}
               body={t('city.explain.summary.fifteen')}
+              moreLabel={t('city.explain.more')}
+              onMore={() => setAboutOpen(true)}
             />
             <dl className="aa-summary">
               <SummaryRow
@@ -212,7 +246,19 @@ export function FifteenCityPage({ platform, profile }) {
             rows={selectedRows}
             clearLabel={t('city.selected.clear')}
             onClear={() => setSelectedCell(null)}
-          />
+          >
+            {/* The map answers one category at a time; the selected cell can
+                answer all ten, which is where a place's shape shows. */}
+            {selectedCell != null && data?.geojson?.features?.[selectedCell] && (
+              <>
+                <p className="aa-catbars__title">{t('fifteen.barsTitle')}</p>
+                <CategoryBars
+                  properties={data.geojson.features[selectedCell].properties}
+                  mode={mode}
+                />
+              </>
+            )}
+          </CellInspector>
 
           <Explain label={t('city.explain.methodsTitle')} className="aa-city__methods">
             <p>{t('city.explain.methods.fifteen')}</p>
@@ -228,19 +274,23 @@ export function FifteenCityPage({ platform, profile }) {
         </aside>
 
         <section className="aa-city__cartogram aa-city__cartogram--wide">
-          <Eyebrow>{t('fifteen.mapTitle')}</Eyebrow>
+          <Eyebrow>
+            {geometry === 'cartogram' ? t('city.cartogram.title') : t('fifteen.mapTitle')}
+          </Eyebrow>
           <div className="aa-city__canvas">
-            {status === 'ready' ? (
+            {status === 'ready' && drawn ? (
               <AtlasMap
                 center={profile.center}
                 zoom={cityZoom(profile)}
+                bounds={bounds}
+                fitPadding={24}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${t('fifteen.mapTitle')}`}
               >
                 <GeoJSONLayer
                   id="fifteen-mesh"
-                  data={data.geojson}
+                  data={drawn}
                   type="fill"
                   paint={fillPaint}
                   onHover={(feature) => setHoverCell(feature ? feature.id : null)}
@@ -257,7 +307,7 @@ export function FifteenCityPage({ platform, profile }) {
                 {hoverCell != null && (
                   <GeoJSONLayer
                     id="fifteen-mesh-highlight"
-                    data={data.geojson}
+                    data={drawn}
                     type="line"
                     paint={{ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }}
                     filter={['==', ['id'], hoverCell]}
@@ -267,7 +317,7 @@ export function FifteenCityPage({ platform, profile }) {
                 {selectedCell != null && (
                   <GeoJSONLayer
                     id="fifteen-mesh-selected"
-                    data={data.geojson}
+                    data={drawn}
                     type="line"
                     paint={{ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.6 }}
                     filter={['==', ['id'], selectedCell]}
@@ -289,12 +339,22 @@ export function FifteenCityPage({ platform, profile }) {
                     })
                   : t('city.cartogram.captionSize', { size: n(stats.cellRadiusM) })}
                 {' · '}
-                {t('city.geometry.mapCaption')}
+                {geometry === 'cartogram'
+                  ? t('city.geometry.cartogramCaption')
+                  : t('city.geometry.mapCaption')}
               </div>
             )}
           </div>
         </section>
       </main>
+
+      {aboutOpen && (
+        <PlatformAbout
+          platformId={platform.id}
+          name={platform.name}
+          onClose={() => setAboutOpen(false)}
+        />
+      )}
 
       <div className="aa-statusbar">
         <span>{source === 'seed' ? t('city.seeded') : t('fifteen.statusHint')}</span>

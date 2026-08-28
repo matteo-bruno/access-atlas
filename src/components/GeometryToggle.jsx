@@ -17,6 +17,9 @@ import './GeometryToggle.css';
  *        which geometries are published for what is on screen — never
  *        inferred, because an unpublished view and an unbuilt one are the
  *        same picture from the outside
+ * @param {boolean} [props.derived]     the cartogram is the Atlas's own rather
+ *        than one the platform published — a different provenance, so it is
+ *        said rather than glossed
  * @param {string}  [props.missingName]  who publishes no cartogram, for the copy
  * @param {boolean} [props.loading]      the other geometry is in flight
  */
@@ -24,6 +27,7 @@ export function GeometryToggle({
   value,
   onChange,
   available,
+  derived = false,
   missingName,
   loading = false,
 }) {
@@ -38,6 +42,9 @@ export function GeometryToggle({
     <div className="aa-geometry">
       <Explain label={t('city.geometry.label')}>
         <p>{t(`city.geometry.about.${value === 'cartogram' ? 'cartogram' : 'map'}`)}</p>
+        {available.cartogram && derived && missingName && (
+          <p>{t('city.geometry.about.derived', { name: missingName })}</p>
+        )}
         {!available.cartogram && missingName && (
           <p>{t('city.geometry.about.missing', { name: missingName })}</p>
         )}

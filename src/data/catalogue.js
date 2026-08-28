@@ -111,10 +111,22 @@ function normaliseCity(raw) {
     // offers the switch exactly where one exists.
     geometry: raw.geometry === 'cartogram' ? 'cartogram' : 'geographic',
     geoDataset: typeof raw.geoDataset === 'string' ? raw.geoDataset : null,
+    cartogramDataset:
+      typeof raw.cartogramDataset === 'string' ? raw.cartogramDataset : null,
+    // Whether a cartogram is the platform's own or one the Atlas derived —
+    // the rule is stated in scripts/build-atlas.mjs, and the UI says which it
+    // is looking at rather than presenting both as the same kind of thing.
+    cartogramSource: raw.cartogramSource === 'derived' ? 'derived' : 'published',
     cartograms:
       raw.cartograms && typeof raw.cartograms === 'object'
         ? Object.fromEntries(
             Object.entries(raw.cartograms).filter(([, path]) => typeof path === 'string'),
+          )
+        : {},
+    cartogramSources:
+      raw.cartogramSources && typeof raw.cartogramSources === 'object'
+        ? Object.fromEntries(
+            Object.entries(raw.cartogramSources).filter(([, kind]) => typeof kind === 'string'),
           )
         : {},
     // Atlas (combined-viewer) entries list which platform layers their union

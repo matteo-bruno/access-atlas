@@ -14,9 +14,10 @@ import { withGeometry } from '../data/adapters.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
+import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
 import { paperForPlatform } from '../data/research.js';
-import { cityZoom } from '../map/framing.js';
+import { cityZoom, meshBounds } from '../map/framing.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { FifteenCityPage } from './FifteenCityPage.jsx';
 import './CityPage.css';
@@ -53,6 +54,7 @@ function CityScreen({ platform, profile }) {
   // Selection is separate from hover: it survives the pointer leaving, which
   // is the whole point of an inspector.
   const [selectedCell, setSelectedCell] = useState(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const toggleSelected = (id) => setSelectedCell((current) => (current === id ? null : id));
   // The index runs [−1, +1] by construction, so the filter's bounds are the
   // measure's own rather than this city's range — the same slice means the
@@ -205,6 +207,11 @@ function CityScreen({ platform, profile }) {
     return count;
   }, [isCdi, filtered, data, range]);
 
+  // Framed by the city's real extent rather than a stored zoom. Measured on
+  // the published geometry, not the drawn one, so switching to the cartogram
+  // — whose cells shrink inside their hexagons — does not creep the camera in.
+  const bounds = useMemo(() => meshBounds(data?.geojson), [data]);
+
   const stats = data?.stats;
   // A published file's own population sum is the better number when it exists;
   // the profile's figure is editorial and may cover a different extent.
@@ -251,6 +258,8 @@ function CityScreen({ platform, profile }) {
           <Explain
             label={isCdi ? t('platform.cardep.legendUnit') : t('city.zoneType')}
             body={t(`city.explain.map.${platform.id}`)}
+            moreLabel={t('city.explain.more')}
+            onMore={() => setAboutOpen(true)}
           />
           {isCdi ? (
             <>
@@ -332,6 +341,8 @@ function CityScreen({ platform, profile }) {
             <Explain
               label={t('city.summary.title')}
               body={t(`city.explain.summary.${platform.id}`)}
+              moreLabel={t('city.explain.more')}
+              onMore={() => setAboutOpen(true)}
             />
             <dl className="aa-summary">
               <SummaryRow
@@ -415,6 +426,8 @@ function CityScreen({ platform, profile }) {
               <AtlasMap
                 center={profile.center}
                 zoom={cityZoom(profile)}
+                bounds={bounds}
+                fitPadding={24}
                 graticule={false}
                 basemap
                 label={`${cityName} — ${t('city.cartogram.title')}`}
@@ -475,7 +488,11 @@ function CityScreen({ platform, profile }) {
 
         {/* ── Scatter ──────────────────────────────────────────── */}
         <section className="aa-city__scatter">
-          <Explain label={isCdi ? t('city.scatterCdi.title') : t('city.scatter.title')}>
+          <Explain
+            label={isCdi ? t('city.scatterCdi.title') : t('city.scatter.title')}
+            moreLabel={t('city.explain.more')}
+            onMore={() => setAboutOpen(true)}
+          >
             <p>{t(`city.explain.scatter.${platform.id}`)}</p>
             <p>{t('city.explain.scatter.sampled')}</p>
           </Explain>
@@ -510,6 +527,14 @@ function CityScreen({ platform, profile }) {
           </div>
         </section>
       </main>
+
+      {aboutOpen && (
+        <PlatformAbout
+          platformId={platform.id}
+          name={platform.name}
+          onClose={() => setAboutOpen(false)}
+        />
+      )}
 
       <div className="aa-statusbar">
         {/* A generated mesh must never be mistaken for a measured one. */}

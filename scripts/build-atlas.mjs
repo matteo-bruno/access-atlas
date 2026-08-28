@@ -125,6 +125,143 @@ function toCell(latLng, source) {
   return cell;
 }
 
+// ── Derived cartograms ───────────────────────────────────────────────
+// P.O.V. and Car Dependency publish a cartogram; 15minCity and CityChrone do
+// not, and theirs cannot be recovered from the ones that do — the published
+// scale saturates at the full hexagon and has a floor for empty cells, so it
+// is a layout its authors computed rather than a transformation of the map.
+//
+// So the Atlas computes its own for those two, by a rule it can state: each
+// cell keeps its centre and its shape, and its **area is proportional to its
+// resident population**, reaching the full hexagon at the city's median cell
+// population and capped there.
+//
+// The median is not an arbitrary choice — it is where this rule best
+// reproduces the cartograms the other two platforms *do* publish for the same
+// city. Checked against both on every build (see checkCartogramRule): it
+// lands within ~12 m on a ~200 m cell, so a cell of a given population looks
+// the same size whichever layer is on screen.
+//
+// This is a rendering, not a measurement: the values a cell carries are
+// untouched, and the catalogue records which cartograms are published and
+// which are the Atlas's own so the UI can say.
+const CARTOGRAM_RULE_TOLERANCE_M = 25;
+
+function medianOf(values) {
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[sorted.length >> 1] ?? 0;
+}
+
+// Drop the closing vertex, however many times it was written: the 15minCity
+// export repeats it twice, and one extra copy of a corner drags a hexagon's
+// centroid nearly 30 m off centre.
+function openRing(ring) {
+  let end = ring.length;
+  while (end > 1 && ring[end - 1][0] === ring[0][0] && ring[end - 1][1] === ring[0][1]) end--;
+  return ring.slice(0, end);
+}
+
+// Mean distance from centroid to vertices — a polygon's "radius".
+function ringRadiusM(ring) {
+  const open = openRing(ring);
+  let cx = 0;
+  let cy = 0;
+  for (const [x, y] of open) {
+    cx += x;
+    cy += y;
+  }
+  cx /= open.length;
+  cy /= open.length;
+  const k = Math.cos((cy * Math.PI) / 180);
+  let sum = 0;
+  for (const [x, y] of open) sum += Math.hypot((x - cx) * 111320 * k, (y - cy) * 111320);
+  return sum / open.length;
+}
+
+/** The linear factor for one cell: area ∝ population, capped at the hexagon. */
+function cartogramFactor(population, reference) {
+  if (!(reference > 0)) return 1;
+  // Area scales with the square of the linear factor.
+  return Math.sqrt(Math.min(Math.max(population, 0) / reference, 1));
+}
+
+/**
+ * Check the rule against a cartogram that *is* published for the same cells,
+ * so a change to either the rule or the data cannot quietly drift the two
+ * apart — the layers of one city would then disagree about how big a cell of
+ * a given population is.
+ */
+function checkCartogramRule(published, cells, reference, label) {
+  const byIndex = new Map(published.features.map((f) => [f.properties.i, f.geometry]));
+  let sum = 0;
+  let count = 0;
+  for (const cell of cells) {
+    const theirs = byIndex.get(cell.i);
+    if (!theirs) continue;
+    const trueRadius = ringRadiusM(cell.geometry.coordinates[0]);
+    const mine = trueRadius * cartogramFactor(cell.population, reference);
+    sum += Math.abs(mine - ringRadiusM(theirs.coordinates[0]));
+    count++;
+  }
+  if (!count) return null;
+  const mean = sum / count;
+  if (mean > CARTOGRAM_RULE_TOLERANCE_M) {
+    fail(
+      `${label}: the derived cartogram rule is ${mean.toFixed(1)} m from the published one ` +
+        `on average (tolerance ${CARTOGRAM_RULE_TOLERANCE_M} m) — the layers of one city would ` +
+        `disagree about how big a cell of a given population is`,
+    );
+  }
+  return mean;
+}
+
+/** Scale a polygon about its own centroid. */
+function scaleRing(ring, factor) {
+  const open = openRing(ring);
+  let cx = 0;
+  let cy = 0;
+  for (const [x, y] of open) {
+    cx += x;
+    cy += y;
+  }
+  cx /= open.length;
+  cy /= open.length;
+  const scaled = open.map(([x, y]) => [
+    r5(cx + (x - cx) * factor),
+    r5(cy + (y - cy) * factor),
+  ]);
+  scaled.push(scaled[0]);
+  return scaled;
+}
+
+/**
+ * A cartogram for cells that have no published one.
+ *
+ * @param {{i: number, geometry: object, population: number}[]} cells
+ * @returns {object} FeatureCollection of `{ properties: { i } }`
+ */
+function derivedCartogram(cells) {
+  const reference = medianOf(cells.map((cell) => Math.max(cell.population, 0)));
+  if (!(reference > 0)) return null;
+
+  return {
+    collection: {
+      type: 'FeatureCollection',
+      features: cells.map((cell) => ({
+        type: 'Feature',
+        properties: { i: cell.i },
+        geometry: {
+          type: 'Polygon',
+          coordinates: [
+            scaleRing(cell.geometry.coordinates[0], cartogramFactor(cell.population, reference)),
+          ],
+        },
+      })),
+    },
+    reference,
+  };
+}
+
 function weightedMedian(values, weights) {
   const pairs = values.map((v, i) => [v, weights[i] || 0]).sort((a, b) => a[0] - b[0]);
   const total = pairs.reduce((s, [, w]) => s + w, 0);
@@ -342,6 +479,72 @@ function buildCity(cityId, sources, catalogue) {
     );
   }
 
+  // The other two platforms publish no cartogram, so the Atlas derives one for
+  // the cells each of them measures — same rule, its own population, and only
+  // ever over the cells that layer covers.
+  const covers = {
+    fifteen: (cell) => cell.properties.proximity_time_foot != null,
+    citychrone: (cell) => cell.properties.cc != null,
+  };
+  for (const [platform, covered] of Object.entries(covers)) {
+    const cells = [];
+    ordered.forEach((cell, i) => {
+      if (!covered(cell)) return;
+      cells.push({
+        i,
+        geometry: features[i].geometry,
+        population: Number(cell.properties.population) || 0,
+      });
+    });
+    const derived = cells.length ? derivedCartogram(cells) : null;
+    if (!derived) continue;
+    const rel = `atlas/${cityId}.cartogram-${platform}.geojson`;
+    const written = writeJSON(rel, derived.collection);
+    cartograms[platform] = rel;
+    console.log(
+      `  ${rel}  ${cells.length} cells  ${mb(written.raw)} → ${mb(written.gz)} gz  (derived)`,
+    );
+  }
+
+  // The 15minCity city page draws its own file, not the union mesh, so it
+  // needs the same cartogram indexed against that file's feature order.
+  const fifteenCartogram = derivedCartogram(
+    fifteen.features.map((feature, i) => ({
+      i,
+      geometry: feature.geometry,
+      population: Number(feature.properties.population) || 0,
+    })),
+  );
+  const fifteenCartogramPath = `fifteen/${cityId}.cartogram.geojson`;
+  if (fifteenCartogram) {
+    const written = writeJSON(fifteenCartogramPath, fifteenCartogram.collection);
+    console.log(
+      `  ${fifteenCartogramPath}  ${fifteen.features.length} cells  ${mb(written.raw)} → ${mb(written.gz)} gz  (derived)`,
+    );
+  }
+
+  // The rule is checked where it can be: against the cartograms the other two
+  // platforms publish for these very cells.
+  for (const platform of ['pov', 'cardep']) {
+    const path = cartograms[platform];
+    if (!path) continue;
+    const cells = [];
+    ordered.forEach((cell, i) => {
+      if (cell.cartograms?.[platform]) {
+        cells.push({
+          i,
+          geometry: features[i].geometry,
+          population: Number(cell.properties.population) || 0,
+        });
+      }
+    });
+    const reference = medianOf(cells.map((cell) => cell.population));
+    const mean = checkCartogramRule(readJSON(path), cells, reference, `${cityId}/${platform}`);
+    if (mean != null) {
+      console.log(`  cartogram rule vs ${platform}: ${mean.toFixed(1)} m mean radius difference`);
+    }
+  }
+
   // ── Catalogue entries ──────────────────────────────────────────────
   const meta = cityMeta(catalogue, cityId);
   const country = cityCountry(catalogue, cityId);
@@ -399,6 +602,14 @@ function buildCity(cityId, sources, catalogue) {
       // alternative geometry, and only for the platforms that publish one.
       geometry: 'geographic',
       cartograms,
+      // P.O.V. and Car Dependency publish theirs; the other two are the
+      // Atlas's own, by the rule stated in derivedCartogram.
+      cartogramSources: Object.fromEntries(
+        Object.keys(cartograms).map((platform) => [
+          platform,
+          platform === 'pov' || platform === 'cardep' ? 'published' : 'derived',
+        ]),
+      ),
       cell,
       layers: ['pov', 'cardep', 'fifteen', 'citychrone'],
     },
@@ -407,6 +618,11 @@ function buildCity(cityId, sources, catalogue) {
       population: fifteenPopulation,
       dataset: sources.fifteen,
       geometry: 'geographic',
+      // Derived rather than published — see derivedCartogram above. The UI
+      // says so; `cartogramSource` is what tells it.
+      ...(fifteenCartogram
+        ? { cartogramDataset: fifteenCartogramPath, cartogramSource: 'derived' }
+        : {}),
       cell,
     },
     citychroneCity: {

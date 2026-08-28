@@ -93,6 +93,16 @@ export function createStaticProvider() {
       return { collection, profile, kind: 'geographic' };
     },
 
+    // The cartogram beside a city published on true geography — the mirror of
+    // cityGeometry, for platforms whose dataset is the map rather than the
+    // cartogram.
+    async cityCartogram(platformId, cityId, catalogue, { signal } = {}) {
+      const profile = publishedCity(catalogue, platformId, cityId);
+      if (!profile?.cartogramDataset) return null;
+      const collection = await loadDataset({ url: dataUrl(profile.cartogramDataset) }, { signal });
+      return { collection, profile, kind: 'cartogram' };
+    },
+
     // The same in reverse for the combined viewer, whose union mesh is
     // already geographic: one platform's cartogram polygons, covering only
     // the cells that platform measures.
@@ -159,6 +169,8 @@ export function createStaticProvider() {
  *                                              → { collection, profile, scenario } | null
  *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]
  *   cityGeometry(platformId, cityId, catalogue, opts)
+ *                                              → { collection, profile, kind } | null
+ *   cityCartogram(platformId, cityId, catalogue, opts)
  *                                              → { collection, profile, kind } | null
  *   atlasGeometry(cityId, platformId, catalogue, opts)
  *                                              → { collection, profile, kind } | null

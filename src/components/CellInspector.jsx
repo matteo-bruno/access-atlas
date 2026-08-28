@@ -13,9 +13,10 @@ import './CellInspector.css';
  * @param {string} props.title
  * @param {string} props.empty                 prompt shown with no selection
  * @param {{label: string, value: string, accent?: string}[]} [props.rows]
+ * @param {React.ReactNode} [props.children]  extra detail under the rows
  * @param {() => void} [props.onClear]
  */
-export function CellInspector({ title, empty, rows, clearLabel, onClear }) {
+export function CellInspector({ title, empty, rows, clearLabel, onClear, children }) {
   return (
     <div className="aa-inspector">
       <div className="aa-inspector__head">
@@ -27,19 +28,22 @@ export function CellInspector({ title, empty, rows, clearLabel, onClear }) {
         )}
       </div>
       {rows ? (
-        <dl className="aa-summary aa-inspector__rows">
-          {rows.map((row) => (
-            <div className="aa-summary__row" key={row.label}>
-              <dt>
-                {row.accent && (
-                  <span className="aa-swatch" style={{ background: row.accent }} />
-                )}
-                {row.label}
-              </dt>
-              <dd className="aa-mono">{row.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <>
+          <dl className="aa-summary aa-inspector__rows">
+            {rows.map((row) => (
+              <div className="aa-summary__row" key={row.label}>
+                <dt>
+                  {row.accent && (
+                    <span className="aa-swatch" style={{ background: row.accent }} />
+                  )}
+                  {row.label}
+                </dt>
+                <dd className="aa-mono">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+          {children}
+        </>
       ) : (
         <p className="aa-inspector__empty">{empty}</p>
       )}

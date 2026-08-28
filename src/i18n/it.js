@@ -203,6 +203,9 @@ export default {
   fifteen: {
     mapTitle: 'Tempo di viaggio verso i servizi',
     minutes: 'min',
+    // Le dieci categorie della cella selezionata, tutte insieme.
+    barsTitle: 'Tutte le categorie, da questa cella',
+    barsAxis: 'Le barre arrivano a {max} {unit}; oltre, la riempiono.',
     legendValue: 'Minuti per raggiungere',
     statusHint:
       'Scegli modo e categoria · passa su una fascia della legenda per isolarla · scorri e trascina per navigare',
@@ -244,7 +247,7 @@ export default {
       legend: 'Residenti per cella',
       tooltip: '{count} residenti',
       about:
-        'Residenti per cella, dall’esportazione di 15minCity. Colorata su scala logaritmica: la popolazione è fortemente asimmetrica, quindi una scala lineare metterebbe quasi tutte le celle nel colore più chiaro. È il contesto in cui si leggono le altre quattro misure — lo stesso spostamento conta di più dove lo compiono più persone.',
+        'Residenti per cella, dall’esportazione di 15-minute city. Colorata su scala logaritmica: la popolazione è fortemente asimmetrica, quindi una scala lineare metterebbe quasi tutte le celle nel colore più chiaro. È il contesto in cui si leggono le altre quattro misure — lo stesso spostamento conta di più dove lo compiono più persone.',
     },
     beyond: {
       fifteen: 'fino al nero a 120 min e oltre',
@@ -371,6 +374,15 @@ export default {
         fifteen: 'La mediana è il tempo della cella di mezzo per la categoria e la modalità a schermo. Descrive celle, non residenti: ogni cella conta una volta, per quante persone ci vivano. La popolazione è la somma del dataset.',
         atlas: 'I valori sono ricalcolati per il layer a schermo. Celle è la maglia unione — ogni cella misurata da almeno una piattaforma — quindi un layer che ne copre meno lo dichiara in una riga a parte.',
       },
+      more: 'Spiegazione completa',
+      aboutTitle: 'Che cos’è {name}',
+      sections: {
+        measure: 'Che cosa misura',
+        map: 'Leggere la mappa',
+        scatter: 'Leggere il grafico',
+        geometry: 'Le due geometrie',
+        summary: 'I valori nel pannello',
+      },
       methodsTitle: 'Dati e metodi',
       methods: {
         pov: 'Celle H3 di risoluzione 9, circa 200 m di lato. Tempi a piedi da OSRM su OpenStreetMap; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione dalle griglie WorldPop a 100 m, riscalate sulle stime ONU.',
@@ -395,6 +407,7 @@ export default {
       about: {
         map: 'Ogni cella è l’esagono che è sul terreno, della stessa dimensione ovunque qualunque cosa contenga. L’area non dice nulla su quante persone una misura riguardi, quindi una periferia poco abitata occupa nell’immagine lo stesso spazio del centro denso.',
         cartogram: 'Ogni cella sta dove si trova davvero, ma la sua area è la popolazione residente e non il territorio che copre: una cella con pochi abitanti si riduce a una frazione di esagono, una affollata lo riempie. Risponde a un’altra domanda — non dove una misura è bassa, ma per quante persone lo è.',
+        derived: 'Questo cartogramma è dell’Atlante: {name} non ne pubblica, quindi l’area qui è proporzionale alla popolazione residente della cella e raggiunge l’esagono pieno alla popolazione mediana della città. La regola è tarata sui cartogrammi che le altre piattaforme pubblicano per la stessa città e li riproduce entro circa 12 m su una cella da 200 m — così una cella con una data popolazione appare della stessa dimensione su qualunque layer.',
         missing: 'Un cartogramma è una disposizione calcolata dai suoi autori, non una trasformazione della mappa: l’Atlante disegna quello che ogni piattaforma ha pubblicato invece di derivarne uno. {name} non ne pubblica.',
       },
     },

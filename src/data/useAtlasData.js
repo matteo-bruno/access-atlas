@@ -292,9 +292,15 @@ export function useCityGeometry(platformId, cityId, enabled) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
-        const result = await provider.cityGeometry(platformId, cityId, catalogue, {
-          signal: controller.signal,
-        });
+        // Whichever way round this city is published: the hexagons beside a
+        // cartogram, or the cartogram beside the hexagons.
+        const result =
+          (await provider.cityGeometry(platformId, cityId, catalogue, {
+            signal: controller.signal,
+          })) ??
+          (await provider.cityCartogram(platformId, cityId, catalogue, {
+            signal: controller.signal,
+          }));
         if (cancelled) return;
         if (!result) {
           // Not published is not an error: the page offers no switch.

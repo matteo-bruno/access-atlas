@@ -205,6 +205,9 @@ export default {
   fifteen: {
     mapTitle: 'Travel time to services',
     minutes: 'min',
+    // The selected cell's ten categories at once, as bars.
+    barsTitle: 'Every category, from this cell',
+    barsAxis: 'Bars run to {max} {unit}; anything longer fills the bar.',
     legendValue: 'Minutes to reach',
     statusHint:
       'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
@@ -246,7 +249,7 @@ export default {
       legend: 'Residents per cell',
       tooltip: '{count} residents',
       about:
-        'Residents per cell, from the 15minCity export. Coloured on a logarithmic scale: population is heavily skewed, so a linear scale would put nearly every cell in the lightest colour. This is the context the other four measures are read against — the same journey matters more where more people make it.',
+        'Residents per cell, from the 15-minute city export. Coloured on a logarithmic scale: population is heavily skewed, so a linear scale would put nearly every cell in the lightest colour. This is the context the other four measures are read against — the same journey matters more where more people make it.',
     },
     beyond: {
       fifteen: 'darkening to black at 120 min and beyond',
@@ -372,6 +375,15 @@ export default {
         fifteen: 'The median is the middle cell’s time for the category and mode on screen. It describes cells rather than residents: every cell counts once, however many people live in it. Population is the dataset’s own sum.',
         atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
       },
+      more: 'Full explanation',
+      aboutTitle: 'About {name}',
+      sections: {
+        measure: 'What it measures',
+        map: 'Reading the map',
+        scatter: 'Reading the plot',
+        geometry: 'The two geometries',
+        summary: 'The figures in the panel',
+      },
       methodsTitle: 'Data & methods',
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
@@ -396,6 +408,7 @@ export default {
       about: {
         map: 'Every cell is the hexagon it is on the ground, the same size everywhere whatever lives in it. Area says nothing about how many people a measure affects, so a thinly populated edge of the city takes up as much of the picture as the dense centre does.',
         cartogram: 'Every cell sits where it really is, but its area is its resident population rather than the ground it covers: a cell with few residents shrinks to a fraction of a hexagon, a crowded one fills it. It answers a different question — not where a measure is low, but how many people it is low for.',
+        derived: 'This cartogram is the Atlas’s own: {name} publishes none, so the area here is proportional to the cell’s resident population, reaching the full hexagon at the city’s median cell population. The rule is calibrated against the cartograms the other platforms do publish for the same city, and reproduces them to about 12 m on a 200 m cell — so a cell of a given population looks the same size whichever layer you are on.',
         missing: 'A cartogram is a layout its authors computed, not a transformation of the map, so the Atlas draws the one each platform published rather than deriving one. {name} publishes none.',
       },
     },
