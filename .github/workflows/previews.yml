@@ -1,0 +1,83 @@
+name: Reshoot platform previews
+
+# The home page's platform cards are stills of each platform's own city view
+# (src/assets/platforms/*.jpg), shot from the running site. Taking them needs a
+# browser, a build, and — since the city maps draw it — reachable basemap
+# tiles, which is more than a laptop always has.
+#
+# Run this from the Actions tab ("Run workflow") whenever the city views change
+# their look: colours, framing, or the basemap itself. It commits the new
+# stills straight to the branch it ran on, so the deploy picks them up.
+
+on:
+  workflow_dispatch:
+    inputs:
+      basemap:
+        description: 'Basemap style URL, or "none" to shoot on blank paper'
+        required: false
+        default: 'https://tiles.openfreemap.org/styles/positron'
+
+permissions:
+  contents: write
+
+jobs:
+  shoot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Unlike CI, this build wants the basemap on — it is the thing the cards
+      # are being reshot to show.
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASEMAP_STYLE: ${{ inputs.basemap }}
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Serve the build
+        run: |
+          npm run preview -- --port 4321 --strictPort &
+          for i in $(seq 1 30); do
+            curl -sf -o /dev/null http://localhost:4321/ && exit 0
+            sleep 1
+          done
+          echo "preview server did not come up" >&2
+          exit 1
+
+      - name: Shoot the previews
+        run: npm run shoot:previews
+        env:
+          SMOKE_URL: http://localhost:4321
+
+      # Upload them either way, so a run whose output looks wrong can be
+      # inspected without digging it back out of a commit.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: platform-previews
+          path: src/assets/platforms/*.jpg
+
+      - name: Commit them if they changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/assets/platforms
+          if git diff --staged --quiet; then
+            echo "Previews are unchanged — nothing to commit."
+            exit 0
+          fi
+          git commit -m 'Reshoot the platform card previews
+
+          Taken by .github/workflows/previews.yml against a build with the
+          basemap enabled.'
+          git push origin HEAD:${{ github.ref_name }}

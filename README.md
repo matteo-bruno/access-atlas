@@ -121,8 +121,11 @@ or turning the basemap off for the published site is a one-line change in
 browser suites assert on console and network errors, and a test that fails when
 a third-party host is unreachable is testing that host. Build the same way
 before running the suites locally. Reshooting the platform card stills is the
-opposite case: build with the basemap **on** (the default), or the cards come
-out on blank paper.
+opposite case: they want the basemap **on** (the default), or the cards come
+out on blank paper — and taking them needs a browser, a build and a reachable
+basemap host at once. **Actions → Reshoot platform previews → Run workflow**
+does all three and commits the result, so no local setup is needed;
+`npm run shoot:previews` against a default build does the same thing locally.
 
 The style is fetched before the map is constructed. A host that is slow,
 blocked or down therefore falls back to the paper basemap rather than leaving
