@@ -150,6 +150,80 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   );
 }
 
+// ── Alternative geometry ─────────────────────────────────────────────
+// A city can publish its cells twice: the values sit on one geometry and a
+// companion file carries the other, joined by the index it states. Nothing
+// downstream can tell that the geometries have drifted apart — a cartogram
+// cell and its hexagon share a centroid, so a mismatch would draw a plausible
+// map of the wrong cells. Check the join here instead: same count, same
+// index per row, and each companion polygon centred on the cell it replaces.
+const centre = (geometry) => {
+  let ring = geometry.coordinates[0];
+  let end = ring.length;
+  while (end > 1 && ring[end - 1][0] === ring[0][0] && ring[end - 1][1] === ring[0][1]) end--;
+  ring = ring.slice(0, end);
+  let x = 0;
+  let y = 0;
+  for (const [px, py] of ring) {
+    x += px;
+    y += py;
+  }
+  return [x / ring.length, y / ring.length];
+};
+const metresApart = (a, b) => {
+  const dLon = (a[0] - b[0]) * 111320 * Math.cos((a[1] * Math.PI) / 180);
+  const dLat = (a[1] - b[1]) * 111320;
+  return Math.hypot(dLon, dLat);
+};
+
+// Every companion the catalogue declares, as [label, values, companion].
+const companions = [];
+for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
+  for (const city of entry.cities ?? []) {
+    if (city.geoDataset) {
+      companions.push([`${platformId}/${city.id} geographic`, city.dataset, city.geoDataset]);
+    }
+  }
+}
+for (const city of catalogue.atlas?.cities ?? []) {
+  for (const [platformId, file] of Object.entries(city.cartograms ?? {})) {
+    companions.push([`atlas/${city.id} ${platformId} cartogram`, city.dataset, file]);
+  }
+}
+
+{
+  const bad = [];
+  for (const [label, valuesPath, companionPath] of companions) {
+    const values = read(valuesPath).features;
+    const companion = read(companionPath).features;
+    // A cartogram companion covers only the cells its platform measures; a
+    // geographic one covers every cell. Either way each row must name its
+    // index, and that index must exist.
+    if (companion.length > values.length) {
+      bad.push(`${label}: ${companion.length} companion cells vs ${values.length} values`);
+      continue;
+    }
+    let worst = 0;
+    for (const feature of companion) {
+      const i = feature.properties?.i;
+      if (!Number.isInteger(i) || i < 0 || i >= values.length) {
+        bad.push(`${label}: companion row points at index ${i}`);
+        break;
+      }
+      worst = Math.max(worst, metresApart(centre(feature.geometry), centre(values[i].geometry)));
+    }
+    // Both geometries describe the same cell, so they share a centre. The
+    // cartogram scales each cell about its own centroid, which is what makes
+    // this comparison meaningful rather than approximate.
+    if (worst > 10) bad.push(`${label}: geometries up to ${worst.toFixed(1)} m apart`);
+  }
+  check(
+    'alternative geometries join to the cells they replace',
+    bad.length === 0,
+    bad.length ? bad.slice(0, 3).join(' | ') : `${companions.length} companion files`,
+  );
+}
+
 // The atlas (combined viewer) union meshes: every cell must reconcile with
 // the per-platform files it was built from — same counts, same shares — so a
 // stale union cannot quietly disagree with the platform pages.

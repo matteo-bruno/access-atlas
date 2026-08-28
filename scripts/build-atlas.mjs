@@ -17,6 +17,10 @@
 // than producing a silently resampled mesh.
 //
 // Outputs, per city:
+//   • public/data/atlas/<id>.cartogram-<platform>.geojson — the cartogram
+//     polygons P.O.V. and Car Dependency publish, keyed by the union mesh's
+//     own feature index, so the viewer can switch geometry without a second
+//     copy of the values. The other two platforms publish no cartogram.
 //   • public/data/atlas/<id>.geojson — union mesh; each feature carries `h3`,
 //     `population`, and whichever platform values exist for that cell
 //     (pov: zone/proximity/opportunity · cardep: cdi/o_score_pt/o_score_car ·
@@ -224,6 +228,10 @@ function buildCity(cityId, sources, catalogue) {
     const h3 = toCell(ringCentroid(feature.geometry), sources.pov);
     const cell = ensure(h3);
     if (cell.properties.zone != null) fail(`${sources.pov}: two features map to cell ${h3}`);
+    // The cartogram polygon is kept aside, not used: the union mesh is drawn
+    // in true geography, and this becomes the companion file the viewer swaps
+    // in when someone asks for the cartogram.
+    cell.cartograms = { ...cell.cartograms, pov: feature.geometry };
     cell.properties.zone = p.zone;
     cell.properties.proximity = p.proximity;
     cell.properties.opportunity = p.opportunity;
@@ -244,6 +252,7 @@ function buildCity(cityId, sources, catalogue) {
     const h3 = toCell(ringCentroid(feature.geometry), sources.cardep);
     const cell = ensure(h3);
     if (cell.properties.cdi != null) fail(`${sources.cardep}: two features map to cell ${h3}`);
+    cell.cartograms = { ...cell.cartograms, cardep: feature.geometry };
     cell.properties.cdi = p.cdi;
     cell.properties.o_score_pt = p.o_score_pt;
     cell.properties.o_score_car = p.o_score_car;
@@ -312,6 +321,27 @@ function buildCity(cityId, sources, catalogue) {
     `  atlas/${cityId}.geojson  ${features.length} cells  ${mb(size.raw)} → ${mb(size.gz)} gz`,
   );
 
+  // ── Cartogram companions ───────────────────────────────────────────
+  // One file per platform that publishes a cartogram, carrying only the
+  // cells that platform covers. `i` is the union mesh's feature index, so a
+  // companion can never drift into the wrong cells: nothing is matched by
+  // position, and a cell a platform does not measure is simply absent.
+  const cartograms = {};
+  for (const platform of ['pov', 'cardep']) {
+    const shapes = [];
+    ordered.forEach((cell, i) => {
+      const geometry = cell.cartograms?.[platform];
+      if (geometry) shapes.push({ type: 'Feature', properties: { i }, geometry });
+    });
+    if (!shapes.length) continue;
+    const rel = `atlas/${cityId}.cartogram-${platform}.geojson`;
+    const written = writeJSON(rel, { type: 'FeatureCollection', features: shapes });
+    cartograms[platform] = rel;
+    console.log(
+      `  ${rel}  ${shapes.length} cells  ${mb(written.raw)} → ${mb(written.gz)} gz`,
+    );
+  }
+
   // ── Catalogue entries ──────────────────────────────────────────────
   const meta = cityMeta(catalogue, cityId);
   const country = cityCountry(catalogue, cityId);
@@ -365,6 +395,10 @@ function buildCity(cityId, sources, catalogue) {
       ...base,
       population,
       dataset: `atlas/${cityId}.geojson`,
+      // The union mesh is drawn where the cells are; the cartogram is an
+      // alternative geometry, and only for the platforms that publish one.
+      geometry: 'geographic',
+      cartograms,
       cell,
       layers: ['pov', 'cardep', 'fifteen', 'citychrone'],
     },
@@ -372,12 +406,14 @@ function buildCity(cityId, sources, catalogue) {
       ...base,
       population: fifteenPopulation,
       dataset: sources.fifteen,
+      geometry: 'geographic',
       cell,
     },
     citychroneCity: {
       ...base,
       population: ccPopulation,
       dataset: null,
+      geometry: 'geographic',
       hourly: { hours: cc.hours, hexcover: cc.hexcover, times: cc.times, cells: n },
       cell,
     },

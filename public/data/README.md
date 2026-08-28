@@ -86,6 +86,24 @@ Two additions beyond the per-platform lists:
   regenerate them with `npm run build:atlas` after changing any Milan file,
   and `npm run test:data` reconciles them against the per-platform files.
 
+- **Alternative geometry.** A city's values sit on one geometry; where the
+  other one is published too, the city entry says which is which. `"geometry"`
+  is `"cartogram"` or `"geographic"` and describes `dataset`'s own polygons;
+  `"geoDataset"` points at the true hexagons beside a cartogram, and an
+  `atlas` city's `"cartograms"` maps a platform id to the cartogram polygons
+  for its cells. A companion file is a `FeatureCollection` whose every feature
+  carries `{ "i": <index into dataset.features> }` and nothing else, so the
+  join is stated rather than positional — and a cartogram companion covers
+  only the cells its platform measures. The viewer offers the switch exactly
+  where a companion exists: 15minCity and CityChrone publish no cartogram, and
+  the UI says so rather than drawing one.
+
+  The geographic companions are **derived**, not copied: every published cell
+  sits on the standard H3 grid, and the cartogram preserves its centroid, so
+  the centroid identifies the cell and the cell determines its hexagon.
+  `build-data.mjs` refuses a centroid more than 10 m off a cell centre, and
+  checks the result against the true hexagons CDI publishes in
+  `hexes.geojson` — they reproduce them exactly.
 - **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. The upstream CDI
   `index.json` uses `[lat, lon]` — flipping it is the exporter's job.
 - **`cell`** describes the real cell geometry. It cannot be measured from a
@@ -147,8 +165,9 @@ accepted in place of `cell_type`.
 
 Note these files are **population-scaled cartograms**: cells sit in their true
 positions but their area encodes population, so a low-population cell shrinks
-to a fraction of a full hexagon. A true-geography export would render with the
-same code.
+to a fraction of a full hexagon. The true hexagons are published beside them as
+`pov/<city>.geo.geojson` and named by the entry's `geoDataset`, which is what
+the city page's map/cartogram switch draws.
 
 ### Car Dependency Index
 

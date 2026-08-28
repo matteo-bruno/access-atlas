@@ -9,6 +9,8 @@
 //
 // What it does per platform:
 //   • one GeoJSON per city, coordinates trimmed to 5 dp and scores to 1 dp
+//   • a `<city>.geo.geojson` companion: the same cells in true geographic
+//     position, so the viewer can show a map as well as a cartogram
 //   • a coverage FeatureCollection of city points for the world map
 //   • catalogue entries merged into public/data/index.json
 //   • the derived counts src/data/home.js quotes, printed at the end
@@ -20,6 +22,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
+import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'public', 'data');
@@ -179,6 +182,100 @@ function writeJSON(file, value) {
 
 const mb = (b) => `${(b / 1e6).toFixed(2)} MB`;
 
+// ── Geographic geometry ──────────────────────────────────────────────
+// Both platforms publish *population-scaled cartograms*: the polygon encodes
+// how many people live in the cell, not where the cell's edges are. The true
+// hexagon is not lost, though — the cartogram scales each cell about its own
+// centroid, and every published city sits on the standard H3 grid, so the
+// centroid identifies the cell and the cell determines its boundary.
+//
+// That boundary is written as a companion file rather than folded into the
+// dataset: one geometry per cell, in the dataset's own order, so the viewer
+// can swap geometries without refetching the values. `i` states the index it
+// belongs to instead of leaving the alignment to chance.
+//
+// The same contract as scripts/build-atlas.mjs: a centroid further than
+// GRID_TOLERANCE_M from an H3 cell centre means the dataset is not on this
+// grid, and the build stops rather than forcing it on.
+const H3_RESOLUTION = 9;
+const GRID_TOLERANCE_M = 10;
+
+function metresBetween(a, b) {
+  const dLat = (a[0] - b[0]) * 111320;
+  const dLon = (a[1] - b[1]) * 111320 * Math.cos((a[0] * Math.PI) / 180);
+  return Math.hypot(dLat, dLon);
+}
+
+// Drop the closing vertex, however many times it was written: CDI's
+// hexes.geojson repeats it twice, which would otherwise weight one corner
+// double in every average below.
+function openRing(ring) {
+  let end = ring.length;
+  while (end > 1 && ring[end - 1][0] === ring[0][0] && ring[end - 1][1] === ring[0][1]) end--;
+  return ring.slice(0, end);
+}
+
+// Mean distance from centroid to vertices — a polygon's "radius", used to
+// compare a derived hexagon against a published one.
+function ringRadiusM(ring) {
+  const open = openRing(ring);
+  let cx = 0;
+  let cy = 0;
+  for (const [x, y] of open) {
+    cx += x;
+    cy += y;
+  }
+  cx /= open.length;
+  cy /= open.length;
+  const k = Math.cos((cy * Math.PI) / 180);
+  let sum = 0;
+  for (const [x, y] of open) sum += Math.hypot((x - cx) * 111320 * k, (y - cy) * 111320);
+  return sum / open.length;
+}
+
+// Centroid of a ring, on the same normalisation as ringRadiusM.
+function ringCentre(ring) {
+  const open = openRing(ring);
+  let x = 0;
+  let y = 0;
+  for (const [px, py] of open) {
+    x += px;
+    y += py;
+  }
+  return [x / open.length, y / open.length];
+}
+
+/**
+ * The true hexagons behind a city's cartogram, in the dataset's order.
+ *
+ * @param {object[]} features  published features, cartogram geometry
+ * @param {string}   source    file name, for error messages
+ * @returns {{ collection: object, cells: string[] }}
+ */
+function geoCompanion(features, source) {
+  const cells = [];
+  const out = features.map((feature, i) => {
+    const [lon, lat] = ringCentroid(feature.geometry);
+    const cell = latLngToCell(lat, lon, H3_RESOLUTION);
+    const distance = metresBetween([lat, lon], cellToLatLng(cell));
+    if (distance > GRID_TOLERANCE_M) {
+      throw new Error(
+        `${source}: cell ${i} centroid is ${distance.toFixed(1)} m from the nearest ` +
+          `H3 r${H3_RESOLUTION} cell centre — this dataset is not on the standard grid`,
+      );
+    }
+    cells.push(cell);
+    const ring = cellToBoundary(cell).map(([la, lo]) => [r5(lo), r5(la)]);
+    ring.push(ring[0]);
+    return {
+      type: 'Feature',
+      properties: { i },
+      geometry: { type: 'Polygon', coordinates: [ring] },
+    };
+  });
+  return { collection: { type: 'FeatureCollection', features: out }, cells };
+}
+
 // ── P.O.V. ───────────────────────────────────────────────────────────
 function buildPov(dir) {
   const src = path.join(dir, 'data');
@@ -257,8 +354,10 @@ function buildPov(dir) {
       type: 'FeatureCollection',
       features,
     });
-    totalRaw += size.raw;
-    totalGz += size.gz;
+    const geo = geoCompanion(features, `pov/${id}.geojson`);
+    const geoSize = writeJSON(path.join(OUT, 'pov', `${id}.geo.geojson`), geo.collection);
+    totalRaw += size.raw + geoSize.raw;
+    totalGz += size.gz + geoSize.gz;
     totalCells += features.length;
 
     const population = Math.round(rows.reduce((s, r) => s + r.population, 0));
@@ -275,6 +374,9 @@ function buildPov(dir) {
       zoom: zoomFor(rows),
       population,
       dataset: `pov/${id}.geojson`,
+      // What the dataset's polygons are, and where the other geometry lives.
+      geometry: 'cartogram',
+      geoDataset: `pov/${id}.geo.geojson`,
       cell: { h3Resolution: 9, cellRadiusM: 200 },
       thresholds: { proximity: r1(proxCut), opportunity: r1(oppCut) },
     });
@@ -300,7 +402,8 @@ function buildPov(dir) {
     }
 
     console.log(
-      `  pov/${id.padEnd(14)} ${String(features.length).padStart(6)} cells  ${mb(size.raw).padStart(8)} → ${mb(size.gz).padStart(8)} gz`,
+      `  pov/${id.padEnd(14)} ${String(features.length).padStart(6)} cells  ${mb(size.raw).padStart(8)} → ${mb(size.gz).padStart(8)} gz` +
+        `  + ${mb(geoSize.gz)} gz geometry`,
     );
   }
 
@@ -310,6 +413,50 @@ function buildPov(dir) {
   });
 
   return { cities, coverage: 'pov/coverage.geojson', totalRaw, totalGz, totalCells };
+}
+
+/**
+ * Check derived hexagons against the ones CDI publishes in hexes.geojson.
+ *
+ * The geometry written beside a cartogram is generated from an H3 index, not
+ * copied from a file, so where upstream states the same hexagon the two must
+ * agree. Both the centre and the size are compared: a centroid check alone
+ * would pass a cell of the wrong resolution.
+ *
+ * @returns {string} a short report for the build log
+ */
+function checkAgainstHexes(file, rows, geo) {
+  if (!fs.existsSync(file)) return 'hexes.geojson absent — geometry unchecked';
+  const published = new Map();
+  for (const feature of JSON.parse(fs.readFileSync(file, 'utf8')).features) {
+    if (feature.geometry?.type !== 'Polygon') continue;
+    published.set(feature.properties?.id, feature.geometry.coordinates[0]);
+  }
+
+  let worstCentre = 0;
+  let worstRadius = 0;
+  let compared = 0;
+  geo.collection.features.forEach((derived, i) => {
+    const ring = published.get(rows[i].sourceId);
+    if (!ring) return;
+    compared++;
+    const [ax, ay] = ringCentre(derived.geometry.coordinates[0]);
+    const [bx, by] = ringCentre(ring);
+    worstCentre = Math.max(worstCentre, metresBetween([ay, ax], [by, bx]));
+    worstRadius = Math.max(
+      worstRadius,
+      Math.abs(ringRadiusM(derived.geometry.coordinates[0]) - ringRadiusM(ring)),
+    );
+  });
+
+  if (!compared) return 'no ids in common with hexes.geojson — geometry unchecked';
+  if (worstCentre > GRID_TOLERANCE_M || worstRadius > GRID_TOLERANCE_M) {
+    throw new Error(
+      `${file}: derived hexagons disagree with the published ones — ` +
+        `centre off by up to ${worstCentre.toFixed(1)} m, radius by ${worstRadius.toFixed(1)} m`,
+    );
+  }
+  return `geometry ✓ ${compared} vs hexes.geojson (≤${Math.max(worstCentre, worstRadius).toFixed(1)} m)`;
 }
 
 // ── Car Dependency Index ─────────────────────────────────────────────
@@ -352,6 +499,9 @@ function buildCdi(dir) {
           geometry: f.geometry,
           lon,
           lat,
+          // Upstream's own cell id, kept only to check the derived hexagon
+          // against the hexes.geojson CDI publishes beside the cartogram.
+          sourceId: p.id,
           population: Number(p.population) || 0,
           cdi: Number(p.CDI),
           pt: Number(p.o_score_pt),
@@ -375,9 +525,15 @@ function buildCdi(dir) {
       type: 'FeatureCollection',
       features,
     });
-    totalRaw += size.raw;
-    totalGz += size.gz;
+    const geo = geoCompanion(features, `cardep/${id}.geojson`);
+    const geoSize = writeJSON(path.join(OUT, 'cardep', `${id}.geo.geojson`), geo.collection);
+    totalRaw += size.raw + geoSize.raw;
+    totalGz += size.gz + geoSize.gz;
     totalCells += features.length;
+    // CDI is the one platform that publishes the true hexagons as well as the
+    // cartogram, so the geometry derived above can be checked rather than
+    // trusted: it must reproduce the file upstream ships.
+    const checked = checkAgainstHexes(path.join(src, name, 'hexes.geojson'), rows, geo);
 
     const population = Math.round(rows.reduce((s, r) => s + r.population, 0));
     const centre = weightedCentre(rows);
@@ -398,6 +554,8 @@ function buildCdi(dir) {
       zoom: zoomFor(rows),
       population,
       dataset: `cardep/${id}.geojson`,
+      geometry: 'cartogram',
+      geoDataset: `cardep/${id}.geo.geojson`,
       cell: { h3Resolution: 9, cellRadiusM: 200 },
     });
 
@@ -417,7 +575,8 @@ function buildCdi(dir) {
     }
 
     console.log(
-      `  cardep/${id.padEnd(14)} ${String(features.length).padStart(6)} cells  ${mb(size.raw).padStart(8)} → ${mb(size.gz).padStart(8)} gz  CDI ${cdi >= 0 ? '+' : ''}${cdi}`,
+      `  cardep/${id.padEnd(14)} ${String(features.length).padStart(6)} cells  ${mb(size.raw).padStart(8)} → ${mb(size.gz).padStart(8)} gz  CDI ${cdi >= 0 ? '+' : ''}${cdi}` +
+        `  ${checked}`,
     );
   }
 
@@ -520,6 +679,9 @@ function buildFifteen(dir, cityId = 'rome') {
         zoom: zoomFor(rows),
         population,
         dataset: `fifteen/${cityId}.geojson`,
+        // 15minCity publishes the cells where they are; there is no
+        // population-scaled cartogram of it to switch to.
+        geometry: 'geographic',
         // The legacy meshes are NOT H3: their cell centroids share only ~8%
         // of positions with the H3 r9 grid the other platforms use, which is
         // chance rather than alignment. Claim the measured cell size and
@@ -558,6 +720,7 @@ const existing = fs.existsSync(cataloguePath)
   : { version: 1, platforms: {} };
 
 const catalogue = {
+  ...existing,
   version: 1,
   platforms: {
     ...existing.platforms,
