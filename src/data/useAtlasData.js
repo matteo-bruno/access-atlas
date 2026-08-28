@@ -4,7 +4,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
-import { publishedCity } from './catalogue.js';
+import { platformEntry, publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
 import { CITIES, citiesForPlatform } from './cities.js';
@@ -325,4 +325,57 @@ function stripEmpty(object) {
   return Object.fromEntries(
     Object.entries(object).filter(([, value]) => value !== undefined && value !== null),
   );
+}
+
+/**
+ * Every published city of a platform, one row each, for the compare view.
+ *
+ * Computed offline and published as a summary file — the alternative is
+ * fetching all 22 city datasets to end up with twenty numbers per city.
+ *
+ * @returns {{ status: 'pending'|'ready'|'empty'|'error', cities: object[] }}
+ */
+export function usePlatformSummary(platformId) {
+  const [state, setState] = useState({ status: 'pending', cities: [] });
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+    setState({ status: 'pending', cities: [] });
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        const summary = await provider.summary(platformId, catalogue, {
+          signal: controller.signal,
+        });
+        if (cancelled) return;
+        const rows = Array.isArray(summary?.cities) ? summary.cities : [];
+        if (!rows.length) {
+          setState({ status: 'empty', cities: [] });
+          return;
+        }
+        // The summary carries figures, not names: the catalogue is where a
+        // city's editorial metadata lives, so the two are joined here.
+        const byId = platformEntry(catalogue, platformId)?.citiesById ?? {};
+        setState({
+          status: 'ready',
+          cities: rows
+            .filter((row) => byId[row.id])
+            .map((row) => ({ ...row, profile: byId[row.id] })),
+        });
+      } catch (error) {
+        if (error?.name === 'AbortError' || cancelled) return;
+        setState({ status: 'error', cities: [] });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [platformId]);
+
+  return state;
 }

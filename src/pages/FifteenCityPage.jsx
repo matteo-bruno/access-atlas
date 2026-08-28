@@ -11,6 +11,8 @@ import { useI18n } from '../i18n/index.jsx';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { useAtlasCityIds } from '../data/useAtlasData.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
+import { Explain } from '../components/Explain.jsx';
+import { CellInspector } from '../components/CellInspector.jsx';
 import { summariseMeasure } from '../data/adapters.js';
 import { CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
 import { paperForPlatform } from '../data/research.js';
@@ -32,6 +34,8 @@ export function FifteenCityPage({ platform, profile }) {
 
   const [mode, setMode] = useState(MODES[0].key);
   const [category, setCategory] = useState(CATEGORIES[0].key);
+  const [hoverCell, setHoverCell] = useState(null);
+  const [selectedCell, setSelectedCell] = useState(null);
 
   const cityName = lang === 'it' ? profile.nameIt : profile.name;
   const region = lang === 'it' ? profile.regionIt : profile.region;
@@ -57,6 +61,30 @@ export function FifteenCityPage({ platform, profile }) {
     }),
     [key],
   );
+
+  // The rows follow the selector: this platform measures forty things per
+  // cell, and the one on screen is the one being read.
+  const selectedRows = useMemo(() => {
+    const feature = selectedCell == null ? null : data?.geojson?.features?.[selectedCell];
+    if (!feature) return null;
+    const p = feature.properties ?? {};
+    const value = p[key];
+    return [
+      {
+        label: `${t(`fifteen.categories.${CATEGORIES.find((c) => c.key === category).i18n}`)} · ${t(
+          `fifteen.modes.${MODES.find((m) => m.key === mode).i18n}`,
+        )}`,
+        value:
+          value == null
+            ? '—'
+            : `${n(value, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`,
+      },
+      {
+        label: t('city.cell.population'),
+        value: Number.isFinite(p.population) ? n(Math.round(p.population)) : '—',
+      },
+    ];
+  }, [selectedCell, data, key, category, mode, t, n]);
 
   const stats = data?.stats;
 
@@ -128,7 +156,7 @@ export function FifteenCityPage({ platform, profile }) {
           <p className="aa-city__hint">{t('fifteen.hint')}</p>
 
           {/* ── Legend ───────────────────────────────────────── */}
-          <Eyebrow>{t('fifteen.legendValue')}</Eyebrow>
+          <Explain label={t('fifteen.legendValue')} body={t('city.explain.map.fifteen')} />
           <RampLegend
             ramp={RAMPS.fifteen}
             format={(v) => n(v, { maximumFractionDigits: 1 })}
@@ -147,7 +175,10 @@ export function FifteenCityPage({ platform, profile }) {
           )}
 
           <div className="aa-city__summary">
-            <Eyebrow>{t('city.summary.title')}</Eyebrow>
+            <Explain
+              label={t('city.summary.title')}
+              body={t('city.explain.summary.fifteen')}
+            />
             <dl className="aa-summary">
               <SummaryRow
                 label={t('city.summary.hexagons')}
@@ -174,6 +205,26 @@ export function FifteenCityPage({ platform, profile }) {
               />
             </dl>
           </div>
+
+          <CellInspector
+            title={t('city.selected.title')}
+            empty={t('city.selected.empty')}
+            rows={selectedRows}
+            clearLabel={t('city.selected.clear')}
+            onClear={() => setSelectedCell(null)}
+          />
+
+          <Explain label={t('city.explain.methodsTitle')} className="aa-city__methods">
+            <p>{t('city.explain.methods.fifteen')}</p>
+            {paper && (
+              <p>
+                {t('city.explain.paperNote')}{' '}
+                <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                  {paper.title} ↗
+                </a>
+              </p>
+            )}
+          </Explain>
         </aside>
 
         <section className="aa-city__cartogram aa-city__cartogram--wide">
@@ -192,6 +243,10 @@ export function FifteenCityPage({ platform, profile }) {
                   data={data.geojson}
                   type="fill"
                   paint={fillPaint}
+                  onHover={(feature) => setHoverCell(feature ? feature.id : null)}
+                  onClick={(feature) =>
+                    setSelectedCell((current) => (current === feature.id ? null : feature.id))
+                  }
                   tooltip={(feature) => {
                     const value = feature.properties?.[key];
                     return value == null
@@ -199,6 +254,26 @@ export function FifteenCityPage({ platform, profile }) {
                       : `${n(value, { maximumFractionDigits: 1 })} ${t('fifteen.minutes')}`;
                   }}
                 />
+                {hoverCell != null && (
+                  <GeoJSONLayer
+                    id="fifteen-mesh-highlight"
+                    data={data.geojson}
+                    type="line"
+                    paint={{ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }}
+                    filter={['==', ['id'], hoverCell]}
+                    interactive={false}
+                  />
+                )}
+                {selectedCell != null && (
+                  <GeoJSONLayer
+                    id="fifteen-mesh-selected"
+                    data={data.geojson}
+                    type="line"
+                    paint={{ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.6 }}
+                    filter={['==', ['id'], selectedCell]}
+                    interactive={false}
+                  />
+                )}
               </AtlasMap>
             ) : (
               <div className="aa-city__loading">{t('city.computing')}</div>

@@ -12,6 +12,9 @@ import { ZONES } from '../data/platforms.js';
 import { useAtlasCityIds, useCityGeometry, useCityProfile } from '../data/useAtlasData.js';
 import { withGeometry } from '../data/adapters.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
+import { Explain } from '../components/Explain.jsx';
+import { CellInspector } from '../components/CellInspector.jsx';
+import { RangeFilter } from '../components/RangeFilter.jsx';
 import { paperForPlatform } from '../data/research.js';
 import { cityZoom } from '../map/framing.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
@@ -47,6 +50,15 @@ function CityScreen({ platform, profile }) {
   const paper = paperForPlatform(platform.id);
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
+  // Selection is separate from hover: it survives the pointer leaving, which
+  // is the whole point of an inspector.
+  const [selectedCell, setSelectedCell] = useState(null);
+  const toggleSelected = (id) => setSelectedCell((current) => (current === id ? null : id));
+  // The index runs [−1, +1] by construction, so the filter's bounds are the
+  // measure's own rather than this city's range — the same slice means the
+  // same thing in every city.
+  const [range, setRange] = useState([-1, 1]);
+  const filtered = range[0] > -1 || range[1] < 1;
 
   // ── Geometry ───────────────────────────────────────────────────────
   // The published file is a cartogram, so that is what opens — the same
@@ -102,10 +114,17 @@ function CityScreen({ platform, profile }) {
 
   const fillPaint = useMemo(() => {
     if (isCdi) {
+      const inRange = [
+        'all',
+        ['>=', ['coalesce', ['get', 'cdi'], 0], range[0]],
+        ['<=', ['coalesce', ['get', 'cdi'], 0], range[1]],
+      ];
       return {
         'fill-color': rampColor(RAMPS.cdi, ['coalesce', ['get', 'cdi'], 0]),
         // Short of opaque, so the basemap reads through the cartogram.
-        'fill-opacity': ['case', ['has', 'cdi'], 0.8, 0],
+        // Filtered-out cells are dimmed, not dropped: the city they belong to
+        // is still the subject.
+        'fill-opacity': ['case', ['!', ['has', 'cdi']], 0, inRange, 0.8, 0.08],
       };
     }
     return {
@@ -120,12 +139,71 @@ function CityScreen({ platform, profile }) {
           ? 0.8
           : ['case', ['==', ['get', 'zone'], activeZone], 0.95, 0.14],
     };
-  }, [isCdi, activeZone, bands]);
+  }, [isCdi, activeZone, bands, range]);
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
     [],
   );
+  // Heavier than the hover outline: a selection has to stay findable once the
+  // pointer has moved on.
+  const selectedPaint = useMemo(
+    () => ({ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.6 }),
+    [],
+  );
+
+  // ── The selected cell ──────────────────────────────────────────────
+  // Read from the loaded features by id, which is the array index in every
+  // adapter, so switching geometry or filtering never moves a cell.
+  const selectedRows = useMemo(() => {
+    const feature = selectedCell == null ? null : data?.geojson?.features?.[selectedCell];
+    if (!feature) return null;
+    const p = feature.properties ?? {};
+    const score = (v) => (Number.isFinite(v) ? n(v, { maximumFractionDigits: 1 }) : '—');
+    const people = (v) => (Number.isFinite(v) ? n(Math.round(v)) : '—');
+
+    if (isCdi) {
+      return [
+        { label: t('city.cell.cdi'), value: formatIndex(p.cdi, n), accent: bands[p.zone]?.color },
+        { label: t('city.cell.byCar'), value: score(p.o_score_car) },
+        { label: t('city.cell.byTransit'), value: score(p.o_score_pt) },
+        { label: t('city.cell.population'), value: people(p.population) },
+      ];
+    }
+    return [
+      {
+        label: t('city.cell.zone'),
+        value: bands[p.zone]?.name ?? '—',
+        accent: bands[p.zone]?.color,
+      },
+      { label: t('city.cell.proximity'), value: score(p.proximity) },
+      { label: t('city.cell.opportunity'), value: score(p.opportunity) },
+      { label: t('city.cell.population'), value: people(p.population) },
+      // The thresholds that decided the zone, so the classification can be
+      // checked against the cell rather than taken on trust.
+      ...(profile.thresholds
+        ? [
+            { label: t('city.cell.thresholdProximity'), value: score(profile.thresholds.proximity) },
+            {
+              label: t('city.cell.thresholdOpportunity'),
+              value: score(profile.thresholds.opportunity),
+            },
+          ]
+        : []),
+    ];
+  }, [selectedCell, data, isCdi, bands, profile.thresholds, t, n]);
+
+  // How many cells the filter leaves, so the slice is a number and not just
+  // a picture. Counted over every cell, not the scatter's sample.
+  const shownCells = useMemo(() => {
+    if (!isCdi || !filtered || !data?.geojson) return null;
+    let count = 0;
+    for (const feature of data.geojson.features) {
+      const value = feature.properties?.cdi;
+      if (Number.isFinite(value) && value >= range[0] && value <= range[1]) count++;
+    }
+    return count;
+  }, [isCdi, filtered, data, range]);
 
   const stats = data?.stats;
   // A published file's own population sum is the better number when it exists;
@@ -168,11 +246,33 @@ function CityScreen({ platform, profile }) {
       <main className="aa-main aa-city" id="main">
         {/* ── Zone panel ───────────────────────────────────────── */}
         <aside className="aa-city__panel">
-          <Eyebrow>{isCdi ? t('platform.cardep.legendUnit') : t('city.zoneType')}</Eyebrow>
+          <Explain
+            label={isCdi ? t('platform.cardep.legendUnit') : t('city.zoneType')}
+            body={t(`city.explain.map.${platform.id}`)}
+          />
           {isCdi ? (
             <>
               <RampLegend ramp={RAMPS.cdi} format={(v) => (v === 0 ? '0' : formatIndex(v, n))} />
               <p className="aa-city__hint">{t('city.cdiHint')}</p>
+              <Explain label={t('city.filter.title')} body={t('city.filter.about')} />
+              <RangeFilter
+                value={range}
+                onChange={setRange}
+                min={-1}
+                max={1}
+                step={0.01}
+                label={t('city.filter.title')}
+                resetLabel={t('city.filter.reset')}
+                format={(v) => (v === 0 ? '0' : formatIndex(v, n))}
+              />
+              {filtered && (
+                <p className="aa-city__hint">
+                  {t('city.filter.showing', {
+                    count: n(shownCells ?? 0),
+                    total: stats ? n(stats.cellCount) : '—',
+                  })}
+                </p>
+              )}
             </>
           ) : (
           <div className="aa-zones">
@@ -227,7 +327,10 @@ function CityScreen({ platform, profile }) {
           )}
 
           <div className="aa-city__summary">
-            <Eyebrow>{t('city.summary.title')}</Eyebrow>
+            <Explain
+              label={t('city.summary.title')}
+              body={t(`city.explain.summary.${platform.id}`)}
+            />
             <dl className="aa-summary">
               <SummaryRow
                 label={t('city.summary.hexagons')}
@@ -277,6 +380,27 @@ function CityScreen({ platform, profile }) {
               />
             </dl>
           </div>
+
+          <CellInspector
+            title={t('city.selected.title')}
+            empty={t('city.selected.empty')}
+            rows={selectedRows}
+            clearLabel={t('city.selected.clear')}
+            onClear={() => setSelectedCell(null)}
+          />
+
+          {/* How the numbers were produced, and where the full account is. */}
+          <Explain label={t('city.explain.methodsTitle')} className="aa-city__methods">
+            <p>{t(`city.explain.methods.${platform.id}`)}</p>
+            {paper && (
+              <p>
+                {t('city.explain.paperNote')}{' '}
+                <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                  {paper.title} ↗
+                </a>
+              </p>
+            )}
+          </Explain>
         </aside>
 
         {/* ── Cartogram ────────────────────────────────────────── */}
@@ -299,8 +423,19 @@ function CityScreen({ platform, profile }) {
                   type="fill"
                   paint={fillPaint}
                   onHover={(feature) => setHoverCell(feature ? feature.id : null)}
+                  onClick={(feature) => toggleSelected(feature.id)}
                   tooltip={(feature) => formatCellTooltip(feature.properties, n)}
                 />
+                {selectedCell != null && (
+                  <GeoJSONLayer
+                    id="mesh-selected"
+                    data={drawn}
+                    type="line"
+                    paint={selectedPaint}
+                    filter={['==', ['id'], selectedCell]}
+                    interactive={false}
+                  />
+                )}
                 {hoverCell != null && (
                   <GeoJSONLayer
                     id="mesh-highlight"
@@ -338,9 +473,10 @@ function CityScreen({ platform, profile }) {
 
         {/* ── Scatter ──────────────────────────────────────────── */}
         <section className="aa-city__scatter">
-          <Eyebrow>
-            {isCdi ? t('city.scatterCdi.title') : t('city.scatter.title')}
-          </Eyebrow>
+          <Explain label={isCdi ? t('city.scatterCdi.title') : t('city.scatter.title')}>
+            <p>{t(`city.explain.scatter.${platform.id}`)}</p>
+            <p>{t('city.explain.scatter.sampled')}</p>
+          </Explain>
           <div className="aa-city__plot">
             {status === 'ready' && (
               <ScatterPlot
@@ -350,6 +486,9 @@ function CityScreen({ platform, profile }) {
                 activeZone={activeZone}
                 hoverCell={hoverCell}
                 onHoverCell={setHoverCell}
+                selectedCell={selectedCell}
+                onSelectCell={toggleSelected}
+                range={isCdi ? range : null}
                 labels={
                   isCdi
                     ? {
@@ -438,6 +577,9 @@ function ScatterPlot({
   activeZone,
   hoverCell,
   onHoverCell,
+  selectedCell,
+  onSelectCell,
+  range,
   labels,
 }) {
   const W = 700;
@@ -506,17 +648,25 @@ function ScatterPlot({
       )}
 
       {points.map((point) => {
-        const dimmed = activeZone != null && activeZone !== point.z;
+        // The scatter carries normalised axes, so the filter is applied to
+        // the index the point was built from rather than to its position.
+        const outside = range != null && (point.v < range[0] || point.v > range[1]);
+        const dimmed = outside || (activeZone != null && activeZone !== point.z);
+        const selected = selectedCell === point.i;
         return (
           <circle
             key={point.i}
+            className="aa-scatter__dot"
             cx={x(point.x)}
             cy={y(point.y)}
-            r={hoverCell === point.i ? 4 : 2}
+            r={selected ? 5 : hoverCell === point.i ? 4 : 2}
             fill={colors[point.z] ?? colors[colors.length - 1]}
+            stroke={selected ? 'var(--ink)' : 'none'}
+            strokeWidth={selected ? 1.2 : 0}
             opacity={dimmed ? 0.12 : 0.85}
             onMouseEnter={() => onHoverCell(point.i)}
             onMouseLeave={() => onHoverCell(null)}
+            onClick={() => onSelectCell(point.i)}
           />
         );
       })}

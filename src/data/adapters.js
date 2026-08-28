@@ -260,6 +260,9 @@ export function meshFromPublishedCdi(collection, profile = {}, stops = [-0.1, 0.
       x: Math.round(norm(row.car) * 1000) / 1000,
       y: Math.round(norm(row.pt) * 1000) / 1000,
       z: features[i].properties.zone,
+      // The index itself, so a filter set in index units can be applied to
+      // the plot without inverting the axis normalisation.
+      v: row.cdi,
     });
   }
 

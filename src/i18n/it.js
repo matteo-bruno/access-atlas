@@ -315,6 +315,71 @@ export default {
       opportunity: 'Punteggio mediano di opportunità',
       population: 'Popolazione coperta',
     },
+    // Il controllo tipico del Car Dependency: restringere l’indice a una fetta
+    // e leggere la città attraverso quella. Le celle fuori sono attenuate, non
+    // rimosse: fanno comunque parte della città descritta.
+    filter: {
+      title: 'Filtra per indice',
+      reset: 'Reimposta',
+      about: 'Restringe mappa e scatter alle celle il cui indice cade fra i due cursori. Tutto il resto rimane sulla mappa, attenuato: qui un filtro è un modo di guardare, non l’affermazione che il resto manchi. I valori del riepilogo non cambiano — descrivono la città intera.',
+      showing: '{count} celle su {total}',
+    },
+    // Le righe dell’ispettore. In un tooltip sta un numero solo; qui si legge
+    // tutto quello che è stato misurato per una cella.
+    selected: {
+      title: 'Cella selezionata',
+      empty: 'Clicca una cella — sulla mappa o sullo scatter — per leggere tutto ciò che è stato misurato.',
+      clear: 'Deseleziona',
+    },
+    cell: {
+      zone: 'Zona',
+      proximity: 'Punteggio di prossimità',
+      opportunity: 'Punteggio di opportunità',
+      cdi: 'Indice di dipendenza dall’auto',
+      byCar: 'Raggiungibile in auto',
+      byTransit: 'Raggiungibile con i mezzi',
+      population: 'Residenti',
+      // Le mediane pesate per popolazione con cui è stata decisa la zona —
+      // i `thresholds` del catalogo, non le mediane semplici del riepilogo.
+      thresholdProximity: 'Soglia di zona, prossimità',
+      thresholdOpportunity: 'Soglia di zona, opportunità',
+      time: 'Tempo di viaggio',
+      velocity: 'Punteggio di velocità',
+      sociality: 'Punteggio di socialità',
+      grid: 'Cella H3',
+    },
+    // ── Spiegazioni ────────────────────────────────────────────────
+    // Riprese dai due viewer originali, che mettono un "?" accanto a tutto ciò
+    // che si può fraintendere. Due loro frasi non sono state riportate: CDI
+    // chiamava il proprio cartogramma "di Dorling" (qui le celle restano nella
+    // posizione vera e cambiano solo area) e P.O.V. chiamava le soglie mediane
+    // semplici (sono pesate per popolazione — vedi CLAUDE.md).
+    explain: {
+      map: {
+        pov: 'Ogni cella prende il colore della zona in cui ricade: verde sopra la mediana su entrambi gli assi, rosso sotto su entrambi, e nel mezzo i due casi misti. Le soglie sono le mediane pesate per popolazione di quella città, quindi una zona confronta luoghi dentro una città e mai una città con un’altra — a confrontarsi fra città sono i punteggi sottostanti.',
+        cardep: 'Blu dove il trasporto pubblico raggiunge più opportunità dell’auto, bianco dove le due si equivalgono, rosso dove l’auto ne raggiunge di più. La scala è fissa per tutte le città invece di essere adattata a ciascuna, così lo stesso colore è lo stesso indice ovunque: una città non viene mai ricolorata per riempire la tavolozza.',
+        fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala serve tutte e dieci le categorie e entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
+      },
+      scatter: {
+        pov: 'Ogni punto è una cella: opportunità sull’asse x, prossimità sull’asse y. Le linee tratteggiate sono le mediane cittadine pesate per popolazione — le stesse soglie che assegnano i colori — quindi i quattro quadranti sono le quattro zone. Passa il mouse su un punto per evidenziarne la cella sulla mappa.',
+        cardep: 'Ogni punto è una cella: quanto raggiunge l’auto sull’asse x, quanto raggiunge il trasporto pubblico sull’asse y. La diagonale è CDI = 0, dove i due raggiungono la stessa quantità: i punti sotto sono dipendenti dall’auto, quelli sopra favorevoli al trasporto pubblico. I due assi condividono una sola scala, ed è questo a dare significato alla diagonale. Passa il mouse su un punto per evidenziarne la cella sulla mappa.',
+        sampled: 'Le città con più celle di quante il grafico possa distinguere sono campionate in modo uniforme: la forma è quella di tutte le celle, i punti no.',
+      },
+      summary: {
+        pov: 'Celle conta quelle coperte dal dataset pubblicato. Ogni mediana è il punteggio della cella di mezzo — conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuna delle due porta un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale della città.',
+        cardep: 'Il CDI mediano è l’indice della cella di mezzo. Il CDI per il residente medio pesa ogni cella per le persone che ci vivono, ed è il valore con cui la piattaforma ordina le città: metà delle celle di una città può essere dipendente dall’auto mentre la maggior parte dei residenti vive nell’altra metà.',
+        fifteen: 'La mediana è il tempo della cella di mezzo per la categoria e la modalità a schermo. Descrive celle, non residenti: ogni cella conta una volta, per quante persone ci vivano. La popolazione è la somma del dataset.',
+        atlas: 'I valori sono ricalcolati per il layer a schermo. Celle è la maglia unione — ogni cella misurata da almeno una piattaforma — quindi un layer che ne copre meno lo dichiara in una riga a parte.',
+      },
+      methodsTitle: 'Dati e metodi',
+      methods: {
+        pov: 'Celle H3 di risoluzione 9, circa 200 m di lato. Tempi a piedi da OSRM su OpenStreetMap; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione dalle griglie WorldPop a 100 m, riscalate sulle stime ONU.',
+        cardep: 'Celle H3 di risoluzione 9, circa 200 m di lato. Tempi in auto e a piedi da OSRM su OpenStreetMap, con un margine per il parcheggio e ritardi da traffico specifici per città sul lato auto; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione da WorldPop.',
+        fifteen: 'Celle H3 di risoluzione 9. Tempi a piedi e in bicicletta da OSRM su OpenStreetMap; servizi da OpenStreetMap, raggruppati nelle dieci categorie elencate nel selettore; popolazione da WorldPop.',
+        citychrone: 'Celle H3 di risoluzione 9, un export per ogni ora del giorno. Trasporto pubblico da orari GTFS; entrambi i punteggi e le isocrone sono definiti nell’articolo della piattaforma. I tempi di viaggio sono pubblicati in minuti interi con un tetto a 180.',
+      },
+      paperNote: 'Il metodo è esposto per esteso nell’articolo.',
+    },
     // Le due geometrie su cui una città può essere pubblicata. Il passaggio
     // cambia il significato del poligono, non i dati: la didascalia sotto la
     // mappa dice quale delle due affermazioni è a schermo.
@@ -354,6 +419,63 @@ export default {
     computing: 'Caricamento della maglia…',
     seeded:
       'Maglia illustrativa — le misure di questa città non sono ancora pubblicate, quindi la disposizione delle celle è generata.',
+  },
+
+  // La vista di confronto: una riga per città invece che una per cella.
+  // Entrambi i viewer originali finiscono su questa schermata; l’Atlante aveva
+  // il pulsante ma non la pagina.
+  compare: {
+    label: 'Confronta le città',
+    title: '{name} in {count} città',
+    lede: 'Tutte le città pubblicate da questa piattaforma, una accanto all’altra. I valori sono calcolati dagli stessi file che disegnano le pagine città: un numero qui è il numero lì.',
+    back: 'Torna alla mappa',
+    openCity: 'Apri {name}',
+    sortBy: 'Ordina per',
+    sort: {
+      name: 'Nome',
+      population: 'Popolazione',
+      weightedCdi: 'Indice per il residente medio',
+      medianCdi: 'Indice mediano',
+      ptShare: 'Celle pro trasporto pubblico',
+      inclusion: 'Inclusione',
+      proximity: 'Prossimità mediana',
+      opportunity: 'Opportunità mediana',
+    },
+    basis: { label: 'Quote', cells: 'Per cella', residents: 'Per residente' },
+    ranking: {
+      cardep: 'Città ordinate per indice',
+      pov: 'Composizione delle zone per città',
+      aboutCardep: 'Ogni barra è l’indice del residente medio di quella città: ogni cella pesata per le persone che ci vivono. A sinistra della linea ci sono le città in cui, per il residente tipico, il trasporto pubblico raggiunge più dell’auto; a destra quelle in cui è l’auto a raggiungere di più. Le barre usano la stessa scala delle mappe.',
+      aboutPov: 'La quota di ogni città che ricade in ciascuna delle quattro zone. Le zone sono decise sulle mediane pesate per popolazione di quella stessa città, quindi qui si confronta la *composizione* interna e non il livello fra città: una città può essere per metà inclusione ed essere comunque servita male. Si può contare per celle o per residenti: le celle isolate sono grandi e poco abitate, e le due letture raccontano cose diverse.',
+    },
+    scatter: {
+      cardep: 'Quanto raggiunge l’auto rispetto ai mezzi',
+      pov: 'Prossimità rispetto a opportunità',
+      aboutCardep: 'Un cerchio per città, posizionato per quanto il residente medio raggiunge nei due modi e dimensionato per popolazione. La diagonale è dove i due raggiungono la stessa quantità: i cerchi sotto sono città in cui l’auto raggiunge di più.',
+      aboutPov: 'Un cerchio per città, posizionato sui punteggi del suo residente medio e dimensionato per popolazione. Entrambi gli assi sono conteggi pesati di punti di interesse raggiungibili, quindi non hanno unità: è la posizione a confrontare le città, e il numero da solo ha senso solo rispetto a un’altra città sullo stesso asse.',
+    },
+    distribution: {
+      title: 'Dove stanno i residenti di ogni città sull’indice',
+      about: 'Ogni curva è una città: la quota dei suoi residenti che vive a un valore dell’indice pari o inferiore. Una curva che sale presto e ripida è una città in cui quasi tutti stanno dalla parte del trasporto pubblico; una che resta piatta fino a destra è una città in cui quasi tutti dipendono dall’auto. Dove la curva attraversa la linea centrale c’è la quota di residenti per cui auto e mezzi raggiungono più o meno lo stesso.',
+    },
+    table: { title: 'Tabella riassuntiva' },
+    th: {
+      city: 'Città',
+      cells: 'Celle',
+      population: 'Popolazione',
+      medianCdi: 'Mediano',
+      weightedCdi: 'Residente medio',
+      ptCells: 'Celle TP',
+      carCells: 'Celle auto',
+      proximity: 'Prossimità med.',
+      opportunity: 'Opportunità med.',
+      inclusion: 'Inclusione',
+      spatial: 'Isol. spaziale',
+      social: 'Isol. sociale',
+      total: 'Isol. totale',
+    },
+    loading: 'Caricamento delle città pubblicate…',
+    empty: 'Questa piattaforma non ha ancora pubblicato riepiloghi per città.',
   },
 
   faq: {

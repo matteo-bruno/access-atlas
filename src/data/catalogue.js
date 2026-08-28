@@ -149,6 +149,9 @@ export function normaliseCatalogue(raw) {
       : [];
     platforms[id] = {
       coverage: typeof entry.coverage === 'string' ? entry.coverage : null,
+      // One row per city for the compare view, computed offline: the same
+      // figures the city pages show, without fetching every city's cells.
+      summary: typeof entry.summary === 'string' ? entry.summary : null,
       cities,
       citiesById: Object.fromEntries(cities.map((city) => [city.id, city])),
     };

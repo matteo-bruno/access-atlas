@@ -1,0 +1,34 @@
+.aa-inspector {
+  margin-top: 18px;
+}
+.aa-inspector__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.aa-inspector__clear {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font-family: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.aa-inspector__clear:hover {
+  color: var(--ink);
+}
+.aa-inspector__empty {
+  margin: 6px 0 0;
+  color: var(--ink-3);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.aa-inspector__rows dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

@@ -316,6 +316,71 @@ export default {
       opportunity: 'Median opportunity score',
       population: 'Population covered',
     },
+    // Car Dependency's own control: narrow the index to a slice and read the
+    // city through it. Cells outside are dimmed rather than removed — they are
+    // still part of the city being described.
+    filter: {
+      title: 'Filter by index',
+      reset: 'Reset',
+      about: 'Narrows the map and the scatter to cells whose index falls between the two thumbs. Everything outside stays on the map, dimmed: a filter here is a way of looking, not a claim that the rest is missing. The summary figures are unaffected — they describe the whole city.',
+      showing: '{count} of {total} cells',
+    },
+    // The inspector's rows. A tooltip has room for one number; this is where
+    // everything measured for a cell is read.
+    selected: {
+      title: 'Selected cell',
+      empty: 'Click any cell — on the map or on the scatter — to read everything measured for it.',
+      clear: 'Clear',
+    },
+    cell: {
+      zone: 'Zone',
+      proximity: 'Proximity score',
+      opportunity: 'Opportunity score',
+      cdi: 'Car Dependency Index',
+      byCar: 'Reachable by car',
+      byTransit: 'Reachable by transit',
+      population: 'Residents',
+      // The population-weighted medians the zone was decided against — the
+      // catalogue's `thresholds`, not the plain medians in the summary.
+      thresholdProximity: 'Zone threshold, proximity',
+      thresholdOpportunity: 'Zone threshold, opportunity',
+      time: 'Travel time',
+      velocity: 'Velocity score',
+      sociality: 'Sociality score',
+      grid: 'H3 cell',
+    },
+    // ── Explanations ───────────────────────────────────────────────
+    // Ported from the two upstream viewers, which put a "?" beside anything a
+    // reader could misread. Two of their sentences are not carried over: CDI
+    // called its cartogram a Dorling one (cells here keep their true position
+    // and only change area), and P.O.V. called its thresholds plain medians
+    // (they are population-weighted — see CLAUDE.md).
+    explain: {
+      map: {
+        pov: 'Each cell takes the colour of the zone it falls in: green above the median on both axes, red below on both, and the two mixed cases between. The thresholds are that city’s own population-weighted medians, so a zone compares places within one city and never one city against another — the underlying scores are what compare across cities.',
+        cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
+        fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all ten categories and both modes, so a colour means the same thing whatever is selected.',
+      },
+      scatter: {
+        pov: 'Each dot is a cell: opportunity along the x-axis, proximity up the y. The dashed lines are the city’s population-weighted medians — the same thresholds that assign the colours — so the four quadrants are the four zones. Hover a dot to highlight its cell on the map.',
+        cardep: 'Each dot is a cell: what a car reaches along the x-axis, what public transport reaches up the y. The diagonal is CDI = 0, where the two reach the same amount — dots below it are car-dependent, above it transit-favoured. Both axes share one scale, which is what makes that diagonal mean anything. Hover a dot to highlight its cell on the map.',
+        sampled: 'Cities with more cells than the plot can separate are sampled evenly, so the shape is every cell’s but the dots are not.',
+      },
+      summary: {
+        pov: 'Cells counts what the published dataset covers. Each median is the middle cell’s score — weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
+        cardep: 'Median CDI is the middle cell’s index. CDI for the average resident weights every cell by the people living in it, and is the figure the platform ranks cities on — half a city’s cells can be car-dependent while most of its residents live in the other half.',
+        fifteen: 'The median is the middle cell’s time for the category and mode on screen. It describes cells rather than residents: every cell counts once, however many people live in it. Population is the dataset’s own sum.',
+        atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
+      },
+      methodsTitle: 'Data & methods',
+      methods: {
+        pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
+        cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
+        fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the ten categories the selector lists; population from WorldPop.',
+        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are published as whole minutes capped at 180.',
+      },
+      paperNote: 'The method is set out in full in the paper.',
+    },
     // The two geometries a city can be published on. Switching is a change of
     // what the polygon means, not a change of data, so the caption under the
     // map states which claim is on screen.
@@ -356,6 +421,62 @@ export default {
     computing: 'Loading the mesh…',
     seeded:
       'Illustrative mesh — this city’s measurements are not yet published, so the arrangement of cells is generated.',
+  },
+
+  // The compare view: one row per city rather than one per cell. Both upstream
+  // viewers end on this screen, and the Atlas had the chip for it but no page.
+  compare: {
+    label: 'Compare cities',
+    title: '{name} across {count} cities',
+    lede: 'Every city this platform has published, side by side. Figures are computed from the same files the city pages draw, so a number here is the number there.',
+    back: 'Back to the map',
+    openCity: 'Open {name}',
+    sortBy: 'Sort by',
+    sort: {
+      name: 'Name',
+      population: 'Population',
+      weightedCdi: 'Index for the average resident',
+      medianCdi: 'Median index',
+      ptShare: 'Transit-favoured cells',
+      inclusion: 'Inclusion',
+      proximity: 'Median proximity',
+      opportunity: 'Median opportunity',
+    },
+    basis: { label: 'Shares', cells: 'By cell', residents: 'By resident' },
+    ranking: {
+      cardep: 'Cities ranked by index',
+      pov: 'Zone mix by city',
+      aboutCardep: 'Each bar is the index for that city’s average resident: every cell weighted by the people living in it. Left of the line is a city where public transport reaches more than a car for the typical resident; right of it, one where the car does. Bars use the same scale as the maps.',
+      aboutPov: 'The share of each city that falls in each of the four zones. Zones are decided against that city’s own population-weighted medians, so this compares the *mix* within cities and not the level between them — a city can be half inclusion and still be poorly served overall. Switch between counting cells and counting residents: isolated cells are large and thinly populated, so the two tell different stories.',
+    },
+    scatter: {
+      cardep: 'What a car reaches against what transit reaches',
+      pov: 'Proximity against opportunity',
+      aboutCardep: 'One circle per city, placed by what the average resident can reach each way and sized by population. The diagonal is where the two reach the same amount: circles below it are cities where the car reaches more.',
+      aboutPov: 'One circle per city, placed by the scores its average resident sits on and sized by population. Both axes are weighted counts of reachable points of interest, so they carry no unit — position compares cities, and the number itself is only meaningful against another city on the same axis.',
+    },
+    distribution: {
+      title: 'Where each city’s residents sit on the index',
+      about: 'Each curve is one city: the share of its residents living at or below a given index. A curve that rises early and steeply is a city where almost everyone is on the transit side; one that stays flat until the right is a city where almost everyone depends on a car. Where a curve crosses the middle line is the share of residents for whom a car and public transport reach about the same.',
+    },
+    table: { title: 'Summary table' },
+    th: {
+      city: 'City',
+      cells: 'Cells',
+      population: 'Population',
+      medianCdi: 'Median',
+      weightedCdi: 'Avg. resident',
+      ptCells: 'Transit cells',
+      carCells: 'Car cells',
+      proximity: 'Med. proximity',
+      opportunity: 'Med. opportunity',
+      inclusion: 'Inclusion',
+      spatial: 'Spatial isol.',
+      social: 'Social isol.',
+      total: 'Total isol.',
+    },
+    loading: 'Loading the published cities…',
+    empty: 'This platform has published no city summaries yet.',
   },
 
   faq: {

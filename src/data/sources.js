@@ -49,6 +49,14 @@ export function createStaticProvider() {
       return cataloguePromise;
     },
 
+    // Per-city aggregates for the compare view. Null where a platform has
+    // published none, which is how the page knows to say so.
+    async summary(platformId, catalogue, { signal } = {}) {
+      const entry = platformEntry(catalogue, platformId);
+      if (!entry?.summary) return null;
+      return loadDataset({ url: dataUrl(entry.summary) }, { signal });
+    },
+
     async coverage(platformId, catalogue, { signal } = {}) {
       const entry = platformEntry(catalogue, platformId);
       if (!entry?.coverage) return null;
@@ -144,6 +152,7 @@ export function createStaticProvider() {
  *
  *   catalogue({ signal })                      → normalised catalogue
  *   coverage(platformId, catalogue, opts)      → FeatureCollection | null
+ *   summary(platformId, catalogue, opts)       → { platform, cities } | null
  *   cityMesh(platformId, cityId, catalogue, opts)
  *                                              → { collection, profile, scenario } | null
  *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]

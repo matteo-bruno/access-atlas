@@ -371,6 +371,87 @@ for (const [route, name] of ROUTES) {
   await page.close();
 }
 
+// ── Inspector and filter ─────────────────────────────────────────────
+// Both upstream viewers pair the map with an inspector and a filter, and both
+// are cross-wired to the scatter. What matters here is that a click reaches
+// the panel with the right cell's numbers, and that filtering says how much
+// of the city it left rather than silently shrinking the map.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/car-dependency-index/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(2600);
+
+  // Dots overlap at this size, so whichever is on top takes the click — any
+  // of them proves the wiring.
+  await page.locator('.aa-scatter__dot').nth(40).click({ force: true });
+  await page.waitForTimeout(400);
+  const rows = (await page.locator('.aa-inspector__rows .aa-summary__row').allInnerTexts()).join(' ');
+  check(
+    'A scatter point inspects its cell',
+    /Car Dependency Index/.test(rows) && /Reachable by car/.test(rows) && /Residents/.test(rows),
+    rows.replace(/\s+/g, ' ').slice(0, 90),
+  );
+
+  // Milan's index runs −0.133 to +1, so the upper thumb is the one that
+  // excludes anything here.
+  await page.locator('.aa-range__input').nth(1).focus();
+  for (let i = 0; i < 80; i++) await page.keyboard.press('ArrowLeft');
+  await page.waitForTimeout(400);
+  const showing = await page.locator('.aa-city__hint').last().innerText();
+  const left = Number((showing.match(/^([\d,]+)/) || [])[1]?.replace(/,/g, ''));
+  check(
+    'The index filter reports the slice it kept',
+    left > 0 && left < 1741,
+    showing,
+  );
+  await page.close();
+}
+
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
+  const box = await page.locator('canvas').boundingBox();
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+  await page.waitForTimeout(700);
+  const rows = (await page.locator('.aa-inspector__rows .aa-summary__row').allInnerTexts()).join(' ');
+  // The H3 row is the one the union mesh adds: it is the cell's name on the
+  // shared grid, and the reason the four layers can be compared at all.
+  check(
+    'The combined viewer inspects a cell and names it on the grid',
+    /H3 cell/.test(rows) && /Residents/.test(rows),
+    rows.replace(/\s+/g, ' ').slice(0, 100),
+  );
+
+  await page.getByRole('button', { name: 'Car Dependency Index' }).click();
+  await page.waitForTimeout(900);
+  check(
+    'Switching layer drops a selection made under another',
+    (await page.locator('.aa-inspector__empty').count()) === 1,
+  );
+  await page.close();
+}
+
+// ── Explanations ─────────────────────────────────────────────────────
+// The "?" panels carry the method, so what is checked is the wording that has
+// been got wrong before: P.O.V.'s thresholds are population-weighted medians,
+// and the two upstream viewers both say "median" alone.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/accessibility-pov/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  const count = await page.locator('.aa-explain__btn').count();
+  for (let i = 0; i < count; i++) await page.locator('.aa-explain__btn').nth(i).click();
+  await page.waitForTimeout(400);
+  const text = (await page.locator('.aa-explain__body').allInnerTexts()).join(' ');
+  check(
+    'Every panel explains itself, and says the thresholds are weighted',
+    count >= 4 && /population-weighted median/.test(text) && /Connection Scan/.test(text),
+    `${count} panels`,
+  );
+  await page.close();
+}
+
 // ── EN ⇄ IT ──────────────────────────────────────────────────────────
 {
   const page = await context.newPage();

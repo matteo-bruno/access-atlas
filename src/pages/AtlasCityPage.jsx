@@ -16,6 +16,9 @@ import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, withGeometry } from '../data/adapters.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
+import { Explain } from '../components/Explain.jsx';
+import { CellInspector } from '../components/CellInspector.jsx';
+import { RangeFilter } from '../components/RangeFilter.jsx';
 import {
   useAtlasCartogram,
   useAtlasMesh,
@@ -64,6 +67,11 @@ function AtlasScreen({ cityId, view }) {
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
   const [geometry, setGeometry] = useState('geographic');
+  const [selectedCell, setSelectedCell] = useState(null);
+  // Car Dependency's index filter, on the same bounds as its own viewer.
+  // Whether it is actually filtering depends on the active layer, which is
+  // resolved from the URL further down.
+  const [range, setRange] = useState([-1, 1]);
 
   // Population comes from the union mesh, so it is offered wherever that mesh
   // is — it is not a platform and has no catalogue entry of its own.
@@ -104,6 +112,9 @@ function AtlasScreen({ cityId, view }) {
 
   const pickLayer = (id) => {
     setActiveZone(null);
+    // Every layer measures something else, so a selection made under one is
+    // not a selection under the next.
+    setSelectedCell(null);
     setParam('layer', id, { push: true });
   };
 
@@ -242,6 +253,8 @@ function AtlasScreen({ cityId, view }) {
   );
 
   // ── Paint ──────────────────────────────────────────────────────────
+  const rangeOn = layer === 'cardep' && (range[0] > -1 || range[1] < 1);
+
   const fillPaint = useMemo(() => {
     // P.O.V. is the one genuinely categorical layer: four named classes, not a
     // quantity, so it keeps discrete colours and band isolation.
@@ -283,11 +296,21 @@ function AtlasScreen({ cityId, view }) {
     // ramp's first colour — absence of data is not a low value.
     const covered =
       value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false);
+    // Filtered-out cells are dimmed rather than dropped, so the slice is read
+    // against the city it was taken from.
+    const opacityFor = rangeOn
+      ? [
+          'case',
+          ['all', ['>=', ['coalesce', value, 0], range[0]], ['<=', ['coalesce', value, 0], range[1]]],
+          opacity,
+          opacity * 0.1,
+        ]
+      : opacity;
     return {
       'fill-color': rampColor(ramp, ['coalesce', value, 0]),
-      'fill-opacity': ['case', covered, opacity, 0],
+      'fill-opacity': ['case', covered, opacityFor, 0],
     };
-  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow]);
+  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range]);
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
@@ -295,6 +318,10 @@ function AtlasScreen({ cityId, view }) {
   );
   const originPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.2 }),
+    [],
+  );
+  const selectedPaint = useMemo(
+    () => ({ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.6 }),
     [],
   );
 
@@ -351,10 +378,70 @@ function AtlasScreen({ cityId, view }) {
   };
 
   const onCellClick = (feature) => {
+    setSelectedCell((current) => (current === feature.id ? null : feature.id));
+    // In the isochrone view a click also chooses the origin everything is
+    // measured from, which is a different job from inspecting the cell.
     if (!citychroneOn || ccView !== 'isochrone') return;
     const cc = ccForFeature(feature);
     if (Number.isFinite(cc)) setParam('from', cc);
   };
+
+  // ── The selected cell ──────────────────────────────────────────────
+  // One mesh, so a cell is the same cell under every layer; what is worth
+  // reading about it is not, so the rows follow the layer on screen.
+  const selectedRows = useMemo(() => {
+    const feature = selectedCell == null ? null : baseGeojson?.features?.[selectedCell];
+    if (!feature) return null;
+    const p = feature.properties ?? {};
+    const score = (v) => (Number.isFinite(v) ? n(v, { maximumFractionDigits: 1 }) : '—');
+    const rows = [];
+
+    if (layer === 'pov') {
+      rows.push({
+        label: t('city.cell.zone'),
+        value: Number.isFinite(p.zone) ? t(`city.zones.${ZONES[p.zone].key}.name`) : '—',
+        accent: Number.isFinite(p.zone) ? ZONES[p.zone].color : undefined,
+      });
+      rows.push({ label: t('city.cell.proximity'), value: score(p.proximity) });
+      rows.push({ label: t('city.cell.opportunity'), value: score(p.opportunity) });
+    } else if (layer === 'cardep') {
+      rows.push({ label: t('city.cell.cdi'), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' });
+      rows.push({ label: t('city.cell.byCar'), value: score(p.o_score_car) });
+      rows.push({ label: t('city.cell.byTransit'), value: score(p.o_score_pt) });
+    } else if (layer === 'fifteen') {
+      rows.push({
+        label: `${t(`fifteen.categories.${CATEGORIES.find((c) => c.key === category).i18n}`)} · ${t(
+          `fifteen.modes.${MODES.find((m) => m.key === mode).i18n}`,
+        )}`,
+        value: p[fifteenKey] == null ? '—' : measure.format(p[fifteenKey]),
+      });
+    } else if (layer === 'citychrone') {
+      const scores = Number.isFinite(p.cc) ? ccHour.data?.byCc.get(p.cc) : null;
+      rows.push({
+        label: t('city.cell.velocity'),
+        value: scores ? `${n(scores.v, { maximumFractionDigits: 1 })} km/h` : '—',
+      });
+      rows.push({
+        label: t('city.cell.sociality'),
+        value: scores ? n(Math.round(scores.s)) : '—',
+      });
+      if (matrixRow && Number.isFinite(p.cc)) {
+        rows.push({
+          label: t('city.cell.time'),
+          value: `${n(matrixRow[p.cc])} ${t('fifteen.minutes')}`,
+        });
+      }
+    }
+
+    rows.push({
+      label: t('city.cell.population'),
+      value: Number.isFinite(p.population) ? n(Math.round(p.population)) : '—',
+    });
+    // The one row that is the same under every layer: the cell's own name on
+    // the shared grid, which is what makes the layers comparable at all.
+    if (p.h3) rows.push({ label: t('city.cell.grid'), value: p.h3 });
+    return rows;
+  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, measure, ccHour.data, matrixRow, t, n]);
 
   const legendTitle = isPopulation
     ? t('atlas.population.legend')
@@ -374,6 +461,15 @@ function AtlasScreen({ cityId, view }) {
       : ccView === 'sociality' && citychroneOn
         ? (v) => (v === 0 ? '0' : `${n(Math.round(v / 1000))}k`)
         : (v) => n(v, { maximumFractionDigits: 1 });
+
+  // How to read the colours of the layer on screen. The three cell-valued
+  // platforms explain their own scale; CityChrone's changes with the measure
+  // picked, so its per-view hint stands in.
+  const legendExplain = isPopulation
+    ? t('atlas.population.about')
+    : layer === 'citychrone'
+      ? t(`atlas.viewHint.${ccView}`)
+      : t(`city.explain.map.${layer}`);
 
   // What the info panel explains about the layer on screen.
   const infoBody = isPopulation
@@ -559,7 +655,7 @@ function AtlasScreen({ cityId, view }) {
           )}
 
           {/* ── Legend ───────────────────────────────────────── */}
-          <Eyebrow>{legendTitle}</Eyebrow>
+          <Explain label={legendTitle} body={legendExplain} />
           {layer === 'pov' ? (
             // The one categorical layer: four named classes, each with the
             // share of covered cells that falls in it.
@@ -604,6 +700,22 @@ function AtlasScreen({ cityId, view }) {
             />
           )}
 
+          {layer === 'cardep' && (
+            <>
+              <Explain label={t('city.filter.title')} body={t('city.filter.about')} />
+              <RangeFilter
+                value={range}
+                onChange={setRange}
+                min={-1}
+                max={1}
+                step={0.01}
+                label={t('city.filter.title')}
+                resetLabel={t('city.filter.reset')}
+                format={(v) => (v === 0 ? '0' : signed(v, n))}
+              />
+            </>
+          )}
+
           {/* ── Geometry ─────────────────────────────────────── */}
           {unified && (
             <GeometryToggle
@@ -633,7 +745,7 @@ function AtlasScreen({ cityId, view }) {
 
           {/* ── Summary ──────────────────────────────────────── */}
           <div className="aa-city__summary">
-            <Eyebrow>{t('city.summary.title')}</Eyebrow>
+            <Explain label={t('city.summary.title')} body={t('city.explain.summary.atlas')} />
             <dl className="aa-summary">
               <SummaryRow
                 label={t('city.summary.hexagons')}
@@ -687,6 +799,30 @@ function AtlasScreen({ cityId, view }) {
               />
             </dl>
           </div>
+
+          <CellInspector
+            title={t('city.selected.title')}
+            empty={t('city.selected.empty')}
+            rows={selectedRows}
+            clearLabel={t('city.selected.clear')}
+            onClear={() => setSelectedCell(null)}
+          />
+
+          {/* Population is context rather than a platform, so it has no
+              method of its own to describe here. */}
+          {!isPopulation && (
+            <Explain label={t('city.explain.methodsTitle')} className="aa-city__methods">
+              <p>{t(`city.explain.methods.${layer}`)}</p>
+              {paper && (
+                <p>
+                  {t('city.explain.paperNote')}{' '}
+                  <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                    {paper.title} ↗
+                  </a>
+                </p>
+              )}
+            </Explain>
+          )}
         </aside>
 
         {/* ── Map ────────────────────────────────────────────── */}
@@ -719,6 +855,16 @@ function AtlasScreen({ cityId, view }) {
                     type="line"
                     paint={highlightPaint}
                     filter={['==', ['id'], hoverCell]}
+                    interactive={false}
+                  />
+                )}
+                {selectedCell != null && (
+                  <GeoJSONLayer
+                    id="atlas-mesh-selected"
+                    data={geojson}
+                    type="line"
+                    paint={selectedPaint}
+                    filter={['==', ['id'], selectedCell]}
                     interactive={false}
                   />
                 )}

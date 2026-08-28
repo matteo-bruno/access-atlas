@@ -182,6 +182,35 @@ function writeJSON(file, value) {
 
 const mb = (b) => `${(b / 1e6).toFixed(2)} MB`;
 
+// ── City summaries ───────────────────────────────────────────────────
+// The compare view needs one row per city, not one row per cell. Computing it
+// in the browser would mean fetching every city's dataset — 15 MB for P.O.V.,
+// 27 MB for Car Dependency — to end up with twenty numbers, so it is computed
+// here and published as a summary file per platform.
+//
+// Everything in it is derived from the same features that were just written,
+// so a figure in the table and the same figure on the city page cannot drift.
+
+// Cumulative share of the *population* at or below each step of a measure —
+// the distribution chart's curve. Twenty-one points is enough to draw it and
+// small enough to publish for every city.
+function populationCdf(rows, value, from, to, steps = 20) {
+  const total = rows.reduce((sum, row) => sum + row.population, 0);
+  if (!total) return null;
+  const points = [];
+  for (let i = 0; i <= steps; i++) {
+    const edge = from + ((to - from) * i) / steps;
+    let below = 0;
+    for (const row of rows) if (value(row) <= edge) below += row.population;
+    points.push([r3(edge), r3(below / total)]);
+  }
+  return points;
+}
+
+function summaryFile(platform, cities) {
+  return { platform, cities };
+}
+
 // ── Geographic geometry ──────────────────────────────────────────────
 // Both platforms publish *population-scaled cartograms*: the polygon encodes
 // how many people live in the cell, not where the cell's edges are. The true
@@ -286,6 +315,7 @@ function buildPov(dir) {
 
   const files = fs.readdirSync(src).filter((f) => f.endsWith('_cartogram.geojson')).sort();
   const cities = [];
+  const summaries = [];
   const coverage = [];
   let totalRaw = 0;
   let totalGz = 0;
@@ -381,6 +411,32 @@ function buildPov(dir) {
       thresholds: { proximity: r1(proxCut), opportunity: r1(oppCut) },
     });
 
+    // The compare view's row for this city. Medians are per cell; the means
+    // are population-weighted, which is the figure that describes a resident
+    // rather than a hexagon.
+    const sortedProx = rows.map((r) => r.proximity).sort((a, b) => a - b);
+    const sortedOpp = rows.map((r) => r.opportunity).sort((a, b) => a - b);
+    summaries.push({
+      id,
+      cells: features.length,
+      population,
+      medianProximity: r1(sortedProx[sortedProx.length >> 1]),
+      medianOpportunity: r1(sortedOpp[sortedOpp.length >> 1]),
+      weightedProximity: population
+        ? r1(rows.reduce((s, r) => s + r.proximity * r.population, 0) / population)
+        : null,
+      weightedOpportunity: population
+        ? r1(rows.reduce((s, r) => s + r.opportunity * r.population, 0) / population)
+        : null,
+      zoneShares: counts.map((c) => r1((c / features.length) * 100)),
+      // The share of *people*, not cells: isolated cells are large and thinly
+      // populated, so the two tell very different stories.
+      zonePopulationShares: population
+        ? popByZone.map((p) => r1((p / population) * 100))
+        : null,
+      thresholds: { proximity: r1(proxCut), opportunity: r1(oppCut) },
+    });
+
     if (!VARIANTS.has(id)) {
       // City-level zone: the zone most of this city's residents live in.
       // A modal zone by cell count would read "total isolation" almost
@@ -411,8 +467,16 @@ function buildPov(dir) {
     type: 'FeatureCollection',
     features: coverage,
   });
+  writeJSON(path.join(OUT, 'pov', 'summary.json'), summaryFile('pov', summaries));
 
-  return { cities, coverage: 'pov/coverage.geojson', totalRaw, totalGz, totalCells };
+  return {
+    cities,
+    coverage: 'pov/coverage.geojson',
+    summary: 'pov/summary.json',
+    totalRaw,
+    totalGz,
+    totalCells,
+  };
 }
 
 /**
@@ -475,6 +539,7 @@ function buildCdi(dir) {
 
   const cities = [];
   const coverage = [];
+  const summaries = [];
   let totalRaw = 0;
   let totalGz = 0;
   let totalCells = 0;
@@ -559,6 +624,29 @@ function buildCdi(dir) {
       cell: { h3Resolution: 9, cellRadiusM: 200 },
     });
 
+    // The compare view's row. `ptShare`/`carShare` use the same ±0.05 band
+    // around zero the upstream viewer calls balanced — a cell that close to
+    // zero is not evidence either way.
+    const sortedCdi = rows.map((r) => r.cdi).sort((a, b) => a - b);
+    summaries.push({
+      id,
+      cells: features.length,
+      population,
+      medianCdi: r3(sortedCdi[sortedCdi.length >> 1]),
+      weightedCdi: cdi,
+      ptShare: r1((rows.filter((r) => r.cdi < -0.05).length / rows.length) * 100),
+      carShare: r1((rows.filter((r) => r.cdi > 0.05).length / rows.length) * 100),
+      weightedByCar: population
+        ? r1(rows.reduce((s, r) => s + r.car * r.population, 0) / population)
+        : null,
+      weightedByTransit: population
+        ? r1(rows.reduce((s, r) => s + r.pt * r.population, 0) / population)
+        : null,
+      // Share of residents living at or below each index value: a steeper
+      // curve is a city where car dependency is more uniform.
+      cdf: populationCdf(rows, (r) => r.cdi, -1, 1),
+    });
+
     if (!VARIANTS.has(id)) {
       coverage.push({
         type: 'Feature',
@@ -584,8 +672,16 @@ function buildCdi(dir) {
     type: 'FeatureCollection',
     features: coverage,
   });
+  writeJSON(path.join(OUT, 'cardep', 'summary.json'), summaryFile('cardep', summaries));
 
-  return { cities, coverage: 'cardep/coverage.geojson', totalRaw, totalGz, totalCells };
+  return {
+    cities,
+    coverage: 'cardep/coverage.geojson',
+    summary: 'cardep/summary.json',
+    totalRaw,
+    totalGz,
+    totalCells,
+  };
 }
 
 // ── 15minCity ────────────────────────────────────────────────────────
@@ -724,8 +820,12 @@ const catalogue = {
   version: 1,
   platforms: {
     ...existing.platforms,
-    ...(pov ? { pov: { coverage: pov.coverage, cities: pov.cities } } : {}),
-    ...(cdi ? { cardep: { coverage: cdi.coverage, cities: cdi.cities } } : {}),
+    ...(pov
+      ? { pov: { coverage: pov.coverage, summary: pov.summary, cities: pov.cities } }
+      : {}),
+    ...(cdi
+      ? { cardep: { coverage: cdi.coverage, summary: cdi.summary, cities: cdi.cities } }
+      : {}),
     ...(fifteen ? { fifteen: { coverage: fifteen.coverage, cities: fifteen.cities } } : {}),
   },
 };
