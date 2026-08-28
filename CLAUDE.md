@@ -41,6 +41,33 @@ src/workers/useCityMesh.js    published-first, seed fallback
 scripts/build-atlas.mjs       offline: joins platform files → atlas/ union meshes
 ```
 
+A city can be published on **two geometries**. The values sit on one — a
+population-scaled cartogram for P.O.V. and Car Dependency, true hexagons for
+15minCity and the atlas union meshes — and a companion file carries the other
+for the same cells, joined by the index it states (`{ "i": n }`) rather than
+by position. The catalogue says which is which (`geometry`, `geoDataset`,
+`cartograms`), and the viewer offers the switch exactly where a companion
+exists. `withGeometry` in `adapters.js` re-draws the loaded features onto the
+other geometry, keeping each feature's id so highlights and feature-state do
+not notice.
+
+**The geographic side is derived; the cartogram side is not.** Every published
+cell sits on the standard H3 grid and the cartogram preserves its centroid, so
+the hexagon is recoverable — and `build-data.mjs` checks the derived hexagons
+against the ones CDI publishes in `hexes.geojson`, which they reproduce
+exactly. The cartogram cannot be derived in the other direction: its scale
+saturates at the full hexagon and has a floor for empty cells, so it is a
+layout its authors computed, not a transformation of the map. 15minCity and
+CityChrone publish none, and the UI says so rather than inventing one. P.O.V.'s
+and Car Dependency's own cartograms are **not** interchangeable either — their
+radii disagree by up to 9.6 m on cells they share, on a 9–201 m range — so the
+combined viewer fetches one per layer.
+
+Per-platform **summary files** (`<platform>/summary.json`, declared as
+`summary` beside `coverage`) carry one row per city for the compare view at
+`/platforms/:slug/compare`. They are written by `build:data` from the features
+it just published, so the table and the city pages cannot disagree.
+
 Anything the catalogue does not list falls back to generated seed data
 (`src/data/cities.js`, `src/data/mesh.js`), so the site works on a fresh
 checkout. Fetching goes through a **provider** — returning `null` means "not
@@ -127,7 +154,14 @@ stretching it to 120 squashes the range nearly every cell sits in.
   city-specific. The underlying scores are what compare across cities.
 - **The cartograms are population-scaled.** Cells sit in true positions; their
   *area* encodes population. Cell geometry therefore cannot be measured from
-  the file and comes from the catalogue's `cell` field.
+  the file and comes from the catalogue's `cell` field. They are **not** Dorling
+  cartograms, whatever the upstream CDI copy says — a Dorling cartogram
+  displaces its cells, and these do not move.
+- **Cell shares and resident shares are different stories.** 67.7% of Milan's
+  P.O.V. cells are total isolation, but only 42.7% of its residents: isolated
+  cells are large and thinly populated. Both are published
+  (`zoneShares`, `zonePopulationShares`) and the compare view switches between
+  them; say which one a figure is.
 - **15minCity's letter codes are retired.** The harmonised exports key
   measures with full words (`education_foot`, `proximity_time_bicycle`);
   `src/data/fifteen.js` holds the live category list. The legacy `script.php`
@@ -203,7 +237,8 @@ npm run smoke:published    # stages a dataset, asserts it is read instead of see
 `test:data` runs the real adapters over every published dataset (all 24
 CityChrone hours included) and checks shares sum to 100, no CDI outside
 [−1, +1], every 15minCity category × mode present, that Rome still reports
-the figures the copy quotes, and that each `atlas/` union mesh reconciles —
+the figures the copy quotes, that each geometry companion joins to a cell
+centred within 10 m of it, and that each `atlas/` union mesh reconciles —
 same counts, same shares, same weighted CDI — with the per-platform files it
 was built from. Run it after any data change — it catches in seconds what the
 browser suites take minutes to reach.
@@ -211,6 +246,16 @@ browser suites take minutes to reach.
 Playwright is deliberately **not** a dependency; CI installs it on the fly.
 Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
 `VITE_BASEMAP_STYLE=none` first so no check depends on the basemap host.
+
+## Explaining the measures
+
+Anything a reader could misread carries an `Explain` — a "?" beside a heading
+that opens its explanation in the flow underneath, on click (not hover, which
+does not survive a touch screen) and below rather than over the map. The copy
+lives under `city.explain.*` and was ported from the two upstream viewers,
+**minus two claims of theirs that are wrong here**: CDI calls its cartogram a
+Dorling one, and P.O.V. calls its thresholds plain medians when they are
+population-weighted. Do not re-import either when adding copy from upstream.
 
 ## Copy and i18n
 

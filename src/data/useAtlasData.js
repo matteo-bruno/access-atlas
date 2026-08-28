@@ -379,3 +379,34 @@ export function usePlatformSummary(platformId) {
 
   return state;
 }
+
+/**
+ * Whether a platform publishes the per-city summary the compare view is built
+ * from — read from the catalogue alone, so offering the link costs nothing.
+ */
+export function usePlatformHasSummary(platformId) {
+  const [has, setHas] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+    setHas(false);
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        if (!cancelled) setHas(Boolean(platformEntry(catalogue, platformId)?.summary));
+      } catch {
+        // No catalogue means nothing is published; the link stays off.
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [platformId]);
+
+  return has;
+}

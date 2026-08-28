@@ -54,7 +54,9 @@ export function createStaticProvider() {
     async summary(platformId, catalogue, { signal } = {}) {
       const entry = platformEntry(catalogue, platformId);
       if (!entry?.summary) return null;
-      return loadDataset({ url: dataUrl(entry.summary) }, { signal });
+      // Plain JSON, not a dataset: loadDataset would hand a .json file to the
+      // GeoJSON loader, which asserts a FeatureCollection.
+      return loadJSON(dataUrl(entry.summary), { signal });
     },
 
     async coverage(platformId, catalogue, { signal } = {}) {

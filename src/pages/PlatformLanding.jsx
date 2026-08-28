@@ -12,6 +12,7 @@ import {
   useAllCoverage,
   useAtlasCityIds,
   useCityCoverage,
+  usePlatformHasSummary,
   useCityPageIds,
 } from '../data/useAtlasData.js';
 import { paperForPlatform } from '../data/research.js';
@@ -47,6 +48,7 @@ function PlatformScreen({ platform }) {
   // and the unused one is cheap: its fetch is cached by URL either way.
   const all = useAllCoverage();
   const single = useCityCoverage(platform ?? PLATFORMS[0]);
+  const hasSummary = usePlatformHasSummary(platform?.id);
   const cities = platform ? single.cities : all.cities;
 
   const cityPageIds = useCityPageIds(platform?.id);
@@ -170,6 +172,13 @@ function PlatformScreen({ platform }) {
           )}
         </div>
 
+        {/* Only where the platform publishes the per-city summary the
+            comparison is built from. */}
+        {platform && hasSummary && (
+          <Link className="aa-chip" to={`/platforms/${platform.slug}/compare`}>
+            {t('compare.label')}
+          </Link>
+        )}
         {paper && (
           <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
             {t('platform.paper')}

@@ -232,7 +232,9 @@ function CityScreen({ platform, profile }) {
             {t('atlas.label')}
           </Link>
         )}
-        <span className="aa-chip">{t('city.compare')}</span>
+        <Link className="aa-chip" to={`/platforms/${platform.slug}/compare`}>
+          {t('city.compare')}
+        </Link>
         {paper && (
           <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
             {t('platform.paper')}

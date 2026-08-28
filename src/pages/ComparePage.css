@@ -1,0 +1,146 @@
+.aa-compare {
+  display: block;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 32px 64px;
+}
+.aa-compare__note {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.aa-compare__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+.aa-compare__section {
+  margin-bottom: 42px;
+}
+.aa-compare__section > .aa-explain {
+  margin-bottom: 14px;
+}
+
+/* ── Bars ────────────────────────────────────────────────────────── */
+.aa-bars {
+  display: grid;
+  gap: 3px;
+}
+.aa-bars__key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 10px;
+  color: var(--ink-2);
+  font-size: 11.5px;
+}
+.aa-bars__keyitem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.aa-bars__row {
+  display: grid;
+  grid-template-columns: 132px 1fr 62px;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 4px;
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+}
+.aa-bars__row:hover {
+  background: var(--hair-soft);
+}
+.aa-bars__name {
+  font-size: 12.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.aa-bars__track,
+.aa-bars__stack {
+  position: relative;
+  height: 15px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.aa-bars__track {
+  background: var(--hair-soft);
+}
+.aa-bars__fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+/* The line every bar is read against: zero, where a car and public transport
+   reach the same amount. */
+.aa-bars__zero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--ink-4);
+}
+.aa-bars__stack {
+  display: flex;
+}
+.aa-bars__seg {
+  height: 100%;
+}
+.aa-bars__value {
+  font-size: 11.5px;
+  text-align: right;
+  color: var(--ink-2);
+}
+
+/* ── Charts ──────────────────────────────────────────────────────── */
+.aa-cityscatter,
+.aa-cdf {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.aa-cityscatter__dot {
+  cursor: pointer;
+}
+.aa-cityscatter__dot:hover circle {
+  fill-opacity: 1;
+}
+
+/* ── Table ───────────────────────────────────────────────────────── */
+.aa-compare__scroll {
+  overflow-x: auto;
+}
+.aa-compare__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+.aa-compare__table th,
+.aa-compare__table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--hair-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+.aa-compare__table th:first-child,
+.aa-compare__table td:first-child {
+  text-align: left;
+}
+.aa-compare__table th {
+  border-bottom: 1px solid var(--hair);
+  color: var(--ink-3);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.aa-compare__table td a {
+  color: inherit;
+}
+.aa-compare__table tbody tr:hover {
+  background: var(--hair-soft);
+}

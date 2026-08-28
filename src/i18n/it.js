@@ -476,6 +476,7 @@ export default {
     },
     loading: 'Caricamento delle città pubblicate…',
     empty: 'Questa piattaforma non ha ancora pubblicato riepiloghi per città.',
+    error: 'Non è stato possibile caricare il riepilogo pubblicato.',
   },
 
   faq: {

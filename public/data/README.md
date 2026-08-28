@@ -112,6 +112,45 @@ Two additions beyond the per-platform lists:
 - A city with no `dataset` still appears in the catalogue but has no detail
   page; the landing map flies to it instead.
 
+## Summary files
+
+One JSON document per platform, listing every published city once — the
+compare view (`/platforms/:slug/compare`) reads this instead of fetching all
+22 city datasets to end up with twenty numbers each. Declared as `"summary"`
+beside `"coverage"` on the platform entry, and written by `build:data` from
+the same features it just published, so a figure here and the same figure on
+a city page cannot drift.
+
+```json
+{
+  "platform": "cardep",
+  "cities": [
+    {
+      "id": "milan",
+      "cells": 1741,
+      "population": 1201023,
+      "medianCdi": 0.112,
+      "weightedCdi": 0.063,
+      "ptShare": 1.9,
+      "carShare": 72.3,
+      "weightedByCar": 1852.6,
+      "weightedByTransit": 1662,
+      "cdf": [[-1, 0], [-0.9, 0], "… 21 points to +1"]
+    }
+  ]
+}
+```
+
+P.O.V.'s rows carry `medianProximity`/`medianOpportunity`, the
+population-weighted means, `thresholds`, and **both** `zoneShares` (per cell)
+and `zonePopulationShares` (per resident). The two differ enough to be worth
+publishing separately: 67.7% of Milan's cells are total isolation, but only
+42.7% of its residents — isolated cells are large and thinly populated.
+
+`cdf` is the cumulative share of a city's *population* at or below each index
+value, 21 points from −1 to +1: enough to draw the distribution curve, small
+enough to publish for every city.
+
 ## Coverage files
 
 One `FeatureCollection` of points per platform, driving the world map and the

@@ -477,6 +477,7 @@ export default {
     },
     loading: 'Loading the published cities…',
     empty: 'This platform has published no city summaries yet.',
+    error: 'The published summary could not be loaded.',
   },
 
   faq: {

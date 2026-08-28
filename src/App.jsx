@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 // Contact pages entirely.
 const PlatformLanding = lazy(() => import('./pages/PlatformLanding.jsx'));
 const CityPage = lazy(() => import('./pages/CityPage.jsx'));
+const ComparePage = lazy(() => import('./pages/ComparePage.jsx'));
 const AtlasCityPage = lazy(() => import('./pages/AtlasCityPage.jsx'));
 const FAQ = lazy(() => import('./pages/FAQ.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
@@ -34,6 +35,9 @@ export default function App() {
           {/* Without a slug: every published city across the four platforms. */}
           <Route path="/platforms" element={<PlatformLanding />} />
           <Route path="/platforms/:slug" element={<PlatformLanding />} />
+          {/* Declared before the city route for readability; React Router
+              ranks the static segment above the dynamic one either way. */}
+          <Route path="/platforms/:slug/compare" element={<ComparePage />} />
           <Route path="/platforms/:slug/:cityId" element={<CityPage />} />
           {/* The combined viewer: one city, all four visualisations. Layer
               and options ride the query string so any view is linkable. */}

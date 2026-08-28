@@ -21,6 +21,8 @@ const ROUTES = [
   ['/platforms/citychrone', 'CityChrone landing'],
   ['/platforms/car-dependency-index', 'Car Dependency landing'],
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
+  ['/platforms/accessibility-pov/compare', 'P.O.V. city comparison'],
+  ['/platforms/car-dependency-index/compare', 'Car Dependency city comparison'],
   ['/platforms/accessibility-pov/rome', 'Rome P.O.V. city page'],
   ['/platforms/car-dependency-index/rome', 'Rome Car Dependency city page'],
   ['/platforms/15min-city/rome', 'Rome 15min-City city page (seeded)'],
@@ -367,6 +369,56 @@ for (const [route, name] of ROUTES) {
       requested.filter((u) => u.includes('cartogram-pov')).length === 1 &&
       requested.filter((u) => u.includes('cartogram-cardep')).length === 1,
     caption,
+  );
+  await page.close();
+}
+
+// ── Compare cities ───────────────────────────────────────────────────
+// The screen both upstream viewers end on. Every figure comes from the
+// published summary file rather than being recomputed in the browser, so what
+// is checked is that the page reproduces the published numbers — and that the
+// cells/residents switch actually changes them, since that difference is the
+// reason both are published.
+{
+  const page = await context.newPage();
+  const errors = [];
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  page.on('pageerror', (e) => errors.push(`PAGEERROR: ${e.message}`));
+
+  await page.goto(`${BASE}/platforms/car-dependency-index/compare`, { waitUntil: 'load' });
+  await page.waitForTimeout(1800);
+  const rows = await page.locator('.aa-compare__table tbody tr').count();
+  const bars = await page.locator('.aa-bars__row').count();
+  const curves = await page.locator('.aa-cdf polyline').count();
+  const milan = await page
+    .locator('.aa-compare__table tbody tr', { hasText: 'Milan' })
+    .first()
+    .innerText();
+  check(
+    'Car Dependency compares all 22 cities on its published figures',
+    rows === 22 && bars === 22 && curves === 22 && /1,741/.test(milan) && /\+0\.06/.test(milan),
+    `${rows} rows · ${curves} curves · ${milan.replace(/\s+/g, ' ')}`,
+  );
+  check('No console errors on the comparison', errors.length === 0, errors.slice(0, 2).join(' | '));
+  await page.close();
+}
+
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/accessibility-pov/compare`, { waitUntil: 'load' });
+  await page.waitForTimeout(1800);
+  const row = () =>
+    page.locator('.aa-compare__table tbody tr', { hasText: 'Milan' }).first().innerText();
+  const byCells = await row();
+  await page.getByRole('button', { name: 'By resident' }).click();
+  await page.waitForTimeout(400);
+  const byResidents = await row();
+  // Isolated cells are large and thinly populated: two thirds of Milan's
+  // cells are total isolation, but only two fifths of its residents.
+  check(
+    'Counting residents instead of cells changes what the zones say',
+    /67\.7%/.test(byCells) && /42\.7%/.test(byResidents),
+    `${byCells.replace(/\s+/g, ' ')} → ${byResidents.replace(/\s+/g, ' ')}`,
   );
   await page.close();
 }
