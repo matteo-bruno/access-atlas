@@ -4,7 +4,6 @@
 // patterns. Bibliography and coverage counts come from data/research.js.
 
 import { Link } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow, SectionHeading } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -18,7 +17,6 @@ export default function Research() {
 
   return (
     <div className="aa-page">
-      <Nav active="research" />
 
       <main className="aa-main" id="main">
         <section className="aa-shell aa-research__intro">

@@ -1,5 +1,4 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { useI18n } from '../i18n/index.jsx';
@@ -21,7 +20,6 @@ function PostScreen({ post }) {
 
   return (
     <div className="aa-page">
-      <Nav active="blog" />
 
       <main className="aa-main" id="main">
         <article className="aa-shell aa-post">

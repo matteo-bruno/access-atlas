@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { useI18n } from '../i18n/index.jsx';
@@ -11,7 +10,6 @@ export default function Contact() {
 
   return (
     <div className="aa-page">
-      <Nav active="contact" />
 
       <main className="aa-main aa-contact" id="main">
         <section className="aa-contact__intro">

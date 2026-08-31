@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -13,7 +12,6 @@ export default function Blog() {
 
   return (
     <div className="aa-page">
-      <Nav active="blog" />
 
       <main className="aa-main aa-blog" id="main">
         <div className="aa-blog__aside">

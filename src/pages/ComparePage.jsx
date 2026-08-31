@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Subhead } from '../components/Subhead.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { useI18n } from '../i18n/index.jsx';
@@ -67,7 +66,6 @@ function CompareScreen({ platform, summary }) {
   if (summary.status === 'pending') {
     return (
       <div className="aa-page">
-        <Nav active="platforms" />
         <main className="aa-main aa-compare" id="main">
           <p className="aa-compare__note">{t('compare.loading')}</p>
         </main>
@@ -77,7 +75,6 @@ function CompareScreen({ platform, summary }) {
 
   return (
     <div className="aa-page">
-      <Nav active="platforms" />
 
       <Subhead
         accent={platform.accent}

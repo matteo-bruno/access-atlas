@@ -131,7 +131,8 @@
 
 /* On the map: one viewport, nothing under it to scroll to. */
 .aa-landing--platform {
-  height: 100%;
+  height: calc(100vh - var(--nav-h, 76px));
+  min-height: 0;
   overflow: hidden;
 }
 .aa-landing--platform .aa-landing__main {

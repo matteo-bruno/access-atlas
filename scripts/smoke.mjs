@@ -628,8 +628,10 @@ for (const [route, name] of ROUTES) {
   await page.evaluate(() => window.scrollTo(0, window.innerHeight * 1.05));
   await page.waitForTimeout(700);
   check(
-    'Scrolling reaches the rest of the home page',
-    (await page.locator('.aa-section-head').count()) >= 3,
+    'Scrolling reaches the rest of the home page, once',
+    (await page.locator('.aa-section-head').count()) >= 3 &&
+      // The hero is over the map; repeating it below would read as a mistake.
+      (await page.locator('.aa-hero').count()) === 0,
   );
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(400);
@@ -673,22 +675,50 @@ for (const [route, name] of ROUTES) {
 }
 
 // ── Between screens ──────────────────────────────────────────────────
-// Routes cross-fade. The failure that matters is a fade that never comes
-// back — the site would be invisible — and a fade on a query change, which
-// would flash the map every time someone picks a layer.
+// Routes cross-fade, and the bar above them does not: it lives outside the
+// fading region, so navigating never rebuilds it. The failures that matter
+// are a fade that never comes back — the site would be invisible — a fade on
+// a query change, which would flash the map every time someone picks a
+// layer, and a bar that moves.
 {
   const page = await context.newPage();
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
   await page.waitForTimeout(2500);
+
+  const navBefore = await page.locator('.aa-nav').boundingBox();
+  const navVar = await page.evaluate(() =>
+    getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
+  );
+  check(
+    'One bar, measured and published as --nav-h',
+    (await page.locator('.aa-nav').count()) === 1 &&
+      Math.abs(parseFloat(navVar) - navBefore.height) < 2,
+    `${navVar} vs ${navBefore.height}px`,
+  );
+
   await page.getByRole('link', { name: 'Research' }).click();
-  await page.waitForTimeout(900);
+  // Mid-flight: out, swapped, or fading back in — but not yet arrived.
+  await page.waitForTimeout(250);
+  const midway = await page.evaluate(
+    () => getComputedStyle(document.querySelector('.aa-fade')).opacity,
+  );
+  await page.waitForTimeout(1000);
   const settled = await page.evaluate(
     () => getComputedStyle(document.querySelector('.aa-fade')).opacity,
   );
+  const navAfter = await page.locator('.aa-nav').boundingBox();
   check(
-    'A tab change fades and settles, rather than sticking',
-    settled === '1' && page.url().endsWith('/research'),
-    `${settled} · ${page.url()}`,
+    'The content fades both ways while the bar stays put',
+    Number(midway) < 1 &&
+      settled === '1' &&
+      navBefore.y === navAfter.y &&
+      navBefore.height === navAfter.height,
+    `${midway} → ${settled}`,
+  );
+  check(
+    'A tab change lands, and lights the tab it landed on',
+    page.url().endsWith('/research') &&
+      (await page.locator('.aa-nav__link--active').innerText()) === 'Research',
   );
 
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });

@@ -5,9 +5,14 @@
 }
 
 html,
-body,
-#root {
+body {
   height: 100%;
+}
+
+/* Not `height`: a sticky element can only travel inside its parent's box, so
+   a root fixed at one viewport would let the nav scroll away with it. */
+#root {
+  min-height: 100%;
 }
 
 body {
@@ -53,15 +58,36 @@ strong {
 
 .aa-page {
   display: flex;
-  min-height: 100%;
+  /* The nav is the shell's now, so a page is the viewport less that bar. */
+  min-height: calc(100vh - var(--nav-h, 76px));
   flex-direction: column;
 }
 
 /* Screens whose map fills the remaining height (platform landings, city
-   detail) rather than scrolling. */
+   detail) rather than scrolling. The nav is no longer inside the page — it is
+   the shell's — so these size against the viewport less the bar, whose height
+   the shell measures and publishes as --nav-h. */
 .aa-page--fixed {
-  height: 100%;
+  height: calc(100vh - var(--nav-h, 76px));
+  /* Inherited from .aa-page, where it is the taller of the two and would win. */
+  min-height: 0;
   overflow: hidden;
+}
+
+/* The bar itself: outside the fading region, so navigating never rebuilds
+   it. Sticky, so it stays put on the pages that scroll. */
+.aa-chrome {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* Full screen on the city view hides the bar. The page cannot unmount what it
+   does not own, so it marks the document instead and the shell's own rule
+   answers — and the ResizeObserver publishes --nav-h: 0 on its own, because a
+   hidden bar measures zero. */
+.aa-chromeless .aa-chrome {
+  display: none;
 }
 
 .aa-main {
@@ -250,8 +276,9 @@ strong {
 /* Cross-fade between routes (see FadingRoutes in App.jsx). The wrapper has to
    pass the height through, or the screens that fill the viewport stop doing
    so the moment it is introduced. */
+/* No height of its own: the pages inside decide, and a fixed one would stop
+   the document growing — and the nav sticking — on the pages that scroll. */
 .aa-fade {
-  height: 100%;
   transition: opacity 170ms ease;
 }
 .aa-fade--out {

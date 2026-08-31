@@ -1,4 +1,3 @@
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow, SectionHeading } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -17,7 +16,6 @@ export default function Work() {
 
   return (
     <div className="aa-page">
-      <Nav active="work" />
 
       <main className="aa-main" id="main">
         <section className="aa-shell aa-work__intro">

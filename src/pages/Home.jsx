@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow, SectionHeading } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -19,7 +18,6 @@ import './Home.css';
 export default function Home() {
   return (
     <div className="aa-page">
-      <Nav active="atlas" />
 
       <main className="aa-main" id="main">
         <HomeSections />
@@ -35,8 +33,12 @@ export default function Home() {
  *
  * The landing scrolls into this rather than linking to it, so the two cannot
  * drift apart: there is one set of sections, mounted in two places.
+ *
+ * `hero` is off under the landing, which has already said all of it over the
+ * map — the same headline twice in one scroll reads as a mistake, because it
+ * is one.
  */
-export function HomeSections() {
+export function HomeSections({ hero = true }) {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
   // Cities published on the shared grid, so the combined viewer can draw every
@@ -51,6 +53,7 @@ export function HomeSections() {
   return (
     <>
         {/* ── Hero ─────────────────────────────────────────────── */}
+        {hero && (
         <section className="aa-shell aa-hero">
           <div className="aa-hero__lead">
             <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
@@ -101,6 +104,7 @@ export function HomeSections() {
             </div>
           </aside>
         </section>
+        )}
 
         {/* ── Atlas metrics ────────────────────────────────────── */}
         <section className="aa-shell">

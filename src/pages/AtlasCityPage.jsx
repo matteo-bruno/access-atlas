@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useParams, useSearchParams } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -77,6 +76,13 @@ function AtlasScreen({ cityId, view }) {
   const [fullscreen, setFullscreen] = useState(false);
   const [summaryOpen, setSummaryOpen] = useState(true);
   const [selectedOpen, setSelectedOpen] = useState(true);
+
+  // The nav belongs to the shell now, so full screen asks for it to go rather
+  // than declining to render it.
+  useEffect(() => {
+    document.documentElement.classList.toggle('aa-chromeless', fullscreen);
+    return () => document.documentElement.classList.remove('aa-chromeless');
+  }, [fullscreen]);
 
   // Full screen is a mode, not a destination: Escape is how anyone expects to
   // leave one.
@@ -527,8 +533,6 @@ function AtlasScreen({ cityId, view }) {
           steps out rather than shrinking. */}
       {!fullscreen && (
         <>
-          <Nav active="platforms" sticky={false} />
-
           <Subhead
             accent={platform.accent}
             label={t('atlas.label')}

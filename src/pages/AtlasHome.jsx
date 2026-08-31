@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -74,7 +73,6 @@ export default function AtlasHome() {
 
   return (
     <div className={`aa-page aa-landing aa-landing--${phase}`}>
-      <Nav active="atlas" sticky={!onMap} />
 
       <main className="aa-main aa-landing__main" id="main">
         {/* The platform screen, mounted from the first frame. In 'home' it is
@@ -139,8 +137,9 @@ export default function AtlasHome() {
           )}
         </PlatformExplorer>
 
-        {/* The rest of the home page, directly underneath. */}
-        {phase !== 'platform' && <HomeSections />}
+        {/* The rest of the home page, directly underneath — without its own
+            hero, which is the one over the map. */}
+        {phase !== 'platform' && <HomeSections hero={false} />}
       </main>
 
       {phase !== 'platform' && <Footer />}

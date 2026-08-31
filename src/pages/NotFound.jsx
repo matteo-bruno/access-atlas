@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -10,7 +9,6 @@ export default function NotFound() {
 
   return (
     <div className="aa-page">
-      <Nav active="atlas" />
       <main className="aa-main aa-shell" id="main" style={{ padding: '96px var(--page-pad)' }}>
         <Eyebrow>{t('notFound.eyebrow')}</Eyebrow>
         <h1

@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
@@ -37,7 +36,6 @@ export default function PlatformLanding() {
   // Remount cleanly when switching platforms so the map rebuilds its layers.
   return (
     <div className="aa-page aa-page--fixed">
-      <Nav active="platforms" sticky={false} />
       <main className="aa-main aa-stagewrap" id="main">
         <PlatformExplorer key={platform?.id ?? 'all'} platform={platform} />
       </main>

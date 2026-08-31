@@ -321,6 +321,27 @@ show the new page at full opacity behind the fading one. It compares the
 string, and fading the map on every dropdown would be worse than not fading
 at all.
 
+Two things make the fade *in* actually run, and both are easy to undo by
+accident. `Suspense` sits **inside** the faded element: with the boundary
+outside, a route whose lazy chunk had not arrived replaced that element with
+the fallback and took the fade with it — which is why new content used to
+appear as a cut. And the swap runs in a `startTransition`, so React holds the
+old screen until the new one can be shown rather than flashing a blank.
+
+**The nav is the shell's, not any page's** (`Chrome` in `App.jsx`), and sits
+outside the faded region, so navigating never rebuilds it: the bar stays put
+while the page under it fades, and only the lit tab changes — derived from
+the path by `activeTab`. Three consequences to keep in mind:
+
+- It publishes its measured height as `--nav-h`, and the full-height screens
+  size against `calc(100vh - var(--nav-h))`. Measuring beats a constant: the
+  bar wraps on narrow screens.
+- `#root` is `min-height: 100%`, never `height`. A sticky element can only
+  travel inside its parent's box, and a root pinned to one viewport let the
+  bar scroll away with it.
+- A page cannot unmount what it does not own, so the city view's full screen
+  marks the document (`.aa-chromeless`) and the shell's own rule answers.
+
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
