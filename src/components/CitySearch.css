@@ -1,0 +1,94 @@
+/* The city search: a box you can put anywhere, so it moved out of the page
+   that used to own it and into the component that renders it. */
+
+.aa-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 300px;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+}
+
+.aa-search:focus-within {
+  border-color: var(--ink-4);
+}
+
+.aa-search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+
+.aa-search__input::placeholder {
+  color: var(--ink-3);
+}
+
+/* Safari's search input decorations don't fit the chrome. */
+.aa-search__input::-webkit-search-decoration,
+.aa-search__input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.aa-search__kbd {
+  padding: 2px 7px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-search__results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+  z-index: 20;
+}
+
+.aa-search__result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.aa-search__result:hover {
+  background: var(--paper-alt);
+}
+
+.aa-search__country {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-search__empty {
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ── Map stage ────────────────────────────────────────────────── */

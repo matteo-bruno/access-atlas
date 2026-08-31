@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Nav } from '../components/Nav.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
-import { Subhead } from '../components/Subhead.jsx';
 import { Icon } from '../components/Icon.jsx';
+import { CitySearch } from '../components/CitySearch.jsx';
 import { AtlasMap } from '../map/AtlasMap.jsx';
 import { CityLayer, CoverageLayer } from '../components/CityLayer.jsx';
 import { useI18n } from '../i18n/index.jsx';
@@ -16,6 +16,8 @@ import {
   useCityPageIds,
 } from '../data/useAtlasData.js';
 import { paperForPlatform } from '../data/research.js';
+// The floating-box chrome these pages share with the city view.
+import '../components/MapBox.css';
 import './PlatformLanding.css';
 
 const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
@@ -42,7 +44,6 @@ function PlatformScreen({ platform }) {
   const mapRef = useRef(null);
   const searchRef = useRef(null);
   const [welcomeOpen, setWelcomeOpen] = useState(true);
-  const [query, setQuery] = useState('');
 
   // Both hooks run unconditionally — hooks cannot be called behind a branch —
   // and the unused one is cheap: its fetch is cached by URL either way.
@@ -57,23 +58,7 @@ function PlatformScreen({ platform }) {
   const copyKey = platform ? `platform.${platform.id}` : 'platform.all';
   const legend = t(`${copyKey}.legend`);
 
-  const matches = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return cities.filter((city) => city.name.toLowerCase().includes(q)).slice(0, 6);
-  }, [cities, query]);
 
-  // ⌘K / Ctrl-K focuses the city search, as the design's hint promises.
-  useEffect(() => {
-    const onKey = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
 
   const openCity = (city) => {
     // One city view, whichever map you came from: the combined viewer, opened
@@ -102,77 +87,19 @@ function PlatformScreen({ platform }) {
     <div className="aa-page aa-page--fixed">
       <Nav active="platforms" sticky={false} />
 
-      <Subhead
-        accent={platform ? platform.accent : COVERAGE_SCALE[COVERAGE_SCALE.length - 1]}
-        label={label}
-        title={title}
-        meta={
-          <span className="aa-mono aa-subhead__count">
-            {platform
-              ? platform.published
-                ? t('platform.cityCount', { count: n(platform.cityCount) })
-                : t('platform.seeded')
-              : t('platform.cityCount', { count: n(cities.length) })}
-          </span>
-        }
-      >
-        <div className="aa-search">
-          <Icon name="search" size={14} color="var(--ink-3)" />
-          <input
-            ref={searchRef}
-            className="aa-search__input"
-            type="search"
-            value={query}
-            placeholder={t('platform.search')}
-            aria-label={t('platform.search')}
-            onChange={(event) => setQuery(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' && matches[0]) openCity(matches[0]);
-              if (event.key === 'Escape') setQuery('');
-            }}
-          />
-          <kbd className="aa-search__kbd">{t('platform.searchHint')}</kbd>
-
-          {query.trim() && (
-            <div className="aa-search__results">
-              {matches.length === 0 && <div className="aa-search__empty">{t('platform.empty')}</div>}
-              {matches.map((city) => (
-                <button
-                  key={city.id}
-                  type="button"
-                  className="aa-search__result"
-                  onMouseDown={(event) => event.preventDefault()}
-                  onClick={() => {
-                    openCity(city);
-                    setQuery('');
-                  }}
-                >
-                  <span>{city.name}</span>
-                  <span className="aa-mono aa-search__country">{city.country}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Only where the platform publishes the per-city summary the
-            comparison is built from. */}
-        {platform && hasSummary && (
-          <Link className="aa-chip" to={`/platforms/${platform.slug}/compare`}>
-            {t('compare.label')}
-          </Link>
-        )}
-        {paper && (
-          <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
-            {t('platform.paper')}
-          </a>
-        )}
-        <a className="aa-chip" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
-          {t('platform.github')}
-        </a>
-      </Subhead>
 
       <main className="aa-main aa-mapstage" id="main">
+        {/* What the bar above the map used to carry, on the map itself: a way
+            to find a city, and the source. The rest of what it held — the
+            platform's name and its city count — the picker and the welcome
+            card already say. */}
+        <div className="aa-mapui aa-mapui--tr aa-mapstage__tools">
+          <CitySearch cities={cities} onOpen={openCity} inputRef={searchRef} />
+          <a className="aa-mapbtn" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
+            {t('platform.github')}
+          </a>
+        </div>
+
         {/* Which set of cities the map draws — the four platforms, or all of
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
@@ -244,6 +171,11 @@ function PlatformScreen({ platform }) {
                 {t('platform.ctaMap')}
                 <Icon name="arrow" size={13} color="#FBFAF4" />
               </button>
+              {platform && hasSummary && (
+                <Link className="aa-welcome__more" to={`/platforms/${platform.slug}/compare`}>
+                  {t('compare.label')}
+                </Link>
+              )}
               {paper && (
                 <a
                   className="aa-welcome__more"

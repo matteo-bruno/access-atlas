@@ -46,7 +46,8 @@ export default {
     // La pagina d’ingresso: la mappa di copertura con le parole sopra.
     landing: {
       mapLabel: 'Tutte le città pubblicate dall’Atlante',
-      ctaOverview: 'Che cosa c’è nell’Atlante',
+      scrollHint: 'Oppure continua a leggere',
+      back: 'Indietro',
     },
     metrics: {
       cities: 'Città pubblicate',

@@ -17,6 +17,26 @@ import { BRAND } from '../data/brand.js';
 import './Home.css';
 
 export default function Home() {
+  return (
+    <div className="aa-page">
+      <Nav active="atlas" />
+
+      <main className="aa-main" id="main">
+        <HomeSections />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+/**
+ * Everything the home page says, without the page around it.
+ *
+ * The landing scrolls into this rather than linking to it, so the two cannot
+ * drift apart: there is one set of sections, mounted in two places.
+ */
+export function HomeSections() {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
   // Cities published on the shared grid, so the combined viewer can draw every
@@ -29,10 +49,7 @@ export default function Home() {
   );
 
   return (
-    <div className="aa-page">
-      <Nav active="atlas" />
-
-      <main className="aa-main" id="main">
+    <>
         {/* ── Hero ─────────────────────────────────────────────── */}
         <section className="aa-shell aa-hero">
           <div className="aa-hero__lead">
@@ -293,10 +310,7 @@ export default function Home() {
             })}
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 }
 

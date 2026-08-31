@@ -1,9 +1,17 @@
-/* The front door: the coverage map, with the words over it. */
+/* The front door: the coverage map, the words over it, and the rest of the
+   home page directly underneath. */
 .aa-landing__main {
-  position: relative;
   display: block;
   min-height: 0;
+}
+
+/* One viewport of map. Scrolling leaves it behind; "explore" stays on it. */
+.aa-landing__stage {
+  position: relative;
+  height: calc(100vh - var(--nav-h, 76px));
+  min-height: 460px;
   overflow: hidden;
+  background: var(--map-paper);
 }
 
 .aa-landing__map {
@@ -15,17 +23,16 @@
   height: 100%;
 }
 
-/* Held back so the copy reads, and released on the way out. */
+/* Held back so the copy reads, and released on the way in. */
 .aa-landing__scrim {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      100deg,
-      color-mix(in srgb, var(--paper) 90%, transparent) 0%,
-      color-mix(in srgb, var(--paper) 70%, transparent) 46%,
-      color-mix(in srgb, var(--paper) 18%, transparent) 100%
-    );
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--paper) 90%, transparent) 0%,
+    color-mix(in srgb, var(--paper) 70%, transparent) 46%,
+    color-mix(in srgb, var(--paper) 18%, transparent) 100%
+  );
   pointer-events: none;
   transition: opacity 620ms ease;
 }
@@ -38,7 +45,7 @@
   height: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: clamp(24px, 6vh, 72px) var(--page-pad) clamp(20px, 4vh, 40px);
+  padding: clamp(24px, 6vh, 68px) var(--page-pad) clamp(18px, 3vh, 32px);
   pointer-events: none;
   transition: opacity 620ms ease, transform 620ms ease;
 }
@@ -56,18 +63,18 @@
 .aa-landing__headline {
   margin: 10px 0 0;
   font-family: var(--font-serif, inherit);
-  font-size: clamp(34px, 5.2vw, 60px);
+  font-size: clamp(32px, 4.8vw, 56px);
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: -0.02em;
 }
 
 .aa-landing__lede {
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   max-width: 560px;
   color: var(--ink-2);
   font-size: 15px;
-  line-height: 1.62;
+  line-height: 1.6;
 }
 .aa-landing__lede strong {
   color: var(--ink);
@@ -78,14 +85,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 26px;
+  margin-top: 24px;
+}
+
+.aa-landing__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .aa-landing__metrics {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
-  margin: 24px 0 0;
+  gap: 26px;
+  margin: 0;
 }
 .aa-landing__metric dt {
   color: var(--ink-3);
@@ -99,40 +113,70 @@
   color: var(--ink);
 }
 
-/* The dissolve: the words and the scrim go, the map stays and comes forward
-   — the next route opens on that same map. */
+.aa-landing__scroll {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+}
+
+/* The dissolve: the words and the scrim go, the map stays and comes forward.
+   Nothing is routed, so the map itself never reloads. */
 .aa-landing--leaving .aa-landing__content {
   opacity: 0;
   transform: translateY(-8px);
 }
-.aa-landing--leaving .aa-landing__scrim {
+.aa-landing--leaving .aa-landing__scrim,
+.aa-landing--platform .aa-landing__scrim {
   opacity: 0;
 }
-.aa-landing--leaving .aa-nav {
-  opacity: 0;
-  transition: opacity 620ms ease;
+
+/* On the map: one viewport, nothing under it to scroll to. */
+.aa-landing--platform {
+  height: 100%;
+  overflow: hidden;
+}
+.aa-landing--platform .aa-landing__stage {
+  height: 100%;
+}
+.aa-landing--platform .aa-landing__main {
+  min-height: 0;
+  flex: 1;
+}
+
+.aa-landing__tools .aa-search {
+  min-width: 260px;
+  box-shadow: 0 2px 10px rgba(21, 23, 26, 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .aa-landing__content,
-  .aa-landing__scrim,
-  .aa-landing--leaving .aa-nav {
+  .aa-landing__scrim {
     transition: none;
   }
 }
 
 @media (max-width: 860px) {
-  .aa-landing__main {
-    overflow-y: auto;
-  }
-  .aa-landing__content {
+  .aa-landing__stage {
     height: auto;
-    min-height: 100%;
+    min-height: 78vh;
   }
   .aa-landing__scrim {
     background: color-mix(in srgb, var(--paper) 88%, transparent);
   }
+  .aa-landing__foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
   .aa-landing__metrics {
     gap: 18px;
   }
+}
+
+/* The tools stack hugs the right edge; the GitHub link is a button, not a
+   banner, so it does not stretch to the search box beside it. */
+.aa-landing__tools,
+.aa-mapstage__tools {
+  align-items: flex-end;
 }

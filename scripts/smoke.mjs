@@ -605,10 +605,12 @@ for (const [route, name] of ROUTES) {
 }
 
 // ── The front door ───────────────────────────────────────────────────
-// The landing is the coverage map with the words over it, and "explore the
-// platform" dissolves the words rather than cutting to another screen. What
-// is asserted is that the map is really there — not a picture of one — and
-// that the invitation actually leads in.
+// The landing is the coverage map with the words over it, and there are two
+// ways past them: scroll to read the rest of the home page, or "explore the
+// platform" to lift the words off the map. The second is a change of what the
+// page shows, *not* a navigation — routing would tear the map down and build
+// another, which is a flash exactly where the transition should be smooth. So
+// what is asserted is that the URL does not move and the map does not reload.
 {
   const page = await context.newPage();
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
@@ -622,9 +624,46 @@ for (const [route, name] of ROUTES) {
     tab,
   );
 
+  // The rest of the home page is directly underneath, not behind a link.
+  await page.evaluate(() => window.scrollTo(0, window.innerHeight * 1.05));
+  await page.waitForTimeout(700);
+  check(
+    'Scrolling reaches the rest of the home page',
+    (await page.locator('.aa-section-head').count()) >= 3,
+  );
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(400);
+
+  const before = page.url();
   await page.getByRole('button', { name: /Explore the platform/ }).click();
-  await page.waitForTimeout(1400);
-  check('Explore leads into the platform', page.url().endsWith('/platforms'), page.url());
+  await page.waitForTimeout(1500);
+  check(
+    'Explore opens the platform on the same URL, on the same map',
+    page.url() === before &&
+      (await page.locator('.aa-landing__tools .aa-search').count()) === 1 &&
+      (await page.locator('.aa-section-head').count()) === 0,
+    page.url(),
+  );
+
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(700);
+  check('Escape brings the words back', (await page.locator('.aa-landing__headline').count()) === 1);
+  await page.close();
+}
+
+// ── The world map's chrome ───────────────────────────────────────────
+// The bar above the map is gone; what it carried that the map still needs is
+// on the map — a way to find a city, and the source.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
+  check(
+    'The world map carries its search and its source, and no bar',
+    (await page.locator('.aa-subhead').count()) === 0 &&
+      (await page.locator('.aa-mapstage__tools .aa-search').count()) === 1 &&
+      (await page.locator('.aa-mapstage__tools .aa-mapbtn').count()) === 1,
+  );
   await page.close();
 }
 

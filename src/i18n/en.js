@@ -53,7 +53,8 @@ export default {
     // The landing: the coverage map with the words over it.
     landing: {
       mapLabel: 'Every city the Atlas has published',
-      ctaOverview: 'What is in the Atlas',
+      scrollHint: 'Or read on',
+      back: 'Back',
     },
     metrics: {
       cities: 'Cities published',

@@ -283,15 +283,29 @@ Do not re-import either when adding copy from upstream.
 ## The front door
 
 `/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map —
-the same layer `/platforms` draws, at the same framing — held behind a scrim
-with the copy over it. "Explore the platform" dissolves the scrim and the
-words rather than cutting to another screen, then routes to `/platforms`,
-which opens on that same map. The timing lives in two places, `DISSOLVE_MS`
-and the CSS transition; change them together, and note that a reader who has
-asked for reduced motion is taken straight there.
+the same layer `/platforms` draws — held behind a scrim with the copy over
+it. There are two ways past that copy, and they answer different questions:
+**scrolling** reads the rest of the home page, which is directly underneath
+(`HomeSections`, exported from `Home.jsx` and mounted in both places, so the
+two cannot drift); **"explore the platform"** lifts the scrim and the words
+instead, leaving the map interactive with the controls a world map needs.
+
+**That second path is a phase, not a route.** Navigating would tear the map
+down and build another — a flash exactly where the transition is meant to be
+smooth — so the URL stays put and the page changes what it shows
+(`phase: 'home' | 'leaving' | 'platform'`). Escape and the "back" box return.
+The timing lives in two places, `DISSOLVE_MS` and the CSS transition; change
+them together, and note that a reader who has asked for reduced motion skips
+the dissolve entirely.
 
 The previous home page is **not deleted** — it is routed at `/overview`, so
 the landing can be reverted by pointing `/` back at it.
+
+The world map at `/platforms` has no bar above it either: the search
+(`CitySearch`, which owns its own ⌘K and its own CSS so it can sit anywhere)
+and the source link float on the map, the platform's paper and comparison
+moved into the welcome card that introduces it, and the legend sits below the
+search rather than under it.
 
 ## The map is the page
 
