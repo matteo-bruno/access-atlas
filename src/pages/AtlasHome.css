@@ -6,29 +6,26 @@
 }
 
 /* One viewport of map. Scrolling leaves it behind; "explore" stays on it. */
-/* One viewport of map on the way in; the whole page once you are on it. */
-.aa-landing .aa-mapstage {
+/* One viewport of clear space over the site's backdrop. */
+.aa-landing__stage {
+  position: relative;
   height: calc(100vh - var(--nav-h, 76px));
   min-height: 460px;
   flex: none;
 }
+
+/* What scrolls over the fixed map: opaque, so the map stays behind it. */
+.aa-landing__sheet {
+  position: relative;
+  background: var(--paper);
+}
+.aa-landing .aa-footer {
+  position: relative;
+  background: var(--paper);
+}
 .aa-landing__main {
   display: flex;
   flex-direction: column;
-}
-
-/* Held back so the copy reads, and released on the way in. */
-.aa-landing__scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    100deg,
-    color-mix(in srgb, var(--paper) 90%, transparent) 0%,
-    color-mix(in srgb, var(--paper) 70%, transparent) 46%,
-    color-mix(in srgb, var(--paper) 18%, transparent) 100%
-  );
-  pointer-events: none;
-  transition: opacity 620ms ease;
 }
 
 .aa-landing__content {
@@ -41,7 +38,6 @@
   margin: 0 auto;
   padding: clamp(24px, 6vh, 68px) var(--page-pad) clamp(18px, 3vh, 32px);
   pointer-events: none;
-  transition: opacity 620ms ease, transform 620ms ease;
 }
 /* Only the things you can act on take the pointer; the rest lets the map
    through. */
@@ -115,19 +111,10 @@
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-  .aa-landing__content {
-    transition: none;
-  }
-}
-
 @media (max-width: 860px) {
   .aa-landing__stage {
     height: auto;
     min-height: 78vh;
-  }
-  .aa-landing__scrim {
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
   }
   .aa-landing__foot {
     flex-direction: column;

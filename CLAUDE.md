@@ -290,14 +290,23 @@ places, so the two cannot drift); **"explore the platform"** is an ordinary
 `<Link>` to `/platforms`, so it changes the URL, lights that tab and opens in
 a new one like any other link.
 
-**The map behind the copy is the platform screen itself.** `PlatformExplorer`
-(exported from `PlatformLanding.jsx`) is the world map and everything on it;
-the landing mounts it with `chrome={false}` and `interactive={false}`, so what
-is behind the words is the real screen rather than a picture of one — and the
-platform is not duplicated to achieve it. Anything added to that component
-appears in both places.
+**The map behind the copy is the site's backdrop, not this page's.**
+`Backdrop` (in the shell, beside the nav) is one coverage map fixed to the
+viewport, behind every page: it never scrolls, never remounts on navigation,
+and is the Atlas's own data rather than a texture that resembles it. The
+landing only leaves it a viewport of clear space and asks for a lighter veil
+(`.aa-backdrop--open`); its own content below is opaque, so scrolling reads as
+a sheet moving over a map that stays put.
 
-The landing once *became* the platform in place, on the same URL, because
+The veil is what makes this liveable: 90% paper by default, because most
+pages are text and the map has to stay a suggestion behind them. It lifts to
+a gradient only on the front door, where showing the map is the point.
+
+The two screens that *are* a full-bleed map — `/platforms` and
+`/atlas/:cityId` — get no backdrop: a second WebGL context would draw nothing
+behind an opaque one.
+
+The landing once became the platform in place, on the same URL, because
 navigating remounted the map and flashed. The route cross-fade below removed
 that reason, and with it the phase machinery: one screen, one link.
 

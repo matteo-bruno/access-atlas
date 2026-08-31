@@ -277,8 +277,11 @@ strong {
    pass the height through, or the screens that fill the viewport stop doing
    so the moment it is introduced. */
 /* No height of its own: the pages inside decide, and a fixed one would stop
-   the document growing — and the nav sticking — on the pages that scroll. */
+   the document growing — and the nav sticking — on the pages that scroll.
+   Positioned so it stacks above the fixed map behind the site. */
 .aa-fade {
+  position: relative;
+  z-index: 1;
   transition: opacity 170ms ease;
 }
 .aa-fade--out {

@@ -3,28 +3,24 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
-import { PlatformExplorer } from './PlatformLanding.jsx';
 import { HomeSections } from './Home.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { ATLAS_METRICS } from '../data/home.js';
-// The floating-box chrome this page shares with the city view.
-import '../components/MapBox.css';
 import './AtlasHome.css';
 
 /**
- * The front door: the Atlas's own coverage map, with the words over it.
+ * The front door: one viewport of the Atlas's own coverage map, with the
+ * words over it.
  *
- * The map is not an illustration. It is `PlatformExplorer` — the very screen
- * the platform tab renders — mounted with its chrome withheld and its pointer
- * off, so what sits behind the copy is the real thing rather than a picture
- * of it.
+ * The map itself is not here — it is the site's backdrop (`Backdrop`, in the
+ * shell), fixed behind every page. This screen only leaves it a viewport of
+ * clear space and asks for a lighter veil over it. Scrolling then brings the
+ * rest of the home page up as an opaque sheet over a map that does not move,
+ * which is the whole reason the backdrop is fixed rather than parallaxed.
  *
- * There are two ways past that copy. Scrolling reads the rest of the home
- * page, which is directly underneath. "Explore the platform" goes to the
- * platform tab — an ordinary link, so it changes the URL, lights that tab,
- * and can be opened in a new one like any other. The platform is not
- * duplicated here; it is only what this page is standing in front of, and the
- * route cross-fade carries the transition.
+ * "Explore the platform" goes to the platform tab — an ordinary link, so it
+ * changes the URL, lights that tab, and can be opened in a new one like any
+ * other. The platform is not duplicated here.
  *
  * The previous home page is still routed at /overview, unchanged.
  */
@@ -34,9 +30,8 @@ export default function AtlasHome() {
   return (
     <div className="aa-page aa-landing">
       <main className="aa-main aa-landing__main" id="main">
-        <PlatformExplorer platform={null} chrome={false} interactive={false}>
-          <div className="aa-landing__scrim" />
-
+        {/* A viewport of nothing: the backdrop shows through it. */}
+        <section className="aa-landing__stage">
           <div className="aa-landing__content">
             <div className="aa-landing__lead">
               <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
@@ -80,11 +75,14 @@ export default function AtlasHome() {
               </p>
             </div>
           </div>
-        </PlatformExplorer>
+        </section>
 
         {/* The rest of the home page, directly underneath — without its own
-            hero, which is the one over the map. */}
-        <HomeSections hero={false} />
+            hero, which is the one over the map. Opaque, so it covers the
+            backdrop as it comes up rather than reading over it. */}
+        <div className="aa-landing__sheet">
+          <HomeSections hero={false} />
+        </div>
       </main>
 
       <Footer />

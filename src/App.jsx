@@ -11,6 +11,7 @@ import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-do
 import { platformBySlug } from './data/platforms.js';
 import { I18nProvider } from './i18n/index.jsx';
 import { Nav } from './components/Nav.jsx';
+import { Backdrop } from './components/Backdrop.jsx';
 import AtlasHome from './pages/AtlasHome.jsx';
 
 // The map routes pull in MapLibre; splitting them keeps it off the FAQ and
@@ -164,6 +165,7 @@ export default function App() {
   return (
     <I18nProvider>
       <ScrollToTop />
+      <Backdrop />
       <Chrome />
       <FadingRoutes>
           <Route path="/" element={<AtlasHome />} />

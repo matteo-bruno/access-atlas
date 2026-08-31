@@ -616,19 +616,26 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
   await page.waitForTimeout(3500);
 
-  const mapCanvas = await page.locator('.aa-landing .aa-mapstage canvas').count();
   const tab = (await page.locator('.aa-nav__link').allInnerTexts())[0];
   check(
-    'The landing draws the platform screen behind its copy, chrome withheld',
-    mapCanvas === 1 &&
+    'The landing leaves a viewport of the site backdrop under its copy',
+    (await page.locator('.aa-backdrop canvas').count()) === 1 &&
       /Accessibility Atlas/.test(tab) &&
       (await page.locator('.aa-picker').count()) === 0,
     tab,
   );
 
-  // The rest of the home page is directly underneath, not behind a link.
+  // The rest of the home page is directly underneath, not behind a link, and
+  // it comes up *over* the map rather than dragging it along.
+  const backdropBefore = await page.locator('.aa-backdrop canvas').boundingBox();
   await page.evaluate(() => window.scrollTo(0, window.innerHeight * 1.05));
   await page.waitForTimeout(700);
+  const backdropAfter = await page.locator('.aa-backdrop canvas').boundingBox();
+  check(
+    'The backdrop stays put while the page scrolls over it',
+    backdropBefore.y === backdropAfter.y && (await page.evaluate(() => window.scrollY)) > 200,
+    `${backdropBefore.y} → ${backdropAfter.y}`,
+  );
   check(
     'Scrolling reaches the rest of the home page, once',
     (await page.locator('.aa-section-head').count()) >= 3 &&
@@ -652,6 +659,31 @@ for (const [route, name] of ROUTES) {
       (await page.locator('.aa-picker').count()) === 1 &&
       (await page.locator('.aa-welcome').count()) === 1,
     `${href} → ${page.url()}`,
+  );
+  await page.close();
+}
+
+// ── One backdrop, everywhere ─────────────────────────────────────────
+// The same map sits behind every page — except the two screens that are
+// themselves a full-bleed map, where a second WebGL context would draw
+// nothing behind an opaque one.
+{
+  const page = await context.newPage();
+  const seen = {};
+  for (const route of ['/research', '/faq', '/contact', '/overview', '/platforms', '/atlas/milan']) {
+    await page.goto(BASE + route, { waitUntil: 'load' });
+    await page.waitForTimeout(2200);
+    seen[route] = await page.locator('.aa-backdrop canvas').count();
+  }
+  check(
+    'The backdrop is on every page but the ones that are a map',
+    seen['/research'] === 1 &&
+      seen['/faq'] === 1 &&
+      seen['/contact'] === 1 &&
+      seen['/overview'] === 1 &&
+      seen['/platforms'] === 0 &&
+      seen['/atlas/milan'] === 0,
+    JSON.stringify(seen),
   );
   await page.close();
 }
