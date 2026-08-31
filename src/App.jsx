@@ -2,12 +2,15 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { platformBySlug } from './data/platforms.js';
 import { I18nProvider } from './i18n/index.jsx';
-import Home from './pages/Home.jsx';
+import AtlasHome from './pages/AtlasHome.jsx';
 
 // The map routes pull in MapLibre; splitting them keeps it off the FAQ and
 // Contact pages entirely.
 const PlatformLanding = lazy(() => import('./pages/PlatformLanding.jsx'));
 const ComparePage = lazy(() => import('./pages/ComparePage.jsx'));
+// The previous home page. Kept routed rather than deleted: the landing above
+// replaces it at "/", and this is what to fall back to if that is a mistake.
+const Home = lazy(() => import('./pages/Home.jsx'));
 const AtlasCityPage = lazy(() => import('./pages/AtlasCityPage.jsx'));
 const FAQ = lazy(() => import('./pages/FAQ.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
@@ -38,7 +41,8 @@ export default function App() {
       <ScrollToTop />
       <Suspense fallback={<div className="aa-page" />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<AtlasHome />} />
+          <Route path="/overview" element={<Home />} />
           {/* Without a slug: every published city across the four platforms. */}
           <Route path="/platforms" element={<PlatformLanding />} />
           <Route path="/platforms/:slug" element={<PlatformLanding />} />

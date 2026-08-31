@@ -17,7 +17,7 @@ export default {
   nav: {
     title: 'Access Atlas',
     tagline: 'Sony CSL · Rome — Sustainable Cities',
-    atlas: 'Atlas',
+    atlas: 'Accessibility Atlas',
     platforms: 'Platforms',
     research: 'Research',
     blog: 'Blog',
@@ -37,7 +37,7 @@ export default {
       ledeProximity: 'proximity',
       ledeOpportunity: 'opportunity',
       ledeCardep: 'car dependency',
-      ctaPrimary: 'Explore the platforms',
+      ctaPrimary: 'Explore the platform',
       ctaSecondary: 'Read the framework paper ↗',
     },
     news: {
@@ -49,6 +49,11 @@ export default {
         atlas: 'Combined viewer — Milan published on one shared grid, all four platforms',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', atlas: 'Aug 2026' },
+    },
+    // The landing: the coverage map with the words over it.
+    landing: {
+      mapLabel: 'Every city the Atlas has published',
+      ctaOverview: 'What is in the Atlas',
     },
     metrics: {
       cities: 'Cities published',

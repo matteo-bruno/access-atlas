@@ -15,7 +15,8 @@ import { chromium } from 'playwright';
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 
 const ROUTES = [
-  ['/', 'Home'],
+  ['/', 'Landing'],
+  ['/overview', 'The previous home page, still routed'],
   ['/platforms', 'All-platforms world map'],
   ['/platforms/15min-city', '15min-City landing'],
   ['/platforms/citychrone', 'CityChrone landing'],
@@ -603,6 +604,30 @@ for (const [route, name] of ROUTES) {
   check('No page scrolls sideways on a phone', wide.length === 0, wide.join(' | '));
 }
 
+// ── The front door ───────────────────────────────────────────────────
+// The landing is the coverage map with the words over it, and "explore the
+// platform" dissolves the words rather than cutting to another screen. What
+// is asserted is that the map is really there — not a picture of one — and
+// that the invitation actually leads in.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/`, { waitUntil: 'load' });
+  await page.waitForTimeout(3500);
+
+  const mapCanvas = await page.locator('.aa-landing__map canvas').count();
+  const tab = (await page.locator('.aa-nav__link').allInnerTexts())[0];
+  check(
+    'The landing draws the coverage map behind its copy',
+    mapCanvas === 1 && /Accessibility Atlas/.test(tab),
+    tab,
+  );
+
+  await page.getByRole('button', { name: /Explore the platform/ }).click();
+  await page.waitForTimeout(1400);
+  check('Explore leads into the platform', page.url().endsWith('/platforms'), page.url());
+  await page.close();
+}
+
 // ── EN ⇄ IT ──────────────────────────────────────────────────────────
 {
   const page = await context.newPage();
@@ -611,14 +636,14 @@ for (const [route, name] of ROUTES) {
   const en = await page.$eval('h1', (e) => e.textContent.trim());
   // Read every metric, not just the first: only values above 999 pick up a
   // thousands separator, and which metrics the home page shows can change.
-  const enMetric = await page.$$eval('.aa-metrics__value', (els) =>
+  const enMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
   await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
   await page.waitForTimeout(700);
   const it = await page.$eval('h1', (e) => e.textContent.trim());
-  const itMetric = await page.$$eval('.aa-metrics__value', (els) =>
+  const itMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
   const lang = await page.evaluate(() => document.documentElement.lang);

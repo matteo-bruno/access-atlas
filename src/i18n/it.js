@@ -10,7 +10,7 @@ export default {
   nav: {
     title: 'Access Atlas',
     tagline: 'Sony CSL · Roma — Città Sostenibili',
-    atlas: 'Atlante',
+    atlas: 'Atlante dell’accessibilità',
     platforms: 'Piattaforme',
     research: 'Ricerca',
     blog: 'Blog',
@@ -30,7 +30,7 @@ export default {
       ledeProximity: 'prossimità',
       ledeOpportunity: 'opportunità',
       ledeCardep: 'dipendenza dall’auto',
-      ctaPrimary: 'Esplora le piattaforme',
+      ctaPrimary: 'Esplora la piattaforma',
       ctaSecondary: 'Leggi l’articolo sul framework ↗',
     },
     news: {
@@ -42,6 +42,11 @@ export default {
         atlas: 'Vista combinata — Milano pubblicata su un’unica griglia, tutte e quattro le piattaforme',
       },
       dates: { pov: 'Apr 2026', cdi: 'Feb 2026', atlas: 'Ago 2026' },
+    },
+    // La pagina d’ingresso: la mappa di copertura con le parole sopra.
+    landing: {
+      mapLabel: 'Tutte le città pubblicate dall’Atlante',
+      ctaOverview: 'Che cosa c’è nell’Atlante',
     },
     metrics: {
       cities: 'Città pubblicate',

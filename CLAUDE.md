@@ -280,6 +280,19 @@ theirs that are wrong here**: CDI calls its cartogram a Dorling one, and
 P.O.V. calls its thresholds plain medians when they are population-weighted.
 Do not re-import either when adding copy from upstream.
 
+## The front door
+
+`/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map —
+the same layer `/platforms` draws, at the same framing — held behind a scrim
+with the copy over it. "Explore the platform" dissolves the scrim and the
+words rather than cutting to another screen, then routes to `/platforms`,
+which opens on that same map. The timing lives in two places, `DISSOLVE_MS`
+and the CSS transition; change them together, and note that a reader who has
+asked for reduced motion is taken straight there.
+
+The previous home page is **not deleted** — it is routed at `/overview`, so
+the landing can be reverted by pointing `/` back at it.
+
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes

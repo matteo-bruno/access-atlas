@@ -1,0 +1,138 @@
+/* The front door: the coverage map, with the words over it. */
+.aa-landing__main {
+  position: relative;
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.aa-landing__map {
+  position: absolute;
+  inset: 0;
+}
+.aa-landing__map .aa-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Held back so the copy reads, and released on the way out. */
+.aa-landing__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--paper) 90%, transparent) 0%,
+      color-mix(in srgb, var(--paper) 70%, transparent) 46%,
+      color-mix(in srgb, var(--paper) 18%, transparent) 100%
+    );
+  pointer-events: none;
+  transition: opacity 620ms ease;
+}
+
+.aa-landing__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(24px, 6vh, 72px) var(--page-pad) clamp(20px, 4vh, 40px);
+  pointer-events: none;
+  transition: opacity 620ms ease, transform 620ms ease;
+}
+/* Only the things you can act on take the pointer; the rest lets the map
+   through. */
+.aa-landing__content a,
+.aa-landing__content button {
+  pointer-events: auto;
+}
+
+.aa-landing__lead {
+  max-width: 620px;
+}
+
+.aa-landing__headline {
+  margin: 10px 0 0;
+  font-family: var(--font-serif, inherit);
+  font-size: clamp(34px, 5.2vw, 60px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.aa-landing__lede {
+  margin: 18px 0 0;
+  max-width: 560px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.62;
+}
+.aa-landing__lede strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.aa-landing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.aa-landing__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 24px 0 0;
+}
+.aa-landing__metric dt {
+  color: var(--ink-3);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.aa-landing__metric dd {
+  margin: 3px 0 0;
+  font-size: 19px;
+  color: var(--ink);
+}
+
+/* The dissolve: the words and the scrim go, the map stays and comes forward
+   — the next route opens on that same map. */
+.aa-landing--leaving .aa-landing__content {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.aa-landing--leaving .aa-landing__scrim {
+  opacity: 0;
+}
+.aa-landing--leaving .aa-nav {
+  opacity: 0;
+  transition: opacity 620ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-landing__content,
+  .aa-landing__scrim,
+  .aa-landing--leaving .aa-nav {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .aa-landing__main {
+    overflow-y: auto;
+  }
+  .aa-landing__content {
+    height: auto;
+    min-height: 100%;
+  }
+  .aa-landing__scrim {
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+  }
+  .aa-landing__metrics {
+    gap: 18px;
+  }
+}
