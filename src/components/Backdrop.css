@@ -13,17 +13,13 @@
   height: 100%;
 }
 
-/* Strong enough that text anywhere on the site stays readable: the map is a
-   suggestion under the page, not a picture the page competes with. */
+/* One veil, the same on every page and at every scroll position: densest
+   where a page's copy sits, nearly clear on the far side. The map is meant to
+   be seen — it is the site's subject, not a watermark — so nothing above it
+   is allowed to paint it out. */
 .aa-backdrop__veil {
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--paper) 90%, transparent);
-}
-
-/* On the front door the map is the point, so the veil lifts across it —
-   densest where the copy sits, nearly clear on the far side. */
-.aa-backdrop--open .aa-backdrop__veil {
   background: linear-gradient(
     100deg,
     color-mix(in srgb, var(--paper) 90%, transparent) 0%,

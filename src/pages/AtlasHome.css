@@ -14,14 +14,11 @@
   flex: none;
 }
 
-/* What scrolls over the fixed map: opaque, so the map stays behind it. */
+/* What scrolls over the fixed map. Transparent: the map has to stay visible
+   the whole way down, so the sections' own cards do the work of readability
+   rather than a sheet painted over everything. */
 .aa-landing__sheet {
   position: relative;
-  background: var(--paper);
-}
-.aa-landing .aa-footer {
-  position: relative;
-  background: var(--paper);
 }
 .aa-landing__main {
   display: flex;

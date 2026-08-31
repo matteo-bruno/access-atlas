@@ -685,6 +685,21 @@ for (const [route, name] of ROUTES) {
       seen['/atlas/milan'] === 0,
     JSON.stringify(seen),
   );
+
+  // And it is the *same* backdrop: one veil, so the map is as visible on a
+  // page of text as it is on the front door.
+  const veil = async (route) => {
+    await page.goto(BASE + route, { waitUntil: 'load' });
+    await page.waitForTimeout(1800);
+    return page.$eval('.aa-backdrop__veil', (e) => getComputedStyle(e).backgroundImage);
+  };
+  const home = await veil('/');
+  const elsewhere = await veil('/research');
+  check(
+    'The map is veiled the same everywhere',
+    home === elsewhere && home !== 'none',
+    home.slice(0, 60),
+  );
   await page.close();
 }
 

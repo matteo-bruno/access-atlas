@@ -16,20 +16,19 @@ const OWN_MAP = ['/platforms', '/atlas'];
  * draws — so the backdrop is the Atlas's own data rather than a texture that
  * resembles it.
  *
- * A veil sits over it. Strong by default, because most pages are text and the
- * map has to stay a suggestion behind them; light on the landing, where
- * showing the map *is* the point. Content above it is opaque where it needs
- * to be, so scrolling reads as a sheet moving over a fixed map.
+ * A veil sits over it — the same one on every page and at every scroll
+ * position, densest where the copy sits and nearly clear on the far side.
+ * Nothing above it paints it out: the map is the site's subject, so it is
+ * visible from the first screen to the last, and what scrolls over it is
+ * transparent between its own cards.
  */
 export function Backdrop() {
   const { pathname } = useLocation();
   const { cities } = useAllCoverage();
   if (OWN_MAP.some((prefix) => pathname.startsWith(prefix))) return null;
 
-  const landing = pathname === '/';
-
   return (
-    <div className={`aa-backdrop${landing ? ' aa-backdrop--open' : ''}`} aria-hidden="true">
+    <div className="aa-backdrop" aria-hidden="true">
       <AtlasMap fitWorldWidth center={[10, 20]} interactive={false} label="">
         <CoverageLayer cities={cities} interactive={false} />
       </AtlasMap>

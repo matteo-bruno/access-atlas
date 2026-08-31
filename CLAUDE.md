@@ -298,9 +298,12 @@ landing only leaves it a viewport of clear space and asks for a lighter veil
 (`.aa-backdrop--open`); its own content below is opaque, so scrolling reads as
 a sheet moving over a map that stays put.
 
-The veil is what makes this liveable: 90% paper by default, because most
-pages are text and the map has to stay a suggestion behind them. It lifts to
-a gradient only on the front door, where showing the map is the point.
+One veil, the same on every page and at every scroll position: a gradient,
+densest where a page's copy sits and nearly clear on the far side. Nothing
+above it may paint it out — the map is the site's subject, not a watermark, so
+what scrolls over it is transparent between its own cards and the map is as
+visible on a page of text as on the front door. If a block turns out to be
+unreadable over it, give that block a background; do not reach for the veil.
 
 The two screens that *are* a full-bleed map — `/platforms` and
 `/atlas/:cityId` — get no backdrop: a second WebGL context would draw nothing
