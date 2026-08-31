@@ -42,3 +42,17 @@ export const BANDS = {
   foot: [3, 6, 9, 12, 15, 18, 21, 24, 30],
   bicycle: [1, 2, 3, 4, 5, 6, 7, 8, 10],
 };
+
+/**
+ * A travel time as a clock reading: `m:ss`, or `mm:ss` past ten minutes.
+ *
+ * The exports carry decimal minutes — 3.99, 12.4 — which reads as a quantity
+ * rather than as a duration. Nobody says "three point nine nine minutes to
+ * the shops". The clock form is the same in both locales, so this is not
+ * routed through Intl: only the separator would differ, and it does not.
+ */
+export function formatTime(minutes) {
+  if (!Number.isFinite(minutes)) return null;
+  const seconds = Math.max(0, Math.round(minutes * 60));
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+}

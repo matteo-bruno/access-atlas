@@ -186,6 +186,26 @@ export function rampGradient(ramp) {
   return `linear-gradient(to right, ${parts.join(', ')})`;
 }
 
+/**
+ * CSS gradient for the tail a ramp keeps going into past its legend bar —
+ * 30 to 120 minutes for 15-minute city, 120 to 180 for the isochrones.
+ *
+ * The bar shows the range nearly every cell sits in; stretching it to the
+ * maximum would squash that range to nothing. The tail is drawn beside it,
+ * compressed, so the colours past the end are still on the legend instead of
+ * being described in a sentence.
+ */
+export function rampTailGradient(ramp) {
+  if (!ramp.beyond) return null;
+  const [, from] = legendRange(ramp);
+  const to = ramp.beyond.value;
+  const inside = ramp.stops.filter(([v]) => v > from && v <= to);
+  const parts = [[from, colorAt(ramp, from)], ...inside].map(
+    ([v, color]) => `${color} ${(((v - from) / (to - from || 1)) * 100).toFixed(1)}%`,
+  );
+  return `linear-gradient(to right, ${parts.join(', ')})`;
+}
+
 /** The value range a ramp's legend bar covers. */
 export function legendRange(ramp) {
   const values = ramp.stops.map(([v]) => v);

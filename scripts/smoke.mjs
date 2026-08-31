@@ -23,10 +23,11 @@ const ROUTES = [
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
   ['/platforms/accessibility-pov/compare', 'P.O.V. city comparison'],
   ['/platforms/car-dependency-index/compare', 'Car Dependency city comparison'],
-  ['/platforms/accessibility-pov/rome', 'Rome P.O.V. city page'],
-  ['/platforms/car-dependency-index/rome', 'Rome Car Dependency city page'],
-  ['/platforms/15min-city/rome', 'Rome 15min-City city page (seeded)'],
-  ['/platforms/15min-city/milan', 'Milan 15min-City city page'],
+  // One city view now. The per-platform city URLs are still in the wild, so
+  // they forward to it rather than 404.
+  ['/platforms/accessibility-pov/rome', 'Old P.O.V. city URL (forwards)'],
+  ['/atlas/rome?layer=pov', 'Rome, P.O.V. layer'],
+  ['/atlas/rome?layer=cardep', 'Rome, Car Dependency layer'],
   ['/atlas/milan', 'Milan combined viewer'],
   ['/atlas/milan?layer=citychrone&view=isochrone', 'Milan combined viewer, CityChrone isochrones'],
   ['/research', 'Research'],
@@ -124,14 +125,15 @@ for (const [route, name] of ROUTES) {
 // ── Rome mesh: computed in the worker, matching the published figures ─
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/accessibility-pov/rome`, { waitUntil: 'load' });
-  await page.waitForTimeout(4000);
+  // Rome is not on the shared grid, so the viewer swaps in P.O.V.'s own mesh
+  // rather than repainting a union one — the legacy path, still in service.
+  await page.goto(`${BASE}/atlas/rome?layer=pov`, { waitUntil: 'load' });
+  await page.waitForTimeout(4500);
 
-  const zones = await page.$$eval('.aa-zones__pct', (els) => els.map((e) => e.textContent.trim()));
+  const zones = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
-  const points = await page.$$eval('.aa-scatter circle', (els) => els.length);
 
   check(
     'Rome zone shares match published figures',
@@ -139,22 +141,18 @@ for (const [route, name] of ROUTES) {
     zones.join(' / '),
   );
   check(
-    'Rome summary matches published figures',
-    summary[0] === ROME_EXPECTED.hexagons &&
-      summary[1] === ROME_EXPECTED.proximity &&
-      summary[2] === ROME_EXPECTED.opportunity &&
-      summary[3] === ROME_EXPECTED.population,
+    'Rome reads its own published mesh',
+    summary[0] === ROME_EXPECTED.hexagons && summary.at(-1) === ROME_EXPECTED.population,
     summary.join(' | '),
   );
-  check('Rome scatter plotted', points > 400, `${points} points`);
   await page.close();
 }
 
 // ── The Car Dependency city page reads the same city, differently ────
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/car-dependency-index/rome`, { waitUntil: 'load' });
-  await page.waitForTimeout(4000);
+  await page.goto(`${BASE}/atlas/rome?layer=cardep`, { waitUntil: 'load' });
+  await page.waitForTimeout(4500);
 
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
@@ -171,8 +169,8 @@ for (const [route, name] of ROUTES) {
   // The index is signed; losing the sign would invert the reading entirely.
   check(
     'Car Dependency index keeps its sign',
-    /^[+−]/.test(summary[1]) && /^[+−]/.test(summary[2]),
-    `${summary[1]} | ${summary[2]}`,
+    /^[+−]/.test(summary[1]),
+    summary.join(' | '),
   );
   await page.close();
 }
@@ -185,16 +183,17 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(6000);
 
-  // 7,637 is the union mesh's cell count — a figure the seed data cannot
-  // produce, so its presence is provenance, not luck.
+  // The summary describes the layer on screen, not the union beneath it: the
+  // count beside a figure has to be the count that figure came from. 1,636
+  // cells over 170 km² is P.O.V.'s mask, and neither is a figure the seed
+  // data can produce — their presence is provenance, not luck.
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
-  check('Combined viewer reads the union mesh', summary[0] === '7,637', summary[0]);
   check(
-    'P.O.V. layer states its mask honestly',
-    summary[1] === '1,636',
-    summary[1],
+    'The summary states the layer’s own mask, in cells and on the ground',
+    summary[0] === '1,636' && summary[1] === '170 km²',
+    summary.join(' | '),
   );
 
   const layers = await page.$$eval('.aa-layers__row', (els) =>
@@ -289,7 +288,11 @@ for (const [route, name] of ROUTES) {
   const results = await page.$$eval('.aa-search__result', (els) => els.length);
   await page.click('.aa-search__result');
   await page.waitForTimeout(1500);
-  check('Search finds and opens Rome', results > 0 && page.url().endsWith('/rome'), page.url());
+  check(
+    'Search finds and opens Rome, on the platform’s layer',
+    results > 0 && /\/atlas\/rome\?layer=pov$/.test(page.url()),
+    page.url(),
+  );
   await page.close();
 }
 
@@ -304,30 +307,29 @@ for (const [route, name] of ROUTES) {
   const requested = [];
   page.on('request', (r) => requested.push(r.url()));
 
-  await page.goto(`${BASE}/platforms/accessibility-pov/milan`, { waitUntil: 'load' });
-  await page.waitForTimeout(2500);
+  await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
   check(
-    'The companion geometry is not fetched until it is asked for',
-    requested.filter((u) => u.includes('.geo.geojson')).length === 0,
-  );
-
-  await page.getByRole('button', { name: 'Map', exact: true }).click();
-  await page.waitForTimeout(2000);
-  const mapCaption = await page.$eval('.aa-city__caption', (e) => e.textContent);
-  check(
-    'Switching to the map loads the hexagons and says what they are',
-    requested.filter((u) => u.includes('pov/milan.geo.geojson')).length === 1 &&
-      /ground it covers/i.test(mapCaption),
-    mapCaption,
+    'The cartogram is not fetched until it is asked for',
+    requested.filter((u) => u.includes('cartogram')).length === 0,
   );
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
-  await page.waitForTimeout(800);
-  const cartoCaption = await page.$eval('.aa-city__caption', (e) => e.textContent);
+  await page.waitForTimeout(2500);
+  const pressed = await page
+    .getByRole('button', { name: 'Cartogram', exact: true })
+    .getAttribute('aria-pressed');
   check(
-    'Switching back says the area is population again',
-    /resident population/i.test(cartoCaption),
-    cartoCaption,
+    'Switching to the cartogram loads the one P.O.V. publishes',
+    requested.filter((u) => u.includes('cartogram-pov')).length === 1 && pressed === 'true',
+  );
+
+  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.waitForTimeout(800);
+  check(
+    'And back to the hexagons',
+    (await page.getByRole('button', { name: 'Map', exact: true }).getAttribute('aria-pressed')) ===
+      'true',
   );
   await page.close();
 }
@@ -343,17 +345,20 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(2000);
   await page.getByRole('button', { name: 'Car Dependency Index' }).click();
   await page.waitForTimeout(2200);
-  const caption = await page.$eval('.aa-city__caption', (e) => e.textContent);
 
   // No layer reuses another's cartogram: the two published ones disagree by
   // up to 9.6 m on cells they share, and the derived ones are per platform
-  // too. Switching layer in cartogram view therefore fetches a second file.
+  // too. Switching layer in cartogram view therefore fetches a second file,
+  // and the choice survives the switch.
+  const stillCartogram = await page
+    .getByRole('button', { name: 'Cartogram', exact: true })
+    .getAttribute('aria-pressed');
   check(
     'The combined viewer switches geometry per layer',
-    /resident population/i.test(caption) &&
+    stillCartogram === 'true' &&
       requested.filter((u) => u.includes('cartogram-fifteen')).length === 1 &&
       requested.filter((u) => u.includes('cartogram-cardep')).length === 1,
-    caption,
+    requested.filter((u) => u.includes('cartogram-')).map((u) => u.split('/').pop()).join(' '),
   );
   await page.close();
 }
@@ -387,9 +392,7 @@ for (const [route, name] of ROUTES) {
     (await page.locator('.aa-catbars__row').count()) === 10,
   );
 
-  await page.locator('.aa-explain__btn').first().click();
-  await page.waitForTimeout(300);
-  await page.getByRole('button', { name: /Full explanation/ }).first().click();
+  await page.getByRole('button', { name: /About this layer/ }).click();
   await page.waitForTimeout(500);
   const modal = (await page.locator('.aa-modal__body').innerText()).toLowerCase();
   await page.keyboard.press('Escape');
@@ -406,17 +409,17 @@ for (const [route, name] of ROUTES) {
 
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/15min-city/milan`, { waitUntil: 'load' });
+  const requested15 = [];
+  page.on('request', (r) => requested15.push(r.url()));
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2500);
-  const caption = await page.$eval('.aa-city__caption', (e) => e.textContent);
-  // The platform publishes no cartogram; this one is the Atlas's own, and the
-  // page has to be able to draw it as well as say so.
+  // 15-minute city publishes no cartogram; this one is the Atlas's own, and
+  // the viewer has to draw it as readily as a published one.
   check(
     '15-minute city can be drawn as a cartogram too',
-    /resident population/i.test(caption),
-    caption,
+    requested15.filter((u) => u.includes('cartogram-fifteen')).length === 1,
   );
   await page.close();
 }
@@ -478,16 +481,15 @@ for (const [route, name] of ROUTES) {
 // of the city it left rather than silently shrinking the map.
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/car-dependency-index/milan`, { waitUntil: 'load' });
-  await page.waitForTimeout(2600);
+  await page.goto(`${BASE}/atlas/milan?layer=cardep`, { waitUntil: 'load' });
+  await page.waitForTimeout(3200);
 
-  // Dots overlap at this size, so whichever is on top takes the click — any
-  // of them proves the wiring.
-  await page.locator('.aa-scatter__dot').nth(40).click({ force: true });
-  await page.waitForTimeout(400);
+  const cell = await page.locator('canvas').boundingBox();
+  await page.mouse.click(cell.x + cell.width / 2, cell.y + cell.height / 2);
+  await page.waitForTimeout(700);
   const rows = (await page.locator('.aa-inspector__rows .aa-summary__row').allInnerTexts()).join(' ');
   check(
-    'A scatter point inspects its cell',
+    'A click inspects the cell under it',
     /Car Dependency Index/.test(rows) && /Reachable by car/.test(rows) && /Residents/.test(rows),
     rows.replace(/\s+/g, ' ').slice(0, 90),
   );
@@ -497,13 +499,10 @@ for (const [route, name] of ROUTES) {
   await page.locator('.aa-range__input').nth(1).focus();
   for (let i = 0; i < 80; i++) await page.keyboard.press('ArrowLeft');
   await page.waitForTimeout(400);
-  const showing = await page.locator('.aa-city__hint').last().innerText();
-  const left = Number((showing.match(/^([\d,]+)/) || [])[1]?.replace(/,/g, ''));
-  check(
-    'The index filter reports the slice it kept',
-    left > 0 && left < 1741,
-    showing,
-  );
+  // The filter dims rather than removes, so the slice is read off the map by
+  // the paint expression. What is checked here is that the control engages:
+  // the reset appears only once something is filtered out.
+  check('The index filter engages', (await page.locator('.aa-range__reset').count()) === 1);
   await page.close();
 }
 
@@ -538,16 +537,35 @@ for (const [route, name] of ROUTES) {
 // and the two upstream viewers both say "median" alone.
 {
   const page = await context.newPage();
-  await page.goto(`${BASE}/platforms/accessibility-pov/milan`, { waitUntil: 'load' });
-  await page.waitForTimeout(2500);
-  const count = await page.locator('.aa-explain__btn').count();
-  for (let i = 0; i < count; i++) await page.locator('.aa-explain__btn').nth(i).click();
+  await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
+
+  // A tooltip follows the pointer's intent: it arrives on hover and leaves
+  // with it, so reading one costs nothing and dismissing it is not a second
+  // decision.
+  await page.locator('.aa-explain__btn').first().hover();
   await page.waitForTimeout(400);
-  const text = (await page.locator('.aa-explain__body').allInnerTexts()).join(' ');
+  const tip = await page.locator('.aa-explain__tip').innerText();
+  await page.mouse.move(10, 10);
+  await page.waitForTimeout(400);
   check(
-    'Every panel explains itself, and says the thresholds are weighted',
-    count >= 4 && /population-weighted median/.test(text) && /Connection Scan/.test(text),
-    `${count} panels`,
+    'A legend explains itself on hover, and stops when the pointer leaves',
+    /population-weighted median/.test(tip) &&
+      (await page.locator('.aa-explain__tip').count()) === 0,
+    tip.replace(/\s+/g, ' ').slice(0, 70),
+  );
+
+  // The long form is one click from the header, not four around the panel.
+  await page.getByRole('button', { name: /About this layer/ }).click();
+  await page.waitForTimeout(500);
+  const modal = (await page.locator('.aa-modal__body').innerText()).toLowerCase();
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  check(
+    'About this layer opens the full account, and states the method',
+    /reading the map/.test(modal) &&
+      /connection scan/.test(modal) &&
+      (await page.locator('.aa-modal').count()) === 0,
   );
   await page.close();
 }
@@ -568,8 +586,8 @@ for (const [route, name] of ROUTES) {
   for (const route of [
     '/platforms/car-dependency-index/compare',
     '/platforms/accessibility-pov/compare',
-    '/platforms/accessibility-pov/milan',
     '/atlas/milan',
+    '/atlas/rome?layer=pov',
   ]) {
     const page = await phone.newPage();
     await page.goto(BASE + route, { waitUntil: 'load' });

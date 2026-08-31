@@ -1,4 +1,4 @@
-import { CATEGORIES, BANDS, measureKey } from '../data/fifteen.js';
+import { CATEGORIES, BANDS, formatTime, measureKey } from '../data/fifteen.js';
 import { RAMPS, colorAt } from '../map/ramps.js';
 import { useI18n } from '../i18n/index.jsx';
 import './CategoryBars.css';
@@ -54,7 +54,7 @@ export function CategoryBars({ properties, mode }) {
             )}
           </span>
           <span className="aa-mono aa-catbars__value">
-            {Number.isFinite(row.value) ? n(row.value, { maximumFractionDigits: 1 }) : '—'}
+            {Number.isFinite(row.value) ? formatTime(row.value) : '—'}
           </span>
         </div>
       ))}

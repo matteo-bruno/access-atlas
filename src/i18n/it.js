@@ -136,6 +136,14 @@ export default {
     },
   },
 
+  // Termini della mappa di base. OpenFreeMap serve le tile senza chiave e
+  // chiede di essere citata insieme a OpenMapTiles e OpenStreetMap; senza di
+  // loro la mappa non esiste, quindi il credito sta sulla mappa.
+  map: {
+    attribution:
+      'Mappa di base © OpenFreeMap · tile vettoriali © OpenMapTiles · dati © contributori di OpenStreetMap',
+  },
+
   platform: {
     search: 'Cerca la tua città…',
     searchHint: '⌘K',
@@ -206,7 +214,7 @@ export default {
     // Le dieci categorie della cella selezionata, tutte insieme.
     barsTitle: 'Tutte le categorie, da questa cella',
     barsAxis: 'Le barre arrivano a {max} {unit}; oltre, la riempiono.',
-    legendValue: 'Minuti per raggiungere',
+    legendValue: 'Tempo di prossimità',
     statusHint:
       'Scegli modo e categoria · passa su una fascia della legenda per isolarla · scorri e trascina per navigare',
     controls: {
@@ -242,6 +250,10 @@ export default {
       opacity: 'Opacità del livello',
     },
     info: 'Su questo livello',
+    hidePanel: 'Nascondi controlli',
+    showPanel: 'Controlli',
+    fullscreen: 'Schermo intero',
+    exitFullscreen: 'Esci da schermo intero',
     population: {
       name: 'Popolazione',
       legend: 'Residenti per cella',
@@ -312,6 +324,7 @@ export default {
     summary: {
       title: 'Sintesi della città',
       hexagons: 'Celle',
+      area: 'Area coperta',
       proximity: 'Punteggio mediano di prossimità',
       medianCdi: 'CDI mediano (per cella)',
       weightedCdi: 'CDI per il residente medio',
@@ -363,11 +376,6 @@ export default {
         cardep: 'Blu dove il trasporto pubblico raggiunge più opportunità dell’auto, bianco dove le due si equivalgono, rosso dove l’auto ne raggiunge di più. La scala è fissa per tutte le città invece di essere adattata a ciascuna, così lo stesso colore è lo stesso indice ovunque: una città non viene mai ricolorata per riempire la tavolozza.',
         fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala serve tutte e dieci le categorie e entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
       },
-      scatter: {
-        pov: 'Ogni punto è una cella: opportunità sull’asse x, prossimità sull’asse y. Le linee tratteggiate sono le mediane cittadine pesate per popolazione — le stesse soglie che assegnano i colori — quindi i quattro quadranti sono le quattro zone. Passa il mouse su un punto per evidenziarne la cella sulla mappa.',
-        cardep: 'Ogni punto è una cella: quanto raggiunge l’auto sull’asse x, quanto raggiunge il trasporto pubblico sull’asse y. La diagonale è CDI = 0, dove i due raggiungono la stessa quantità: i punti sotto sono dipendenti dall’auto, quelli sopra favorevoli al trasporto pubblico. I due assi condividono una sola scala, ed è questo a dare significato alla diagonale. Passa il mouse su un punto per evidenziarne la cella sulla mappa.',
-        sampled: 'Le città con più celle di quante il grafico possa distinguere sono campionate in modo uniforme: la forma è quella di tutte le celle, i punti no.',
-      },
       summary: {
         pov: 'Celle conta quelle coperte dal dataset pubblicato. Ogni mediana è il punteggio della cella di mezzo — conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuna delle due porta un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale della città.',
         cardep: 'Il CDI mediano è l’indice della cella di mezzo. Il CDI per il residente medio pesa ogni cella per le persone che ci vivono, ed è il valore con cui la piattaforma ordina le città: metà delle celle di una città può essere dipendente dall’auto mentre la maggior parte dei residenti vive nell’altra metà.',
@@ -375,13 +383,14 @@ export default {
         atlas: 'I valori sono ricalcolati per il layer a schermo. Celle è la maglia unione — ogni cella misurata da almeno una piattaforma — quindi un layer che ne copre meno lo dichiara in una riga a parte.',
       },
       more: 'Spiegazione completa',
+      platformSite: 'Il sito di {name}',
       aboutTitle: 'Che cos’è {name}',
       sections: {
         measure: 'Che cosa misura',
         map: 'Leggere la mappa',
-        scatter: 'Leggere il grafico',
         geometry: 'Le due geometrie',
         summary: 'I valori nel pannello',
+        source: 'Da dove viene',
       },
       methodsTitle: 'Dati e metodi',
       methods: {

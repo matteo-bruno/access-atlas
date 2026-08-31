@@ -112,6 +112,14 @@ an `atlas` catalogue entry loads one union mesh and repaints; a city without
 one swaps per-platform meshes. Do not assume one city implies one mesh; ask
 the catalogue.
 
+**There is one city view, and it is that page.** The per-platform city pages
+were removed: everything they did, the combined viewer does on any published
+city, and keeping four screens meant four places for the same measure to be
+described differently. `/platforms/:slug/:cityId` still resolves — it
+redirects to `/atlas/:cityId?layer=<platform>` — and `/platforms/:slug/compare`
+is untouched. The cell-level scatter went with those pages; the compare
+view's city-level scatter did not.
+
 A practical check when new data arrives: map both platforms' cell centroids to
 H3 at the claimed resolution and compare the sets (`build-atlas.mjs` does this
 with a hard 10 m tolerance). Above ~99% overlap of the tighter mask means one
@@ -143,8 +151,11 @@ readable:
   all ten categories and both modes for the same reason.
 
 The 15minCity ramp is centred on white at 15 minutes and keeps darkening past
-30 to black at 120; the legend bar stops at 30 and *names* the tail, because
-stretching it to 120 squashes the range nearly every cell sits in.
+30 to black at 120. The legend bar stops at 30 and draws the rest as a
+**compressed tail** beside it — a quarter of the width for four times the
+range, labelled `… 120+`. Stretching the bar to 120 squashes the range nearly
+every cell sits in; leaving the tail off puts colours on the map that are
+nowhere on the legend. The isochrone ramp does the same past 120.
 
 ## Facts that are easy to get wrong
 
@@ -254,13 +265,47 @@ Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
 
 ## Explaining the measures
 
-Anything a reader could misread carries an `Explain` — a "?" beside a heading
-that opens its explanation in the flow underneath, on click (not hover, which
-does not survive a touch screen) and below rather than over the map. The copy
-lives under `city.explain.*` and was ported from the two upstream viewers,
-**minus two claims of theirs that are wrong here**: CDI calls its cartogram a
-Dorling one, and P.O.V. calls its thresholds plain medians when they are
-population-weighted. Do not re-import either when adding copy from upstream.
+Two levels, and the split matters. Anything a reader could misread carries an
+`Explain` — a "?" that shows a **tooltip** on hover or focus and drops it when
+the pointer leaves, so reading one costs nothing and dismissing it is not a
+second decision. The long form — what the platform measures, how its colours
+read, the two geometries, the panel's figures, the method, the sources — is
+one dialog behind "about this layer" (`PlatformAbout`), never a growing block
+in the panel. Both draw on the same `city.explain.*` copy, so a tooltip and
+the dialog cannot say different things, and the dialog's colour key is the
+same `RampLegend` the map uses.
+
+The copy was ported from the two upstream viewers, **minus two claims of
+theirs that are wrong here**: CDI calls its cartogram a Dorling one, and
+P.O.V. calls its thresholds plain medians when they are population-weighted.
+Do not re-import either when adding copy from upstream.
+
+## The map is the page
+
+The city view is a full-bleed map with a controls column and floating boxes
+(`MapBox`) in its corners: the geometry switch and the panel toggle top left,
+the city summary and the selected cell top right, opacity bottom left, full
+screen bottom right. Full screen hides the chrome and keeps the column, and
+Escape leaves it.
+
+Two things that are easy to get wrong here:
+
+- **The summary describes the layer, not the mesh.** Its cell count and area
+  are the layer's own mask — 1,636 cells over 170 km² for Milan's P.O.V., not
+  the union's 7,637 — because the count beside a figure has to be the count
+  that figure came from. Area comes from `meshFromAtlas`, measured on the
+  union mesh's true hexagons, and is omitted for a legacy city whose mesh is a
+  cartogram: a cartogram's polygons are a population, not a place.
+- **The basemap's terms are on the map.** OpenFreeMap serves the tiles
+  keylessly and asks to be credited with OpenMapTiles and OpenStreetMap
+  (`map.attribution`), which is why that line replaced the H3 caption rather
+  than joining it.
+
+15-minute city's times are shown as a clock — `formatTime`, `m:ss` or `mm:ss`
+— everywhere a reader meets one: the map's tooltip, the inspector, the bars.
+Decimal minutes read as a quantity; nobody says "three point nine nine
+minutes to the shops". The legend keeps plain numbers, because it is a scale
+rather than a reading.
 
 ## Copy and i18n
 

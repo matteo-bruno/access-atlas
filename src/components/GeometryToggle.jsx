@@ -22,6 +22,8 @@ import './GeometryToggle.css';
  *        said rather than glossed
  * @param {string}  [props.missingName]  who publishes no cartogram, for the copy
  * @param {boolean} [props.loading]      the other geometry is in flight
+ * @param {boolean} [props.compact]      floating on the map rather than in a
+ *        panel: the two buttons on one line, the explanation on the "?"
  */
 export function GeometryToggle({
   value,
@@ -30,6 +32,7 @@ export function GeometryToggle({
   derived = false,
   missingName,
   loading = false,
+  compact = false,
 }) {
   const { t } = useI18n();
 
@@ -39,8 +42,8 @@ export function GeometryToggle({
   ];
 
   return (
-    <div className="aa-geometry">
-      <Explain label={t('city.geometry.label')}>
+    <div className={`aa-geometry${compact ? ' aa-geometry--compact' : ''}`}>
+      <Explain label={compact ? undefined : t('city.geometry.label')}>
         <p>{t(`city.geometry.about.${value === 'cartogram' ? 'cartogram' : 'map'}`)}</p>
         {available.cartogram && derived && missingName && (
           <p>{t('city.geometry.about.derived', { name: missingName })}</p>
@@ -61,7 +64,7 @@ export function GeometryToggle({
             onClick={() => onChange(option.key)}
           >
             {option.label}
-            {!option.enabled && (
+            {!option.enabled && !compact && (
               <span className="aa-geometry__off">{t('city.geometry.unavailable')}</span>
             )}
           </button>

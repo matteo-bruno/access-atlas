@@ -1,64 +1,68 @@
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import './Explain.css';
 
 /**
- * A heading with a "?" that opens a short explanation in place.
+ * A "?" beside a heading that shows its explanation as a tooltip.
  *
- * Both upstream viewers put one of these next to anything a reader could
- * misread — a legend, an axis, a summary figure — and open them on *click*
- * rather than hover, so the text stays put long enough to read and works on a
- * touch screen. The explanation sits in the flow underneath rather than
- * floating over the map, so opening one never covers what it describes.
+ * The tooltip follows the pointer's intent rather than a click: it appears on
+ * hover or focus and leaves when the pointer does, so reading one costs
+ * nothing and dismissing it is not a second decision. It stays while the
+ * pointer is over the tooltip itself, which is what makes a link inside one
+ * reachable. Escape closes it for the keyboard.
  *
- * The short text answers the question in front of the reader; anything longer
- * belongs behind "more info", which opens the full account in a dialog rather
- * than pushing the map off the screen.
+ * The long form is not here — it is behind the page's "about" dialog, so a
+ * tooltip never has to be big enough to hold an argument.
  *
- * @param {string} [props.label]     heading text; omitted for a bare "?"
- * @param {string} [props.body]      the explanation, or pass children
- * @param {Function} [props.onMore]  opens the long form
- * @param {boolean} [props.open]     open on first render
+ * @param {string} [props.label]   heading text; omitted for a bare "?"
+ * @param {string} [props.body]    the explanation, or pass children
+ * @param {'left'|'right'} [props.align]  which edge the tooltip hangs from
  */
-export function Explain({
-  label,
-  body,
-  children,
-  onMore,
-  moreLabel,
-  defaultOpen = false,
-  className = '',
-}) {
-  const [open, setOpen] = useState(defaultOpen);
+export function Explain({ label, body, children, align = 'left', className = '' }) {
+  const [open, setOpen] = useState(false);
   const id = useId();
   const content = children ?? body;
+  // A pointer crossing the gap between button and tooltip should not close it,
+  // so the whole wrapper owns the hover rather than the button alone.
+  const wrapRef = useRef(null);
 
   return (
     <div className={`aa-explain ${className}`.trim()}>
       <div className={`aa-explain__head${label ? ' aa-eyebrow' : ''}`}>
         {label && <span>{label}</span>}
-        <button
-          type="button"
-          className={`aa-explain__btn${open ? ' aa-explain__btn--open' : ''}`}
-          aria-expanded={open}
-          aria-controls={id}
-          // The visible glyph carries no meaning to a screen reader, and
-          // "?" alone would not say what is being explained.
-          aria-label={label ? `${label} — ?` : '?'}
-          onClick={() => setOpen((current) => !current)}
+        <span
+          className="aa-explain__wrap"
+          ref={wrapRef}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
         >
-          ?
-        </button>
-      </div>
-      {open && (
-        <div className="aa-explain__body" id={id} role="note">
-          {typeof content === 'string' ? <p>{content}</p> : content}
-          {onMore && (
-            <button type="button" className="aa-explain__more" onClick={onMore}>
-              {moreLabel} →
-            </button>
+          <button
+            type="button"
+            className={`aa-explain__btn${open ? ' aa-explain__btn--open' : ''}`}
+            aria-expanded={open}
+            aria-describedby={open ? id : undefined}
+            // The glyph says nothing to a screen reader, and "?" alone would
+            // not say what is being explained.
+            aria-label={label ? `${label} — ?` : '?'}
+            onFocus={() => setOpen(true)}
+            onBlur={() => setOpen(false)}
+            onClick={() => setOpen((current) => !current)}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') setOpen(false);
+            }}
+          >
+            ?
+          </button>
+          {open && content && (
+            <span
+              className={`aa-explain__tip aa-explain__tip--${align}`}
+              id={id}
+              role="tooltip"
+            >
+              {typeof content === 'string' ? <span>{content}</span> : content}
+            </span>
           )}
-        </div>
-      )}
+        </span>
+      </div>
     </div>
   );
 }

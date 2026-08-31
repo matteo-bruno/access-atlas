@@ -76,31 +76,14 @@ function PlatformScreen({ platform }) {
   }, []);
 
   const openCity = (city) => {
-    // On the all-platforms map the combined viewer is the natural destination
-    // — it is the view that shows every lens this city has.
-    if (!platform) {
-      if (atlasCityIds.has(city.id)) {
-        navigate(`/atlas/${city.id}`);
-        return;
-      }
-      const covering = PLATFORMS.find(
-        (p) => p.hasCityPages && (city.platforms ?? []).includes(p.id),
-      );
-      if (covering) {
-        navigate(`/platforms/${covering.slug}/${city.id}`);
-        return;
-      }
-    } else {
-      if (platform.hasCityPages && cityPageIds.has(city.id)) {
-        navigate(`/platforms/${platform.slug}/${city.id}`);
-        return;
-      }
-      // A platform without its own city pages (CityChrone) opens the combined
-      // viewer on its layer when the city is in the atlas.
-      if (atlasCityIds.has(city.id)) {
-        navigate(`/atlas/${city.id}?layer=${platform.id}`);
-        return;
-      }
+    // One city view, whichever map you came from: the combined viewer, opened
+    // on this platform's layer. It draws a harmonised city from one union
+    // mesh and a legacy one by swapping per-platform meshes, so it works for
+    // every published city — there is nothing left for a per-platform page to
+    // do that this does not.
+    if (atlasCityIds.has(city.id) || cityPageIds.has(city.id)) {
+      navigate(platform ? `/atlas/${city.id}?layer=${platform.id}` : `/atlas/${city.id}`);
+      return;
     }
     mapRef.current?.flyTo({ center: [city.lon, city.lat], zoom: 6, duration: 900 });
   };

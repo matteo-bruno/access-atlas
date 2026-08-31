@@ -133,3 +133,81 @@
   pointer-events: none;
   z-index: 3;
 }
+
+/* ── The map is the page ──────────────────────────────────────────── */
+/* Two columns, not three: the combined viewer has no chart beside the map,
+   and the map takes whatever the panel is not using. */
+.aa-atlas .aa-city {
+  grid-template-columns: 260px 1fr;
+}
+/* With the panel hidden — and in full screen — the map is the whole width. */
+.aa-atlas--nopanel .aa-city {
+  grid-template-columns: 1fr;
+}
+.aa-atlas .aa-city__cartogram {
+  padding: 12px;
+}
+.aa-atlas .aa-city__canvas {
+  margin-top: 0;
+}
+/* Full screen keeps the panel, so the controls stay reachable; everything
+   that is chrome is gone rather than smaller. */
+.aa-atlas--full .aa-city__cartogram {
+  padding: 0;
+}
+.aa-atlas--full .aa-city__canvas {
+  border: 0;
+  border-radius: 0;
+}
+
+/* The basemap's terms sit on the map, clear of the boxes in the corners. */
+.aa-atlas .aa-city__caption {
+  right: 14px;
+  left: 14px;
+  bottom: 8px;
+  font-size: 10.5px;
+  font-style: normal;
+  text-align: center;
+}
+
+/* Opacity is a slider and a number, on one line, in the smallest box that
+   holds them. */
+.aa-mapbox--opacity {
+  min-width: 150px;
+}
+.aa-mapbox--opacity .aa-opacity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.aa-mapbox--opacity .aa-opacity__input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The selected-cell box carries a bar chart; it needs more room than the
+   summary beside it, and its own scroll when a cell has ten categories. */
+.aa-mapui--tr .aa-mapbox {
+  width: 296px;
+}
+.aa-inspector--bare {
+  margin-top: 0;
+}
+
+@media (max-width: 1080px) {
+  /* Stacked layout: the boxes would cover a map that is now only 320px tall,
+     so they go back to being blocks under it. */
+  .aa-atlas .aa-city,
+  .aa-atlas--nopanel .aa-city {
+    grid-template-columns: 1fr;
+  }
+  .aa-mapui {
+    position: static;
+    max-width: none;
+    margin-top: 8px;
+  }
+  .aa-mapui--tr .aa-mapbox {
+    width: auto;
+  }
+}

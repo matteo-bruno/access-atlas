@@ -1,8 +1,25 @@
-/* Continuous colour ramp legend: the gradient, its tick labels, and an
-   optional note for a tail the bar does not show. */
+/* Continuous colour ramp legend: the gradient, its tick labels, and — where
+   the ramp keeps going past the bar — a compressed tail beside it. */
 
 .aa-ramp {
   margin: 6px 0 16px;
+}
+
+/* The tail is a quarter of the width for four times the range: the break in
+   scale is deliberate, and the gap between the two bars is what shows it. */
+.aa-ramp__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.aa-ramp__seg {
+  flex: 3.4;
+  min-width: 0;
+}
+
+.aa-ramp__seg--tail {
+  flex: 1;
 }
 
 .aa-ramp__bar {
@@ -25,11 +42,7 @@
   white-space: nowrap;
 }
 
-.aa-ramp__beyond {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 8px;
-  font-size: 11.5px;
-  color: var(--ink-3);
+.aa-ramp__tick--break {
+  left: 0;
+  color: var(--ink-4);
 }

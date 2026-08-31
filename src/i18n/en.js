@@ -143,6 +143,14 @@ export default {
     },
   },
 
+  // Basemap terms. OpenFreeMap serves the tiles keylessly and asks to be
+  // credited alongside OpenMapTiles and OpenStreetMap; the map is unusable
+  // without them, so the credit is on the map rather than in a colophon.
+  map: {
+    attribution:
+      'Basemap © OpenFreeMap · vector tiles © OpenMapTiles · map data © OpenStreetMap contributors',
+  },
+
   platform: {
     search: 'Search your city…',
     searchHint: '⌘K',
@@ -208,7 +216,7 @@ export default {
     // The selected cell's ten categories at once, as bars.
     barsTitle: 'Every category, from this cell',
     barsAxis: 'Bars run to {max} {unit}; anything longer fills the bar.',
-    legendValue: 'Minutes to reach',
+    legendValue: 'Proximity time',
     statusHint:
       'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
     controls: {
@@ -244,6 +252,10 @@ export default {
       opacity: 'Layer opacity',
     },
     info: 'About this layer',
+    hidePanel: 'Hide controls',
+    showPanel: 'Controls',
+    fullscreen: 'Full screen',
+    exitFullscreen: 'Exit full screen',
     population: {
       name: 'Population',
       legend: 'Residents per cell',
@@ -313,6 +325,7 @@ export default {
     summary: {
       title: 'City summary',
       hexagons: 'Cells',
+      area: 'Area covered',
       proximity: 'Median proximity score',
       medianCdi: 'Median CDI (per cell)',
       weightedCdi: 'CDI for the average resident',
@@ -364,11 +377,6 @@ export default {
         cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
         fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all ten categories and both modes, so a colour means the same thing whatever is selected.',
       },
-      scatter: {
-        pov: 'Each dot is a cell: opportunity along the x-axis, proximity up the y. The dashed lines are the city’s population-weighted medians — the same thresholds that assign the colours — so the four quadrants are the four zones. Hover a dot to highlight its cell on the map.',
-        cardep: 'Each dot is a cell: what a car reaches along the x-axis, what public transport reaches up the y. The diagonal is CDI = 0, where the two reach the same amount — dots below it are car-dependent, above it transit-favoured. Both axes share one scale, which is what makes that diagonal mean anything. Hover a dot to highlight its cell on the map.',
-        sampled: 'Cities with more cells than the plot can separate are sampled evenly, so the shape is every cell’s but the dots are not.',
-      },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the middle cell’s score — weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
         cardep: 'Median CDI is the middle cell’s index. CDI for the average resident weights every cell by the people living in it, and is the figure the platform ranks cities on — half a city’s cells can be car-dependent while most of its residents live in the other half.',
@@ -376,13 +384,14 @@ export default {
         atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
       },
       more: 'Full explanation',
+      platformSite: 'The {name} site',
       aboutTitle: 'About {name}',
       sections: {
         measure: 'What it measures',
         map: 'Reading the map',
-        scatter: 'Reading the plot',
         geometry: 'The two geometries',
         summary: 'The figures in the panel',
+        source: 'Where this comes from',
       },
       methodsTitle: 'Data & methods',
       methods: {

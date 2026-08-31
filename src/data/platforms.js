@@ -27,7 +27,6 @@ export const PLATFORMS = [
     previewCity: 'milan',
     cityCount: 1,
     published: true,
-    hasCityPages: true,
     // Diverging scale: cool = close, warm = far. Index i covers stops[i].
     scale: [
       '#3b6e8f',
@@ -90,7 +89,6 @@ export const PLATFORMS = [
     markerStyle: 'ring',
     coversAllCities: false,
     studyOnly: true,
-    hasCityPages: true,
   },
   {
     id: 'pov',
@@ -111,7 +109,6 @@ export const PLATFORMS = [
     markerStyle: 'ring',
     coversAllCities: false,
     studyOnly: true,
-    hasCityPages: true,
   },
 ];
 

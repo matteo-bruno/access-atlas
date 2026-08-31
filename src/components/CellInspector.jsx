@@ -14,19 +14,22 @@ import './CellInspector.css';
  * @param {string} props.empty                 prompt shown with no selection
  * @param {{label: string, value: string, accent?: string}[]} [props.rows]
  * @param {React.ReactNode} [props.children]  extra detail under the rows
+ * @param {boolean} [props.bare]  omit the heading — the container has one
  * @param {() => void} [props.onClear]
  */
-export function CellInspector({ title, empty, rows, clearLabel, onClear, children }) {
+export function CellInspector({ title, empty, rows, clearLabel, onClear, children, bare = false }) {
   return (
-    <div className="aa-inspector">
-      <div className="aa-inspector__head">
-        <Eyebrow>{title}</Eyebrow>
-        {rows && onClear && (
-          <button type="button" className="aa-inspector__clear" onClick={onClear}>
-            {clearLabel}
-          </button>
-        )}
-      </div>
+    <div className={`aa-inspector${bare ? ' aa-inspector--bare' : ''}`}>
+      {!bare && (
+        <div className="aa-inspector__head">
+          <Eyebrow>{title}</Eyebrow>
+          {rows && onClear && (
+            <button type="button" className="aa-inspector__clear" onClick={onClear}>
+              {clearLabel}
+            </button>
+          )}
+        </div>
+      )}
       {rows ? (
         <>
           <dl className="aa-summary aa-inspector__rows">

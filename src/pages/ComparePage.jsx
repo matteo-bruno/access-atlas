@@ -62,7 +62,7 @@ function CompareScreen({ platform, summary }) {
     ? ['weightedCdi', 'medianCdi', 'ptShare', 'population', 'name']
     : ['inclusion', 'proximity', 'opportunity', 'population', 'name'];
 
-  const cityHref = (row) => `/platforms/${platform.slug}/${row.id}`;
+  const cityHref = (row) => `/atlas/${row.id}?layer=${platform.id}`;
 
   if (summary.status === 'pending') {
     return (

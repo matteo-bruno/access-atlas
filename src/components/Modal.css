@@ -73,3 +73,31 @@
 .aa-modal__body a {
   color: var(--ink);
 }
+
+/* What the platform is, before what it measures. */
+.aa-about__lede {
+  margin: 0 0 4px;
+  padding-left: 10px;
+  border-left: 3px solid var(--hair);
+  color: var(--ink);
+  font-size: 14px;
+}
+.aa-modal__body .aa-ramp {
+  margin: 10px 0 4px;
+}
+.aa-about__zones {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.aa-about__zones li {
+  display: grid;
+  grid-template-columns: 12px 128px 1fr;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+}
+.aa-about__zones strong {
+  color: var(--ink);
+  font-weight: 600;
+}

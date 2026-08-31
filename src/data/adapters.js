@@ -368,6 +368,36 @@ export function summariseMeasure(collection, key, bands) {
  *   fifteen  `<category>_<mode>` in minutes (summarised at runtime)
  *   citychrone `cc` — row index into the hourly hexcover/times files
  */
+/**
+ * Ground area of a polygon in square kilometres.
+ *
+ * Only meaningful on true geography: a cartogram's polygons are scaled by
+ * population, so their area is a population and not a place. Callers pass
+ * geographic meshes only.
+ */
+function polygonAreaKm2(geometry) {
+  const rings = geometry?.type === 'Polygon' ? geometry.coordinates : null;
+  if (!rings?.length) return 0;
+  let ring = rings[0];
+  let end = ring.length;
+  while (end > 1 && ring[end - 1][0] === ring[0][0] && ring[end - 1][1] === ring[0][1]) end--;
+  ring = ring.slice(0, end);
+  if (ring.length < 3) return 0;
+
+  // Equirectangular about the ring's own latitude: at a 200 m cell the
+  // distortion is far below the precision anything downstream shows.
+  const lat = ring.reduce((sum, [, y]) => sum + y, 0) / ring.length;
+  const kx = 111.32 * Math.cos((lat * Math.PI) / 180);
+  const ky = 110.57;
+  let sum = 0;
+  for (let i = 0; i < ring.length; i++) {
+    const [x1, y1] = ring[i];
+    const [x2, y2] = ring[(i + 1) % ring.length];
+    sum += x1 * kx * (y2 * ky) - x2 * kx * (y1 * ky);
+  }
+  return Math.abs(sum) / 2;
+}
+
 export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0.3, 1]) {
   const features = collection?.features;
   if (!Array.isArray(features) || features.length === 0) {
@@ -389,6 +419,9 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
   let fifteenCells = 0;
   let citychroneCells = 0;
   let population = 0;
+  // Area is per layer, because the layers cover different masks — the figure
+  // beside a layer's cell count has to be the area of those cells.
+  const area = { pov: 0, cardep: 0, fifteen: 0, citychrone: 0, all: 0 };
   const ccToId = new Map();
 
   const withIds = features.map((feature, i) => {
@@ -396,10 +429,16 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
     const pop = Number(p.population) || 0;
     population += pop;
 
+    // The union mesh is drawn in true geography, so its polygons are the
+    // cells themselves and their area is the ground they cover.
+    const cellArea = polygonAreaKm2(feature.geometry);
+    area.all += cellArea;
+
     if (Number.isFinite(p.zone)) {
       if (p.zone < 0 || p.zone > 3) throw new AdapterError(`Cell ${i} has zone ${p.zone}`);
       zoneCounts[p.zone]++;
       povCells++;
+      area.pov += cellArea;
     }
     if (Number.isFinite(p.cdi)) {
       if (p.cdi < -1 || p.cdi > 1) throw new AdapterError(`Cell ${i} has CDI ${p.cdi}`);
@@ -408,11 +447,16 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
       cdiPopulation += pop;
       cdiWeightedSum += p.cdi * pop;
       cardepCells++;
+      area.cardep += cellArea;
     }
-    if (Number.isFinite(p.proximity_time_foot)) fifteenCells++;
+    if (Number.isFinite(p.proximity_time_foot)) {
+      fifteenCells++;
+      area.fifteen += cellArea;
+    }
     if (Number.isFinite(p.cc)) {
       ccToId.set(p.cc, i);
       citychroneCells++;
+      area.citychrone += cellArea;
     }
 
     // The page filters highlights and applies feature-state by feature id, so
@@ -430,15 +474,18 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
       cellRadiusM: profile.cell?.cellRadiusM ?? null,
       h3Resolution: profile.cell?.h3Resolution ?? null,
       population: population || null,
+      areaKm2: Math.round(area.all),
     },
     layers: {
       pov: {
         cells: povCells,
+        areaKm2: Math.round(area.pov),
         zoneShares: share(zoneCounts, povCells),
         zoneCounts,
       },
       cardep: {
         cells: cardepCells,
+        areaKm2: Math.round(area.cardep),
         zoneShares: share(cdiCounts, cardepCells),
         zoneCounts: cdiCounts,
         medianCdi: cdiValues.length ? Math.round(median(cdiValues) * 1000) / 1000 : null,
@@ -446,8 +493,8 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
           ? Math.round((cdiWeightedSum / cdiPopulation) * 1000) / 1000
           : null,
       },
-      fifteen: { cells: fifteenCells },
-      citychrone: { cells: citychroneCells, ccToId },
+      fifteen: { cells: fifteenCells, areaKm2: Math.round(area.fifteen) },
+      citychrone: { cells: citychroneCells, areaKm2: Math.round(area.citychrone), ccToId },
     },
   };
 }
