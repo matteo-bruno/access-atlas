@@ -248,3 +248,15 @@
   min-width: 260px;
   box-shadow: 0 2px 10px rgba(21, 23, 26, 0.1);
 }
+
+/* The stage is a component now, so the page around it supplies the column it
+   grows in. */
+.aa-stagewrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.aa-stagewrap .aa-mapstage {
+  flex: 1;
+  min-height: 0;
+}

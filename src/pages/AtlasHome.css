@@ -6,21 +6,19 @@
 }
 
 /* One viewport of map. Scrolling leaves it behind; "explore" stays on it. */
-.aa-landing__stage {
-  position: relative;
+/* One viewport of map on the way in; the whole page once you are on it. */
+.aa-landing .aa-mapstage {
   height: calc(100vh - var(--nav-h, 76px));
   min-height: 460px;
-  overflow: hidden;
-  background: var(--map-paper);
+  flex: none;
 }
-
-.aa-landing__map {
-  position: absolute;
-  inset: 0;
-}
-.aa-landing__map .aa-map {
-  width: 100%;
+.aa-landing--platform .aa-mapstage {
   height: 100%;
+  flex: 1;
+}
+.aa-landing__main {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Held back so the copy reads, and released on the way in. */
@@ -136,9 +134,6 @@
   height: 100%;
   overflow: hidden;
 }
-.aa-landing--platform .aa-landing__stage {
-  height: 100%;
-}
 .aa-landing--platform .aa-landing__main {
   min-height: 0;
   flex: 1;
@@ -179,4 +174,13 @@
 .aa-landing__tools,
 .aa-mapstage__tools {
   align-items: flex-end;
+}
+
+/* The welcome card owns the top left on the platform screen, so the way back
+   sits above it and the card drops below. */
+.aa-landing__back {
+  z-index: 5;
+}
+.aa-landing--platform .aa-welcome {
+  top: 72px;
 }

@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { platformBySlug } from './data/platforms.js';
 import { I18nProvider } from './i18n/index.jsx';
@@ -27,6 +27,52 @@ function CityRedirect() {
   return <Navigate to={`/atlas/${cityId}${platform ? `?layer=${platform.id}` : ''}`} replace />;
 }
 
+// Long enough to register as a fade, short enough to stay out of the way.
+// Matched to the transition on .aa-fade in global.css.
+const FADE_MS = 170;
+
+/**
+ * Cross-fades between routes.
+ *
+ * Every screen here is a map or a page of copy, and cutting between them is
+ * abrupt in a way neither deserves. The trick is to keep rendering the *old*
+ * location while the fade runs, then swap and fade back in — otherwise the
+ * new page appears at full opacity behind the fading one.
+ *
+ * Only the path is compared. The city view keeps its layer, hour and
+ * selection in the query string, and fading the map every time someone
+ * changes a dropdown would be worse than not fading at all.
+ */
+function FadingRoutes({ children }) {
+  const location = useLocation();
+  const [shown, setShown] = useState(location);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (location.pathname === shown.pathname) {
+      // Same screen, new query: swap without a fade.
+      if (location !== shown) setShown(location);
+      return undefined;
+    }
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      setShown(location);
+      return undefined;
+    }
+    setVisible(false);
+    const timer = window.setTimeout(() => {
+      setShown(location);
+      setVisible(true);
+    }, FADE_MS);
+    return () => window.clearTimeout(timer);
+  }, [location, shown]);
+
+  return (
+    <div className={`aa-fade${visible ? '' : ' aa-fade--out'}`}>
+      <Routes location={shown}>{children}</Routes>
+    </div>
+  );
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -40,7 +86,7 @@ export default function App() {
     <I18nProvider>
       <ScrollToTop />
       <Suspense fallback={<div className="aa-page" />}>
-        <Routes>
+        <FadingRoutes>
           <Route path="/" element={<AtlasHome />} />
           <Route path="/overview" element={<Home />} />
           {/* Without a slug: every published city across the four platforms. */}
@@ -63,7 +109,7 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+        </FadingRoutes>
       </Suspense>
     </I18nProvider>
   );

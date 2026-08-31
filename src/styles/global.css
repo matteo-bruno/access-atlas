@@ -246,3 +246,19 @@ strong {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Cross-fade between routes (see FadingRoutes in App.jsx). The wrapper has to
+   pass the height through, or the screens that fill the viewport stop doing
+   so the moment it is introduced. */
+.aa-fade {
+  height: 100%;
+  transition: opacity 170ms ease;
+}
+.aa-fade--out {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aa-fade {
+    transition: none;
+  }
+}

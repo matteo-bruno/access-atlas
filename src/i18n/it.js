@@ -11,7 +11,7 @@ export default {
     title: 'Access Atlas',
     tagline: 'Sony CSL · Roma — Città Sostenibili',
     atlas: 'Atlante dell’accessibilità',
-    platforms: 'Piattaforme',
+    platforms: 'Piattaforma',
     research: 'Ricerca',
     blog: 'Blog',
     faq: 'FAQ',
@@ -657,7 +657,7 @@ export default {
   footer: {
     description:
       'Ricerca aperta sull’accesso urbano dal team Città Sostenibili di Sony CSL — Roma. Metodi, mappe e dati, pubblicati e liberamente riutilizzabili.',
-    platforms: 'Piattaforme',
+    platforms: 'Piattaforma',
     research: 'Ricerca',
     researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
     about: 'Chi siamo',

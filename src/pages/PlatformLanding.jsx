@@ -35,10 +35,32 @@ export default function PlatformLanding() {
   // An unknown slug falls back to the all-platforms map rather than a 404:
   // the route is still a request for the world map.
   // Remount cleanly when switching platforms so the map rebuilds its layers.
-  return <PlatformScreen key={platform?.id ?? 'all'} platform={platform} />;
+  return (
+    <div className="aa-page aa-page--fixed">
+      <Nav active="platforms" sticky={false} />
+      <main className="aa-main aa-stagewrap" id="main">
+        <PlatformExplorer key={platform?.id ?? 'all'} platform={platform} />
+      </main>
+    </div>
+  );
 }
 
-function PlatformScreen({ platform }) {
+/**
+ * The world map and everything on it — the screen the platform tab *is*, and
+ * the one the landing becomes when you step onto it.
+ *
+ * It is a component rather than a page so those two can be the same screen
+ * rather than two that resemble each other. The landing mounts it from the
+ * first frame with `chrome` off: the map is then already there, behind the
+ * words, and entering only reveals the controls. Nothing remounts, which is
+ * the whole reason that transition is smooth.
+ *
+ * @param {object|null} props.platform   one platform's map, or all of them
+ * @param {boolean} [props.chrome]       show the controls
+ * @param {boolean} [props.interactive]  let the map take the pointer
+ * @param {React.ReactNode} [props.children]  drawn over the map
+ */
+export function PlatformExplorer({ platform, chrome = true, interactive = true, children }) {
   const { t, n } = useI18n();
   const navigate = useNavigate();
   const mapRef = useRef(null);
@@ -84,11 +106,40 @@ function PlatformScreen({ platform }) {
     : t('platform.all.label');
 
   return (
-    <div className="aa-page aa-page--fixed">
-      <Nav active="platforms" sticky={false} />
+    <div className="aa-mapstage">
+      {/* The map first, and always: it is what the landing holds behind its
+          words, and what this screen is built around. */}
+      <AtlasMap
+        ref={mapRef}
+        fitWorldWidth
+        center={[10, 20]}
+        interactive={interactive}
+        label={title}
+      >
+        {platform ? (
+          <CityLayer
+            platform={platform}
+            cities={cities}
+            interactive={interactive}
+            tooltip={interactive ? tooltip : undefined}
+            onSelect={
+              interactive ? (properties) => openCity({ ...properties, id: properties.id }) : undefined
+            }
+          />
+        ) : (
+          <CoverageLayer
+            cities={cities}
+            interactive={interactive}
+            tooltip={interactive ? tooltip : undefined}
+            onSelect={
+              interactive ? (properties) => openCity({ ...properties, id: properties.id }) : undefined
+            }
+          />
+        )}
+      </AtlasMap>
 
-
-      <main className="aa-main aa-mapstage" id="main">
+      {chrome && (
+        <>
         {/* What the bar above the map used to carry, on the map itself: a way
             to find a city, and the source. The rest of what it held — the
             platform's name and its city count — the picker and the welcome
@@ -127,23 +178,6 @@ function PlatformScreen({ platform }) {
             </Link>
           ))}
         </nav>
-
-        <AtlasMap ref={mapRef} fitWorldWidth center={[10, 20]} label={title}>
-          {platform ? (
-            <CityLayer
-              platform={platform}
-              cities={cities}
-              tooltip={tooltip}
-              onSelect={(properties) => openCity({ ...properties, id: properties.id })}
-            />
-          ) : (
-            <CoverageLayer
-              cities={cities}
-              tooltip={tooltip}
-              onSelect={(properties) => openCity({ ...properties, id: properties.id })}
-            />
-          )}
-        </AtlasMap>
 
         {welcomeOpen && (
           <section className="aa-card aa-welcome">
@@ -219,7 +253,10 @@ function PlatformScreen({ platform }) {
         </div>
 
         <div className="aa-mapstage__attribution aa-mono">{t('platform.attribution')}</div>
-      </main>
+        </>
+      )}
+
+      {children}
     </div>
   );
 }

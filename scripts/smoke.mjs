@@ -18,7 +18,7 @@ const ROUTES = [
   ['/', 'Landing'],
   ['/overview', 'The previous home page, still routed'],
   ['/platforms', 'All-platforms world map'],
-  ['/platforms/15min-city', '15min-City landing'],
+  ['/platforms/15min-city', '15-minute city landing'],
   ['/platforms/citychrone', 'CityChrone landing'],
   ['/platforms/car-dependency-index', 'Car Dependency landing'],
   ['/platforms/accessibility-pov', 'P.O.V. landing'],
@@ -616,7 +616,7 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
   await page.waitForTimeout(3500);
 
-  const mapCanvas = await page.locator('.aa-landing__map canvas').count();
+  const mapCanvas = await page.locator('.aa-landing .aa-mapstage canvas').count();
   const tab = (await page.locator('.aa-nav__link').allInnerTexts())[0];
   check(
     'The landing draws the coverage map behind its copy',
@@ -637,10 +637,15 @@ for (const [route, name] of ROUTES) {
   const before = page.url();
   await page.getByRole('button', { name: /Explore the platform/ }).click();
   await page.waitForTimeout(1500);
+  // What it opens is the platform screen itself — the same component the
+  // platform tab renders, chrome and all — not a reduced version of it.
   check(
-    'Explore opens the platform on the same URL, on the same map',
+    'Explore opens the platform screen, on the same URL and the same map',
     page.url() === before &&
-      (await page.locator('.aa-landing__tools .aa-search').count()) === 1 &&
+      (await page.locator('.aa-picker').count()) === 1 &&
+      (await page.locator('.aa-welcome').count()) === 1 &&
+      (await page.locator('.aa-legend').count()) === 1 &&
+      (await page.locator('.aa-search').count()) === 1 &&
       (await page.locator('.aa-section-head').count()) === 0,
     page.url(),
   );
@@ -663,6 +668,38 @@ for (const [route, name] of ROUTES) {
     (await page.locator('.aa-subhead').count()) === 0 &&
       (await page.locator('.aa-mapstage__tools .aa-search').count()) === 1 &&
       (await page.locator('.aa-mapstage__tools .aa-mapbtn').count()) === 1,
+  );
+  await page.close();
+}
+
+// ── Between screens ──────────────────────────────────────────────────
+// Routes cross-fade. The failure that matters is a fade that never comes
+// back — the site would be invisible — and a fade on a query change, which
+// would flash the map every time someone picks a layer.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  await page.getByRole('link', { name: 'Research' }).click();
+  await page.waitForTimeout(900);
+  const settled = await page.evaluate(
+    () => getComputedStyle(document.querySelector('.aa-fade')).opacity,
+  );
+  check(
+    'A tab change fades and settles, rather than sticking',
+    settled === '1' && page.url().endsWith('/research'),
+    `${settled} · ${page.url()}`,
+  );
+
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForTimeout(3500);
+  await page.getByRole('button', { name: 'Car Dependency Index' }).click();
+  await page.waitForTimeout(120);
+  check(
+    'Changing a layer does not fade the map',
+    (await page.evaluate(
+      () => getComputedStyle(document.querySelector('.aa-fade')).opacity,
+    )) === '1',
   );
   await page.close();
 }

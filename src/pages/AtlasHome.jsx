@@ -5,18 +5,13 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
-import { CitySearch } from '../components/CitySearch.jsx';
-import { AtlasMap } from '../map/AtlasMap.jsx';
-import { CoverageLayer } from '../components/CityLayer.jsx';
+import { PlatformExplorer } from './PlatformLanding.jsx';
 import { HomeSections } from './Home.jsx';
 import { useI18n } from '../i18n/index.jsx';
-import { useAllCoverage, useAtlasCityIds } from '../data/useAtlasData.js';
 import { ATLAS_METRICS } from '../data/home.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './AtlasHome.css';
-
-const GITHUB_URL = 'https://github.com/sony-csl-rome';
 
 // Long enough to read as a dissolve, short enough that nobody waits for it.
 // Matched to the transition in AtlasHome.css — change both together.
@@ -40,21 +35,18 @@ const DISSOLVE_MS = 620;
  */
 export default function AtlasHome() {
   const { t, n } = useI18n();
-  const navigate = useNavigate();
-  const { cities } = useAllCoverage();
-  const atlasCityIds = useAtlasCityIds();
-  // 'home' → the words over the map, with the page under them.
+  // 'home' → the words over the map, with the rest of the page under them.
   // 'leaving' → the dissolve.
-  // 'platform' → the map, interactive, with its own controls.
+  // 'platform' → the platform screen itself, controls and all.
   const [phase, setPhase] = useState('home');
   const timer = useRef(null);
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
-  const stillness = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-
   const enter = () => {
-    if (stillness()) {
+    // Anyone who has asked not to be moved around gets the destination, not
+    // the choreography.
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
       setPhase('platform');
       return;
     }
@@ -67,7 +59,8 @@ export default function AtlasHome() {
     setPhase('home');
   };
 
-  // Escape is how anyone expects to get out of a screen they went into.
+  // Escape is how anyone expects to get out of a screen they went into — and
+  // here it is the only way, since nothing was routed to get in.
   useEffect(() => {
     if (phase !== 'platform') return undefined;
     const onKey = (event) => {
@@ -77,11 +70,6 @@ export default function AtlasHome() {
     return () => document.removeEventListener('keydown', onKey);
   }, [phase]);
 
-  const openCity = (city) => {
-    // Every city view is the combined viewer; the map is only the way in.
-    if (atlasCityIds.has(city.id) || city.id) navigate(`/atlas/${city.id}`);
-  };
-
   const onMap = phase === 'platform';
 
   return (
@@ -89,25 +77,13 @@ export default function AtlasHome() {
       <Nav active="atlas" sticky={!onMap} />
 
       <main className="aa-main aa-landing__main" id="main">
-        <section className="aa-landing__stage">
-          <div className="aa-landing__map">
-            <AtlasMap
-              fitWorldWidth
-              center={[10, 20]}
-              interactive={onMap}
-              label={t('home.landing.mapLabel')}
-            >
-              <CoverageLayer
-                cities={cities}
-                interactive={onMap}
-                onSelect={onMap ? (properties) => openCity(properties) : undefined}
-                tooltip={onMap ? (feature) => feature.properties.name : undefined}
-              />
-            </AtlasMap>
-          </div>
-          <div className="aa-landing__scrim" />
+        {/* The platform screen, mounted from the first frame. In 'home' it is
+            the background: same component, same map, chrome withheld. Going
+            in reveals the chrome — it does not build a second screen, which
+            is what keeps the transition smooth. */}
+        <PlatformExplorer platform={null} chrome={onMap} interactive={onMap}>
+          {!onMap && <div className="aa-landing__scrim" />}
 
-          {/* ── The words ─────────────────────────────────────── */}
           {phase !== 'platform' && (
             <div className="aa-landing__content">
               <div className="aa-landing__lead">
@@ -154,23 +130,14 @@ export default function AtlasHome() {
             </div>
           )}
 
-          {/* ── The platform, on the same map ─────────────────── */}
           {onMap && (
-            <div className="aa-mapui aa-mapui--tr aa-landing__tools">
-              <CitySearch cities={cities} onOpen={openCity} />
-              <a className="aa-mapbtn" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
-                {t('platform.github')}
-              </a>
-            </div>
-          )}
-          {onMap && (
-            <div className="aa-mapui aa-mapui--tl">
+            <div className="aa-mapui aa-mapui--tl aa-landing__back">
               <button type="button" className="aa-mapbtn" onClick={leave}>
                 ← {t('home.landing.back')}
               </button>
             </div>
           )}
-        </section>
+        </PlatformExplorer>
 
         {/* The rest of the home page, directly underneath. */}
         {phase !== 'platform' && <HomeSections />}

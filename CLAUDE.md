@@ -298,6 +298,13 @@ The timing lives in two places, `DISSOLVE_MS` and the CSS transition; change
 them together, and note that a reader who has asked for reduced motion skips
 the dissolve entirely.
 
+**The landing and the platform tab are one screen.** `PlatformExplorer`
+(exported from `PlatformLanding.jsx`) is the world map and everything on it;
+the landing mounts it from the first frame with `chrome={false}`, so entering
+reveals controls rather than building a second screen. Anything added to that
+component appears in both places, which is the point — they were drifting
+apart when they were two.
+
 The previous home page is **not deleted** — it is routed at `/overview`, so
 the landing can be reverted by pointing `/` back at it.
 
@@ -306,6 +313,13 @@ The world map at `/platforms` has no bar above it either: the search
 and the source link float on the map, the platform's paper and comparison
 moved into the welcome card that introduces it, and the legend sits below the
 search rather than under it.
+
+**Routes cross-fade** (`FadingRoutes` in `App.jsx`), which is why it keeps
+rendering the *old* location until the fade finishes — swapping first would
+show the new page at full opacity behind the fading one. It compares the
+**path only**: the city view keeps its layer, hour and selection in the query
+string, and fading the map on every dropdown would be worse than not fading
+at all.
 
 ## The map is the page
 

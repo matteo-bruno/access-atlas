@@ -18,7 +18,7 @@ export default {
     title: 'Access Atlas',
     tagline: 'Sony CSL · Rome — Sustainable Cities',
     atlas: 'Accessibility Atlas',
-    platforms: 'Platforms',
+    platforms: 'Platform',
     research: 'Research',
     blog: 'Blog',
     faq: 'FAQ',
@@ -658,7 +658,7 @@ export default {
   footer: {
     description:
       'Open research on urban access from the Sustainable Cities team at Sony CSL — Rome. Methods, maps and data, published and free to reuse.',
-    platforms: 'Platforms',
+    platforms: 'Platform',
     research: 'Research',
     researchLinks: ['Papers', 'Datasets', 'Blog', 'FAQ'],
     about: 'About',
