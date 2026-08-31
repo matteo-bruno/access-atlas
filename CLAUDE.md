@@ -282,28 +282,24 @@ Do not re-import either when adding copy from upstream.
 
 ## The front door
 
-`/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map —
-the same layer `/platforms` draws — held behind a scrim with the copy over
-it. There are two ways past that copy, and they answer different questions:
-**scrolling** reads the rest of the home page, which is directly underneath
-(`HomeSections`, exported from `Home.jsx` and mounted in both places, so the
-two cannot drift); **"explore the platform"** lifts the scrim and the words
-instead, leaving the map interactive with the controls a world map needs.
+`/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map,
+held behind a scrim with the copy over it. Two ways past that copy, answering
+different questions: **scrolling** reads the rest of the home page, directly
+underneath (`HomeSections`, exported from `Home.jsx` and mounted in both
+places, so the two cannot drift); **"explore the platform"** is an ordinary
+`<Link>` to `/platforms`, so it changes the URL, lights that tab and opens in
+a new one like any other link.
 
-**That second path is a phase, not a route.** Navigating would tear the map
-down and build another — a flash exactly where the transition is meant to be
-smooth — so the URL stays put and the page changes what it shows
-(`phase: 'home' | 'leaving' | 'platform'`). Escape and the "back" box return.
-The timing lives in two places, `DISSOLVE_MS` and the CSS transition; change
-them together, and note that a reader who has asked for reduced motion skips
-the dissolve entirely.
-
-**The landing and the platform tab are one screen.** `PlatformExplorer`
+**The map behind the copy is the platform screen itself.** `PlatformExplorer`
 (exported from `PlatformLanding.jsx`) is the world map and everything on it;
-the landing mounts it from the first frame with `chrome={false}`, so entering
-reveals controls rather than building a second screen. Anything added to that
-component appears in both places, which is the point — they were drifting
-apart when they were two.
+the landing mounts it with `chrome={false}` and `interactive={false}`, so what
+is behind the words is the real screen rather than a picture of one — and the
+platform is not duplicated to achieve it. Anything added to that component
+appears in both places.
+
+The landing once *became* the platform in place, on the same URL, because
+navigating remounted the map and flashed. The route cross-fade below removed
+that reason, and with it the phase machinery: one screen, one link.
 
 The previous home page is **not deleted** — it is routed at `/overview`, so
 the landing can be reverted by pointing `/` back at it.

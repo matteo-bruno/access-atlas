@@ -47,7 +47,6 @@ export default {
     landing: {
       mapLabel: 'Tutte le città pubblicate dall’Atlante',
       scrollHint: 'Oppure continua a leggere',
-      back: 'Indietro',
     },
     metrics: {
       cities: 'Città pubblicate',

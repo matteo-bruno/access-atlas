@@ -54,7 +54,6 @@ export default {
     landing: {
       mapLabel: 'Every city the Atlas has published',
       scrollHint: 'Or read on',
-      back: 'Back',
     },
     metrics: {
       cities: 'Cities published',

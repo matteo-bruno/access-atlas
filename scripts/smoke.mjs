@@ -605,12 +605,12 @@ for (const [route, name] of ROUTES) {
 }
 
 // ── The front door ───────────────────────────────────────────────────
-// The landing is the coverage map with the words over it, and there are two
-// ways past them: scroll to read the rest of the home page, or "explore the
-// platform" to lift the words off the map. The second is a change of what the
-// page shows, *not* a navigation — routing would tear the map down and build
-// another, which is a flash exactly where the transition should be smooth. So
-// what is asserted is that the URL does not move and the map does not reload.
+// The landing is the coverage map with the words over it — the platform
+// screen itself, mounted with its chrome withheld, so what is behind the copy
+// is the real thing rather than a picture of it. There are two ways past the
+// copy: scroll to read the rest of the home page, or take the invitation,
+// which is an ordinary link to the platform tab. The platform is not
+// duplicated here, and the route cross-fade carries the transition.
 {
   const page = await context.newPage();
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
@@ -619,8 +619,10 @@ for (const [route, name] of ROUTES) {
   const mapCanvas = await page.locator('.aa-landing .aa-mapstage canvas').count();
   const tab = (await page.locator('.aa-nav__link').allInnerTexts())[0];
   check(
-    'The landing draws the coverage map behind its copy',
-    mapCanvas === 1 && /Accessibility Atlas/.test(tab),
+    'The landing draws the platform screen behind its copy, chrome withheld',
+    mapCanvas === 1 &&
+      /Accessibility Atlas/.test(tab) &&
+      (await page.locator('.aa-picker').count()) === 0,
     tab,
   );
 
@@ -636,25 +638,21 @@ for (const [route, name] of ROUTES) {
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(400);
 
-  const before = page.url();
-  await page.getByRole('button', { name: /Explore the platform/ }).click();
-  await page.waitForTimeout(1500);
-  // What it opens is the platform screen itself — the same component the
-  // platform tab renders, chrome and all — not a reduced version of it.
+  // The invitation is the tab: same destination, same link, so it can be
+  // opened in a new one like any other.
+  const cta = page.getByRole('link', { name: /Explore the platform/ });
+  const href = await cta.getAttribute('href');
+  await cta.click();
+  await page.waitForTimeout(1600);
   check(
-    'Explore opens the platform screen, on the same URL and the same map',
-    page.url() === before &&
+    'Explore goes to the platform tab, and lights it',
+    href === '/platforms' &&
+      page.url().endsWith('/platforms') &&
+      (await page.locator('.aa-nav__link--active').innerText()) === 'Platform' &&
       (await page.locator('.aa-picker').count()) === 1 &&
-      (await page.locator('.aa-welcome').count()) === 1 &&
-      (await page.locator('.aa-legend').count()) === 1 &&
-      (await page.locator('.aa-search').count()) === 1 &&
-      (await page.locator('.aa-section-head').count()) === 0,
-    page.url(),
+      (await page.locator('.aa-welcome').count()) === 1,
+    `${href} → ${page.url()}`,
   );
-
-  await page.keyboard.press('Escape');
-  await page.waitForTimeout(700);
-  check('Escape brings the words back', (await page.locator('.aa-landing__headline').count()) === 1);
   await page.close();
 }
 

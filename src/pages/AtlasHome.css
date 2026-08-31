@@ -12,10 +12,6 @@
   min-height: 460px;
   flex: none;
 }
-.aa-landing--platform .aa-mapstage {
-  height: 100%;
-  flex: 1;
-}
 .aa-landing__main {
   display: flex;
   flex-direction: column;
@@ -118,36 +114,9 @@
   letter-spacing: 0.04em;
 }
 
-/* The dissolve: the words and the scrim go, the map stays and comes forward.
-   Nothing is routed, so the map itself never reloads. */
-.aa-landing--leaving .aa-landing__content {
-  opacity: 0;
-  transform: translateY(-8px);
-}
-.aa-landing--leaving .aa-landing__scrim,
-.aa-landing--platform .aa-landing__scrim {
-  opacity: 0;
-}
-
-/* On the map: one viewport, nothing under it to scroll to. */
-.aa-landing--platform {
-  height: calc(100vh - var(--nav-h, 76px));
-  min-height: 0;
-  overflow: hidden;
-}
-.aa-landing--platform .aa-landing__main {
-  min-height: 0;
-  flex: 1;
-}
-
-.aa-landing__tools .aa-search {
-  min-width: 260px;
-  box-shadow: 0 2px 10px rgba(21, 23, 26, 0.1);
-}
 
 @media (prefers-reduced-motion: reduce) {
-  .aa-landing__content,
-  .aa-landing__scrim {
+  .aa-landing__content {
     transition: none;
   }
 }
@@ -168,20 +137,4 @@
   .aa-landing__metrics {
     gap: 18px;
   }
-}
-
-/* The tools stack hugs the right edge; the GitHub link is a button, not a
-   banner, so it does not stretch to the search box beside it. */
-.aa-landing__tools,
-.aa-mapstage__tools {
-  align-items: flex-end;
-}
-
-/* The welcome card owns the top left on the platform screen, so the way back
-   sits above it and the card drops below. */
-.aa-landing__back {
-  z-index: 5;
-}
-.aa-landing--platform .aa-welcome {
-  top: 72px;
 }
