@@ -128,6 +128,15 @@ strong {
   border-radius: var(--radius);
 }
 
+/* The coloured half of a title. Every page's headline carries one — the
+   design's own device, which the landing had and the rest did not: the phrase
+   that says what the page is takes the brand magenta, the run-up to it stays
+   in ink. One class rather than a `__accent` per page, so the colour is
+   decided in one place. */
+.aa-accent {
+  color: var(--magenta);
+}
+
 /* Section heading: § tag · title · italic hint */
 .aa-section-head {
   display: flex;

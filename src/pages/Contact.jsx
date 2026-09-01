@@ -17,7 +17,7 @@ export default function Contact() {
           <h1 className="aa-contact__headline">
             {t('contact.headline')}
             <br />
-            <span className="aa-contact__accent">{t('contact.headlineAccent')}</span>
+            <span className="aa-accent">{t('contact.headlineAccent')}</span>
           </h1>
           <p className="aa-contact__lede">{t('contact.lede')}</p>
 

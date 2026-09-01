@@ -16,7 +16,11 @@ export default function Blog() {
       <main className="aa-main aa-blog" id="main">
         <div className="aa-blog__aside">
           <Eyebrow>{t('blog.eyebrow')}</Eyebrow>
-          <h1 className="aa-blog__headline">{t('blog.headline')}</h1>
+          <h1 className="aa-blog__headline">
+            {t('blog.headline')}
+            <br />
+            <span className="aa-accent">{t('blog.headlineAccent')}</span>
+          </h1>
           <p className="aa-blog__lede">{t('blog.lede')}</p>
           <dl className="aa-blog__meta">
             <div className="aa-blog__metarow">

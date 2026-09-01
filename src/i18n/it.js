@@ -29,7 +29,9 @@ export default {
     hero: {
       eyebrow: 'Piattaforme di ricerca aperte · Sony CSL Roma',
       // La pagina d'ingresso: il nome dell'Atlante e una riga su cosa fa.
-      title: 'Accessibility Atlas',
+      title: 'Accessibility',
+      // La metà colorata del nome; vedi .aa-accent in global.css.
+      titleAccent: 'Atlas',
       subtitle: 'Mappiamo l’accesso urbano, città per città.',
       // La home precedente (/overview) apre ancora sulla forma lunga.
       headline: 'Un atlante per misurare',
@@ -511,7 +513,8 @@ export default {
 
   faq: {
     eyebrow: 'Domande frequenti',
-    headline: 'Domande\nricorrenti.',
+    headline: 'Domande',
+    headlineAccent: 'ricorrenti.',
     lede: 'Risposte brevi a ciò che ci viene chiesto più spesso. Avete un’altra domanda? Scrivete a {email}.',
     meta: {
       updated: 'Ultimo aggiornamento',
@@ -611,7 +614,8 @@ export default {
   // La schermata di confronto, prima che esista.
   stats: {
     eyebrow: 'Statistiche',
-    headline: 'Confronta le città.',
+    headline: 'Confronta',
+    headlineAccent: 'le città.',
     lede: 'Una schermata con ogni città pubblicata su ogni misura — prossimità, opportunità, dipendenza dall’auto, mix di zone — affiancate e ordinabili.',
     emptyTitle: 'Non ancora costruita',
     emptyBody:
@@ -630,7 +634,8 @@ export default {
   // Consulenza — breve, perché non c'è altro che si possa dire onestamente.
   consulting: {
     eyebrow: 'Consulenza',
-    headline: 'Lavorate su una città?\nParliamone.',
+    headline: 'Lavorate su una città?',
+    headlineAccent: 'Parliamone.',
     lede: 'Se siete un’amministrazione pubblica, un’agenzia o un’azienda che ha bisogno di misurare l’accesso — per un piano, un servizio, una valutazione o un caso di investimento — potete chiedercelo. Raccontateci la domanda e vi diremo con franchezza se è una a cui i nostri metodi sanno rispondere.',
     cta: 'Scriveteci',
     whoTitle: 'A chi è rivolta',
@@ -700,7 +705,8 @@ export default {
 
   research: {
     eyebrow: 'Produzione scientifica',
-    headline: 'Articoli, dati e codice.',
+    headline: 'Articoli, dati',
+    headlineAccent: 'e codice.',
     lede: 'I metodi dietro l’Atlante sono pubblicati e i dataset sono scaricabili. Le piattaforme il cui articolo è ancora in preparazione sono indicate come tali — le mappe si mostrano, la citazione non si inventa.',
     papersTag: '01',
     papersTitle: 'Articoli',
@@ -716,7 +722,8 @@ export default {
 
   blog: {
     eyebrow: 'Blog',
-    headline: 'Appunti\ndall’Atlante.',
+    headline: 'Appunti',
+    headlineAccent: 'dall’Atlante.',
     lede: 'Testi più lunghi su cosa misuriamo, come lo misuriamo, e cosa le mappe mostrano e non mostrano.',
     readingTime: '{count} min di lettura',
     backToBlog: '← Tutti gli articoli',
@@ -726,7 +733,8 @@ export default {
 
   work: {
     eyebrow: 'Lavora con noi',
-    headline: 'Nessuna posizione\naperta al momento.',
+    headline: 'Nessuna posizione',
+    headlineAccent: 'aperta al momento.',
     lede: 'Al momento non stiamo selezionando per un ruolo finanziato. Siamo però sempre contenti di sentire studenti e studentesse che vogliano lavorare seriamente sull’accessibilità urbana — e quelle conversazioni cominciano di solito molto prima che una posizione esista.',
     openTitle: 'Cosa è aperto',
     positionsTitle: 'Posizioni aperte',
@@ -773,7 +781,8 @@ export default {
 
   notFound: {
     eyebrow: 'Errore 404',
-    headline: 'Fuori mappa.',
+    headline: 'Fuori',
+    headlineAccent: 'mappa.',
     lede: 'Questa pagina non fa parte dell’Atlante. Prova le piattaforme, o torna alla home.',
     cta: 'Torna all’Atlante',
   },

@@ -54,7 +54,7 @@ export function HomeSections({ hero = true }) {
             <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
             <h1 className="aa-hero__headline">
               {t('home.hero.headline')}{' '}
-              <span className="aa-hero__accent">{t('home.hero.headlineAccent')}</span>
+              <span className="aa-accent">{t('home.hero.headlineAccent')}</span>
             </h1>
             <p className="aa-hero__lede">
               <Interpolate

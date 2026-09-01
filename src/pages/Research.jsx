@@ -21,7 +21,10 @@ export default function Research() {
       <main className="aa-main" id="main">
         <section className="aa-shell aa-research__intro">
           <Eyebrow>{t('research.eyebrow')}</Eyebrow>
-          <h1 className="aa-research__headline">{t('research.headline')}</h1>
+          <h1 className="aa-research__headline">
+            {t('research.headline')}{' '}
+            <span className="aa-accent">{t('research.headlineAccent')}</span>
+          </h1>
           <p className="aa-research__lede">{t('research.lede')}</p>
         </section>
 

@@ -23,7 +23,8 @@ export default function NotFound() {
             lineHeight: 1,
           }}
         >
-          {t('notFound.headline')}
+          {t('notFound.headline')}{' '}
+          <span className="aa-accent">{t('notFound.headlineAccent')}</span>
         </h1>
         <p style={{ maxWidth: 520, fontSize: 16, lineHeight: 1.6, color: 'var(--ink-2)' }}>
           {t('notFound.lede')}

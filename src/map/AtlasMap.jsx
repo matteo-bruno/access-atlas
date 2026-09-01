@@ -38,10 +38,24 @@ function worldWidthZoom(widthPx) {
   return Math.log2(Math.max(widthPx, 1) / 512);
 }
 
-function applyWorldWidthZoom(map, boost = 0) {
+/**
+ * Frame a world view: the zoom that spans the container, plus any boost, and
+ * the centre it is meant to be looking at.
+ *
+ * The centre has to be re-applied *with* the zoom rather than left to the
+ * constructor. MapLibre clamps the centre latitude so the viewport cannot
+ * show past the poles, and at the construction zoom the whole world is barely
+ * taller than the box — the clamp there is about ±18.6°, so a map asked to
+ * centre on 47°N was quietly pulled to 19°N and never let back once the real
+ * zoom arrived. It cost a coverage map that looked centred on the Atlantic
+ * while the cities sat in a band at the top.
+ */
+function applyWorldWidthZoom(map, boost = 0, center = null) {
   const width = map.getContainer().clientWidth;
   if (!width) return;
-  map.setZoom(worldWidthZoom(width) + boost);
+  const zoom = worldWidthZoom(width) + boost;
+  if (center) map.jumpTo({ center, zoom });
+  else map.setZoom(zoom);
 }
 
 /**
@@ -176,7 +190,7 @@ export function AtlasMap({
         announced = true;
         setAnchor(overlayAnchor(map));
         if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-        else if (fitWorldWidth) applyWorldWidthZoom(map, worldZoomBoost);
+        else if (fitWorldWidth) applyWorldWidthZoom(map, worldZoomBoost, center);
         setReady(true);
         onReady?.(map);
       };
@@ -196,7 +210,7 @@ export function AtlasMap({
       let observer;
       if (fitWorldWidth && typeof ResizeObserver !== 'undefined') {
         observer = new ResizeObserver(() => {
-          if (map.loaded()) applyWorldWidthZoom(map, worldZoomBoost);
+          if (map.loaded()) applyWorldWidthZoom(map, worldZoomBoost, center);
         });
         observer.observe(containerRef.current);
       }

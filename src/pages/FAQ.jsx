@@ -31,7 +31,11 @@ export default function FAQ() {
       <main className="aa-main aa-faq" id="main">
         <div className="aa-faq__aside">
           <Eyebrow>{t('faq.eyebrow')}</Eyebrow>
-          <h1 className="aa-faq__headline">{t('faq.headline')}</h1>
+          <h1 className="aa-faq__headline">
+            {t('faq.headline')}
+            <br />
+            <span className="aa-accent">{t('faq.headlineAccent')}</span>
+          </h1>
           <p className="aa-faq__lede">
             <Interpolate
               template={t('faq.lede')}

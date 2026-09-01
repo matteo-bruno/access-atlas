@@ -20,15 +20,31 @@ const CITY_ZOOM_BOOST = 1.1;
  * both pass it, alongside the same centre and the same box (the backdrop
  * starts below the nav for exactly that reason — see Backdrop.css).
  *
- * Zero is the plain fit, which crops nothing and leaves the cities small in a
- * lot of ocean. This is a little over half a zoom level in: the published
- * cities fill more of the frame, and the widest of them — the US west coast
- * against central Europe — still sit inside it.
+ * Zero is the plain fit: the whole world across the container, every city on
+ * screen and most of the frame ocean. The boost trades that spare world for
+ * size, and the trade has a hard floor — **every published city has to stay
+ * in frame**, because this is the Atlas's own coverage map and a city cropped
+ * out of it reads as a city we do not have.
+ *
+ * The longitude span is `360 / 2^boost` at any width (the fit zoom already
+ * scales with the container), so the arithmetic is exact: the published
+ * cities run from Seattle at −122.3° to Stockholm at +18.0°, which needs
+ * 140.3°. At this boost the frame is 173.9° wide, and centred at −40° it
+ * covers −126.9° to +46.9° — Seattle with about four degrees to spare.
+ * Anything past ~1.15 starts cutting the west coast off. Latitude is the
+ * viewport's own aspect ratio and is never the binding constraint: even a
+ * 1920×600 window still reaches 62°N, above Stockholm's 59.3°.
  */
-export const WORLD_ZOOM_BOOST = 0.65;
+export const WORLD_ZOOM_BOOST = 1.05;
 
-/** The centre both coverage maps are framed on. */
-export const WORLD_CENTER = [10, 26];
+/**
+ * The centre both coverage maps are framed on.
+ *
+ * Not the middle of the world — the middle of the *data*. The published
+ * cities are one European cluster and five in North America, and a frame
+ * centred on the Atlantic is what holds both at this zoom.
+ */
+export const WORLD_CENTER = [-40, 47];
 
 export function cityZoom(profile, boost = CITY_ZOOM_BOOST) {
   return (profile?.zoom ?? 10) + boost;

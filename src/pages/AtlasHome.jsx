@@ -41,7 +41,10 @@ export default function AtlasHome() {
             <div className="aa-landing__middle">
               <div className="aa-landing__lead aa-fadein">
                 <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
-                <h1 className="aa-landing__headline">{t('home.hero.title')}</h1>
+                <h1 className="aa-landing__headline">
+                  {t('home.hero.title')}{' '}
+                  <span className="aa-accent">{t('home.hero.titleAccent')}</span>
+                </h1>
                 <p className="aa-landing__subtitle">{t('home.hero.subtitle')}</p>
 
                 <div className="aa-landing__actions">

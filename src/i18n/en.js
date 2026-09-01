@@ -35,7 +35,9 @@ export default {
     hero: {
       eyebrow: 'Open research platforms · Sony CSL Rome',
       // The landing: the Atlas's name, and one line saying what it does.
-      title: 'Accessibility Atlas',
+      title: 'Accessibility',
+      // The coloured half of the name; see .aa-accent in global.css.
+      titleAccent: 'Atlas',
       subtitle: 'Mapping urban access, city by city.',
       // The previous home page (/overview) still opens on the long form.
       headline: 'An atlas to measure',
@@ -511,7 +513,8 @@ export default {
 
   faq: {
     eyebrow: 'Frequently asked',
-    headline: 'Common\nquestions.',
+    headline: 'Common',
+    headlineAccent: 'questions.',
     lede: 'Short answers to what we are asked most. Something else on your mind? Write to {email}.',
     meta: {
       updated: 'Last updated',
@@ -611,7 +614,8 @@ export default {
   // The comparison screen, before it exists.
   stats: {
     eyebrow: 'Statistics',
-    headline: 'Compare cities.',
+    headline: 'Compare',
+    headlineAccent: 'cities.',
     lede: 'One screen for every published city on every measure — proximity, opportunity, car dependency, the zone mix — side by side and sortable.',
     emptyTitle: 'Not built yet',
     emptyBody:
@@ -630,7 +634,8 @@ export default {
   // Consulting — short, because there is nothing else that can honestly be said.
   consulting: {
     eyebrow: 'Consulting',
-    headline: 'Working on a city?\nTalk to us.',
+    headline: 'Working on a city?',
+    headlineAccent: 'Talk to us.',
     lede: 'If you are a public administration, an agency or a company that needs to measure access — for a plan, a service, an investment case or an evaluation — we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer.',
     cta: 'Write to us',
     whoTitle: 'Who this is for',
@@ -700,7 +705,8 @@ export default {
 
   research: {
     eyebrow: 'Research output',
-    headline: 'Papers, data and code.',
+    headline: 'Papers, data',
+    headlineAccent: 'and code.',
     lede: 'The methods behind the Atlas are published and the datasets are downloadable. Platforms whose paper is still in preparation are marked as such — the maps are shown, the citation is not invented.',
     papersTag: '01',
     papersTitle: 'Papers',
@@ -716,7 +722,8 @@ export default {
 
   blog: {
     eyebrow: 'Blog',
-    headline: 'Notes from\nthe Atlas.',
+    headline: 'Notes from',
+    headlineAccent: 'the Atlas.',
     lede: 'Longer-form writing about what we measure, how we measure it, and what the maps do and do not show.',
     readingTime: '{count} min read',
     backToBlog: '← All posts',
@@ -726,7 +733,8 @@ export default {
 
   work: {
     eyebrow: 'Work with us',
-    headline: 'No open positions\nright now.',
+    headline: 'No open positions',
+    headlineAccent: 'right now.',
     lede: 'We are not recruiting for a funded role at the moment. We are, however, always glad to hear from students who want to do serious work on urban accessibility — and those conversations usually start long before a position exists.',
     openTitle: 'What is open',
     positionsTitle: 'Current openings',
@@ -773,7 +781,8 @@ export default {
 
   notFound: {
     eyebrow: 'Error 404',
-    headline: 'Off the map.',
+    headline: 'Off the',
+    headlineAccent: 'map.',
     lede: 'That page is not part of the Atlas. Try the platforms, or head back to the home page.',
     cta: 'Back to the Atlas',
   },

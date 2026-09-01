@@ -148,6 +148,12 @@ offline, and one job each.
 - **`--font-mono` (Roboto Mono)** is only ever used for figures, coordinates
   and counts, where digits have to line up column to column.
 
+**Every title carries a coloured half** — `.aa-accent` in `global.css`, the
+brand magenta — split in the dictionaries as `headline` / `headlineAccent`
+(and `title` / `titleAccent` on the landing). The phrase that says what the
+page *is* takes the colour; the run-up to it stays in ink. One class, so the
+colour is decided in one place.
+
 A title that is not on that list is a bug in one direction; a paragraph in the
 serif is a bug in the other.
 
@@ -317,6 +323,22 @@ viewport, behind every page: it never scrolls, never remounts on navigation,
 and is the Atlas's own data rather than a texture that resembles it. The
 landing only leaves it a viewport of clear space; its own sections scroll over
 it as before.
+
+**The coverage frame has a floor: every published city stays in it.** The
+longitude span is `360 / 2^WORLD_ZOOM_BOOST` at any width, so the arithmetic
+is exact — Seattle at −122.3° to Stockholm at +18.0° needs 140.3°, the boost
+gives 173.9°, and the centre sits at −40° (the middle of the *data*, not of
+the world). Past ~1.15 the west coast goes over the edge. `smoke.mjs`
+reprojects the published coverage and fails if any marker lands outside.
+
+**A world view must re-apply its centre with its zoom** (`applyWorldWidthZoom`).
+MapLibre clamps the centre latitude so a viewport cannot show past the poles,
+and at the construction zoom the whole world is barely taller than the box —
+the clamp there is about ±18.6°. A map given `center: [-40, 47]` was quietly
+pulled to 19°N and never let back when `setZoom` arrived, which is a bug
+nothing else could see: the map rendered, had markers, and passed every other
+check. The smoke suite now hovers the pixel a known city projects to, which
+pins centre and zoom together.
 
 **The backdrop and the platform screen are one map, and must stay one.** Same
 centre and same zoom past the world-width fit (`WORLD_CENTER` and

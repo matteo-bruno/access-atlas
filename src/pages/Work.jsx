@@ -20,7 +20,11 @@ export default function Work() {
       <main className="aa-main" id="main">
         <section className="aa-shell aa-work__intro">
           <Eyebrow>{t('work.eyebrow')}</Eyebrow>
-          <h1 className="aa-work__headline">{t('work.headline')}</h1>
+          <h1 className="aa-work__headline">
+            {t('work.headline')}
+            <br />
+            <span className="aa-accent">{t('work.headlineAccent')}</span>
+          </h1>
           <p className="aa-work__lede">{t('work.lede')}</p>
         </section>
 

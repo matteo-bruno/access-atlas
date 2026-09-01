@@ -24,7 +24,11 @@ export default function Consulting() {
       <main className="aa-main" id="main">
         <section className="aa-shell aa-prose__intro">
           <Eyebrow>{t('consulting.eyebrow')}</Eyebrow>
-          <h1 className="aa-prose__headline">{t('consulting.headline')}</h1>
+          <h1 className="aa-prose__headline">
+            {t('consulting.headline')}
+            <br />
+            <span className="aa-accent">{t('consulting.headlineAccent')}</span>
+          </h1>
           <p className="aa-prose__lede">{t('consulting.lede')}</p>
 
           <div className="aa-prose__links">

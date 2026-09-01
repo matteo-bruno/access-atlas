@@ -23,7 +23,10 @@ export default function Stats() {
       <main className="aa-main" id="main">
         <section className="aa-shell aa-prose__intro">
           <Eyebrow>{t('stats.eyebrow')}</Eyebrow>
-          <h1 className="aa-prose__headline">{t('stats.headline')}</h1>
+          <h1 className="aa-prose__headline">
+            {t('stats.headline')}{' '}
+            <span className="aa-accent">{t('stats.headlineAccent')}</span>
+          </h1>
           <p className="aa-prose__lede">{t('stats.lede')}</p>
         </section>
 

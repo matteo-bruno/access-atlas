@@ -11,6 +11,9 @@
 // with SMOKE_URL.
 
 import { chromium } from 'playwright';
+// Plain module, no dependencies — the checks below reproject against the very
+// constants the app frames its coverage maps with.
+import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../src/map/framing.js';
 
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 
@@ -744,6 +747,78 @@ for (const [route, name] of ROUTES) {
     'The map’s chrome fades in rather than appearing',
     faded.length >= 4 && faded.every((name) => name === 'aa-fadein'),
     `${faded.length} elements`,
+  );
+  await page.close();
+}
+
+// ── The coverage map is framed where it says it is ───────────────────
+// MapLibre clamps the centre latitude so a viewport cannot show past the
+// poles, and at a world view's construction zoom that clamp is about ±18.6° —
+// so a map asked to centre on 47°N was silently pulled to 19°N and never let
+// back once the real zoom arrived. Nothing else here could see it: the map
+// still rendered, still had markers, still passed every other check.
+//
+// Reprojecting a known city and hovering the pixel it should be at pins the
+// centre and the zoom together: if either drifts, the tooltip does not appear.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
+  await page.waitForTimeout(3500);
+  await page.click('.aa-welcome__close').catch(() => {});
+  await page.waitForTimeout(300);
+
+  const box = await page.locator('.aa-mapstage canvas').boundingBox();
+  // MapLibre spans the world across 512px at zoom 0, and a world view's zoom
+  // is the one that fits the container's width, plus the boost.
+  const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
+  const mercatorY = (lat) =>
+    0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
+  const project = ([lon, lat]) => {
+    let delta = lon - WORLD_CENTER[0];
+    while (delta > 180) delta -= 360;
+    while (delta < -180) delta += 360;
+    return [
+      box.x + box.width / 2 + (delta / 360) * worldPx,
+      box.y + box.height / 2 + (mercatorY(lat) - mercatorY(WORLD_CENTER[1])) * worldPx,
+    ];
+  };
+
+  // Milan is the city published on every platform, so it is on this map
+  // whatever else changes.
+  const [x, y] = project([9.19, 45.46]);
+  await page.mouse.move(x, y);
+  await page.waitForTimeout(400);
+  const tip = await page.$eval('.aa-map-popup', (e) => e.innerText.trim()).catch(() => '');
+  check(
+    'The world map is framed on the centre and zoom it was given',
+    /Milan/.test(tip),
+    `${Math.round(x)},${Math.round(y)} → ${tip.split('\n')[0] || '(nothing under the pointer)'}`,
+  );
+
+  // And the frame still holds every published city: this is the Atlas's own
+  // coverage map, and a city cropped out of it reads as one we do not have.
+  const cities = await page.evaluate(async (url) => {
+    const catalogue = await (await fetch(url)).json();
+    const points = [];
+    for (const platform of Object.values(catalogue.platforms ?? {})) {
+      if (!platform.coverage) continue;
+      const collection = await (await fetch(`/data/${platform.coverage}`)).json();
+      for (const feature of collection.features) {
+        points.push([feature.properties.name, feature.geometry.coordinates]);
+      }
+    }
+    return points;
+  }, `${BASE}/data/index.json`);
+  const outside = cities
+    .filter(([, coords]) => {
+      const [px, py] = project(coords);
+      return px < box.x || px > box.x + box.width || py < box.y || py > box.y + box.height;
+    })
+    .map(([name]) => name);
+  check(
+    'Every published city is inside the coverage frame',
+    cities.length > 0 && outside.length === 0,
+    outside.length ? [...new Set(outside)].join(', ') : `${cities.length} markers`,
   );
   await page.close();
 }

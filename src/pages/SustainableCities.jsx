@@ -28,7 +28,7 @@ export default function SustainableCities() {
           <h1 className="aa-prose__headline">
             {t('about.headline')}
             <br />
-            <span className="aa-prose__accent">{t('about.headlineAccent')}</span>
+            <span className="aa-accent">{t('about.headlineAccent')}</span>
           </h1>
           <p className="aa-prose__lede">{t('about.lede')}</p>
 
