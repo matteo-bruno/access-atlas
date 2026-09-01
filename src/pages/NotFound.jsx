@@ -14,9 +14,12 @@ export default function NotFound() {
         <h1
           style={{
             margin: '18px 0 20px',
+            // The display face, like every other page's title. One weight
+            // only — see --font-serif in tokens.css.
+            fontFamily: 'var(--font-serif)',
             fontSize: 54,
-            fontWeight: 600,
-            letterSpacing: '-0.035em',
+            fontWeight: 400,
+            letterSpacing: '-0.02em',
             lineHeight: 1,
           }}
         >

@@ -29,15 +29,17 @@
   --map-land-line: #cdc6b3;
   --map-graticule: rgba(0, 0, 0, 0.05);
 
-  /* Type — one face for the whole site.
-     `--font-serif` is kept as a role rather than a typeface: the headings that
-     asked for it now take Poppins too, and keeping the token means every
-     `var(--font-serif)` in the stylesheets follows without being rewritten.
-     `--font-mono` stays a real monospace: it is only ever used for figures,
-     coordinates and counts, where digits have to line up column to column. */
-  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
-  --font-serif: 'Poppins', system-ui, -apple-system, sans-serif;
+  /* Type — two faces with one job each.
+     `--font-serif` is the display face: it carries the titles and nothing
+     else, and ships a single weight, so every rule that reaches for it also
+     sets `font-weight: 400` (see the title rules in global.css and the page
+     stylesheets — 600 on a 400-only face is a synthesised bold).
+     `--font-sans` is everything that is read rather than announced.
+     `--font-mono` is only ever used for figures, coordinates and counts,
+     where digits have to line up column to column. */
+  --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Roboto Mono', 'SFMono-Regular', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
 
   /* Geometry */
   --radius: 6px;

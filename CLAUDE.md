@@ -134,12 +134,22 @@ and was wrong.
 
 ## Type
 
-**Poppins carries the whole site**, self-hosted through `@fontsource/poppins`
-so it renders identically offline. `--font-serif` survives as a *role* rather
-than a typeface — the headings that asked for it now take Poppins too, and
-keeping the token means every `var(--font-serif)` follows without a rewrite.
-`--font-mono` stays a real monospace: it is only ever used for figures,
-coordinates and counts, where digits have to line up column to column.
+Two faces, self-hosted through `@fontsource` so they render identically
+offline, and one job each.
+
+- **`--font-serif` (Instrument Serif) is the display face**, and it carries
+  the titles: every page's `__headline`, the landing, and
+  `.aa-section-head__title`. It **ships one weight**, so every rule that
+  reaches for it also sets `font-weight: 400` — 600 on a 400-only face is a
+  synthesised bold, and it looks it. Tracking is `-0.02em` rather than the
+  `-0.035em` the sans took: a serif closes up at that size on its own.
+- **`--font-sans` (Roboto) is everything else** — body, UI, ledes, card
+  titles, the nav.
+- **`--font-mono` (Roboto Mono)** is only ever used for figures, coordinates
+  and counts, where digits have to line up column to column.
+
+A title that is not on that list is a bug in one direction; a paragraph in the
+serif is a bug in the other.
 
 ## Colour
 
