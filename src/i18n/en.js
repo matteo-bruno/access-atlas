@@ -15,10 +15,13 @@ export default {
   },
 
   nav: {
-    title: 'Access Atlas',
+    title: 'Accessibility Atlas',
     tagline: 'Sony CSL · Rome — Sustainable Cities',
     atlas: 'Accessibility Atlas',
     platforms: 'Platform',
+    stats: 'Stats',
+    about: 'Sustainable cities',
+    consulting: 'Consulting',
     research: 'Research',
     blog: 'Blog',
     faq: 'FAQ',
@@ -31,6 +34,10 @@ export default {
   home: {
     hero: {
       eyebrow: 'Open research platforms · Sony CSL Rome',
+      // The landing: the Atlas's name, and one line saying what it does.
+      title: 'Accessibility Atlas',
+      subtitle: 'Mapping urban access, city by city.',
+      // The previous home page (/overview) still opens on the long form.
       headline: 'An atlas to measure',
       headlineAccent: 'cities’ access.',
       lede: 'What is within reach in a city? Measure {proximity} — the everyday services within walking distance. Measure {opportunity} — what public transport can reach within a time budget. Measure {cardep} — how much you need a car to access opportunities in the city. Discover how access propagates inequalities.',
@@ -55,6 +62,16 @@ export default {
       mapLabel: 'Every city the Atlas has published',
       scrollHint: 'Or read on',
     },
+    // Why any of this is measured. Three sentences, in this order: they are a
+    // sequence, and the page's argument rests on the last one.
+    premise: {
+      eyebrow: 'The premise',
+      lines: [
+        'Cities are places of opportunities.',
+        'Access to opportunities reduces inequalities.',
+        'Unequal access creates unequal societies.',
+      ],
+    },
     metrics: {
       cities: 'Cities published',
       platforms: 'Platforms',
@@ -62,24 +79,12 @@ export default {
       cells: 'Hexagonal cells',
       researchers: 'Researchers',
     },
-    coverage: {
-      tag: '01',
-      title: 'A single map of access, four lenses.',
-      hint: 'hover any platform to preview',
-      badge: 'Published coverage · {count} cities',
-      combined:
-        'Where every platform has been exported onto one shared grid, the four lenses become layers of a single map:',
-      legend: {
-        opportunity: 'Opportunity',
-        proximity: 'Proximity',
-        comparison: 'Comparison',
-      },
-    },
     platforms: {
-      tag: '02',
-      title: 'The four platforms',
+      title: 'Accessibility layers',
       hint: 'proximity → opportunity → comparison',
-      open: 'Open',
+      // Each card opens the Atlas's own introduction to that layer, not the
+      // upstream viewer — the platform is one link further on, from there.
+      more: 'More info',
       cityCount: '{count} cities',
       themes: {
         fifteen: 'Proximity',
@@ -98,9 +103,11 @@ export default {
       },
     },
     table: {
-      tag: '03',
-      title: 'By the numbers',
+      title: 'Compare cities',
       hint: 'six cities · P.O.V. framework',
+      statsNote:
+        'Six cities on three measures, from the P.O.V. datasets. The screen that compares every published city, on every measure, is the Stats tab.',
+      statsCta: 'Open Stats',
       headers: {
         city: 'City',
         proximity: 'Median proximity score',
@@ -109,58 +116,44 @@ export default {
       },
       note: 'Proximity and opportunity are weighted counts of reachable points of interest, comparable between cities because every city is measured the same way. Inclusion is the share of cells above both population-weighted medians.',
     },
-    quote: {
-      eyebrow: 'The premise',
-      before: 'A city is a promise of ',
-      accent: 'nearness',
-      after: ': that the things you need are within reach. The Atlas asks, city by city and cell by cell, whether that promise is being kept — and for whom.',
-      attribution: '— Sustainable Cities team · Sony CSL Rome',
-    },
     side: {
-      tag: '04',
-      title: 'Side projects & future work',
+      title: 'Work in progress',
+      // Only for a card that has something to open; the rest say nothing
+      // rather than claiming a status nobody can check.
+      kinds: { live: 'Live', paper: 'Paper' },
       items: {
-        maps3d: {
-          name: '3D Maps',
-          status: 'Live',
-          desc: 'Interactive three-dimensional maps of urban structure.',
+        shade: {
+          name: 'The right to the shade',
+          desc: 'Shade as infrastructure: who can cross a city in summer without walking in the sun, and who cannot.',
         },
-        whatif: {
-          status: 'Archive',
-          desc: 'The original modular platform that seeded the Atlas.',
+        weight: {
+          name: 'The weight of urban inequalities',
+          desc: 'Inequality in access read in three dimensions, city by city, as a surface rather than a table.',
         },
-        heat: {
-          name: 'Pedestrian Heat',
-          status: 'Planned',
-          desc: 'Heat exposure along pedestrian routes.',
+        odMatrices: {
+          name: 'OD matrices from GPS data',
+          desc: 'Origin–destination flows reconstructed from GPS traces, to measure the journeys people actually make against the ones a network makes possible.',
         },
-        a11y: {
-          name: 'Accessibility for All',
-          status: 'In progress',
-          desc: 'Reachability measured for wheelchair users rather than an average pedestrian.',
+        bikeLanes: {
+          name: 'Bike lane planning',
+          desc: 'Where a cycle network should grow next, given the width of the roads it has to fit into and the connections it would create.',
         },
-        sound: {
-          name: 'Soundscapes',
-          status: 'Concept',
-          desc: 'Acoustic exposure as a dimension of urban quality.',
+        co2: {
+          name: 'Transport CO₂ emissions',
+          desc: 'The emissions cost of urban form: how much carbon a city’s mobility spends, and how proximity changes the figure.',
+        },
+        quality: {
+          name: 'The inequality of quality',
+          desc: 'The framework’s third dimension: not how much is reachable, but how good it is — and whether quality is distributed as unequally as access.',
         },
       },
     },
-  },
-
-  // Basemap terms. OpenFreeMap serves the tiles keylessly and asks to be
-  // credited alongside OpenMapTiles and OpenStreetMap; the map is unusable
-  // without them, so the credit is on the map rather than in a colophon.
-  map: {
-    attribution:
-      'Basemap © OpenFreeMap · vector tiles © OpenMapTiles · map data © OpenStreetMap contributors',
   },
 
   platform: {
     search: 'Search your city…',
     searchHint: '⌘K',
     paper: 'Paper ↗',
-    github: 'GitHub ↗',
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',
     ctaMap: 'Click a city on the map',
@@ -290,6 +283,13 @@ export default {
       isochrone: 'Minutes from the selected cell',
     },
     summary: { weightedV: 'Velocity for the average resident' },
+    // The corner of the controls column where the viewer admits it can be
+    // wrong. {contact} is the address, rendered as a link.
+    mistake: {
+      title: 'Notice a mistake?',
+      body: 'Mistakes can happen! Data could be missing or misleading. {contact} if you know this can be fixed.',
+      contact: 'Contact us',
+    },
     layerCells: 'Cells measured by {name}',
     isochroneEmpty: 'Click a cell to draw travel times from it',
     unavailable: 'Not published',
@@ -511,7 +511,7 @@ export default {
 
   faq: {
     eyebrow: 'Frequently asked',
-    headline: 'Six common\nquestions.',
+    headline: 'Common\nquestions.',
     lede: 'Short answers to what we are asked most. Something else on your mind? Write to {email}.',
     meta: {
       updated: 'Last updated',
@@ -534,6 +534,10 @@ export default {
         a: 'Street networks and points of interest come from OpenStreetMap. Walking times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm rather than an average frequency. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
       },
       {
+        q: 'Why is my city wrong?',
+        a: 'It might well be. The measurements are only as good as their inputs: an OpenStreetMap area that is thinly mapped, a GTFS feed that is out of date, a line that opened after the export was run, or a service that closed before it — all of these produce a map that is confidently wrong in a way the map itself cannot detect. If you know a city and something looks off, write to us and say where the better data is: an up-to-date feed, an official source, or simply which part of the map does not match what is on the ground. That is the fastest way for a city to be re-exported. Every published dataset is downloadable, so the disagreement can be checked rather than argued about.',
+      },
+      {
         q: 'Why isn’t my city included?',
         a: 'Coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, open a GitHub issue.',
       },
@@ -546,6 +550,104 @@ export default {
         a: 'Yes. The visualisation code is MIT-licensed and the published datasets are CC BY-NC 4.0 — free to use, share and adapt with attribution, for non-commercial purposes. Commercial use needs written permission. The papers themselves are open access under CC BY 4.0.',
       },
     ],
+  },
+
+  // Who we are — the research line the Atlas is one output of.
+  about: {
+    eyebrow: 'Sustainable cities',
+    headline: 'A research line on cities,',
+    headlineAccent: 'not a product.',
+    lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories — Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
+    labLink: 'Sony CSL ↗',
+    teamLink: 'The people →',
+
+    doTitle: 'What we do',
+    do: {
+      measure: {
+        tag: 'Measure',
+        title: 'We measure what a city gives access to',
+        desc: 'Proximity, opportunity and — where it can be done honestly — the value of what is reachable, computed cell by cell from open data on street networks, timetables, services and population.',
+      },
+      compare: {
+        tag: 'Compare',
+        title: 'We make cities comparable',
+        desc: 'Every city is measured the same way, on the same grid, with the same scales — which is what makes a figure from one city mean anything beside a figure from another.',
+      },
+      publish: {
+        tag: 'Publish',
+        title: 'We publish the method and the data',
+        desc: 'Peer-reviewed papers, downloadable datasets and open code. A measurement that informs a planning decision should be checkable by the people that decision lands on.',
+      },
+    },
+
+    withTitle: 'Who we work with',
+    withBody:
+      'The group sits inside Sony CSL Rome, hosted in the joint initiative with CREF, and its research runs with collaborators at Sapienza and other universities and institutes in Italy and abroad. Doctoral and master’s students work on the Atlas as part of that arrangement rather than alongside it.',
+    withBody2:
+      'We also work with city administrations, research groups and NGOs — usually because someone needs to make an argument about access with evidence behind it. If that is you, the contact page is the place to start.',
+
+    projectsTitle: 'Other projects',
+    projectsHint: 'beyond the four layers',
+    projects: {
+      whatif: {
+        tag: 'Platform',
+        name: 'WhatIf',
+        desc: 'The lab’s modular urban simulation platform, and the home of the upstream 15-minute city and CityChrone viewers.',
+      },
+      maps3d: {
+        tag: 'Live map',
+        name: '3D maps',
+        desc: 'Urban inequality read in three dimensions — the weight of a city’s differences, drawn as a surface.',
+      },
+      bikeLanes: {
+        tag: 'Paper',
+        name: 'Bike lane planning',
+        desc: 'Road-width-aware network optimisation: where a cycle network should grow next, given the streets it has to fit into.',
+      },
+    },
+    labCta: 'Visit Sony CSL',
+  },
+
+  // The comparison screen, before it exists.
+  stats: {
+    eyebrow: 'Statistics',
+    headline: 'Compare cities.',
+    lede: 'One screen for every published city on every measure — proximity, opportunity, car dependency, the zone mix — side by side and sortable.',
+    emptyTitle: 'Not built yet',
+    emptyBody:
+      'This tab is where cities will be compared across the four layers at once. It is deliberately empty until it can be: a page of plausible-looking figures would be worse than a page that says there are none. What already exists is below.',
+    availableTitle: 'What can be compared today',
+    availableHint: 'one platform at a time',
+    compare: {
+      fifteen: 'Every city this platform has published, side by side.',
+      citychrone: 'Every city this platform has published, side by side.',
+      cardep:
+        'All 22 cities ranked by the index for their average resident, with the distribution of residents across the index.',
+      pov: 'All 18 cities by their mix of the four zones, counted by cell or by resident, with the scores behind them.',
+    },
+  },
+
+  // Consulting — short, because there is nothing else that can honestly be said.
+  consulting: {
+    eyebrow: 'Consulting',
+    headline: 'Working on a city?\nTalk to us.',
+    lede: 'If you are a public administration, an agency or a company that needs to measure access — for a plan, a service, an investment case or an evaluation — we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer.',
+    cta: 'Write to us',
+    whoTitle: 'Who this is for',
+    who: {
+      policy: {
+        tag: 'Public sector',
+        title: 'Policy makers',
+        desc: 'Cities, regions, transport authorities and agencies deciding where a line, a service or a facility should go — and needing to know, beforehand, who it would actually reach.',
+      },
+      company: {
+        tag: 'Private sector',
+        title: 'Companies',
+        desc: 'Organisations whose decisions depend on how a city is reached: siting, service design, mobility, or an evidence base for a report that has to withstand scrutiny.',
+      },
+    },
+    note:
+      'A note on the licence: the published datasets are CC BY-NC 4.0, so commercial use needs written permission. That is a conversation, not a refusal — it is the same address either way.',
   },
 
   contact: {
@@ -661,7 +763,7 @@ export default {
     research: 'Research',
     researchLinks: ['Papers', 'Datasets', 'Blog', 'FAQ'],
     about: 'About',
-    aboutLinks: ['Team', 'Contact', 'Work with us'],
+    aboutLinks: ['Sustainable cities', 'Team', 'Contact', 'Consulting', 'Work with us'],
     touch: 'Stay in touch',
     touchLinks: ['GitHub', 'Newsletter'],
     workCta: 'Work with us →',

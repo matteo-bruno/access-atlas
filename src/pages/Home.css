@@ -125,95 +125,6 @@
   padding-bottom: 56px;
 }
 
-/* Floating chip used over maps (coverage badge, legend). */
-.aa-map-badge {
-  position: absolute;
-  padding: 8px 12px;
-  background: rgba(251, 250, 244, 0.92);
-  border: 1px solid var(--hair);
-  border-radius: var(--radius);
-  backdrop-filter: blur(4px);
-  font-size: 12px;
-  color: var(--ink-2);
-  z-index: 2;
-}
-
-.aa-coverage {
-  overflow: hidden;
-}
-
-.aa-coverage__canvas {
-  position: relative;
-  /* Taller than the design's 280px illustration: a real Mercator map needs the
-     extra height to show the same span of latitudes, from Helsinki to
-     Melbourne, at full page width. */
-  height: 400px;
-}
-
-.aa-coverage__badge {
-  top: 14px;
-  left: 18px;
-}
-
-.aa-coverage__legend {
-  top: 14px;
-  right: 18px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  padding: 10px 14px;
-  font-size: 11.5px;
-}
-
-.aa-coverage__legenditem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Way in to the combined viewer, under the coverage map. */
-.aa-coverage__foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 20px;
-  padding: 14px 18px;
-  border-top: 1px solid var(--hair);
-}
-
-.aa-coverage__note {
-  margin: 0;
-  max-width: 62ch;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-
-.aa-coverage__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.aa-coverage__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 13px;
-  border: 1px solid var(--ink);
-  border-radius: var(--radius);
-  background: var(--ink);
-  color: var(--card);
-  font-size: 13px;
-  text-decoration: none;
-  transition: opacity 120ms ease;
-}
-
-.aa-coverage__cta:hover {
-  opacity: 0.85;
-}
-
 /* ── Platform cards ───────────────────────────────────────────── */
 
 .aa-platforms {
@@ -287,7 +198,7 @@
   overflow: hidden;
 }
 
-/* ── By the numbers ───────────────────────────────────────────── */
+/* ── Compare cities ───────────────────────────────────────────── */
 
 .aa-table {
   overflow: hidden;
@@ -335,43 +246,49 @@
   color: var(--ink-2);
 }
 
-/* ── Pull quote ───────────────────────────────────────────────── */
-
-.aa-quote {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
+/* The foot of the table: what these six cities are a sample of, and the way
+   to the screen that will hold all of them. */
+.aa-table__foot {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 48px;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 14px 22px;
+  background: var(--paper-alt);
+  border-top: 1px solid var(--hair);
 }
 
-.aa-quote__body {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-size: 30px;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: var(--ink);
-}
-
-.aa-quote__accent {
-  color: var(--magenta);
-}
-
-.aa-quote__attribution {
-  margin-top: 16px;
-  font-family: var(--font-sans);
-  font-style: normal;
+.aa-table__note {
+  max-width: 62ch;
   font-size: 13px;
-  color: var(--ink-3);
+  line-height: 1.5;
+  color: var(--ink-2);
 }
 
-/* ── Side projects ────────────────────────────────────────────── */
+.aa-table__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--card);
+  font-size: 13px;
+  white-space: nowrap;
+  transition: opacity 120ms ease;
+}
+
+.aa-table__cta:hover {
+  opacity: 0.85;
+}
+
+/* ── Work in progress ─────────────────────────────────────────── */
 
 .aa-side {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -382,6 +299,7 @@
 .aa-side__meta {
   display: flex;
   align-items: center;
+  min-height: 14px;
   gap: 8px;
   margin-bottom: 14px;
   font-size: 11px;
@@ -424,11 +342,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .aa-quote {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .aa-metrics {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 0;
@@ -465,18 +378,6 @@
     grid-template-columns: 1fr;
   }
 
-  .aa-quote__body {
-    font-size: 24px;
-  }
-
-  .aa-coverage__canvas {
-    height: 300px;
-  }
-
-  .aa-coverage__legend {
-    display: none;
-  }
-
   /* The meters need more room than a phone has — show the numbers only. */
   .aa-table__head,
   .aa-table__row {
@@ -491,7 +392,7 @@
   }
 }
 
-/* A side-project card that links out is still a card, not a link-coloured
+/* A work-in-progress card that links out is still a card, not a link-coloured
    block of text. */
 .aa-side__card--link {
   display: block;

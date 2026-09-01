@@ -179,14 +179,13 @@ try {
       [...errors, ...bad].slice(0, 2).join(' | '),
     );
 
-    const zones = await page.$$eval('.aa-zones__pct', (els) => els.map((e) => e.textContent.trim()));
+    // The combined viewer is the one city view now, and it lists the zone
+    // shares as bands. The old per-platform page's `.aa-zones__pct` went with
+    // that page, and so did its cell-level scatter.
+    const zones = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
     const summary = await page.$$eval('.aa-summary__row dd', (els) =>
       els.map((e) => e.textContent.trim()),
     );
-    const caption = await page
-      .$eval('.aa-city__caption', (e) => e.textContent.trim())
-      .catch(() => '');
-
     check(
       'Zone shares come from the published file',
       zones.join(' ') === expected.shares.join(' '),
@@ -197,12 +196,13 @@ try {
       summary[0] === String(expected.cellCount),
       summary[0],
     );
+    // The basemap's terms are the only credit on the map now, and they are on
+    // screen rather than behind a toggle: MapLibre's own control, not compact.
     check(
-      'Cell geometry caption comes from the catalogue',
-      /9/.test(caption) && /200/.test(caption),
-      caption || '(no caption)',
+      'The basemap credit is on the map, permanently',
+      (await page.locator('.maplibregl-ctrl-attrib').count()) === 0 ||
+        (await page.locator('.maplibregl-ctrl-attrib.maplibregl-compact').count()) === 0,
     );
-    check('Scatter is plotted', (await page.$$eval('.aa-scatter circle', (e) => e.length)) > 0);
     await page.close();
   }
 

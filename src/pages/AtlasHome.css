@@ -1,11 +1,11 @@
 /* The front door: the coverage map, the words over it, and the rest of the
    home page directly underneath. */
 .aa-landing__main {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 0;
 }
 
-/* One viewport of map. Scrolling leaves it behind; "explore" stays on it. */
 /* One viewport of clear space over the site's backdrop. */
 .aa-landing__stage {
   position: relative;
@@ -20,16 +20,11 @@
 .aa-landing__sheet {
   position: relative;
 }
-.aa-landing__main {
-  display: flex;
-  flex-direction: column;
-}
 
 .aa-landing__content {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
@@ -43,6 +38,18 @@
   pointer-events: auto;
 }
 
+/* The name, what it does and the way in sit in the middle of the viewport
+   rather than at the top of it — the map is the backdrop to a title, not a
+   header with a map under it. `auto` margins centre the block and leave the
+   metrics pinned to the foot. */
+.aa-landing__middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(24px, 6vw, 80px);
+  margin: auto 0;
+}
+
 .aa-landing__lead {
   max-width: 620px;
 }
@@ -50,29 +57,49 @@
 .aa-landing__headline {
   margin: 10px 0 0;
   font-family: var(--font-serif, inherit);
-  font-size: clamp(32px, 4.8vw, 56px);
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -0.02em;
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
 }
 
-.aa-landing__lede {
-  margin: 16px 0 0;
-  max-width: 560px;
+.aa-landing__subtitle {
+  margin: 14px 0 0;
+  max-width: 30ch;
   color: var(--ink-2);
-  font-size: 15px;
-  line-height: 1.6;
-}
-.aa-landing__lede strong {
-  color: var(--ink);
-  font-weight: 600;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
 }
 
 .aa-landing__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 28px;
+}
+
+/* The premise: to the right of the title, and below its baseline, so it reads
+   as the second thing on the screen rather than a column competing with the
+   first. */
+.aa-landing__premise {
+  align-self: flex-end;
+  max-width: 340px;
+  padding-bottom: 6px;
+}
+
+.aa-landing__premisebody {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* Three sentences, one per line: they are a sequence — opportunities, access,
+   inequality — and running them together as a paragraph loses the step. */
+.aa-landing__premisebody span {
+  display: block;
 }
 
 .aa-landing__foot {
@@ -107,11 +134,28 @@
   letter-spacing: 0.04em;
 }
 
+@media (max-width: 980px) {
+  /* The premise stacks under the title rather than beside it; at this width
+     there is no "right" to put it on. */
+  .aa-landing__middle {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .aa-landing__premise {
+    align-self: flex-start;
+    max-width: 46ch;
+  }
+}
 
 @media (max-width: 860px) {
   .aa-landing__stage {
     height: auto;
     min-height: 78vh;
+  }
+  .aa-landing__middle {
+    margin: 32px 0;
   }
   .aa-landing__foot {
     flex-direction: column;

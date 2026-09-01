@@ -28,6 +28,9 @@ const Research = lazy(() => import('./pages/Research.jsx'));
 const Blog = lazy(() => import('./pages/Blog.jsx'));
 const BlogPost = lazy(() => import('./pages/BlogPost.jsx'));
 const Work = lazy(() => import('./pages/Work.jsx'));
+const SustainableCities = lazy(() => import('./pages/SustainableCities.jsx'));
+const Stats = lazy(() => import('./pages/Stats.jsx'));
+const Consulting = lazy(() => import('./pages/Consulting.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 /** An old per-platform city URL → the combined viewer on that layer. */
@@ -106,6 +109,9 @@ function FadingRoutes({ children }) {
 const TABS = [
   ['/platforms', 'platforms'],
   ['/atlas', 'platforms'],
+  ['/sustainable-cities', 'about'],
+  ['/stats', 'stats'],
+  ['/consulting', 'consulting'],
   ['/research', 'research'],
   ['/blog', 'blog'],
   ['/work-with-us', 'work'],
@@ -135,10 +141,12 @@ function Chrome() {
     const node = ref.current;
     if (!node || typeof ResizeObserver === 'undefined') return undefined;
     const publish = () => {
-      document.documentElement.style.setProperty(
-        '--nav-h',
-        `${Math.round(node.getBoundingClientRect().height)}px`,
-      );
+      // Not rounded: the backdrop is offset by this to sit exactly where the
+      // platform screen's map sits, and rounding a 74.5px bar to 75 leaves the
+      // two worlds half a pixel apart — visible as a jump when you step from
+      // one to the other.
+      const height = node.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--nav-h', `${height.toFixed(2)}px`);
     };
     publish();
     const observer = new ResizeObserver(publish);
@@ -183,6 +191,9 @@ export default function App() {
           {/* The combined viewer: one city, all four visualisations. Layer
               and options ride the query string so any view is linkable. */}
           <Route path="/atlas/:cityId" element={<AtlasCityPage />} />
+          <Route path="/sustainable-cities" element={<SustainableCities />} />
+          <Route path="/stats" element={<Stats />} />
+          <Route path="/consulting" element={<Consulting />} />
           <Route path="/research" element={<Research />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

@@ -10,6 +10,26 @@
 
 const CITY_ZOOM_BOOST = 1.1;
 
+/**
+ * How far past the world-width fit the site's coverage maps sit.
+ *
+ * Two maps show it — the backdrop behind every page, and the platform screen
+ * — and they have to be the same map: the front door hands the reader
+ * straight to the platform tab, and a world that jumps a step between them
+ * reads as two different maps rather than one. So the figure lives here and
+ * both pass it, alongside the same centre and the same box (the backdrop
+ * starts below the nav for exactly that reason — see Backdrop.css).
+ *
+ * Zero is the plain fit, which crops nothing and leaves the cities small in a
+ * lot of ocean. This is a little over half a zoom level in: the published
+ * cities fill more of the frame, and the widest of them — the US west coast
+ * against central Europe — still sit inside it.
+ */
+export const WORLD_ZOOM_BOOST = 0.65;
+
+/** The centre both coverage maps are framed on. */
+export const WORLD_CENTER = [10, 26];
+
 export function cityZoom(profile, boost = CITY_ZOOM_BOOST) {
   return (profile?.zoom ?? 10) + boost;
 }

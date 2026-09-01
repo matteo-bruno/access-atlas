@@ -14,7 +14,7 @@ export function Footer() {
   // Destinations by position, so the dictionaries stay pure labels and the
   // translations cannot drift away from the routes.
   const researchTo = ['/research', '/research', '/blog', '/faq'];
-  const aboutTo = ['/contact', '/contact', '/work-with-us'];
+  const aboutTo = ['/sustainable-cities', '/contact', '/contact', '/consulting', '/work-with-us'];
   const touchHref = [CONTACT.codeUrl, null];
 
   const columns = [

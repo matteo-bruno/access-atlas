@@ -21,6 +21,8 @@ import { MapBox } from '../components/MapBox.jsx';
 import { CategoryBars } from '../components/CategoryBars.jsx';
 import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
+import { Interpolate } from '../components/Interpolate.jsx';
+import { CONTACT } from '../data/team.js';
 import {
   useAtlasCartogram,
   useAtlasMesh,
@@ -743,6 +745,12 @@ function AtlasScreen({ cityId, view }) {
                 />
               </>
             )}
+
+            {/* The corner of the panel where a reader who knows the city
+                better than the data does can say so. It sits under the
+                controls rather than beside a figure: the doubt is usually
+                about the layer as a whole, not one cell. */}
+            <MistakeNote />
           </aside>
         )}
 
@@ -808,7 +816,7 @@ function AtlasScreen({ cityId, view }) {
             )}
 
             {/* ── Top left: the panel switch and the geometry ──── */}
-            <div className="aa-mapui aa-mapui--tl">
+            <div className="aa-mapui aa-mapui--tl aa-fadein">
               <button
                 type="button"
                 className="aa-mapbtn"
@@ -831,7 +839,7 @@ function AtlasScreen({ cityId, view }) {
             </div>
 
             {/* ── Top right: what the city adds up to, and one cell ── */}
-            <div className="aa-mapui aa-mapui--tr">
+            <div className="aa-mapui aa-mapui--tr aa-fadein aa-fadein--slow">
               <MapBox
                 title={t('city.summary.title')}
                 open={summaryOpen}
@@ -928,7 +936,7 @@ function AtlasScreen({ cityId, view }) {
             </div>
 
             {/* ── Bottom left: how strongly the layer is painted ── */}
-            <div className="aa-mapui aa-mapui--bl">
+            <div className="aa-mapui aa-mapui--bl aa-fadein">
               <MapBox title={t('atlas.controls.opacity')} className="aa-mapbox--opacity">
                 <label className="aa-opacity">
                   <input
@@ -946,7 +954,7 @@ function AtlasScreen({ cityId, view }) {
               </MapBox>
             </div>
 
-            <div className="aa-mapui aa-mapui--br">
+            <div className="aa-mapui aa-mapui--br aa-fadein">
               <button
                 type="button"
                 className="aa-mapbtn"
@@ -960,10 +968,6 @@ function AtlasScreen({ cityId, view }) {
             {citychroneOn && ccView === 'isochrone' && originCc == null && (
               <div className="aa-atlas__prompt">{t('atlas.isochroneEmpty')}</div>
             )}
-
-            {/* The basemap's terms, in full: it is a third party's work and
-                the map is unusable without it. */}
-            <div className="aa-city__caption">{t('map.attribution')}</div>
           </div>
         </section>
       </main>
@@ -993,6 +997,46 @@ function AtlasScreen({ cityId, view }) {
             {formatCoord(profile.center[1], 'NS')} {formatCoord(profile.center[0], 'EW')}
           </span>
         </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * "Notice a mistake?" — the one place the viewer admits it can be wrong.
+ *
+ * Closed it is a line of text in the corner of the controls; open it says what
+ * kind of wrong is likely (missing or misleading data) and hands over an
+ * address. A form would promise a workflow that does not exist behind it.
+ */
+function MistakeNote() {
+  const { t } = useI18n();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className={`aa-mistake${open ? ' aa-mistake--open' : ''}`}>
+      <button
+        type="button"
+        className="aa-mistake__toggle"
+        aria-expanded={open}
+        onClick={() => setOpen((current) => !current)}
+      >
+        <Icon name="info" size={12} color="currentColor" />
+        {t('atlas.mistake.title')}
+      </button>
+      {open && (
+        <p className="aa-mistake__body">
+          <Interpolate
+            template={t('atlas.mistake.body')}
+            values={{
+              contact: (
+                <a className="aa-mistake__link" href={`mailto:${CONTACT.general}`}>
+                  {t('atlas.mistake.contact')}
+                </a>
+              ),
+            }}
+          />
+        </p>
       )}
     </div>
   );

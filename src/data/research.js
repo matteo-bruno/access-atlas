@@ -184,7 +184,7 @@ export const DATASETS = [
 ];
 
 export const CITATION = `Sustainable Cities team, Sony Computer Science Laboratories — Rome.
-Access Atlas (2026). https://matteo-bruno.github.io/access-atlas/
+Accessibility Atlas (2026). https://matteo-bruno.github.io/access-atlas/
 
 The framework:
 Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026).

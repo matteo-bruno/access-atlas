@@ -68,7 +68,6 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
   };
 }
 
-/** Multi-hue dot palette for the home coverage map. */
 /**
  * Markers for the all-platforms world map, shaded by how many of the four
  * lenses a city has published data for. That is the one thing worth reading
@@ -83,21 +82,6 @@ export function coverageCountPaint(scale) {
     'circle-color': ['interpolate', ['linear'], ['get', 'platformCount'], ...stops],
     'circle-opacity': 0.9,
     'circle-stroke-color': 'rgba(255,255,255,0.55)',
-    'circle-stroke-width': 0.6,
-  };
-}
-
-export function atlasCirclePaint(scale) {
-  return {
-    'circle-radius': RADIUS_DENSE,
-    'circle-color': [
-      'match',
-      ['%', ['get', 'paletteIndex'], scale.length],
-      ...scale.flatMap((color, i) => [i, color]),
-      scale[0],
-    ],
-    'circle-opacity': 0.9,
-    'circle-stroke-color': 'rgba(255,255,255,0.5)',
     'circle-stroke-width': 0.6,
   };
 }

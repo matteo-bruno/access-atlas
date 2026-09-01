@@ -222,3 +222,17 @@
     font-size: 17px;
   }
 }
+
+/* The chips a post ends on: the platform it introduces, the paper it rests
+   on. Wrapping, because a citation makes a long label. */
+.aa-post__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 8px;
+}
+
+.aa-post__links .aa-chip {
+  white-space: normal;
+  line-height: 1.4;
+}

@@ -160,14 +160,58 @@
   border-radius: 0;
 }
 
-/* The basemap's terms sit on the map, clear of the boxes in the corners. */
-.aa-atlas .aa-city__caption {
-  right: 14px;
-  left: 14px;
-  bottom: 8px;
-  font-size: 10.5px;
-  font-style: normal;
-  text-align: center;
+/* The basemap's terms are MapLibre's own control now, bottom right and always
+   open — one credit, in the corner the reader already looks for it in. */
+
+/* ── "Notice a mistake?" ──────────────────────────────────────────
+   The corner of the controls column. `margin-top: auto` pins it to the
+   bottom of the panel when the controls above are short, and it simply
+   follows them when they are not. */
+.aa-atlas .aa-city__panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.aa-mistake {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.aa-mistake__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  margin-left: -8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11.5px;
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.aa-mistake__toggle:hover,
+.aa-mistake--open .aa-mistake__toggle {
+  background: var(--paper-alt);
+  color: var(--ink);
+}
+
+.aa-mistake__body {
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: var(--paper-alt);
+  border-radius: var(--radius);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.aa-mistake__link {
+  color: var(--magenta);
+  border-bottom: 1px solid var(--magenta);
 }
 
 /* Opacity is a slider and a number, on one line, in the smallest box that

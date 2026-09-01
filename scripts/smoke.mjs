@@ -31,9 +31,14 @@ const ROUTES = [
   ['/atlas/rome?layer=cardep', 'Rome, Car Dependency layer'],
   ['/atlas/milan', 'Milan combined viewer'],
   ['/atlas/milan?layer=citychrone&view=isochrone', 'Milan combined viewer, CityChrone isochrones'],
+  ['/sustainable-cities', 'Sustainable cities — who we are'],
+  ['/stats', 'Stats — the comparison screen, before it exists'],
+  ['/consulting', 'Consulting'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
   ['/blog/what-the-atlas-measures', 'Blog post'],
+  ['/blog/layer-15-minute-city', 'Layer post — 15-minute city'],
+  ['/blog/layer-accessibility-pov', 'Layer post — P.O.V.'],
   ['/work-with-us', 'Work with us'],
   ['/faq', 'FAQ'],
   ['/contact', 'Contact'],
@@ -617,12 +622,25 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(3500);
 
   const tab = (await page.locator('.aa-nav__link').allInnerTexts())[0];
+  const headline = await page.$eval('.aa-landing__headline', (e) => e.textContent.trim());
   check(
     'The landing leaves a viewport of the site backdrop under its copy',
     (await page.locator('.aa-backdrop canvas').count()) === 1 &&
       /Accessibility Atlas/.test(tab) &&
+      headline === 'Accessibility Atlas' &&
       (await page.locator('.aa-picker').count()) === 0,
-    tab,
+    `${tab} · ${headline}`,
+  );
+
+  // The premise reads beside the name, not in a section further down.
+  const premise = await page.$eval('.aa-landing__premisebody', (e) => e.innerText.trim());
+  check(
+    'The premise is on the front door, under the title and to its right',
+    /^Cities are places of opportunities\./.test(premise) &&
+      /unequal societies\.$/.test(premise) &&
+      (await page.locator('.aa-landing__premise').boundingBox()).x >
+        (await page.locator('.aa-landing__lead').boundingBox()).x,
+    premise.replace(/\n/g, ' '),
   );
 
   // The rest of the home page is directly underneath, not behind a link, and
@@ -711,10 +729,21 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
   check(
-    'The world map carries its search and its source, and no bar',
+    'The world map carries its search, and no bar and no repository link',
     (await page.locator('.aa-subhead').count()) === 0 &&
       (await page.locator('.aa-mapstage__tools .aa-search').count()) === 1 &&
-      (await page.locator('.aa-mapstage__tools .aa-mapbtn').count()) === 1,
+      (await page.locator('.aa-mapstage__tools .aa-mapbtn').count()) === 0,
+  );
+
+  // Everything that floats over the map arrives by fading in: a control that
+  // snaps on over a half-drawn map reads as a page that has not loaded.
+  const faded = await page.$$eval('.aa-fadein', (els) =>
+    els.map((e) => getComputedStyle(e).animationName),
+  );
+  check(
+    'The map’s chrome fades in rather than appearing',
+    faded.length >= 4 && faded.every((name) => name === 'aa-fadein'),
+    `${faded.length} elements`,
   );
   await page.close();
 }
@@ -784,7 +813,9 @@ for (const [route, name] of ROUTES) {
   const page = await context.newPage();
   await page.goto(`${BASE}/`, { waitUntil: 'load' });
   await page.waitForTimeout(1200);
-  const en = await page.$eval('h1', (e) => e.textContent.trim());
+  // The h1 is the Atlas's name and is the same in both locales — the line
+  // under it is what a locale swap has to change.
+  const en = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
   // Read every metric, not just the first: only values above 999 pick up a
   // thousands separator, and which metrics the home page shows can change.
   const enMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
@@ -793,7 +824,7 @@ for (const [route, name] of ROUTES) {
 
   await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
   await page.waitForTimeout(700);
-  const it = await page.$eval('h1', (e) => e.textContent.trim());
+  const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
   const itMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );

@@ -264,6 +264,36 @@ strong {
   height: 6px;
 }
 
+/* Anything that arrives on top of a map fades in rather than appearing.
+   A map paints in two steps — the paper, then the data — and controls that
+   snap in over it while it is still resolving read as a page that is not
+   finished loading. Opacity only, never transform: several of these boxes are
+   positioned with one (`.aa-picker` centres itself with translateX), and an
+   animation on transform would throw them across the screen on arrival.
+
+   `both` keeps the first frame at opacity 0, so nothing flashes before the
+   animation starts, and the small delay lets the map's own first paint land
+   underneath. */
+@keyframes aa-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aa-fadein {
+  animation: aa-fadein 420ms ease 90ms both;
+}
+
+/* Staggered by corner, so the screen assembles rather than blinking on: the
+   map's own furniture first, the cards that explain it a beat later. */
+.aa-fadein--slow {
+  animation-duration: 560ms;
+  animation-delay: 220ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

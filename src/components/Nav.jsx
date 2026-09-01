@@ -15,6 +15,9 @@ export function Nav({ active = 'atlas', sticky = true }) {
   const items = [
     { key: 'atlas', to: '/', label: t('nav.atlas') },
     { key: 'platforms', to: '/platforms', label: t('nav.platforms') },
+    { key: 'stats', to: '/stats', label: t('nav.stats') },
+    { key: 'about', to: '/sustainable-cities', label: t('nav.about') },
+    { key: 'consulting', to: '/consulting', label: t('nav.consulting') },
     { key: 'research', to: '/research', label: t('nav.research') },
     { key: 'blog', to: '/blog', label: t('nav.blog') },
     { key: 'faq', to: '/faq', label: t('nav.faq') },

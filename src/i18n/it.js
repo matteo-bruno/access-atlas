@@ -8,10 +8,14 @@ export default {
   },
 
   nav: {
-    title: 'Access Atlas',
+    // Il nome è il nome, anche in italiano: è così che l'Atlante si chiama.
+    title: 'Accessibility Atlas',
     tagline: 'Sony CSL · Roma — Città Sostenibili',
-    atlas: 'Atlante dell’accessibilità',
+    atlas: 'Accessibility Atlas',
     platforms: 'Piattaforma',
+    stats: 'Statistiche',
+    about: 'Città sostenibili',
+    consulting: 'Consulenza',
     research: 'Ricerca',
     blog: 'Blog',
     faq: 'FAQ',
@@ -24,6 +28,10 @@ export default {
   home: {
     hero: {
       eyebrow: 'Piattaforme di ricerca aperte · Sony CSL Roma',
+      // La pagina d'ingresso: il nome dell'Atlante e una riga su cosa fa.
+      title: 'Accessibility Atlas',
+      subtitle: 'Mappiamo l’accesso urbano, città per città.',
+      // La home precedente (/overview) apre ancora sulla forma lunga.
       headline: 'Un atlante per misurare',
       headlineAccent: 'l’accesso delle città.',
       lede: 'Che cosa è a portata in una città? Misura la {proximity} — i servizi quotidiani raggiungibili a piedi. Misura l’{opportunity} — ciò a cui il trasporto pubblico può arrivare entro un budget di tempo. Misura la {cardep} — quanto serve l’automobile per accedere alle opportunità della città. Scopri come l’accesso propaga le disuguaglianze.',
@@ -48,6 +56,16 @@ export default {
       mapLabel: 'Tutte le città pubblicate dall’Atlante',
       scrollHint: 'Oppure continua a leggere',
     },
+    // Perché tutto questo viene misurato. Tre frasi, in quest'ordine: sono una
+    // sequenza, e l'argomento della pagina poggia sull'ultima.
+    premise: {
+      eyebrow: 'La premessa',
+      lines: [
+        'Le città sono luoghi di opportunità.',
+        'L’accesso alle opportunità riduce le disuguaglianze.',
+        'Un accesso diseguale crea società diseguali.',
+      ],
+    },
     metrics: {
       cities: 'Città pubblicate',
       platforms: 'Piattaforme',
@@ -55,24 +73,12 @@ export default {
       cells: 'Celle esagonali',
       researchers: 'Ricercatori',
     },
-    coverage: {
-      tag: '01',
-      title: 'Una sola mappa dell’accesso, quattro lenti.',
-      hint: 'passa sopra una piattaforma per l’anteprima',
-      badge: 'Copertura pubblicata · {count} città',
-      combined:
-        'Dove tutte le piattaforme sono state esportate su un’unica griglia condivisa, le quattro prospettive diventano livelli di una sola mappa:',
-      legend: {
-        opportunity: 'Opportunità',
-        proximity: 'Prossimità',
-        comparison: 'Confronto',
-      },
-    },
     platforms: {
-      tag: '02',
-      title: 'Le quattro piattaforme',
+      title: 'Livelli di accessibilità',
       hint: 'prossimità → opportunità → confronto',
-      open: 'Apri',
+      // Ogni scheda apre l'introduzione dell'Atlante a quel livello, non il
+      // viewer originale: la piattaforma è un link più avanti, da lì.
+      more: 'Più informazioni',
       cityCount: '{count} città',
       themes: {
         fifteen: 'Prossimità',
@@ -91,9 +97,11 @@ export default {
       },
     },
     table: {
-      tag: '03',
-      title: 'I numeri',
+      title: 'Confronta le città',
       hint: 'sei città · framework P.O.V.',
+      statsNote:
+        'Sei città su tre misure, dai dataset P.O.V. La schermata che confronta ogni città pubblicata, su ogni misura, è la scheda Statistiche.',
+      statsCta: 'Apri Statistiche',
       headers: {
         city: 'Città',
         proximity: 'Punteggio mediano di prossimità',
@@ -102,58 +110,44 @@ export default {
       },
       note: 'Prossimità e opportunità sono conteggi pesati di punti di interesse raggiungibili, confrontabili fra città perché ogni città è misurata allo stesso modo. L’inclusione è la quota di celle sopra entrambe le mediane pesate sulla popolazione.',
     },
-    quote: {
-      eyebrow: 'La premessa',
-      before: 'Una città è una promessa di ',
-      accent: 'vicinanza',
-      after: ': che le cose di cui hai bisogno siano a portata. L’Atlante chiede, città per città e cella per cella, se quella promessa venga mantenuta — e per chi.',
-      attribution: '— Team Città Sostenibili · Sony CSL Roma',
-    },
     side: {
-      tag: '04',
-      title: 'Progetti collaterali e sviluppi futuri',
+      title: 'Lavori in corso',
+      // Solo per una scheda che ha qualcosa da aprire; le altre non dicono
+      // nulla invece di dichiarare uno stato che nessuno può verificare.
+      kinds: { live: 'Online', paper: 'Articolo' },
       items: {
-        maps3d: {
-          name: 'Mappe 3D',
-          status: 'Online',
-          desc: 'Mappe tridimensionali interattive della struttura urbana.',
+        shade: {
+          name: 'Il diritto all’ombra',
+          desc: 'L’ombra come infrastruttura: chi può attraversare una città d’estate senza camminare al sole, e chi no.',
         },
-        whatif: {
-          status: 'Archivio',
-          desc: 'La piattaforma modulare originale da cui è nato l’Atlante.',
+        weight: {
+          name: 'Il peso delle disuguaglianze urbane',
+          desc: 'La disuguaglianza di accesso letta in tre dimensioni, città per città, come superficie invece che come tabella.',
         },
-        heat: {
-          name: 'Pedestrian Heat',
-          status: 'In programma',
-          desc: 'Esposizione al calore lungo i percorsi pedonali.',
+        odMatrices: {
+          name: 'Matrici OD da dati GPS',
+          desc: 'Flussi origine–destinazione ricostruiti da tracce GPS, per misurare gli spostamenti che le persone fanno davvero contro quelli che la rete rende possibili.',
         },
-        a11y: {
-          name: 'Accessibility for All',
-          status: 'In corso',
-          desc: 'Raggiungibilità misurata per chi usa una sedia a rotelle, non per un pedone medio.',
+        bikeLanes: {
+          name: 'Pianificazione delle piste ciclabili',
+          desc: 'Dove far crescere la rete ciclabile, data la larghezza delle strade in cui deve stare e i collegamenti che creerebbe.',
         },
-        sound: {
-          name: 'Soundscapes',
-          status: 'Concept',
-          desc: 'L’esposizione acustica come dimensione della qualità urbana.',
+        co2: {
+          name: 'Emissioni di CO₂ dei trasporti',
+          desc: 'Il costo in emissioni della forma urbana: quanta anidride carbonica spende la mobilità di una città, e quanto la prossimità cambia il conto.',
+        },
+        quality: {
+          name: 'La disuguaglianza della qualità',
+          desc: 'La terza dimensione del quadro teorico: non quanto è raggiungibile, ma quanto è buono — e se la qualità sia distribuita in modo diseguale quanto l’accesso.',
         },
       },
     },
-  },
-
-  // Termini della mappa di base. OpenFreeMap serve le tile senza chiave e
-  // chiede di essere citata insieme a OpenMapTiles e OpenStreetMap; senza di
-  // loro la mappa non esiste, quindi il credito sta sulla mappa.
-  map: {
-    attribution:
-      'Mappa di base © OpenFreeMap · tile vettoriali © OpenMapTiles · dati © contributori di OpenStreetMap',
   },
 
   platform: {
     search: 'Cerca la tua città…',
     searchHint: '⌘K',
     paper: 'Articolo ↗',
-    github: 'GitHub ↗',
     welcome: 'Benvenuto in {name}',
     dismiss: 'Chiudi',
     ctaMap: 'Clicca una città sulla mappa',
@@ -289,6 +283,13 @@ export default {
       isochrone: 'Minuti dalla cella selezionata',
     },
     summary: { weightedV: 'Velocità per la persona media' },
+    // L'angolo della colonna dei controlli in cui il viewer ammette di poter
+    // sbagliare. {contact} è l'indirizzo, reso come link.
+    mistake: {
+      title: 'Hai notato un errore?',
+      body: 'Gli errori capitano! I dati possono mancare o essere fuorvianti. {contact} se sai come si può sistemare.',
+      contact: 'Scrivici',
+    },
     layerCells: 'Celle misurate da {name}',
     isochroneEmpty: 'Clicca una cella per disegnare i tempi di viaggio da lì',
     unavailable: 'Non pubblicato',
@@ -510,7 +511,7 @@ export default {
 
   faq: {
     eyebrow: 'Domande frequenti',
-    headline: 'Sei domande\nricorrenti.',
+    headline: 'Domande\nricorrenti.',
     lede: 'Risposte brevi a ciò che ci viene chiesto più spesso. Avete un’altra domanda? Scrivete a {email}.',
     meta: {
       updated: 'Ultimo aggiornamento',
@@ -533,6 +534,10 @@ export default {
         a: 'Rete stradale e punti di interesse vengono da OpenStreetMap. I tempi a piedi sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm invece che con una frequenza media. La popolazione viene dalle griglie WorldPop a 100 m riscalate sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, circa 200 m.',
       },
       {
+        q: 'Perché la mia città è sbagliata?',
+        a: 'Può benissimo esserlo. Le misure valgono quanto valgono i dati che le producono: un’area mappata poco su OpenStreetMap, un feed GTFS non aggiornato, una linea aperta dopo l’export o un servizio chiuso prima — tutto questo produce una mappa sicura di sé e sbagliata, in un modo che la mappa da sola non può accorgersi. Se conoscete una città e qualcosa non torna, scriveteci indicando dove stanno i dati migliori: un feed aggiornato, una fonte ufficiale, o semplicemente quale parte della mappa non corrisponde a ciò che c’è sul territorio. È il modo più rapido perché una città venga riesportata. Ogni dataset pubblicato è scaricabile, quindi il disaccordo si può verificare invece che discutere.',
+      },
+      {
         q: 'Perché la mia città non c’è?',
         a: 'La copertura è limitata dai dati, non dall’interesse: servono una buona mappatura OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di puntare alla copertura globale, perché un feed mal specificato produce numeri sbagliati dall’aria affidabile. Se la vostra città ha entrambi e manca, aprite una issue su GitHub.',
       },
@@ -545,6 +550,104 @@ export default {
         a: 'Sì. Il codice di visualizzazione è sotto licenza MIT e i dataset pubblicati sono CC BY-NC 4.0 — liberi di usare, condividere e adattare con attribuzione, per scopi non commerciali. L’uso commerciale richiede autorizzazione scritta. Gli articoli sono open access con licenza CC BY 4.0.',
       },
     ],
+  },
+
+  // Chi siamo — la linea di ricerca di cui l'Atlante è uno dei risultati.
+  about: {
+    eyebrow: 'Città sostenibili',
+    headline: 'Una linea di ricerca sulle città,',
+    headlineAccent: 'non un prodotto.',
+    lede: 'Siamo un gruppo di ricerca no-profit e una linea di ricerca di Sony Computer Science Laboratories — Roma, con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
+    labLink: 'Sony CSL ↗',
+    teamLink: 'Le persone →',
+
+    doTitle: 'Cosa facciamo',
+    do: {
+      measure: {
+        tag: 'Misuriamo',
+        title: 'Misuriamo a cosa dà accesso una città',
+        desc: 'Prossimità, opportunità e — dove si può fare onestamente — il valore di ciò che è raggiungibile, calcolati cella per cella a partire da dati aperti su rete stradale, orari, servizi e popolazione.',
+      },
+      compare: {
+        tag: 'Confrontiamo',
+        title: 'Rendiamo le città confrontabili',
+        desc: 'Ogni città è misurata allo stesso modo, sulla stessa griglia, con le stesse scale — è questo che permette a un numero di una città di significare qualcosa accanto al numero di un’altra.',
+      },
+      publish: {
+        tag: 'Pubblichiamo',
+        title: 'Pubblichiamo metodo e dati',
+        desc: 'Articoli sottoposti a revisione, dataset scaricabili e codice aperto. Una misura che informa una decisione di pianificazione dovrebbe essere verificabile da chi quella decisione la subisce.',
+      },
+    },
+
+    withTitle: 'Con chi lavoriamo',
+    withBody:
+      'Il gruppo sta dentro Sony CSL Roma, ospitato nell’iniziativa congiunta con il CREF, e la sua ricerca procede con collaboratori della Sapienza e di altre università e istituti, in Italia e all’estero. Dottorande, dottorandi e tesisti lavorano sull’Atlante dentro questo assetto, non accanto ad esso.',
+    withBody2:
+      'Lavoriamo anche con amministrazioni cittadine, gruppi di ricerca e associazioni — di solito perché qualcuno deve sostenere una tesi sull’accesso con dei dati alle spalle. Se è il vostro caso, la pagina dei contatti è il punto da cui partire.',
+
+    projectsTitle: 'Altri progetti',
+    projectsHint: 'oltre i quattro livelli',
+    projects: {
+      whatif: {
+        tag: 'Piattaforma',
+        name: 'WhatIf',
+        desc: 'La piattaforma modulare di simulazione urbana del laboratorio, e la casa dei viewer originali di 15-minute city e CityChrone.',
+      },
+      maps3d: {
+        tag: 'Mappa online',
+        name: 'Mappe 3D',
+        desc: 'La disuguaglianza urbana letta in tre dimensioni — il peso delle differenze di una città, disegnato come superficie.',
+      },
+      bikeLanes: {
+        tag: 'Articolo',
+        name: 'Pianificazione delle piste ciclabili',
+        desc: 'Ottimizzazione di rete che tiene conto della larghezza stradale: dove far crescere la rete ciclabile, date le strade in cui deve stare.',
+      },
+    },
+    labCta: 'Vai a Sony CSL',
+  },
+
+  // La schermata di confronto, prima che esista.
+  stats: {
+    eyebrow: 'Statistiche',
+    headline: 'Confronta le città.',
+    lede: 'Una schermata con ogni città pubblicata su ogni misura — prossimità, opportunità, dipendenza dall’auto, mix di zone — affiancate e ordinabili.',
+    emptyTitle: 'Non ancora costruita',
+    emptyBody:
+      'Questa scheda è dove le città verranno confrontate sui quattro livelli insieme. È volutamente vuota finché non potrà esserlo davvero: una pagina di numeri dall’aria plausibile sarebbe peggio di una pagina che dice che non ce ne sono. Qui sotto c’è ciò che esiste già.',
+    availableTitle: 'Cosa si può confrontare oggi',
+    availableHint: 'una piattaforma alla volta',
+    compare: {
+      fifteen: 'Tutte le città pubblicate da questa piattaforma, affiancate.',
+      citychrone: 'Tutte le città pubblicate da questa piattaforma, affiancate.',
+      cardep:
+        'Tutte e 22 le città ordinate per l’indice del loro abitante medio, con la distribuzione dei residenti lungo l’indice.',
+      pov: 'Tutte e 18 le città per il mix delle quattro zone, contate per cella o per residente, con i punteggi che stanno dietro.',
+    },
+  },
+
+  // Consulenza — breve, perché non c'è altro che si possa dire onestamente.
+  consulting: {
+    eyebrow: 'Consulenza',
+    headline: 'Lavorate su una città?\nParliamone.',
+    lede: 'Se siete un’amministrazione pubblica, un’agenzia o un’azienda che ha bisogno di misurare l’accesso — per un piano, un servizio, una valutazione o un caso di investimento — potete chiedercelo. Raccontateci la domanda e vi diremo con franchezza se è una a cui i nostri metodi sanno rispondere.',
+    cta: 'Scriveteci',
+    whoTitle: 'A chi è rivolta',
+    who: {
+      policy: {
+        tag: 'Settore pubblico',
+        title: 'Decisori pubblici',
+        desc: 'Città, regioni, aziende di trasporto e agenzie che devono decidere dove mettere una linea, un servizio o una struttura — e sapere prima chi raggiungerebbe davvero.',
+      },
+      company: {
+        tag: 'Settore privato',
+        title: 'Aziende',
+        desc: 'Organizzazioni le cui decisioni dipendono da come si raggiunge una città: localizzazione, progettazione di servizi, mobilità, o una base di dati per un rapporto che deve reggere alla verifica.',
+      },
+    },
+    note:
+      'Una nota sulla licenza: i dataset pubblicati sono CC BY-NC 4.0, quindi l’uso commerciale richiede un permesso scritto. È una conversazione, non un rifiuto — l’indirizzo è comunque lo stesso.',
   },
 
   contact: {
@@ -660,7 +763,7 @@ export default {
     research: 'Ricerca',
     researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
     about: 'Chi siamo',
-    aboutLinks: ['Team', 'Contatti', 'Lavora con noi'],
+    aboutLinks: ['Città sostenibili', 'Team', 'Contatti', 'Consulenza', 'Lavora con noi'],
     touch: 'Resta in contatto',
     touchLinks: ['GitHub', 'Newsletter'],
     workCta: 'Lavora con noi →',

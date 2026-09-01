@@ -1,7 +1,7 @@
-# Access Atlas
+# Accessibility Atlas
 
-An atlas of how cities give access — the public site for the Sustainable Cities
-team's research at **Sony CSL Rome**.
+An atlas that measures how accessible cities are — the public site for the
+Sustainable Cities team's research at **Sony CSL Rome**.
 
 It brings four open research platforms under one identity:
 
@@ -61,15 +61,18 @@ Outstanding before launch:
 
 | Route                      | Screen |
 | -------------------------- | ------ |
-| `/`                        | Home — hero, metrics, coverage map, four platforms, table, quote, side projects |
+| `/`                        | Landing — the name and the premise over the coverage backdrop, then metrics, the four accessibility layers, the city comparison and work in progress |
 | `/platforms/:slug`         | Platform landing — full-bleed world map, welcome card, legend, city search |
 | `/platforms/:slug/:cityId` | City detail — P.O.V. zones, Car Dependency bands, or 15minCity's category/mode selectors |
 | `/atlas/:cityId`           | Combined viewer — one mesh, all four platforms as switchable layers; state in the query string |
 | `/research`                | Papers, datasets, citation |
 | `/blog`, `/blog/:slug`     | Long-form writing |
 | `/work-with-us`            | Open positions, PhD / thesis / internship routes |
-| `/faq`                     | Six questions |
+| `/faq`                     | Common questions |
 | `/contact`                 | Team, address, collaboration |
+| `/sustainable-cities`      | Who we are — the research line, the lab, other projects |
+| `/stats`                   | Where cities will be compared; links the per-platform comparisons |
+| `/consulting`              | For policy makers and companies who want to ask |
 
 Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,
 `accessibility-pov`.
@@ -226,9 +229,10 @@ direction is **B, "Cartographic Index" (smoothed)**, in
 
 Three deliberate departures from the artboards:
 
-- **Home coverage map is 400 px tall, not 280.** The design's illustration
-  compressed the globe; a real Mercator map at page width needs the extra height
-  to show the same span, Helsinki to Melbourne.
+- **The home's coverage map became the site's backdrop.** The design put a
+  400 px map inside the page; it is now one fixed map behind every screen,
+  framed exactly as the platform screen frames it, and the page's own copy of
+  it went rather than showing the same map twice.
 - **Cartogram caption reads "H3 resolution 9 · ~186 m cells"**, derived from the
   mesh rather than the design's hard-coded "resolution 10 · scale 1:80 000" —
   8,089 cells over Rome is resolution 9, and shipping a wrong number in a
@@ -236,7 +240,8 @@ Three deliberate departures from the artboards:
 - **`/research` had no artboard.** The nav has always listed it, so rather than
   leave a dead link the page is assembled only from existing design patterns.
 
-Everything else keeps the design's dimensions, tokens and type scale. Footer
+Everything else keeps the design's dimensions, tokens and scale; the type is
+Poppins throughout (figures keep a monospace, so digits line up). Footer
 link columns other than Platforms don't navigate — matching the design, which
 renders them as plain labels; they are ready for hrefs.
 

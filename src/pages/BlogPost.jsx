@@ -53,6 +53,26 @@ function PostScreen({ post }) {
 function Block({ block }) {
   if (block.h2) return <h2 className="aa-post__h2">{block.h2}</h2>;
   if (block.note) return <p className="aa-post__note">{block.note}</p>;
+  // Where a post hands the reader on: the platform it describes, the paper
+  // behind it. Rendered as chips rather than inline links so they read as the
+  // end of the article rather than an aside inside it.
+  if (block.links) {
+    return (
+      <div className="aa-post__links">
+        {block.links.map((link) => (
+          <a
+            key={link.url}
+            className="aa-chip"
+            href={link.url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    );
+  }
   if (block.ul) {
     return (
       <ul className="aa-post__list">

@@ -38,10 +38,10 @@ function worldWidthZoom(widthPx) {
   return Math.log2(Math.max(widthPx, 1) / 512);
 }
 
-function applyWorldWidthZoom(map) {
+function applyWorldWidthZoom(map, boost = 0) {
   const width = map.getContainer().clientWidth;
   if (!width) return;
-  map.setZoom(worldWidthZoom(width));
+  map.setZoom(worldWidthZoom(width) + boost);
 }
 
 /**
@@ -66,6 +66,11 @@ export function AtlasMap({
   bounds = null,
   fitPadding = 40,
   fitWorldWidth = false,
+  // Zoom levels past the world-width fit. The site's two coverage maps — the
+  // backdrop and the platform screen — share one value (WORLD_ZOOM_BOOST in
+  // map/framing.js) so they frame the world identically; thumbnails keep the
+  // plain fit, which is what makes a whole world fit in a small box.
+  worldZoomBoost = 0,
   className = '',
   children,
   onReady,
@@ -134,8 +139,11 @@ export function AtlasMap({
         maxZoom,
         interactive,
         // Third-party tiles must carry their attribution; the paper basemap is
-        // credited in the page chrome instead.
-        attributionControl: usesTiles({ basemap }) ? { compact: true } : false,
+        // credited in the page chrome instead. Not compact: the credit is a
+        // condition of using the tiles, so it is on screen rather than behind
+        // an "i" the reader has to find — and it is now the only place the
+        // city view states it.
+        attributionControl: usesTiles({ basemap }) ? { compact: false } : false,
         dragRotate: false,
         pitchWithRotate: false,
         renderWorldCopies: true,
@@ -168,7 +176,7 @@ export function AtlasMap({
         announced = true;
         setAnchor(overlayAnchor(map));
         if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-        else if (fitWorldWidth) applyWorldWidthZoom(map);
+        else if (fitWorldWidth) applyWorldWidthZoom(map, worldZoomBoost);
         setReady(true);
         onReady?.(map);
       };
@@ -188,7 +196,7 @@ export function AtlasMap({
       let observer;
       if (fitWorldWidth && typeof ResizeObserver !== 'undefined') {
         observer = new ResizeObserver(() => {
-          if (map.loaded()) applyWorldWidthZoom(map);
+          if (map.loaded()) applyWorldWidthZoom(map, worldZoomBoost);
         });
         observer.observe(containerRef.current);
       }
@@ -212,7 +220,7 @@ export function AtlasMap({
     // center/zoom are initial camera values only — changing them later should
     // move the camera (see below), not tear the map down.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, interactive, graticule, basemap]);
+  }, [visible, interactive, graticule, basemap, worldZoomBoost]);
 
   // Keep the camera in sync when a parent drives it.
   useEffect(() => {

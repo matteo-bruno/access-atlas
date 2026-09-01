@@ -4,6 +4,7 @@ import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
 import { AtlasMap } from '../map/AtlasMap.jsx';
+import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../map/framing.js';
 import { CityLayer, CoverageLayer } from '../components/CityLayer.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
@@ -18,8 +19,6 @@ import { paperForPlatform } from '../data/research.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
-
-const GITHUB_URL = 'https://github.com/matteo-bruno/access-atlas';
 
 /**
  * The world map. Without a slug it shows every published city across the four
@@ -110,7 +109,10 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
       <AtlasMap
         ref={mapRef}
         fitWorldWidth
-        center={[10, 20]}
+        // The same framing as the backdrop behind every other page: one world,
+        // however you arrived at it (see WORLD_ZOOM_BOOST).
+        worldZoomBoost={WORLD_ZOOM_BOOST}
+        center={WORLD_CENTER}
         interactive={interactive}
         label={title}
       >
@@ -139,20 +141,18 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
       {chrome && (
         <>
         {/* What the bar above the map used to carry, on the map itself: a way
-            to find a city, and the source. The rest of what it held — the
-            platform's name and its city count — the picker and the welcome
-            card already say. */}
-        <div className="aa-mapui aa-mapui--tr aa-mapstage__tools">
+            to find a city. The rest of what it held — the platform's name and
+            its city count — the picker and the welcome card already say, and
+            the repository link that sat here went with it: this screen is for
+            reading the map, and the code is linked from the footer. */}
+        <div className="aa-mapui aa-mapui--tr aa-mapstage__tools aa-fadein">
           <CitySearch cities={cities} onOpen={openCity} inputRef={searchRef} />
-          <a className="aa-mapbtn" href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
-            {t('platform.github')}
-          </a>
         </div>
 
         {/* Which set of cities the map draws — the four platforms, or all of
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
-        <nav className="aa-card aa-picker" aria-label={t('platform.all.pick')}>
+        <nav className="aa-card aa-picker aa-fadein" aria-label={t('platform.all.pick')}>
           <Link
             className={`aa-picker__item${platform ? '' : ' aa-picker__item--active'}`}
             to="/platforms"
@@ -178,7 +178,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         </nav>
 
         {welcomeOpen && (
-          <section className="aa-card aa-welcome">
+          <section className="aa-card aa-welcome aa-fadein aa-fadein--slow">
             <div className="aa-welcome__head">
               <Eyebrow>{t('platform.welcome', { name: title })}</Eyebrow>
               <button
@@ -222,7 +222,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </section>
         )}
 
-        <section className="aa-card aa-legend" aria-label={t(`${copyKey}.legendUnit`)}>
+        <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>
           <Eyebrow>{t(`${copyKey}.legendUnit`)}</Eyebrow>
           <div className="aa-legend__items">
             {legend.map((entry, index) => (
@@ -237,7 +237,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </div>
         </section>
 
-        <div className="aa-zoom">
+        <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>
             <Icon name="plus" size={14} color="var(--ink-2)" />
           </button>
@@ -250,7 +250,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </button>
         </div>
 
-        <div className="aa-mapstage__attribution aa-mono">{t('platform.attribution')}</div>
+        <div className="aa-mapstage__attribution aa-mono aa-fadein">{t('platform.attribution')}</div>
         </>
       )}
 

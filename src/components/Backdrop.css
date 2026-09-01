@@ -1,9 +1,18 @@
 /* The map behind the site: fixed, so the page scrolls over it rather than
    carrying it along, and behind everything, so nothing has to know it is
-   there. */
+   there.
+
+   It starts *below* the nav rather than at the top of the viewport. The
+   platform screen's map occupies exactly that box (`.aa-page--fixed` is the
+   viewport less the bar), and the two are meant to be one map: given the same
+   centre and the same zoom, an identical box is what makes the world land in
+   the same place on both. */
 .aa-backdrop {
   position: fixed;
-  inset: 0;
+  top: var(--nav-h, 76px);
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 0;
   pointer-events: none;
   background: var(--map-paper);

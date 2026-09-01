@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { AtlasMap } from '../map/AtlasMap.jsx';
+import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../map/framing.js';
 import { CoverageLayer } from './CityLayer.jsx';
 import { useAllCoverage } from '../data/useAtlasData.js';
 import './Backdrop.css';
@@ -16,6 +17,11 @@ const OWN_MAP = ['/platforms', '/atlas'];
  * draws — so the backdrop is the Atlas's own data rather than a texture that
  * resembles it.
  *
+ * It is framed exactly as the platform screen's map is — same centre, same
+ * zoom past the world-width fit, and the same box, which is why the element
+ * starts below the nav rather than at the top of the viewport. Stepping from
+ * the front door onto the platform tab then keeps the world still.
+ *
  * A veil sits over it — the same one on every page and at every scroll
  * position, densest where the copy sits and nearly clear on the far side.
  * Nothing above it paints it out: the map is the site's subject, so it is
@@ -29,7 +35,13 @@ export function Backdrop() {
 
   return (
     <div className="aa-backdrop" aria-hidden="true">
-      <AtlasMap fitWorldWidth center={[10, 20]} interactive={false} label="">
+      <AtlasMap
+        fitWorldWidth
+        worldZoomBoost={WORLD_ZOOM_BOOST}
+        center={WORLD_CENTER}
+        interactive={false}
+        label=""
+      >
         <CoverageLayer cities={cities} interactive={false} />
       </AtlasMap>
       <div className="aa-backdrop__veil" />

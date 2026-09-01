@@ -83,16 +83,34 @@ export const TABLE_SCALE = {
   inclusion: (v) => Math.min(v * 2.4, 100),
 };
 
-// A `url` marks a project that is live and opens in a new tab; the others are
-// described but have nothing to link to yet.
-export const SIDE_PROJECTS = [
+// Work in progress — the lines of research running alongside the four
+// published layers. A `url` marks one that has something to open: a live map,
+// or the paper it produced. `kind` says which, so the card can label the link
+// honestly rather than calling a preprint a platform. The rest have neither
+// yet, and say nothing rather than claiming a status nobody can check.
+export const WORK_IN_PROGRESS = [
+  { key: 'shade', color: '#d57b66' },
   {
-    key: 'maps3d',
+    key: 'weight',
     color: BRAND.navy,
+    kind: 'live',
     url: 'https://mat701.github.io/3D-maps/weight-urban.html',
   },
-  { key: 'whatif', name: 'whatif-machine', color: '#9CA0A6' },
-  { key: 'heat', color: '#d57b66' },
-  { key: 'a11y', color: BRAND.cyan },
-  { key: 'sound', color: BRAND.magenta },
+  { key: 'odMatrices', color: BRAND.cyan },
+  {
+    key: 'bikeLanes',
+    color: '#3b8a4f',
+    kind: 'paper',
+    // Basilone R. et al. (2025), J. Phys. Complexity 6, 035008 — see
+    // src/data/research.js, which carries the same DOI.
+    url: 'https://doi.org/10.1088/2632-072X/adf683',
+  },
+  {
+    key: 'co2',
+    color: '#a04640',
+    kind: 'paper',
+    // Marzolla F. et al. (2026), npj Sustainable Mobility and Transport 3, 7.
+    url: 'https://doi.org/10.1038/s44333-025-00074-0',
+  },
+  { key: 'quality', color: BRAND.magenta },
 ];

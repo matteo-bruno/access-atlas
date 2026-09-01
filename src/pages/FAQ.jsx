@@ -7,8 +7,10 @@ import { useI18n } from '../i18n/index.jsx';
 import { CONTACT } from '../data/team.js';
 import './FAQ.css';
 
-// The design opens entries 1 and 3 by default.
-const INITIALLY_OPEN = [0, 2];
+// Every entry starts closed. The design opened two of them, which put two
+// answers on the screen before anyone had asked a question and pushed the
+// rest of the list below the fold — the point of the page is the list.
+const INITIALLY_OPEN = [];
 
 export default function FAQ() {
   const { t, n } = useI18n();

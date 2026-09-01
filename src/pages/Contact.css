@@ -1,6 +1,7 @@
 .aa-contact {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: start;
 }
 
 .aa-contact__intro {
@@ -65,57 +66,78 @@
 
 /* ── Team ─────────────────────────────────────────────────────── */
 
+/* No panel of its own: the column sat on a block of tinted paper that made it
+   a second surface competing with the details card opposite. The map behind
+   the site shows through here like it does everywhere else. */
 .aa-contact__team {
   padding: 56px 40px;
-  background: var(--paper-alt);
 }
 
+/* People, in two columns, with the name leading and the role under it. The
+   boxes that used to sit behind each row are gone: a name is not a card, and
+   twelve cards in a column read as twelve things to click. */
 .aa-team {
-  margin-top: 16px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 28px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.aa-team__row {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr auto;
-  gap: 10px;
-  align-items: center;
-  padding: 14px 18px;
+.aa-team__item {
+  padding: 12px 0;
   border-bottom: 1px solid var(--hair-soft);
 }
 
-.aa-team__row:last-child {
+/* The last row of each column, whichever it is, closes the list. */
+.aa-team__item:last-child,
+.aa-team__item:nth-last-child(2):nth-child(odd) {
   border-bottom: 0;
 }
 
-.aa-team__row--join {
-  background: var(--paper-alt);
-}
-
-.aa-team__row--join .aa-team__name {
-  color: var(--magenta);
-}
-
 .aa-team__name {
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
+.aa-team__name a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.aa-team__name a:hover {
+  color: var(--magenta);
+  border-bottom-color: var(--magenta);
+}
+
 .aa-team__role {
+  margin-top: 2px;
   font-size: 12.5px;
+  line-height: 1.45;
   color: var(--ink-3);
 }
 
-.aa-team__link {
-  font-size: 11px;
-  color: var(--ink-2);
-  text-align: right;
-  white-space: nowrap;
+/* The open place on the team, marked rather than boxed. */
+.aa-team__item--join .aa-team__name a {
+  color: var(--magenta);
 }
 
-.aa-team__link:hover {
-  color: var(--magenta);
+/* Former members: same list, quieter, so the current team reads first. */
+.aa-contact__former {
+  margin-top: 40px;
+}
+
+.aa-team--former .aa-team__name {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.aa-team--former .aa-team__item {
+  padding: 9px 0;
 }
 
 @media (max-width: 1080px) {
@@ -148,28 +170,11 @@
     margin-top: 10px;
   }
 
-  .aa-team__row {
+  .aa-team {
     grid-template-columns: 1fr;
-    gap: 2px;
   }
 
-  .aa-team__link {
-    text-align: left;
-    white-space: normal;
-    overflow-wrap: anywhere;
+  .aa-team__item:nth-last-child(2):nth-child(odd) {
+    border-bottom: 1px solid var(--hair-soft);
   }
-}
-
-/* Former members: same table, quieter, so the current team reads first. */
-.aa-contact__former {
-  margin-top: 34px;
-}
-
-.aa-team--former .aa-team__name {
-  font-weight: 400;
-  color: var(--ink-2);
-}
-
-.aa-team--former .aa-team__row {
-  padding: 11px 18px;
 }

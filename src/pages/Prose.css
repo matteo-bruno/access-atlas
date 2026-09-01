@@ -1,0 +1,144 @@
+/* Shared layout for the three pages that are mostly words: who we are, the
+   comparison screen that is not built yet, and the one line about consulting.
+   One stylesheet rather than three near-identical ones — they are the same
+   page shape with different copy in it. */
+
+.aa-prose__intro {
+  padding-top: 56px;
+  padding-bottom: 40px;
+}
+
+.aa-prose__headline {
+  margin: 18px 0 20px;
+  max-width: 820px;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.aa-prose__accent {
+  color: var(--magenta);
+}
+
+.aa-prose__lede {
+  max-width: 660px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+/* A block of body copy over the backdrop: it carries its own paper, because
+   the rule is that a block which cannot be read over the map gets a
+   background of its own rather than a heavier veil. */
+.aa-prose__body {
+  padding: 26px 28px;
+  max-width: 780px;
+}
+
+.aa-prose__p {
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+
+.aa-prose__p + .aa-prose__p {
+  margin-top: 14px;
+}
+
+.aa-prose__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.aa-prose__card {
+  padding: 22px 24px;
+}
+
+.aa-prose__cardtitle {
+  margin: 12px 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.aa-prose__carddesc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+/* Outward links — the lab, the projects. Chips, so a list of them reads as a
+   set of destinations rather than a paragraph of underlines. */
+.aa-prose__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.aa-prose__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--card);
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 120ms ease;
+}
+
+.aa-prose__cta:hover {
+  opacity: 0.85;
+}
+
+/* "Nothing here yet", said once and plainly. */
+.aa-prose__empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 26px 28px;
+  max-width: 780px;
+}
+
+.aa-prose__emptydot {
+  margin-top: 6px;
+  background: var(--ink-4);
+}
+
+.aa-prose__emptytitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.aa-prose__emptybody {
+  margin-top: 10px;
+  max-width: 62ch;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1080px) {
+  .aa-prose__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .aa-prose__headline {
+    font-size: 38px;
+  }
+
+  .aa-prose__list {
+    grid-template-columns: 1fr;
+  }
+}

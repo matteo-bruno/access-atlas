@@ -1,4 +1,4 @@
-# Working on the Access Atlas
+# Working on the Accessibility Atlas
 
 Notes for anyone — human or model — picking this up cold. `README.md` covers
 structure, build and deployment; this file covers the things that are easy to
@@ -131,6 +131,15 @@ one, and its map caption states the measured cell size (~201 m) without naming
 a grid. Cities exported onto the standard H3 grid should set the resolution.
 The build script no longer infers it from cell radius; an earlier version did,
 and was wrong.
+
+## Type
+
+**Poppins carries the whole site**, self-hosted through `@fontsource/poppins`
+so it renders identically offline. `--font-serif` survives as a *role* rather
+than a typeface — the headings that asked for it now take Poppins too, and
+keeping the token means every `var(--font-serif)` follows without a rewrite.
+`--font-mono` stays a real monospace: it is only ever used for figures,
+coordinates and counts, where digits have to line up column to column.
 
 ## Colour
 
@@ -283,7 +292,9 @@ Do not re-import either when adding copy from upstream.
 ## The front door
 
 `/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map,
-held behind a scrim with the copy over it. Two ways past that copy, answering
+with the copy over it. The words sit in the middle of that viewport — the
+name, one line under it, one way in — with **the premise** beside them, to the
+right and below the title's baseline. Two ways past the copy, answering
 different questions: **scrolling** reads the rest of the home page, directly
 underneath (`HomeSections`, exported from `Home.jsx` and mounted in both
 places, so the two cannot drift); **"explore the platform"** is an ordinary
@@ -294,9 +305,24 @@ a new one like any other link.
 `Backdrop` (in the shell, beside the nav) is one coverage map fixed to the
 viewport, behind every page: it never scrolls, never remounts on navigation,
 and is the Atlas's own data rather than a texture that resembles it. The
-landing only leaves it a viewport of clear space and asks for a lighter veil
-(`.aa-backdrop--open`); its own content below is opaque, so scrolling reads as
-a sheet moving over a map that stays put.
+landing only leaves it a viewport of clear space; its own sections scroll over
+it as before.
+
+**The backdrop and the platform screen are one map, and must stay one.** Same
+centre and same zoom past the world-width fit (`WORLD_CENTER` and
+`WORLD_ZOOM_BOOST` in `map/framing.js`, passed by both), and the same box:
+`.aa-backdrop` starts at `--nav-h` rather than at the top of the viewport,
+because the platform map fills the viewport less the bar. `--nav-h` is
+published unrounded for the same reason — rounding a 74.5 px bar to 75 leaves
+the two worlds half a pixel apart, which reads as a jump when you step from
+one to the other. Changing any of the three without the others is what makes
+the front door and the platform tab look like different maps.
+
+**What floats over a map fades in** (`.aa-fadein`, `global.css`): a map paints
+in two steps, and controls that snap on over a half-drawn one read as a page
+that has not loaded. Opacity only, never transform — `.aa-picker` centres
+itself with `translateX`, and animating transform would throw it across the
+screen.
 
 One veil, the same on every page and at every scroll position: a gradient,
 densest where a page's copy sits and nearly clear on the far side. Nothing
@@ -350,6 +376,27 @@ the path by `activeTab`. Three consequences to keep in mind:
 - A page cannot unmount what it does not own, so the city view's full screen
   marks the document (`.aa-chromeless`) and the shell's own rule answers.
 
+## The home page
+
+Three sections under the landing, and none of them numbered: **Accessibility
+layers** (the four platform cards), **Compare cities** (the six-city table,
+which hands off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
+`src/data/home.js`). The coverage-map section that used to open the page went
+when the backdrop became the site's map — it was the same map twice — and the
+pull quote went when the premise moved onto the front door.
+
+**A platform card opens the Atlas's own introduction to that layer, not the
+upstream viewer.** Each of the four has a post in `src/data/blog.js` carrying
+`layer: '<platform id>'`, which `postForLayer` resolves; a post's `links`
+block is where the platform and its paper are handed over. A card labelled
+"More info" that dropped a first-time reader straight into someone else's
+viewer was the thing this replaced.
+
+Three tabs exist mostly to be filled in: `/sustainable-cities` says who the
+group is, `/stats` says the all-city comparison is not built and links the two
+per-platform ones that are, and `/consulting` gives an address. They share
+`Prose.css`.
+
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
@@ -366,10 +413,16 @@ Two things that are easy to get wrong here:
   that figure came from. Area comes from `meshFromAtlas`, measured on the
   union mesh's true hexagons, and is omitted for a legacy city whose mesh is a
   cartogram: a cartogram's polygons are a population, not a place.
-- **The basemap's terms are on the map.** OpenFreeMap serves the tiles
-  keylessly and asks to be credited with OpenMapTiles and OpenStreetMap
-  (`map.attribution`), which is why that line replaced the H3 caption rather
-  than joining it.
+- **The basemap's terms are MapLibre's own control, and they are not compact.**
+  OpenFreeMap serves the tiles keylessly and asks to be credited with
+  OpenMapTiles and OpenStreetMap; the credit travels inside the style's
+  sources and `AtlasMap` renders it with `attributionControl: { compact: false }`,
+  bottom right and permanently open. A second copy of the same line used to sit
+  under the map as `.aa-city__caption` — one credit, in one corner, is the
+  whole of it now.
+- **"Notice a mistake?" is the corner of the controls column** — a toggle that
+  opens two sentences and a `mailto:`. It is pinned with `margin-top: auto`,
+  which is why `.aa-atlas .aa-city__panel` is a flex column.
 
 15-minute city's times are shown as a clock — `formatTime`, `m:ss` or `mm:ss`
 — everywhere a reader meets one: the map's tooltip, the inspector, the bars.

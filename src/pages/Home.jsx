@@ -4,14 +4,12 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow, SectionHeading } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
-import { AtlasMap } from '../map/AtlasMap.jsx';
-import { AtlasCityLayer } from '../components/CityLayer.jsx';
 import { PlatformPreview } from '../components/PlatformPreview.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
-import { useAtlasCities } from '../data/useAtlasData.js';
-import { CITIES, citiesForPlatform } from '../data/cities.js';
-import { ATLAS_METRICS, CITY_TABLE, NEWS, SIDE_PROJECTS, TABLE_SCALE } from '../data/home.js';
+import { citiesForPlatform } from '../data/cities.js';
+import { postForLayer } from '../data/blog.js';
+import { ATLAS_METRICS, CITY_TABLE, NEWS, TABLE_SCALE, WORK_IN_PROGRESS } from '../data/home.js';
 import { BRAND } from '../data/brand.js';
 import './Home.css';
 
@@ -41,9 +39,6 @@ export default function Home() {
 export function HomeSections({ hero = true }) {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
-  // Cities published on the shared grid, so the combined viewer can draw every
-  // platform from one mesh. Empty until one is — the CTA appears with the data.
-  const atlasCities = useAtlasCities();
 
   const platformCities = useMemo(
     () => Object.fromEntries(PLATFORMS.map((p) => [p.id, citiesForPlatform(p)])),
@@ -120,116 +115,52 @@ export function HomeSections({ hero = true }) {
           </div>
         </section>
 
-        {/* ── §01 Coverage map ─────────────────────────────────── */}
+        {/* ── The four layers ──────────────────────────────────── */}
         <section className="aa-shell aa-block">
-          <SectionHeading
-            tag={t('home.coverage.tag')}
-            title={t('home.coverage.title')}
-            hint={t('home.coverage.hint')}
-          />
-          <div className="aa-card aa-coverage">
-            <div className="aa-coverage__canvas">
-              <AtlasMap
-                fitWorldWidth
-                center={[10, 20]}
-                interactive={false}
-                label={t('home.coverage.badge', { count: n(10142) })}
-              >
-                <AtlasCityLayer cities={CITIES} interactive={false} />
-              </AtlasMap>
-
-              <div className="aa-map-badge aa-coverage__badge">
-                {t('home.coverage.badge', { count: n(10142) })}
-              </div>
-
-              <div className="aa-map-badge aa-coverage__legend">
-                {[
-                  ['opportunity', BRAND.navy],
-                  ['proximity', BRAND.magenta],
-                  ['comparison', BRAND.cyan],
-                ].map(([key, color]) => (
-                  <span key={key} className="aa-coverage__legenditem">
-                    <span className="aa-dot" style={{ background: color }} />
-                    {t(`home.coverage.legend.${key}`)}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* The combined viewer is what this section's title describes, so
-                the way in belongs here. Listed per city, because being on the
-                shared grid is a property of the city, not of the site. */}
-            {atlasCities.length > 0 && (
-              <div className="aa-coverage__foot">
-                <p className="aa-coverage__note">{t('home.coverage.combined')}</p>
-                <div className="aa-coverage__links">
-                  {atlasCities.map((city) => (
-                    <Link key={city.id} className="aa-coverage__cta" to={`/atlas/${city.id}`}>
-                      {lang === 'it' ? (city.nameIt ?? city.name) : city.name}
-                      <Icon name="arrow" size={13} color="currentColor" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* ── §02 The four platforms ───────────────────────────── */}
-        <section className="aa-shell aa-block">
-          <SectionHeading
-            tag={t('home.platforms.tag')}
-            title={t('home.platforms.title')}
-            hint={t('home.platforms.hint')}
-          />
+          <SectionHeading title={t('home.platforms.title')} hint={t('home.platforms.hint')} />
           <div className="aa-platforms">
-            {/* Each card opens the platform's own live site — the upstream
-                platforms show more cities than the Atlas has republished. The
-                Atlas's own views are reached from §01 above (the combined
-                viewer) and from the Platforms nav. */}
-            {PLATFORMS.map((platform) => (
-              <a
-                key={platform.id}
-                href={platform.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="aa-card aa-lift aa-platform"
-              >
-                <div className="aa-platform__text">
-                  <div className="aa-platform__kicker">
-                    <span className="aa-dot" style={{ background: platform.accent }} />
-                    <span>
-                      {platform.tag} · {t(`home.platforms.themes.${platform.id}`)}
-                    </span>
+            {/* Each card opens the Atlas's own introduction to that layer —
+                what it measures, how its colours read, and from there the
+                platform itself and the paper behind it. Sending a first-time
+                visitor straight into an upstream viewer skipped all of that. */}
+            {PLATFORMS.map((platform) => {
+              const post = postForLayer(platform.id);
+              return (
+                <Link
+                  key={platform.id}
+                  to={post ? `/blog/${post.slug}` : `/platforms/${platform.slug}`}
+                  className="aa-card aa-lift aa-platform"
+                >
+                  <div className="aa-platform__text">
+                    <div className="aa-platform__kicker">
+                      <span className="aa-dot" style={{ background: platform.accent }} />
+                      <span>{t(`home.platforms.themes.${platform.id}`)}</span>
+                    </div>
+                    <h3 className="aa-platform__name">{platform.name}</h3>
+                    <p className="aa-platform__desc">{t(`home.platforms.desc.${platform.id}`)}</p>
+                    <div className="aa-platform__foot">
+                      <span className="aa-mono aa-platform__count">
+                        {t('home.platforms.cityCount', { count: n(platform.cityCount) })}
+                      </span>
+                      <span className="aa-platform__open" style={{ color: platform.accent }}>
+                        {t('home.platforms.more')}
+                        <Icon name="arrow" size={13} color={platform.accent} />
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="aa-platform__name">{platform.name}</h3>
-                  <p className="aa-platform__desc">{t(`home.platforms.desc.${platform.id}`)}</p>
-                  <div className="aa-platform__foot">
-                    <span className="aa-mono aa-platform__count">
-                      {t('home.platforms.cityCount', { count: n(platform.cityCount) })}
-                    </span>
-                    <span className="aa-platform__open" style={{ color: platform.accent }}>
-                      {t('home.platforms.open')}
-                      <Icon name="arrow" size={13} color={platform.accent} />
-                    </span>
-                  </div>
-                </div>
 
-                <div className="aa-platform__map">
-                  <PlatformPreview platform={platform} cities={platformCities[platform.id]} />
-                </div>
-              </a>
-            ))}
+                  <div className="aa-platform__map">
+                    <PlatformPreview platform={platform} cities={platformCities[platform.id]} />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
-        {/* ── §03 By the numbers ───────────────────────────────── */}
+        {/* ── Compare cities ───────────────────────────────────── */}
         <section className="aa-shell aa-block">
-          <SectionHeading
-            tag={t('home.table.tag')}
-            title={t('home.table.title')}
-            hint={t('home.table.hint')}
-          />
+          <SectionHeading title={t('home.table.title')} hint={t('home.table.hint')} />
           <div className="aa-card aa-table">
             <div className="aa-table__head">
               <div>{t('home.table.headers.city')}</div>
@@ -262,36 +193,34 @@ export function HomeSections({ hero = true }) {
                 />
               </div>
             ))}
+
+            {/* Six cities on three measures is a sample, not a comparison.
+                The screen that will hold the whole set is its own tab. */}
+            <div className="aa-table__foot">
+              <span className="aa-table__note">{t('home.table.statsNote')}</span>
+              <Link className="aa-table__cta" to="/stats">
+                {t('home.table.statsCta')}
+                <Icon name="arrow" size={13} color="currentColor" />
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* ── Pull quote ───────────────────────────────────────── */}
-        <section className="aa-shell aa-quote">
-          <Eyebrow>{t('home.quote.eyebrow')}</Eyebrow>
-          <blockquote className="aa-quote__body">
-            {t('home.quote.before')}
-            <em className="aa-quote__accent">{t('home.quote.accent')}</em>
-            {t('home.quote.after')}
-            <footer className="aa-quote__attribution">{t('home.quote.attribution')}</footer>
-          </blockquote>
-        </section>
-
-        {/* ── §04 Side projects ────────────────────────────────── */}
+        {/* ── Work in progress ─────────────────────────────────── */}
         <section className="aa-shell aa-block">
-          <SectionHeading tag={t('home.side.tag')} title={t('home.side.title')} />
+          <SectionHeading title={t('home.side.title')} />
           <div className="aa-side">
-            {/* A project with a `url` is live and links out; the rest are
-                still cards, because there is nothing to open yet. */}
-            {SIDE_PROJECTS.map((project) => {
+            {/* A project with a `url` has something to open — a live map, or
+                the paper it produced — and links out; the rest are still
+                cards, because there is nothing to open yet. */}
+            {WORK_IN_PROGRESS.map((project) => {
               const body = (
                 <>
                   <div className="aa-side__meta">
                     <span className="aa-dot aa-dot--sm" style={{ background: project.color }} />
-                    <span>{t(`home.side.items.${project.key}.status`)}</span>
+                    {project.kind && <span>{t(`home.side.kinds.${project.kind}`)}</span>}
                   </div>
-                  <h3 className="aa-side__name">
-                    {project.name ?? t(`home.side.items.${project.key}.name`)}
-                  </h3>
+                  <h3 className="aa-side__name">{t(`home.side.items.${project.key}.name`)}</h3>
                   <p className="aa-side__desc">{t(`home.side.items.${project.key}.desc`)}</p>
                 </>
               );

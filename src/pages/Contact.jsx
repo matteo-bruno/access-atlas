@@ -43,43 +43,40 @@ export default function Contact() {
 
         <section className="aa-contact__team">
           <Eyebrow>{t('contact.teamTitle')}</Eyebrow>
-          <div className="aa-card aa-team">
+          {/* A list of people, not a table of rows in boxes: the name leads
+              and the role sits under it, so the eye runs down the names. */}
+          <ul className="aa-team">
             {TEAM.map((member) => (
-              <div
+              <li
                 key={member.name ?? 'join'}
-                className={`aa-team__row${member.isJoin ? ' aa-team__row--join' : ''}`}
+                className={`aa-team__item${member.isJoin ? ' aa-team__item--join' : ''}`}
               >
                 <div className="aa-team__name">
                   {member.isJoin ? (
-                    t('contact.joinName')
+                    <Link to="/work-with-us">{t('contact.joinName')}</Link>
                   ) : member.email ? (
                     <a href={`mailto:${member.email}`}>{member.name}</a>
                   ) : (
                     member.name
                   )}
                 </div>
-                <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
-                {/* The join row points at the page that says what is actually
-                    open, rather than a mailto for no vacancy. */}
-                {member.isJoin && (
-                  <Link className="aa-mono aa-team__link" to="/work-with-us">
-                    {t('footer.workCta')}
-                  </Link>
-                )}
-              </div>
+                <div className="aa-team__role">
+                  {member.isJoin ? t('footer.workCta') : t(`contact.roles.${member.roleKey}`)}
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="aa-contact__former">
             <Eyebrow>{t('contact.formerTitle')}</Eyebrow>
-            <div className="aa-card aa-team aa-team--former">
+            <ul className="aa-team aa-team--former">
               {FORMER_MEMBERS.map((member) => (
-                <div key={member.name} className="aa-team__row">
+                <li key={member.name} className="aa-team__item">
                   <div className="aa-team__name">{member.name}</div>
                   <div className="aa-team__role">{t(`contact.roles.${member.roleKey}`)}</div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       </main>
