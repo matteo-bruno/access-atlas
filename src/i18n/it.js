@@ -56,12 +56,11 @@ export default {
     // La pagina d’ingresso: la mappa di copertura con le parole sopra.
     landing: {
       mapLabel: 'Tutte le città pubblicate dall’Atlante',
-      scrollHint: 'Oppure continua a leggere',
+      by: 'Un progetto Sony CSL · Rome',
     },
     // Perché tutto questo viene misurato. Tre frasi, in quest'ordine: sono una
     // sequenza, e l'argomento della pagina poggia sull'ultima.
     premise: {
-      eyebrow: 'La premessa',
       lines: [
         'Le città sono luoghi di opportunità.',
         'L’accesso alle opportunità riduce le disuguaglianze.',
@@ -77,7 +76,6 @@ export default {
     },
     platforms: {
       title: 'Livelli di accessibilità',
-      hint: 'prossimità → opportunità → confronto',
       // Ogni scheda apre l'introduzione dell'Atlante a quel livello, non il
       // viewer originale: la piattaforma è un link più avanti, da lì.
       more: 'Più informazioni',
@@ -100,7 +98,6 @@ export default {
     },
     table: {
       title: 'Confronta le città',
-      hint: 'sei città · framework P.O.V.',
       statsNote:
         'Sei città su tre misure, dai dataset P.O.V. La schermata che confronta ogni città pubblicata, su ogni misura, è la scheda Statistiche.',
       statsCta: 'Apri Statistiche',

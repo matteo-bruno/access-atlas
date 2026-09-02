@@ -34,11 +34,16 @@
 }
 
 /* Floats over whatever is beside it: the panel is narrow and the map must not
-   reflow because someone asked what a legend means. */
+   reflow because someone asked what a legend means.
+
+   Fixed, and drawn in a portal on the body (see Explain.jsx): the controls
+   column it usually hangs off scrolls, and a scrolling box clips its children
+   whatever their z-index — which cut these off at the map's edge. Its position
+   is computed against the button and set inline; the width is duplicated there
+   because the placement needs it before the browser has laid this out. */
 .aa-explain__tip {
-  position: absolute;
-  top: calc(100% + 7px);
-  z-index: 30;
+  position: fixed;
+  z-index: 60;
   display: block;
   width: 258px;
   padding: 10px 12px;
@@ -53,12 +58,6 @@
   line-height: 1.5;
   text-transform: none;
   white-space: normal;
-}
-.aa-explain__tip--left {
-  left: -6px;
-}
-.aa-explain__tip--right {
-  right: -6px;
 }
 .aa-explain__tip p {
   margin: 0 0 7px;

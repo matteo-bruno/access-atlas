@@ -1,10 +1,13 @@
-// "§ 01 · A single map of access, four lenses. — hover any platform to preview"
-export function SectionHeading({ tag, title, hint }) {
+// "§ 01 · A single map of access, four lenses."
+//
+// The italic note that used to sit at the far right of a heading is gone: it
+// restated the section under it in three words, and read as a caption for
+// something that was not there yet.
+export function SectionHeading({ tag, title }) {
   return (
     <div className="aa-section-head">
       {tag && <div className="aa-eyebrow">§ {tag}</div>}
       <h2 className="aa-section-head__title">{title}</h2>
-      {hint && <div className="aa-section-head__hint">{hint}</div>}
     </div>
   );
 }

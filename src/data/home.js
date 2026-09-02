@@ -8,6 +8,11 @@
 
 import { BRAND } from './brand.js';
 
+// Nothing renders these at the moment: the landing and the home page both
+// dropped their list of them — counting the Atlas on the way in said nothing a
+// reader could act on. They are kept, and kept correct, because they are
+// counted from the published files by `build:data` like every other figure
+// here, and putting the list back is one block of JSX.
 export const ATLAS_METRICS = [
   // 20 distinct cities across the four platforms' datasets.
   { key: 'cities', value: 20 },

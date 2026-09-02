@@ -756,6 +756,20 @@ function AtlasScreen({ cityId, view }) {
 
         {/* ── Map ────────────────────────────────────────────── */}
         <section className="aa-city__cartogram aa-city__cartogram--wide">
+          {/* The controls column's own edge, not a control on the map: a
+              chevron astride the seam between the two, pointing at what
+              closing it would leave. It says which way it moves the column
+              and needs no word for it. */}
+          <button
+            type="button"
+            className="aa-city__panelbtn"
+            aria-pressed={!sidebarOpen}
+            aria-label={t(sidebarOpen ? 'atlas.hidePanel' : 'atlas.showPanel')}
+            title={t(sidebarOpen ? 'atlas.hidePanel' : 'atlas.showPanel')}
+            onClick={() => setSidebarOpen((open) => !open)}
+          >
+            <Icon name={sidebarOpen ? 'chevronLeft' : 'chevronRight'} size={14} color="currentColor" />
+          </button>
           <div className="aa-city__canvas">
             {meshReady && geojson ? (
               <AtlasMap
@@ -818,17 +832,9 @@ function AtlasScreen({ cityId, view }) {
               </div>
             )}
 
-            {/* ── Top left: the panel switch and the geometry ──── */}
-            <div className="aa-mapui aa-mapui--tl aa-fadein">
-              <button
-                type="button"
-                className="aa-mapbtn"
-                aria-pressed={!sidebarOpen}
-                onClick={() => setSidebarOpen((open) => !open)}
-              >
-                {sidebarOpen ? '◀' : '▶'} {t(sidebarOpen ? 'atlas.hidePanel' : 'atlas.showPanel')}
-              </button>
-              {unified && (
+            {/* ── Top left: the geometry ───────────────────────── */}
+            {unified && (
+              <div className="aa-mapui aa-mapui--tl aa-fadein">
                 <GeometryToggle
                   compact
                   value={geometryValue}
@@ -838,8 +844,8 @@ function AtlasScreen({ cityId, view }) {
                   missingName={platform.name}
                   loading={cartogramOn && cartogram.status === 'pending'}
                 />
-              )}
-            </div>
+              </div>
+            )}
 
             {/* ── Top right: what the city adds up to, and one cell ── */}
             <div className="aa-mapui aa-mapui--tr aa-fadein aa-fadein--slow">

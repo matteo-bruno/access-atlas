@@ -62,12 +62,12 @@ export default {
     // The landing: the coverage map with the words over it.
     landing: {
       mapLabel: 'Every city the Atlas has published',
-      scrollHint: 'Or read on',
+      // The corner of the first screen, beside the Sony CSL mark.
+      by: 'A Sony CSL · Rome project',
     },
     // Why any of this is measured. Three sentences, in this order: they are a
     // sequence, and the page's argument rests on the last one.
     premise: {
-      eyebrow: 'The premise',
       lines: [
         'Cities are places of opportunities.',
         'Access to opportunities reduces inequalities.',
@@ -83,7 +83,6 @@ export default {
     },
     platforms: {
       title: 'Accessibility layers',
-      hint: 'proximity → opportunity → comparison',
       // Each card opens the Atlas's own introduction to that layer, not the
       // upstream viewer — the platform is one link further on, from there.
       more: 'More info',
@@ -106,7 +105,6 @@ export default {
     },
     table: {
       title: 'Compare cities',
-      hint: 'six cities · P.O.V. framework',
       statsNote:
         'Six cities on three measures, from the P.O.V. datasets. The screen that compares every published city, on every measure, is the Stats tab.',
       statsCta: 'Open Stats',

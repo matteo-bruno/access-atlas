@@ -9,7 +9,7 @@ import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
 import { citiesForPlatform } from '../data/cities.js';
 import { postForLayer } from '../data/blog.js';
-import { ATLAS_METRICS, CITY_TABLE, NEWS, TABLE_SCALE, WORK_IN_PROGRESS } from '../data/home.js';
+import { CITY_TABLE, NEWS, TABLE_SCALE, WORK_IN_PROGRESS } from '../data/home.js';
 import { BRAND } from '../data/brand.js';
 import './Home.css';
 
@@ -101,23 +101,9 @@ export function HomeSections({ hero = true }) {
         </section>
         )}
 
-        {/* ── Atlas metrics ────────────────────────────────────── */}
-        <section className="aa-shell">
-          <div className="aa-card aa-metrics">
-            {ATLAS_METRICS.map((metric) => (
-              <div key={metric.key} className="aa-metrics__item">
-                <div className="aa-metrics__value">
-                  {metric.raw ? metric.value : n(metric.value)}
-                </div>
-                <div className="aa-metrics__label">{t(`home.metrics.${metric.key}`)}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ── The four layers ──────────────────────────────────── */}
         <section className="aa-shell aa-block">
-          <SectionHeading title={t('home.platforms.title')} hint={t('home.platforms.hint')} />
+          <SectionHeading title={t('home.platforms.title')} />
           <div className="aa-platforms">
             {/* Each card opens the Atlas's own introduction to that layer —
                 what it measures, how its colours read, and from there the
@@ -160,7 +146,7 @@ export function HomeSections({ hero = true }) {
 
         {/* ── Compare cities ───────────────────────────────────── */}
         <section className="aa-shell aa-block">
-          <SectionHeading title={t('home.table.title')} hint={t('home.table.hint')} />
+          <SectionHeading title={t('home.table.title')} />
           <div className="aa-card aa-table">
             <div className="aa-table__head">
               <div>{t('home.table.headers.city')}</div>

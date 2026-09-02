@@ -10,6 +10,10 @@ const PATHS = {
     </>
   ),
   close: <path d="M6 6l12 12M18 6L6 18" />,
+  // A bare chevron, for the controls column's own edge: it points at what
+  // closing it would leave.
+  chevronLeft: <path d="M14 6l-6 6 6 6" />,
+  chevronRight: <path d="M10 6l6 6-6 6" />,
   info: (
     <>
       <circle cx="12" cy="12" r="9" />

@@ -564,6 +564,49 @@ for (const [route, name] of ROUTES) {
     tip.replace(/\s+/g, ' ').slice(0, 70),
   );
 
+  // A tooltip in the controls column is bounded by the window, not by the
+  // column: it used to be a child of a box that scrolls, which clips what its
+  // children paint outside it, so the half with the method in it was cut off
+  // at the map's edge.
+  const panelBox = await page.locator('.aa-city__panel').boundingBox();
+  await page.locator('.aa-city__panel .aa-explain__btn').first().hover();
+  await page.waitForTimeout(400);
+  const tipBox = await page.locator('.aa-explain__tip').boundingBox();
+  const viewport = page.viewportSize();
+  check(
+    'A tooltip in the controls column is not clipped by it',
+    tipBox.x + tipBox.width > panelBox.x + panelBox.width &&
+      tipBox.x >= 0 &&
+      tipBox.x + tipBox.width <= viewport.width &&
+      tipBox.y + tipBox.height <= viewport.height,
+    `tip to ${Math.round(tipBox.x + tipBox.width)}px, column ends at ${Math.round(
+      panelBox.x + panelBox.width,
+    )}px`,
+  );
+  await page.mouse.move(10, 10);
+  await page.waitForTimeout(300);
+
+  // The column's handle is on the column's own edge, and says which way it
+  // moves it with a chevron rather than a word.
+  const handle = page.locator('.aa-city__panelbtn');
+  const handleBox = await handle.boundingBox();
+  const onTheSeam = Math.abs(handleBox.x + handleBox.width / 2 - (panelBox.x + panelBox.width)) < 3;
+  const wordless = (await handle.innerText()).trim() === '';
+  await handle.click();
+  await page.waitForTimeout(500);
+  const closed = await page.locator('.aa-city__panel').count();
+  await page.locator('.aa-city__panelbtn').click();
+  await page.waitForTimeout(500);
+  check(
+    'The controls column is closed from its own edge, by a chevron with no word on it',
+    onTheSeam &&
+      wordless &&
+      closed === 0 &&
+      (await page.locator('.aa-city__panel').count()) === 1 &&
+      (await page.locator('.aa-mapbtn', { hasText: 'Hide controls' }).count()) === 0,
+    `${onTheSeam ? 'on the seam' : 'off the seam'} · ${wordless ? 'no label' : 'labelled'}`,
+  );
+
   // The long form is one click from the header, not four around the panel.
   await page.getByRole('button', { name: /About this layer/ }).click();
   await page.waitForTimeout(500);
@@ -635,15 +678,38 @@ for (const [route, name] of ROUTES) {
     `${tab} · ${headline}`,
   );
 
-  // The premise reads beside the name, not in a section further down.
+  // One column on the centre line: the name, then the argument under it. The
+  // premise used to be a second block off to the right, which made the screen
+  // two things to read rather than one.
   const premise = await page.$eval('.aa-landing__premisebody', (e) => e.innerText.trim());
+  const headBox = await page.locator('.aa-landing__headline').boundingBox();
+  const premiseBox = await page.locator('.aa-landing__premisebody').boundingBox();
+  const middle = (box) => box.x + box.width / 2;
   check(
-    'The premise is on the front door, under the title and to its right',
+    'The premise reads under the name, on the same centre line',
     /^Cities are places of opportunities\./.test(premise) &&
       /unequal societies\.$/.test(premise) &&
-      (await page.locator('.aa-landing__premise').boundingBox()).x >
-        (await page.locator('.aa-landing__lead').boundingBox()).x,
-    premise.replace(/\n/g, ' '),
+      premiseBox.y > headBox.y + headBox.height &&
+      Math.abs(middle(premiseBox) - middle(headBox)) < 2,
+    `${premise.replace(/\n/g, ' ').slice(0, 44)}… · Δcentre ${(
+      middle(premiseBox) - middle(headBox)
+    ).toFixed(1)}px`,
+  );
+
+  // Whose Atlas it is, in the corner — and nothing counting itself on the way
+  // in: the figures that used to sit at the foot of this screen, and again a
+  // screen below it, are gone from both.
+  const stageBox = await page.locator('.aa-landing__stage').boundingBox();
+  const creditBox = await page.locator('.aa-landing__by').boundingBox();
+  check(
+    'A credit in the corner, and no figures counted at the door',
+    (await page.locator('.aa-landing__by img').count()) === 1 &&
+      middle(creditBox) > middle(stageBox) &&
+      creditBox.y > stageBox.y + stageBox.height * 0.7 &&
+      (await page.locator('.aa-landing__metric').count()) === 0 &&
+      (await page.locator('.aa-metrics').count()) === 0 &&
+      (await page.locator('.aa-section-head__hint').count()) === 0,
+    await page.$eval('.aa-landing__by', (e) => e.innerText.trim()),
   );
 
   // The rest of the home page is directly underneath, not behind a link, and
@@ -740,6 +806,32 @@ for (const [route, name] of ROUTES) {
       `${midway} → ${covered} → ${back} · ${kept ? 'one map' : 'rebuilt'}`,
     );
   }
+
+  // The map is framed by the width of its box, so a page that scrolls and a
+  // page that does not must still hand it the same width — otherwise the
+  // world shifts by a scrollbar between one tab and the next. The gutter is
+  // reserved on every page for exactly that (see global.css).
+  const measure = async () => ({
+    w: (await page.locator('.aa-backdrop canvas').boundingBox()).width,
+    scrolls: await page.evaluate(
+      () => document.documentElement.scrollHeight > window.innerHeight + 1,
+    ),
+  });
+  await page.goto(`${BASE}/research`, { waitUntil: 'load' });
+  await page.waitForTimeout(2000);
+  const scrolling = await measure();
+  // The same page with nothing left to scroll — which is a short page, without
+  // depending on which of the site's pages happens to be short at this size.
+  await page.evaluate(() => {
+    document.querySelector('.aa-fade').style.display = 'none';
+  });
+  await page.waitForTimeout(600);
+  const still = await measure();
+  check(
+    'The world is the same width on a page that scrolls and one that does not',
+    scrolling.scrolls && !still.scrolls && scrolling.w === still.w,
+    `${scrolling.w}px with a bar · ${still.w}px without`,
+  );
 
   // And it is the *same* backdrop: one veil, so the map is as visible on a
   // page of text as it is on the front door.
@@ -925,16 +1017,16 @@ for (const [route, name] of ROUTES) {
   // The h1 is the Atlas's name and is the same in both locales — the line
   // under it is what a locale swap has to change.
   const en = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  // Read every metric, not just the first: only values above 999 pick up a
-  // thousands separator, and which metrics the home page shows can change.
-  const enMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
+  // Read every figure in the compare table, not just the first: only values
+  // above 999 pick up a thousands separator.
+  const enMetric = await page.$$eval('.aa-table__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
   await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
   await page.waitForTimeout(700);
   const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  const itMetric = await page.$$eval('.aa-landing__metric dd', (els) =>
+  const itMetric = await page.$$eval('.aa-table__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
   const lang = await page.evaluate(() => document.documentElement.lang);

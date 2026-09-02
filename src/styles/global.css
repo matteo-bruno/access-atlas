@@ -9,6 +9,18 @@ body {
   height: 100%;
 }
 
+/* Always reserve the scrollbar's track, on every page.
+
+   The site's map is fixed to the viewport and framed by its *width* — the
+   world spans the container exactly (see map/framing.js) — so a page that
+   scrolls and a page that does not were handing it two different widths, and
+   the world moved a few pixels between them. Reserving the gutter whether or
+   not there is anything to scroll makes that width one number, and the map
+   holds still from page to page. */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Not `height`: a sticky element can only travel inside its parent's box, so
    a root fixed at one viewport would let the nav scroll away with it. */
 #root {
@@ -152,14 +164,6 @@ strong {
   font-weight: 400;
   letter-spacing: -0.015em;
   color: var(--ink);
-}
-
-.aa-section-head__hint {
-  flex: 1;
-  text-align: right;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--ink-3);
 }
 
 /* Buttons */

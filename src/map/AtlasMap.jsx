@@ -174,6 +174,21 @@ export function AtlasMap({
 
       map.touchZoomRotate?.disableRotation();
       mapRef.current = map;
+
+      // Frame it *now*, before the style has loaded and so before the first
+      // frame is painted. The camera the constructor was given is only a
+      // starting point — a world view's real zoom depends on how wide its
+      // container turned out to be, and a city's on the extent of its mesh —
+      // and applying it on `load` meant the map painted once at the wrong
+      // framing and then jumped to the right one. Nothing renders before the
+      // style arrives, so a camera set here is simply the one the reader
+      // sees first.
+      const frame = () => {
+        if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
+        else if (fitWorldWidth) applyWorldWidthZoom(map, worldZoomBoost, center);
+      };
+      frame();
+
       // MapLibre swallows style/source failures unless you listen for them.
       let basemapReported = false;
       map.on('error', (event) => {
@@ -197,8 +212,10 @@ export function AtlasMap({
         if (announced) return;
         announced = true;
         setAnchor(overlayAnchor(map));
-        if (bounds) map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-        else if (fitWorldWidth) applyWorldWidthZoom(map, worldZoomBoost, center);
+        // Again, now that the style is up: MapLibre clamps the centre against
+        // the viewport, and the clamp before a style has given the map its
+        // real extent is not the one that will hold.
+        frame();
         setReady(true);
         onReady?.(map);
       };

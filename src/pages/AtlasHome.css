@@ -38,24 +38,28 @@
   pointer-events: auto;
 }
 
-/* The name, what it does and the way in sit in the middle of the viewport
-   rather than at the top of it — the map is the backdrop to a title, not a
-   header with a map under it. `auto` margins centre the block and leave the
-   metrics pinned to the foot. */
+/* One column, on the centre line of the viewport — the map is the backdrop to
+   a title, not a header with a map under it. `auto` margins centre it
+   vertically and leave the credit pinned to the foot. */
 .aa-landing__middle {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: clamp(24px, 6vw, 80px);
+  justify-content: center;
   margin: auto 0;
 }
 
+/* Everything the front door says, read straight down: name, what it does, why
+   it is measured, the way in. Centred, so the map is symmetrical around it
+   rather than pushed to one side. */
 .aa-landing__lead {
-  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  text-align: center;
 }
 
 .aa-landing__headline {
-  margin: 10px 0 0;
+  margin: 0;
   font-family: var(--font-serif);
   font-size: clamp(38px, 6vw, 76px);
   font-weight: 400;
@@ -65,7 +69,7 @@
 
 .aa-landing__subtitle {
   margin: 14px 0 0;
-  max-width: 30ch;
+  max-width: 34ch;
   color: var(--ink-2);
   font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 300;
@@ -73,27 +77,28 @@
   letter-spacing: -0.005em;
 }
 
-.aa-landing__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-/* The premise: to the right of the title, and below its baseline, so it reads
-   as the second thing on the screen rather than a column competing with the
-   first. */
-.aa-landing__premise {
-  align-self: flex-end;
-  max-width: 340px;
-  padding-bottom: 6px;
-}
-
+/* The premise, under the name and set off from it by a short rule in the
+   brand's light blue: the title says what this is, the rule ends it, and the
+   three sentences say why it exists. */
 .aa-landing__premisebody {
-  margin-top: 12px;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink);
+  position: relative;
+  margin-top: clamp(26px, 4vh, 40px);
+  padding-top: clamp(24px, 3.5vh, 34px);
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.aa-landing__premisebody::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 46px;
+  height: 2px;
+  border-radius: 1px;
+  transform: translateX(-50%);
+  background: var(--cyan);
 }
 
 /* Three sentences, one per line: they are a sequence — opportunities, access,
@@ -102,51 +107,44 @@
   display: block;
 }
 
-.aa-landing__foot {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
+/* The one the rest of the site rests on, in the brand's dark blue: the
+   sequence arrives somewhere, and the last line is where. */
+.aa-landing__premiseend {
+  color: var(--navy);
+  font-weight: 500;
 }
 
-.aa-landing__metrics {
+.aa-landing__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 26px;
-  margin: 0;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(26px, 4vh, 38px);
 }
-.aa-landing__metric dt {
+
+/* Navy rather than ink: the way in belongs to the same two colours as the
+   rule and the closing line. */
+.aa-landing__cta.aa-btn--solid {
+  background: var(--navy);
+}
+.aa-landing__cta.aa-btn--solid:hover {
+  background: var(--navy-deep);
+}
+
+/* Whose Atlas this is: the foot of the first screen, on the far side from the
+   nav's own mark. */
+.aa-landing__foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.aa-landing__by {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   color: var(--ink-3);
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.aa-landing__metric dd {
-  margin: 3px 0 0;
-  font-size: 19px;
-  color: var(--ink);
-}
-
-.aa-landing__scroll {
-  margin: 0;
-  color: var(--ink-3);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
-}
-
-@media (max-width: 980px) {
-  /* The premise stacks under the title rather than beside it; at this width
-     there is no "right" to put it on. */
-  .aa-landing__middle {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 28px;
-  }
-
-  .aa-landing__premise {
-    align-self: flex-start;
-    max-width: 46ch;
-  }
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 860px) {
@@ -158,11 +156,6 @@
     margin: 32px 0;
   }
   .aa-landing__foot {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .aa-landing__metrics {
-    gap: 18px;
+    justify-content: flex-start;
   }
 }

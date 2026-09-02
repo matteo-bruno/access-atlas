@@ -117,7 +117,42 @@
 }
 
 .aa-city__cartogram {
+  position: relative;
   border-right: 1px solid var(--hair);
+}
+
+/* The controls column's handle, astride the seam between the column and the
+   map rather than a labelled button floating on the map: it belongs to the
+   edge it moves, so it sits on it, halfway down, and says which way with a
+   chevron instead of a word. With the column closed there is no seam to
+   straddle, so it tucks against the frame's left edge. */
+.aa-city__panelbtn {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 6;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--hair);
+  border-radius: 11px;
+  background: var(--card);
+  color: var(--ink-3);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.aa-city__panelbtn:hover {
+  border-color: var(--ink-4);
+  color: var(--ink);
+}
+.aa-atlas--nopanel .aa-city__panelbtn {
+  left: 6px;
+  transform: translate(0, -50%);
 }
 
 .aa-city__canvas {
@@ -217,6 +252,13 @@
   .aa-city__cartogram {
     border-right: 0;
     border-bottom: 1px solid var(--hair);
+  }
+
+  /* Stacked, the column is above the map rather than beside it: there is no
+     vertical seam to sit on, so the handle keeps to the map's own left edge. */
+  .aa-city__panelbtn {
+    left: 6px;
+    transform: translate(0, -50%);
   }
 
   .aa-city__canvas {

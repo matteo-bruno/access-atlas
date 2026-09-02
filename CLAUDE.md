@@ -261,6 +261,23 @@ with a static build that cannot hold a secret. `resolveStyle` fetches the style
 itself rather than handing MapLibre a URL, so an unreachable provider degrades
 to paper instead of leaving the map style-less and, therefore, layer-less.
 
+**A map must be framed before its first frame, not on `load`.** The camera the
+constructor is given is only a starting point: a world view's real zoom depends
+on how wide its container turned out to be, and a city's on the extent of its
+mesh. Applying that on `load` painted the map once at the constructor's framing
+and then jumped — visible on every cold open of the front door. `AtlasMap` now
+frames immediately after construction *and* again on load (the second is not
+redundant: MapLibre's centre clamp before a style is not the one that holds).
+Nothing renders before the style arrives, so the first camera is the one the
+reader sees.
+
+**The scrollbar is part of the map's framing.** The world spans the container's
+width exactly, so a page that scrolls and a page that does not were handing the
+backdrop two different widths, and the world stepped sideways by a scrollbar
+between one tab and the next. `html { scrollbar-gutter: stable }` reserves the
+track on every page; `smoke.mjs` asserts the width is the same with and without
+one. Anything that changes how the document scrolls has to keep that true.
+
 **GitHub Pages deep links return HTTP 404 with a rendered page.** Inherent to
 the `404.html` fallback. Users see the right page; crawlers and uptime checks
 see a 404.
@@ -293,7 +310,13 @@ Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
 Two levels, and the split matters. Anything a reader could misread carries an
 `Explain` — a "?" that shows a **tooltip** on hover or focus and drops it when
 the pointer leaves, so reading one costs nothing and dismissing it is not a
-second decision. The long form — what the platform measures, how its colours
+second decision. **The tooltip is drawn in a portal on the body, positioned
+against its button**: most of them live in the city view's controls column,
+which scrolls, and a scrolling box clips what its children paint outside it
+whatever their z-index — so the half with the method in it was cut off at the
+map's edge. Fixed and portalled, it is bounded by the window instead, flips
+above the button when there is no room below, and closes on a short delay so
+the pointer can cross the gap into it. The long form — what the platform measures, how its colours
 read, the two geometries, the panel's figures, the method, the sources — is
 one dialog behind "about this layer" (`PlatformAbout`), never a growing block
 in the panel. Both draw on the same `city.explain.*` copy, so a tooltip and
@@ -308,14 +331,26 @@ Do not re-import either when adding copy from upstream.
 ## The front door
 
 `/` is the landing (`src/pages/AtlasHome.jsx`): the Atlas's own coverage map,
-with the copy over it. The words sit in the middle of that viewport — the
-name, one line under it, one way in — with **the premise** beside them, to the
-right and below the title's baseline. Two ways past the copy, answering
-different questions: **scrolling** reads the rest of the home page, directly
-underneath (`HomeSections`, exported from `Home.jsx` and mounted in both
-places, so the two cannot drift); **"explore the platform"** is an ordinary
-`<Link>` to `/platforms`, so it changes the URL, lights that tab and opens in
-a new one like any other link.
+with the copy over it. **One centred column, read straight down** — the name,
+one line under it, the premise, one way in — on the centre line of that
+viewport, so the map is symmetrical around the words rather than pushed to one
+side. The premise used to be a second block off to the right under its own
+heading, which made the screen two things to read; it is now where the title
+arrives, three sentences under a short rule in the brand's **cyan**, closing on
+a line in **navy**, which the way in then repeats. The magenta half of the
+title is unchanged — that rule holds for every page.
+
+The screen **counts nothing**: the list of cities, platforms, countries, cells
+and researchers that sat at its foot, and again a screen below it, is gone from
+both. `ATLAS_METRICS` in `src/data/home.js` is still derived and still correct
+— nothing renders it, and putting it back is one block of JSX. What is in the
+corner instead is the credit: the Sony CSL mark and one line, bottom right.
+
+Two ways past the copy, answering different questions: **scrolling** reads the
+rest of the home page, directly underneath (`HomeSections`, exported from
+`Home.jsx` and mounted in both places, so the two cannot drift);
+**"explore the platform"** is an ordinary `<Link>` to `/platforms`, so it
+changes the URL, lights that tab and opens in a new one like any other link.
 
 **The map behind the copy is the site's backdrop, not this page's.**
 `Backdrop` (in the shell, beside the nav) is one coverage map fixed to the
@@ -428,7 +463,10 @@ layers** (the four platform cards), **Compare cities** (the six-city table,
 which hands off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
 `src/data/home.js`). The coverage-map section that used to open the page went
 when the backdrop became the site's map — it was the same map twice — and the
-pull quote went when the premise moved onto the front door.
+pull quote went when the premise moved onto the front door. The metrics strip
+went with the landing's copy of it, and `SectionHeading` no longer takes a
+`hint`: the italic note at the far right of a heading restated the section
+under it in three words.
 
 **A platform card opens the Atlas's own introduction to that layer, not the
 upstream viewer.** Each of the four has a post in `src/data/blog.js` carrying
@@ -445,10 +483,15 @@ per-platform ones that are, and `/consulting` gives an address. They share
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
-(`MapBox`) in its corners: the geometry switch and the panel toggle top left,
-the city summary and the selected cell top right, opacity bottom left, full
-screen bottom right. Full screen hides the chrome and keeps the column, and
-Escape leaves it.
+(`MapBox`) in its corners: the geometry switch top left, the city summary and
+the selected cell top right, opacity bottom left, full screen bottom right.
+Full screen hides the chrome and keeps the column, and Escape leaves it.
+
+**The column is closed from its own edge**, not from a button on the map: a
+small chevron (`.aa-city__panelbtn`) sits astride the seam between the column
+and the map, halfway down, and says which way it moves with its direction
+rather than a word. It was a labelled button in the map's top-left corner,
+where it read as a control on the map and crowded the geometry switch.
 
 Two things that are easy to get wrong here:
 
