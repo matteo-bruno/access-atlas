@@ -765,6 +765,9 @@ function AtlasScreen({ cityId, view }) {
                 fitPadding={24}
                 graticule={false}
                 basemap
+                // Full-bleed: it takes over from the site's backdrop, which
+                // holds the frame until this map has painted (map/backdrop.js).
+                coversBackdrop
                 label={`${cityName} — ${platform.name}`}
               >
                 <GeoJSONLayer

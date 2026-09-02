@@ -1,12 +1,15 @@
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AtlasMap } from '../map/AtlasMap.jsx';
+import { useBackdropCovered } from '../map/backdrop.js';
 import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../map/framing.js';
 import { CoverageLayer } from './CityLayer.jsx';
 import { useAllCoverage } from '../data/useAtlasData.js';
 import './Backdrop.css';
 
-// Screens that are themselves a full-bleed map. The backdrop would sit behind
-// an opaque map, costing a second WebGL context to draw nothing.
+// Screens that are themselves a full-bleed map. The backdrop ends up behind
+// an opaque map there, so it is dropped from the compositor once that map has
+// painted — but not before, and it is not torn down: see below.
 const OWN_MAP = ['/platforms', '/atlas'];
 
 /**
@@ -27,15 +30,55 @@ const OWN_MAP = ['/platforms', '/atlas'];
  * Nothing above it paints it out: the map is the site's subject, so it is
  * visible from the first screen to the last, and what scrolls over it is
  * transparent between its own cards.
+ *
+ * **It survives the two screens that draw their own map.** Unmounting it on
+ * their route emptied the frame at the exact moment the reader stepped onto
+ * the platform tab: the world went, paper showed for as long as the new map
+ * took to build, and the world came back — one map leaving and another
+ * arriving, when they are meant to be the same world. So the route only
+ * decides how the backdrop is *dressed*; whether it is on screen at all is
+ * decided by the covering map, which reports itself once it has painted
+ * (`useBackdropCovered`). Both directions then hand over with something in
+ * frame throughout: the incoming map fades up over a world in the same place,
+ * and the outgoing one fades off one that is still there behind it.
+ *
+ * Covered is hidden rather than unmounted, so returning is instant and the
+ * WebGL context is built once. It costs nothing to composite while hidden,
+ * and `visibility` rather than `display` keeps the box measurable, which is
+ * what lets the map keep its world-width fit across a resize it cannot see.
  */
 export function Backdrop() {
   const { pathname } = useLocation();
   const { cities } = useAllCoverage();
-  if (OWN_MAP.some((prefix) => pathname.startsWith(prefix))) return null;
+  const covered = useBackdropCovered();
+  const mapRef = useRef(null);
+  const ownMap = OWN_MAP.some((prefix) => pathname.startsWith(prefix));
+
+  // Built the first time a page actually wants it, and kept from then on.
+  // Opening the site straight onto a full-bleed map screen therefore still
+  // costs one WebGL context, not two.
+  const [built, setBuilt] = useState(!ownMap);
+  useEffect(() => {
+    if (!ownMap) setBuilt(true);
+  }, [ownMap]);
+
+  // Coming back out from under a covering map: ask for a frame rather than
+  // trusting the compositor to have kept the one it was hidden with.
+  useEffect(() => {
+    if (!covered) mapRef.current?.map?.triggerRepaint();
+  }, [covered]);
+
+  if (!built) return null;
 
   return (
-    <div className="aa-backdrop" aria-hidden="true">
+    <div
+      className={`aa-backdrop${ownMap ? ' aa-backdrop--bare' : ''}${
+        covered ? ' aa-backdrop--covered' : ''
+      }`}
+      aria-hidden="true"
+    >
       <AtlasMap
+        ref={mapRef}
         fitWorldWidth
         worldZoomBoost={WORLD_ZOOM_BOOST}
         center={WORLD_CENTER}

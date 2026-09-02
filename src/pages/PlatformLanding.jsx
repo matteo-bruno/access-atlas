@@ -110,9 +110,13 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         ref={mapRef}
         fitWorldWidth
         // The same framing as the backdrop behind every other page: one world,
-        // however you arrived at it (see WORLD_ZOOM_BOOST).
+        // however you arrived at it (see WORLD_ZOOM_BOOST). Which is also why
+        // this map takes the backdrop's place rather than the route doing it:
+        // the backdrop stays until this one has painted the same world in the
+        // same box, so arriving here changes the chrome, not the world.
         worldZoomBoost={WORLD_ZOOM_BOOST}
         center={WORLD_CENTER}
+        coversBackdrop
         interactive={interactive}
         label={title}
       >

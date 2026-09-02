@@ -363,9 +363,22 @@ what scrolls over it is transparent between its own cards and the map is as
 visible on a page of text as on the front door. If a block turns out to be
 unreadable over it, give that block a background; do not reach for the veil.
 
+**The backdrop is dismissed by the map that replaces it, never by the route.**
 The two screens that *are* a full-bleed map — `/platforms` and
-`/atlas/:cityId` — get no backdrop: a second WebGL context would draw nothing
-behind an opaque one.
+`/atlas/:cityId` — end up with a second WebGL context drawing nothing behind
+an opaque one, so the backdrop does go; but dropping it the moment the URL
+changed emptied the frame while the new map was still being built, and the
+world left and came back on a step that is meant to be one world throughout.
+So a covering map reports itself once it has painted (`useCoversBackdrop` in
+`src/map/backdrop.js`, passed as `coversBackdrop` to `AtlasMap`) and only then
+is the backdrop let go — hidden with `visibility`, not unmounted, so stepping
+back out returns the same map instead of building a second one, and the box
+stays measurable so the world-width fit survives a resize it cannot see. The
+veil goes earlier, on the route, so what the incoming map fades up over is the
+bare world it is about to be. Opening the site straight onto one of those two
+screens still builds one context, not two: the backdrop is created the first
+time a page actually wants it. `smoke.mjs` asserts both halves — the world
+holds through the handover, and the map that comes back is the one that left.
 
 The landing once became the platform in place, on the same URL, because
 navigating remounted the map and flashed. The route cross-fade below removed

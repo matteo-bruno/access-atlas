@@ -18,6 +18,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 // and leave its `./maplibre-gl-shared.mjs` import dangling. Needs
 // `worker.format: 'es'` in vite.config.js, since MapLibre spawns it as a module.
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+import { useCoversBackdrop } from './backdrop.js';
 import { overlayAnchor, resolveStyle, usesTiles } from './style.js';
 import './AtlasMap.css';
 
@@ -85,6 +86,11 @@ export function AtlasMap({
   // map/framing.js) so they frame the world identically; thumbnails keep the
   // plain fit, which is what makes a whole world fit in a small box.
   worldZoomBoost = 0,
+  // Set by the two screens that *are* a map. The site's backdrop stays on
+  // screen until this map has painted, so stepping onto one of them changes
+  // the chrome over the world rather than replacing the world (see
+  // map/backdrop.js).
+  coversBackdrop = false,
   className = '',
   children,
   onReady,
@@ -101,6 +107,8 @@ export function AtlasMap({
   // place names stay readable above the mesh.
   const [anchor, setAnchor] = useState(undefined);
   const [visible, setVisible] = useState(interactive);
+
+  useCoversBackdrop(coversBackdrop && ready);
 
   useImperativeHandle(ref, () => ({
     get map() {

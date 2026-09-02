@@ -687,7 +687,8 @@ for (const [route, name] of ROUTES) {
 // ── One backdrop, everywhere ─────────────────────────────────────────
 // The same map sits behind every page — except the two screens that are
 // themselves a full-bleed map, where a second WebGL context would draw
-// nothing behind an opaque one.
+// nothing behind an opaque one. Loaded straight onto one of those, the
+// backdrop is never built at all.
 {
   const page = await context.newPage();
   const seen = {};
@@ -706,6 +707,39 @@ for (const [route, name] of ROUTES) {
       seen['/atlas/milan'] === 0,
     JSON.stringify(seen),
   );
+
+  // Arriving at a map screen from a page is the other half of that rule.
+  // Dropping the backdrop the moment the URL changed emptied the frame while
+  // the new map was built in front of the reader — the world left and came
+  // back, when the two are framed as one world. It now stays until that map
+  // has painted, and is hidden rather than torn down, so stepping back out
+  // returns the same map rather than building a second one.
+  {
+    await page.goto(`${BASE}/research`, { waitUntil: 'load' });
+    await page.waitForTimeout(2200);
+    // Mark it, so a rebuilt map can be told from the one that stayed.
+    await page.$eval('.aa-backdrop canvas', (e) => {
+      e.dataset.smoke = 'kept';
+    });
+
+    await page.getByRole('link', { name: 'Platform', exact: true }).click();
+    // Mid-fade: the platform map is not up yet, and the world must still be.
+    await page.waitForTimeout(150);
+    const midway = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
+    await page.waitForTimeout(2200);
+    const covered = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
+    const stage = await page.locator('.aa-mapstage canvas').count();
+
+    await page.getByRole('link', { name: 'Research', exact: true }).click();
+    await page.waitForTimeout(1500);
+    const back = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
+    const kept = await page.$eval('.aa-backdrop canvas', (e) => e.dataset.smoke === 'kept');
+    check(
+      'The world holds while a map screen takes over, and is the same one after',
+      midway === 'visible' && covered === 'hidden' && stage === 1 && back === 'visible' && kept,
+      `${midway} → ${covered} → ${back} · ${kept ? 'one map' : 'rebuilt'}`,
+    );
+  }
 
   // And it is the *same* backdrop: one veil, so the map is as visible on a
   // page of text as it is on the front door.
