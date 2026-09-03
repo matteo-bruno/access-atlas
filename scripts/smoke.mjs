@@ -807,6 +807,83 @@ for (const [route, name] of ROUTES) {
     );
   }
 
+  // And the same rule read off the screen rather than off the DOM.
+  //
+  // The check above passed while the handover was still visibly broken: the
+  // backdrop element stayed `visible` throughout, and an opaque sheet of the
+  // incoming screen's own paper was painted over it — its map container's
+  // background, up the moment the route committed and covering the world for
+  // the ~350ms MapLibre took to build. No computed style can see that; only
+  // the composited frame can. So this samples frames straight off the
+  // compositor and asserts none of them is blank, across the two handovers
+  // that hurt most: a page onto the platform world, and that world onto a
+  // city.
+  //
+  // "Blank" is measured as contrast — the standard deviation of luminance
+  // over the lower half of the frame, which is clear of the cards on every
+  // screen involved. A frame with a world in it scores ~11 and one with the
+  // city view's chrome far more; the frames the old build dropped scored 1-4.
+  {
+    const page = await context.newPage();
+    await page.goto(`${BASE}/research`, { waitUntil: 'load' });
+    await page.waitForTimeout(2500);
+
+    const client = await context.newCDPSession(page);
+    const frames = [];
+    client.on('Page.screencastFrame', async ({ data, sessionId }) => {
+      frames.push(data);
+      await client.send('Page.screencastFrameAck', { sessionId }).catch(() => {});
+    });
+    await client.send('Page.startScreencast', { format: 'jpeg', quality: 70, everyNthFrame: 1 });
+
+    await page.getByRole('link', { name: 'Platform', exact: true }).click();
+    await page.waitForTimeout(2500);
+    await page.fill('.aa-search__input', 'mila');
+    await page.waitForTimeout(400);
+    await page.click('.aa-search__result');
+    await page.waitForTimeout(2500);
+    await client.send('Page.stopScreencast');
+
+    // Decoded somewhere else, so nothing is drawn into the page being watched.
+    const meter = await context.newPage();
+    await meter.setContent('<canvas id="c"></canvas>');
+    let worst = Infinity;
+    for (const data of frames) {
+      // eslint-disable-next-line no-await-in-loop
+      const contrast = await meter.evaluate(async (jpeg) => {
+        const img = new Image();
+        img.src = `data:image/jpeg;base64,${jpeg}`;
+        await img.decode();
+        const canvas = document.getElementById('c');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        const top = Math.round(img.height * 0.55);
+        const px = ctx.getImageData(0, top, img.width, img.height - top).data;
+        let sum = 0;
+        let sumSq = 0;
+        const n = px.length / 4;
+        for (let i = 0; i < px.length; i += 4) {
+          const v = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+          sum += v;
+          sumSq += v * v;
+        }
+        const mean = sum / n;
+        return Math.sqrt(Math.max(sumSq / n - mean * mean, 0));
+      }, data);
+      worst = Math.min(worst, contrast);
+    }
+    await meter.close();
+
+    check(
+      'No frame of either handover is a blank sheet where the world was',
+      frames.length > 20 && worst > 5,
+      `${frames.length} frames · quietest ${Number.isFinite(worst) ? worst.toFixed(1) : 'n/a'}`,
+    );
+    await page.close();
+  }
+
   // The map is framed by the width of its box, so a page that scrolls and a
   // page that does not must still hand it the same width — otherwise the
   // world shifts by a scrollbar between one tab and the next. The gutter is

@@ -288,7 +288,11 @@ export function AtlasMap({
   return (
     <div
       ref={containerRef}
-      className={`aa-map ${className}`.trim()}
+      // Blank until the style is up: an empty map's paper is an opaque sheet,
+      // and on the two screens that take over from the site's backdrop it was
+      // painting the world out for as long as MapLibre took to build. It fades
+      // up instead, over whatever is behind it (see AtlasMap.css).
+      className={`aa-map${ready ? '' : ' aa-map--blank'} ${className}`.trim()}
       role={interactive ? 'application' : 'img'}
       aria-label={label}
     >

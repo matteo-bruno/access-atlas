@@ -155,12 +155,15 @@
   transform: translate(0, -50%);
 }
 
+/* Transparent until its map has painted, for the reason .aa-mapstage is: the
+   city view takes over from the site's backdrop, and a paper box here covered
+   that world for as long as the mesh took to load and MapLibre to build. The
+   loading line reads over the world; the map's own paper arrives with it. */
 .aa-city__canvas {
   position: relative;
   flex: 1;
   margin-top: 12px;
   min-height: 220px;
-  background: var(--map-paper);
   border: 1px solid var(--hair-soft);
   border-radius: var(--radius);
   overflow: hidden;

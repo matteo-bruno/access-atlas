@@ -4,6 +4,22 @@
   width: 100%;
   height: 100%;
   background: var(--map-paper);
+  /* Fades up from the state below rather than appearing. Long enough to read
+     as a dissolve between two worlds, short enough not to be a wait. */
+  transition: opacity 320ms ease;
+}
+
+/* Before MapLibre has a style there is nothing on the canvas, and the paper
+   under it is an opaque sheet the size of the map. On the two screens that
+   take over from the site's backdrop that sheet was painting the world out
+   the moment the route committed, and the world only came back when the new
+   map's first frame landed — the whole of the flash the handover exists to
+   avoid. A map with nothing to show therefore shows nothing, letting whatever
+   is behind it stand in, and fades in once it has painted. Instant in, so a
+   map that is torn down and rebuilt does not fade out first. */
+.aa-map--blank {
+  opacity: 0;
+  transition: none;
 }
 
 /* MapLibre draws its own focus ring; keep ours off the canvas. */

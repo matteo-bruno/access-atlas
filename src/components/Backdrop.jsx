@@ -50,9 +50,17 @@ const OWN_MAP = ['/platforms', '/atlas'];
 export function Backdrop() {
   const { pathname } = useLocation();
   const { cities } = useAllCoverage();
-  const covered = useBackdropCovered();
   const mapRef = useRef(null);
   const ownMap = OWN_MAP.some((prefix) => pathname.startsWith(prefix));
+  // Both halves have to hold, and they answer different questions.
+  //
+  // `useBackdropCovered` is the map's: has something actually painted in
+  // front, and is it the screen that is arriving rather than one dissolving?
+  // (A route cross-fade counts as nothing covering — see map/backdrop.js.)
+  //
+  // `ownMap` is the route's: only the two full-bleed map screens ever cover
+  // the backdrop, so a stale count cannot hide the world on a page of copy.
+  const covered = useBackdropCovered() && ownMap;
 
   // Built the first time a page actually wants it, and kept from then on.
   // Opening the site straight onto a full-bleed map screen therefore still

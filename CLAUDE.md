@@ -412,8 +412,35 @@ stays measurable so the world-width fit survives a resize it cannot see. The
 veil goes earlier, on the route, so what the incoming map fades up over is the
 bare world it is about to be. Opening the site straight onto one of those two
 screens still builds one context, not two: the backdrop is created the first
-time a page actually wants it. `smoke.mjs` asserts both halves — the world
-holds through the handover, and the map that comes back is the one that left.
+time a page actually wants it.
+
+**Holding the backdrop is not enough on its own: nothing may paint over it
+either.** The rule above was in place and the handover still went blank, for a
+reason no computed style can show. A map's container carries the paper the map
+is drawn on, and the incoming screen commits with that paper up and its canvas
+empty — so `.aa-mapstage`, `.aa-city__canvas` and `.aa-map` itself were an
+opaque sheet the size of the viewport, laid over a backdrop that was still
+dutifully `visible` underneath, for the ~350 ms MapLibre took to build. Three
+things keep it honest now: a map with no style yet is `.aa-map--blank`, which
+paints nothing and lets what is behind it stand in, then fades up over 320 ms
+once it has something to show; the two containers bring no paper of their own,
+so the box is the world until the map fills it; and the backdrop's own fade out
+is timed to start *after* that fade in has finished, so the two overlap rather
+than trade places.
+
+**A route cross-fade counts as nothing covering.** The screen being left is
+still mounted, and still counted, for the length of the fade — which is right
+when it is dissolving to a page, and wrong when it is dissolving to another
+map: stepping from `/platforms` to a city, the outgoing map was the only thing
+holding the backdrop down, so the frame emptied for exactly the fade's length.
+`FadingRoutes` therefore reports its own state (`useRouteFading`), and the
+world comes back underneath the outgoing map rather than after it.
+
+`smoke.mjs` asserts all of it — the world holds through the handover, the map
+that comes back is the one that left, and, sampling frames off the compositor
+across two handovers, that none of them is a blank sheet where the world was.
+That last one is the check that would have caught the flash: the DOM-level one
+passed the whole time it was happening.
 
 The landing once became the platform in place, on the same URL, because
 navigating remounted the map and flashed. The route cross-fade below removed

@@ -16,7 +16,9 @@
   z-index: 0;
   pointer-events: none;
   background: var(--map-paper);
-  transition: opacity 200ms ease;
+  /* Uncovering is instant: the screen being left is still on top and fading
+     out, so the world is restored underneath it rather than into a gap. Only
+     the covered state below transitions, and only on the way in. */
 }
 .aa-backdrop .aa-map {
   width: 100%;
@@ -28,17 +30,21 @@
    The two are framed identically, so the covering map has already painted the
    same world in the same place by the time this runs: the fade is invisible,
    and its only job is to let the compositor go once the handover is complete
-   rather than at the moment the URL changed. Hence the delay — the covering
-   map reports itself when its style is up, and its own layers land a frame or
-   two later. Uncovering takes the base transition instead, so leaving one of
-   those screens brings the backdrop back at once, under a page that is only
-   then starting to fade in. */
+   rather than at the moment the URL changed.
+
+   The delay is what makes it a handover rather than a swap, and it is timed
+   against the covering map: that map reports itself when its style is up and
+   then fades in over 320ms (see AtlasMap.css), and its own layers — the city
+   markers on the platform world, the mesh on a city — land a frame or two
+   after that. So nothing here starts moving until the map in front is fully
+   opaque, and the two overlap for the whole of its fade. Leaving is not this
+   transition at all: see above. */
 .aa-backdrop--covered {
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 260ms ease 200ms,
-    visibility 0s linear 460ms;
+    opacity 260ms ease 360ms,
+    visibility 0s linear 620ms;
 }
 
 /* One veil, the same on every page and at every scroll position: densest

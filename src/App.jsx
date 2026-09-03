@@ -10,6 +10,7 @@ import {
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { platformBySlug } from './data/platforms.js';
 import { I18nProvider } from './i18n/index.jsx';
+import { useRouteFading } from './map/backdrop.js';
 import { Nav } from './components/Nav.jsx';
 import { Backdrop } from './components/Backdrop.jsx';
 import AtlasHome from './pages/AtlasHome.jsx';
@@ -94,6 +95,12 @@ function FadingRoutes({ children }) {
   useEffect(() => {
     if (shown === location && !pending) setVisible(true);
   }, [shown, location, pending]);
+
+  // Tell the site's backdrop the screen on top is dissolving, so it can take
+  // the frame back under it rather than wait for it to unmount — which is a
+  // whole fade too late, and left the frame empty for exactly that long when
+  // one map screen was replaced by another (see map/backdrop.js).
+  useRouteFading(!visible);
 
   return (
     <div className={`aa-fade${visible ? '' : ' aa-fade--out'}`}>

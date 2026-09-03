@@ -20,8 +20,18 @@ import { useEffect, useSyncExternalStore } from 'react';
  * A count rather than a flag: during a route cross-fade the outgoing screen
  * is still mounted while the incoming one arrives, and a flag would let the
  * one leaving switch the backdrop back on over the one that just took over.
+ *
+ * The count is qualified by one other thing: whether a route cross-fade is
+ * running. A covering map that belongs to the screen being *left* is still
+ * mounted and still counted, but it is dissolving — and stepping from one map
+ * screen to the other (the platform world to a city, say) it was the only
+ * thing counted, so the backdrop stayed hidden behind a map fading to nothing
+ * and the frame emptied for the length of the fade. While a fade is in
+ * flight, then, nothing is taken to cover: the world comes back underneath
+ * the outgoing map and that map dissolves into it.
  */
 let covering = 0;
+let fading = false;
 const listeners = new Set();
 
 function subscribe(listener) {
@@ -37,7 +47,7 @@ function notify() {
 export function useBackdropCovered() {
   return useSyncExternalStore(
     subscribe,
-    () => covering > 0,
+    () => covering > 0 && !fading,
     // Server-rendered or pre-hydration: nothing has painted, so nothing covers.
     () => false,
   );
@@ -61,4 +71,20 @@ export function useCoversBackdrop(covers) {
       notify();
     };
   }, [covers]);
+}
+
+/**
+ * For the route cross-fade: declare that one is running.
+ *
+ * Called by `FadingRoutes` with its own state, so the backdrop learns that
+ * the screen on top is on its way out at the moment the fade starts rather
+ * than when that screen finally unmounts — which is a whole fade too late.
+ *
+ * @param {boolean} isFading
+ */
+export function useRouteFading(isFading) {
+  useEffect(() => {
+    fading = isFading;
+    notify();
+  }, [isFading]);
 }
