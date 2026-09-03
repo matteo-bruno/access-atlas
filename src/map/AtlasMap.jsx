@@ -24,6 +24,12 @@ import './AtlasMap.css';
 
 const MapCtx = createContext(null);
 
+// The sources a map draws itself, as opposed to the ones a third-party
+// basemap style brought with it: the paper basemap's two, and the GeoJSON
+// sources <GeoJSONLayer> adds, which it suffixes. Used to decide when the map
+// has something worth showing — see the effect that sets `painted`.
+const OWN_SOURCE = /^land$|^graticule$|-src$/;
+
 export function useAtlasMap() {
   return useContext(MapCtx);
 }
@@ -103,12 +109,14 @@ export function AtlasMap({
   // rather than returned directly from the effect.
   const cleanupRef = useRef(null);
   const [ready, setReady] = useState(false);
+  // Ready is the style; painted is everything the map was given. See below.
+  const [painted, setPainted] = useState(false);
   // The basemap's first symbol layer: data layers are inserted before it so
   // place names stay readable above the mesh.
   const [anchor, setAnchor] = useState(undefined);
   const [visible, setVisible] = useState(interactive);
 
-  useCoversBackdrop(coversBackdrop && ready);
+  useCoversBackdrop(coversBackdrop && painted);
 
   useImperativeHandle(ref, () => ({
     get map() {
@@ -247,6 +255,7 @@ export function AtlasMap({
         map.remove();
         mapRef.current = null;
         setReady(false);
+        setPainted(false);
       };
     })();
 
@@ -260,6 +269,48 @@ export function AtlasMap({
     // move the camera (see below), not tear the map down.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible, interactive, graticule, basemap, worldZoomBoost]);
+
+  // A style being up is not the same as the map having something to show.
+  //
+  // `ready` means MapLibre has parsed the style — the paper background, and
+  // the *declaration* of the land, the graticule and whatever layers the
+  // children add. The data behind all of those arrives afterwards, and the
+  // city markers landed about 200ms behind the world. A map that faded in on
+  // `ready` therefore covered the backdrop's markers with its own empty world
+  // and popped the same dots back in a moment later: a blink with no cause a
+  // reader could see.
+  //
+  // So it waits for its own sources to load. Its *own*: the paper basemap's
+  // land and graticule, and the GeoJSON sources the children add (`-src`).
+  // Never the third-party basemap — that is context, it may be slow, blocked
+  // or down, and gating the data on it is the trap that once left the map
+  // blank whenever the tile host was unreachable.
+  //
+  // The effect runs after the children's own effects (React runs them child
+  // first), so their sources are on the map by the time it looks.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return undefined;
+    let settled = false;
+    const settle = () => {
+      if (settled) return;
+      settled = true;
+      setPainted(true);
+    };
+    const check = () => {
+      const sources = Object.keys(map.getStyle()?.sources ?? {}).filter((id) => OWN_SOURCE.test(id));
+      if (sources.every((id) => map.getSource(id) && map.isSourceLoaded(id))) settle();
+    };
+    map.on('sourcedata', check);
+    check();
+    // A failsafe, not a schedule: a source that never resolves must not leave
+    // the map invisible for good.
+    const timer = window.setTimeout(settle, 2000);
+    return () => {
+      window.clearTimeout(timer);
+      map.off('sourcedata', check);
+    };
+  }, [ready]);
 
   // Keep the camera in sync when a parent drives it.
   useEffect(() => {
@@ -288,11 +339,12 @@ export function AtlasMap({
   return (
     <div
       ref={containerRef}
-      // Blank until the style is up: an empty map's paper is an opaque sheet,
-      // and on the two screens that take over from the site's backdrop it was
-      // painting the world out for as long as MapLibre took to build. It fades
-      // up instead, over whatever is behind it (see AtlasMap.css).
-      className={`aa-map${ready ? '' : ' aa-map--blank'} ${className}`.trim()}
+      // Blank until everything it was given is drawn — not merely until the
+      // style is up. An empty map's paper is an opaque sheet, and on the two
+      // screens that take over from the site's backdrop it was painting the
+      // world out for as long as MapLibre took to build. It fades up instead,
+      // over whatever is behind it (see AtlasMap.css).
+      className={`aa-map${painted ? '' : ' aa-map--blank'} ${className}`.trim()}
       role={interactive ? 'application' : 'img'}
       aria-label={label}
     >

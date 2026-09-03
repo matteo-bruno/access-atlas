@@ -53,6 +53,24 @@ export function useCityCoverage(platform) {
   };
 }
 
+// Resolved once, and remembered against the provider it came from.
+//
+// Two screens draw this same merge — the site's backdrop, behind every page,
+// and the platform world map — and they are meant to be one world. Deriving it
+// twice meant the second one mounted on the *seed* city list and swapped to
+// the published set a beat later, so the reader stepping onto the platform tab
+// watched the markers change under a map that had just told them it was the
+// same world. Whoever resolves it first now hands it to everyone after.
+//
+// Held against the provider rather than cleared by it: a scenario backend
+// installed with `setDataProvider()` publishes different data, and remembering
+// which provider answered means this file needs no hook into that seam.
+let merged = { provider: null, cities: null };
+
+function cachedCoverage() {
+  return merged.provider === getDataProvider() ? merged.cities : null;
+}
+
 /**
  * Every published city across all four platforms, merged by id, with the list
  * of platforms that cover each. Drives the all-platforms world map, where the
@@ -64,13 +82,14 @@ export function useCityCoverage(platform) {
  * @returns {{ cities: object[], source: 'published'|'seed' }}
  */
 export function useAllCoverage() {
-  const [published, setPublished] = useState(null);
+  const [published, setPublished] = useState(cachedCoverage);
   const seed = useMemo(
     () => CITIES.map((city) => ({ ...city, platforms: [], platformCount: 1 })),
     [],
   );
 
   useEffect(() => {
+    if (cachedCoverage()) return undefined;
     let cancelled = false;
     const controller = new AbortController();
 
@@ -78,7 +97,7 @@ export function useAllCoverage() {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
-        const merged = new Map();
+        const byId = new Map();
 
         for (const platform of PLATFORMS) {
           let collection = null;
@@ -91,7 +110,7 @@ export function useAllCoverage() {
           }
           if (!collection) continue;
           for (const city of citiesFromPublished(collection)) {
-            const existing = merged.get(city.id);
+            const existing = byId.get(city.id);
             if (existing) {
               // Keep the first platform's figures; only the platform list and
               // the count are merged. Mixing per-platform measures into one
@@ -99,13 +118,15 @@ export function useAllCoverage() {
               existing.platforms.push(platform.id);
               existing.platformCount = existing.platforms.length;
             } else {
-              merged.set(city.id, { ...city, platforms: [platform.id], platformCount: 1 });
+              byId.set(city.id, { ...city, platforms: [platform.id], platformCount: 1 });
             }
           }
         }
 
-        if (cancelled || merged.size === 0) return;
-        setPublished([...merged.values()]);
+        if (byId.size === 0) return;
+        merged = { provider, cities: [...byId.values()] };
+        if (cancelled) return;
+        setPublished(merged.cities);
       } catch (error) {
         if (error?.name !== 'AbortError' && import.meta.env.DEV) {
           console.info('[data] merged coverage unavailable', error.message);

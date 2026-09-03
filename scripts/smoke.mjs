@@ -828,6 +828,17 @@ for (const [route, name] of ROUTES) {
     await page.goto(`${BASE}/research`, { waitUntil: 'load' });
     await page.waitForTimeout(2500);
 
+    // Where Milan's marker lands, from the constants both maps are framed
+    // with — the backdrop's box is the platform map's box, which is the whole
+    // point of the handover.
+    const box = await page.locator('.aa-backdrop canvas').boundingBox();
+    const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
+    const mercY = (lat) => 0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
+    const marker = {
+      x: Math.round(box.x + box.width / 2 + ((9.19 - WORLD_CENTER[0]) / 360) * worldPx),
+      y: Math.round(box.y + box.height / 2 + (mercY(45.46) - mercY(WORLD_CENTER[1])) * worldPx),
+    };
+
     const client = await context.newCDPSession(page);
     const frames = [];
     client.on('Page.screencastFrame', async ({ data, sessionId }) => {
@@ -840,6 +851,9 @@ for (const [route, name] of ROUTES) {
     await page.waitForTimeout(2500);
     await page.fill('.aa-search__input', 'mila');
     await page.waitForTimeout(400);
+    // Everything up to here is the platform world, where the markers belong;
+    // past it the city map legitimately takes the world off the screen.
+    const worldFrames = frames.length;
     await page.click('.aa-search__result');
     await page.waitForTimeout(2500);
     await client.send('Page.stopScreencast');
@@ -848,7 +862,33 @@ for (const [route, name] of ROUTES) {
     const meter = await context.newPage();
     await meter.setContent('<canvas id="c"></canvas>');
     let worst = Infinity;
-    for (const data of frames) {
+    const dots = [];
+    for (const [index, data] of frames.entries()) {
+      if (index < worldFrames) {
+        // eslint-disable-next-line no-await-in-loop
+        dots.push(
+          await meter.evaluate(
+            async ({ jpeg, at }) => {
+              const img = new Image();
+              img.src = `data:image/jpeg;base64,${jpeg}`;
+              await img.decode();
+              const canvas = document.getElementById('c');
+              canvas.width = img.width;
+              canvas.height = img.height;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0);
+              const px = ctx.getImageData(at.x - 12, at.y - 12, 24, 24).data;
+              let darkest = 255;
+              for (let i = 0; i < px.length; i += 4) {
+                const v = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+                if (v < darkest) darkest = v;
+              }
+              return darkest;
+            },
+            { jpeg: data, at: marker },
+          ),
+        );
+      }
       // eslint-disable-next-line no-await-in-loop
       const contrast = await meter.evaluate(async (jpeg) => {
         const img = new Image();
@@ -880,6 +920,28 @@ for (const [route, name] of ROUTES) {
       'No frame of either handover is a blank sheet where the world was',
       frames.length > 20 && worst > 5,
       `${frames.length} frames · quietest ${Number.isFinite(worst) ? worst.toFixed(1) : 'n/a'}`,
+    );
+
+    // And the markers on it are not blinking either. The incoming map used to
+    // fade in on its style rather than on its data, so for ~200ms it covered
+    // the backdrop's city markers with its own empty world and then popped the
+    // same dots back in. Once Milan's dot is on screen it has to stay there:
+    // the two maps draw it in the same place, so there is nothing for a reader
+    // to see between them.
+    // Measured against the dot's own settled darkness rather than a number
+    // picked here: what matters is that it does not lighten once it is on
+    // screen. Settled it reads ~28 and never strays past ~33; through the
+    // blink it climbed to 65 and 123 before dropping back.
+    const tail = dots.slice(-10).sort((a, b) => a - b);
+    const limit = (tail[Math.floor(tail.length / 2)] ?? 255) + 25;
+    const first = dots.findIndex((darkest) => darkest < 60);
+    const faded = first < 0 ? [] : dots.slice(first).filter((darkest) => darkest > limit);
+    check(
+      'A city marker does not blink as one map hands the world to the next',
+      first >= 0 && faded.length === 0,
+      `${dots.length} frames of the world · ${
+        first < 0 ? 'dot never seen' : `dot from #${first}, ${faded.length} frames paler than ${Math.round(limit)}`
+      }`,
     );
     await page.close();
   }

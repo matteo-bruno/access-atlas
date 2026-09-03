@@ -428,6 +428,25 @@ so the box is the world until the map fills it; and the backdrop's own fade out
 is timed to start *after* that fade in has finished, so the two overlap rather
 than trade places.
 
+**A map is painted when its own sources are, not when its style is.** Style
+load is the paper and the *declaration* of everything else; the data behind it
+arrives after. The city markers landed about 200 ms behind the world, so a map
+that faded in on style load covered the backdrop's markers with its own empty
+world and popped the same dots back a moment later — a blink with no cause a
+reader could see. `AtlasMap` now waits for the sources it draws itself: the
+paper basemap's `land` and `graticule`, and the `-src` GeoJSON sources its
+children add. **Never the third-party basemap** — that is context, it may be
+slow or blocked, and gating the data on it is the trap that once left the map
+blank whenever the tile host was unreachable. A failsafe timer covers a source
+that never resolves; it is a failsafe, not a schedule.
+
+**The merged coverage is derived once and remembered** (`useAllCoverage`), held
+against the provider it came from so a `setDataProvider()` swap needs no hook
+into this file. Both the backdrop and the platform world map draw it, and
+deriving it twice meant the second one mounted on the *seed* city list and
+swapped to the published set a beat later — the markers changing under a map
+that had just said it was the same world.
+
 **A route cross-fade counts as nothing covering.** The screen being left is
 still mounted, and still counted, for the length of the fade — which is right
 when it is dissolving to a page, and wrong when it is dissolving to another
@@ -438,9 +457,12 @@ world comes back underneath the outgoing map rather than after it.
 
 `smoke.mjs` asserts all of it — the world holds through the handover, the map
 that comes back is the one that left, and, sampling frames off the compositor
-across two handovers, that none of them is a blank sheet where the world was.
-That last one is the check that would have caught the flash: the DOM-level one
-passed the whole time it was happening.
+across two handovers, that none of them is a blank sheet where the world was
+and that Milan's marker never lightens once it is on screen. Those last two are
+the checks that would have caught the flash and the blink: the DOM-level one
+passed the whole time both were happening. Both are measured against what the
+frame settles at rather than a number written down here, and both fail on the
+build before the fix — worth re-confirming if you change either.
 
 The landing once became the platform in place, on the same URL, because
 navigating remounted the map and flashed. The route cross-fade below removed
