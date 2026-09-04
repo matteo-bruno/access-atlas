@@ -20,6 +20,7 @@ import {
   citiesFromPublished,
 } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
+import { readDataJSON } from './lib/datafile.mjs';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
 const CDI_STOPS = [-0.1, 0.1, 0.3, 1];
@@ -30,7 +31,9 @@ const check = (name, ok, detail = '') => {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
 };
 
-const read = (rel) => JSON.parse(fs.readFileSync(path.join(DATA, rel), 'utf8'));
+// Published files may be stored gzipped (15minCity is), so reads go through
+// the shared helper rather than fs directly — see scripts/lib/datafile.mjs.
+const read = (rel) => readDataJSON(path.join(DATA, rel));
 const near = (value, target, tolerance) => Math.abs(value - target) <= tolerance;
 
 const catalogue = read('index.json');

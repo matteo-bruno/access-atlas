@@ -36,6 +36,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
+import { readDataJSON } from './lib/datafile.mjs';
 
 const ROOT = process.cwd();
 const DATA = path.join(ROOT, 'public', 'data');
@@ -84,7 +85,9 @@ const r2 = (v) => Math.round(v * 100) / 100;
 const r5 = (v) => Math.round(v * 1e5) / 1e5;
 const mb = (b) => `${(b / 1e6).toFixed(2)} MB`;
 
-const readJSON = (rel) => JSON.parse(fs.readFileSync(path.join(DATA, rel), 'utf8'));
+// Published files may be stored gzipped (15minCity is), so reads go through
+// the shared helper rather than fs directly — see scripts/lib/datafile.mjs.
+const readJSON = (rel) => readDataJSON(path.join(DATA, rel));
 
 function fail(message) {
   console.error(`\nERROR: ${message}`);

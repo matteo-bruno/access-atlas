@@ -3,17 +3,21 @@
 // Atlas, one file per city, with all the compressions the published files
 // benefit from applied on the way through.
 //
-// The published files sit at `public/data/fifteen/<city>.geojson`, joined by
-// a companion cartogram `public/data/fifteen/<city>.cartogram.geojson`. The
+// The published files sit at `public/data/fifteen/<city>.geojson.gz`, joined
+// by a companion cartogram `<city>.cartogram.geojson.gz` — 15minCity is
+// stored compressed, because the Atlas is served from a machine where the
+// size of the data tree is what constrains it (`--plain` opts out). The
 // catalogue in `public/data/index.json` picks them up under
-// `platforms.fifteen.cities`, and the coverage layer's marker for each city
-// goes into `public/data/fifteen/coverage.geojson`.
+// `platforms.fifteen.cities` and names the `.gz` explicitly; the coverage
+// layer's marker for each city goes into `fifteen/coverage.geojson.gz`.
 //
 // Usage:
 //   npm run import:fifteen
 //   npm run import:fifteen -- --src input_data/15mincity --out public/data/fifteen
 //   npm run import:fifteen -- --dry-run                    # write nothing
 //   npm run import:fifteen -- --only acilia,rome           # subset by slug
+//   npm run import:fifteen -- --plain                      # uncompressed output
+//   npm run import:fifteen -- --country FR --region France
 //
 // What the script does per file:
 //   1. Rounds every coordinate to 5 decimal places  (~1.1 m at Rome latitude,
@@ -34,7 +38,7 @@
 //      each cell keeps its centre, its area proportional to residents,
 //      reaching the full hexagon at the city's median cell population
 //      (this is the rule build-atlas.mjs already uses for Milan).
-//   8. Writes both files to `public/data/fifteen/`.
+//   8. Writes both files to `public/data/fifteen/`, gzipped.
 //   9. Updates the catalogue entry in `public/data/index.json` and the
 //      coverage-marker feature in `public/data/fifteen/coverage.geojson`.
 //
@@ -44,7 +48,9 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
+import { readDataJSON, writeDataFile } from './lib/datafile.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -77,6 +83,13 @@ const ONLY = (arg('only') ?? '')
 // `--region` accepts the English name and `--region-it` its Italian; a city
 // that needs different copy is a hand edit to the catalogue afterwards, which
 // a later rerun preserves.
+// 15minCity keeps only the compressed copy on disk: the Atlas is served from
+// a machine where the size of the data tree is the binding constraint, and a
+// plain companion beside it would double that for bytes no client asks for.
+// `--plain` writes uncompressed files instead, for inspecting an import.
+const STORE_GZIP = !flag('plain');
+const EXT = STORE_GZIP ? '.geojson.gz' : '.geojson';
+
 const COUNTRY = arg('country', 'IT');
 const REGION = arg('region', 'Italy');
 const REGION_IT = arg('region-it', 'Italia');
@@ -411,19 +424,24 @@ function processCity(srcPath) {
 function writeJSON(target, data) {
   // GeoJSON files are only ever read by machines — minify. `.json` files
   // (the catalogue) are human-readable and reviewed by hand — pretty-print.
-  const body = target.endsWith('.geojson')
-    ? JSON.stringify(data)
-    : `${JSON.stringify(data, null, 2)}\n`;
-  if (!DRY_RUN) {
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, body);
+  const isGeo = target.endsWith('.geojson') || target.endsWith('.geojson.gz');
+  const body = isGeo ? JSON.stringify(data) : `${JSON.stringify(data, null, 2)}\n`;
+  if (DRY_RUN) {
+    // Report what the write would have cost without performing it.
+    return target.endsWith('.gz')
+      ? { raw: body.length, stored: zlib.gzipSync(Buffer.from(body)).length }
+      : { raw: body.length, stored: body.length };
   }
-  return body.length;
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  return writeDataFile(target, body);
 }
 
 function readJSONIfExists(target) {
-  if (!fs.existsSync(target)) return null;
-  return JSON.parse(fs.readFileSync(target, 'utf8'));
+  try {
+    return readDataJSON(target);
+  } catch {
+    return null;
+  }
 }
 
 function upsertCoverage(coveragePath, city) {
@@ -454,7 +472,7 @@ function upsertCatalogue(cataloguePath, city) {
   const catalogue = readJSONIfExists(cataloguePath);
   if (!catalogue) throw new Error(`catalogue not found: ${cataloguePath}`);
   const platforms = catalogue.platforms ?? {};
-  const fifteen = platforms.fifteen ?? { coverage: 'fifteen/coverage.geojson', cities: [] };
+  const fifteen = platforms.fifteen ?? { coverage: `fifteen/coverage${EXT}`, cities: [] };
 
   const row = {
     id: city.cityId,
@@ -470,9 +488,9 @@ function upsertCatalogue(cataloguePath, city) {
     center: city.centre,
     zoom: city.zoom,
     population: city.population,
-    dataset: `fifteen/${city.cityId}.geojson`,
+    dataset: `fifteen/${city.cityId}${EXT}`,
     geometry: 'geographic',
-    cartogramDataset: `fifteen/${city.cityId}.cartogram.geojson`,
+    cartogramDataset: `fifteen/${city.cityId}.cartogram${EXT}`,
     cartogramSource: 'derived',
     cell: {
       h3Resolution: null,
@@ -526,26 +544,32 @@ function main() {
     const srcPath = path.join(SRC_DIR, file);
     try {
       const city = processCity(srcPath);
-      const layerPath = path.join(OUT_DIR, `${city.cityId}.geojson`);
-      const cartPath = path.join(OUT_DIR, `${city.cityId}.cartogram.geojson`);
+      const layerPath = path.join(OUT_DIR, `${city.cityId}${EXT}`);
+      const cartPath = path.join(OUT_DIR, `${city.cityId}.cartogram${EXT}`);
 
       const layerBytes = writeJSON(layerPath, city.layerCollection);
       const cartBytes = writeJSON(cartPath, city.cartogramCollection);
-      const coverageCount = upsertCoverage(path.join(OUT_DIR, 'coverage.geojson'), city);
+      const coverageCount = upsertCoverage(path.join(OUT_DIR, `coverage${EXT}`), city);
       const cityCount = upsertCatalogue(CATALOGUE, city);
 
       stats.push({
         id: city.cityId,
         cells: city.cellCount,
-        layerKb: (layerBytes / 1024).toFixed(1),
-        cartKb: (cartBytes / 1024).toFixed(1),
+        raw: layerBytes.raw + cartBytes.raw,
+        stored: layerBytes.stored + cartBytes.stored,
         pop: city.population,
         prox: city.proximityMinutes,
         centre: city.centre,
       });
 
+      // Both numbers matter and they answer different questions: `raw` is what
+      // the JSON weighs, `stored` is what the disk gives up for it. They are
+      // the same figure when the tree is uncompressed.
+      const kb = (n) => `${(n / 1024).toFixed(1)} kB`;
+      const last = stats[stats.length - 1];
       console.log(
-        `  ${city.cityId.padEnd(16)} ${String(city.cellCount).padStart(6)} cells  ${String(city.population).padStart(9)} pop  layer ${stats[stats.length - 1].layerKb.padStart(7)} kB  cart ${stats[stats.length - 1].cartKb.padStart(7)} kB  (cov ${coverageCount}, cat ${cityCount})`,
+        `  ${city.cityId.padEnd(16)} ${String(city.cellCount).padStart(6)} cells  ${String(city.population).padStart(9)} pop  ` +
+          `${kb(last.raw).padStart(9)} json → ${kb(last.stored).padStart(9)} on disk  (cov ${coverageCount}, cat ${cityCount})`,
       );
     } catch (err) {
       console.error(`  failed on ${file}: ${err.message}`);
@@ -553,8 +577,18 @@ function main() {
     }
   }
 
-  if (DRY_RUN) console.log('\ndry run — no files written');
-  else console.log(`\ndone. run \`npm run test:data\` to validate.`);
+  const raw = stats.reduce((s, c) => s + c.raw, 0);
+  const stored = stats.reduce((s, c) => s + c.stored, 0);
+  const mb = (n) => `${(n / 1024 / 1024).toFixed(2)} MB`;
+  if (raw) {
+    console.log(
+      `\n${stats.length} cities  ${mb(raw)} json → ${mb(stored)} on disk` +
+        (STORE_GZIP ? ` (${Math.round((1 - stored / raw) * 100)}% saved, stored gzipped)` : ''),
+    );
+  }
+
+  if (DRY_RUN) console.log('dry run — no files written');
+  else console.log('run `npm run test:data` to validate.');
 }
 
 main();

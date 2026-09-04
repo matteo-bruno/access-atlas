@@ -122,7 +122,12 @@ export async function loadNpy(url, { signal } = {}) {
 
 function formatFor(url, explicit) {
   if (explicit) return explicit;
-  const path = url.split('?')[0].toLowerCase();
+  let path = url.split('?')[0].toLowerCase();
+  // A `.gz` is a transport wrapper, not a format: the browser has already
+  // decoded it by the time a loader sees the body (the server sends it with
+  // `Content-Encoding: gzip`), so the format is whatever it decodes *to*.
+  // Without this, `times00.npy.gz` would be parsed as GeoJSON.
+  if (path.endsWith('.gz')) path = path.slice(0, -3);
   if (path.endsWith('.zip') || path.endsWith('.shp')) return 'shapefile';
   if (path.endsWith('.npy')) return 'npy';
   return 'geojson';

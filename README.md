@@ -188,31 +188,83 @@ A static build; `dist/` can be served by anything.
 
 ### Compression
 
-Two separate things, and it is worth keeping them apart.
+Two mechanisms, and they stack.
 
-**The published files themselves are plain `.geojson`** and stay that
-way — they live in git, they are diffed and reviewed, and the app fetches
-them by their plain path. What the import scripts reduce is their
-*content*: coordinate precision, value precision, and fields nothing
-reads.
+**1. Content reduction, in the import scripts.** Coordinates to 5 decimal
+places (~1 m), values to 1 decimal, pipeline fields nothing reads
+dropped. Roughly 30 % off before anything is compressed.
 
-**Transfer is gzipped, and that is the server's job.** `npm run build`
-writes a `.gz` companion beside every text file in `dist/` above 4 KB
-(`scripts/postbuild-compress.mjs`), and the server sends that instead
-when the client accepts gzip. Measured on the Milan city page: **6.68 MB
-→ 0.96 MB**, an 86 % reduction on the wire.
+**2. gzip.** A platform can store its published files gzipped, and the
+server sends them with `Content-Encoding: gzip` so the browser decodes
+them transparently.
 
-| Where | How the `.gz` gets used |
+**15minCity is stored gzipped** — `fifteen/milan.geojson.gz`, named that
+way in the catalogue — because the Atlas is served from a machine where
+the size of the data tree is the binding constraint. That directory went
+**9.72 MB → 1.93 MB**, and a Milan page load transfers 0.96 MB rather
+than 6.68 MB. The other platforms are still plain; convert one with:
+
+```bash
+npm run compress:data -- --platform cardep          # convert + repoint catalogue
+npm run compress:data -- --platform cardep --dry-run
+npm run compress:data -- --platform cardep --decompress   # back out
+npm run compress:data -- --all
+```
+
+It rewrites every path the catalogue names — `dataset`, `geoDataset`,
+`cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios and
+CityChrone's `{hh}` hourly templates — so nothing is left pointing at a
+file that moved. Run `npm run test:data` after.
+
+Separately, `npm run build` writes `.gz` companions beside every *other*
+text file in `dist/` above 4 KB (`scripts/postbuild-compress.mjs`), which
+is the `gzip_static` convention. `npm run build:nogzip` skips it.
+
+**Serving it.** Everything below sends `Content-Encoding: gzip` with the
+type of what the file decodes *to*, which is what the browser needs:
+
+| Where | Mechanism |
 | --- | --- |
-| `npm run preview` | the `aa-serve-precompressed` plugin in `vite.config.js` |
-| nginx | `gzip_static on;` |
-| Caddy | `encode gzip` (prefers precompressed) |
-| GitHub Pages / Netlify / Vercel | ignored — they gzip on the fly themselves |
-| `npm run dev` | not used; dev serves from `public/` and builds no companions |
+| `npm run dev` / `npm run preview` | `aa-serve-precompressed` in `vite.config.js` |
+| nginx | see below |
+| Caddy | `encode gzip` — prefers precompressed automatically |
+| GitHub Pages / Netlify / Vercel | `.gz` companions ignored; a stored `.gz` still needs the header set |
 
-`npm run build:nogzip` skips the step. Note that a client sending
-`Accept-Encoding: identity` still gets the full uncompressed file, so
-nothing depends on the companion existing.
+nginx, serving a tree where some files are stored `.gz` and others have
+`.gz` companions:
+
+```nginx
+server {
+    root /srv/access-atlas/dist;
+
+    # Companions beside a plain file (case 2 above).
+    gzip_static on;
+
+    # Files whose only copy is compressed: send the encoding, and the
+    # content type of what it decodes to rather than application/gzip.
+    location ~ \.geojson\.gz$ {
+        add_header Content-Encoding gzip;
+        add_header Vary Accept-Encoding;
+        default_type application/geo+json;
+    }
+    location ~ \.json\.gz$ {
+        add_header Content-Encoding gzip;
+        add_header Vary Accept-Encoding;
+        default_type application/json;
+    }
+
+    # SPA fallback — deep links must serve the shell.
+    location / { try_files $uri /index.html; }
+}
+```
+
+Without those `location` blocks the browser receives gzip bytes labelled
+`application/gzip` and every dataset fails to parse. That failure is loud
+(a console error, no map) rather than silent, which is deliberate: the
+catalogue names the `.gz` explicitly instead of relying on the server to
+rewrite `.geojson` → `.geojson.gz`, because a rewrite that a
+misconfigured server does not perform would 404 into the SPA fallback and
+quietly render seed data instead.
 
 Two requirements:
 

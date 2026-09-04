@@ -643,11 +643,41 @@ ends in `.gz`, so the type would otherwise sniff as gzip) and `Vary:
 Accept-Encoding` (one URL, two encodings). If you measure compression,
 measure a response, never a directory listing.
 
-**`public/data/` stays plain `.geojson` and should.** Those files are in
-git, and the app fetches them by their plain path; the `.gz` is a build
-artefact of `dist/`, produced after Vite has copied `public/` across.
-Committing compressed data would trade reviewable diffs for bytes the
-server already saves on its own.
+**A platform can be stored gzipped, and 15minCity is.** `public/data/
+fifteen/` holds `milan.geojson.gz` and nothing else — the catalogue names
+the `.gz` — because the Atlas is served from a machine where the size of
+the data tree is the binding constraint, and 9.72 MB became 1.93 MB.
+`npm run compress:data -- --platform <id>` converts a platform and
+repoints every path the catalogue names (`dataset`, `geoDataset`,
+`cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios,
+CityChrone's `{hh}` templates); `--decompress` backs it out.
+
+Worth knowing before reaching for it on the rest: **git already stores
+every blob zlib-compressed**, so this does not shrink the *repository*
+much — 176 MB of working tree is 48 MB packed — and it costs delta
+compression, since a re-import rewrites the whole gzip stream rather than
+a few KB of text. What it shrinks is the tree on the server's disk, which
+is the reason it is on.
+
+Two consequences that bite silently:
+
+- **Everything that reads published data goes through
+  `scripts/lib/datafile.mjs`** (`readDataJSON` / `writeDataFile`), which
+  resolves either spelling. `fs.readFileSync` on a catalogue path is now
+  a bug — it will hand you gzip bytes. `test-data.mjs` and
+  `build-atlas.mjs` were converted with the platform.
+- **`.gz` is a transport wrapper, not a format.** `formatFor` in
+  `map/loaders.js` strips it before deciding, or a compressed
+  `times00.npy` would be parsed as GeoJSON.
+
+The catalogue names the `.gz` **explicitly** rather than letting the
+server rewrite `.geojson` → `.geojson.gz`. A rewrite is tidier, and it is
+the wrong trade here: a server that has not been configured for it would
+404, and a 404 under the SPA fallback is `index.html` with HTTP 200,
+which the data layer reads as "not published" and silently answers with
+seed data. Naming the real file makes a misconfigured server fail loudly
+at `JSON.parse` instead. The nginx block for it is in the README; without
+it the browser gets gzip bytes labelled `application/gzip`.
 
 The upstream repos are inputs, not dependencies — nothing at runtime reaches
 back to them. `mat701/CDI` and `mat701/accessibility-pov` are public and can be
