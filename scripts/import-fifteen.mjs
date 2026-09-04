@@ -71,6 +71,16 @@ const ONLY = (arg('only') ?? '')
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);
 
+// Where this batch of cities is. The source files say nothing about it, and
+// the UI shows both — the city header prints `region`, the search result
+// prints `country` — so they are stated once per run rather than left blank.
+// `--region` accepts the English name and `--region-it` its Italian; a city
+// that needs different copy is a hand edit to the catalogue afterwards, which
+// a later rerun preserves.
+const COUNTRY = arg('country', 'IT');
+const REGION = arg('region', 'Italy');
+const REGION_IT = arg('region-it', 'Italia');
+
 // ── constants ────────────────────────────────────────────────────────
 const COORD_DECIMALS = 5;
 const VALUE_DECIMALS = 1;
@@ -374,6 +384,10 @@ function processCity(srcPath) {
   return {
     cityId,
     cityName,
+    name: cityName,
+    country: COUNTRY,
+    region: REGION,
+    regionIt: REGION_IT,
     population,
     centre: [rCoord(centre[0]), rCoord(centre[1])],
     bbox,
@@ -424,6 +438,9 @@ function upsertCoverage(coveragePath, city) {
     properties: {
       id: city.cityId,
       name: city.cityName,
+      // The search result prints the country beside the name; without it the
+      // row reads as a bare name next to every other city's "Milan · IT".
+      country: city.country,
       isStudy: true,
       proximityMinutes: city.proximityMinutes,
       population: city.population,
@@ -442,6 +459,14 @@ function upsertCatalogue(cataloguePath, city) {
   const row = {
     id: city.cityId,
     name: city.cityName,
+    // The city header renders `region` directly, so it must be a string even
+    // when the source file says nothing about where the city is — an absent
+    // key reaches the page as the literal text "undefined". `--country` names
+    // the region for a whole import run; a per-city correction is a hand edit
+    // to the catalogue, which a rerun then preserves (see below).
+    region: city.region,
+    nameIt: city.name,
+    regionIt: city.regionIt,
     center: city.centre,
     zoom: city.zoom,
     population: city.population,

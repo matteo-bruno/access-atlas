@@ -359,18 +359,33 @@ and is the Atlas's own data rather than a texture that resembles it. The
 landing only leaves it a viewport of clear space; its own sections scroll over
 it as before.
 
-**The coverage frame has a floor: every published city stays in it.** The
-longitude span is `360 / 2^WORLD_ZOOM_BOOST` at any width, so the arithmetic
-is exact. The frame is currently the plain fit (`WORLD_ZOOM_BOOST = 0`,
-`WORLD_CENTER = [0, 25]`) — the whole world across the container's width —
-because the Atlas is now global in ambition and a data-centric boost would
-crop new regions off the sides. The earlier setting was a boost of 1.05
-centred at −40°, which reached from Seattle at −122.3° to Stockholm at
-+18.0° with about four degrees to spare on each side; that was fine while
-the coverage sat in one European cluster and five North American cities,
-and is worth revisiting if the map ever wants a tighter frame again.
-`smoke.mjs` reprojects the published coverage and fails if any marker
-lands outside, so the assertion adapts to whatever the constants say.
+**The coverage frame is derived from the coverage, not written down.**
+`coverageFraming()` in `map/framing.js` takes the merged city list and
+returns the centre and zoom boost both coverage maps use. The longitude span
+is `360 / 2^boost` at any width, so the arithmetic is exact: it fits the
+*shortest arc* containing every city (not `max − min` — coverage straddling
+the antimeridian would otherwise frame the whole globe to show two
+neighbours), pads it by 1.25, and clamps the result to at most 2.4 so an
+Atlas publishing one city still draws a world rather than that city's
+rooftops. Latitude's midpoint is taken in Mercator, because the projection
+stretches toward the poles and the degree-midpoint sits visibly north of the
+middle of the drawn band.
+
+A pose written down once goes wrong in both directions as coverage grows:
+too tight crops new continents off the sides, too loose shrinks the cities
+that *are* published to specks on an empty ocean. **Both failures pass a
+test that only asks whether the markers are inside the frame** — the second
+one shipped exactly that way, at `WORLD_ZOOM_BOOST = 0`, and read as "the
+cities aren't loading". `WORLD_ZOOM_BOOST` and `WORLD_CENTER` still exist,
+but they are a *cache of the function's output* for the coverage published
+today, used only for the frame or two before the catalogue answers — keeping
+them equal to the derived pose is what stops a cold load from re-framing.
+Do not hand-tune them; change the padding or the clamp instead.
+
+Both callers pass the **merged** coverage (`all.cities`), never the open
+tab's, so switching platform never moves the world — and so the backdrop and
+the platform screen stay one map. `smoke.mjs` reprojects the published
+coverage and fails if any marker lands outside.
 
 **A world view must re-apply its centre with its zoom** (`applyWorldWidthZoom`).
 MapLibre clamps the centre latitude so a viewport cannot show past the poles,

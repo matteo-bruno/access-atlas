@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AtlasMap } from '../map/AtlasMap.jsx';
 import { useBackdropCovered } from '../map/backdrop.js';
-import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../map/framing.js';
+import { coverageFraming } from '../map/framing.js';
 import { CoverageLayer } from './CityLayer.jsx';
 import { useAllCoverage } from '../data/useAtlasData.js';
 import './Backdrop.css';
@@ -50,6 +50,11 @@ const OWN_MAP = ['/platforms', '/atlas'];
 export function Backdrop() {
   const { pathname } = useLocation();
   const { cities } = useAllCoverage();
+  // The pose follows the coverage rather than a constant, so the world stays
+  // framed on the data as cities are published beyond the original clusters
+  // (see coverageFraming). The platform screen derives it from the same
+  // merged list, which is what keeps the two maps one map.
+  const { center, zoomBoost } = coverageFraming(cities);
   const mapRef = useRef(null);
   const ownMap = OWN_MAP.some((prefix) => pathname.startsWith(prefix));
   // Both halves have to hold, and they answer different questions.
@@ -88,8 +93,8 @@ export function Backdrop() {
       <AtlasMap
         ref={mapRef}
         fitWorldWidth
-        worldZoomBoost={WORLD_ZOOM_BOOST}
-        center={WORLD_CENTER}
+        worldZoomBoost={zoomBoost}
+        center={center}
         interactive={false}
         label=""
       >

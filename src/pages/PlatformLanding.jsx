@@ -4,7 +4,7 @@ import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
 import { AtlasMap } from '../map/AtlasMap.jsx';
-import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../map/framing.js';
+import { coverageFraming } from '../map/framing.js';
 import { CityLayer, CoverageLayer } from '../components/CityLayer.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
@@ -70,6 +70,8 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
   const single = useCityCoverage(platform ?? PLATFORMS[0]);
   const hasSummary = usePlatformHasSummary(platform?.id);
   const cities = platform ? single.cities : all.cities;
+  // Always the merged coverage, never the open tab's — see the AtlasMap props.
+  const worldFrame = coverageFraming(all.cities);
 
   const cityPageIds = useCityPageIds(platform?.id);
   const atlasCityIds = useAtlasCityIds();
@@ -110,12 +112,16 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         ref={mapRef}
         fitWorldWidth
         // The same framing as the backdrop behind every other page: one world,
-        // however you arrived at it (see WORLD_ZOOM_BOOST). Which is also why
+        // however you arrived at it (see coverageFraming). Which is also why
         // this map takes the backdrop's place rather than the route doing it:
         // the backdrop stays until this one has painted the same world in the
         // same box, so arriving here changes the chrome, not the world.
-        worldZoomBoost={WORLD_ZOOM_BOOST}
-        center={WORLD_CENTER}
+        //
+        // Derived from `all.cities`, never from the open tab's `cities`: the
+        // world must not move when the reader switches platform, and a tab
+        // showing one city would otherwise frame itself to that city.
+        worldZoomBoost={worldFrame.zoomBoost}
+        center={worldFrame.center}
         coversBackdrop
         interactive={interactive}
         label={title}

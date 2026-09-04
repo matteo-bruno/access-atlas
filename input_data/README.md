@@ -28,6 +28,18 @@ npm run import:fifteen -- --only rome  # subset by slug
 npm run import:fifteen -- --dry-run    # show what would be written
 ```
 
+The source files say nothing about where a city is, and the UI shows it in
+two places — the city header prints the region, the search result prints
+the country — so state it per run. It defaults to Italy:
+
+```
+npm run import:fifteen -- --country FR --region France --region-it Francia
+```
+
+A city needing different copy from the rest of its batch is a hand edit to
+`public/data/index.json` afterwards: reruns preserve `nameIt`, `region` and
+`regionIt` on a row that already has them.
+
 The script:
 
 - compresses each file (rounds coordinates to 5 decimals, rounds minute
