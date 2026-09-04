@@ -22,11 +22,73 @@ const spaFallback = () => {
   };
 };
 
+// Serve the `.gz` companions `scripts/postbuild-compress.mjs` writes.
+//
+// Vite's preview server is plain sirv: it serves `milan.geojson` as 8.5 MB
+// whether or not a `milan.geojson.gz` sits beside it and whether or not the
+// client asked for gzip. That made the whole pre-compression step invisible
+// locally — the files were on disk, nothing read them, and `npm run preview`
+// looked exactly like a build with no compression at all.
+//
+// This is what nginx's `gzip_static on` does, in about fifteen lines: if the
+// client accepts gzip and a `.gz` companion exists, send that instead with
+// `Content-Encoding: gzip`. It applies to preview only — in dev the files are
+// served from `public/` and no companions have been built.
+//
+// Content-Type has to be set here: the response path ends in `.gz`, so the
+// type would otherwise be sniffed as gzip rather than the JSON it decodes to.
+const TYPES = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.mjs': 'text/javascript',
+  '.css': 'text/css',
+  '.svg': 'image/svg+xml',
+  '.json': 'application/json',
+  '.geojson': 'application/geo+json',
+  '.txt': 'text/plain',
+  '.map': 'application/json',
+  '.xml': 'application/xml',
+  '.webmanifest': 'application/manifest+json',
+};
+
+const servePrecompressed = () => ({
+  name: 'aa-serve-precompressed',
+  apply: 'serve',
+  configurePreviewServer(server) {
+    const outDir = path.resolve(server.config.root, server.config.build.outDir);
+    const base = server.config.base || '/';
+
+    server.middlewares.use((req, res, next) => {
+      if (!req.headers['accept-encoding']?.includes('gzip')) return next();
+
+      const url = (req.url ?? '').split('?')[0].split('#')[0];
+      // Strip the deploy base so a sub-path build resolves inside outDir.
+      const rel = decodeURIComponent(
+        url.startsWith(base) ? url.slice(base.length) : url.replace(/^\//, ''),
+      );
+      // Never let a crafted path climb out of the build directory.
+      const file = path.resolve(outDir, rel);
+      if (file !== outDir && !file.startsWith(outDir + path.sep)) return next();
+
+      const gz = `${file}.gz`;
+      if (!fs.existsSync(gz) || !fs.statSync(gz).isFile()) return next();
+
+      const type = TYPES[path.extname(file).toLowerCase()];
+      if (type) res.setHeader('Content-Type', type);
+      res.setHeader('Content-Encoding', 'gzip');
+      res.setHeader('Content-Length', fs.statSync(gz).size);
+      // Same bytes under two encodings: caches must key on the header.
+      res.setHeader('Vary', 'Accept-Encoding');
+      fs.createReadStream(gz).pipe(res);
+    });
+  },
+});
+
 // `base` is configurable so the Atlas can also be served from a sub-path
 // (e.g. https://sonycsl.example/access-atlas/) without a rebuild of the source.
 export default defineConfig({
   base: process.env.VITE_BASE ?? '/',
-  plugins: [react(), spaFallback()],
+  plugins: [react(), spaFallback(), servePrecompressed()],
   define: {
     // Stamped into the catalogue's URL so a returning visitor cannot be served
     // a cached `index.json` from a previous deploy. The catalogue is the one

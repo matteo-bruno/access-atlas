@@ -186,11 +186,33 @@ locale, so `10,142` becomes `10.142` in Italian. The choice persists to
 
 A static build; `dist/` can be served by anything.
 
-`npm run build` also pre-generates `.gz` companions for every text file
-in `dist/` above 4 KB via `scripts/postbuild-compress.mjs` — useful on
-static hosts that serve precompressed files (nginx `gzip_static on`,
-Caddy `encode gzip`). GitHub Pages does its own on-the-fly gzip and
-ignores them harmlessly; run `npm run build:nogzip` to skip the step.
+### Compression
+
+Two separate things, and it is worth keeping them apart.
+
+**The published files themselves are plain `.geojson`** and stay that
+way — they live in git, they are diffed and reviewed, and the app fetches
+them by their plain path. What the import scripts reduce is their
+*content*: coordinate precision, value precision, and fields nothing
+reads.
+
+**Transfer is gzipped, and that is the server's job.** `npm run build`
+writes a `.gz` companion beside every text file in `dist/` above 4 KB
+(`scripts/postbuild-compress.mjs`), and the server sends that instead
+when the client accepts gzip. Measured on the Milan city page: **6.68 MB
+→ 0.96 MB**, an 86 % reduction on the wire.
+
+| Where | How the `.gz` gets used |
+| --- | --- |
+| `npm run preview` | the `aa-serve-precompressed` plugin in `vite.config.js` |
+| nginx | `gzip_static on;` |
+| Caddy | `encode gzip` (prefers precompressed) |
+| GitHub Pages / Netlify / Vercel | ignored — they gzip on the fly themselves |
+| `npm run dev` | not used; dev serves from `public/` and builds no companions |
+
+`npm run build:nogzip` skips the step. Note that a client sending
+`Accept-Encoding: identity` still gets the full uncompressed file, so
+nothing depends on the companion existing.
 
 Two requirements:
 

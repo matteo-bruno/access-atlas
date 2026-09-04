@@ -629,6 +629,26 @@ Static hosts with `gzip_static on` (nginx) or `encode gzip` (Caddy) pick
 them up automatically; GitHub Pages does its own on-the-fly gzip and
 ignores them harmlessly. `npm run build:nogzip` skips the step.
 
+**A pre-compressed file nothing serves is not compression.** The
+companions shipped for a while with no server reading them: Vite's
+preview is plain sirv, which sends `milan.geojson` as 8.5 MB whether or
+not `milan.geojson.gz` sits beside it, so `npm run preview` looked
+byte-for-byte like a build with the step turned off, and the only number
+anyone had was the one the build script printed about its own output.
+`aa-serve-precompressed` in `vite.config.js` is `gzip_static` in fifteen
+lines, so preview now matches what nginx or Caddy will do and the saving
+is measurable where people actually look — 6.68 MB → 0.96 MB on the
+Milan city page. It sets `Content-Type` explicitly (the file it opens
+ends in `.gz`, so the type would otherwise sniff as gzip) and `Vary:
+Accept-Encoding` (one URL, two encodings). If you measure compression,
+measure a response, never a directory listing.
+
+**`public/data/` stays plain `.geojson` and should.** Those files are in
+git, and the app fetches them by their plain path; the `.gz` is a build
+artefact of `dist/`, produced after Vite has copied `public/` across.
+Committing compressed data would trade reviewable diffs for bytes the
+server already saves on its own.
+
 The upstream repos are inputs, not dependencies — nothing at runtime reaches
 back to them. `mat701/CDI` and `mat701/accessibility-pov` are public and can be
 cloned directly; `add_repo` refuses them when the session is scoped to a
