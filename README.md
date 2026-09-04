@@ -30,9 +30,24 @@ version first and says so instead.
 nvm use 22           # or any Node ≥ 20
 npm install
 npm run dev          # http://localhost:5173
-npm run build        # → dist/
+npm run build        # → dist/ (also pre-gzips text files; see Deployment)
 npm run preview
 ```
+
+## Adding data
+
+Drop upstream files under `input_data/<platform>/` and run the matching
+import script. See [`input_data/README.md`](input_data/README.md) for the
+per-platform schema.
+
+```bash
+npm run import:fifteen           # input_data/15mincity/*.geojson → public/data/fifteen/
+npm run test:data                # validate what was just written
+```
+
+Each import script rounds coordinates and values, drops pipeline debris,
+derives the population-scaled cartogram companion, and upserts the city
+into `public/data/index.json` + the platform's `coverage.geojson`.
 
 The scripts that drive a browser — `smoke`, `smoke:published`,
 `shoot:previews` — also need Playwright, which is deliberately *not* a
@@ -169,7 +184,15 @@ locale, so `10,142` becomes `10.142` in Italian. The choice persists to
 
 ## Deployment
 
-A static build; `dist/` can be served by anything. Two requirements:
+A static build; `dist/` can be served by anything.
+
+`npm run build` also pre-generates `.gz` companions for every text file
+in `dist/` above 4 KB via `scripts/postbuild-compress.mjs` — useful on
+static hosts that serve precompressed files (nginx `gzip_static on`,
+Caddy `encode gzip`). GitHub Pages does its own on-the-fly gzip and
+ignores them harmlessly; run `npm run build:nogzip` to skip the step.
+
+Two requirements:
 
 - **SPA fallback.** Deep links like `/platforms/citychrone` must serve
   `index.html`. On Netlify/Vercel this is the default; on nginx use

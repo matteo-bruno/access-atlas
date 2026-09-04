@@ -21,30 +21,28 @@ const CITY_ZOOM_BOOST = 1.1;
  * starts below the nav for exactly that reason — see Backdrop.css).
  *
  * Zero is the plain fit: the whole world across the container, every city on
- * screen and most of the frame ocean. The boost trades that spare world for
- * size, and the trade has a hard floor — **every published city has to stay
- * in frame**, because this is the Atlas's own coverage map and a city cropped
- * out of it reads as a city we do not have.
- *
- * The longitude span is `360 / 2^boost` at any width (the fit zoom already
- * scales with the container), so the arithmetic is exact: the published
- * cities run from Seattle at −122.3° to Stockholm at +18.0°, which needs
- * 140.3°. At this boost the frame is 173.9° wide, and centred at −40° it
- * covers −126.9° to +46.9° — Seattle with about four degrees to spare.
- * Anything past ~1.15 starts cutting the west coast off. Latitude is the
- * viewport's own aspect ratio and is never the binding constraint: even a
- * 1920×600 window still reaches 62°N, above Stockholm's 59.3°.
+ * screen with the map spanning the full 360° in longitude. The Atlas is now
+ * global in ambition — cities are being added on every continent — so the
+ * frame stays at the plain fit rather than trading paper for a data-centric
+ * boost that would crop new regions off the sides. The longitude span is
+ * `360 / 2^boost`, so a boost of 0 means the whole world sits across the
+ * container's width. Latitude follows the viewport's own aspect ratio and is
+ * never the binding constraint: the poles clip, which is expected — no
+ * published city sits above ~60°N.
  */
-export const WORLD_ZOOM_BOOST = 1.05;
+export const WORLD_ZOOM_BOOST = 0;
 
 /**
  * The centre both coverage maps are framed on.
  *
- * Not the middle of the world — the middle of the *data*. The published
- * cities are one European cluster and five in North America, and a frame
- * centred on the Atlantic is what holds both at this zoom.
+ * A shade north of the equator, on the prime meridian: this keeps the
+ * populated latitudes (Europe, North America, most of Asia, the northern
+ * half of Africa) inside a viewport of any reasonable aspect ratio, and
+ * puts the map's horizontal midline through the belt where most cities
+ * are. Longitude 0 keeps the frame symmetric around the Atlantic + Europe
+ * axis rather than biasing east or west.
  */
-export const WORLD_CENTER = [-40, 47];
+export const WORLD_CENTER = [0, 25];
 
 export function cityZoom(profile, boost = CITY_ZOOM_BOOST) {
   return (profile?.zoom ?? 10) + boost;

@@ -361,10 +361,16 @@ it as before.
 
 **The coverage frame has a floor: every published city stays in it.** The
 longitude span is `360 / 2^WORLD_ZOOM_BOOST` at any width, so the arithmetic
-is exact — Seattle at −122.3° to Stockholm at +18.0° needs 140.3°, the boost
-gives 173.9°, and the centre sits at −40° (the middle of the *data*, not of
-the world). Past ~1.15 the west coast goes over the edge. `smoke.mjs`
-reprojects the published coverage and fails if any marker lands outside.
+is exact. The frame is currently the plain fit (`WORLD_ZOOM_BOOST = 0`,
+`WORLD_CENTER = [0, 25]`) — the whole world across the container's width —
+because the Atlas is now global in ambition and a data-centric boost would
+crop new regions off the sides. The earlier setting was a boost of 1.05
+centred at −40°, which reached from Seattle at −122.3° to Stockholm at
++18.0° with about four degrees to spare on each side; that was fine while
+the coverage sat in one European cluster and five North American cities,
+and is worth revisiting if the map ever wants a tighter frame again.
+`smoke.mjs` reprojects the published coverage and fails if any marker
+lands outside, so the assertion adapts to whatever the constants say.
 
 **A world view must re-apply its centre with its zoom** (`applyWorldWidthZoom`).
 MapLibre clamps the centre latitude so a viewport cannot show past the poles,
@@ -587,8 +593,26 @@ Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ```bash
 npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
 npm run build:atlas        # union meshes + fifteen/citychrone catalogue entries
+npm run import:fifteen     # standalone-format 15minCity files → public/data/fifteen/
 npm run shoot:previews     # platform-card stills, from the running site
 ```
+
+`build:data` reads the *legacy* upstream schemas (letter-coded properties
+under `<dir>/hexes/hexes.geojson` for 15minCity, and the CDI / P.O.V.
+repos as they publish them). `import:fifteen` covers the harmonised
+standalone schema — one `*.geojson` per city under `input_data/15mincity/`
+with full-name properties (`education_foot`, `proximity_time_bicycle`,
+`centroid_lon`, `population`) — compressing coordinates and values,
+dropping pipeline debris, recomputing `proximity_time_<mode>` as the
+mean of the per-category minutes (some source exports store it in
+seconds), deriving the population-scaled cartogram companion, and
+upserting the catalogue and coverage entries. See `input_data/README.md`.
+
+`npm run build` also runs `scripts/postbuild-compress.mjs`, which writes
+`<file>.gz` companions for every text-ish file in `dist/` above 4 KB.
+Static hosts with `gzip_static on` (nginx) or `encode gzip` (Caddy) pick
+them up automatically; GitHub Pages does its own on-the-fly gzip and
+ignores them harmlessly. `npm run build:nogzip` skips the step.
 
 The upstream repos are inputs, not dependencies — nothing at runtime reaches
 back to them. `mat701/CDI` and `mat701/accessibility-pov` are public and can be
