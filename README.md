@@ -229,15 +229,23 @@ Separately, `npm run build` writes `.gz` companions beside every *other*
 text file in `dist/` above 4 KB (`scripts/postbuild-compress.mjs`), which
 is the `gzip_static` convention. `npm run build:nogzip` skips it.
 
-**Serving it.** Everything below sends `Content-Encoding: gzip` with the
-type of what the file decodes *to*, which is what the browser needs:
+**Serving it — no server configuration is required.** The loaders sniff
+the first two bytes of every dataset and decompress in the browser
+(`DecompressionStream`) when the body is still gzipped, so a stored `.gz`
+works on a host that knows nothing about it. GitHub Pages serves these as
+an opaque `application/gzip` download and cannot be configured otherwise;
+that path is covered.
+
+Configuring the server is still worth doing where you can — the browser
+then decodes natively as the response streams, rather than the app
+buffering the whole file and decoding after:
 
 | Where | Mechanism |
 | --- | --- |
 | `npm run dev` / `npm run preview` | `aa-serve-precompressed` in `vite.config.js` |
 | nginx | see below |
 | Caddy | `encode gzip` — prefers precompressed automatically |
-| GitHub Pages / Netlify / Vercel | `.gz` companions ignored; a stored `.gz` still needs the header set |
+| GitHub Pages / Netlify / Vercel | nothing to do; the app decompresses |
 
 nginx, serving a tree where some files are stored `.gz` and others have
 `.gz` companions:
@@ -274,12 +282,15 @@ server {
 ```
 
 Without those `location` blocks the browser receives gzip bytes labelled
-`application/gzip` and every dataset fails to parse. That failure is loud
-(a console error, no map) rather than silent, which is deliberate: the
-catalogue names the `.gz` explicitly instead of relying on the server to
-rewrite `.geojson` → `.geojson.gz`, because a rewrite that a
-misconfigured server does not perform would 404 into the SPA fallback and
-quietly render seed data instead.
+`application/gzip`, and the app decompresses them itself — slower, but
+correct. What the blocks buy is native streaming decode.
+
+The catalogue names the `.gz` explicitly rather than relying on the
+server to rewrite `.geojson` → `.geojson.gz`. A rewrite a host does not
+perform would 404 into the SPA fallback, which returns `index.html` with
+HTTP 200 — and the data layer reads that as "not published" and quietly
+renders seed data. Naming the real file means a host that cannot serve it
+fails visibly instead.
 
 Two requirements:
 

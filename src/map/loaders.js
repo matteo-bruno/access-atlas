@@ -27,12 +27,62 @@ function assertFeatureCollection(data, url) {
   return data;
 }
 
-export async function loadGeoJSON(url, { signal } = {}) {
+// Gzip's magic number. Two bytes is enough to tell a compressed body from a
+// decompressed one with no false positives here: JSON starts `{` or `[`, and
+// a .npy starts \x93NUMPY.
+const GZIP_MAGIC_0 = 0x1f;
+const GZIP_MAGIC_1 = 0x8b;
+
+/**
+ * Fetch a dataset and hand back its *decoded* bytes.
+ *
+ * Most published files are stored gzipped (`milan.geojson.gz`), and who
+ * decompresses them depends on the host, which the app cannot assume:
+ *
+ *   • A server told about them — nginx with the `.gz` location blocks in the
+ *     README, or the dev/preview plugin — sends `Content-Encoding: gzip`, and
+ *     the browser decodes before we ever see the body.
+ *   • A plain static host — GitHub Pages among them, and it cannot be
+ *     configured otherwise — serves the file as an opaque `application/gzip`
+ *     download. The body then arrives still compressed.
+ *
+ * Sniffing the first two bytes covers both without caring which happened, and
+ * without trusting `Content-Encoding`, which the fetch spec lets the browser
+ * strip once it has decoded. This is why the whole data tree can be stored
+ * compressed and still work on a host with no configuration at all.
+ */
+async function fetchDecoded(url, { signal } = {}) {
   const response = await fetch(url, { signal });
   if (!response.ok) {
     throw new DatasetError(`${response.status} ${response.statusText}`, { url });
   }
-  return assertFeatureCollection(await response.json(), url);
+  const buffer = await response.arrayBuffer();
+  const head = new Uint8Array(buffer, 0, Math.min(2, buffer.byteLength));
+  if (head.length < 2 || head[0] !== GZIP_MAGIC_0 || head[1] !== GZIP_MAGIC_1) {
+    return buffer;
+  }
+
+  if (typeof DecompressionStream === 'undefined') {
+    throw new DatasetError(
+      `${url} is gzipped and this browser cannot decompress it`,
+      { url },
+    );
+  }
+  const stream = new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(stream).arrayBuffer();
+}
+
+const decodeText = (buffer) => new TextDecoder().decode(buffer);
+
+export async function loadGeoJSON(url, { signal } = {}) {
+  const buffer = await fetchDecoded(url, { signal });
+  let parsed;
+  try {
+    parsed = JSON.parse(decodeText(buffer));
+  } catch (cause) {
+    throw new DatasetError(`${url} is not valid JSON`, { url, cause });
+  }
+  return assertFeatureCollection(parsed, url);
 }
 
 /**
@@ -40,11 +90,12 @@ export async function loadGeoJSON(url, { signal } = {}) {
  * skips the FeatureCollection assertion the map layer needs.
  */
 export async function loadJSON(url, { signal } = {}) {
-  const response = await fetch(url, { signal });
-  if (!response.ok) {
-    throw new DatasetError(`${response.status} ${response.statusText}`, { url });
+  const buffer = await fetchDecoded(url, { signal });
+  try {
+    return JSON.parse(decodeText(buffer));
+  } catch (cause) {
+    throw new DatasetError(`${url} is not valid JSON`, { url, cause });
   }
-  return response.json();
 }
 
 /**
@@ -53,11 +104,9 @@ export async function loadJSON(url, { signal } = {}) {
  * never lands in the main bundle.
  */
 export async function loadShapefile(url, { signal } = {}) {
-  const response = await fetch(url, { signal });
-  if (!response.ok) {
-    throw new DatasetError(`${response.status} ${response.statusText}`, { url });
-  }
-  const buffer = await response.arrayBuffer();
+  // A zipped shapefile is not gzip, so `fetchDecoded` passes it through
+  // untouched; a `.shp.gz` would be decoded before shpjs sees it.
+  const buffer = await fetchDecoded(url, { signal });
   const { default: shp } = await import('shpjs');
   const parsed = await shp(buffer);
   // shpjs returns an array when the archive holds several layers — merge them.
@@ -77,11 +126,7 @@ export async function loadShapefile(url, { signal } = {}) {
  * `{ shape, data }` with `data` a flat Uint8Array in row-major order.
  */
 export async function loadNpy(url, { signal } = {}) {
-  const response = await fetch(url, { signal });
-  if (!response.ok) {
-    throw new DatasetError(`${response.status} ${response.statusText}`, { url });
-  }
-  const buffer = await response.arrayBuffer();
+  const buffer = await fetchDecoded(url, { signal });
   const bytes = new Uint8Array(buffer);
 
   // Magic: \x93NUMPY, then major/minor version, then a little-endian header

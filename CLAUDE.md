@@ -682,6 +682,26 @@ Two consequences that bite silently:
   `map/loaders.js` strips it before deciding, or a compressed
   `times00.npy` would be parsed as GeoJSON.
 
+**Who decompresses is not the app's business to assume, and assuming it
+broke the deployed site.** Storing the tree gzipped was verified against
+the dev and preview servers, which set `Content-Encoding: gzip` — so the
+browser decoded before the loaders saw anything, and every check passed.
+GitHub Pages, which is what `/` actually deploys to, serves a `.gz` as an
+opaque `application/gzip` download with no such header and cannot be
+configured otherwise. Every layer went to "The published mesh could not
+be loaded" the moment it shipped, because `response.json()` was handed
+gzip bytes.
+
+`fetchDecoded` in `map/loaders.js` now sniffs the gzip magic number
+(`1f 8b`) on the body and decompresses with `DecompressionStream` when
+it is still compressed. Two bytes is unambiguous here — JSON starts `{`
+or `[`, a `.npy` starts `\x93NUMPY` — and it deliberately does *not*
+consult `Content-Encoding`, which the fetch spec lets the browser strip
+once it has decoded. So the same file works on a configured server and on
+a host that has never heard of it. Test any change to this against a host
+that does **not** set the header; `npm run preview` does set it and will
+tell you everything is fine.
+
 The catalogue names the `.gz` **explicitly** rather than letting the
 server rewrite `.geojson` → `.geojson.gz`. A rewrite is tidier, and it is
 the wrong trade here: a server that has not been configured for it would
