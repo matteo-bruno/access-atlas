@@ -109,13 +109,37 @@ function convert(file) {
   return { before: raw.length, after: gz.length };
 }
 
+/**
+ * The compressible units, each a directory under public/data/ plus the
+ * catalogue node naming its files.
+ *
+ * `atlas` is one of them and is easy to miss: its cities live in
+ * `catalogue.atlas`, not in `catalogue.platforms`, so a loop over the
+ * platforms would repoint nothing there — or, worse, repoint it without
+ * converting the directory, leaving the catalogue naming files that do not
+ * exist. Under the SPA fallback those 404s come back as `index.html` with
+ * HTTP 200, which is the failure mode this whole design is trying to avoid.
+ */
+function unitsFrom(catalogue) {
+  const units = Object.entries(catalogue.platforms ?? {}).map(([name, entry]) => ({
+    name,
+    entry,
+  }));
+  if (catalogue.atlas?.cities?.length) {
+    units.push({ name: 'atlas', entry: catalogue.atlas });
+  }
+  return units;
+}
+
 function main() {
   const catalogue = JSON.parse(fs.readFileSync(CATALOGUE, 'utf8'));
-  const names = ALL ? Object.keys(catalogue.platforms ?? {}) : PLATFORM ? [PLATFORM] : [];
+  const units = unitsFrom(catalogue);
+  const byName = new Map(units.map((u) => [u.name, u]));
+  const names = ALL ? units.map((u) => u.name) : PLATFORM ? [PLATFORM] : [];
 
   if (!names.length) {
     console.error('name a platform with --platform <id>, or --all');
-    console.error(`available: ${Object.keys(catalogue.platforms ?? {}).join(', ')}`);
+    console.error(`available: ${units.map((u) => u.name).join(', ')}`);
     process.exit(1);
   }
 
@@ -127,7 +151,7 @@ function main() {
   let count = 0;
 
   for (const name of names) {
-    const entry = catalogue.platforms?.[name];
+    const entry = byName.get(name)?.entry;
     if (!entry) {
       console.error(`  ${name}: not in the catalogue — skipped`);
       process.exitCode = 1;
@@ -156,12 +180,6 @@ function main() {
         ? `  ${name.padEnd(12)} ${String(converted).padStart(3)} files  ${mb(platformBefore).padStart(9)} → ${mb(platformAfter).padStart(9)}`
         : `  ${name.padEnd(12)} nothing to do`,
     );
-  }
-
-  // The atlas section names files too, and its cities live outside
-  // `platforms`, so it is repointed whenever its own directory was touched.
-  if (catalogue.atlas?.cities && (ALL || names.includes('atlas'))) {
-    repoint(catalogue.atlas);
   }
 
   if (!DRY_RUN) fs.writeFileSync(CATALOGUE, `${JSON.stringify(catalogue, null, 2)}\n`);

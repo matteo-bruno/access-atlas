@@ -643,14 +643,23 @@ ends in `.gz`, so the type would otherwise sniff as gzip) and `Vary:
 Accept-Encoding` (one URL, two encodings). If you measure compression,
 measure a response, never a directory listing.
 
-**A platform can be stored gzipped, and 15minCity is.** `public/data/
-fifteen/` holds `milan.geojson.gz` and nothing else — the catalogue names
-the `.gz` — because the Atlas is served from a machine where the size of
-the data tree is the binding constraint, and 9.72 MB became 1.93 MB.
+**Every platform is stored gzipped.** `public/data/` holds
+`milan.geojson.gz` and nothing else — the catalogue names the `.gz` —
+because the Atlas is served from a machine where the size of the data
+tree is the binding constraint, and 176 MB became 41 MB.
 `npm run compress:data -- --platform <id>` converts a platform and
 repoints every path the catalogue names (`dataset`, `geoDataset`,
 `cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios,
-CityChrone's `{hh}` templates); `--decompress` backs it out.
+CityChrone's `{hh}` templates); `--decompress` backs it out, `--all`
+does the lot.
+
+**`atlas` is a compressible unit like the four platforms, and is the one
+a loop forgets.** Its cities live in `catalogue.atlas`, not in
+`catalogue.platforms`, so iterating the platforms repoints everything
+*except* the union meshes — or, in the first cut of `compress-data.mjs`,
+repointed `catalogue.atlas` without converting `public/data/atlas/`,
+leaving the catalogue naming files that were not there. `unitsFrom()`
+returns the platforms plus atlas so the two can never diverge again.
 
 Worth knowing before reaching for it on the rest: **git already stores
 every blob zlib-compressed**, so this does not shrink the *repository*
@@ -662,10 +671,13 @@ is the reason it is on.
 Two consequences that bite silently:
 
 - **Everything that reads published data goes through
-  `scripts/lib/datafile.mjs`** (`readDataJSON` / `writeDataFile`), which
-  resolves either spelling. `fs.readFileSync` on a catalogue path is now
-  a bug — it will hand you gzip bytes. `test-data.mjs` and
-  `build-atlas.mjs` were converted with the platform.
+  `scripts/lib/datafile.mjs`** (`readDataJSON` / `readDataBuffer` /
+  `writeDataFile`), which resolves either spelling. `fs.readFileSync` on
+  a catalogue path is now a bug — it will hand you gzip bytes. So is
+  `fs.statSync`: `test-data.mjs` checked CityChrone's matrices were at
+  least `cells²` bytes *on disk*, which a compressed 3 MB matrix is not,
+  so 24 good files read as truncated. It measures the decoded buffer
+  now, which also proves the gzip stream is intact.
 - **`.gz` is a transport wrapper, not a format.** `formatFor` in
   `map/loaders.js` strips it before deciding, or a compressed
   `times00.npy` would be parsed as GeoJSON.

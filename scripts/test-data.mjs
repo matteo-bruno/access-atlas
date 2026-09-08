@@ -20,7 +20,7 @@ import {
   citiesFromPublished,
 } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
-import { readDataJSON } from './lib/datafile.mjs';
+import { readDataBuffer, readDataJSON } from './lib/datafile.mjs';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
 const CDI_STOPS = [-0.1, 0.1, 0.3, 1];
@@ -78,8 +78,12 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
           if (!Number.isFinite(summary.weightedMedianV)) {
             bad.push(`${city.id}: hour ${hh} has no usable v_score`);
           }
-          const stat = fs.statSync(path.join(DATA, times.replace('{hh}', hh)));
-          if (stat.size < n * n) bad.push(`${city.id}: times ${hh} too small for ${n}×${n}`);
+          // The matrix may be stored gzipped, so this has to measure the
+          // decoded bytes rather than the file on disk — a compressed 3 MB
+          // matrix is smaller than n² and would read as truncated. Going
+          // through readDataBuffer also proves the gzip stream is intact.
+          const matrix = readDataBuffer(path.join(DATA, times.replace('{hh}', hh)));
+          if (matrix.length < n * n) bad.push(`${city.id}: times ${hh} too small for ${n}×${n}`);
         }
         cells += n;
       } catch (error) {

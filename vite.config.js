@@ -46,6 +46,10 @@ const TYPES = {
   '.svg': 'image/svg+xml',
   '.json': 'application/json',
   '.geojson': 'application/geo+json',
+  // CityChrone's hourly travel-time matrices. Binary, but they gzip well
+  // (uint8 minutes with long runs) and are read as an ArrayBuffer, so the
+  // type only has to be something the browser will not try to sniff as text.
+  '.npy': 'application/octet-stream',
   '.txt': 'text/plain',
   '.map': 'application/json',
   '.xml': 'application/xml',

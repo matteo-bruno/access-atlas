@@ -198,11 +198,20 @@ dropped. Roughly 30 % off before anything is compressed.
 server sends them with `Content-Encoding: gzip` so the browser decodes
 them transparently.
 
-**15minCity is stored gzipped** — `fifteen/milan.geojson.gz`, named that
-way in the catalogue — because the Atlas is served from a machine where
-the size of the data tree is the binding constraint. That directory went
-**9.72 MB → 1.93 MB**, and a Milan page load transfers 0.96 MB rather
-than 6.68 MB. The other platforms are still plain; convert one with:
+**Every platform is stored gzipped** — `fifteen/milan.geojson.gz`, named
+that way in the catalogue — because the Atlas is served from a machine
+where the size of the data tree is the binding constraint.
+`public/data/` went **176 MB → 41 MB**:
+
+| | before | after |
+| --- | ---: | ---: |
+| citychrone | 83.63 MB | 23.89 MB |
+| cardep | 47.53 MB | 8.77 MB |
+| pov | 25.28 MB | 4.48 MB |
+| fifteen | 9.72 MB | 1.93 MB |
+| atlas | 9.23 MB | 1.34 MB |
+
+Converting a platform either way:
 
 ```bash
 npm run compress:data -- --platform cardep          # convert + repoint catalogue
@@ -251,6 +260,12 @@ server {
         add_header Content-Encoding gzip;
         add_header Vary Accept-Encoding;
         default_type application/json;
+    }
+    # CityChrone's hourly travel-time matrices.
+    location ~ \.npy\.gz$ {
+        add_header Content-Encoding gzip;
+        add_header Vary Accept-Encoding;
+        default_type application/octet-stream;
     }
 
     # SPA fallback — deep links must serve the shell.
