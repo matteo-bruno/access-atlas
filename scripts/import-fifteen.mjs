@@ -36,6 +36,7 @@ import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
 import { readDataJSON, writeDataFile } from './lib/datafile.mjs';
+import { countryAt } from './lib/country.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -62,12 +63,14 @@ const ONLY = (arg('only') ?? '')
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);
 
-// Where this batch of cities is. The source files say nothing about it, and
-// the UI shows both — the city header prints `region`, the search result
-// prints `country` — so they are stated once per run rather than left blank.
-// `--region` accepts the English name and `--region-it` its Italian; a city
-// that needs different copy is a hand edit to the catalogue afterwards, which
-// a later rerun preserves.
+// Where a city is, is **derived from its own centroid** (see lib/country.mjs)
+// rather than stated per run: the source files carry no such field, the UI
+// shows it twice, and a value derived every run cannot go stale or be undone
+// by a flag someone forgot to pass. These three override the lookup when it
+// is wrong or when the Italian name is wanted — `regionIt` is the one that
+// cannot be derived, so it falls back to the English name unless the
+// catalogue already carries a hand-written one — Natural Earth's own
+// `NAME_IT` supplies it otherwise.
 // 15minCity keeps only the compressed copy on disk: the Atlas is served from
 // a machine where the size of the data tree is the binding constraint, and a
 // plain companion beside it would double that for bytes no client asks for.
@@ -75,9 +78,9 @@ const ONLY = (arg('only') ?? '')
 const STORE_GZIP = !flag('plain');
 const EXT = STORE_GZIP ? '.geojson.gz' : '.geojson';
 
-const COUNTRY = arg('country', 'IT');
-const REGION = arg('region', 'Italy');
-const REGION_IT = arg('region-it', 'Italia');
+const COUNTRY = arg('country');
+const REGION = arg('region');
+const REGION_IT = arg('region-it');
 
 // ── constants ────────────────────────────────────────────────────────
 const COORD_DECIMALS = 5;
@@ -417,6 +420,20 @@ function processCity(srcPath) {
       ]
     : [(west + east) / 2, (south + north) / 2];
 
+  // Where the city is, from the centroid just computed. `--country` /
+  // `--region` override it; a null result leaves both blank rather than
+  // guessing, and is reported so it is not discovered on the page.
+  const found = countryAt(centre[0], centre[1]);
+  const place = {
+    iso: COUNTRY ?? found?.iso ?? null,
+    name: REGION ?? found?.name ?? null,
+    // Natural Earth carries localised country names, so the Italian label is
+    // derived rather than kept in a table that would drift from the English.
+    nameIt: REGION_IT ?? found?.nameIt ?? REGION ?? found?.name ?? null,
+    derived: found,
+    overridden: Boolean(COUNTRY || REGION),
+  };
+
   // Is this export on the shared H3 grid? If it is, the city joins the atlas
   // union directly and the per-platform copy is never written — the union is
   // the only file the viewer reads for a city that has one, so producing both
@@ -464,9 +481,10 @@ function processCity(srcPath) {
     cityId,
     cityName,
     name: cityName,
-    country: COUNTRY,
-    region: REGION,
-    regionIt: REGION_IT,
+    country: place.iso,
+    region: place.name,
+    regionIt: REGION_IT ?? place.nameIt,
+    place,
     population,
     centre: [rCoord(centre[0]), rCoord(centre[1])],
     bbox,
@@ -634,9 +652,14 @@ function upsertAtlasCatalogue(catalogue, city, { cells, layers }, paths) {
   const row = {
     id: city.cityId,
     name: city.cityName,
+    // The city's own name in Italian cannot be derived, so a hand-written one
+    // is kept. `region` / `regionIt` are derived from the centroid every run
+    // and deliberately are *not* — preserving them would let a wrong value
+    // from an earlier run outlive the fix, which is the staleness this
+    // derivation exists to remove. `--region` overrides per run.
     nameIt: existing?.nameIt ?? city.name,
-    region: existing?.region ?? city.region,
-    regionIt: existing?.regionIt ?? city.regionIt,
+    region: city.region,
+    regionIt: city.regionIt,
     center: city.centre,
     zoom: city.zoom,
     population: city.population,
@@ -688,13 +711,12 @@ function upsertCatalogue(catalogue, city, paths) {
 
   const cities = fifteen.cities ?? [];
   const idx = cities.findIndex((c) => c.id === city.cityId);
-  // Preserve any editorial overrides the catalogue already has for this city
-  // (nameIt, region, regionIt) so a rerun does not clobber hand-written copy.
+  // Only `nameIt` is preserved: it is the one field nothing can derive. The
+  // region pair comes from the centroid on every run, so a stale or wrong
+  // value cannot survive a re-import.
   if (idx >= 0) {
     const existing = cities[idx];
-    for (const k of ['nameIt', 'region', 'regionIt']) {
-      if (existing[k] != null) row[k] = existing[k];
-    }
+    if (existing.nameIt != null) row.nameIt = existing.nameIt;
     cities[idx] = row;
   } else {
     cities.push(row);
@@ -790,12 +812,26 @@ function main() {
 
       const kb = (n) => `${(n / 1024).toFixed(1)} kB`;
       const last = stats[stats.length - 1];
+      // A nearest-coast match or no match at all is worth saying out loud:
+      // both are the cases where the derived country can be wrong, and a
+      // blank one reaches the page as a missing region.
+      const d = city.place.derived;
+      if (!city.place.iso) {
+        console.warn(
+          `    ! ${city.cityId}: no country within range of ${city.centre.join(', ')} — region left blank`,
+        );
+      } else if (d && !d.exact && !city.place.overridden) {
+        console.warn(
+          `    ~ ${city.cityId}: ${d.iso} matched ${d.distanceKm} km from the coast, not contained`,
+        );
+      }
+
       const where = onGrid
         ? `atlas r${city.grid.resolution}${merged.layers.length > 1 ? ` +${merged.layers.filter((l) => l !== 'fifteen').join('/')}` : ''}`
         : 'own mesh';
       console.log(
         `  ${city.cityId.padEnd(16)} ${String(city.cellCount).padStart(6)} cells  ${String(city.population).padStart(9)} pop  ` +
-          `${kb(last.raw).padStart(9)} json → ${kb(last.stored).padStart(9)} on disk  ${where}  (cov ${coverageCount}, cat ${cityCount})`,
+          `${kb(last.raw).padStart(9)} json → ${kb(last.stored).padStart(9)} on disk  ${(city.place.iso ?? '--').padEnd(3)} ${where}  (cov ${coverageCount}, cat ${cityCount})`,
       );
     } catch (err) {
       console.error(`  failed on ${file}: ${err.message}`);

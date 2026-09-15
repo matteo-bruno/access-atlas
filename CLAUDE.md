@@ -673,6 +673,42 @@ not H3 — carried over from the *legacy letter-coded* Rome data, which is
 not. The harmonised standalone exports are, exactly, and the field is
 required to stay honest.
 
+**Where a city is, is derived from its centroid, not passed in.**
+`scripts/lib/country.mjs` answers it from Natural Earth admin-0 1:50m,
+vendored beside it as `countries.geojson.gz` (551 kB, stripped to `iso` /
+`name` / `nameIt`, rounded to 3 dp) — a **build-time** asset the importer
+reads and nothing ships. Natural Earth carries localised country names,
+so `regionIt` comes from `NAME_IT` rather than a hand-kept table that
+would drift from the English.
+
+**A city centroid is not reliably inside its own country.** Stockholm's
+sits 3.9 km off Sweden's drawn coast — the archipelago is below 1:50m —
+and New York's 3 km off, so plain point-in-polygon answers "nowhere" for
+two obviously-placed cities. The lookup is containment first, then the
+nearest boundary within 25 km, and past that it returns null and warns
+rather than handing an ocean point to whichever country is nearest. The
+importer prints which of the three happened, because the nearest-coast
+case is the one that can be wrong.
+
+`region` and `regionIt` are re-derived every run and **not** preserved
+across re-imports, unlike `nameIt`: preserving a derived field lets a
+wrong value from an earlier run outlive the fix, which is the staleness
+the derivation exists to remove. `--country` / `--region` / `--region-it`
+override per run.
+
+**MapLibre 6 has no Equal Earth.** `createProjectionFromName` registers
+exactly `mercator`, `globe` and `vertical-perspective`; the style spec's
+projection type takes those names or a zoom interpolation between them,
+not an arbitrary projection. A flat equal-area world would mean drawing
+the two world maps with d3-geo instead of MapLibre — feasible, since they
+render only our own paper, graticule, land and dots — but it would take
+the backdrop/platform handover machinery with it (`coversBackdrop`, the
+fade timing, `applyWorldWidthZoom`, `coverageFraming`, and the smoke
+checks that reproject coverage to pixels all assume a MapLibre map).
+Pre-projecting the GeoJSON and feeding MapLibre the result as lon/lat is
+the trap: every geographic operation downstream would keep working and
+quietly give wrong positions.
+
 **`build:atlas` cannot run against this tree and now says so.** It
 rewrites the fifteen and citychrone platform lists, their coverage files
 and the atlas list with plain `.geojson` paths, which against a gzipped

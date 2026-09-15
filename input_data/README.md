@@ -28,17 +28,28 @@ npm run import:fifteen -- --only rome  # subset by slug
 npm run import:fifteen -- --dry-run    # show what would be written
 ```
 
-The source files say nothing about where a city is, and the UI shows it in
-two places — the city header prints the region, the search result prints
-the country — so state it per run. It defaults to Italy:
+The source files say nothing about where a city is, so the importer works
+it out from the city's own weighted centroid — `IT` for the search
+result, `Italy` / `Italia` for the city header, from Natural Earth's own
+localised country names. Nothing to pass.
+
+A city centroid is not always inside its country's drawn outline at this
+generalisation (Stockholm's sits 3.9 km off Sweden's coast, on an
+archipelago 1:50m does not resolve), so the lookup falls back to the
+nearest coast within 25 km and says so in the output. Past that it leaves
+the fields blank and warns, rather than assigning an ocean point to
+whichever country is closest.
+
+Override per run when it is wrong:
 
 ```
 npm run import:fifteen -- --country FR --region France --region-it Francia
 ```
 
-A city needing different copy from the rest of its batch is a hand edit to
-`public/data/index.json` afterwards: reruns preserve `nameIt`, `region` and
-`regionIt` on a row that already has them.
+`region` and `regionIt` are re-derived on every run and deliberately not
+preserved — that is what stops a wrong value outliving its fix. The
+city's own name in Italian (`nameIt`) *is* preserved, because nothing can
+derive it.
 
 The script:
 
