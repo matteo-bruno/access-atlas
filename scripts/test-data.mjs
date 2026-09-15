@@ -39,6 +39,23 @@ const near = (value, target, tolerance) => Math.abs(value - target) <= tolerance
 const catalogue = read('index.json');
 check('Catalogue parses', !!catalogue.platforms, `version ${catalogue.version}`);
 
+// A city on the shared grid publishes **one** file: the atlas union, which
+// its platform row also points at rather than duplicating. Those rows need
+// two allowances below — the union carries cells outside this platform's mask
+// (so its feature count is not the layer's cell count), and there is no second
+// copy to reconcile against. Keyed by dataset path, so a row is atlas-backed
+// exactly when it names a file the atlas section also names.
+const ATLAS_DATASETS = new Set(
+  (catalogue.atlas?.cities ?? []).map((c) => c.dataset).filter(Boolean),
+);
+const isAtlasBacked = (city) => ATLAS_DATASETS.has(city.dataset);
+
+/** The subset of an atlas union carrying a platform's own measures. */
+const layerOnly = (collection, key) => ({
+  ...collection,
+  features: collection.features.filter((f) => Number.isFinite(f.properties?.[key])),
+});
+
 for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   const cities = entry.cities ?? [];
   if (!cities.length) {
@@ -122,6 +139,9 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
         if (out.length) bad.push(`${city.id}: ${out.length} cells with CDI outside [−1, +1]`);
         if (mesh.stats.weightedCdi == null) bad.push(`${city.id}: no population-weighted index`);
       } else if (platformId === 'fifteen') {
+        // An atlas-backed row's file spans every layer, so the fifteen checks
+        // run over the cells that actually carry fifteen measures.
+        if (isAtlasBacked(city)) collection = layerOnly(collection, 'proximity_time_foot');
         const mesh = meshFromPublishedFifteen(collection, city);
         if (mesh.stats.cellCount !== collection.features.length) {
           bad.push(`${city.id}: cell count mismatch`);
@@ -263,7 +283,10 @@ for (const city of catalogue.atlas?.cities ?? []) {
     }
 
     const fifteenCity = catalogue.platforms.fifteen?.cities.find((c) => c.id === city.id);
-    if (fifteenCity) {
+    // Skipped when the platform row names the union itself: there is one copy
+    // of these measures, so a comparison would only be the file against
+    // itself. Drift is only possible where two copies exist.
+    if (fifteenCity && !isAtlasBacked(fifteenCity)) {
       const fifteen = read(fifteenCity.dataset);
       if (layers.fifteen.cells !== fifteen.features.length) {
         bad.push(`fifteen covers ${layers.fifteen.cells} union cells vs ${fifteen.features.length} published`);

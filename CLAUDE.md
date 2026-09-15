@@ -647,6 +647,44 @@ measure a response, never a directory listing.
 `milan.geojson.gz` and nothing else — the catalogue names the `.gz` —
 because the Atlas is served from a machine where the size of the data
 tree is the binding constraint, and 176 MB became 41 MB.
+**A city on the shared grid publishes one file, and `import:fifteen`
+writes it.** The viewer reads the union mesh for any city that has an
+atlas entry and never touches that city's per-platform file, so producing
+both is storing every measure twice and fetching one of them never. The
+importer therefore writes straight into `atlas/<city>.geojson.gz` and
+merges by H3 index: a city already carrying P.O.V. or Car Dependency
+keeps them and *gains* the fifteen measures, and a re-import replaces
+only this layer's own keys. Milan was migrated the same way — its
+`platforms.fifteen` row points at `atlas/milan.geojson.gz` and the
+per-platform copy is gone. A row whose `dataset` is also named by the
+atlas section is "atlas-backed"; `test:data` gives those two allowances
+(the file spans layers, so fifteen checks run over the cells carrying
+fifteen measures, and there is no second copy to reconcile against).
+
+**The grid is detected, never assumed — and centroid proximity cannot
+detect it.** An H3 cell's centre coincides with the centre of its central
+child, so a mesh on r9 matches r9, r10 and r11 centres equally well and
+taking the first hit claims a grid four times too fine. `detectH3` only
+accepts a resolution whose **cell boundary** lands on the feature's
+polygon: measured on a real export, r9 gives a 0.0 m vertex mismatch and
+r10 gives 138.7 m. The first version of the importer skipped this and
+hard-coded `h3Resolution: null` with a comment claiming these exports are
+not H3 — carried over from the *legacy letter-coded* Rome data, which is
+not. The harmonised standalone exports are, exactly, and the field is
+required to stay honest.
+
+**`build:atlas` cannot run against this tree and now says so.** It
+rewrites the fifteen and citychrone platform lists, their coverage files
+and the atlas list with plain `.geojson` paths, which against a gzipped
+tree repoints the catalogue at files that do not exist — and a 404 under
+the SPA fallback is `index.html` with HTTP 200, so the site answers with
+seed data rather than failing. It did exactly that once before the guard
+existed. It refuses when any catalogue path is gzipped or any row is
+atlas-backed. Recovering a union's 15minCity layer on rebuild does work
+(`existingAtlasPath` reads it back out, keyed by the `h3` already on
+those features); it is the catalogue rewrite that has not been taught the
+stored extension. That is the follow-up.
+
 `npm run compress:data -- --platform <id>` converts a platform and
 repoints every path the catalogue names (`dataset`, `geoDataset`,
 `cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios,

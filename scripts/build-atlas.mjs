@@ -36,10 +36,25 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
-import { readDataJSON } from './lib/datafile.mjs';
+import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
 
 const ROOT = process.cwd();
 const DATA = path.join(ROOT, 'public', 'data');
+
+/**
+ * The union mesh already published for a city, if there is one.
+ *
+ * Used to recover a layer whose per-platform export is not in the tree —
+ * `import:fifteen` writes straight into the union and keeps no second copy,
+ * so the union is that layer's only source on a rebuild.
+ */
+function existingAtlasPath(cityId) {
+  for (const ext of ['.geojson', '.geojson.gz']) {
+    const rel = `atlas/${cityId}${ext}`;
+    if (resolveDataFile(path.join(DATA, rel))) return rel;
+  }
+  return null;
+}
 
 const H3_RESOLUTION = 9;
 // A centroid this close to the H3 cell centre is that cell; further means the
@@ -337,13 +352,34 @@ function buildCity(cityId, sources, catalogue) {
   };
 
   // ── 15minCity: defines the widest mask and the published geometry ──
-  const fifteen = readJSON(sources.fifteen);
+  //
+  // The source is normally the platform's own export. A city imported by
+  // `import:fifteen` has none: that script writes its layer straight into the
+  // union, because the union is the only file the viewer reads for a city on
+  // the shared grid and a second copy would never be fetched. Rebuilding such
+  // a city therefore reads this layer back out of the union it is rebuilding,
+  // which is sound because those features already carry their own `h3` — no
+  // centroid has to be re-mapped to a grid it was already keyed on.
+  const fifteenSource = resolveDataFile(path.join(DATA, sources.fifteen))
+    ? sources.fifteen
+    : existingAtlasPath(cityId);
+  if (!fifteenSource) {
+    fail(
+      `${sources.fifteen} is missing and no union mesh exists to recover the 15minCity layer from — ` +
+        `re-import the city with \`npm run import:fifteen\` first`,
+    );
+  }
+  const fifteen = readJSON(fifteenSource);
+  const fromUnion = fifteenSource !== sources.fifteen;
   const fifteenRadii = [];
   for (const feature of fifteen.features) {
     const p = feature.properties;
-    const h3 = toCell([p.centroid_lat, p.centroid_lon], sources.fifteen);
+    // A union's own features are already keyed by h3; only cells carrying
+    // this layer's measures belong to its mask.
+    if (fromUnion && !Number.isFinite(Number(p.proximity_time_foot))) continue;
+    const h3 = fromUnion ? p.h3 : toCell([p.centroid_lat, p.centroid_lon], fifteenSource);
     const cell = ensure(h3);
-    if (cell.geometry) fail(`${sources.fifteen}: two features map to cell ${h3}`);
+    if (cell.geometry) fail(`${fifteenSource}: two features map to cell ${h3}`);
     cell.geometry = feature.geometry;
     cell.properties.population = Math.round(Number(p.population) || 0);
     if (Number.isFinite(Number(p.radius))) fifteenRadii.push(Number(p.radius));
@@ -351,7 +387,7 @@ function buildCity(cityId, sources, catalogue) {
       for (const mode of FIFTEEN_MODES) {
         const key = `${category}_${mode}`;
         const value = Number(p[key]);
-        if (!Number.isFinite(value)) fail(`${sources.fifteen}: cell ${h3} is missing ${key}`);
+        if (!Number.isFinite(value)) fail(`${fifteenSource}: cell ${h3} is missing ${key}`);
         cell.properties[key] = r1(value);
       }
     }
@@ -421,8 +457,12 @@ function buildCity(cityId, sources, catalogue) {
   const n = reference.features.length;
   for (let hour = 0; hour < cc.hours; hour++) {
     const file = path.join(DATA, cc.times.replace('{hh}', String(hour).padStart(2, '0')));
-    const stat = fs.statSync(file);
-    if (stat.size < n * n) fail(`${file}: ${stat.size} bytes cannot hold a ${n}×${n} matrix`);
+    // The matrix may be stored gzipped, so this measures the decoded bytes:
+    // a compressed 3 MB matrix is smaller than n² and would read as truncated.
+    const matrix = readDataBuffer(file);
+    if (matrix.length < n * n) {
+      fail(`${file}: ${matrix.length} bytes cannot hold a ${n}×${n} matrix`);
+    }
   }
   for (const feature of reference.features) {
     const p = feature.properties;
@@ -674,6 +714,51 @@ if (only && !HARMONISED[only]) fail(`"${only}" is not in the HARMONISED table`);
 const cataloguePath = path.join(DATA, 'index.json');
 const catalogue = JSON.parse(fs.readFileSync(cataloguePath, 'utf8'));
 
+// This script rewrites the fifteen and citychrone platform lists, their
+// coverage files and the atlas list, and it writes **plain `.geojson` paths**
+// throughout. Against a tree stored gzipped (see `npm run compress:data`) that
+// is destructive rather than merely stale: it repoints the catalogue at files
+// that do not exist, and because a 404 under the SPA fallback is `index.html`
+// with HTTP 200, the site would answer with seed data rather than fail. It
+// also flattens a city whose layer lives in the union mesh — `import:fifteen`
+// writes there and keeps no per-platform copy — back to a per-platform path.
+//
+// Refusing is the honest behaviour until the writes below learn the stored
+// extension. Recovering the union for such a city does work (see
+// `existingAtlasPath`); it is the catalogue rewrite that does not.
+{
+  const fifteenEntry = catalogue.platforms?.fifteen ?? {};
+  const citychroneEntry = catalogue.platforms?.citychrone ?? {};
+  const atlasDatasets = new Set(
+    (catalogue.atlas?.cities ?? []).map((c) => c.dataset).filter(Boolean),
+  );
+  const paths = [
+    fifteenEntry.coverage,
+    citychroneEntry.coverage,
+    ...(fifteenEntry.cities ?? []).map((c) => c.dataset),
+    ...(citychroneEntry.cities ?? []).map((c) => c.dataset),
+    ...atlasDatasets,
+  ].filter(Boolean);
+
+  const gzipped = paths.filter((p) => p.endsWith('.gz'));
+  const atlasBacked = (fifteenEntry.cities ?? []).filter((c) => atlasDatasets.has(c.dataset));
+
+  if (gzipped.length || atlasBacked.length) {
+    const why = [
+      gzipped.length ? `${gzipped.length} catalogue paths are stored gzipped` : null,
+      atlasBacked.length
+        ? `${atlasBacked.map((c) => c.id).join(', ')} publish their 15minCity layer in the union mesh`
+        : null,
+    ].filter(Boolean);
+    fail(
+      `build:atlas would rewrite the catalogue with plain .geojson paths, but ${why.join(' and ')}. ` +
+        `Running it would point the catalogue at files that do not exist. Use \`npm run import:fifteen\` ` +
+        `to refresh a 15minCity layer, or \`npm run compress:data -- --all --decompress\` first if you ` +
+        `really need a full rebuild.`,
+    );
+  }
+}
+
 const built = cityIds.map((id) => buildCity(id, HARMONISED[id], catalogue));
 
 // Merge into the catalogue. The fifteen and citychrone platform lists are
@@ -683,7 +768,8 @@ const built = cityIds.map((id) => buildCity(id, HARMONISED[id], catalogue));
 function mergeCities(existing = [], updates) {
   const byId = new Map();
   for (const city of existing) {
-    if (city.dataset && !fs.existsSync(path.join(DATA, city.dataset))) {
+    // resolveDataFile, not existsSync: a dataset may be stored gzipped.
+    if (city.dataset && !resolveDataFile(path.join(DATA, city.dataset))) {
       console.log(`  dropping ${city.id}: dataset ${city.dataset} no longer exists`);
       continue;
     }

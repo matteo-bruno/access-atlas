@@ -3,44 +3,28 @@
 // Atlas, one file per city, with all the compressions the published files
 // benefit from applied on the way through.
 //
-// The published files sit at `public/data/fifteen/<city>.geojson.gz`, joined
-// by a companion cartogram `<city>.cartogram.geojson.gz` — 15minCity is
-// stored compressed, because the Atlas is served from a machine where the
-// size of the data tree is what constrains it (`--plain` opts out). The
-// catalogue in `public/data/index.json` picks them up under
-// `platforms.fifteen.cities` and names the `.gz` explicitly; the coverage
-// layer's marker for each city goes into `fifteen/coverage.geojson.gz`.
+// Where a city lands depends on its grid, and the script proves which:
 //
-// Usage:
-//   npm run import:fifteen
-//   npm run import:fifteen -- --src input_data/15mincity --out public/data/fifteen
-//   npm run import:fifteen -- --dry-run                    # write nothing
-//   npm run import:fifteen -- --only acilia,rome           # subset by slug
-//   npm run import:fifteen -- --plain                      # uncompressed output
-//   npm run import:fifteen -- --country FR --region France
+//   • **On the shared H3 grid** (what these exports are) the city joins the
+//     atlas union at `public/data/atlas/<city>.geojson.gz`, with its cartogram
+//     beside it as `<city>.cartogram-fifteen.geojson.gz`. The union is the
+//     only file the viewer reads for a city that has one, so no per-platform
+//     copy is written — producing one would store every measure twice and
+//     fetch it never. Re-running *adds this layer* to whatever the union
+//     already carries, keyed by H3 index, rather than replacing the file.
+//   • **Off it**, there is no union to join, and the mesh is published on its
+//     own at `public/data/fifteen/<city>.geojson.gz` with a null resolution.
 //
-// What the script does per file:
-//   1. Rounds every coordinate to 5 decimal places  (~1.1 m at Rome latitude,
-//      more than enough for a ~200 m hex — the source had 15 dp of noise).
-//   2. Rounds every travel-time value to 1 decimal   (the ramp is in minutes,
-//      sub-second precision is noise).
-//   3. Drops pipeline debris: `snapped_id`, `closest_waypoint`, `internal_id`,
-//      `component`. Nothing in the app reads these.
-//   4. Keeps `centroid_lon/lat`, `radius`, `population` — small overhead,
-//      and useful for future re-processing (build-atlas.mjs needs them if
-//      the file is later folded into an H3 union mesh).
-//   5. Keeps `99999` "unreachable" sentinels — the ramp handles the tail.
-//   6. Recomputes `proximity_time_foot` and `proximity_time_bicycle` as the
-//      arithmetic mean of the nine category values in minutes (skipping
-//      99999 sentinels). Some source exports store these fields in seconds,
-//      or as a sum — the app's ramp expects a minutes-scale average.
-//   7. Derives a population-scaled cartogram companion:
-//      each cell keeps its centre, its area proportional to residents,
-//      reaching the full hexagon at the city's median cell population
-//      (this is the rule build-atlas.mjs already uses for Milan).
-//   8. Writes both files to `public/data/fifteen/`, gzipped.
-//   9. Updates the catalogue entry in `public/data/index.json` and the
-//      coverage-marker feature in `public/data/fifteen/coverage.geojson`.
+// The grid is detected, never assumed. Centroid proximity alone cannot decide
+// it — an H3 cell's centre coincides with its central child's, so an r9 mesh
+// matches r9, r10 and r11 centres equally well — so a resolution is only
+// accepted when the cell's own boundary lands on the feature's polygon. See
+// `detectH3`.
+//
+// Either way the catalogue in `public/data/index.json` is updated (the
+// `platforms.fifteen` row, plus the `atlas` entry for a city on the grid) and
+// the coverage marker goes into `fifteen/coverage.geojson.gz`. `--plain`
+// writes uncompressed files, for inspecting an import.
 //
 // Idempotent. Rerunning the script on the same source overwrites the
 // published city cleanly; existing cities the source does not name are
@@ -50,6 +34,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
+import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
 import { readDataJSON, writeDataFile } from './lib/datafile.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -207,6 +192,68 @@ function scaleGeometry(geometry, factor, centre) {
   return geometry;
 }
 
+// ── H3 grid detection ────────────────────────────────────────────────
+// A cell centroid this close to an H3 cell centre *is* that cell; further
+// means the export is not on this grid and must not be forced onto it. Same
+// tolerance build-atlas.mjs uses, for the same reason.
+const GRID_TOLERANCE_M = 10;
+const CANDIDATE_RESOLUTIONS = [8, 9, 10, 11];
+
+const metresBetween = ([lat1, lon1], [lat2, lon2]) =>
+  Math.hypot((lon2 - lon1) * 111320 * Math.cos((lat1 * Math.PI) / 180), (lat2 - lat1) * 110540);
+
+/**
+ * The H3 resolution a mesh is published on, or null if it is not H3.
+ *
+ * Centroid proximity alone cannot decide this: an H3 cell's centre coincides
+ * with the centre of its central child, so a mesh on r9 matches r9, r10 and
+ * r11 centres equally well and picking the first hit silently claims a grid
+ * four times too fine. The size has to be checked too — so a candidate is only
+ * accepted when the cell's own **boundary** lands on the feature's polygon.
+ * Measured on a real export: r9 gives a 0.0 m vertex mismatch and r10 gives
+ * 138.7 m.
+ *
+ * Returns `{ resolution, indices }` or null. `indices` is parallel to
+ * `features`, so callers do not recompute what was proved here.
+ */
+function detectH3(features, centroids) {
+  for (const resolution of CANDIDATE_RESOLUTIONS) {
+    const indices = [];
+    let ok = true;
+
+    for (let i = 0; i < features.length && ok; i++) {
+      const centre = centroids[i];
+      if (!centre) { ok = false; break; }
+      const [lon, lat] = centre;
+      const cell = latLngToCell(lat, lon, resolution);
+      if (metresBetween([lat, lon], cellToLatLng(cell)) > GRID_TOLERANCE_M) ok = false;
+      indices.push(cell);
+    }
+    if (!ok) continue;
+
+    // One feature per cell, or the mesh is finer than the grid claimed.
+    if (new Set(indices).size !== features.length) continue;
+
+    // The decisive test: does the cell drawn at this resolution have the same
+    // outline as the feature? Sampled — a mesh is one grid or it is not.
+    const step = Math.max(1, Math.floor(features.length / 40));
+    let worst = 0;
+    for (let i = 0; i < features.length; i += step) {
+      const ring = features[i]?.geometry?.coordinates?.[0];
+      if (!Array.isArray(ring)) continue;
+      for (const [blat, blon] of cellToBoundary(indices[i])) {
+        let nearest = Infinity;
+        for (const [plon, plat] of ring) {
+          nearest = Math.min(nearest, metresBetween([blat, blon], [plat, plon]));
+        }
+        worst = Math.max(worst, nearest);
+      }
+    }
+    if (worst <= GRID_TOLERANCE_M) return { resolution, indices, vertexError: worst };
+  }
+  return null;
+}
+
 function median(values) {
   if (!values.length) return null;
   const sorted = [...values].sort((a, b) => a - b);
@@ -263,6 +310,9 @@ function processCity(srcPath) {
   let population = 0;
   const radii = [];
   const centres = [];
+  // Parallel to the features, unlike `centres` — detectH3 needs to line each
+  // cell up with its own centroid, including any that has none.
+  const cellCentres = [];
   const walkTimes = [];
   const walkWeights = [];
   let west = Infinity;
@@ -280,6 +330,7 @@ function processCity(srcPath) {
         ? [Number(src.centroid_lon), Number(src.centroid_lat)]
         : polygonCentroid(geometry);
     if (centre) centres.push(centre);
+    cellCentres.push(centre ?? null);
     const pop = Math.round(Number(src.population) || 0);
     population += pop;
 
@@ -366,6 +417,18 @@ function processCity(srcPath) {
       ]
     : [(west + east) / 2, (south + north) / 2];
 
+  // Is this export on the shared H3 grid? If it is, the city joins the atlas
+  // union directly and the per-platform copy is never written — the union is
+  // the only file the viewer reads for a city that has one, so producing both
+  // would be storing every measure twice. If it is not, the mesh is published
+  // on its own and says so with a null resolution.
+  const grid = detectH3(outFeatures, cellCentres);
+  if (grid) {
+    outFeatures.forEach((feature, i) => {
+      feature.properties.h3 = grid.indices[i];
+    });
+  }
+
   // ── cartogram companion ────────────────────────────────────────────
   const populations = outFeatures.map((f) => f.properties.pop);
   const referencePop = median(populations.filter((p) => p > 0));
@@ -379,9 +442,12 @@ function processCity(srcPath) {
     return {
       type: 'Feature',
       properties: { i: feature.id },
-      geometry: factor === 0
-        ? { type: 'Polygon', coordinates: [] }
-        : scaleGeometry(feature.geometry, factor, cellCentre),
+      // An unpopulated cell scales to nothing, but it still has to be a
+      // well-formed ring collapsed onto its own centre rather than an empty
+      // `coordinates: []` — consumers read `coordinates[0]` to find where the
+      // companion sits, and an empty one crashes them. This is what
+      // build-atlas.mjs's derived cartogram does for the same case.
+      geometry: scaleGeometry(feature.geometry, factor, cellCentre),
     };
   });
 
@@ -408,6 +474,29 @@ function processCity(srcPath) {
     cellRadiusM: radiusM,
     proximityMinutes,
     cellCount: outFeatures.length,
+    grid,
+    // What the atlas union carries for this layer: the H3 index it joins on,
+    // the population the cartogram rule needs, and the measures themselves.
+    // The source's own bookkeeping (`centroid_lon`, `radius`, `id`) is left
+    // behind — the union is keyed by `h3`, so a second notion of where a cell
+    // is could only ever disagree with it.
+    atlasFeatures: grid
+      ? outFeatures.map((feature) => {
+          const p = feature.properties;
+          const props = { h3: p.h3, population: p.pop };
+          for (const cat of CATEGORIES) {
+            for (const mode of MODES) {
+              const key = `${cat}_${mode}`;
+              if (key in p) props[key] = p[key];
+            }
+          }
+          for (const mode of MODES) {
+            const key = `proximity_time_${mode}`;
+            if (key in p) props[key] = p[key];
+          }
+          return { type: 'Feature', geometry: feature.geometry, properties: props };
+        })
+      : null,
     layerCollection: {
       type: 'FeatureCollection',
       bbox: bbox.map((v) => rCoord(v)),
@@ -468,9 +557,104 @@ function upsertCoverage(coveragePath, city) {
   return others.length;
 }
 
-function upsertCatalogue(cataloguePath, city) {
-  const catalogue = readJSONIfExists(cataloguePath);
-  if (!catalogue) throw new Error(`catalogue not found: ${cataloguePath}`);
+// Which properties belong to which layer, so adding one can replace exactly
+// its own measures and leave every other platform's alone.
+const FIFTEEN_KEYS = new Set([
+  ...CATEGORIES.flatMap((c) => MODES.map((m) => `${c}_${m}`)),
+  ...MODES.map((m) => `proximity_time_${m}`),
+]);
+
+/**
+ * Add this city's 15minCity measures to its atlas union mesh.
+ *
+ * The union is keyed by H3 index, so this is a merge rather than a write: a
+ * city that already carries P.O.V. or Car Dependency keeps them, gains the
+ * fifteen measures on the cells they cover, and grows by any cell only
+ * 15minCity reaches. Re-importing replaces this layer's own keys and touches
+ * nothing else — which is what makes "add a layer" an operation rather than a
+ * rebuild.
+ *
+ * @returns {{ collection: object, cells: number, layers: string[] }}
+ */
+function mergeAtlas(atlasPath, city) {
+  const existing = readJSONIfExists(atlasPath);
+  const byH3 = new Map();
+
+  for (const feature of existing?.features ?? []) {
+    const h3 = feature?.properties?.h3;
+    if (typeof h3 !== 'string') continue;
+    // Drop this layer's previous values so a re-import cannot leave a stale
+    // measure on a cell the new export no longer covers.
+    const props = {};
+    for (const [k, v] of Object.entries(feature.properties)) {
+      if (!FIFTEEN_KEYS.has(k)) props[k] = v;
+    }
+    byH3.set(h3, { ...feature, properties: props });
+  }
+
+  for (const feature of city.atlasFeatures) {
+    const h3 = feature.properties.h3;
+    const prior = byH3.get(h3);
+    byH3.set(
+      h3,
+      prior
+        ? { ...prior, properties: { ...prior.properties, ...feature.properties } }
+        : feature,
+    );
+  }
+
+  // Feature ids are array indices — the page filters highlights and applies
+  // feature-state by them, so they are assigned after the merge settles.
+  const features = [...byH3.values()].map((feature, i) => ({ ...feature, id: i }));
+
+  // Which layers the union now actually carries, read off the cells rather
+  // than remembered: a declared layer with no cells fails test:data.
+  const present = new Set();
+  for (const { properties: p } of features) {
+    if (Number.isFinite(p.proximity_time_foot)) present.add('fifteen');
+    if (Number.isFinite(p.zone)) present.add('pov');
+    if (Number.isFinite(p.cdi)) present.add('cardep');
+    if (Number.isFinite(p.cc)) present.add('citychrone');
+  }
+
+  return {
+    collection: { type: 'FeatureCollection', features },
+    cells: features.length,
+    layers: [...present],
+  };
+}
+
+/** The atlas-union catalogue entry for a city, merged with what is there. */
+function upsertAtlasCatalogue(catalogue, city, { cells, layers }, paths) {
+  const atlas = catalogue.atlas ?? { cities: [] };
+  const cities = atlas.cities ?? [];
+  const idx = cities.findIndex((c) => c.id === city.cityId);
+  const existing = idx >= 0 ? cities[idx] : null;
+
+  const row = {
+    id: city.cityId,
+    name: city.cityName,
+    nameIt: existing?.nameIt ?? city.name,
+    region: existing?.region ?? city.region,
+    regionIt: existing?.regionIt ?? city.regionIt,
+    center: city.centre,
+    zoom: city.zoom,
+    population: city.population,
+    dataset: paths.atlas,
+    geometry: 'geographic',
+    cartograms: { ...(existing?.cartograms ?? {}), fifteen: paths.cartogram },
+    cartogramSources: { ...(existing?.cartogramSources ?? {}), fifteen: 'derived' },
+    cell: { h3Resolution: city.grid.resolution, cellRadiusM: city.cellRadiusM },
+    layers,
+  };
+
+  if (idx >= 0) cities[idx] = row;
+  else cities.push(row);
+  catalogue.atlas = { ...atlas, cities };
+  return cities.length;
+}
+
+function upsertCatalogue(catalogue, city, paths) {
   const platforms = catalogue.platforms ?? {};
   const fifteen = platforms.fifteen ?? { coverage: `fifteen/coverage${EXT}`, cities: [] };
 
@@ -488,12 +672,16 @@ function upsertCatalogue(cataloguePath, city) {
     center: city.centre,
     zoom: city.zoom,
     population: city.population,
-    dataset: `fifteen/${city.cityId}${EXT}`,
+    // For a city on the shared grid this points at the **union mesh**, the
+    // same file the atlas entry names. The row still has to exist — it is
+    // what puts the city in the platform's list and makes its marker open a
+    // page — but the measures live in one file, not two.
+    dataset: paths.dataset,
     geometry: 'geographic',
-    cartogramDataset: `fifteen/${city.cityId}.cartogram${EXT}`,
+    cartogramDataset: paths.cartogram,
     cartogramSource: 'derived',
     cell: {
-      h3Resolution: null,
+      h3Resolution: city.grid?.resolution ?? null,
       cellRadiusM: city.cellRadiusM,
     },
   };
@@ -514,7 +702,6 @@ function upsertCatalogue(cataloguePath, city) {
 
   platforms.fifteen = { ...fifteen, cities };
   catalogue.platforms = platforms;
-  writeJSON(cataloguePath, catalogue);
   return cities.length;
 }
 
@@ -539,43 +726,84 @@ function main() {
 
   console.log(`importing ${files.length} 15minCity city file${files.length === 1 ? '' : 's'} from ${path.relative(ROOT, SRC_DIR)}${DRY_RUN ? ' (dry run)' : ''}`);
 
+  const catalogue = readJSONIfExists(CATALOGUE);
+  if (!catalogue) {
+    console.error(`catalogue not found: ${CATALOGUE}`);
+    process.exit(1);
+  }
+
   const stats = [];
   for (const file of files) {
     const srcPath = path.join(SRC_DIR, file);
     try {
       const city = processCity(srcPath);
-      const layerPath = path.join(OUT_DIR, `${city.cityId}${EXT}`);
-      const cartPath = path.join(OUT_DIR, `${city.cityId}.cartogram${EXT}`);
 
-      const layerBytes = writeJSON(layerPath, city.layerCollection);
-      const cartBytes = writeJSON(cartPath, city.cartogramCollection);
+      // On the shared grid the city joins the atlas union and that union is
+      // the only copy: the viewer reads it for any city that has one, so a
+      // per-platform file beside it would be every measure stored twice and
+      // never fetched. Off the grid there is no union to join, and the mesh
+      // is published on its own.
+      const onGrid = Boolean(city.grid);
+      const paths = onGrid
+        ? {
+            atlas: `atlas/${city.cityId}${EXT}`,
+            cartogram: `atlas/${city.cityId}.cartogram-fifteen${EXT}`,
+          }
+        : {
+            atlas: null,
+            dataset: `fifteen/${city.cityId}${EXT}`,
+            cartogram: `fifteen/${city.cityId}.cartogram${EXT}`,
+          };
+      if (onGrid) paths.dataset = paths.atlas;
+
+      let layerBytes;
+      let cartBytes;
+      let merged = null;
+
+      if (onGrid) {
+        const atlasPath = path.resolve(ROOT, 'public/data', paths.atlas);
+        merged = mergeAtlas(atlasPath, city);
+        layerBytes = writeJSON(atlasPath, merged.collection);
+        cartBytes = writeJSON(
+          path.resolve(ROOT, 'public/data', paths.cartogram),
+          city.cartogramCollection,
+        );
+        upsertAtlasCatalogue(catalogue, city, merged, paths);
+      } else {
+        layerBytes = writeJSON(path.join(OUT_DIR, `${city.cityId}${EXT}`), city.layerCollection);
+        cartBytes = writeJSON(
+          path.join(OUT_DIR, `${city.cityId}.cartogram${EXT}`),
+          city.cartogramCollection,
+        );
+      }
+
       const coverageCount = upsertCoverage(path.join(OUT_DIR, `coverage${EXT}`), city);
-      const cityCount = upsertCatalogue(CATALOGUE, city);
+      const cityCount = upsertCatalogue(catalogue, city, paths);
 
       stats.push({
         id: city.cityId,
         cells: city.cellCount,
         raw: layerBytes.raw + cartBytes.raw,
         stored: layerBytes.stored + cartBytes.stored,
-        pop: city.population,
-        prox: city.proximityMinutes,
-        centre: city.centre,
+        onGrid,
       });
 
-      // Both numbers matter and they answer different questions: `raw` is what
-      // the JSON weighs, `stored` is what the disk gives up for it. They are
-      // the same figure when the tree is uncompressed.
       const kb = (n) => `${(n / 1024).toFixed(1)} kB`;
       const last = stats[stats.length - 1];
+      const where = onGrid
+        ? `atlas r${city.grid.resolution}${merged.layers.length > 1 ? ` +${merged.layers.filter((l) => l !== 'fifteen').join('/')}` : ''}`
+        : 'own mesh';
       console.log(
         `  ${city.cityId.padEnd(16)} ${String(city.cellCount).padStart(6)} cells  ${String(city.population).padStart(9)} pop  ` +
-          `${kb(last.raw).padStart(9)} json → ${kb(last.stored).padStart(9)} on disk  (cov ${coverageCount}, cat ${cityCount})`,
+          `${kb(last.raw).padStart(9)} json → ${kb(last.stored).padStart(9)} on disk  ${where}  (cov ${coverageCount}, cat ${cityCount})`,
       );
     } catch (err) {
       console.error(`  failed on ${file}: ${err.message}`);
       process.exitCode = 1;
     }
   }
+
+  writeJSON(CATALOGUE, catalogue);
 
   const raw = stats.reduce((s, c) => s + c.raw, 0);
   const stored = stats.reduce((s, c) => s + c.stored, 0);
@@ -585,6 +813,12 @@ function main() {
       `\n${stats.length} cities  ${mb(raw)} json → ${mb(stored)} on disk` +
         (STORE_GZIP ? ` (${Math.round((1 - stored / raw) * 100)}% saved, stored gzipped)` : ''),
     );
+    const off = stats.filter((c) => !c.onGrid);
+    if (off.length) {
+      console.log(
+        `${off.length} not on the shared H3 grid, published on their own mesh: ${off.map((c) => c.id).join(', ')}`,
+      );
+    }
   }
 
   if (DRY_RUN) console.log('dry run — no files written');
