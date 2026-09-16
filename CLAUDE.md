@@ -245,8 +245,21 @@ only — the built site was always fine, which is exactly what makes it read as
 "my newly imported cities did not import". The catalogue is fetched with no
 caller's signal now; a caller's own abort ends only its own wait
 (`whenAborted` in `sources.js`), and a failed fetch clears the memo so the
-next caller retries. `test:data` pins both, and the browser suites cannot:
-they run against a build, where React does not double-mount.
+next caller retries.
+
+The dataset cache had the same shape and one extra edge, and it cost the
+whole city view: `loadDataset` keyed its promise on the URL, created it with
+the first caller's signal, and could hand that promise to the next caller
+*before* the rejection cleared the entry — which is exactly the sequence a
+remount produces. The abort was then wrapped in a `DatasetError`, so every
+`error.name === 'AbortError'` guard downstream read it as a broken file and
+drew the fallback. In development that meant every published city mesh became
+the seed mesh, with the real file sitting right there answering 200 to nobody:
+`/atlas/rome` reported 8,115 cells and no median rather than P.O.V.'s 8,089.
+Shared work now carries no caller's signal, an abort keeps its own name, and
+`whenAborted` in `loaders.js` is what ends one caller's wait. `test:data`
+pins all three, and the browser suites cannot: they run against a build,
+where React does not double-mount.
 
 **The seed data reproduces the real Rome figures.** The generated mesh was
 calibrated to match 8,089 cells and 12.9/2.7/1.4/83.0. Any test that checks
@@ -677,6 +690,21 @@ per-platform copy is gone. A row whose `dataset` is also named by the
 atlas section is "atlas-backed"; `test:data` gives those two allowances
 (the file spans layers, so fifteen checks run over the cells carrying
 fifteen measures, and there is no second copy to reconcile against).
+
+**A union may only claim a city when it carries every layer published for
+it.** The viewer reads the union and nothing else for a city with an `atlas`
+entry, so a union holding one layer does not add that layer to a city — it
+hides the others. Importing 15minCity Rome, which P.O.V. and Car Dependency
+publish on their own meshes, wrote `atlas/rome` with fifteen alone and took
+both of them off the city view; `test:data` caught it as `pov covers 0 union
+cells vs 8089 published`. `import:fifteen` now asks that question of the
+*merged* result rather than of what was declared: every published layer
+present means join the union (Milan, and any city nothing else publishes),
+a layer missing means publish beside them at `fifteen/<city>` and drop the
+stray entry and file a previous run left. A union that already carries one
+platform's values and is missing another's is refused outright, because
+joining it and stepping around it both hide a layer, and harmonising is
+`build:atlas`'s job.
 
 **The grid is detected, never assumed — and centroid proximity cannot
 detect it.** An H3 cell's centre coincides with the centre of its central

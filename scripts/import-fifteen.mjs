@@ -642,6 +642,55 @@ function mergeAtlas(atlasPath, city) {
   };
 }
 
+/**
+ * Platforms that publish this city on a mesh of their own, and whose values
+ * the union does not carry.
+ *
+ * The union is all the viewer reads for a city with an atlas entry, so each
+ * of these would go dark the moment such an entry existed.
+ */
+function layersPublishedOutside(catalogue, cityId, unionLayers) {
+  const carried = new Set(unionLayers);
+  const outside = [];
+  for (const [platformId, entry] of Object.entries(catalogue.platforms ?? {})) {
+    if (platformId === 'fifteen') continue;
+    const row = (entry.cities ?? []).find((c) => c.id === cityId);
+    if (!row || (!row.dataset && !row.hourly)) continue;
+    if (!carried.has(platformId)) outside.push(platformId);
+  }
+  return outside;
+}
+
+/** Remove a file whichever way round it is stored. */
+function removeDataFile(relative) {
+  for (const candidate of [relative, `${relative}.gz`, relative.replace(/\.gz$/, '')]) {
+    const target = path.resolve(ROOT, 'public/data', candidate);
+    if (fs.existsSync(target)) {
+      if (!DRY_RUN) fs.rmSync(target);
+      console.warn(`      removed ${candidate}`);
+    }
+  }
+}
+
+/**
+ * Undo a union this script wrote for a city that should not have one.
+ *
+ * Only ever called where the union holds this layer and nothing else, so
+ * there is no other platform's data to lose. The catalogue entry is what
+ * actually matters — it is what makes the viewer read the union — but the
+ * file goes too rather than sitting unreferenced.
+ */
+function dropOwnUnion(catalogue, cityId) {
+  const cities = catalogue.atlas?.cities ?? [];
+  const idx = cities.findIndex((c) => c.id === cityId);
+  if (idx < 0) return;
+  cities.splice(idx, 1);
+  catalogue.atlas = { ...catalogue.atlas, cities };
+  console.warn(`      dropped the atlas entry for ${cityId}`);
+  removeDataFile(`atlas/${cityId}${EXT}`);
+  removeDataFile(`atlas/${cityId}.cartogram-fifteen${EXT}`);
+}
+
 /** The atlas-union catalogue entry for a city, merged with what is there. */
 function upsertAtlasCatalogue(catalogue, city, { cells, layers }, paths) {
   const atlas = catalogue.atlas ?? { cities: [] };
@@ -765,8 +814,34 @@ function main() {
       // per-platform file beside it would be every measure stored twice and
       // never fetched. Off the grid there is no union to join, and the mesh
       // is published on its own.
+      //
+      // Being on the grid is not on its own enough, because the union is the
+      // *whole* of what the viewer reads for a city that has one. A union
+      // carrying only this layer, for a city P.O.V. and Car Dependency
+      // publish on their own meshes, does not add 15minCity to that city: it
+      // hides the two layers that were already there. So the union may claim
+      // a city only when it carries every layer the catalogue publishes for
+      // it — which is what `missing` below asks, on the merged result rather
+      // than on what was declared.
       const onGrid = Boolean(city.grid);
-      const paths = onGrid
+      const atlasPath = path.resolve(ROOT, 'public/data', `atlas/${city.cityId}${EXT}`);
+      const merged = onGrid ? mergeAtlas(atlasPath, city) : null;
+      const missing = merged ? layersPublishedOutside(catalogue, city.cityId, merged.layers) : [];
+      const carried = merged ? merged.layers.filter((l) => l !== 'fifteen') : [];
+
+      // A union that already holds another platform's values *and* is missing
+      // a third is a half-harmonised city, and joining it or stepping around
+      // it would both hide a layer. That is `build:atlas`'s job, not a guess
+      // to make here.
+      if (missing.length && carried.length) {
+        throw new Error(
+          `atlas/${city.cityId} carries ${carried.join(', ')} but ${missing.join(', ')} ` +
+            `publish ${city.cityId} on their own meshes — run build:atlas to harmonise them first`,
+        );
+      }
+
+      const joinsUnion = onGrid && missing.length === 0;
+      const paths = joinsUnion
         ? {
             atlas: `atlas/${city.cityId}${EXT}`,
             cartogram: `atlas/${city.cityId}.cartogram-fifteen${EXT}`,
@@ -776,15 +851,12 @@ function main() {
             dataset: `fifteen/${city.cityId}${EXT}`,
             cartogram: `fifteen/${city.cityId}.cartogram${EXT}`,
           };
-      if (onGrid) paths.dataset = paths.atlas;
+      if (joinsUnion) paths.dataset = paths.atlas;
 
       let layerBytes;
       let cartBytes;
-      let merged = null;
 
-      if (onGrid) {
-        const atlasPath = path.resolve(ROOT, 'public/data', paths.atlas);
-        merged = mergeAtlas(atlasPath, city);
+      if (joinsUnion) {
         layerBytes = writeJSON(atlasPath, merged.collection);
         cartBytes = writeJSON(
           path.resolve(ROOT, 'public/data', paths.cartogram),
@@ -797,6 +869,16 @@ function main() {
           path.join(OUT_DIR, `${city.cityId}.cartogram${EXT}`),
           city.cartogramCollection,
         );
+        if (missing.length) {
+          console.warn(
+            `    ~ ${city.cityId}: ${missing.join(', ')} publish it on their own meshes, so a union` +
+              ' would hide them — published on its own mesh instead',
+          );
+          // An earlier run may have written exactly that union. It holds
+          // nothing but this layer (the throw above covers the other case),
+          // so the catalogue entry and the file go together.
+          dropOwnUnion(catalogue, city.cityId);
+        }
       }
 
       const coverageCount = upsertCoverage(path.join(OUT_DIR, `coverage${EXT}`), city);
@@ -808,6 +890,7 @@ function main() {
         raw: layerBytes.raw + cartBytes.raw,
         stored: layerBytes.stored + cartBytes.stored,
         onGrid,
+        joinsUnion,
       });
 
       const kb = (n) => `${(n / 1024).toFixed(1)} kB`;
@@ -826,8 +909,8 @@ function main() {
         );
       }
 
-      const where = onGrid
-        ? `atlas r${city.grid.resolution}${merged.layers.length > 1 ? ` +${merged.layers.filter((l) => l !== 'fifteen').join('/')}` : ''}`
+      const where = joinsUnion
+        ? `atlas r${city.grid.resolution}${merged.layers.length > 1 ? ` +${carried.join('/')}` : ''}`
         : 'own mesh';
       console.log(
         `  ${city.cityId.padEnd(16)} ${String(city.cellCount).padStart(6)} cells  ${String(city.population).padStart(9)} pop  ` +
@@ -853,6 +936,17 @@ function main() {
     if (off.length) {
       console.log(
         `${off.length} not on the shared H3 grid, published on their own mesh: ${off.map((c) => c.id).join(', ')}`,
+      );
+    }
+    // On the grid, but another platform publishes the city on a mesh of its
+    // own: a union here would be the only file the viewer reads, and would
+    // therefore hide that platform. `build:atlas` is what joins them.
+    const beside = stats.filter((c) => c.onGrid && !c.joinsUnion);
+    if (beside.length) {
+      console.log(
+        `${beside.length} on the grid but published beside another platform's mesh rather than in a union: ${beside
+          .map((c) => c.id)
+          .join(', ')}`,
       );
     }
   }

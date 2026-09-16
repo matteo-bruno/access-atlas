@@ -13,7 +13,7 @@
 // keeps "what is real" separate from "what do we draw when nothing is".
 // ─────────────────────────────────────────────────────────────────────────
 
-import { loadDataset, loadJSON } from '../map/loaders.js';
+import { loadDataset, loadJSON, whenAborted } from '../map/loaders.js';
 import {
   EMPTY_CATALOGUE,
   atlasCity,
@@ -24,24 +24,6 @@ import {
   platformEntry,
   publishedCity,
 } from './catalogue.js';
-
-/**
- * A promise that rejects when this caller's signal aborts, and never
- * otherwise. Raced against a shared fetch, it lets one consumer stop waiting
- * without cancelling the work the others are waiting on.
- */
-function whenAborted(signal) {
-  return new Promise((_, reject) => {
-    const fail = () =>
-      reject(
-        signal.reason instanceof Error
-          ? signal.reason
-          : new DOMException('The operation was aborted.', 'AbortError'),
-      );
-    if (signal.aborted) fail();
-    else signal.addEventListener('abort', fail, { once: true });
-  });
-}
 
 /** Static provider: plain files under public/data/, no backend required. */
 export function createStaticProvider() {

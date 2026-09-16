@@ -7,6 +7,24 @@
 
 const cache = new Map();
 
+/**
+ * A promise that rejects when this caller's signal aborts, and never
+ * otherwise. Raced against a shared fetch, it lets one consumer stop waiting
+ * without cancelling the work the others are waiting on.
+ */
+export function whenAborted(signal) {
+  return new Promise((_, reject) => {
+    const fail = () =>
+      reject(
+        signal.reason instanceof Error
+          ? signal.reason
+          : new DOMException('The operation was aborted.', 'AbortError'),
+      );
+    if (signal.aborted) fail();
+    else signal.addEventListener('abort', fail, { once: true });
+  });
+}
+
 export class DatasetError extends Error {
   constructor(message, { url, cause } = {}) {
     super(message);
@@ -188,20 +206,33 @@ const LOADERS = { geojson: loadGeoJSON, shapefile: loadShapefile, npy: loadNpy }
  */
 export async function loadDataset(descriptor, { signal, cache: useCache = true } = {}) {
   const { url } = descriptor;
-  if (useCache && cache.has(url)) return cache.get(url);
-
   const format = formatFor(url, descriptor.format);
-  const promise = (LOADERS[format] ?? loadGeoJSON)(url, { signal }).catch(
-    (error) => {
+  let promise = useCache ? cache.get(url) : null;
+
+  if (!promise) {
+    // A cached promise is shared, so it carries **no caller's signal**: the
+    // component that happened to ask first would otherwise cancel the fetch
+    // for everyone waiting on the same URL, and the cache can hand out that
+    // promise before the rejection has cleared the entry. React remounts
+    // every effect in development, so this was every city mesh, every load:
+    // the second mount awaited the first mount's aborted fetch and the page
+    // fell back to seed data with the real file sitting right there.
+    promise = (LOADERS[format] ?? loadGeoJSON)(url, useCache ? {} : { signal }).catch((error) => {
       cache.delete(url);
+      // An abort keeps its own name. Wrapped in a DatasetError it reads as a
+      // broken file, and every caller that means to ignore its own
+      // cancellation instead drew the fallback.
+      if (error?.name === 'AbortError') throw error;
       throw error instanceof DatasetError
         ? error
         : new DatasetError(`Could not load ${url}`, { url, cause: error });
-    },
-  );
+    });
+    if (useCache) cache.set(url, promise);
+  }
 
-  if (useCache) cache.set(url, promise);
-  return promise;
+  // The caller's own abort still ends its wait; the shared fetch carries on
+  // for whoever else asked, and lands in the cache for whoever asks next.
+  return signal ? Promise.race([promise, whenAborted(signal)]) : promise;
 }
 
 /**

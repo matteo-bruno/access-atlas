@@ -21,6 +21,7 @@ import {
 } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
 import { createStaticProvider } from '../src/data/sources.js';
+import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { readDataBuffer, readDataJSON } from './lib/datafile.mjs';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
@@ -384,6 +385,52 @@ for (const city of catalogue.atlas?.cities ?? []) {
         Object.keys(recovered.platforms ?? {}).length > 0,
       `${Object.keys(recovered.platforms ?? {}).length} platforms on the retry`,
     );
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+}
+
+// Datasets are cached by URL and therefore shared the same way, with one
+// extra edge: the cache can hand out an in-flight promise before a rejection
+// has cleared the entry, so an aborted fetch was inherited by the very next
+// caller. The abort also has to keep its name — wrapped in a DatasetError it
+// reads as a broken file, and a caller meaning to ignore its own cancellation
+// draws the seed mesh instead.
+{
+  const body = readDataBuffer(path.join(DATA, catalogue.platforms.pov.coverage));
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, { signal } = {}) => {
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    if (signal?.aborted) throw new DOMException('The operation was aborted.', 'AbortError');
+    return new Response(body);
+  };
+
+  try {
+    clearDatasetCache();
+    const url = '/data/pov/coverage.geojson';
+    const leaving = new AbortController();
+    const first = loadDataset({ url }, { signal: leaving.signal }).then(
+      () => 'resolved',
+      (error) => error.name,
+    );
+    leaving.abort();
+    const firstOutcome = await first;
+
+    let second = null;
+    let inherited = null;
+    try {
+      second = await loadDataset({ url });
+    } catch (error) {
+      inherited = error.name;
+    }
+    check(
+      'a dataset outlives a caller that goes away mid-fetch',
+      firstOutcome === 'AbortError' && second?.features?.length > 0,
+      inherited
+        ? `next caller inherited ${inherited}`
+        : `caller saw ${firstOutcome}, next caller got ${second?.features?.length ?? 0} features`,
+    );
+    clearDatasetCache();
   } finally {
     globalThis.fetch = realFetch;
   }
