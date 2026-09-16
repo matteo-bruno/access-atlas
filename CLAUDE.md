@@ -706,6 +706,22 @@ platform's values and is missing another's is refused outright, because
 joining it and stepping around it both hide a layer, and harmonising is
 `build:atlas`'s job.
 
+**An import rebuilds what it cannot read, so it must not fail to read
+quietly.** `import:fifteen` is additive by design — each city is upserted
+into the coverage file, the catalogue row and, where it joins one, the union
+mesh — but every one of those starts by reading what is already there, and
+the helper that did the reading returned null for *any* failure. An absent
+file and a file truncated by an interrupted run therefore looked identical,
+and the importer answered both by writing a fresh one: a coverage file
+holding the city being imported and nothing else, with every other city's
+catalogue row still in place looking healthy. What that reads as on the site
+is "importing one city deleted all the others from the platform". The same
+read backs the union, where it would have dropped another platform's values.
+Only an absent file is null now; a file that is there but unreadable stops
+the run and says how to put it back. `writeDataFile` also renames a
+temporary file into place rather than writing over the target, so an import
+interrupted halfway cannot leave the truncated file that starts this off.
+
 **The grid is detected, never assumed — and centroid proximity cannot
 detect it.** An H3 cell's centre coincides with the centre of its central
 child, so a mesh on r9 matches r9, r10 and r11 centres equally well and

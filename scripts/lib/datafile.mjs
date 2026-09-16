@@ -56,15 +56,24 @@ export function readDataJSON(file) {
  */
 export function writeDataFile(file, body) {
   const buf = Buffer.from(body);
-  if (!file.endsWith('.gz')) {
-    fs.writeFileSync(file, buf);
-    return { raw: buf.length, stored: buf.length };
-  }
-  const gz = zlib.gzipSync(buf, { level: zlib.constants.Z_BEST_COMPRESSION });
-  fs.writeFileSync(file, gz);
+  const gzipped = file.endsWith('.gz');
+  const payload = gzipped ? zlib.gzipSync(buf, { level: zlib.constants.Z_BEST_COMPRESSION }) : buf;
+
+  // Written beside the target and renamed over it, because a rename is
+  // atomic and a write is not: an import stopped halfway through one of
+  // these files (Ctrl-C, a full disk) left a truncated file that still
+  // looked like a file. The next run then could not read it, and a script
+  // that cannot read what is there writes what it has instead — which is how
+  // a coverage file ends up holding one city.
+  const tmp = `${file}.tmp-${process.pid}`;
+  fs.writeFileSync(tmp, payload);
+  fs.renameSync(tmp, file);
+
   // A stale plain copy beside the compressed one would be served by a static
   // host in preference to nothing and silently go out of date.
-  const plain = file.slice(0, -3);
-  if (fs.existsSync(plain)) fs.rmSync(plain);
-  return { raw: buf.length, stored: gz.length };
+  if (gzipped) {
+    const plain = file.slice(0, -3);
+    if (fs.existsSync(plain)) fs.rmSync(plain);
+  }
+  return { raw: buf.length, stored: payload.length };
 }

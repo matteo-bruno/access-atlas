@@ -35,7 +35,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
-import { readDataJSON, writeDataFile } from './lib/datafile.mjs';
+import { readDataJSON, resolveDataFile, writeDataFile } from './lib/datafile.mjs';
 import { countryAt } from './lib/country.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -543,11 +543,31 @@ function writeJSON(target, data) {
   return writeDataFile(target, body);
 }
 
+/**
+ * What is at this path, or null when there is nothing there.
+ *
+ * "Nothing there" and "there but unreadable" are different answers, and this
+ * script acts on them very differently: where it reads nothing, it writes a
+ * fresh file. Swallowing both meant a coverage file truncated by an
+ * interrupted run was silently replaced by one holding the city being
+ * imported and nothing else — which on the site reads as every other city
+ * having been deleted, while their catalogue rows sit there looking fine.
+ * The same read backs the atlas union, where it would drop another
+ * platform's values instead.
+ *
+ * So only an absent file is null. An unreadable one stops the import and
+ * says what to do about it.
+ */
 function readJSONIfExists(target) {
+  if (!resolveDataFile(target)) return null;
   try {
     return readDataJSON(target);
-  } catch {
-    return null;
+  } catch (err) {
+    throw new Error(
+      `${path.relative(ROOT, target)} is there but could not be read (${err.message}). ` +
+        'Rewriting it from scratch would drop everything it holds, so this run stops here. ' +
+        'Restore it (git checkout -- public/data) or delete it deliberately, then re-run.',
+    );
   }
 }
 
@@ -797,7 +817,13 @@ function main() {
 
   console.log(`importing ${files.length} 15minCity city file${files.length === 1 ? '' : 's'} from ${path.relative(ROOT, SRC_DIR)}${DRY_RUN ? ' (dry run)' : ''}`);
 
-  const catalogue = readJSONIfExists(CATALOGUE);
+  let catalogue;
+  try {
+    catalogue = readJSONIfExists(CATALOGUE);
+  } catch (err) {
+    console.error(`  ${err.message}`);
+    process.exit(1);
+  }
   if (!catalogue) {
     console.error(`catalogue not found: ${CATALOGUE}`);
     process.exit(1);
