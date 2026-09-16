@@ -34,6 +34,18 @@ export function colorExpression(platform) {
 const RADIUS = ['interpolate', ['linear'], ['zoom'], 0, 2.4, 2, 4, 5, 7.5, 9, 13];
 const RADIUS_DENSE = ['interpolate', ['linear'], ['zoom'], 0, 1.9, 2, 3.2, 5, 6, 9, 11];
 
+// Every filled marker carries a hairline of ink rather than of white.
+//
+// Both scales run pale at one end — 15minCity's near-15-minute band and the
+// merged map's one-platform grey — and a pale dot with a white edge on this
+// paper is a smudge with a lighter smudge around it: the marker that most
+// needs an outline is exactly the one a white outline cannot give. Ink at low
+// alpha reads against the paper and disappears into a dark dot, so the same
+// value works at both ends of every scale. Kept thin enough that it draws the
+// edge rather than the dot.
+const MARKER_EDGE = 'rgba(21, 23, 26, 0.5)';
+const MARKER_EDGE_WIDTH = ['interpolate', ['linear'], ['zoom'], 0, 0.6, 5, 1, 9, 1.4];
+
 /**
  * Circle paint for a platform's city markers.
  * `ring` platforms (Car Dependency, P.O.V.) draw a hollow marker with a soft
@@ -62,9 +74,9 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
   return {
     'circle-radius': radius,
     'circle-color': color,
-    'circle-opacity': 0.9,
-    'circle-stroke-color': 'rgba(255,255,255,0.55)',
-    'circle-stroke-width': dense ? 0 : 0.8,
+    'circle-opacity': 0.92,
+    'circle-stroke-color': MARKER_EDGE,
+    'circle-stroke-width': MARKER_EDGE_WIDTH,
   };
 }
 
@@ -80,9 +92,9 @@ export function coverageCountPaint(scale) {
   return {
     'circle-radius': RADIUS_DENSE,
     'circle-color': ['interpolate', ['linear'], ['get', 'platformCount'], ...stops],
-    'circle-opacity': 0.9,
-    'circle-stroke-color': 'rgba(255,255,255,0.55)',
-    'circle-stroke-width': 0.6,
+    'circle-opacity': 0.92,
+    'circle-stroke-color': MARKER_EDGE,
+    'circle-stroke-width': MARKER_EDGE_WIDTH,
   };
 }
 

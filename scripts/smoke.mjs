@@ -262,13 +262,17 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(3000);
 
   const items = await page.$$eval('.aa-picker__item', (els) => els.map((e) => e.textContent.trim()));
+  const active = await page.$eval('.aa-picker__item--active', (e) => e.textContent.trim());
   const allLegend = await page.$$eval('.aa-legend__item', (els) =>
     els.map((e) => e.textContent.trim()),
   );
+  // The four layers, then the whole. `/platforms` opens on the first of them
+  // rather than on the merged map, which has its own address — a reader
+  // arriving at the Atlas gets a measure rather than a count of measures.
   check(
-    'World map offers all four platforms plus the combined coverage',
-    items.length === 5,
-    items.join(' · '),
+    'The Atlas opens on 15-minute city, and offers the four layers plus all of them',
+    items.length === 5 && /15-minute city/.test(active) && /All layers/.test(items[4]),
+    `${active} · ${items.join(' · ')}`,
   );
 
   await page.click('.aa-picker__item:has-text("Car Dependency")');
@@ -283,6 +287,39 @@ for (const [route, name] of ROUTES) {
     page.url().endsWith('/platforms/car-dependency-index') &&
       cdiLegend.join(' ') !== allLegend.join(' '),
     `${allLegend.join('/')} → ${cdiLegend.join('/')}`,
+  );
+  await page.close();
+}
+
+// ── Every marker opens its city ──────────────────────────────────────
+// A city published by one layer is still a city. The merged map used to ask
+// the *open tab* which cities had a view, and with no tab open that answer
+// was the bundled seed list — so twenty of the twenty-two published cities
+// did not respond to a click at all. The city view opens on the first layer
+// that city actually carries, which for Rome is Car Dependency.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/platforms/all`, { waitUntil: 'load' });
+  await page.waitForTimeout(3500);
+  await page.click('.aa-welcome__close').catch(() => {});
+  await page.waitForTimeout(300);
+
+  const box = await page.locator('.aa-mapstage canvas').boundingBox();
+  const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
+  const mercator = (lat) =>
+    0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
+  let delta = 12.4964 - WORLD_CENTER[0];
+  while (delta > 180) delta -= 360;
+  while (delta < -180) delta += 360;
+  const x = box.x + box.width / 2 + (delta / 360) * worldPx;
+  const y = box.y + box.height / 2 + (mercator(41.9028) - mercator(WORLD_CENTER[1])) * worldPx;
+
+  await page.mouse.click(x, y);
+  await page.waitForTimeout(2500);
+  check(
+    'A marker the open layer does not cover still opens its city',
+    /\/atlas\/rome/.test(page.url()),
+    page.url().replace(BASE, '') || '(did not navigate)',
   );
   await page.close();
 }
@@ -672,7 +709,7 @@ for (const [route, name] of ROUTES) {
   check(
     'The landing leaves a viewport of the site backdrop under its copy',
     (await page.locator('.aa-backdrop canvas').count()) === 1 &&
-      /Accessibility Atlas/.test(tab) &&
+      /Home/.test(tab) &&
       headline === 'Accessibility Atlas' &&
       (await page.locator('.aa-picker').count()) === 0,
     `${tab} · ${headline}`,
@@ -742,7 +779,7 @@ for (const [route, name] of ROUTES) {
     'Explore goes to the platform tab, and lights it',
     href === '/platforms' &&
       page.url().endsWith('/platforms') &&
-      (await page.locator('.aa-nav__link--active').innerText()) === 'Platform' &&
+      (await page.locator('.aa-nav__link--active').innerText()) === 'Atlas' &&
       (await page.locator('.aa-picker').count()) === 1 &&
       (await page.locator('.aa-welcome').count()) === 1,
     `${href} → ${page.url()}`,
@@ -788,7 +825,7 @@ for (const [route, name] of ROUTES) {
       e.dataset.smoke = 'kept';
     });
 
-    await page.getByRole('link', { name: 'Platform', exact: true }).click();
+    await page.getByRole('link', { name: 'Atlas', exact: true }).click();
     // Mid-fade: the platform map is not up yet, and the world must still be.
     await page.waitForTimeout(150);
     const midway = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
@@ -847,7 +884,7 @@ for (const [route, name] of ROUTES) {
     });
     await client.send('Page.startScreencast', { format: 'jpeg', quality: 70, everyNthFrame: 1 });
 
-    await page.getByRole('link', { name: 'Platform', exact: true }).click();
+    await page.getByRole('link', { name: 'Atlas', exact: true }).click();
     await page.waitForTimeout(2500);
     await page.fill('.aa-search__input', 'mila');
     await page.waitForTimeout(400);

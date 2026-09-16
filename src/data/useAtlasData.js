@@ -144,9 +144,13 @@ export function useAllCoverage() {
 }
 
 /**
- * The set of city ids that have a detail page for this platform — a bundled
- * seed profile, or a published dataset. Used to decide whether clicking a
- * marker opens a city or just flies the map to it.
+ * The set of city ids that have a city view — a bundled seed profile, or a
+ * published dataset. Used to decide whether clicking a marker opens a city or
+ * just flies the map to it.
+ *
+ * `platformId` is optional, and leaving it out asks the question the merged
+ * map needs: published by *any* platform. The city view opens on the first
+ * layer that city actually has, so it has something to draw either way.
  */
 export function useCityPageIds(platformId) {
   const [publishedIds, setPublishedIds] = useState(null);
@@ -161,8 +165,19 @@ export function useCityPageIds(platformId) {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
         if (cancelled) return;
-        const cities = catalogue?.platforms?.[platformId]?.cities ?? [];
-        setPublishedIds(cities.filter((city) => city.dataset).map((city) => city.id));
+        // No platform named means "any of them": the merged map's markers
+        // come from every platform's coverage, and a city published by one
+        // of them has a city view whether or not it is on the open tab.
+        // Asking only the open tab left those markers inert — a city with
+        // Car Dependency but no 15minCity simply did not respond to a click.
+        const entries = platformId
+          ? [catalogue?.platforms?.[platformId]]
+          : Object.values(catalogue?.platforms ?? {});
+        const ids = entries
+          .flatMap((entry) => entry?.cities ?? [])
+          .filter((city) => city.dataset || city.hourly)
+          .map((city) => city.id);
+        setPublishedIds([...new Set(ids)]);
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }

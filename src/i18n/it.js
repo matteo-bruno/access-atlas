@@ -11,8 +11,8 @@ export default {
     // Il nome è il nome, anche in italiano: è così che l'Atlante si chiama.
     title: 'Accessibility Atlas',
     tagline: 'Sony CSL · Roma — Città Sostenibili',
-    atlas: 'Accessibility Atlas',
-    platforms: 'Piattaforma',
+    atlas: 'Home',
+    platforms: 'Atlante',
     stats: 'Statistiche',
     about: 'Città sostenibili',
     consulting: 'Consulenza',
@@ -160,7 +160,10 @@ export default {
     seeded: 'Valori illustrativi — le misure di questa piattaforma non sono ancora pubblicate.',
 
     all: {
-      name: 'Tutte le piattaforme',
+      name: 'Tutti i livelli',
+      // La mappa unita è l'Atlante stesso, non uno dei suoi livelli: si
+      // presenta con il proprio nome invece che tramite `platform.welcome`.
+      welcome: 'Benvenuto nell’Accessibility Atlas',
       label: 'Copertura pubblicata',
       pick: 'Scegli una mappa',
       intro:

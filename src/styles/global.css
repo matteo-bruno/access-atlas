@@ -258,12 +258,18 @@ strong {
   border-radius: 3px;
 }
 
+/* A key's colour, with a hairline of its own.
+   Every scale on the site runs pale at one end, and a pale square on this
+   paper has no edge of its own — the step that most needs an outline is the
+   one the paper swallows. Ink at low alpha draws the edge on a pale swatch
+   and vanishes into a dark one, so one rule covers the whole ramp. */
 .aa-swatch {
   display: inline-block;
   width: 14px;
   height: 14px;
   border-radius: 3px;
   flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgb(21 23 26 / 0.18);
 }
 
 .aa-dot {

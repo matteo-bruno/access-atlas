@@ -175,6 +175,16 @@ readable:
   checked against — update both together. 15minCity shares one scale across
   all ten categories and both modes for the same reason.
 
+**A pale swatch needs an edge, and the edge is ink.** Every scale here runs
+pale at one end, and on this paper the palest step has no outline of its own:
+the one-platform grey on the coverage map and 15minCity's near-15-minute band
+were dots you had to know were there. The white halo the markers used to
+carry could not help — the marker that most needs an outline is exactly the
+one white cannot draw. `MARKER_EDGE` in `map/layers.js` is ink at 0.5 alpha,
+which reads against the paper and disappears into a dark dot, so one value
+works at both ends of every scale; `.aa-swatch` and `.aa-picker__dot` carry
+the same hairline as an inset shadow.
+
 The 15minCity ramp is centred on white at 15 minutes and keeps darkening past
 30 to black at 120. The legend bar stops at 30 and draws the rest as a
 **compressed tail** beside it — a quarter of the width for four times the
@@ -528,6 +538,27 @@ and the source link float on the map, the platform's paper and comparison
 moved into the welcome card that introduces it, and the legend sits below the
 search rather than under it.
 
+**It opens on a layer, not on a count of layers.** `/platforms` is the first
+layer — 15-minute city — and the merged map has its own address at
+`/platforms/all`, which an unknown slug also lands on. The picker lists the
+four layers in platform order and puts "All layers" last, because it is the
+whole rather than a fifth lens, and it introduces itself as the Atlas
+(`platform.all.welcome`) rather than through `platform.welcome`, which would
+say "Welcome to All layers". Each entry's dot is a **miniature of the scale
+that map draws with** — the layer's own ramp, P.O.V.'s four zones as hard
+quarters, the coverage scale for the merged map. Solid accents could not do
+that job: two of the four layers are navy and two are terracotta, so half the
+row was two pairs of identical dots.
+
+**Every marker opens its city, whatever the open layer covers.** The city
+view opens on the first layer that city actually carries, so a Car
+Dependency city needs no 15minCity to be worth a click. `useCityPageIds()`
+asks the catalogue for cities published by *any* platform when no platform is
+named; asking only the open tab meant the merged map fell back to the bundled
+seed profiles, of which there is one, and twenty of the twenty-two published
+cities were inert. `smoke.mjs` clicks Rome on the merged map and expects
+`/atlas/rome`.
+
 **Routes cross-fade** (`FadingRoutes` in `App.jsx`), which is why it keeps
 rendering the *old* location until the fade finishes — swapping first would
 show the new page at full opacity behind the fading one. It compares the
@@ -547,6 +578,10 @@ outside the faded region, so navigating never rebuilds it: the bar stays put
 while the page under it fades, and only the lit tab changes — derived from
 the path by `activeTab`. Three consequences to keep in mind:
 
+- The first two tabs are **Home** (`/`) and **Atlas** (`/platforms`): what
+  they lead to, not what the site is called. The site's name is already on
+  the bar, to the left, and a tab repeating it said nothing about where it
+  went. `smoke.mjs` clicks them by those names.
 - It publishes its measured height as `--nav-h`, and the full-height screens
   size against `calc(100vh - var(--nav-h))`. Measuring beats a constant: the
   bar wraps on narrow screens.

@@ -21,6 +21,28 @@ import '../components/MapBox.css';
 import './PlatformLanding.css';
 
 /**
+ * A picker dot is a miniature of the scale the map behind it draws with.
+ *
+ * Solid accents could not do this job: two of the four layers are navy and
+ * two are terracotta, so half the list was two pairs of identical dots. A
+ * scale is the one thing that is different for every layer *and* already on
+ * screen a moment later, which makes the dot a preview rather than a label
+ * needing to be learned. Continuous scales run as a gradient; P.O.V.'s four
+ * zones are categorical and get hard quarters, because a zone is a class and
+ * not a point on a ramp.
+ *
+ * @param {string[]} colors  the scale, in order
+ * @param {boolean} [hard]   draw discrete wedges rather than a blend
+ */
+function scaleDot(colors, { hard = false } = {}) {
+  if (!hard) return `linear-gradient(135deg, ${colors.join(', ')})`;
+  const step = 100 / colors.length;
+  return `conic-gradient(from -45deg, ${colors
+    .map((color, i) => `${color} ${i * step}% ${(i + 1) * step}%`)
+    .join(', ')})`;
+}
+
+/**
  * The world map. Without a slug it shows every published city across the four
  * platforms; with one it shows that platform's cities, its scale and its
  * legend. The selector switches between them by navigating, so which map you
@@ -28,10 +50,12 @@ import './PlatformLanding.css';
  */
 export default function PlatformLanding() {
   const { slug } = useParams();
-  const platform = slug ? platformBySlug(slug) : null;
+  // `/platforms` opens on the first layer — 15-minute city, the measure that
+  // needs the least explaining and covers the most cities — and the merged
+  // map has its own address at `/platforms/all`. An unknown slug lands there
+  // too rather than on a 404: the route is still a request for the world map.
+  const platform = slug === undefined ? PLATFORMS[0] : platformBySlug(slug);
 
-  // An unknown slug falls back to the all-platforms map rather than a 404:
-  // the route is still a request for the world map.
   // Remount cleanly when switching platforms so the map rebuilds its layers.
   return (
     <div className="aa-page aa-page--fixed">
@@ -163,16 +187,6 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
         <nav className="aa-card aa-picker aa-fadein" aria-label={t('platform.all.pick')}>
-          <Link
-            className={`aa-picker__item${platform ? '' : ' aa-picker__item--active'}`}
-            to="/platforms"
-          >
-            <span
-              className="aa-dot"
-              style={{ background: COVERAGE_SCALE[COVERAGE_SCALE.length - 1] }}
-            />
-            {t('platform.all.name')}
-          </Link>
           {PLATFORMS.map((option) => (
             <Link
               key={option.id}
@@ -181,16 +195,30 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
               }`}
               to={`/platforms/${option.slug}`}
             >
-              <span className="aa-dot" style={{ background: option.accent }} />
+              <span
+                className="aa-picker__dot"
+                style={{ backgroundImage: scaleDot(option.scale, { hard: !option.stops }) }}
+              />
               {option.name}
             </Link>
           ))}
+          {/* Last, because it is the whole rather than another layer. Its
+              dot is the coverage scale, which is what that map colours by. */}
+          <Link
+            className={`aa-picker__item${platform ? '' : ' aa-picker__item--active'}`}
+            to="/platforms/all"
+          >
+            <span className="aa-picker__dot" style={{ backgroundImage: scaleDot(COVERAGE_SCALE) }} />
+            {t('platform.all.name')}
+          </Link>
         </nav>
 
         {welcomeOpen && (
           <section className="aa-card aa-welcome aa-fadein aa-fadein--slow">
             <div className="aa-welcome__head">
-              <Eyebrow>{t('platform.welcome', { name: title })}</Eyebrow>
+              <Eyebrow>
+                {platform ? t('platform.welcome', { name: title }) : t('platform.all.welcome')}
+              </Eyebrow>
               <button
                 type="button"
                 className="aa-welcome__close"

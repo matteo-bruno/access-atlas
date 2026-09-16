@@ -17,8 +17,8 @@ export default {
   nav: {
     title: 'Accessibility Atlas',
     tagline: 'Sony CSL · Rome — Sustainable Cities',
-    atlas: 'Accessibility Atlas',
-    platforms: 'Platform',
+    atlas: 'Home',
+    platforms: 'Atlas',
     stats: 'Stats',
     about: 'Sustainable cities',
     consulting: 'Consulting',
@@ -167,7 +167,10 @@ export default {
     seeded: 'Illustrative values — this platform’s measurements are not yet published.',
 
     all: {
-      name: 'All platforms',
+      name: 'All layers',
+      // The merged map is the Atlas itself rather than one of its layers, so
+      // it introduces itself by name instead of through `platform.welcome`.
+      welcome: 'Welcome to the Accessibility Atlas',
       label: 'Published coverage',
       pick: 'Choose a map',
       intro:
