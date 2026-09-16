@@ -24,7 +24,11 @@ React + Vite, MapLibre for the maps, bilingual EN/IT.
 **Node 20 or newer** — the scripts are ES modules and CI builds on Node 22. On
 an older Node the `.mjs` files are parsed as CommonJS and die on their first
 `import` with a bare `SyntaxError: Unexpected identifier`; `npm run` checks the
-version first and says so instead.
+version first and says so instead. The same preflight checks that the packages
+a script imports are installed: the data scripts need `h3-js`, a
+devDependency, so a tree installed with `--omit=dev` or installed before that
+dependency was added answers `ERR_MODULE_NOT_FOUND` instead of running, and
+`npm install` is the fix.
 
 ```bash
 nvm use 22           # or any Node ≥ 20
