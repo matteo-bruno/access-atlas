@@ -34,9 +34,15 @@ export const EMPTY_CATALOGUE = {
   atlas: { cities: [], citiesById: {} },
 };
 
-/** Absolute URL for a path inside public/data/, honouring the deploy base. */
+/**
+ * Absolute URL for a path inside public/data/, honouring the deploy base.
+ *
+ * The optional chaining is what lets the Node suites import this module and
+ * the provider above it: Vite replaces `import.meta.env` with the build's own
+ * object, and plain Node leaves it undefined.
+ */
 export function dataUrl(path) {
-  return `${import.meta.env.BASE_URL}data/${path}`;
+  return `${import.meta.env?.BASE_URL ?? '/'}data/${path}`;
 }
 
 // Build id, defined by vite.config.js. Falls back for consumers that run the

@@ -25,6 +25,24 @@ import {
   publishedCity,
 } from './catalogue.js';
 
+/**
+ * A promise that rejects when this caller's signal aborts, and never
+ * otherwise. Raced against a shared fetch, it lets one consumer stop waiting
+ * without cancelling the work the others are waiting on.
+ */
+function whenAborted(signal) {
+  return new Promise((_, reject) => {
+    const fail = () =>
+      reject(
+        signal.reason instanceof Error
+          ? signal.reason
+          : new DOMException('The operation was aborted.', 'AbortError'),
+      );
+    if (signal.aborted) fail();
+    else signal.addEventListener('abort', fail, { once: true });
+  });
+}
+
 /** Static provider: plain files under public/data/, no backend required. */
 export function createStaticProvider() {
   let cataloguePromise = null;
@@ -35,18 +53,33 @@ export function createStaticProvider() {
     async catalogue({ signal } = {}) {
       // Memoised rather than refetched: the catalogue is read on nearly every
       // route and never changes within a session.
+      //
+      // Fetched **without the caller's signal**, and that is the whole point.
+      // One promise is shared by every consumer on the page, so binding it to
+      // the first consumer's lifetime let that consumer's unmount cancel the
+      // catalogue for all of them, and the rejected promise stayed memoised,
+      // so nothing ever retried. React remounts every effect in development,
+      // which aborts the first request on every single page load: the app
+      // then answered "nothing is published" for the rest of the session and
+      // drew seed cities, silently and only in `npm run dev`. The symptom is
+      // a city list that is neither the catalogue's nor obviously wrong.
+      //
+      // A failure is not memoised either: the entry is cleared before the
+      // empty catalogue is returned, so the next caller tries again.
       if (!cataloguePromise) {
-        cataloguePromise = loadJSON(catalogueUrl(), { signal })
+        cataloguePromise = loadJSON(catalogueUrl())
           .then(normaliseCatalogue)
-          .catch((error) => {
+          .catch(() => {
             // No catalogue at all is the normal state before any data is
             // published — not an error worth propagating.
-            if (error?.name === 'AbortError') throw error;
             cataloguePromise = null;
             return EMPTY_CATALOGUE;
           });
       }
-      return cataloguePromise;
+      // The caller's own abort still ends *its* wait, which is what an
+      // unmounting component needs; the shared fetch carries on for whoever
+      // else asked, and its result is what the next caller gets.
+      return signal ? Promise.race([cataloguePromise, whenAborted(signal)]) : cataloguePromise;
     },
 
     // Per-city aggregates for the compare view. Null where a platform has

@@ -20,6 +20,7 @@ import {
   citiesFromPublished,
 } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
+import { createStaticProvider } from '../src/data/sources.js';
 import { readDataBuffer, readDataJSON } from './lib/datafile.mjs';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
@@ -313,6 +314,79 @@ for (const city of catalogue.atlas?.cities ?? []) {
     bad.length === 0,
     bad.slice(0, 3).join(' | '),
   );
+}
+
+// ── The provider ─────────────────────────────────────────────────────
+// The catalogue is fetched once and shared by every consumer on the page, and
+// two things about that sharing are worth pinning here rather than
+// discovering in a browser.
+//
+// A consumer that goes away must not take the catalogue with it: the fetch is
+// deliberately not bound to any one caller's signal, because React remounts
+// every effect in development, and binding it meant the first request was
+// aborted on every page load. And a failed fetch must not be remembered, or
+// one bad moment answers "nothing is published" for the rest of the session.
+// Either way the app draws seed cities: a plausible map of the wrong data,
+// which no browser check catches because it renders perfectly.
+{
+  const body = readDataBuffer(path.join(DATA, 'index.json'));
+  const requests = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, { signal } = {}) => {
+    requests.push(String(url));
+    // Slow enough that the caller below aborts while it is still in flight,
+    // which is the case that used to poison the memo.
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    if (signal?.aborted) throw new DOMException('The operation was aborted.', 'AbortError');
+    return new Response(body);
+  };
+
+  try {
+    const provider = createStaticProvider();
+    const leaving = new AbortController();
+    const first = provider.catalogue({ signal: leaving.signal }).then(
+      () => 'resolved',
+      (error) => error.name,
+    );
+    leaving.abort();
+    const firstOutcome = await first;
+    // The failure this guards against is the *next* caller inheriting the
+    // memoised rejection, so catch it rather than letting it end the suite.
+    let second = null;
+    let inherited = null;
+    try {
+      second = await provider.catalogue();
+    } catch (error) {
+      inherited = error.name;
+    }
+    const platformCount = Object.keys(second?.platforms ?? {}).length;
+    check(
+      'the catalogue outlives a caller that goes away mid-fetch',
+      platformCount > 0,
+      inherited
+        ? `next caller inherited the first one's ${inherited}`
+        : `caller saw ${firstOutcome}, next caller got ${platformCount} platforms in ${requests.length} request(s)`,
+    );
+
+    // A failure is not memoised either: the next caller tries again rather
+    // than inheriting the empty catalogue forever.
+    const failing = createStaticProvider();
+    globalThis.fetch = async () => {
+      requests.push('failed');
+      throw new Error('offline');
+    };
+    const empty = await failing.catalogue();
+    globalThis.fetch = async () => new Response(body);
+    const recovered = await failing.catalogue();
+    check(
+      'a failed catalogue fetch is retried, not remembered',
+      Object.keys(empty.platforms ?? {}).length === 0 &&
+        Object.keys(recovered.platforms ?? {}).length > 0,
+      `${Object.keys(recovered.platforms ?? {}).length} platforms on the retry`,
+    );
+  } finally {
+    globalThis.fetch = realFetch;
+  }
 }
 
 // Rome is the city quoted throughout the site; pin its published figures so a

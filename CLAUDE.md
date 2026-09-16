@@ -231,6 +231,23 @@ now fetched as `index.json?v=<build id>` (`catalogueUrl()`, id defined in
 is "the deployed site disagrees with `public/data/`", suspect the cache before
 the code.
 
+**A shared fetch must not carry one caller's abort signal.** The catalogue is
+memoised, because nearly every route reads it and it cannot change within a
+session, so every consumer on the page awaits the same promise. That promise
+was created with whichever consumer asked first, *including its
+`AbortSignal`* — and React remounts every effect in development, so the first
+consumer unmounted a tick later and aborted the fetch for all of them. The
+rejection was then left in the memo, so nothing ever retried: one aborted
+request per page load, and the session answered "nothing is published" from
+then on. What that looks like is not an error. It is the seed city list, on a
+site whose maps, panels and figures all render perfectly, in `npm run dev`
+only — the built site was always fine, which is exactly what makes it read as
+"my newly imported cities did not import". The catalogue is fetched with no
+caller's signal now; a caller's own abort ends only its own wait
+(`whenAborted` in `sources.js`), and a failed fetch clears the memo so the
+next caller retries. `test:data` pins both, and the browser suites cannot:
+they run against a build, where React does not double-mount.
+
 **The seed data reproduces the real Rome figures.** The generated mesh was
 calibrated to match 8,089 cells and 12.9/2.7/1.4/83.0. Any test that checks
 those values passes whether the real file loaded or not. Tests on this data
