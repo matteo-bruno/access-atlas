@@ -310,6 +310,103 @@ Two requirements:
   pre-rendering the routes, is the way out if that matters.
 - **Sub-path hosting.** Set `VITE_BASE=/your-path/` at build time.
 
+### Deploying to your own server
+
+`scripts/deploy.sh` builds, uploads and verifies in one command. It exists
+because the two settings that decide whether a deploy works are both compiled
+in at build time and both fail silently when wrong, so typing them by hand
+once per deploy is the failure mode rather than the safeguard.
+
+```bash
+scripts/deploy.sh                 # build, upload, install, verify
+scripts/deploy.sh --skip-build    # publish the dist/ already on disk
+scripts/deploy.sh --verify-only   # re-run the checks against the live URL
+```
+
+Its defaults are the live deployment: `https://whatif.sonycsl.it/atlas/`,
+served from `/var/www/whatif/atlas`. Every one of them is an environment
+variable, so a second host needs no edit to the file.
+
+| | |
+| --- | --- |
+| `AA_URL` | public URL, trailing slash required |
+| `AA_BASE` | its path component, which is what `VITE_BASE` is set to |
+| `AA_BASEMAP` | MapLibre style for the city basemap |
+| `AA_SSH` | ssh destination |
+| `AA_STAGE` | staging directory, writable without privileges |
+| `AA_TARGET` | final location, under the vhost's DocumentRoot |
+| `AA_OWNER` | user Apache reads as (`apache:apache` on RHEL-alikes) |
+
+It uploads in two steps, to `AA_STAGE` as the login user and then into
+`AA_TARGET` with `sudo`, because only the second half needs privileges.
+
+**The checks are the point of it.** It refuses to publish a `dist/` whose
+assets are not under `AA_BASE`, which is the one mistake that produces a
+working-looking site. A base that does not match the URL sends the catalogue
+request into the SPA fallback, which answers with `index.html` and HTTP 200,
+and the data layer reads that as "nothing is published" and draws seed data.
+Every map, panel and figure then renders perfectly and every layer reads "Not
+published". That is also why the post-deploy check reads the *body* of
+`data/index.json` rather than its status code, which is 200 either way. It
+refuses a build with no `404.html` too, and one carrying no catalogue at all.
+
+The script copies files. The rewrite rule is the server's own, and has to be
+installed once by hand.
+
+### Apache
+
+Deep links like `/atlas/faq` must serve the shell, or they 404 on reload.
+`dist/404.html` does not cover this: that is for hosts with no rewrite rule at
+all. Put this inside the `<VirtualHost>` that actually serves the site. On a
+certbot setup that is the `:443` vhost in `<name>-le-ssl.conf`, not the `:80`
+one, which does nothing but redirect to HTTPS:
+
+```apache
+<Directory /var/www/whatif/atlas>
+    Options -Indexes -MultiViews
+    AllowOverride None
+    Require all granted
+
+    RewriteEngine On
+    RewriteBase /atlas/
+
+    # Real files and directories are served as-is.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Everything else is a client-side route: hand it the shell.
+    RewriteRule ^ index.html [L]
+</Directory>
+```
+
+Then `sudo a2enmod rewrite`, `sudo apachectl configtest`, `sudo systemctl
+reload apache2`. The configtest before the reload is not optional on a vhost
+that also serves something else.
+
+Three things that cost time here:
+
+- **In the vhost, not in `.htaccess`.** An `.htaccess` under `AA_TARGET` is
+  deleted by the next deploy, because `rsync --delete` mirrors `dist/` and
+  `dist/` contains no such file. It also needs `AllowOverride` to permit it,
+  which a stock vhost does not. Whether overrides are on at all is one test:
+  write an invalid directive into one and request the path. A 500 means it is
+  read, a 200 means it is ignored.
+- **`Options -MultiViews`.** With MultiViews on, Apache resolves extensionless
+  URLs against files on disk before `mod_rewrite` runs, which breaks the
+  routes unpredictably.
+- **certbot can rewrite `<name>-le-ssl.conf`.** Not on an ordinary renewal,
+  but a re-run of `certbot --apache` for that host will. Keep a copy of the
+  block and check it survived any certificate work.
+
+The gzipped datasets need no configuration. Apache serves a `.gz` as
+`application/x-gzip` with no `Content-Encoding`, and `fetchDecoded` in
+`src/map/loaders.js` sniffs the magic number and decompresses in the browser.
+Declaring the encoding server-side is a speed optimisation, and it breaks
+outright if `mime.conf` already has `AddEncoding x-gzip .gz` active: two
+`Content-Encoding` headers, double decode, nothing loads.
+
+
 ### GitHub Pages
 
 `.github/workflows/pages.yml` builds the site with `VITE_BASE` set to the
