@@ -293,6 +293,8 @@ export default {
       body: 'Mistakes can happen! Data could be missing or misleading. {contact} if you know this can be fixed.',
       contact: 'Contact us',
     },
+    // {date} is the OpenStreetMap extract's date, formatted from src/data/osm.js.
+    osmUpdate: 'Last OpenStreetMap update: {date}',
     layerCells: 'Cells measured by {name}',
     isochroneEmpty: 'Click a cell to draw travel times from it',
     unavailable: 'Not published',

@@ -24,6 +24,7 @@ import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
 import { CONTACT } from '../data/team.js';
+import { formatOsmDate } from '../data/osm.js';
 import {
   useAtlasCartogram,
   useAtlasMesh,
@@ -41,6 +42,7 @@ import './AtlasCityPage.css';
 // offered separately rather than as a fifth lens.
 const LAYER_ORDER = PLATFORMS.map((platform) => platform.id);
 const POPULATION_LAYER = 'population';
+const POPULATED = ['!=', ['coalesce', ['get', 'population'], -1], 0];
 
 // Every layer the URL may name, and where its values come from.
 const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
@@ -366,6 +368,13 @@ function AtlasScreen({ cityId, view }) {
       'fill-opacity': ['case', covered, opacityFor, 0],
     };
   }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range]);
+
+  // A cell where nobody lives has no one for a measure to describe, so every
+  // layer but Population leaves it out. Dropped by the layer filter rather
+  // than painted clear, so it cannot be hovered or selected either. The
+  // grid's populations are whole numbers; a feature carrying none at all (a
+  // legacy mesh) is kept.
+  const meshFilter = layer === POPULATION_LAYER ? undefined : POPULATED;
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
@@ -810,6 +819,7 @@ function AtlasScreen({ cityId, view }) {
                   data={geojson}
                   type="fill"
                   paint={fillPaint}
+                  filter={meshFilter}
                   promoteId={!unified && layer === 'citychrone' ? 'new_id' : undefined}
                   featureState={featureState}
                   onHover={(feature) => setHoverCell(feature ? feature.id : null)}
@@ -1040,11 +1050,14 @@ function AtlasScreen({ cityId, view }) {
  * address. A form would promise a workflow that does not exist behind it.
  */
 function MistakeNote() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [open, setOpen] = useState(false);
 
   return (
     <div className={`aa-mistake${open ? ' aa-mistake--open' : ''}`}>
+      {/* How old the street and point-of-interest data under every layer is:
+          the first thing to check when a cell looks out of date. */}
+      <p className="aa-osmnote">{t('atlas.osmUpdate', { date: formatOsmDate(lang) })}</p>
       <button
         type="button"
         className="aa-mistake__toggle"
