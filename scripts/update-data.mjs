@@ -31,10 +31,14 @@
 // is something to decide on, not to have happen.
 //
 // A source is whatever the platform hands over: a zip, the same folder
-// unpacked, or (15minCity) one GeoJSON. Its file name gives the city:
+// unpacked, or (15minCity) one GeoJSON. Its file name proposes the city:
 // `zurich_pov.zip`, `zurich_cdi.zip`, `Zurich.zip`, `Zurich.geojson` → `zurich`.
+// Where its cells are decides it, so two same-named cities are two cities
+// (see `resolveCityId` in scripts/lib/bundle.mjs); the manifest records the
+// city each source was published as.
 
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
@@ -200,14 +204,10 @@ for (const platform of selected) {
     : [];
   const seen = new Set();
 
-  // Two files mapping to one slug would each overwrite the other's city,
-  // and which one ends up published would depend on the order of a loop.
-  const bySlug = new Map();
-  for (const f of files) {
-    const s = platform.slug(f);
-    if (bySlug.has(s)) fail(`${platform.dir}/${bySlug.get(s)} and ${platform.dir}/${f} are both city "${s}"; rename one`);
-    bySlug.set(s, f);
-  }
+  // Two files whose names give one slug are not refused here: `San José` and
+  // `San Jose` may be Costa Rica and California. The importer decides which
+  // city each is from where its cells are, and refuses the second source of a
+  // city this platform already has (`claims`, below).
 
   for (const f of files) {
     const key = `${platform.dir}/${f}`;
@@ -229,6 +229,14 @@ for (const platform of selected) {
 
   for (const key of Object.keys(manifest.files)) {
     if (key.startsWith(`${platform.dir}/`) && !seen.has(key)) removed.push(key);
+  }
+
+  // Which city each source still in the folder was published as. An entry
+  // from before the manifest recorded it falls back to its file's slug.
+  platform.claims = new Map();
+  for (const key of seen) {
+    const entry = manifest.files[key];
+    if (entry) platform.claims.set(key, entry.city ?? platform.slug(path.basename(key)));
   }
 }
 
@@ -284,11 +292,22 @@ if (opts.has('baseline')) {
 // through its exit code, which for a batch would not say which one.
 const done = [];
 const failed = [];
+const reportFile = path.join(os.tmpdir(), `aa-import-${process.pid}.json`);
 for (const item of plan) {
   console.log(`\n── ${item.platform.id}: ${item.slug} (${item.reason})`);
-  if (run('scripts/import-data.mjs', [item.platform.id, item.file])) done.push(item);
-  else failed.push(item);
+  // Every other source of this platform, by the city it publishes: the
+  // importer refuses to publish this one over any of them.
+  const claimed = {};
+  for (const [key, city] of item.platform.claims) if (key !== item.key) claimed[city] = key;
+  fs.rmSync(reportFile, { force: true });
+  const args = [item.platform.id, item.file, '--claimed', JSON.stringify(claimed), '--report', reportFile];
+  if (run('scripts/import-data.mjs', args)) {
+    item.city = JSON.parse(fs.readFileSync(reportFile, 'utf8')).cityId;
+    item.platform.claims.set(item.key, item.city);
+    done.push(item);
+  } else failed.push(item);
 }
+fs.rmSync(reportFile, { force: true });
 
 if (!done.length) {
   console.error(`\nevery import failed (${failed.map((i) => i.key).join(', ')}); manifest unchanged.`);
@@ -313,6 +332,7 @@ for (const item of done) {
     size: item.size,
     importer: item.platform.currentFingerprint,
     importedAt: now,
+    city: item.city,
   };
 }
 writeManifest(manifest);

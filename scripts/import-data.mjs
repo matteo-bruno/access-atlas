@@ -7,6 +7,9 @@
 //   source     the export as the platform hands it over (see input_data/README.md)
 //
 //   --city <id>          city id, when the file name does not give the right one
+//   --claimed <json>     { id: source } of cities other sources already publish
+//                        for this platform (update-data passes it)
+//   --report <file>      write { cityId } there on success (update-data reads it)
 //   --dry-run            check and report, write nothing
 //   --name / --name-it   the city's name, English / Italian
 //   --country <ISO>      and --region / --region-it: where it is, when the
@@ -16,10 +19,16 @@
 // layer (scripts/lib/bundle.mjs), so importing P.O.V. for a city that has
 // 15minCity keeps 15minCity, and re-importing a layer replaces that layer
 // only. `npm run update:data` runs this for whatever changed in input_data/.
+//
+// The file name proposes a city; where the layer is decides it
+// (`resolveCityId` in bundle.mjs). A layer named after a published city that
+// lies somewhere else is a different city with the same name, and is
+// published beside it with its country as a suffix (`valencia-ve`).
 
 import path from 'node:path';
-import { publishLayer } from './lib/bundle.mjs';
-import { slugify } from './lib/slug.mjs';
+import fs from 'node:fs';
+import { publishLayer, readCatalogue, resolveCityId } from './lib/bundle.mjs';
+import { displayName, slugify } from './lib/slug.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
 import * as fifteen from './importers/fifteen.mjs';
@@ -52,13 +61,34 @@ if (!importer || !source) {
   process.exit(2);
 }
 
-const cityId = arg('city') ?? slugify(importer.cityName(path.basename(source)));
+const sourceName = displayName(importer.cityName(path.basename(source)));
+const base = slugify(sourceName);
 const dryRun = flag('dry-run');
 const kb = (n) => `${(n / 1024).toFixed(0)} kB`;
+let cityId = arg('city') ?? base;
 
 try {
   const started = Date.now();
   const parsed = importer.parse(source);
+  const resolved = resolveCityId(readCatalogue(), { base, requested: arg('city'), record: parsed.record });
+  cityId = resolved.id;
+  if (resolved.homonym) {
+    const h = resolved.homonym;
+    console.log(
+      `  "${base}" is already ${[h.name, h.region].filter(Boolean).join(', ')}, elsewhere: ` +
+        `this one is published as "${cityId}"`,
+    );
+  }
+  // Another source of this platform already publishes this city: importing
+  // this one too would overwrite it, and which survived would depend on the
+  // order the files were read in.
+  const claimed = arg('claimed') ? JSON.parse(arg('claimed')) : {};
+  if (claimed[cityId]) {
+    throw new Error(
+      `${claimed[cityId]} already publishes this city for ${platformId}; ` +
+        'keep one of the two sources, or pass --city if they are different places',
+    );
+  }
   const report = publishLayer({
     cityId,
     record: parsed.record,
@@ -70,8 +100,10 @@ try {
       country: arg('country'),
       region: arg('region'),
       regionIt: arg('region-it'),
+      sourceName,
     },
   });
+  if (arg('report') && !dryRun) fs.writeFileSync(arg('report'), JSON.stringify({ cityId }));
 
   console.log(
     `${cityId} · ${importer.layer}: ${report.cells} cells${report.replaced ? ' (replaced)' : ''} — ` +

@@ -13,10 +13,28 @@ input_data/
   cdi/          zurich_cdi.zip
 ```
 
-The file name gives the city: `Zurich.geojson`, `Zurich.zip`,
+The file name proposes the city: `Zurich.geojson`, `Zurich.zip`,
 `zurich_pov.zip` and `zurich_cdi.zip` are all `zurich` (the `_pov` / `_cdi`
 suffix is dropped, accents and spaces become a slug: `New York` →
 `new-york`). A zip can also be given unpacked, as a folder of the same name.
+
+Where the layer's cells are decides it. The slug folds accents away, so
+`San José` and `San Jose` give the same one, and there are cities with
+the same name anyway (Valencia in Spain and in Venezuela):
+
+- a published city with that slug, or with that slug and a country suffix,
+  is this city if the layer shares a cell with it or lies within 30 km;
+- otherwise the layer is a new city: the slug if it is free, else the slug
+  with the country's ISO code (`valencia-ve`, `san-jose-cr`);
+- a second same-named city **in the same country** stops the import:
+  give it `--city` (and `--name`).
+
+A new city is named as its file is written, accents included
+(`são_paulo.geojson` → "São Paulo"); a name in all lower case is
+capitalised word by word. The manifest records the city each source was
+published as, and a second source for a city the platform already has
+(`Zurich.zip` and `Zürich.zip`, or a zip and its unpacked folder) is
+refused before it writes anything: keep one of the two.
 
 ## Updating: import only what changed
 

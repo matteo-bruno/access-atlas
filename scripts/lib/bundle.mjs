@@ -562,6 +562,104 @@ export function writeCatalogue(catalogue, { dryRun = false } = {}) {
   fs.renameSync(tmp, abs(CATALOGUE));
 }
 
+// ── which city an import is ──────────────────────────────────────────
+//
+// A file name is not an identity. Two cities can share a name (Valencia in
+// Spain and in Venezuela, San José in Costa Rica and San Jose in California,
+// whose slugs are the same once the accent is folded), and every import is
+// additive: a layer given the id of a city that is somewhere else would be
+// merged into that city's grid, and the result would pass every check. So the
+// id is decided by where the layer is, not only by what the file is called.
+
+// A layer this far from a city that shares none of its cells is another city.
+// Every published layer of one city overlaps the others; the distance is the
+// fallback for a layer that does not, and same-named cities are almost always
+// hundreds of kilometres apart.
+export const SAME_CITY_KM = 30;
+
+function distanceKm([lon1, lat1], [lon2, lat2]) {
+  const rad = Math.PI / 180;
+  const a =
+    Math.sin(((lat2 - lat1) * rad) / 2) ** 2 +
+    Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(((lon2 - lon1) * rad) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(a));
+}
+
+function publishedCities(catalogue) {
+  const byId = new Map();
+  const rows = [
+    ...(catalogue.atlas?.cities ?? []),
+    ...Object.values(catalogue.platforms ?? {}).flatMap((p) => p.cities ?? []),
+  ];
+  for (const row of rows) if (!byId.has(row.id)) byId.set(row.id, row);
+  return byId;
+}
+
+function sharesCells(cityId, cells) {
+  const file = abs(gridPath(cityId));
+  if (!resolveDataFile(file)) return false;
+  const own = new Set(readDataJSON(file).cells);
+  return cells.some((h3) => own.has(h3));
+}
+
+/**
+ * The id a layer is published under.
+ *
+ * `base` is the slug of the file's city name. A published city with that id,
+ * or with that id and a country suffix (`valencia-ve`), is this city when it
+ * shares a cell with the layer or lies within SAME_CITY_KM of it. When none
+ * is, the layer is a new city: `base` if that is free, otherwise `base`
+ * suffixed with its own country's ISO code. Two same-named cities in one
+ * country cannot be told apart that way, and the import stops and asks for
+ * `--city` rather than pick.
+ *
+ * `requested` (`--city`) is taken as given, except that it may not name a
+ * published city somewhere else.
+ *
+ * @returns {{ id: string, homonym: object | null }}
+ *   `homonym` is the published city whose name this one shares, when the id
+ *   had to be disambiguated.
+ */
+export function resolveCityId(catalogue, { base, requested, record }) {
+  const cities = publishedCities(catalogue);
+  const centre = weightedCentre(record.cells, record.fields.population);
+  const away = (c) => (c.center ? Math.round(distanceKm(centre, c.center)) : null);
+  const samePlace = (c) => sharesCells(c.id, record.cells) || (c.center != null && away(c) <= SAME_CITY_KM);
+  const describe = (c) =>
+    `"${c.id}" (${[c.name, c.region].filter(Boolean).join(', ')}${away(c) != null ? `, ${away(c)} km away` : ''})`;
+
+  if (requested) {
+    const known = cities.get(requested);
+    if (known && !samePlace(known)) {
+      throw new Error(`--city ${requested} is published elsewhere: ${describe(known)}; choose another id`);
+    }
+    return { id: requested, homonym: null };
+  }
+
+  // The exact id first, then its suffixed homonyms in order.
+  const suffixed = new RegExp(`^${base}-[a-z]{2}$`);
+  const homonyms = [...cities.values()]
+    .filter((c) => c.id === base || suffixed.test(c.id))
+    .sort((a, b) => (a.id === base ? -1 : b.id === base ? 1 : a.id.localeCompare(b.id)));
+  const match = homonyms.find(samePlace);
+  if (match) return { id: match.id, homonym: null };
+  if (!cities.has(base)) return { id: base, homonym: null };
+
+  // The suffix has to tell the two apart, so a homonym in the same country
+  // (`rome-it` beside `rome`, both Italian) is no answer either.
+  const iso = countryAt(centre[0], centre[1])?.iso;
+  const id = iso ? `${base}-${iso.toLowerCase()}` : null;
+  const sameCountry = homonyms.some((c) => c.country && c.country === iso);
+  if (!id || cities.has(id) || sameCountry) {
+    const taken = homonyms.map(describe).join(', ');
+    throw new Error(
+      `"${base}" is already a different city: ${taken}. ` +
+        'This layer is somewhere else; give it its own id with --city (and --name for how it reads)',
+    );
+  }
+  return { id, homonym: cities.get(base) };
+}
+
 /** Every place the catalogue already describes this city, for its editorial fields. */
 function knownMeta(catalogue, cityId) {
   const entries = [
@@ -592,7 +690,8 @@ function coverageCountry(cityId) {
  * A city's name and place. What the catalogue already says wins — names are
  * editorial, and some were written by hand — and anything missing is derived
  * from the city's own centre (scripts/lib/country.mjs). `overrides` are the
- * command-line flags, for when the derivation is wrong.
+ * command-line flags, for when the derivation is wrong, plus `sourceName`, the
+ * name as the source file writes it, which a new city is named after.
  */
 export function cityMeta(catalogue, cityId, centre, overrides = {}) {
   const known = knownMeta(catalogue, cityId);
@@ -608,7 +707,9 @@ export function cityMeta(catalogue, cityId, centre, overrides = {}) {
     region = region ?? place.name ?? null;
     regionIt = regionIt ?? place.nameIt ?? region;
   }
-  const name = overrides.name ?? known.name ?? titleCase(cityId);
+  // A new city is named as its file is, accents and spaces included; the id
+  // is only the fallback, and a poor one (`sao-paulo` reads "Sao Paulo").
+  const name = overrides.name ?? known.name ?? overrides.sourceName ?? titleCase(cityId);
   return {
     meta: {
       name,

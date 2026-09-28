@@ -785,6 +785,24 @@ rather than handing an ocean point to whichever country is nearest. The
 importer prints which happened, because the nearest-coast case is the one
 that can be wrong.
 
+**A file name proposes a city; where its cells are decides it.** The
+slug folds accents and spaces away because it is a URL, so `San José`
+(Costa Rica) and `San Jose` (California) give the same one, and plenty of
+real cities share a name outright (Valencia, Paris, Portland). Every import
+is additive, so a layer handed the id of a city that is somewhere else is
+merged into that city's grid, and every check passes. `resolveCityId` in
+`bundle.mjs` therefore matches a slug against published cities by place
+(a shared cell, or within 30 km), publishes a different place as a new
+city suffixed with its country (`valencia-ve`), and stops for `--city`
+when the homonym is in the same country, since the suffix would not tell
+the two apart. `update-data` no longer refuses two files over their slug
+alone: the manifest records the city each source was published as, and
+only a second source for the *same* city of one platform is refused, by
+the importer, before it writes. The display name of a new city comes from
+the file as written (`displayName` in `slug.mjs`), never from the slug:
+`sao-paulo` title-cased reads "Sao Paulo". Keep all three in mind before
+touching how an id is derived; comparing names is not identifying cities.
+
 The lookup only runs for a city the catalogue does not know. A known city
 keeps its names and region, because several were written by hand ("United
 States", not Natural Earth's "United States of America") and a new layer
