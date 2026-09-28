@@ -20,40 +20,99 @@
 //           Mistral, DeepSeek, OpenRouter, Groq, and every local server worth
 //           running (vLLM, SGLang, llama.cpp's llama-server, Ollama, LM Studio).
 // A third protocol is one more file with the same method.
+//
+// What the server holds is not one provider but a chain of them, one per
+// configured model (chain.mjs), so a model that will not answer hands the
+// turn to the next.
 
-import { createGeminiProvider } from './gemini.mjs';
+import { createGeminiProvider, listGeminiFlashModels } from './gemini.mjs';
 import { createOpenAIProvider } from './openai.mjs';
+import { createChain } from './chain.mjs';
 
+// How long `auto` trusts its list of models before asking again.
+const AUTO_REFRESH_MS = 6 * 60 * 60 * 1000;
+
+/**
+ * The models to use, as a chain (llm/chain.mjs): tried in order, each one
+ * falling through to the next when it is over quota, overloaded or gone.
+ *
+ * CITYCHAT_MODEL is a comma-separated list, most preferred first:
+ *
+ *   CITYCHAT_MODEL=gemini-3.8-flash,gemini-3-flash,gemini-2.5-flash
+ *
+ * For Gemini, an entry `auto` stands for every Flash model the key can call,
+ * newest first, as the API lists them; it is the default, so a model Google
+ * adds is used without a config change and one it retires is dropped.
+ * Names may be mixed with it: `gemini-2.5-flash,auto` puts one model first.
+ */
 export function providerFromEnv(env = process.env) {
   const kind = (env.CITYCHAT_PROVIDER || 'gemini').toLowerCase();
   const temperature = env.CITYCHAT_TEMPERATURE ? Number(env.CITYCHAT_TEMPERATURE) : 0.3;
-  const timeoutMs = Number(env.CITYCHAT_TIMEOUT_MS || 60000);
+  const timeoutMs = Number(env.CITYCHAT_TIMEOUT_MS || 45000);
+  const entries = String(env.CITYCHAT_MODEL || (kind === 'gemini' ? 'auto' : ''))
+    .split(',')
+    .map((m) => m.trim())
+    .filter(Boolean);
 
   if (kind === 'gemini') {
-    return createGeminiProvider({
-      apiKey: env.CITYCHAT_API_KEY || env.GEMINI_API_KEY,
-      // An alias Google keeps pointed at its current Flash model, so the
-      // prototype does not break when a dated version is retired. Pin a
-      // specific model in production, where answers should not change under you.
-      model: env.CITYCHAT_MODEL || 'gemini-flash-latest',
-      baseUrl: env.CITYCHAT_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta',
-      temperature,
-      timeoutMs,
-    });
+    const apiKey = env.CITYCHAT_API_KEY || env.GEMINI_API_KEY;
+    if (!apiKey) throw new Error('Gemini needs CITYCHAT_API_KEY (or GEMINI_API_KEY)');
+    const baseUrl = env.CITYCHAT_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta';
+    const make = (model) => createGeminiProvider({ apiKey, model, baseUrl, temperature, timeoutMs });
+
+    const providers = new Map(); // one provider per model name, kept across refreshes
+    const get = (model) => {
+      if (!providers.has(model)) providers.set(model, make(model));
+      return providers.get(model);
+    };
+    let auto = null; // { names, at }
+    const expandAuto = async () => {
+      if (auto && Date.now() - auto.at < AUTO_REFRESH_MS) return auto.names;
+      try {
+        const names = await listGeminiFlashModels({ apiKey, baseUrl });
+        if (!names.length) throw new Error('no Flash models listed for this key');
+        auto = { names, at: Date.now() };
+        console.log(`[citychat] auto: ${names.join(', ')}`);
+      } catch (error) {
+        // Keep the last good list; with none, fall back to the alias Google
+        // keeps pointed at its current Flash model.
+        console.error(`[citychat] could not list Gemini models: ${error.message}`);
+        if (!auto) return ['gemini-flash-latest'];
+      }
+      return auto.names;
+    };
+
+    return createChain(
+      async () => {
+        const names = [];
+        for (const entry of entries) {
+          for (const name of entry === 'auto' ? await expandAuto() : [entry]) {
+            if (!names.includes(name)) names.push(name);
+          }
+        }
+        return names.map(get);
+      },
+      { label: `gemini:${entries.join(',')}` },
+    );
   }
+
   if (kind === 'openai') {
     if (!env.CITYCHAT_BASE_URL) {
       throw new Error(
         'CITYCHAT_PROVIDER=openai needs CITYCHAT_BASE_URL, e.g. http://127.0.0.1:8000/v1 for vLLM, http://127.0.0.1:11434/v1 for Ollama, https://api.openai.com/v1',
       );
     }
-    return createOpenAIProvider({
-      apiKey: env.CITYCHAT_API_KEY || '',
-      model: env.CITYCHAT_MODEL,
-      baseUrl: env.CITYCHAT_BASE_URL,
-      temperature,
-      timeoutMs,
-    });
+    if (!entries.length) throw new Error('CITYCHAT_PROVIDER=openai needs CITYCHAT_MODEL');
+    const providers = entries.map((model) =>
+      createOpenAIProvider({
+        apiKey: env.CITYCHAT_API_KEY || '',
+        model,
+        baseUrl: env.CITYCHAT_BASE_URL,
+        temperature,
+        timeoutMs,
+      }),
+    );
+    return createChain(async () => providers, { label: `openai:${entries.join(',')}` });
   }
   throw new Error(`Unknown CITYCHAT_PROVIDER "${kind}" (expected gemini or openai)`);
 }

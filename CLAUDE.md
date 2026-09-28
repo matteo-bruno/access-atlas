@@ -903,6 +903,13 @@ follows from that:
   llama.cpp, Ollama and most hosted APIs. Gemini's newer models refuse a
   follow-up that drops the thought signatures on their function calls, so
   the adapter replays the model's own parts verbatim: do not rebuild them.
+- **It is configured with a list of models, not a model** (`CITYCHAT_MODEL`,
+  default `auto`: every Flash the key can call, newest first, from the
+  API's own model list). A 429, 404, 403, 5xx or timeout hands the turn to
+  the next model, which starts it **over**: another model refuses the first
+  one's thought signatures, which is also why `gemini.mjs` replays `raw`
+  only when it carries its own model name. A failed model rests for as long
+  as the 429 said (`llm/chain.mjs`). A 400 is never retried elsewhere.
 - **The static site does not depend on it.** A build talks to the service
   only when built with `VITE_CITYCHAT=1` (always in `npm run dev`); without
   it the tab says CityChat is not enabled and sends nothing, which is what

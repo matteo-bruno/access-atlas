@@ -15,6 +15,9 @@ import { collectNumbers, unverifiedNumbers } from '../server/citychat/numbers.mj
 import { runChat } from '../server/citychat/chat.mjs';
 import { systemPrompt } from '../server/citychat/knowledge.mjs';
 import { providerFromEnv } from '../server/citychat/llm/index.mjs';
+import { createChain } from '../server/citychat/llm/chain.mjs';
+import { ProviderError } from '../server/citychat/llm/http.mjs';
+import { rankFlashModels } from '../server/citychat/llm/gemini.mjs';
 import { readDataJSON } from './lib/datafile.mjs';
 
 let failures = 0;
@@ -189,6 +192,124 @@ const base = `http://127.0.0.1:${mock.address().port}`;
   check('OpenAI-compatible: <think> is stripped from the answer', events.at(-1)?.text === 'Milano: 72,3% delle celle.', events.at(-1)?.text);
 }
 mock.close();
+
+// ── Falling back through the models ──────────────────────────────────
+// A stand-in for Gemini where each model fails its own way, as the free
+// tier does: over quota with a stated delay, retired, overloaded, fine.
+{
+  const calls = [];
+  const behaviour = {
+    'gemini-9-flash': () => [429, { error: { code: 429, status: 'RESOURCE_EXHAUSTED', details: [{ '@type': 'type.googleapis.com/google.rpc.RetryInfo', retryDelay: '37s' }] } }],
+    'gemini-8-flash': () => [404, { error: { code: 404, status: 'NOT_FOUND' } }],
+    'gemini-7-flash': () => [503, { error: { code: 503, status: 'UNAVAILABLE' } }],
+    'gemini-6-flash': () => [200, { candidates: [{ content: { role: 'model', parts: [{ text: 'Risposta.' }] } }] }],
+    'gemini-bad-flash': () => [400, { error: { code: 400, status: 'INVALID_ARGUMENT' } }],
+  };
+  const google = http.createServer(async (req, res) => {
+    for await (const _ of req);
+    res.setHeader('Content-Type', 'application/json');
+    if (req.method === 'GET') {
+      calls.push('list');
+      return res.end(JSON.stringify({ models: [
+        { name: 'models/gemini-6-flash', supportedGenerationMethods: ['generateContent'] },
+        { name: 'models/gemini-9-flash', supportedGenerationMethods: ['generateContent'] },
+        { name: 'models/gemini-9-flash-lite', supportedGenerationMethods: ['generateContent'] },
+        { name: 'models/gemini-9-flash-image', supportedGenerationMethods: ['generateContent'] },
+        { name: 'models/gemini-9-pro', supportedGenerationMethods: ['generateContent'] },
+        { name: 'models/text-embedding-9', supportedGenerationMethods: ['embedContent'] },
+      ] }));
+    }
+    const model = decodeURIComponent(req.url.match(/models\/([^:]+):/)[1]);
+    calls.push(model);
+    const [status, body] = (behaviour[model] ?? behaviour['gemini-6-flash'])();
+    res.statusCode = status;
+    res.end(JSON.stringify(body));
+  });
+  await new Promise((r) => google.listen(0, '127.0.0.1', r));
+  const url = `http://127.0.0.1:${google.address().port}`;
+  const ask = (provider) => collect(runChat({ provider, runTool, messages: [{ role: 'user', text: 'Ciao' }] }));
+
+  const chain = providerFromEnv({ GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: 'gemini-9-flash, gemini-8-flash,gemini-7-flash,gemini-6-flash' });
+  let events = await ask(chain);
+  let answer = events.at(-1);
+  check('Fallback: 429, 404 and 503 each hand the turn on', calls.join(' ') === 'gemini-9-flash gemini-8-flash gemini-7-flash gemini-6-flash', calls.join(' '));
+  check('Fallback: the page is told at each step', events.filter((e) => e.status === 'fallback').map((e) => e.to).join(',') === 'gemini:gemini-8-flash,gemini:gemini-7-flash,gemini:gemini-6-flash');
+  check('Fallback: the answer names the model that gave it', answer?.type === 'answer' && answer.model === 'gemini:gemini-6-flash', answer?.model);
+
+  calls.length = 0;
+  await ask(chain);
+  check('Fallback: failed models are set aside for the next question', calls[0] === 'gemini-6-flash' && calls.length === 1, calls.join(' '));
+
+  calls.length = 0;
+  const bad = providerFromEnv({ GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: 'gemini-bad-flash,gemini-6-flash' });
+  let threw = null;
+  try {
+    await ask(bad);
+  } catch (error) {
+    threw = error;
+  }
+  check('Fallback: a malformed request (400) is not retried on another model', threw?.status === 400 && calls.join(' ') === 'gemini-bad-flash', calls.join(' '));
+
+  calls.length = 0;
+  const quota = providerFromEnv({ GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: 'gemini-9-flash' });
+  threw = null;
+  try {
+    await ask(quota);
+  } catch (error) {
+    threw = error;
+  }
+  check('Fallback: every model over quota is reported as quota', threw?.quota === true && threw.status === 429);
+
+  calls.length = 0;
+  const auto = providerFromEnv({ GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url });
+  events = await ask(auto);
+  check('auto: lists the models once, then tries them newest first', calls.join(' ') === 'list gemini-9-flash gemini-6-flash', calls.join(' '));
+  check('auto: the chain is what the API listed, Flash only, Lite last', auto.name === 'gemini:gemini-9-flash > gemini:gemini-6-flash > gemini:gemini-9-flash-lite', auto.name);
+  google.close();
+}
+
+{
+  // A model that goes down mid-turn, after a tool call: the next one starts
+  // the turn over, never inheriting the first one's parts.
+  let aCalls = 0;
+  const seenByB = [];
+  const a = {
+    name: 'a',
+    async complete() {
+      if (aCalls++ === 0) return { text: '', toolCalls: [{ id: 'x', name: 'list_cities', args: {} }], raw: { provider: 'gemini', model: 'a', parts: ['A'] } };
+      throw new ProviderError('down', { status: 503 });
+    },
+  };
+  const b = {
+    name: 'b',
+    async complete({ messages }) {
+      seenByB.push(messages.length);
+      return { text: 'Ok.', toolCalls: [] };
+    },
+  };
+  const events = await collect(runChat({ provider: createChain(async () => [a, b]), runTool, messages: [{ role: 'user', text: 'Città?' }] }));
+  check('Fallback mid-turn: the next model starts from the question alone', seenByB[0] === 1 && events.at(-1)?.model === 'b', `${seenByB} ${events.at(-1)?.model}`);
+}
+
+{
+  // The wait a 429 states is the wait it gets; without one, a minute.
+  let t = 0;
+  const p = (name) => ({ name });
+  const chain = createChain(async () => [p('a'), p('b')], { now: () => t });
+  chain.failed(p('a'), new ProviderError('x', { status: 429, retryAfterMs: 37000 }));
+  const order = async () => (await chain.candidates()).map((c) => c.name).join('');
+  check('Cooldown: a model resting goes to the back', (await order()) === 'ba');
+  t = 36000;
+  check('Cooldown: still resting before its stated delay', (await order()) === 'ba');
+  t = 38000;
+  check('Cooldown: back in front after it', (await order()) === 'ab');
+}
+
+check(
+  'auto ranking: newest Flash first, stable before preview, Lite last, variants out',
+  JSON.stringify(rankFlashModels(['gemini-2.5-flash', 'gemini-3-flash-preview', 'gemini-3-flash', 'gemini-2.5-flash-lite', 'gemini-flash-latest', 'gemini-2.5-flash-image', 'gemini-2.5-pro', 'gemini-2.0-flash-001'])) ===
+    JSON.stringify(['gemini-3-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash', 'gemini-2.5-flash-lite']),
+);
 
 check('Every tool has a description and an object schema', TOOL_DEFINITIONS.every((t) => t.description && t.parameters?.type === 'object'));
 

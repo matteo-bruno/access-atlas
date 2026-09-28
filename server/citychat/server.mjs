@@ -45,6 +45,7 @@ const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = Number(env.CITYCHAT_RATE_MAX || 30);
 const MAX_CONCURRENT = Number(env.CITYCHAT_MAX_CONCURRENT || 4);
 
+// A chain of models, tried in order (llm/chain.mjs).
 const provider = providerFromEnv(env);
 const runTool = createTools(createDataStore(DATA_DIR));
 
@@ -134,6 +135,8 @@ async function handleChat(req, res) {
   const tools = [];
   let usage = null;
   let outcome = 'ok';
+  let answeredBy = null;
+  let fallbacks = [];
   // NDJSON: the content type is what the page checks first, because under the
   // SPA fallback a wrong URL answers index.html with a 200.
   res.writeHead(200, {
@@ -152,8 +155,11 @@ async function handleChat(req, res) {
       if (event.type === 'tool') tools.push(event.name);
       if (event.type === 'answer') {
         usage = event.usage;
+        answeredBy = event.model;
+        fallbacks = event.fallbacks ?? [];
         if (event.unverified.length) outcome = 'unverified';
         delete event.usage;
+        delete event.fallbacks;
       }
       if (event.type === 'error') outcome = event.code;
       if (closed) break;
@@ -161,15 +167,19 @@ async function handleChat(req, res) {
     }
   } catch (error) {
     outcome = error instanceof ProviderError ? `provider:${error.status ?? 'error'}` : 'error';
+    if (error.failures) fallbacks = error.failures;
     console.error('[citychat]', error.message, error.detail ?? '');
-    if (!closed) send({ type: 'error', code: error instanceof ProviderError ? 'provider' : 'server' });
+    // "Every model is over quota" is its own message: it passes if you wait.
+    const code = error.quota ? 'quota' : error instanceof ProviderError ? 'provider' : 'server';
+    if (!closed) send({ type: 'error', code });
   } finally {
     inFlight--;
     res.end();
     console.log(
       JSON.stringify({
         t: new Date().toISOString(),
-        provider: provider.name,
+        model: answeredBy,
+        fallbacks: fallbacks.map((f) => `${f.model}:${f.status ?? 'error'}`),
         persona: input.persona ?? null,
         city: input.city ?? null,
         turns: input.messages.length,
@@ -198,6 +208,9 @@ const server = http.createServer(async (req, res) => {
     return res.end();
   }
   if (route === '/health' && req.method === 'GET') {
+    // Resolving the chain here is what turns `auto` into model names (cached
+    // for hours), so the page can say which model it will be talking to.
+    await provider.candidates().catch(() => null);
     return sendJSON(res, 200, { ok: true, provider: provider.name });
   }
   if (route === '' && req.method === 'POST') return handleChat(req, res);

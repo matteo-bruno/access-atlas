@@ -89,7 +89,11 @@ export default function CityChat() {
         signal: controller.signal,
         onEvent: (event) => {
           if (event.type === 'tool') setPending((p) => p && { ...p, tools: [...p.tools, event] });
-          if (event.type === 'status') setPending((p) => p && { ...p, checking: true });
+          if (event.type === 'status' && event.status === 'fallback') {
+            // The turn starts over on the next model: what the last one
+            // looked up is not what this answer will be built from.
+            setPending((p) => p && { tools: [], checking: false, switching: modelName(event.to) });
+          } else if (event.type === 'status') setPending((p) => p && { ...p, checking: true });
         },
       });
       setMessages((m) => [
@@ -100,6 +104,7 @@ export default function CityChat() {
           links: answer.links ?? [],
           tools: answer.tools ?? [],
           unverified: answer.unverified ?? [],
+          model: answer.model ? modelName(answer.model) : null,
         },
       ]);
     } catch (error) {
@@ -228,6 +233,7 @@ export default function CityChat() {
                           </div>
                         )}
                         {m.tools.length > 0 && <ToolTrace tools={m.tools} cityName={cityName} />}
+                        {m.model && <div className="aa-chat__model">{t('citychat.answeredBy', { model: m.model })}</div>}
                       </div>
                     )}
                   </div>
@@ -239,7 +245,11 @@ export default function CityChat() {
                   <div className="aa-chat__who">{t('citychat.assistant')}</div>
                   <div className="aa-chat__bubble aa-chat__bubble--pending">
                     <span className="aa-chat__dots" aria-hidden="true" />
-                    {pending.checking ? t('citychat.checking') : t('citychat.working')}
+                    {pending.checking
+                      ? t('citychat.checking')
+                      : pending.switching
+                        ? t('citychat.switching', { model: pending.switching })
+                        : t('citychat.working')}
                     {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
                   </div>
                 </div>
@@ -289,7 +299,7 @@ export default function CityChat() {
 
             <div className="aa-chat__foot">
               <span className={`aa-chat__status aa-chat__status--${service.status}`}>
-                {t(`citychat.status.${service.status}`, { provider: service.provider })}
+                {t(`citychat.status.${service.status}`, { provider: describeChain(service.provider, t) })}
               </span>
               <p className="aa-chat__disclaimer">{t('citychat.disclaimer')}</p>
             </div>
@@ -300,6 +310,18 @@ export default function CityChat() {
       <Footer />
     </div>
   );
+}
+
+/** "gemini:gemini-2.5-flash" or "openai:qwen3@host" → the model's own name. */
+function modelName(name) {
+  return String(name ?? '').replace(/^[a-z]+:/, '').replace(/@.*$/, '');
+}
+
+/** The service's chain of models: the first, and how many stand behind it. */
+function describeChain(name, t) {
+  const models = String(name ?? '').split(' > ').filter(Boolean);
+  if (models.length <= 1) return modelName(models[0] ?? name);
+  return `${modelName(models[0])} ${t('citychat.status.reserve', { count: models.length - 1 })}`;
 }
 
 /** Which data an answer was computed from, as the tools were called. */

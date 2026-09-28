@@ -6,10 +6,11 @@
 // signatures newer Gemini models require to be sent back with each function
 // call: they live on the model's own parts, which this adapter replays as-is.
 
-import { ProviderError, postJSON } from './http.mjs';
+import { ProviderError, getJSON, postJSON } from './http.mjs';
 
 export function createGeminiProvider({ apiKey, model, baseUrl, temperature, timeoutMs }) {
   if (!apiKey) throw new Error('Gemini needs CITYCHAT_API_KEY (or GEMINI_API_KEY)');
+  const own = (raw) => raw?.provider === 'gemini' && raw.model === model;
 
   const url = `${baseUrl.replace(/\/$/, '')}/models/${encodeURIComponent(model)}:generateContent`;
 
@@ -17,7 +18,7 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, time
     messages.map((m) => {
       if (m.role === 'user') return { role: 'user', parts: [{ text: m.text }] };
       if (m.role === 'assistant') {
-        if (m.raw?.provider === 'gemini') return { role: 'model', parts: m.raw.parts };
+        if (own(m.raw)) return { role: 'model', parts: m.raw.parts };
         const parts = [];
         if (m.text) parts.push({ text: m.text });
         for (const call of m.toolCalls ?? []) parts.push({ functionCall: { name: call.name, args: call.args } });
@@ -75,13 +76,61 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, time
       return {
         text,
         toolCalls,
-        raw: { provider: 'gemini', parts },
+        raw: { provider: 'gemini', model, parts },
         usage: data.usageMetadata
           ? { input: data.usageMetadata.promptTokenCount, output: data.usageMetadata.candidatesTokenCount }
           : null,
       };
     },
   };
+}
+
+/**
+ * The Flash models this key can call, newest first: what `CITYCHAT_MODEL=auto`
+ * expands to. Asked of the API rather than written down, because Google
+ * renames and retires models faster than this file would be edited.
+ */
+export async function listGeminiFlashModels({ apiKey, baseUrl, timeoutMs = 15000 }) {
+  const names = [];
+  let pageToken = '';
+  do {
+    const q = new URLSearchParams({ pageSize: '1000', ...(pageToken ? { pageToken } : {}) });
+    const data = await getJSON(`${baseUrl.replace(/\/$/, '')}/models?${q}`, {
+      headers: { 'x-goog-api-key': apiKey },
+      timeoutMs,
+      label: 'Gemini model list',
+    });
+    for (const m of data.models ?? []) {
+      if ((m.supportedGenerationMethods ?? []).includes('generateContent')) {
+        names.push(String(m.name).replace(/^models\//, ''));
+      }
+    }
+    pageToken = data.nextPageToken ?? '';
+  } while (pageToken);
+  return rankFlashModels(names);
+}
+
+/**
+ * Plain Flash chat models, best first: newest version first; at one version
+ * the stable release before a preview; every full Flash before any Flash-Lite,
+ * which is the last resort rather than the next step down. Aliases
+ * (`-latest`), dated snapshots and the image, audio, TTS and live variants
+ * are left out: they are either duplicates or not chat models.
+ */
+export function rankFlashModels(names) {
+  const re = /^gemini-(\d+(?:\.\d+)?)-flash(-lite)?(?:-(preview)(?:-[a-z0-9-]*)?)?$/;
+  const seen = new Set();
+  const ranked = [];
+  for (const name of names) {
+    const m = re.exec(name);
+    if (!m || /image|audio|tts|live|thinking|exp/.test(name) || seen.has(name)) continue;
+    // A dated preview ("-preview-05-20") is a snapshot of the undated one.
+    if (m[3] && /-preview-/.test(name) && names.includes(name.replace(/-preview-.*/, '-preview'))) continue;
+    seen.add(name);
+    ranked.push({ name, version: Number(m[1]), lite: !!m[2], preview: !!m[3] });
+  }
+  ranked.sort((a, b) => a.lite - b.lite || b.version - a.version || a.preview - b.preview || a.name.localeCompare(b.name));
+  return ranked.map((r) => r.name);
 }
 
 /**

@@ -9,6 +9,8 @@
 import { systemPrompt } from './knowledge.mjs';
 import { TOOL_DEFINITIONS } from './tools.mjs';
 import { collectNumbers, unverifiedNumbers } from './numbers.mjs';
+import { asChain } from './llm/chain.mjs';
+import { ProviderError } from './llm/http.mjs';
 
 const MAX_STEPS = 8;
 const MAX_LINKS = 6;
@@ -18,8 +20,15 @@ const CORRECTION = (bad) =>
   'Call a tool that computes them, or rewrite the answer without them. Reply with the corrected answer only.';
 
 /**
+ * One turn, on the first model in the chain that answers.
+ *
+ * A model that fails in a way the next one might not (over quota, down,
+ * retired: ProviderError.retryable) hands the turn over, and the turn starts
+ * again on it. The page is told with a `fallback` event, so it can clear the
+ * tool calls it was showing; the answer says which model gave it.
+ *
  * @param {object} p
- * @param {{ complete: Function }} p.provider
+ * @param {object} p.provider  a chain (llm/chain.mjs) or a single provider
  * @param {(name: string, args: object) => Promise<object>} p.runTool
  * @param {{ role: 'user'|'assistant', text: string }[]} p.messages  the visible conversation, ending with the user's question
  * @param {string} [p.persona]
@@ -27,7 +36,38 @@ const CORRECTION = (bad) =>
  * @param {string} [p.lang]
  * @returns {AsyncGenerator<object>}  events: tool, status, answer
  */
-export async function* runChat({ provider, runTool, messages, persona, city, lang }) {
+export async function* runChat({ provider, ...turn }) {
+  const chain = asChain(provider);
+  const candidates = await chain.candidates();
+  const failures = [];
+  for (let i = 0; i < candidates.length; i++) {
+    const model = candidates[i];
+    try {
+      for await (const event of runTurn({ ...turn, provider: model })) {
+        yield event.type === 'answer' ? { ...event, model: model.name, fallbacks: failures } : event;
+      }
+      chain.succeeded(model);
+      return;
+    } catch (error) {
+      if (!(error instanceof ProviderError) || !error.retryable) throw error;
+      chain.failed(model, error);
+      failures.push({ model: model.name, status: error.status ?? null });
+      console.error(`[citychat] ${model.name} failed (${error.message})${i + 1 < candidates.length ? `, trying ${candidates[i + 1].name}` : ''}`);
+      if (i + 1 < candidates.length) yield { type: 'status', status: 'fallback', from: model.name, to: candidates[i + 1].name };
+    }
+  }
+  // Every model refused. Over quota everywhere is worth saying as such: it
+  // passes on its own, and the reader should wait rather than rephrase.
+  const quota = failures.length > 0 && failures.every((f) => f.status === 429);
+  throw Object.assign(new ProviderError(`every model failed: ${failures.map((f) => `${f.model} ${f.status ?? 'error'}`).join(', ')}`, { status: quota ? 429 : 503 }), {
+    exhausted: true,
+    quota,
+    failures,
+  });
+}
+
+/** One turn on one model. */
+async function* runTurn({ provider, runTool, messages, persona, city, lang }) {
   const system = systemPrompt({ persona, city, lang });
   const convo = messages.map((m) => ({ role: m.role, text: m.text }));
 

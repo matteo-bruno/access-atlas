@@ -49,11 +49,11 @@ Everything is environment variables; no code changes to switch.
 | Variable | Default | |
 | --- | --- | --- |
 | `CITYCHAT_PROVIDER` | `gemini` | `gemini` or `openai` (any OpenAI-compatible API) |
-| `CITYCHAT_MODEL` | `gemini-flash-latest` | model name as the provider knows it |
+| `CITYCHAT_MODEL` | `auto` (Gemini) | comma-separated models, most preferred first; see [Fallback](#fallback-when-a-model-will-not-answer) |
 | `CITYCHAT_API_KEY` | | also read from `GEMINI_API_KEY` |
 | `CITYCHAT_BASE_URL` | Gemini's | required for `openai` |
 | `CITYCHAT_TEMPERATURE` | `0.3` | |
-| `CITYCHAT_TIMEOUT_MS` | `60000` | per model call |
+| `CITYCHAT_TIMEOUT_MS` | `45000` | per model call; a timeout moves on to the next model |
 | `CITYCHAT_PORT` / `CITYCHAT_HOST` | `3100` / `127.0.0.1` | |
 | `CITYCHAT_DATA_DIR` | `public/data` | the data to answer from |
 | `CITYCHAT_RATE_MAX` | `30` | questions per IP per 10 minutes |
@@ -64,8 +64,11 @@ Everything is environment variables; no code changes to switch.
 Examples:
 
 ```bash
-# Gemini (default). Pin a dated model in production so answers do not change under you.
-CITYCHAT_MODEL=gemini-2.5-flash GEMINI_API_KEY=… npm run citychat
+# Gemini (default): every Flash model the key can call, newest first
+GEMINI_API_KEY=… npm run citychat
+
+# Gemini with a fixed order, e.g. to keep answers stable in production
+CITYCHAT_MODEL=gemini-3.8-flash,gemini-3-flash,gemini-2.5-flash GEMINI_API_KEY=… npm run citychat
 
 # A local model on vLLM
 vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 --enable-auto-tool-choice --tool-call-parser hermes
@@ -92,6 +95,45 @@ shows under each one.
 
 A third API protocol (Anthropic's, say) is one more file in `llm/` implementing
 `complete({ system, messages, tools })`; `llm/index.mjs` describes the format.
+
+## Fallback: when a model will not answer
+
+The free tier of Gemini runs out per model and per minute, models get
+overloaded, and names are retired. So `CITYCHAT_MODEL` is a list, and a turn
+that fails on one model is run again on the next (`llm/chain.mjs`):
+
+| The model answers | What happens |
+| --- | --- |
+| 429 (quota) | next model; this one rests for the delay Google states (`retryDelay`), else a minute |
+| 404 (no such model) | next model; rests six hours |
+| 403 (not open to this key or tier) | next model; rests thirty minutes |
+| 5xx, timeout, unreadable answer | next model; rests thirty seconds |
+| 400 (malformed request) | no fallback: every model would refuse the same request |
+
+A resting model goes to the back of the list rather than out of it, so when
+everything is resting the chain is still tried in order. If every model
+fails, the page says so, and says "over quota, try again in a minute" when
+that is the reason for all of them.
+
+The turn starts over on the next model rather than continuing: a Gemini
+turn carries that model's thought signatures, which another model refuses.
+The tools are deterministic and cheap, so the cost is a second or two. The
+page clears the tool calls it was showing and says which model is taking
+over; every answer names the model that gave it, and the log line records
+the fallbacks.
+
+**`auto`** asks the API which models the key can call (`GET /models`, cached
+for six hours) and keeps the plain Flash ones: newest version first, a stable
+release before its preview, every full Flash before any Flash-Lite. Aliases,
+dated snapshots and the image, audio, TTS and live variants are left out. It
+can be mixed with names: `gemini-2.5-flash,auto` tries that one first and
+then everything else. If the list cannot be fetched, the last good one is
+used, or Google's `gemini-flash-latest` alias if there never was one.
+
+The same list works for `CITYCHAT_PROVIDER=openai`, over the models one
+server offers (`qwen3:14b,qwen3:8b` on Ollama). Falling back from Gemini to a
+local model would need a list that mixes providers; the chain supports it,
+the environment variables do not yet.
 
 ## What the model can call
 

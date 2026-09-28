@@ -94,7 +94,7 @@ export async function askCityChat({ messages, persona, city, lang, signal, onEve
       } catch {
         continue;
       }
-      if (event.type === 'error') throw new CityChatError(event.code === 'too_many_steps' ? 'too_many_steps' : 'provider');
+      if (event.type === 'error') throw new CityChatError(['too_many_steps', 'quota'].includes(event.code) ? event.code : 'provider');
       if (event.type === 'answer') answer = event;
       onEvent?.(event);
     }
