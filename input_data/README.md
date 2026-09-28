@@ -1,27 +1,40 @@
 # Source data staging
 
-Drop upstream data files here to feed the Atlas's import scripts. Nothing
-in this folder is served by the site directly — the scripts under
-`../scripts/` read from here and write compressed, ready-to-serve copies
-under `../public/data/`.
+Drop each platform's export here, exactly as the platform hands it over,
+and run `npm run update:data`. Nothing in this folder is served by the
+site: the importers read from here and write compact, ready-to-serve files
+under `../public/data/cities/<city>/`.
+
+```
+input_data/
+  15mincity/    Zurich.geojson
+  citychrone/   Zurich.zip
+  pov/          zurich_pov.zip
+  cdi/          zurich_cdi.zip
+```
+
+The file name gives the city: `Zurich.geojson`, `Zurich.zip`,
+`zurich_pov.zip` and `zurich_cdi.zip` are all `zurich` (the `_pov` / `_cdi`
+suffix is dropped, accents and spaces become a slug: `New York` →
+`new-york`). A zip can also be given unpacked, as a folder of the same name.
 
 ## Updating: import only what changed
 
 ```
-npm run update:data                  # every platform with an importer
-npm run update:data -- --15mincity   # only the platforms named
+npm run update:data                  # every platform
+npm run update:data -- --pov --cdi   # only the platforms named (--15mincity, --citychrone, --pov, --cdi)
 npm run update:data -- --dry-run     # list what would be imported, change nothing
 npm run update:data -- --force       # re-import every file, changed or not
 npm run update:data -- --baseline    # record the files as imported, import nothing
 ```
 
-`update:data` hashes every file here and compares it with
-`manifest.json`, which records what was imported: each file's SHA-256 and
-a fingerprint of the importer that read it. A file that is new or whose
-content changed is imported, one city per importer run, so a failure names
-its file. Then `test:data` runs, and only if it passes is the manifest
-updated. A failed or rejected run leaves the files looking unimported, and
-the next run offers them again.
+`update:data` hashes every source here and compares it with
+`manifest.json`, which records what was imported: each source's SHA-256
+and a fingerprint of the importer that read it. A source that is new or
+whose content changed is imported on its own, so a failure names its file.
+Then `test:data` runs, and only if it passes is the manifest updated. A
+failed or rejected run leaves the files looking unimported, and the next
+run offers them again.
 
 - **Content, not dates.** Copying or re-downloading a file changes its
   date, not its hash, and does not trigger an import.
@@ -37,66 +50,107 @@ The source folders are ignored by git (too large); `manifest.json` is
 committed alongside the data it describes, so `git log input_data/manifest.json`
 is the history of what was imported and when.
 
-Only 15minCity has an importer so far. P.O.V., CDI and CityChrone are
-recognised (`--pov` says there is no importer yet), and files dropped in
-their folders are reported as skipped rather than ignored.
-
-## 15minCity
-
-One `*.geojson` per city, in the harmonised full-name schema (properties
-like `education_foot`, `proximity_time_bicycle`, `centroid_lon`,
-`population`). The filename becomes the city id: `Acilia.geojson` →
-`acilia`, `New York.geojson` → `new-york`.
+One source by hand, with the options `update:data` does not pass:
 
 ```
-input_data/
-  15mincity/
-    Acilia.geojson
-    Rome.geojson
-    …
+npm run import -- pov input_data/pov/zurich_pov.zip
+npm run import -- cdi path/to/zurich/ --city zurich --dry-run
+npm run import -- 15mincity Acilia.geojson --name Acilia --name-it Acilia --country IT
 ```
 
-Then:
+## What an import does
+
+Every platform publishes on the standard H3 grid (resolution 9), and every
+import proves it: each cell's centre must be within 10 m of an H3 cell
+centre **and** its outline must match that cell's own boundary. Centres
+alone cannot tell r9 from r10, because a cell's centre is also its central
+child's. An export that is not on the grid is refused, not forced onto it.
+
+A city is then rebuilt from what is already published plus the new layer:
+one grid (every cell any layer covers, sorted by H3 index) and one file per
+layer. Importing P.O.V. for a city that has 15minCity keeps 15minCity;
+re-importing a layer replaces that layer only. Files whose content did not
+change are not rewritten, so re-importing the same export changes nothing.
+
+The catalogue (`public/data/index.json`), the platform's world-map marker
+(`<platform>/coverage.geojson.gz`) and, for P.O.V. and CDI, the compare
+view's row (`<platform>/summary.json.gz`) are updated in the same run.
+Afterwards `test:data` tells you if a count written in the code
+(`src/data/platforms.js`, `src/data/home.js`) needs the new value.
+
+### Where a city is
+
+The exports say nothing about it, so a new city's country is worked out
+from its own population-weighted centre, from Natural Earth's boundaries
+and localised names (`IT`, `Italy` / `Italia`). A centre is not always
+inside its country's drawn outline at this generalisation (Stockholm's sits
+3.9 km off Sweden's coast), so the lookup falls back to the nearest coast
+within 25 km and says so; past that it leaves the fields blank and warns.
+
+A city already in the catalogue keeps its names and region, because some
+were written by hand. Override when either is wrong:
 
 ```
-npm run import:fifteen                 # process every file
-npm run import:fifteen -- --only rome  # subset by slug
-npm run import:fifteen -- --dry-run    # show what would be written
+npm run import -- 15mincity Paris.geojson --country FR --region France --region-it Francia --name-it Parigi
 ```
 
-The source files say nothing about where a city is, so the importer works
-it out from the city's own weighted centroid — `IT` for the search
-result, `Italy` / `Italia` for the city header, from Natural Earth's own
-localised country names. Nothing to pass.
+## The four formats
 
-A city centroid is not always inside its country's drawn outline at this
-generalisation (Stockholm's sits 3.9 km off Sweden's coast, on an
-archipelago 1:50m does not resolve), so the lookup falls back to the
-nearest coast within 25 km and says so in the output. Past that it leaves
-the fields blank and warns, rather than assigning an ocean point to
-whichever country is closest.
+### 15minCity: `15mincity/<City>.geojson`
 
-Override per run when it is wrong:
+One FeatureCollection per city in the harmonised full-name schema:
+`<category>_<mode>` minutes for nine categories × `foot` / `bicycle`
+(`education_foot`, …), `population`, and optionally `centroid_lon` /
+`centroid_lat`. Minutes are kept to 1 decimal; the `99999` "unreachable"
+sentinel is kept as is. Pipeline fields (`snapped_id`, `closest_waypoint`,
+`internal_id`, `component`, `radius`) are dropped.
+
+`proximity_time_<mode>` is not read: some exports store it in seconds. It
+is the mean of the nine categories, and since that is exactly derivable it
+is not stored either; the browser computes it. The cartogram is the Atlas's
+own (area ∝ the grid's population, full hexagon at the median over the
+layer's cells).
+
+### CityChrone: `citychrone/<City>.zip`
+
+The platform's hourly files, each one plain or zipped on its own:
 
 ```
-npm run import:fifteen -- --country FR --region France --region-it Francia
+Zurich/hexcover00.zip … hexcover23.zip   (or hexcoverHH.json)
+Zurich/times00.zip    … times23.zip      (or timesHH.npy)
 ```
 
-`region` and `regionIt` are re-derived on every run and deliberately not
-preserved — that is what stops a wrong value outliving its fix. The
-city's own name in Italian (`nameIt`) *is* preserved, because nothing can
-derive it.
+Every hour must be there, with the same cells in the same order (`new_id`,
+`coord` checked hour by hour), and every matrix must be `uint8`, `n × n`.
+All 24 hours of scores go into one layer file of a few hundred kB, so the
+hour selector is instant. The matrices stay one file per hour, fetched only
+for isochrones, with rows and columns re-ordered to grid order: lossless,
+and 2 to 3.5 times smaller.
 
-The script:
+### P.O.V.: `pov/<city>_pov.zip`
 
-- compresses each file (rounds coordinates to 5 decimals, rounds minute
-  values to 1 decimal, drops pipeline debris like `snapped_id`);
-- recomputes `proximity_time_foot` and `proximity_time_bicycle` as the
-  mean of the nine per-category minute values, so cities exported with a
-  seconds-scale sum still land on the ramp's expected minutes scale;
-- derives a population-scaled cartogram companion (`<city>.cartogram.geojson`);
-- upserts the city into `public/data/index.json` and the coverage marker
-  into `public/data/fifteen/coverage.geojson`.
+The two files the platform exports:
 
-Rerunning the script on the same input overwrites the published city
-cleanly; existing cities the source does not name are left alone.
+```
+zurich.geojson             true hexagons
+zurich_cartogram.geojson   the platform's cartogram (EPSG:3857 metres)
+```
+
+both with `hexagon_id`, `population`, `proximity`, `opportunity` and
+`cell_type`. The hexagons give each cell its H3 index; the cartogram is
+kept as the platform drew it. The zone thresholds are recomputed as
+population-weighted medians, and the import stops if classifying any cell
+against them does not reproduce its `cell_type`.
+
+### Car Dependency Index: `cdi/<city>_cdi.zip`
+
+The city's folder as the CDI repository publishes it:
+
+```
+zurich/cartogram.geojson   values (CDI, o_score_pt, o_score_car, population) and the cartogram
+zurich/hexes.geojson       true hexagons (any hexes*.geojson)
+zurich/cdi.csv             the same values again, not read
+```
+
+Cells with no CDI are left out, as the upstream viewer does. A CDI outside
+[−1, +1] stops the import.

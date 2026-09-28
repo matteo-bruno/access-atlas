@@ -22,8 +22,9 @@ Two consequences worth internalising before editing copy:
   than show a coverage count it cannot support. A generated city mesh labels
   itself as generated (`city.seeded`).
 
-`src/data/home.js` regenerates its figures from `npm run build:data`, which
-prints the counts to paste in. Don't hand-edit them.
+The counts in `src/data/home.js` and `cityCount` in `src/data/platforms.js`
+are counted from the catalogue by `npm run test:data`, which fails with the
+value to write in when an import changes one. Don't edit them otherwise.
 
 ## The data layer
 
@@ -32,46 +33,73 @@ measurements or seed data**, per city, per platform.
 
 ```
 public/data/index.json        catalogue — what is actually published
+public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
 src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
+src/data/grid.js              grid + layer files → the union mesh the viewer draws
 src/data/adapters.js          published files → the shapes the UI consumes
 src/data/useAtlasData.js      React bindings (coverage, profile, city pages)
 src/data/useAtlasView.js      React bindings for the combined viewer
 src/workers/useCityMesh.js    published-first, seed fallback
-scripts/build-atlas.mjs       offline: joins platform files → atlas/ union meshes
+scripts/import-data.mjs       one platform export → its city (importers/ per platform)
+scripts/update-data.mjs       whatever changed in input_data/, per input_data/manifest.json
 ```
 
-A city can be published on **two geometries**. The values sit on one — a
-population-scaled cartogram for P.O.V. and Car Dependency, true hexagons for
-15minCity and the atlas union meshes — and a companion file carries the other
-for the same cells, joined by the index it states (`{ "i": n }`) rather than
-by position. The catalogue says which is which (`geometry`, `geoDataset`,
-`cartograms`), and the viewer offers the switch exactly where a companion
-exists. `withGeometry` in `adapters.js` re-draws the loaded features onto the
-other geometry, keeping each feature's id so highlights and feature-state do
-not notice.
+**A city is one grid and one file per layer, and nothing is stored twice.**
+Every platform publishes on the standard H3 grid, so a cell's polygon is not
+data: the grid file holds only the H3 indices and a population per cell, and
+`grid.js` draws the hexagons in the browser (h3-js, imported on demand by the
+city view only). Each layer file holds that layer's values as columns keyed
+to grid positions, and is fetched the first time the layer is opened —
+`useAtlasMesh` loads the grid, then merges each layer in as it arrives, so the
+page still receives one FeatureCollection with a layer's values as
+properties and its paint expressions never noticed the change. The format,
+field by field, is in `public/data/README.md`; the reasons are at the top of
+`scripts/lib/bundle.mjs`.
 
-**Geographic geometry is derived, and checked.** Every published cell sits on
-the standard H3 grid and the cartogram preserves its centroid, so the hexagon
-is recoverable — and `build-data.mjs` checks the derived hexagons against the
-ones CDI publishes in `hexes.geojson`, which they reproduce exactly.
+The grid is every cell any layer covers, **sorted by H3 index**. That makes
+it deterministic (the same layers always give the same bytes, so a re-import
+of the same export writes nothing) and makes a layer's row order a property
+of its cells alone, so adding a layer to a city never reorders another
+layer's rows. CityChrone depends on that: its travel-time matrices are stored
+with rows and columns in the same order, and a layer row number indexes both.
+In H3 order neighbouring cells are neighbouring rows, which is also why the
+matrices compress 2 to 3.5 times better than in the export's order.
+
+A cell's **context population** — the Population layer, the city summary,
+the derived cartograms — is the grid's: P.O.V. and Car Dependency share one
+population model and win where they cover a cell, then 15minCity, then
+CityChrone. Each layer keeps its own population too, for its own figures.
+
+**Two geometries, one of them a companion.** The union mesh is drawn on the
+true hexagons, and every layer has a cartogram to switch to, built from its
+layer file: `layerCartogram` produces a `FeatureCollection` of
+`{ "i": <grid position> }` and `withGeometry` in `adapters.js` re-draws the
+loaded features onto it, keeping each feature's id so highlights and
+feature-state do not notice.
 
 **Cartograms come from two places, and the catalogue says which.** P.O.V. and
-Car Dependency publish theirs. 15minCity and CityChrone publish none, so
-`build-atlas.mjs` derives one by a rule it states: a cell keeps its centre and
-its shape, and its **area is proportional to its resident population**,
-reaching the full hexagon at the city's median cell population. The median is
-not arbitrary — it is where the rule best reproduces the two published
-cartograms, which it matches to ~12 m on a ~200 m cell, and `build-atlas.mjs`
-fails if that drifts past 25 m. `cartogramSource` / `cartogramSources` mark a
-cartogram as `published` or `derived`, and the UI says which one is on screen.
-No layer reuses another's: even the two published ones disagree by up to 9.6 m
-on cells they share, on a 9–201 m range.
+Car Dependency publish theirs, and those are **not** scaled hexagons — up to
+~10 m off one on small cells — so they are kept as the platform drew them:
+integer vertex offsets from the cell's H3 centre, in 1e-5°, the precision they
+were always published at. Encoding them as a scale per cell was measured and
+rejected for that reason. 15minCity and CityChrone publish none, so the Atlas
+derives one by a rule it states: a cell keeps its centre and its shape, and
+its **area is proportional to its population**, reaching the full hexagon at
+the median over the layer's cells. The population is the **grid's**, not the
+layer's own: 15minCity's population model puts Milan's derived cartogram
+38 m from the published ones, the grid's puts it at ~13 m, and the point is
+that a cell of a given population is the same size whichever layer is on
+screen. `test:data` fails if the rule drifts past 25 m from a published
+cartogram of the same city. `cartogramSources` marks each as `published` or
+`derived`, and the UI says which one is on screen. No layer reuses another's:
+even the two published ones disagree by up to 9.6 m on cells they share.
 
-Per-platform **summary files** (`<platform>/summary.json`, declared as
+Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at
-`/platforms/:slug/compare`. They are written by `build:data` from the features
-it just published, so the table and the city pages cannot disagree.
+`/platforms/:slug/compare`, and the **coverage files** one marker per city for
+the world maps. The importer writes both from the values it is publishing, so
+the table and the city pages cannot disagree.
 
 Anything the catalogue does not list falls back to generated seed data
 (`src/data/cities.js`, `src/data/mesh.js`), so the site works on a fresh
@@ -80,37 +108,30 @@ published", throwing means "this provider failed", and both fall back. A future
 scenario backend is a second provider installed with `setDataProvider()`; no
 caller changes.
 
-Adding a city is a file copy plus a catalogue entry. That is the whole design.
+Adding a city is dropping its exports in `input_data/` and running
+`npm run update:data`. That is the whole design.
 
 ## The grids — read this before touching the combined viewer
 
-**Target state: one standard H3 grid per city, shared by every platform.**
-Harmonisation happens **offline**, in the export pipeline, not in the app.
-The app's job is to render whatever grid the catalogue describes — it does not
-reproject, resample or reconcile anything.
+**One standard H3 grid per city, shared by every platform — and every
+published city is on it.** Harmonisation happens **offline**, in the
+importers, not in the app. The app renders whatever grid the catalogue
+describes — it does not reproject, resample or reconcile anything.
 
-**Milan is harmonised, and the combined viewer ships.** Verified by H3 index
-(not centroid rounding — `scripts/build-atlas.mjs` refuses any centroid more
-than 10 m off an H3 r9 cell centre): all four platforms sit on one grid, with
-nested masks — 15minCity covers 7,498 cells (the whole metro), Car Dependency
-and CityChrone an *identical* 1,741, P.O.V. a strict subset at 1,636.
-`build-atlas.mjs` joins them into `public/data/atlas/milan.geojson` (7,637
-union cells) and `/atlas/:cityId` repaints that one mesh per layer. Rerun
-`npm run build:atlas` after changing any Milan file — the union is derived,
-and `test:data` fails if it drifts from the per-platform files.
+Every import proves the grid rather than assuming it (see "The grid is
+detected" below), and a mask is whatever each platform covers: in Milan
+15minCity covers 7,498 cells (the whole metro), Car Dependency and CityChrone
+an *identical* 1,741, P.O.V. a strict subset at 1,636, and the grid is their
+7,637-cell union. Rome's P.O.V. (8,089) and Car Dependency (11,409) turned out
+to be on the same grid too — 99.8% of P.O.V.'s cells sit on a CDI cell — so
+every city now opens in the combined viewer with its layers on one mesh. The
+retired legacy 15minCity Rome export was a different tiling (~8% overlap,
+i.e. chance) and is exactly what the importer would now refuse.
 
-Rome is the legacy state and shows what it costs. Measured cell by cell:
-
-| Platform | Rome cells | Grid |
-| --- | --- | --- |
-| P.O.V. | 8,089 | same H3 grid as CDI — 99.8% of its cells sit on a CDI cell |
-| Car Dependency | 11,409 | same grid, wider urban mask |
-| 15minCity (retired) | 11,879 | **a different tiling** — ~8% overlap, i.e. chance |
-
-**Both paths live in `src/pages/AtlasCityPage.jsx` from day one.** A city with
-an `atlas` catalogue entry loads one union mesh and repaints; a city without
-one swaps per-platform meshes. Do not assume one city implies one mesh; ask
-the catalogue.
+`src/pages/AtlasCityPage.jsx` still carries the older path — a city with
+per-platform datasets and no `atlas` entry swaps meshes instead of repainting
+one — and the catalogue decides which applies. Nothing published takes it
+today.
 
 **There is one city view, and it is that page.** The per-platform city pages
 were removed: everything they did, the combined viewer does on any published
@@ -120,17 +141,10 @@ redirects to `/atlas/:cityId?layer=<platform>` — and `/platforms/:slug/compare
 is untouched. The cell-level scatter went with those pages; the compare
 view's city-level scatter did not.
 
-A practical check when new data arrives: map both platforms' cell centroids to
-H3 at the claimed resolution and compare the sets (`build-atlas.mjs` does this
-with a hard 10 m tolerance). Above ~99% overlap of the tighter mask means one
-grid; single digits means two.
-
-**The `cell` field is per-city and must stay honest.** `h3Resolution` is
-`null` for meshes we cannot confirm are H3 — the legacy 15minCity Rome data is
-one, and its map caption states the measured cell size (~201 m) without naming
-a grid. Cities exported onto the standard H3 grid should set the resolution.
-The build script no longer infers it from cell radius; an earlier version did,
-and was wrong.
+**The `cell` field is per-city and must stay honest.** `h3Resolution` is the
+resolution the importer proved, and `cellRadiusM` is measured from the grid's
+own hexagons. An earlier build script inferred the resolution from cell
+radius, and was wrong.
 
 ## Type
 
@@ -199,8 +213,8 @@ nowhere on the legend. The isochrone ramp does the same past 120.
   "how many more places a car reaches" — a quantity the index does not measure.
 - **P.O.V. zone thresholds are population-weighted medians**, not plain
   medians. Verified: classifying against them reproduces the upstream
-  `cell_type` for all 47,902 published cells. `build-data.mjs` re-derives every
-  cell and throws if it disagrees.
+  `cell_type` for all 47,902 published cells. The P.O.V. importer re-derives
+  every cell and throws if it disagrees.
 - **Zones compare places within a city, not between cities** — thresholds are
   city-specific. The underlying scores are what compare across cities.
 - **The cartograms are population-scaled.** Cells sit in true positions; their
@@ -332,14 +346,16 @@ npm run smoke              # every route in a real browser
 npm run smoke:published    # stages a dataset, asserts it is read instead of seed
 ```
 
-`test:data` runs the real adapters over every published dataset (all 24
-CityChrone hours included) and checks shares sum to 100, no CDI outside
-[−1, +1], every 15minCity category × mode present, that Rome still reports
-the figures the copy quotes, that each geometry companion joins to a cell
-centred within 10 m of it, and that each `atlas/` union mesh reconciles —
-same counts, same shares, same weighted CDI — with the per-platform files it
-was built from. Run it after any data change — it catches in seconds what the
-browser suites take minutes to reach.
+`test:data` runs the viewer's own code (`grid.js`, `meshFromAtlas`) over
+every published city — grid to hexagons, every layer merged in, all 24
+CityChrone hours included — and checks the grid is sorted and unique, every
+layer's rows land on grid cells, shares sum to 100, no CDI is outside
+[−1, +1], every 15minCity category × mode is present, each cartogram is drawn
+on its own cells and the derived rule stays within 25 m of the published
+ones, the compare rows agree with the layers, the counts written in the code
+match the catalogue, and that Rome still reports the figures the copy
+quotes. Run it after any data change — `update:data` does — it catches in
+seconds what the browser suites take minutes to reach.
 
 Playwright is deliberately **not** a dependency; CI installs it on the fly.
 Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
@@ -634,8 +650,8 @@ Two things that are easy to get wrong here:
   are the layer's own mask — 1,636 cells over 170 km² for Milan's P.O.V., not
   the union's 7,637 — because the count beside a figure has to be the count
   that figure came from. Area comes from `meshFromAtlas`, measured on the
-  union mesh's true hexagons, and is omitted for a legacy city whose mesh is a
-  cartogram: a cartogram's polygons are a population, not a place.
+  true hexagons. Until the layer's own file has arrived the count reads "—":
+  a zero there would be a claim, not a placeholder.
 - **The basemap's terms are MapLibre's own control, and they are not compact.**
   OpenFreeMap serves the tiles keylessly and asks to be credited with
   OpenMapTiles and OpenStreetMap; the credit travels inside the style's
@@ -671,23 +687,17 @@ Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ## Regenerating things
 
 ```bash
-npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
-npm run build:atlas        # union meshes + fifteen/citychrone catalogue entries
-npm run import:fifteen     # standalone-format 15minCity files → public/data/fifteen/
-npm run update:data        # only what changed in input_data/, per input_data/manifest.json
+npm run update:data        # import whatever changed in input_data/, then test:data
+npm run import -- pov input_data/pov/zurich_pov.zip   # one export by hand (--dry-run, --city, --country …)
 npm run shoot:previews     # platform-card stills, from the running site
 ```
 
-`build:data` reads the *legacy* upstream schemas (letter-coded properties
-under `<dir>/hexes/hexes.geojson` for 15minCity, and the CDI / P.O.V.
-repos as they publish them). `import:fifteen` covers the harmonised
-standalone schema — one `*.geojson` per city under `input_data/15mincity/`
-with full-name properties (`education_foot`, `proximity_time_bicycle`,
-`centroid_lon`, `population`) — compressing coordinates and values,
-dropping pipeline debris, recomputing `proximity_time_<mode>` as the
-mean of the per-category minutes (some source exports store it in
-seconds), deriving the population-scaled cartogram companion, and
-upserting the catalogue and coverage entries. See `input_data/README.md`.
+`input_data/README.md` has the four export formats and the options. The
+importers read the platforms' exports as they hand them over — P.O.V.'s two
+GeoJSONs (the cartogram in EPSG:3857), CDI's city folder, 15minCity's
+harmonised GeoJSON, CityChrone's zip of per-hour zips — straight from the zip.
+`scripts/lib/zip.mjs` is a small reader for exactly that (stored and
+deflated members, no zip64), because Node has none.
 
 `npm run build` also runs `scripts/postbuild-compress.mjs`, which writes
 `<file>.gz` companions for every text-ish file in `dist/` above 4 KB.
@@ -697,78 +707,50 @@ ignores them harmlessly. `npm run build:nogzip` skips the step.
 
 **A pre-compressed file nothing serves is not compression.** The
 companions shipped for a while with no server reading them: Vite's
-preview is plain sirv, which sends `milan.geojson` as 8.5 MB whether or
-not `milan.geojson.gz` sits beside it, so `npm run preview` looked
-byte-for-byte like a build with the step turned off, and the only number
-anyone had was the one the build script printed about its own output.
-`aa-serve-precompressed` in `vite.config.js` is `gzip_static` in fifteen
-lines, so preview now matches what nginx or Caddy will do and the saving
-is measurable where people actually look — 6.68 MB → 0.96 MB on the
-Milan city page. It sets `Content-Type` explicitly (the file it opens
-ends in `.gz`, so the type would otherwise sniff as gzip) and `Vary:
+preview is plain sirv, which sends a file whole whether or not its `.gz`
+sits beside it, so `npm run preview` looked byte-for-byte like a build
+with the step turned off. `aa-serve-precompressed` in `vite.config.js` is
+`gzip_static` in fifteen lines, so preview now matches what nginx or Caddy
+will do. It sets `Content-Type` explicitly (the file it opens ends in
+`.gz`, so the type would otherwise sniff as gzip) and `Vary:
 Accept-Encoding` (one URL, two encodings). If you measure compression,
 measure a response, never a directory listing.
 
-**Every platform is stored gzipped.** `public/data/` holds
-`milan.geojson.gz` and nothing else — the catalogue names the `.gz` —
-because the Atlas is served from a machine where the size of the data
-tree is the binding constraint, and 176 MB became 41 MB.
-**A city on the shared grid publishes one file, and `import:fifteen`
-writes it.** The viewer reads the union mesh for any city that has an
-atlas entry and never touches that city's per-platform file, so producing
-both is storing every measure twice and fetching one of them never. The
-importer therefore writes straight into `atlas/<city>.geojson.gz` and
-merges by H3 index: a city already carrying P.O.V. or Car Dependency
-keeps them and *gains* the fifteen measures, and a re-import replaces
-only this layer's own keys. Milan was migrated the same way — its
-`platforms.fifteen` row points at `atlas/milan.geojson.gz` and the
-per-platform copy is gone. A row whose `dataset` is also named by the
-atlas section is "atlas-backed"; `test:data` gives those two allowances
-(the file spans layers, so fifteen checks run over the cells carrying
-fifteen measures, and there is no second copy to reconcile against).
+**The same companions shadow a staged file.** `smoke:published` stages a
+catalogue by overwriting `dist/data/index.json`, and the preview kept
+serving the build's `index.json.gz` beside it — so the suite read the real
+catalogue and failed on every push without the staging ever being seen. It
+moves the twin aside while staged now. Anything that edits a file in
+`dist/` after the build has the same trap.
 
-**A union may only claim a city when it carries every layer published for
-it.** The viewer reads the union and nothing else for a city with an `atlas`
-entry, so a union holding one layer does not add that layer to a city — it
-hides the others. Importing 15minCity Rome, which P.O.V. and Car Dependency
-publish on their own meshes, wrote `atlas/rome` with fifteen alone and took
-both of them off the city view; `test:data` caught it as `pov covers 0 union
-cells vs 8089 published`. `import:fifteen` now asks that question of the
-*merged* result rather than of what was declared: every published layer
-present means join the union (Milan, and any city nothing else publishes),
-a layer missing means publish beside them at `fifteen/<city>` and drop the
-stray entry and file a previous run left. A union that already carries one
-platform's values and is missing another's is refused outright, because
-joining it and stepping around it both hide a layer, and harmonising is
-`build:atlas`'s job.
+**Every published file is stored gzipped** and named that way in the
+catalogue, because the Atlas is served from a machine where the size of the
+data tree is the binding constraint. With the per-city layout, `public/data/`
+went from 38.6 MB to 15.4 MB with Zurich's four layers added; everything but
+CityChrone's travel times is under 3 MB.
 
 **An import rebuilds what it cannot read, so it must not fail to read
-quietly.** `import:fifteen` is additive by design — each city is upserted
-into the coverage file, the catalogue row and, where it joins one, the union
-mesh — but every one of those starts by reading what is already there, and
-the helper that did the reading returned null for *any* failure. An absent
-file and a file truncated by an interrupted run therefore looked identical,
-and the importer answered both by writing a fresh one: a coverage file
-holding the city being imported and nothing else, with every other city's
-catalogue row still in place looking healthy. What that reads as on the site
-is "importing one city deleted all the others from the platform". The same
-read backs the union, where it would have dropped another platform's values.
-Only an absent file is null now; a file that is there but unreadable stops
-the run and says how to put it back. `writeDataFile` also renames a
-temporary file into place rather than writing over the target, so an import
-interrupted halfway cannot leave the truncated file that starts this off.
+quietly.** Every import is additive — the city is rebuilt from what is
+already published plus the new layer, and the coverage file, the summary and
+the catalogue are upserted — and every one of those starts by reading what is
+there. An earlier importer returned null for *any* failed read, so a file
+truncated by an interrupted run looked the same as no file, and was answered
+by writing a fresh one: a coverage file holding one city, which on the site
+read as "importing one city deleted all the others". Only an absent file is
+empty now; a file that is there but unreadable stops the run and says how to
+put it back. `writeDataFile` renames a temporary file into place rather than
+writing over the target, so an interrupted import cannot leave a truncated
+file behind.
 
 **The grid is detected, never assumed — and centroid proximity cannot
 detect it.** An H3 cell's centre coincides with the centre of its central
-child, so a mesh on r9 matches r9, r10 and r11 centres equally well and
-taking the first hit claims a grid four times too fine. `detectH3` only
-accepts a resolution whose **cell boundary** lands on the feature's
-polygon: measured on a real export, r9 gives a 0.0 m vertex mismatch and
-r10 gives 138.7 m. The first version of the importer skipped this and
-hard-coded `h3Resolution: null` with a comment claiming these exports are
-not H3 — carried over from the *legacy letter-coded* Rome data, which is
-not. The harmonised standalone exports are, exactly, and the field is
-required to stay honest.
+child, so a mesh on r9 matches r9, r10 and r11 centres equally well. Every
+importer checks both: the centre within 10 m of an r9 cell centre **and** the
+polygon within 10 m of that cell's own boundary (r9 gives a 0.0 m vertex
+mismatch on a real export, r10 gives 138.7 m). An earlier importer hard-coded
+`h3Resolution: null` with a comment claiming these exports are not H3 —
+carried over from the *legacy letter-coded* Rome data, which is not. The
+harmonised exports are, exactly.
 
 **Where a city is, is derived from its centroid, not passed in.**
 `scripts/lib/country.mjs` answers it from Natural Earth admin-0 1:50m,
@@ -784,14 +766,14 @@ and New York's 3 km off, so plain point-in-polygon answers "nowhere" for
 two obviously-placed cities. The lookup is containment first, then the
 nearest boundary within 25 km, and past that it returns null and warns
 rather than handing an ocean point to whichever country is nearest. The
-importer prints which of the three happened, because the nearest-coast
-case is the one that can be wrong.
+importer prints which happened, because the nearest-coast case is the one
+that can be wrong.
 
-`region` and `regionIt` are re-derived every run and **not** preserved
-across re-imports, unlike `nameIt`: preserving a derived field lets a
-wrong value from an earlier run outlive the fix, which is the staleness
-the derivation exists to remove. `--country` / `--region` / `--region-it`
-override per run.
+The lookup only runs for a city the catalogue does not know. A known city
+keeps its names and region, because several were written by hand ("United
+States", not Natural Earth's "United States of America") and a new layer
+should not rename a city. `--name`, `--name-it`, `--country`, `--region`,
+`--region-it` override.
 
 **MapLibre 6 has no Equal Earth.** `createProjectionFromName` registers
 exactly `mercator`, `globe` and `vertical-perspective`; the style spec's
@@ -806,52 +788,24 @@ Pre-projecting the GeoJSON and feeding MapLibre the result as lon/lat is
 the trap: every geographic operation downstream would keep working and
 quietly give wrong positions.
 
-**`build:atlas` cannot run against this tree and now says so.** It
-rewrites the fifteen and citychrone platform lists, their coverage files
-and the atlas list with plain `.geojson` paths, which against a gzipped
-tree repoints the catalogue at files that do not exist — and a 404 under
-the SPA fallback is `index.html` with HTTP 200, so the site answers with
-seed data rather than failing. It did exactly that once before the guard
-existed. It refuses when any catalogue path is gzipped or any row is
-atlas-backed. Recovering a union's 15minCity layer on rebuild does work
-(`existingAtlasPath` reads it back out, keyed by the `h3` already on
-those features); it is the catalogue rewrite that has not been taught the
-stored extension. That is the follow-up.
-
-`npm run compress:data -- --platform <id>` converts a platform and
-repoints every path the catalogue names (`dataset`, `geoDataset`,
-`cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios,
-CityChrone's `{hh}` templates); `--decompress` backs it out, `--all`
-does the lot.
-
-**`atlas` is a compressible unit like the four platforms, and is the one
-a loop forgets.** Its cities live in `catalogue.atlas`, not in
-`catalogue.platforms`, so iterating the platforms repoints everything
-*except* the union meshes — or, in the first cut of `compress-data.mjs`,
-repointed `catalogue.atlas` without converting `public/data/atlas/`,
-leaving the catalogue naming files that were not there. `unitsFrom()`
-returns the platforms plus atlas so the two can never diverge again.
-
-Worth knowing before reaching for it on the rest: **git already stores
-every blob zlib-compressed**, so this does not shrink the *repository*
-much — 176 MB of working tree is 48 MB packed — and it costs delta
-compression, since a re-import rewrites the whole gzip stream rather than
-a few KB of text. What it shrinks is the tree on the server's disk, which
-is the reason it is on.
+**Git already stores every blob zlib-compressed**, so gzipping does not
+shrink the *repository* much, and it costs delta compression, since a
+re-import rewrites the whole gzip stream. What it shrinks is the tree on the
+server's disk, which is the reason it is on.
 
 Two consequences that bite silently:
 
 - **Everything that reads published data goes through
   `scripts/lib/datafile.mjs`** (`readDataJSON` / `readDataBuffer` /
-  `writeDataFile`), which resolves either spelling. `fs.readFileSync` on
-  a catalogue path is now a bug — it will hand you gzip bytes. So is
-  `fs.statSync`: `test-data.mjs` checked CityChrone's matrices were at
-  least `cells²` bytes *on disk*, which a compressed 3 MB matrix is not,
-  so 24 good files read as truncated. It measures the decoded buffer
-  now, which also proves the gzip stream is intact.
+  `writeDataFile`). `fs.readFileSync` on a catalogue path is a bug — it will
+  hand you gzip bytes. So is `fs.statSync`: `test-data.mjs` once checked
+  CityChrone's matrices were at least `cells²` bytes *on disk*, which a
+  compressed matrix is not, so 24 good files read as truncated. It measures
+  the decoded buffer, which also proves the gzip stream is intact.
 - **`.gz` is a transport wrapper, not a format.** `formatFor` in
   `map/loaders.js` strips it before deciding, or a compressed
-  `times00.npy` would be parsed as GeoJSON.
+  `times00.npy` would be parsed as GeoJSON. The grid and layer files are
+  plain JSON, not GeoJSON, and are loaded with an explicit `format: 'json'`.
 
 **Who decompresses is not the app's business to assume, and assuming it
 broke the deployed site.** Storing the tree gzipped was verified against
@@ -889,19 +843,22 @@ different owner.
 
 ## CityChrone
 
-The fourth platform, published for Milan and rendered **only through the
-combined viewer** — it has no `/platforms/citychrone/:cityId` page; its
+The fourth platform, published for Milan and Zurich and rendered **only
+through the combined viewer** — it has no `/platforms/citychrone/:cityId` page; its
 landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 
 - **The paper** — Biazzo, Monechi & Loreto, *General scores for accessibility
   and inequality measures in urban areas*, R. Soc. Open Sci. 6(8) 190979
   (2019), `doi:10.1098/rsos.190979` — defines both scores and the isochrone
   method; it is tagged to this platform on the Research page.
-- **The published form is hourly**: 24 hexcover FeatureCollections (per-cell
+- **The export is hourly**: 24 hexcover FeatureCollections (per-cell
   `v_score`/`s_score`) plus 24 `times*.npy` matrices (uint8 minutes, row =
-  origin cell). The catalogue's `hourly` entry describes them as `{hh}` path
-  templates; hourly values are joined onto the mesh as MapLibre feature-state
-  at runtime, never baked into a GeoJSON.
+  origin cell). Published, all 24 hours of scores are one layer file, so the
+  hour selector recomputes rather than fetches; the matrices stay one file
+  per hour (`hourly.times`, a `{hh}` template), fetched only for isochrones
+  and stored in grid order. Hourly values are joined onto the mesh as
+  MapLibre feature-state at runtime, never baked into the features. The
+  isochrone origin in the URL (`from=`) is a layer row, i.e. grid order.
 - Its card still is shot from the combined viewer's CityChrone layer
   (`scripts/shoot-previews.mjs`).
 

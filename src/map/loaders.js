@@ -196,13 +196,13 @@ function formatFor(url, explicit) {
   return 'geojson';
 }
 
-const LOADERS = { geojson: loadGeoJSON, shapefile: loadShapefile, npy: loadNpy };
+const LOADERS = { geojson: loadGeoJSON, json: loadJSON, shapefile: loadShapefile, npy: loadNpy };
 
 /**
  * Load a dataset by descriptor, with an in-memory cache keyed on the URL so
  * revisiting a platform does not refetch.
  *
- * @param {{ url: string, format?: 'geojson'|'shapefile'|'npy' }} descriptor
+ * @param {{ url: string, format?: 'geojson'|'json'|'shapefile'|'npy' }} descriptor
  */
 export async function loadDataset(descriptor, { signal, cache: useCache = true } = {}) {
   const { url } = descriptor;

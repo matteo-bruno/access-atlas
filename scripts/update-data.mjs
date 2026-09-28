@@ -2,8 +2,8 @@
 // Import whatever in `input_data/` has changed since it was last imported,
 // and nothing else.
 //
-//   npm run update:data                     every platform with an importer
-//   npm run update:data -- --15mincity      only the platforms named
+//   npm run update:data                     every platform
+//   npm run update:data -- --15mincity      only the platforms named (--citychrone, --pov, --cdi)
 //   npm run update:data -- --dry-run        list what would be imported
 //   npm run update:data -- --force          re-import every file, changed or not
 //   npm run update:data -- --baseline       record the files as imported, import nothing
@@ -30,8 +30,9 @@
 // otherwise re-import every city, and a fix that should reach published data
 // is something to decide on, not to have happen.
 //
-// Adding a platform is one entry in PLATFORMS, once it has an importer that
-// reads `input_data/<dir>/` and takes `--only <slug>`.
+// A source is whatever the platform hands over: a zip, the same folder
+// unpacked, or (15minCity) one GeoJSON. Its file name gives the city:
+// `zurich_pov.zip`, `zurich_cdi.zip`, `Zurich.zip`, `Zurich.geojson` → `zurich`.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,6 +40,12 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { slugify } from './lib/slug.mjs';
+import * as pov from './importers/pov.mjs';
+import * as cdi from './importers/cdi.mjs';
+import * as fifteen from './importers/fifteen.mjs';
+import * as citychrone from './importers/citychrone.mjs';
+
+const IMPORTERS = { '15mincity': fifteen, citychrone, pov, cdi };
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -46,28 +53,30 @@ const INPUT = path.join(ROOT, 'input_data');
 const MANIFEST = path.join(INPUT, 'manifest.json');
 
 // ── platforms ────────────────────────────────────────────────────────
-// `importer` is the script run once per changed city with `--only <slug>`;
-// `fingerprint` is every file whose change can change that script's output.
-const PLATFORMS = [
-  {
-    id: '15mincity',
-    dir: '15mincity',
-    accepts: (f) => f.toLowerCase().endsWith('.geojson'),
-    slug: (f) => slugify(path.basename(f, path.extname(f))),
-    importer: 'scripts/import-fifteen.mjs',
-    fingerprint: [
-      'scripts/import-fifteen.mjs',
-      'scripts/lib/datafile.mjs',
-      'scripts/lib/country.mjs',
-      'scripts/lib/countries.geojson.gz',
-      'scripts/lib/slug.mjs',
-    ],
-  },
+// One per input folder. Each changed source is imported on its own with
+// `scripts/import-data.mjs <id> <source>`; `fingerprint` is every file whose
+// change can change what that produces.
+const SHARED = [
+  'scripts/import-data.mjs',
+  'scripts/lib/bundle.mjs',
+  'scripts/lib/zip.mjs',
+  'scripts/lib/datafile.mjs',
+  'scripts/lib/country.mjs',
+  'scripts/lib/countries.geojson.gz',
+  'scripts/lib/slug.mjs',
+  'scripts/importers/common.mjs',
 ];
-
-// Recognised so that `--pov` says "not yet" rather than "unknown", and so
-// that files dropped in their folders are not silently ignored.
-const PENDING = ['pov', 'cdi', 'citychrone'];
+const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
+  const importer = IMPORTERS[id];
+  const module = `scripts/importers/${importer.layer === 'cardep' ? 'cdi' : importer.layer}.mjs`;
+  return {
+    id,
+    dir: importer.dir,
+    accepts: importer.accepts,
+    slug: (f) => slugify(importer.cityName(f)),
+    fingerprint: [module, ...SHARED],
+  };
+});
 
 // ── args ─────────────────────────────────────────────────────────────
 const OPTIONS = new Set(['dry-run', 'force', 'baseline', 'help']);
@@ -79,7 +88,6 @@ for (const a of argv) {
   if (!a.startsWith('-') || !name) fail(`unexpected argument: ${a}`);
   if (OPTIONS.has(name)) opts.add(name);
   else if (PLATFORMS.some((p) => p.id === name)) named.push(name);
-  else if (PENDING.includes(name)) fail(`${name} has no importer yet; only ${PLATFORMS.map((p) => p.id).join(', ')} can be updated`);
   else fail(`unknown option: ${a}`);
 }
 
@@ -101,6 +109,21 @@ function fail(message) {
 }
 
 function sha256(file) {
+  // A source may be an unpacked folder: its hash covers every file's path and
+  // content, so renaming or editing any one of them is a change.
+  if (fs.statSync(file).isDirectory()) {
+    const hash = crypto.createHash('sha256');
+    const walk = (dir) => {
+      for (const name of fs.readdirSync(dir).sort()) {
+        if (name.startsWith('.')) continue;
+        const full = path.join(dir, name);
+        if (fs.statSync(full).isDirectory()) walk(full);
+        else hash.update(`${path.relative(file, full)}\0${sha256(full)}\0`);
+      }
+    };
+    walk(file);
+    return hash.digest('hex');
+  }
   // Streamed in chunks rather than read whole: exports run to tens of MB.
   const hash = crypto.createHash('sha256');
   const fd = fs.openSync(file, 'r');
@@ -154,6 +177,12 @@ function run(script, args) {
 
 const rel = (p) => path.relative(ROOT, p);
 
+function sizeOf(file) {
+  const stat = fs.statSync(file);
+  if (!stat.isDirectory()) return stat.size;
+  return fs.readdirSync(file).reduce((sum, name) => sum + sizeOf(path.join(file, name)), 0);
+}
+
 // ── scan ─────────────────────────────────────────────────────────────
 const manifest = readManifest();
 const plan = []; // { platform, key, file, slug, sha, size, reason }
@@ -166,7 +195,9 @@ for (const platform of selected) {
   const fingerprint = fingerprintOf(platform);
   platform.currentFingerprint = fingerprint;
 
-  const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter(platform.accepts).sort() : [];
+  const files = fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((f) => !f.startsWith('.') && platform.accepts(f)).sort()
+    : [];
   const seen = new Set();
 
   // Two files mapping to one slug would each overwrite the other's city,
@@ -181,7 +212,7 @@ for (const platform of selected) {
   for (const f of files) {
     const key = `${platform.dir}/${f}`;
     const file = path.join(dir, f);
-    const size = fs.statSync(file).size;
+    const size = sizeOf(file);
     const sha = sha256(file);
     const prev = manifest.files[key];
     seen.add(key);
@@ -198,18 +229,6 @@ for (const platform of selected) {
 
   for (const key of Object.keys(manifest.files)) {
     if (key.startsWith(`${platform.dir}/`) && !seen.has(key)) removed.push(key);
-  }
-}
-
-// Files waiting for an importer that does not exist yet are worth a line,
-// since "I dropped the new P.O.V. data in and nothing happened" is otherwise
-// the whole of what the run says about them.
-if (!named.length) {
-  for (const id of PENDING) {
-    const dir = path.join(INPUT, id);
-    if (fs.existsSync(dir) && fs.readdirSync(dir).some((f) => !f.startsWith('.'))) {
-      console.log(`  ~ input_data/${id}/ has files, but ${id} has no importer yet, skipped`);
-    }
   }
 }
 
@@ -267,7 +286,7 @@ const done = [];
 const failed = [];
 for (const item of plan) {
   console.log(`\n── ${item.platform.id}: ${item.slug} (${item.reason})`);
-  if (run(item.platform.importer, ['--only', item.slug])) done.push(item);
+  if (run('scripts/import-data.mjs', [item.platform.id, item.file])) done.push(item);
   else failed.push(item);
 }
 

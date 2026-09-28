@@ -14,6 +14,7 @@ import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, withGeometry } from '../data/adapters.js';
+import { citychroneHourFromLayer } from '../data/grid.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
@@ -149,7 +150,13 @@ function AtlasScreen({ cityId, view }) {
   };
 
   // ── Data ───────────────────────────────────────────────────────────
-  const atlas = useAtlasMesh(cityId, unified);
+  // The grid loads once; the open layer's file loads the first time it is
+  // opened (population is the grid's own and needs none).
+  const atlas = useAtlasMesh(cityId, layer === POPULATION_LAYER ? null : layer, unified);
+  const layerLoaded =
+    !unified || layer === POPULATION_LAYER || !profile.layerData?.[layer]
+      ? true
+      : atlas.layerStatus[layer] === 'ready';
   // Legacy path: the active platform's own mesh, swapped on layer change.
   const swapProfile =
     !unified && layer !== 'citychrone' && layer !== POPULATION_LAYER
@@ -158,7 +165,14 @@ function AtlasScreen({ cityId, view }) {
   const swapMesh = useCityMesh(swapProfile ?? null, layer);
 
   const citychroneOn = layer === 'citychrone' && available.has('citychrone');
-  const ccHour = useCitychroneHour(cityId, hour, citychroneOn);
+  // On the per-city layout every hour's scores are in the CityChrone layer
+  // file, so the hour selector is a recomputation, not a fetch.
+  const ccLayerFile = atlas.data?.files?.citychrone ?? null;
+  const ccHour = useCitychroneHour(cityId, hour, citychroneOn && !profile.grid);
+  const ccHourData = useMemo(
+    () => (ccLayerFile ? citychroneHourFromLayer(ccLayerFile, hour) : ccHour.data),
+    [ccLayerFile, hour, ccHour.data],
+  );
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone');
 
   // ── Geometry ───────────────────────────────────────────────────────
@@ -168,7 +182,10 @@ function AtlasScreen({ cityId, view }) {
   // two derived by the Atlas — and each is its own, never shared: even the two
   // published ones disagree by up to 9.6 m on cells they both cover.
   const cartogramLayer = unified && layer !== POPULATION_LAYER ? layer : null;
-  const cartogramPublished = Boolean(profile.cartograms?.[cartogramLayer]);
+  // Every layer on the per-city layout has one: its own, or the rule's.
+  const cartogramPublished = Boolean(
+    profile.cartograms?.[cartogramLayer] || profile.layerData?.[cartogramLayer],
+  );
   const cartogramDerived = profile.cartogramSources?.[cartogramLayer] === 'derived';
   const cartogramOn = geometry === 'cartogram' && cartogramPublished;
   // The choice is remembered across layers but only honoured where that
@@ -214,9 +231,9 @@ function AtlasScreen({ cityId, view }) {
   }, [citychroneOn, ccView, originCc, times.matrix]);
 
   const featureState = useMemo(() => {
-    if (!citychroneOn || !ccHour.data || !featureIdForCc) return null;
+    if (!citychroneOn || !ccHourData || !featureIdForCc) return null;
     const states = new Map();
-    for (const [cc, scores] of ccHour.data.byCc) {
+    for (const [cc, scores] of ccHourData.byCc) {
       const id = featureIdForCc(cc);
       if (id == null) continue;
       const state = { v: scores.v, s: scores.s };
@@ -224,7 +241,7 @@ function AtlasScreen({ cityId, view }) {
       states.set(id, state);
     }
     return states;
-  }, [citychroneOn, ccHour.data, featureIdForCc, matrixRow]);
+  }, [citychroneOn, ccHourData, featureIdForCc, matrixRow]);
 
   // The union mesh's extent, so the frame is the city and not the layer:
   // switching between a platform covering 7,498 cells and one covering 1,636
@@ -374,15 +391,19 @@ function AtlasScreen({ cityId, view }) {
   const paper = isPopulation ? null : paperForPlatform(layer);
   const stats = meshData?.stats;
   const cellCount = unified ? atlas.data?.stats.cellCount : stats?.cellCount;
-  const layerCells = isPopulation
-    ? cellCount
-    : unified
-      ? atlas.data?.layers[layer]?.cells
-      : stats?.cellCount;
+  // Nothing to count until the layer's own file is in: a zero here would be
+  // a claim, not a placeholder.
+  const layerCells = !layerLoaded
+    ? null
+    : isPopulation
+      ? cellCount
+      : unified
+        ? atlas.data?.layers[layer]?.cells
+        : stats?.cellCount;
   // Ground covered by the cells this layer measures. Only the union mesh is
   // drawn in true geography, so only it can be measured — a cartogram's
   // polygons are a population, not a place.
-  const layerArea = unified
+  const layerArea = unified && layerLoaded
     ? isPopulation
       ? atlas.data?.stats.areaKm2
       : atlas.data?.layers[layer]?.areaKm2
@@ -412,7 +433,7 @@ function AtlasScreen({ cityId, view }) {
       return value == null ? t('atlas.noValue') : measure.format(value);
     }
     const cc = ccForFeature(feature);
-    const scores = cc != null ? ccHour.data?.byCc.get(cc) : null;
+    const scores = cc != null ? ccHourData?.byCc.get(cc) : null;
     if (!scores) return t('atlas.noValue');
     if (ccView === 'isochrone') {
       // No popup before an origin exists — the standing prompt instructs, and
@@ -462,7 +483,7 @@ function AtlasScreen({ cityId, view }) {
         value: p[fifteenKey] == null ? '—' : measure.format(p[fifteenKey]),
       });
     } else if (layer === 'citychrone') {
-      const scores = Number.isFinite(p.cc) ? ccHour.data?.byCc.get(p.cc) : null;
+      const scores = Number.isFinite(p.cc) ? ccHourData?.byCc.get(p.cc) : null;
       rows.push({
         label: t('city.cell.velocity'),
         value: scores ? `${n(scores.v, { maximumFractionDigits: 1 })} km/h` : '—',
@@ -487,7 +508,7 @@ function AtlasScreen({ cityId, view }) {
     // the shared grid, which is what makes the layers comparable at all.
     if (p.h3) rows.push({ label: t('city.cell.grid'), value: p.h3 });
     return rows;
-  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, measure, ccHour.data, matrixRow, t, n]);
+  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, measure, ccHourData, matrixRow, t, n]);
 
   const legendTitle = isPopulation
     ? t('atlas.population.legend')
@@ -887,9 +908,9 @@ function AtlasScreen({ cityId, view }) {
                     <SummaryRow
                       label={t('atlas.summary.weightedV')}
                       value={
-                        ccHour.data?.weightedMedianV == null
+                        ccHourData?.weightedMedianV == null
                           ? '—'
-                          : `${n(ccHour.data.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
+                          : `${n(ccHourData.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
                       }
                     />
                   )}

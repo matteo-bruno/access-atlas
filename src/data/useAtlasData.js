@@ -4,7 +4,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
-import { platformEntry, publishedCity } from './catalogue.js';
+import { hasCityData, platformEntry, publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
 import { CITIES, citiesForPlatform } from './cities.js';
@@ -175,7 +175,7 @@ export function useCityPageIds(platformId) {
           : Object.values(catalogue?.platforms ?? {});
         const ids = entries
           .flatMap((entry) => entry?.cities ?? [])
-          .filter((city) => city.dataset || city.hourly)
+          .filter(hasCityData)
           .map((city) => city.id);
         setPublishedIds([...new Set(ids)]);
       } catch (error) {
@@ -284,7 +284,7 @@ export function useCityProfile(platformId, cityId) {
       setState({
         status: 'ready',
         profile,
-        source: entry?.dataset ? 'published' : 'seed',
+        source: entry?.dataset || entry?.layer ? 'published' : 'seed',
       });
     })();
 

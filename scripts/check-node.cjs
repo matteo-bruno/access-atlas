@@ -14,7 +14,7 @@
 // have it, and neither does one installed before the dependency was added.
 // Each npm script names what it needs:
 //
-//     node scripts/check-node.cjs h3-js && node scripts/build-data.mjs
+//     node scripts/check-node.cjs h3-js && node scripts/import-data.mjs
 //
 // A name package.json does not declare, playwright, which the browser suites
 // install on the fly, is reported as such, with the line that installs it.

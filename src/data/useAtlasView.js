@@ -8,7 +8,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { citychroneHour, meshFromAtlas } from './adapters.js';
-import { atlasCity, publishedCity } from './catalogue.js';
+import { atlasCity, hasCityData, publishedCity } from './catalogue.js';
+import { gridFeatures, mergeLayer } from './grid.js';
 import { getDataProvider } from './sources.js';
 import { PLATFORMS } from './platforms.js';
 
@@ -55,7 +56,7 @@ export function useAtlasView(cityId) {
         const platformProfiles = {};
         for (const platform of PLATFORMS) {
           const cityEntry = publishedCity(catalogue, platform.id, cityId);
-          if (cityEntry && (cityEntry.dataset || cityEntry.hourly)) {
+          if (hasCityData(cityEntry)) {
             platformProfiles[platform.id] = cityEntry;
           }
         }
@@ -109,36 +110,70 @@ export function useAtlasView(cityId) {
  * The union mesh for a harmonised city. No seed fallback — the combined
  * viewer only ever draws measurements, so a failed load is an error state the
  * page reports rather than papers over.
+ *
+ * On the per-city layout the grid loads first and is enough to draw the map;
+ * each layer's file is fetched the first time that layer is opened and merged
+ * in, so a visitor who only looks at one layer downloads one. `layerStatus`
+ * says where each layer is. A city published the older way (one union file)
+ * loads whole, as before.
+ *
+ * @returns {{ status, data, error, layerStatus: Record<string, string> }}
  */
-export function useAtlasMesh(cityId, enabled = true) {
-  const [state, setState] = useState({ status: 'idle', data: null, error: null });
+export function useAtlasMesh(cityId, layer, enabled = true) {
+  const [state, setState] = useState({ status: 'idle', data: null, error: null, layerStatus: {} });
+  // Everything loaded for this city so far: the grid, its features with every
+  // loaded layer merged in, and the raw layer files (CityChrone's hours are
+  // read from its file rather than baked into the features).
+  const store = useRef(null);
+
+  const publish = (current) => {
+    const collection = { type: 'FeatureCollection', features: current.features };
+    const data = meshFromAtlas(collection, current.profile);
+    data.files = { ...current.files };
+    setState((previous) => ({
+      status: 'ready',
+      data,
+      error: null,
+      layerStatus: { ...previous.layerStatus, ...current.layerStatus },
+    }));
+  };
 
   useEffect(() => {
+    store.current = null;
     if (!enabled || !cityId) {
-      setState({ status: 'idle', data: null, error: null });
+      setState({ status: 'idle', data: null, error: null, layerStatus: {} });
       return undefined;
     }
     let cancelled = false;
     const controller = new AbortController();
-    setState({ status: 'pending', data: null, error: null });
+    setState({ status: 'pending', data: null, error: null, layerStatus: {} });
 
     (async () => {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        const profile = atlasCity(catalogue, cityId);
+        if (profile?.grid) {
+          const grid = await provider.cityGrid(cityId, catalogue, { signal: controller.signal });
+          const features = await gridFeatures(grid);
+          if (cancelled) return;
+          store.current = { cityId, profile, grid, features, files: {}, layerStatus: {} };
+          publish(store.current);
+          return;
+        }
         const published = await provider.atlasMesh(cityId, catalogue, {
           signal: controller.signal,
         });
         if (cancelled) return;
         if (!published) {
-          setState({ status: 'idle', data: null, error: null });
+          setState({ status: 'idle', data: null, error: null, layerStatus: {} });
           return;
         }
         const data = meshFromAtlas(published.collection, published.profile);
-        setState({ status: 'ready', data, error: null });
+        setState({ status: 'ready', data, error: null, layerStatus: {} });
       } catch (error) {
         if (error?.name === 'AbortError' || cancelled) return;
-        setState({ status: 'error', data: null, error });
+        setState({ status: 'error', data: null, error, layerStatus: {} });
       }
     })();
 
@@ -147,6 +182,37 @@ export function useAtlasMesh(cityId, enabled = true) {
       controller.abort();
     };
   }, [cityId, enabled]);
+
+  // The open layer, on first open. Nothing is cancelled when the layer
+  // changes again before it arrives: the file is small, and merging it
+  // anyway means switching back is instant.
+  const gridReady = state.status === 'ready';
+  useEffect(() => {
+    const current = store.current;
+    if (!gridReady || !current || current.cityId !== cityId || !layer) return;
+    if (!current.profile.layerData?.[layer] || current.layerStatus[layer]) return;
+
+    current.layerStatus[layer] = 'pending';
+    setState((previous) => ({ ...previous, layerStatus: { ...previous.layerStatus, [layer]: 'pending' } }));
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue();
+        const file = await provider.cityLayer(cityId, layer, catalogue);
+        if (store.current !== current) return;
+        current.features = mergeLayer(current.features, layer, file);
+        current.files[layer] = file;
+        current.layerStatus[layer] = 'ready';
+        publish(current);
+      } catch (error) {
+        if (store.current !== current) return;
+        if (import.meta.env?.DEV) console.warn(`[data] ${cityId}/${layer} unusable`, error.message);
+        current.layerStatus[layer] = 'error';
+        setState((previous) => ({ ...previous, layerStatus: { ...previous.layerStatus, [layer]: 'error' } }));
+      }
+    })();
+  }, [cityId, layer, gridReady]);
 
   return state;
 }

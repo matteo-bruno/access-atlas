@@ -2,26 +2,26 @@
 // locales format them with Intl — 10,142 in English, 10.142 in Italian.
 //
 // Every figure below is counted from the datasets published under
-// public/data/. `npm run build:data` recomputes them when the data changes and
-// prints the values it derived — nothing here is an estimate, and nothing is
-// carried over from the design mock.
+// public/data/. `npm run test:data` recounts them from the catalogue and fails
+// with the right value when the data changes — nothing here is an estimate,
+// and nothing is carried over from the design mock.
 
 import { BRAND } from './brand.js';
 
 // Nothing renders these at the moment: the landing and the home page both
 // dropped their list of them — counting the Atlas on the way in said nothing a
 // reader could act on. They are kept, and kept correct, because they are
-// counted from the published files by `build:data` like every other figure
-// here, and putting the list back is one block of JSX.
+// counted from the published files like every other figure here (and
+// checked by `test:data`), and putting the list back is one block of JSX.
 export const ATLAS_METRICS = [
   // 20 distinct cities across the four platforms' datasets.
   { key: 'cities', value: 20 },
   { key: 'platforms', value: 4 },
   // AT CH DE ES FR IT PT SE US
   { key: 'countries', value: 9 },
-  // Cells across all 42 published city datasets, scenario variants included
-  // (pov 47,902 · cardep 96,846 · fifteen 7,498 · citychrone 1,741).
-  { key: 'cells', value: 153987 },
+  // Cells across every published layer of every city, scenario variants
+  // included (pov 47,902 · cardep 96,846 · fifteen 9,357 · citychrone 2,650).
+  { key: 'cells', value: 156755 },
   { key: 'researchers', value: 7 },
 ];
 

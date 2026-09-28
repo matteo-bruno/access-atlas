@@ -9,16 +9,13 @@
     "build": "vite build && node scripts/postbuild-compress.mjs",
     "build:nogzip": "vite build",
     "preview": "vite preview",
-    "build:data": "node scripts/check-node.cjs h3-js && node scripts/build-data.mjs",
-    "build:atlas": "node scripts/check-node.cjs h3-js && node scripts/build-atlas.mjs",
-    "import:fifteen": "node scripts/check-node.cjs h3-js && node scripts/import-fifteen.mjs",
+    "import": "node scripts/check-node.cjs h3-js && node scripts/import-data.mjs",
     "update:data": "node scripts/check-node.cjs h3-js && node scripts/update-data.mjs",
     "compress:dist": "node scripts/postbuild-compress.mjs",
     "test:data": "node scripts/check-node.cjs && node scripts/test-data.mjs",
     "shoot:previews": "node scripts/check-node.cjs && node scripts/shoot-previews.mjs",
     "smoke": "node scripts/check-node.cjs playwright && node scripts/smoke.mjs",
-    "smoke:published": "node scripts/check-node.cjs playwright && node scripts/smoke-published.mjs",
-    "compress:data": "node scripts/check-node.cjs && node scripts/compress-data.mjs"
+    "smoke:published": "node scripts/check-node.cjs playwright && node scripts/smoke-published.mjs"
   },
   "engines": {
     "node": ">=20"
@@ -27,6 +24,7 @@
     "@fontsource/instrument-serif": "^5.3.0",
     "@fontsource/roboto": "^5.3.0",
     "@fontsource/roboto-mono": "^5.3.0",
+    "h3-js": "^4.5.0",
     "maplibre-gl": "^6.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -35,7 +33,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.0",
-    "h3-js": "^4.5.0",
     "vite": "^7.1.0"
   }
 }

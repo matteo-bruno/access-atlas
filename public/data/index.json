@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "platforms": {
     "fifteen": {
       "coverage": "fifteen/coverage.geojson.gz",
@@ -10,19 +10,36 @@
           "nameIt": "Milano",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
-            9.18876,
-            45.52519
+            9.18765,
+            45.52334
           ],
           "zoom": 8.6,
           "population": 3231186,
-          "dataset": "atlas/milan.geojson.gz",
-          "geometry": "geographic",
-          "cartogramDataset": "atlas/milan.cartogram-fifteen.geojson.gz",
-          "cartogramSource": "derived",
+          "layer": "cities/milan/fifteen.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 198
+            "cellRadiusM": 201
+          }
+        },
+        {
+          "id": "zurich",
+          "name": "Zurich",
+          "nameIt": "Zurigo",
+          "region": "Switzerland",
+          "regionIt": "Svizzera",
+          "country": "CH",
+          "center": [
+            8.53678,
+            47.37953
+          ],
+          "zoom": 9.5,
+          "population": 716896,
+          "layer": "cities/zurich/fifteen.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 197
           }
         }
       ]
@@ -36,23 +53,46 @@
           "nameIt": "Milano",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
-            9.18876,
-            45.52519
+            9.17987,
+            45.47426
           ],
-          "zoom": 8.6,
+          "zoom": 9.9,
           "population": 1201023,
-          "dataset": null,
-          "geometry": "geographic",
-          "hourly": {
-            "hours": 24,
-            "hexcover": "citychrone/milan/hexcover{hh}.json.gz",
-            "times": "citychrone/milan/times{hh}.npy.gz",
-            "cells": 1741
-          },
+          "layer": "cities/milan/citychrone.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 198
+            "cellRadiusM": 201
+          },
+          "hourly": {
+            "hours": 24,
+            "cells": 1741,
+            "times": "cities/milan/citychrone/times{hh}.npy.gz"
+          }
+        },
+        {
+          "id": "zurich",
+          "name": "Zurich",
+          "nameIt": "Zurigo",
+          "region": "Switzerland",
+          "regionIt": "Svizzera",
+          "country": "CH",
+          "center": [
+            8.52928,
+            47.38479
+          ],
+          "zoom": 10.4,
+          "population": 404151,
+          "layer": "cities/zurich/citychrone.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 197
+          },
+          "hourly": {
+            "hours": 24,
+            "cells": 909,
+            "times": "cities/zurich/citychrone/times{hh}.npy.gz"
           }
         }
       ]
@@ -67,18 +107,17 @@
           "nameIt": "Barcellona",
           "region": "Spain",
           "regionIt": "Spagna",
+          "country": "ES",
           "center": [
             2.16075,
             41.39802
           ],
           "zoom": 10.1,
           "population": 1608693,
-          "dataset": "cardep/barcelona.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/barcelona.geo.geojson.gz",
+          "layer": "cities/barcelona/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 199
           }
         },
         {
@@ -87,18 +126,17 @@
           "nameIt": "Berlino",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             13.4032,
             52.50437
           ],
           "zoom": 8.6,
           "population": 3482138,
-          "dataset": "cardep/berlin.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/berlin.geo.geojson.gz",
+          "layer": "cities/berlin/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 191
           }
         },
         {
@@ -107,18 +145,17 @@
           "nameIt": "Bordeaux",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             -0.57778,
             44.84368
           ],
           "zoom": 10.6,
           "population": 251045,
-          "dataset": "cardep/bordeaux.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/bordeaux.geo.geojson.gz",
+          "layer": "cities/bordeaux/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 198
           }
         },
         {
@@ -127,18 +164,17 @@
           "nameIt": "Boston",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -71.09007,
             42.3233
           ],
           "zoom": 9.8,
           "population": 615409,
-          "dataset": "cardep/boston.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/boston.geo.geojson.gz",
+          "layer": "cities/boston/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 205
           }
         },
         {
@@ -147,18 +183,17 @@
           "nameIt": "Chicago",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -87.68386,
             41.86533
           ],
           "zoom": 8.7,
           "population": 2504511,
-          "dataset": "cardep/chicago.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/chicago.geo.geojson.gz",
+          "layer": "cities/chicago/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 202
           }
         },
         {
@@ -167,18 +202,17 @@
           "nameIt": "Firenze",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             11.24518,
             43.77931
           ],
           "zoom": 10.2,
           "population": 348792,
-          "dataset": "cardep/florence.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/florence.geo.geojson.gz",
+          "layer": "cities/florence/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 205
           }
         },
         {
@@ -187,18 +221,36 @@
           "nameIt": "Karlsruhe",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             8.40205,
             49.01081
           ],
           "zoom": 9.9,
           "population": 323592,
-          "dataset": "cardep/karlsruhe.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/karlsruhe.geo.geojson.gz",
+          "layer": "cities/karlsruhe/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 194
+          }
+        },
+        {
+          "id": "malaga",
+          "name": "Málaga",
+          "nameIt": "Malaga",
+          "region": "Spain",
+          "regionIt": "Spagna",
+          "country": "ES",
+          "center": [
+            -4.45463,
+            36.7129
+          ],
+          "zoom": 9.2,
+          "population": 595659,
+          "layer": "cities/malaga/cardep.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 206
           }
         },
         {
@@ -207,18 +259,17 @@
           "nameIt": "Milano",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             9.17987,
             45.47426
           ],
           "zoom": 9.9,
           "population": 1201023,
-          "dataset": "cardep/milan.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/milan.geo.geojson.gz",
+          "layer": "cities/milan/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 201
           }
         },
         {
@@ -227,38 +278,17 @@
           "nameIt": "Monaco di Baviera",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             11.55614,
             48.14381
           ],
           "zoom": 9.4,
           "population": 1606031,
-          "dataset": "cardep/munich.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/munich.geo.geojson.gz",
+          "layer": "cities/munich/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
-          }
-        },
-        {
-          "id": "malaga",
-          "name": "M\u00e1laga",
-          "nameIt": "Malaga",
-          "region": "Spain",
-          "regionIt": "Spagna",
-          "center": [
-            -4.45463,
-            36.7129
-          ],
-          "zoom": 9.2,
-          "population": 595659,
-          "dataset": "cardep/malaga.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/malaga.geo.geojson.gz",
-          "cell": {
-            "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 198
           }
         },
         {
@@ -267,18 +297,17 @@
           "nameIt": "Nantes",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             -1.55358,
             47.22516
           ],
           "zoom": 10.4,
           "population": 276956,
-          "dataset": "cardep/nantes.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/nantes.geo.geojson.gz",
+          "layer": "cities/nantes/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 197
           }
         },
         {
@@ -287,38 +316,17 @@
           "nameIt": "New York",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -73.92293,
             40.72503
           ],
           "zoom": 8.5,
           "population": 8038108,
-          "dataset": "cardep/new-york.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/new-york.geo.geojson.gz",
+          "layer": "cities/new-york/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
-          }
-        },
-        {
-          "id": "paris-fua",
-          "name": "Paris (metro area)",
-          "nameIt": "Parigi (area metropolitana)",
-          "region": "France",
-          "regionIt": "Francia",
-          "center": [
-            2.3375,
-            48.85446
-          ],
-          "zoom": 8.5,
-          "population": 9865626,
-          "dataset": "cardep/paris-fua.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/paris-fua.geo.geojson.gz",
-          "cell": {
-            "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 202
           }
         },
         {
@@ -327,18 +335,36 @@
           "nameIt": "Parigi",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             2.34577,
             48.86051
           ],
           "zoom": 9.9,
           "population": 2269189,
-          "dataset": "cardep/paris.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/paris.geo.geojson.gz",
+          "layer": "cities/paris/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 191
+          }
+        },
+        {
+          "id": "paris-fua",
+          "name": "Paris (metro area)",
+          "nameIt": "Parigi (area metropolitana)",
+          "region": "France",
+          "regionIt": "Francia",
+          "country": "FR",
+          "center": [
+            2.3375,
+            48.85446
+          ],
+          "zoom": 8.5,
+          "population": 9865626,
+          "layer": "cities/paris-fua/cardep.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 191
           }
         },
         {
@@ -347,18 +373,17 @@
           "nameIt": "Porto",
           "region": "Portugal",
           "regionIt": "Portogallo",
+          "country": "PT",
           "center": [
             -8.62145,
             41.16225
           ],
           "zoom": 10.6,
           "population": 230048,
-          "dataset": "cardep/porto.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/porto.geo.geojson.gz",
+          "layer": "cities/porto/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 210
           }
         },
         {
@@ -367,18 +392,17 @@
           "nameIt": "Roma",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             12.49368,
             41.88207
           ],
           "zoom": 8.5,
           "population": 2610166,
-          "dataset": "cardep/rome.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/rome.geo.geojson.gz",
+          "layer": "cities/rome/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 208
           }
         },
         {
@@ -387,18 +411,17 @@
           "nameIt": "Roma (scenario Metro D)",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             12.49368,
             41.88207
           ],
           "zoom": 8.5,
           "population": 2610166,
-          "dataset": "cardep/rome-metro-d.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/rome-metro-d.geo.geojson.gz",
+          "layer": "cities/rome-metro-d/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 208
           }
         },
         {
@@ -407,18 +430,17 @@
           "nameIt": "Seattle",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -122.33241,
             47.62875
           ],
           "zoom": 9.4,
           "population": 643867,
-          "dataset": "cardep/seattle.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/seattle.geo.geojson.gz",
+          "layer": "cities/seattle/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 190
           }
         },
         {
@@ -427,18 +449,17 @@
           "nameIt": "Stoccolma",
           "region": "Sweden",
           "regionIt": "Svezia",
+          "country": "SE",
           "center": [
             18.01134,
             59.32144
           ],
           "zoom": 9.5,
           "population": 996902,
-          "dataset": "cardep/stockholm.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/stockholm.geo.geojson.gz",
+          "layer": "cities/stockholm/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 176
           }
         },
         {
@@ -447,15 +468,14 @@
           "nameIt": "Valencia",
           "region": "Spain",
           "regionIt": "Spagna",
+          "country": "ES",
           "center": [
             -0.37262,
             39.46653
           ],
           "zoom": 9.1,
           "population": 770448,
-          "dataset": "cardep/valencia.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/valencia.geo.geojson.gz",
+          "layer": "cities/valencia/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
             "cellRadiusM": 200
@@ -467,18 +487,17 @@
           "nameIt": "Vienna",
           "region": "Austria",
           "regionIt": "Austria",
+          "country": "AT",
           "center": [
             16.3743,
             48.20471
           ],
           "zoom": 9.2,
           "population": 1920660,
-          "dataset": "cardep/vienna.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/vienna.geo.geojson.gz",
+          "layer": "cities/vienna/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 201
           }
         },
         {
@@ -487,18 +506,17 @@
           "nameIt": "Zurigo",
           "region": "Switzerland",
           "regionIt": "Svizzera",
+          "country": "CH",
           "center": [
             8.52928,
             47.38479
           ],
           "zoom": 10.4,
           "population": 404151,
-          "dataset": "cardep/zurich.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "cardep/zurich.geo.geojson.gz",
+          "layer": "cities/zurich/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 197
           }
         }
       ]
@@ -513,18 +531,17 @@
           "nameIt": "Barcellona",
           "region": "Spain",
           "regionIt": "Spagna",
+          "country": "ES",
           "center": [
             2.16075,
             41.39802
           ],
           "zoom": 10.1,
-          "population": 1608684,
-          "dataset": "pov/barcelona.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/barcelona.geo.geojson.gz",
+          "population": 1608693,
+          "layer": "cities/barcelona/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 199
           },
           "thresholds": {
             "proximity": 8977.5,
@@ -537,18 +554,17 @@
           "nameIt": "Berlino",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             13.4032,
             52.50437
           ],
           "zoom": 8.6,
-          "population": 3482152,
-          "dataset": "pov/berlin.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/berlin.geo.geojson.gz",
+          "population": 3482138,
+          "layer": "cities/berlin/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 191
           },
           "thresholds": {
             "proximity": 6288.1,
@@ -561,18 +577,17 @@
           "nameIt": "Bordeaux",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             -0.57778,
             44.84368
           ],
           "zoom": 10.6,
-          "population": 251048,
-          "dataset": "pov/bordeaux.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/bordeaux.geo.geojson.gz",
+          "population": 251045,
+          "layer": "cities/bordeaux/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 198
           },
           "thresholds": {
             "proximity": 4236.8,
@@ -585,18 +600,17 @@
           "nameIt": "Chicago",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -87.68386,
             41.86533
           ],
           "zoom": 8.7,
-          "population": 2504515,
-          "dataset": "pov/chicago.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/chicago.geo.geojson.gz",
+          "population": 2504511,
+          "layer": "cities/chicago/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 202
           },
           "thresholds": {
             "proximity": 2271.8,
@@ -609,18 +623,17 @@
           "nameIt": "Karlsruhe",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             8.40205,
             49.01081
           ],
           "zoom": 10,
-          "population": 323609,
-          "dataset": "pov/karlsruhe.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/karlsruhe.geo.geojson.gz",
+          "population": 323592,
+          "layer": "cities/karlsruhe/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 194
           },
           "thresholds": {
             "proximity": 4048.8,
@@ -629,22 +642,21 @@
         },
         {
           "id": "malaga",
-          "name": "M\u00e1laga",
+          "name": "Málaga",
           "nameIt": "Malaga",
           "region": "Spain",
           "regionIt": "Spagna",
+          "country": "ES",
           "center": [
             -4.45463,
             36.7129
           ],
           "zoom": 9.3,
-          "population": 595671,
-          "dataset": "pov/malaga.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/malaga.geo.geojson.gz",
+          "population": 595659,
+          "layer": "cities/malaga/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 206
           },
           "thresholds": {
             "proximity": 7177.9,
@@ -657,18 +669,17 @@
           "nameIt": "Milano",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             9.17987,
             45.47426
           ],
           "zoom": 9.9,
-          "population": 1201028,
-          "dataset": "pov/milan.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/milan.geo.geojson.gz",
+          "population": 1201023,
+          "layer": "cities/milan/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 201
           },
           "thresholds": {
             "proximity": 6157.8,
@@ -681,18 +692,17 @@
           "nameIt": "Monaco di Baviera",
           "region": "Germany",
           "regionIt": "Germania",
+          "country": "DE",
           "center": [
             11.55614,
             48.14381
           ],
           "zoom": 9.4,
-          "population": 1606059,
-          "dataset": "pov/munich.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/munich.geo.geojson.gz",
+          "population": 1606031,
+          "layer": "cities/munich/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 198
           },
           "thresholds": {
             "proximity": 5605,
@@ -705,18 +715,17 @@
           "nameIt": "Nantes",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             -1.55358,
             47.22516
           ],
           "zoom": 10.4,
-          "population": 276965,
-          "dataset": "pov/nantes.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/nantes.geo.geojson.gz",
+          "population": 276956,
+          "layer": "cities/nantes/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 197
           },
           "thresholds": {
             "proximity": 5570.7,
@@ -729,18 +738,17 @@
           "nameIt": "New York",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -73.92293,
             40.72503
           ],
           "zoom": 8.5,
-          "population": 8038165,
-          "dataset": "pov/new-york.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/new-york.geo.geojson.gz",
+          "population": 8038108,
+          "layer": "cities/new-york/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 202
           },
           "thresholds": {
             "proximity": 6531.1,
@@ -753,18 +761,17 @@
           "nameIt": "Parigi",
           "region": "France",
           "regionIt": "Francia",
+          "country": "FR",
           "center": [
             2.34577,
             48.86051
           ],
           "zoom": 9.9,
-          "population": 2269192,
-          "dataset": "pov/paris.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/paris.geo.geojson.gz",
+          "population": 2269189,
+          "layer": "cities/paris/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 191
           },
           "thresholds": {
             "proximity": 18162.8,
@@ -777,18 +784,17 @@
           "nameIt": "Porto",
           "region": "Portugal",
           "regionIt": "Portogallo",
+          "country": "PT",
           "center": [
             -8.62145,
             41.16225
           ],
           "zoom": 10.6,
-          "population": 230046,
-          "dataset": "pov/porto.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/porto.geo.geojson.gz",
+          "population": 230048,
+          "layer": "cities/porto/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 210
           },
           "thresholds": {
             "proximity": 6733.4,
@@ -801,18 +807,17 @@
           "nameIt": "Roma",
           "region": "Italy",
           "regionIt": "Italia",
+          "country": "IT",
           "center": [
             12.49368,
             41.88207
           ],
           "zoom": 8.5,
-          "population": 2610243,
-          "dataset": "pov/rome.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/rome.geo.geojson.gz",
+          "population": 2610166,
+          "layer": "cities/rome/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 208
           },
           "thresholds": {
             "proximity": 2590.5,
@@ -825,18 +830,17 @@
           "nameIt": "Seattle",
           "region": "United States",
           "regionIt": "Stati Uniti",
+          "country": "US",
           "center": [
             -122.33241,
             47.62875
           ],
           "zoom": 9.4,
-          "population": 643859,
-          "dataset": "pov/seattle.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/seattle.geo.geojson.gz",
+          "population": 643867,
+          "layer": "cities/seattle/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 190
           },
           "thresholds": {
             "proximity": 2886,
@@ -849,18 +853,17 @@
           "nameIt": "Stoccolma",
           "region": "Sweden",
           "regionIt": "Svezia",
+          "country": "SE",
           "center": [
-            18.01135,
+            18.01134,
             59.32144
           ],
           "zoom": 9.5,
-          "population": 996903,
-          "dataset": "pov/stockholm.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/stockholm.geo.geojson.gz",
+          "population": 996902,
+          "layer": "cities/stockholm/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 176
           },
           "thresholds": {
             "proximity": 2854.4,
@@ -873,15 +876,14 @@
           "nameIt": "Valencia",
           "region": "Spain",
           "regionIt": "Spagna",
+          "country": "ES",
           "center": [
             -0.37262,
             39.46653
           ],
           "zoom": 9.1,
-          "population": 770439,
-          "dataset": "pov/valencia.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/valencia.geo.geojson.gz",
+          "population": 770448,
+          "layer": "cities/valencia/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
             "cellRadiusM": 200
@@ -897,18 +899,17 @@
           "nameIt": "Vienna",
           "region": "Austria",
           "regionIt": "Austria",
+          "country": "AT",
           "center": [
             16.3743,
             48.20471
           ],
           "zoom": 9.3,
-          "population": 1920674,
-          "dataset": "pov/vienna.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/vienna.geo.geojson.gz",
+          "population": 1920660,
+          "layer": "cities/vienna/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 201
           },
           "thresholds": {
             "proximity": 7111.7,
@@ -921,18 +922,17 @@
           "nameIt": "Zurigo",
           "region": "Switzerland",
           "regionIt": "Svizzera",
+          "country": "CH",
           "center": [
             8.52928,
             47.38479
           ],
           "zoom": 10.5,
-          "population": 404153,
-          "dataset": "pov/zurich.geojson.gz",
-          "geometry": "cartogram",
-          "geoDataset": "pov/zurich.geo.geojson.gz",
+          "population": 404151,
+          "layer": "cities/zurich/pov.json.gz",
           "cell": {
             "h3Resolution": 9,
-            "cellRadiusM": 200
+            "cellRadiusM": 197
           },
           "thresholds": {
             "proximity": 7358.9,
@@ -945,41 +945,696 @@
   "atlas": {
     "cities": [
       {
+        "id": "barcelona",
+        "name": "Barcelona",
+        "nameIt": "Barcellona",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          2.16075,
+          41.39802
+        ],
+        "zoom": 10.1,
+        "population": 1608693,
+        "grid": "cities/barcelona/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 199
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/barcelona/cardep.json.gz",
+          "pov": "cities/barcelona/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "berlin",
+        "name": "Berlin",
+        "nameIt": "Berlino",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          13.4032,
+          52.50437
+        ],
+        "zoom": 8.6,
+        "population": 3482138,
+        "grid": "cities/berlin/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/berlin/cardep.json.gz",
+          "pov": "cities/berlin/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "bordeaux",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.57778,
+          44.84368
+        ],
+        "zoom": 10.6,
+        "population": 251045,
+        "grid": "cities/bordeaux/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/bordeaux/cardep.json.gz",
+          "pov": "cities/bordeaux/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "boston",
+        "name": "Boston",
+        "nameIt": "Boston",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -71.09007,
+          42.3233
+        ],
+        "zoom": 9.8,
+        "population": 615409,
+        "grid": "cities/boston/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        },
+        "layers": [
+          "cardep"
+        ],
+        "layerData": {
+          "cardep": "cities/boston/cardep.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published"
+        }
+      },
+      {
+        "id": "chicago",
+        "name": "Chicago",
+        "nameIt": "Chicago",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -87.68386,
+          41.86533
+        ],
+        "zoom": 8.7,
+        "population": 2504511,
+        "grid": "cities/chicago/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/chicago/cardep.json.gz",
+          "pov": "cities/chicago/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "florence",
+        "name": "Florence",
+        "nameIt": "Firenze",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.24518,
+          43.77931
+        ],
+        "zoom": 10.2,
+        "population": 348792,
+        "grid": "cities/florence/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        },
+        "layers": [
+          "cardep"
+        ],
+        "layerData": {
+          "cardep": "cities/florence/cardep.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published"
+        }
+      },
+      {
+        "id": "karlsruhe",
+        "name": "Karlsruhe",
+        "nameIt": "Karlsruhe",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          8.40205,
+          49.01081
+        ],
+        "zoom": 9.9,
+        "population": 323592,
+        "grid": "cities/karlsruhe/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 194
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/karlsruhe/cardep.json.gz",
+          "pov": "cities/karlsruhe/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "malaga",
+        "name": "Málaga",
+        "nameIt": "Malaga",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -4.45463,
+          36.7129
+        ],
+        "zoom": 9.2,
+        "population": 595659,
+        "grid": "cities/malaga/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 206
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/malaga/cardep.json.gz",
+          "pov": "cities/malaga/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
         "id": "milan",
         "name": "Milan",
         "nameIt": "Milano",
         "region": "Italy",
         "regionIt": "Italia",
+        "country": "IT",
         "center": [
           9.18876,
           45.52519
         ],
         "zoom": 8.6,
         "population": 3067071,
-        "dataset": "atlas/milan.geojson.gz",
-        "geometry": "geographic",
-        "cartograms": {
-          "pov": "atlas/milan.cartogram-pov.geojson.gz",
-          "cardep": "atlas/milan.cartogram-cardep.geojson.gz",
-          "fifteen": "atlas/milan.cartogram-fifteen.geojson.gz",
-          "citychrone": "atlas/milan.cartogram-citychrone.geojson.gz"
+        "grid": "cities/milan/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "layers": [
+          "fifteen",
+          "citychrone",
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "fifteen": "cities/milan/fifteen.json.gz",
+          "citychrone": "cities/milan/citychrone.json.gz",
+          "cardep": "cities/milan/cardep.json.gz",
+          "pov": "cities/milan/pov.json.gz"
         },
         "cartogramSources": {
-          "pov": "published",
-          "cardep": "published",
           "fifteen": "derived",
-          "citychrone": "derived"
+          "citychrone": "derived",
+          "cardep": "published",
+          "pov": "published"
         },
+        "hourly": {
+          "hours": 24,
+          "cells": 1741,
+          "times": "cities/milan/citychrone/times{hh}.npy.gz"
+        }
+      },
+      {
+        "id": "munich",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.55614,
+          48.14381
+        ],
+        "zoom": 9.4,
+        "population": 1606031,
+        "grid": "cities/munich/grid.json.gz",
         "cell": {
           "h3Resolution": 9,
           "cellRadiusM": 198
         },
         "layers": [
-          "pov",
           "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/munich/cardep.json.gz",
+          "pov": "cities/munich/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "nantes",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.55358,
+          47.22516
+        ],
+        "zoom": 10.4,
+        "population": 276956,
+        "grid": "cities/nantes/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/nantes/cardep.json.gz",
+          "pov": "cities/nantes/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "new-york",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -73.92293,
+          40.72503
+        ],
+        "zoom": 8.5,
+        "population": 8038108,
+        "grid": "cities/new-york/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/new-york/cardep.json.gz",
+          "pov": "cities/new-york/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "paris",
+        "name": "Paris",
+        "nameIt": "Parigi",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.34577,
+          48.86051
+        ],
+        "zoom": 9.9,
+        "population": 2269189,
+        "grid": "cities/paris/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/paris/cardep.json.gz",
+          "pov": "cities/paris/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "paris-fua",
+        "name": "Paris (metro area)",
+        "nameIt": "Parigi (area metropolitana)",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.3375,
+          48.85446
+        ],
+        "zoom": 8.5,
+        "population": 9865626,
+        "grid": "cities/paris-fua/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        },
+        "layers": [
+          "cardep"
+        ],
+        "layerData": {
+          "cardep": "cities/paris-fua/cardep.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published"
+        }
+      },
+      {
+        "id": "porto",
+        "name": "Porto",
+        "nameIt": "Porto",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.62145,
+          41.16225
+        ],
+        "zoom": 10.6,
+        "population": 230048,
+        "grid": "cities/porto/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/porto/cardep.json.gz",
+          "pov": "cities/porto/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.49368,
+          41.88207
+        ],
+        "zoom": 8.5,
+        "population": 2610166,
+        "grid": "cities/rome/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/rome/cardep.json.gz",
+          "pov": "cities/rome/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "rome-metro-d",
+        "name": "Rome (Metro D scenario)",
+        "nameIt": "Roma (scenario Metro D)",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.49368,
+          41.88207
+        ],
+        "zoom": 8.5,
+        "population": 2610166,
+        "grid": "cities/rome-metro-d/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        },
+        "layers": [
+          "cardep"
+        ],
+        "layerData": {
+          "cardep": "cities/rome-metro-d/cardep.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published"
+        }
+      },
+      {
+        "id": "seattle",
+        "name": "Seattle",
+        "nameIt": "Seattle",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -122.33241,
+          47.62875
+        ],
+        "zoom": 9.4,
+        "population": 643867,
+        "grid": "cities/seattle/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/seattle/cardep.json.gz",
+          "pov": "cities/seattle/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "stockholm",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          18.01134,
+          59.32144
+        ],
+        "zoom": 9.5,
+        "population": 996902,
+        "grid": "cities/stockholm/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/stockholm/cardep.json.gz",
+          "pov": "cities/stockholm/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "valencia",
+        "name": "Valencia",
+        "nameIt": "Valencia",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -0.37262,
+          39.46653
+        ],
+        "zoom": 9.1,
+        "population": 770448,
+        "grid": "cities/valencia/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/valencia/cardep.json.gz",
+          "pov": "cities/valencia/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "vienna",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          16.3743,
+          48.20471
+        ],
+        "zoom": 9.2,
+        "population": 1920660,
+        "grid": "cities/vienna/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "layers": [
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "cardep": "cities/vienna/cardep.json.gz",
+          "pov": "cities/vienna/pov.json.gz"
+        },
+        "cartogramSources": {
+          "cardep": "published",
+          "pov": "published"
+        }
+      },
+      {
+        "id": "zurich",
+        "name": "Zurich",
+        "nameIt": "Zurigo",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          8.53579,
+          47.38022
+        ],
+        "zoom": 9.5,
+        "population": 697916,
+        "grid": "cities/zurich/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "layers": [
           "fifteen",
-          "citychrone"
-        ]
+          "citychrone",
+          "cardep",
+          "pov"
+        ],
+        "layerData": {
+          "fifteen": "cities/zurich/fifteen.json.gz",
+          "citychrone": "cities/zurich/citychrone.json.gz",
+          "cardep": "cities/zurich/cardep.json.gz",
+          "pov": "cities/zurich/pov.json.gz"
+        },
+        "cartogramSources": {
+          "fifteen": "derived",
+          "citychrone": "derived",
+          "cardep": "published",
+          "pov": "published"
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 909,
+          "times": "cities/zurich/citychrone/times{hh}.npy.gz"
+        }
       }
     ]
   }
