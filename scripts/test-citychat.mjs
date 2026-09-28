@@ -142,28 +142,44 @@ const collect = async (gen) => {
 }
 
 // ── Adapters, against a local stand-in for each API ──────────────────
+/** Answer as Server-Sent Events, as both APIs do when asked to stream. */
+function sse(res, events) {
+  res.setHeader('Content-Type', 'text/event-stream');
+  for (const e of events) res.write(`data: ${typeof e === 'string' ? e : JSON.stringify(e)}\n\n`);
+  res.end();
+}
+
 const requests = [];
 const mock = http.createServer(async (req, res) => {
   let body = '';
   for await (const c of req) body += c;
   const parsed = JSON.parse(body);
   requests.push({ url: req.url, headers: req.headers, body: parsed });
-  res.setHeader('Content-Type', 'application/json');
-  if (req.url.includes(':generateContent')) {
-    const lastRole = parsed.contents.at(-1).role;
+  if (req.url.includes(':streamGenerateContent')) {
     const hasResponse = parsed.contents.at(-1).parts.some((p) => p.functionResponse);
-    res.end(JSON.stringify(
-      hasResponse || lastRole !== 'user' || parsed.contents.length > 1
-        ? { candidates: [{ content: { role: 'model', parts: [{ text: 'Milano: 72,3% delle celle.' }] } }], usageMetadata: { promptTokenCount: 10, candidatesTokenCount: 5 } }
-        : { candidates: [{ content: { role: 'model', parts: [{ functionCall: { name: 'city_overview', args: { city: 'milan' } }, thoughtSignature: 'SIG' }] } }] },
-    ));
+    // The answer in three chunks, the way Gemini streams it; usage on the last.
+    sse(res, hasResponse
+      ? [
+          { candidates: [{ content: { role: 'model', parts: [{ text: 'Milano: ' }] } }] },
+          { candidates: [{ content: { role: 'model', parts: [{ text: '72,3% delle ' }] } }] },
+          { candidates: [{ content: { role: 'model', parts: [{ text: 'celle.' }] }, finishReason: 'STOP' }], usageMetadata: { promptTokenCount: 10, candidatesTokenCount: 5 } },
+        ]
+      : [{ candidates: [{ content: { role: 'model', parts: [{ functionCall: { name: 'city_overview', args: { city: 'milan' } }, thoughtSignature: 'SIG' }] } }] }]);
   } else {
     const last = parsed.messages.at(-1);
-    res.end(JSON.stringify(
-      last.role === 'tool'
-        ? { choices: [{ message: { role: 'assistant', content: '<think>hm</think>Milano: 72,3% delle celle.' } }] }
-        : { choices: [{ message: { role: 'assistant', content: null, tool_calls: [{ id: 't1', type: 'function', function: { name: 'city_overview', arguments: '{"city":"milan"}' } }] } }] },
-    ));
+    // Deltas, with the tool call's arguments split across two of them, and
+    // the [DONE] sentinel OpenAI-compatible servers end on.
+    sse(res, last.role === 'tool'
+      ? [
+          { choices: [{ delta: { role: 'assistant', content: '<think>hm</think>Milano: ' } }] },
+          { choices: [{ delta: { content: '72,3% delle celle.' } }] },
+          '[DONE]',
+        ]
+      : [
+          { choices: [{ delta: { role: 'assistant', tool_calls: [{ index: 0, id: 't1', type: 'function', function: { name: 'city_overview', arguments: '{"city":' } }] } }] },
+          { choices: [{ delta: { tool_calls: [{ index: 0, function: { arguments: '"milan"}' } }] } }] },
+          '[DONE]',
+        ]);
   }
 });
 await new Promise((r) => mock.listen(0, '127.0.0.1', r));
@@ -174,7 +190,7 @@ const base = `http://127.0.0.1:${mock.address().port}`;
   const provider = providerFromEnv({ CITYCHAT_PROVIDER: 'gemini', GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: base, CITYCHAT_MODEL: 'm' });
   const events = await collect(runChat({ provider, runTool, messages: [{ role: 'user', text: 'Milano?' }] }));
   const [one, two] = requests;
-  check('Gemini: key sent as x-goog-api-key, model in the path', one?.headers['x-goog-api-key'] === 'k' && one.url === '/models/m:generateContent');
+  check('Gemini: key sent as x-goog-api-key, streamed from the model in the path', one?.headers['x-goog-api-key'] === 'k' && one.url === '/models/m:streamGenerateContent?alt=sse');
   check('Gemini: tools declared with upper-case schema types', one?.body.tools?.[0]?.functionDeclarations?.find((d) => d.name === 'city_overview')?.parameters?.type === 'OBJECT');
   check('Gemini: a tool with no parameters has no schema', !('parameters' in (one?.body.tools?.[0]?.functionDeclarations?.find((d) => d.name === 'list_cities') ?? { parameters: 1 })));
   check('Gemini: the model turn is replayed with its thought signature', two?.body.contents?.[1]?.parts?.[0]?.thoughtSignature === 'SIG');
@@ -186,7 +202,7 @@ const base = `http://127.0.0.1:${mock.address().port}`;
   const provider = providerFromEnv({ CITYCHAT_PROVIDER: 'openai', CITYCHAT_BASE_URL: `${base}/v1`, CITYCHAT_MODEL: 'local', CITYCHAT_API_KEY: 'x' });
   const events = await collect(runChat({ provider, runTool, messages: [{ role: 'user', text: 'Milano?' }] }));
   const [one, two] = requests;
-  check('OpenAI-compatible: posts to /chat/completions with a bearer key', one?.url === '/v1/chat/completions' && one.headers.authorization === 'Bearer x');
+  check('OpenAI-compatible: streams from /chat/completions with a bearer key', one?.url === '/v1/chat/completions' && one.headers.authorization === 'Bearer x' && one.body.stream === true);
   check('OpenAI-compatible: system prompt first, tools as functions', one?.body.messages[0].role === 'system' && one.body.tools.every((t) => t.type === 'function'));
   check('OpenAI-compatible: tool result keyed to its call id', two?.body.messages.at(-1)?.role === 'tool' && two.body.messages.at(-1).tool_call_id === 't1');
   check('OpenAI-compatible: <think> is stripped from the answer', events.at(-1)?.text === 'Milano: 72,3% delle celle.', events.at(-1)?.text);
@@ -202,7 +218,7 @@ mock.close();
     'gemini-9-flash': () => [429, { error: { code: 429, status: 'RESOURCE_EXHAUSTED', details: [{ '@type': 'type.googleapis.com/google.rpc.RetryInfo', retryDelay: '37s' }] } }],
     'gemini-8-flash': () => [404, { error: { code: 404, status: 'NOT_FOUND' } }],
     'gemini-7-flash': () => [503, { error: { code: 503, status: 'UNAVAILABLE' } }],
-    'gemini-6-flash': () => [200, { candidates: [{ content: { role: 'model', parts: [{ text: 'Risposta.' }] } }] }],
+    'gemini-6-flash': () => [200, [{ candidates: [{ content: { role: 'model', parts: [{ text: 'Risposta.' }] } }] }]],
     'gemini-bad-flash': () => [400, { error: { code: 400, status: 'INVALID_ARGUMENT' } }],
   };
   const google = http.createServer(async (req, res) => {
@@ -222,6 +238,7 @@ mock.close();
     const model = decodeURIComponent(req.url.match(/models\/([^:]+):/)[1]);
     calls.push(model);
     const [status, body] = (behaviour[model] ?? behaviour['gemini-6-flash'])();
+    if (status === 200) return sse(res, body);
     res.statusCode = status;
     res.end(JSON.stringify(body));
   });
@@ -289,6 +306,62 @@ mock.close();
   };
   const events = await collect(runChat({ provider: createChain(async () => [a, b]), runTool, messages: [{ role: 'user', text: 'Città?' }] }));
   check('Fallback mid-turn: the next model starts from the question alone', seenByB[0] === 1 && events.at(-1)?.model === 'b', `${seenByB} ${events.at(-1)?.model}`);
+}
+
+// ── Long answers are not cut off; silence is ─────────────────────────
+// Scaled down: a 300 ms wait for the first byte and 300 ms of allowed
+// silence stand for the real 90 s and 120 s.
+{
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const slow = http.createServer(async (req, res) => {
+    for await (const _ of req);
+    const model = decodeURIComponent(req.url.match(/models\/([^:]+):/)[1]);
+    res.setHeader('Content-Type', 'text/event-stream');
+    const chunk = (text) => res.write(`data: ${JSON.stringify({ candidates: [{ content: { role: 'model', parts: [{ text }] } }] })}\n\n`);
+    if (model === 'mute') {
+      await sleep(600); // thinks past the first-byte wait, never writes
+      return res.end();
+    }
+    await sleep(200); // thinking, inside the first-byte wait
+    if (model === 'stall') {
+      chunk('Inizio ');
+      await sleep(700); // then goes quiet past the allowed silence
+      return res.end();
+    }
+    // Writes for ~1.8 s in all, six times the first-byte wait, but never
+    // silent for longer than 150 ms at a stretch.
+    for (let i = 0; i < 12; i++) {
+      chunk('parola ');
+      await sleep(150);
+    }
+    res.end();
+  });
+  await new Promise((r) => slow.listen(0, '127.0.0.1', r));
+  const url = `http://127.0.0.1:${slow.address().port}`;
+  const env = (model) => ({ GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: model, CITYCHAT_FIRST_BYTE_MS: '300', CITYCHAT_IDLE_MS: '300' });
+  const ask = (model) => collect(runChat({ provider: providerFromEnv(env(model)), runTool, messages: [{ role: 'user', text: 'Ciao' }] }));
+
+  const t0 = Date.now();
+  const events = await ask('long');
+  const answer = events.at(-1);
+  check(
+    'Streaming: an answer that keeps writing is not cut off, however long it takes',
+    answer?.type === 'answer' && answer.text === 'parola '.repeat(12).trim() && Date.now() - t0 > 1500,
+    `${Date.now() - t0} ms`,
+  );
+  check('Streaming: the page hears that the answer is being written', events.some((e) => e.type === 'progress' && e.phase === 'writing' && e.chars > 0));
+
+  const fallback = await ask('mute,long');
+  check('Streaming: a model silent past the first-byte wait hands over to the next', fallback.at(-1)?.model === 'gemini:long' && fallback.some((e) => e.status === 'fallback'));
+
+  let stalled = null;
+  try {
+    await ask('stall');
+  } catch (error) {
+    stalled = error;
+  }
+  check('Streaming: a stream that goes quiet mid-answer is a stall, not an answer', stalled?.failures?.[0]?.model === 'gemini:stall' && /stalled/.test(stalled.failures[0].reason) && stalled.failures[0].started, stalled?.failures?.[0]?.reason);
+  slow.close();
 }
 
 {

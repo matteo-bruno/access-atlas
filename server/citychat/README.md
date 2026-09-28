@@ -53,7 +53,8 @@ Everything is environment variables; no code changes to switch.
 | `CITYCHAT_API_KEY` | | also read from `GEMINI_API_KEY` |
 | `CITYCHAT_BASE_URL` | Gemini's | required for `openai` |
 | `CITYCHAT_TEMPERATURE` | `0.3` | |
-| `CITYCHAT_TIMEOUT_MS` | `45000` | per model call; a timeout moves on to the next model |
+| `CITYCHAT_FIRST_BYTE_MS` | `90000` | how long a model may think before it starts answering; past it, the next model |
+| `CITYCHAT_IDLE_MS` | `120000` | how long a stream may then go silent before it counts as stalled |
 | `CITYCHAT_PORT` / `CITYCHAT_HOST` | `3100` / `127.0.0.1` | |
 | `CITYCHAT_DATA_DIR` | `public/data` | the data to answer from |
 | `CITYCHAT_RATE_MAX` | `30` | questions per IP per 10 minutes |
@@ -107,7 +108,7 @@ that fails on one model is run again on the next (`llm/chain.mjs`):
 | 429 (quota) | next model; this one rests for the delay Google states (`retryDelay`), else a minute |
 | 404 (no such model) | next model; rests six hours |
 | 403 (not open to this key or tier) | next model; rests thirty minutes |
-| 5xx, timeout, unreadable answer | next model; rests thirty seconds |
+| 5xx, no first byte in time, a stalled stream, unreadable answer | next model; rests thirty seconds |
 | 400 (malformed request) | no fallback: every model would refuse the same request |
 
 A resting model goes to the back of the list rather than out of it, so when
@@ -134,6 +135,29 @@ The same list works for `CITYCHAT_PROVIDER=openai`, over the models one
 server offers (`qwen3:14b,qwen3:8b` on Ollama). Falling back from Gemini to a
 local model would need a list that mixes providers; the chain supports it,
 the environment variables do not yet.
+
+## Long answers are not timed out
+
+Every model call is streamed (Gemini's `streamGenerateContent`, `stream: true`
+on OpenAI-compatible servers), and the deadline is on **silence**, never on
+the length of the answer (`postSSE` in `llm/http.mjs`):
+
+- **before the first byte**, `CITYCHAT_FIRST_BYTE_MS` (90 s). A thinking
+  model sends nothing until it has thought, so this is also its thinking
+  time. Past it, the turn goes to the next model.
+- **once it is writing**, only a gap longer than `CITYCHAT_IDLE_MS` (120 s)
+  between two chunks stops it, as a stalled connection. However long the
+  answer takes, as long as it keeps coming it is let finish.
+
+Between the service and the page the same holds: while the model writes the
+page is told so ("Writing the answer…"), and every ten seconds the service
+sends a `ping` line whatever is happening, so no proxy on the way closes a
+connection that looks idle. The page never times a question out itself.
+
+The answer is shown when it is complete and its figures have been checked,
+not word by word: a draft is exactly the text the figure check has not seen
+yet (see below), and a figure on screen that is then taken back is still a
+figure that was published.
 
 ## What the model can call
 
@@ -208,7 +232,7 @@ Then build the site with the tab switched on:
 `VITE_CITYCHAT=1 scripts/deploy.sh` (the script passes the environment to the
 build).
 
-`flushpackets=on` lets the tool calls reach the page as they happen. Check it
+`flushpackets=on` lets the tool calls and progress reach the page as they happen. The service's ten-second `ping` keeps the connection inside Apache's default `ProxyTimeout` (60 s) however long an answer takes; a proxy with a shorter idle timeout than that needs raising. Check it
 with `curl https://whatif.sonycsl.it/atlas/api/citychat/health`, which must
 answer JSON: an HTML page there is the SPA fallback, meaning the proxy is not
 in place.

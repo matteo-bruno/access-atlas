@@ -664,6 +664,7 @@ export default {
     working: 'Sto leggendo i dati…',
     answeredBy: 'Ha risposto {model}',
     switching: 'Passo a {model}…',
+    writing: 'Sto scrivendo la risposta…',
     checking: 'Sto controllando le cifre…',
     consulted: 'Calcolato da',
     showOnMap: 'Mostra sulla mappa',

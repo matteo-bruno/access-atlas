@@ -910,6 +910,13 @@ follows from that:
   one's thought signatures, which is also why `gemini.mjs` replays `raw`
   only when it carries its own model name. A failed model rests for as long
   as the 429 said (`llm/chain.mjs`). A 400 is never retried elsewhere.
+- **No answer is timed out for being long.** Every model call streams, and
+  the deadline is on silence (`postSSE`): 90 s for the first byte, which is
+  the model's thinking time, then 120 s between chunks. A non-streamed call
+  with one deadline on the whole cut off exactly the answers that took the
+  most work. The service also writes a `ping` line every 10 s so no proxy
+  closes the page's connection, and it shows "writing" rather than the
+  draft: a draft is the text the figure check has not seen yet.
 - **The static site does not depend on it.** A build talks to the service
   only when built with `VITE_CITYCHAT=1` (always in `npm run dev`); without
   it the tab says CityChat is not enabled and sends nothing, which is what

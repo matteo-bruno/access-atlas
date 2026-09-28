@@ -6,13 +6,14 @@
 // signatures newer Gemini models require to be sent back with each function
 // call: they live on the model's own parts, which this adapter replays as-is.
 
-import { ProviderError, getJSON, postJSON } from './http.mjs';
+import { ProviderError, getJSON, postSSE } from './http.mjs';
 
-export function createGeminiProvider({ apiKey, model, baseUrl, temperature, timeoutMs }) {
+export function createGeminiProvider({ apiKey, model, baseUrl, temperature, firstByteMs, idleMs }) {
   if (!apiKey) throw new Error('Gemini needs CITYCHAT_API_KEY (or GEMINI_API_KEY)');
   const own = (raw) => raw?.provider === 'gemini' && raw.model === model;
 
-  const url = `${baseUrl.replace(/\/$/, '')}/models/${encodeURIComponent(model)}:generateContent`;
+  // Streamed, so a long answer is never cut off for being long: see postSSE.
+  const url = `${baseUrl.replace(/\/$/, '')}/models/${encodeURIComponent(model)}:streamGenerateContent?alt=sse`;
 
   const toContents = (messages) =>
     messages.map((m) => {
@@ -41,7 +42,7 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, time
 
   return {
     name: `gemini:${model}`,
-    async complete({ system, messages, tools }) {
+    async complete({ system, messages, tools, onProgress }) {
       const body = {
         systemInstruction: { parts: [{ text: system }] },
         contents: toContents(messages),
@@ -50,18 +51,37 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, time
       if (tools?.length) {
         body.tools = [{ functionDeclarations: tools.map(toDeclaration) }];
       }
-      const data = await postJSON(url, body, {
+
+      // The stream's chunks, joined into the one answer they make up. Parts
+      // are kept exactly as they came, one per chunk: a thought signature can
+      // ride on any of them, and the next request has to send them back
+      // untouched.
+      const parts = [];
+      let finishReason = null;
+      let blockReason = null;
+      let usageMetadata = null;
+      let chars = 0;
+      await postSSE(url, body, {
         headers: { 'x-goog-api-key': apiKey },
-        timeoutMs,
+        firstByteMs,
+        idleMs,
         label: 'Gemini',
+        onData: (chunk) => {
+          const candidate = chunk.candidates?.[0];
+          for (const part of candidate?.content?.parts ?? []) {
+            parts.push(part);
+            if (typeof part.text === 'string' && !part.thought) chars += part.text.length;
+          }
+          finishReason = candidate?.finishReason ?? finishReason;
+          blockReason = chunk.promptFeedback?.blockReason ?? blockReason;
+          usageMetadata = chunk.usageMetadata ?? usageMetadata;
+          onProgress?.({ chars, calls: parts.some((p) => p.functionCall) });
+        },
       });
 
-      const candidate = data.candidates?.[0];
-      if (!candidate?.content?.parts) {
-        const reason = candidate?.finishReason || data.promptFeedback?.blockReason || 'no content';
-        throw new ProviderError(`Gemini returned no answer (${reason})`);
+      if (!parts.length) {
+        throw new ProviderError(`Gemini returned no answer (${finishReason || blockReason || 'no content'})`);
       }
-      const parts = candidate.content.parts;
       const text = parts
         .filter((p) => typeof p.text === 'string' && !p.thought)
         .map((p) => p.text)
@@ -77,8 +97,8 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, time
         text,
         toolCalls,
         raw: { provider: 'gemini', model, parts },
-        usage: data.usageMetadata
-          ? { input: data.usageMetadata.promptTokenCount, output: data.usageMetadata.candidatesTokenCount }
+        usage: usageMetadata
+          ? { input: usageMetadata.promptTokenCount, output: usageMetadata.candidatesTokenCount }
           : null,
       };
     },

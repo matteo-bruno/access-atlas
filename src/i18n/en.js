@@ -665,6 +665,7 @@ export default {
     working: 'Reading the data…',
     answeredBy: 'Answered by {model}',
     switching: '{model} is taking over…',
+    writing: 'Writing the answer…',
     checking: 'Checking the figures…',
     consulted: 'Computed from',
     showOnMap: 'Show on map',

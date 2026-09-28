@@ -88,7 +88,8 @@ export default function CityChat() {
         lang,
         signal: controller.signal,
         onEvent: (event) => {
-          if (event.type === 'tool') setPending((p) => p && { ...p, tools: [...p.tools, event] });
+          if (event.type === 'tool') setPending((p) => p && { ...p, writing: false, tools: [...p.tools, event] });
+          if (event.type === 'progress') setPending((p) => p && { ...p, writing: true });
           if (event.type === 'status' && event.status === 'fallback') {
             // The turn starts over on the next model: what the last one
             // looked up is not what this answer will be built from.
@@ -247,9 +248,11 @@ export default function CityChat() {
                     <span className="aa-chat__dots" aria-hidden="true" />
                     {pending.checking
                       ? t('citychat.checking')
-                      : pending.switching
-                        ? t('citychat.switching', { model: pending.switching })
-                        : t('citychat.working')}
+                      : pending.writing
+                        ? t('citychat.writing')
+                        : pending.switching
+                          ? t('citychat.switching', { model: pending.switching })
+                          : t('citychat.working')}
                     {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
                   </div>
                 </div>

@@ -48,7 +48,11 @@ const AUTO_REFRESH_MS = 6 * 60 * 60 * 1000;
 export function providerFromEnv(env = process.env) {
   const kind = (env.CITYCHAT_PROVIDER || 'gemini').toLowerCase();
   const temperature = env.CITYCHAT_TEMPERATURE ? Number(env.CITYCHAT_TEMPERATURE) : 0.3;
-  const timeoutMs = Number(env.CITYCHAT_TIMEOUT_MS || 45000);
+  // No limit on how long an answer takes, only on silence (llm/http.mjs,
+  // postSSE): how long to wait for a model to start, which covers its
+  // thinking, and how long a stream may then stall before it is given up.
+  const firstByteMs = Number(env.CITYCHAT_FIRST_BYTE_MS || env.CITYCHAT_TIMEOUT_MS || 90000);
+  const idleMs = Number(env.CITYCHAT_IDLE_MS || 120000);
   const entries = String(env.CITYCHAT_MODEL || (kind === 'gemini' ? 'auto' : ''))
     .split(',')
     .map((m) => m.trim())
@@ -58,7 +62,7 @@ export function providerFromEnv(env = process.env) {
     const apiKey = env.CITYCHAT_API_KEY || env.GEMINI_API_KEY;
     if (!apiKey) throw new Error('Gemini needs CITYCHAT_API_KEY (or GEMINI_API_KEY)');
     const baseUrl = env.CITYCHAT_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta';
-    const make = (model) => createGeminiProvider({ apiKey, model, baseUrl, temperature, timeoutMs });
+    const make = (model) => createGeminiProvider({ apiKey, model, baseUrl, temperature, firstByteMs, idleMs });
 
     const providers = new Map(); // one provider per model name, kept across refreshes
     const get = (model) => {
@@ -109,7 +113,8 @@ export function providerFromEnv(env = process.env) {
         model,
         baseUrl: env.CITYCHAT_BASE_URL,
         temperature,
-        timeoutMs,
+        firstByteMs,
+        idleMs,
       }),
     );
     return createChain(async () => providers, { label: `openai:${entries.join(',')}` });

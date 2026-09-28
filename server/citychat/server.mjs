@@ -44,6 +44,7 @@ const MAX_BODY = 64 * 1024;
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX = Number(env.CITYCHAT_RATE_MAX || 30);
 const MAX_CONCURRENT = Number(env.CITYCHAT_MAX_CONCURRENT || 4);
+const HEARTBEAT_MS = 10 * 1000;
 
 // A chain of models, tried in order (llm/chain.mjs).
 const provider = providerFromEnv(env);
@@ -149,6 +150,12 @@ async function handleChat(req, res) {
   res.on('close', () => {
     closed = true;
   });
+  // A line every few seconds whatever the model is doing, so no proxy on the
+  // way (Apache's ProxyTimeout, a load balancer's idle timeout) takes a long
+  // silence for a dead connection. The page ignores it.
+  const heartbeat = setInterval(() => {
+    if (!closed) send({ type: 'ping' });
+  }, HEARTBEAT_MS);
 
   try {
     for await (const event of runChat({ provider, runTool, ...input })) {
@@ -173,13 +180,14 @@ async function handleChat(req, res) {
     const code = error.quota ? 'quota' : error instanceof ProviderError ? 'provider' : 'server';
     if (!closed) send({ type: 'error', code });
   } finally {
+    clearInterval(heartbeat);
     inFlight--;
     res.end();
     console.log(
       JSON.stringify({
         t: new Date().toISOString(),
         model: answeredBy,
-        fallbacks: fallbacks.map((f) => `${f.model}:${f.status ?? 'error'}`),
+        fallbacks: fallbacks.map((f) => `${f.model}:${f.status ?? (f.started ? 'stalled' : 'no-answer')}`),
         persona: input.persona ?? null,
         city: input.city ?? null,
         turns: input.messages.length,

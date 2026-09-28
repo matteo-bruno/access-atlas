@@ -51,7 +51,7 @@ export async function* runChat({ provider, ...turn }) {
     } catch (error) {
       if (!(error instanceof ProviderError) || !error.retryable) throw error;
       chain.failed(model, error);
-      failures.push({ model: model.name, status: error.status ?? null });
+      failures.push({ model: model.name, status: error.status ?? null, reason: error.message, started: !!error.started });
       console.error(`[citychat] ${model.name} failed (${error.message})${i + 1 < candidates.length ? `, trying ${candidates[i + 1].name}` : ''}`);
       if (i + 1 < candidates.length) yield { type: 'status', status: 'fallback', from: model.name, to: candidates[i + 1].name };
     }
@@ -82,7 +82,16 @@ async function* runTurn({ provider, runTool, messages, persona, city, lang }) {
   let usage = { input: 0, output: 0 };
 
   for (let step = 0; step < MAX_STEPS; step++) {
-    const res = await provider.complete({ system, messages: convo, tools: TOOL_DEFINITIONS });
+    // The model streams; while it does, the page hears that it is writing,
+    // which is also what keeps every proxy between here and it from closing
+    // a connection that has gone quiet.
+    let res;
+    for await (const item of whileWaiting((onProgress) =>
+      provider.complete({ system, messages: convo, tools: TOOL_DEFINITIONS, onProgress }),
+    )) {
+      if (item.done) res = item.value;
+      else yield item.value;
+    }
     if (res.usage) {
       usage.input += res.usage.input ?? 0;
       usage.output += res.usage.output ?? 0;
@@ -155,4 +164,52 @@ function collectLinks(result, links) {
     }
   };
   visit(result);
+}
+
+// How often the page may be told the answer has grown, at most.
+const PROGRESS_EVERY_MS = 700;
+
+/**
+ * Run `start(onProgress)` and yield its progress as `progress` events while
+ * it runs, then its result as `{ done: true, value }`. Writing progress is
+ * throttled, and only reported once the model is writing prose rather than
+ * calling a tool: a tool call is announced by its own event.
+ */
+async function* whileWaiting(start) {
+  const queue = [];
+  let wake = null;
+  let settled = null;
+  let lastAt = 0;
+  const notify = () => {
+    wake?.();
+    wake = null;
+  };
+  start(({ chars, calls }) => {
+    const now = Date.now();
+    if (calls || !chars || now - lastAt < PROGRESS_EVERY_MS) return;
+    lastAt = now;
+    queue.push({ done: false, value: { type: 'progress', phase: 'writing', chars } });
+    notify();
+  }).then(
+    (value) => {
+      settled = { value };
+      notify();
+    },
+    (error) => {
+      settled = { error };
+      notify();
+    },
+  );
+  for (;;) {
+    if (queue.length) {
+      yield queue.shift();
+      continue;
+    }
+    if (settled) break;
+    await new Promise((resolve) => {
+      wake = resolve;
+    });
+  }
+  if (settled.error) throw settled.error;
+  yield { done: true, value: settled.value };
 }

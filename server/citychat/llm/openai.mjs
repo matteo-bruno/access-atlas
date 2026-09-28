@@ -13,9 +13,9 @@
 // cannot call tools will answer from memory, which is exactly what CityChat
 // exists to prevent; numbers.mjs will flag it, but pick a model that can.
 
-import { ProviderError, postJSON } from './http.mjs';
+import { ProviderError, postSSE } from './http.mjs';
 
-export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, timeoutMs }) {
+export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firstByteMs, idleMs }) {
   if (!model) throw new Error('CITYCHAT_PROVIDER=openai needs CITYCHAT_MODEL');
   const url = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
 
@@ -44,11 +44,13 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, time
 
   return {
     name: `openai:${model}@${new URL(baseUrl).host}`,
-    async complete({ system, messages, tools }) {
+    async complete({ system, messages, tools, onProgress }) {
       const body = {
         model,
         messages: toMessages(system, messages),
         temperature,
+        // Streamed, so a long answer is never cut off for being long.
+        stream: true,
       };
       if (tools?.length) {
         body.tools = tools.map((t) => ({
@@ -56,27 +58,49 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, time
           function: { name: t.name, description: t.description, parameters: t.parameters },
         }));
       }
-      const data = await postJSON(url, body, {
-        headers: apiKey ? { Authorization: `Bearer ${apiKey}` } : {},
-        timeoutMs,
-        label: 'Model server',
-      });
-      const message = data.choices?.[0]?.message;
-      if (!message) throw new ProviderError('Model server returned no message');
 
-      const toolCalls = (message.tool_calls ?? []).map((c, i) => ({
+      // Deltas joined back into one message. Tool calls arrive in pieces
+      // keyed by `index`: the id and name once, the arguments as fragments.
+      let content = '';
+      const calls = [];
+      let usage = null;
+      let seen = false;
+      await postSSE(url, body, {
+        headers: apiKey ? { Authorization: `Bearer ${apiKey}` } : {},
+        firstByteMs,
+        idleMs,
+        label: 'Model server',
+        onData: (chunk) => {
+          if (chunk.usage) usage = chunk.usage;
+          const delta = chunk.choices?.[0]?.delta;
+          if (!delta) return;
+          seen = true;
+          if (typeof delta.content === 'string') content += delta.content;
+          for (const piece of delta.tool_calls ?? []) {
+            const at = piece.index ?? calls.length;
+            calls[at] ??= { id: '', name: '', arguments: '' };
+            if (piece.id) calls[at].id = piece.id;
+            if (piece.function?.name) calls[at].name += piece.function.name;
+            if (piece.function?.arguments) calls[at].arguments += piece.function.arguments;
+          }
+          onProgress?.({ chars: content.length, calls: calls.length > 0 });
+        },
+      });
+      if (!seen) throw new ProviderError('Model server returned no message');
+
+      const toolCalls = calls.filter(Boolean).map((c, i) => ({
         id: c.id || `call_${i}`,
-        name: c.function?.name,
-        args: parseArgs(c.function?.arguments),
+        name: c.name,
+        args: parseArgs(c.arguments),
       }));
       // Reasoning models served locally often put their thinking in the
       // content between <think> tags; it is not part of the answer.
-      const text = String(message.content ?? '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+      const text = String(content).replace(/<think>[\s\S]*?<\/think>/g, '').trim();
       return {
         text,
         toolCalls,
         raw: null,
-        usage: data.usage ? { input: data.usage.prompt_tokens, output: data.usage.completion_tokens } : null,
+        usage: usage ? { input: usage.prompt_tokens, output: usage.completion_tokens } : null,
       };
     },
   };

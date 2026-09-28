@@ -72,3 +72,116 @@ export function postJSON(url, body, options) {
 export function getJSON(url, options) {
   return request(url, { ...options, method: 'GET' });
 }
+
+/**
+ * POST and read the answer as Server-Sent Events, one parsed `data:` payload
+ * at a time.
+ *
+ * The deadline is not on the call, it is on silence. A model that thinks
+ * for a long time before writing is working, and one that is writing is
+ * certainly working, so neither is cut off: `firstByteMs` bounds only the
+ * wait for the first byte (a thinking model says nothing until it has
+ * thought), and once anything has arrived `idleMs` bounds only a gap between
+ * two chunks, which is a stalled connection rather than a slow answer. There
+ * is no limit on the whole.
+ *
+ * A failure before the first byte can go to the next model like any other.
+ * One after it is marked `started`, for the log: the model was answering.
+ *
+ * @param {(data: object) => void} onData  called per event; `[DONE]` ends the stream
+ */
+export async function postSSE(url, body, { headers = {}, firstByteMs, idleMs, label, onData }) {
+  const controller = new AbortController();
+  let started = false;
+  let timer = null;
+  let timedOut = false;
+  const arm = (ms) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, ms);
+  };
+  const fail = (message, extra = {}) =>
+    Object.assign(new ProviderError(`${label}: ${message}`, extra), { started });
+
+  arm(firstByteMs);
+  try {
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream', ...headers },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
+    } catch (error) {
+      throw fail(timedOut ? `no answer within ${Math.round(firstByteMs / 1000)} s` : `request failed (${error.message})`);
+    }
+    if (!response.ok) {
+      const text = await response.text().catch(() => '');
+      throw fail(`HTTP ${response.status}`, {
+        status: response.status,
+        detail: text.slice(0, 2000),
+        retryAfterMs: response.status === 429 ? retryAfter(response, text) : null,
+      });
+    }
+
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let dataLines = [];
+    const dispatch = () => {
+      if (!dataLines.length) return false;
+      const payload = dataLines.join('\n');
+      dataLines = [];
+      if (payload.trim() === '[DONE]') return true;
+      let parsed;
+      try {
+        parsed = JSON.parse(payload);
+      } catch {
+        throw fail('unreadable event in the stream', { detail: payload.slice(0, 500), retryable: true });
+      }
+      onData(parsed);
+      return false;
+    };
+
+    const reader = response.body.getReader();
+    for (;;) {
+      let chunk;
+      try {
+        chunk = await reader.read();
+      } catch (error) {
+        throw fail(
+          timedOut
+            ? started
+              ? `stream stalled for ${Math.round(idleMs / 1000)} s`
+              : `no answer within ${Math.round(firstByteMs / 1000)} s`
+            : `stream broke (${error.message})`,
+        );
+      }
+      if (chunk.done) break;
+      if (!started) started = true;
+      arm(idleMs);
+      buffer += decoder.decode(chunk.value, { stream: true });
+      let newline;
+      while ((newline = buffer.indexOf('\n')) >= 0) {
+        const line = buffer.slice(0, newline).replace(/\r$/, '');
+        buffer = buffer.slice(newline + 1);
+        if (line === '') {
+          if (dispatch()) {
+            reader.cancel().catch(() => {});
+            return;
+          }
+        } else if (line.startsWith('data:')) {
+          dataLines.push(line.slice(5).replace(/^ /, ''));
+        }
+        // `event:`, `id:` and comments carry nothing these APIs use.
+      }
+    }
+    buffer += decoder.decode();
+    if (buffer.startsWith('data:')) dataLines.push(buffer.slice(5).replace(/^ /, ''));
+    dispatch();
+  } finally {
+    clearTimeout(timer);
+  }
+}
