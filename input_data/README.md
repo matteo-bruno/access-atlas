@@ -5,6 +5,42 @@ in this folder is served by the site directly — the scripts under
 `../scripts/` read from here and write compressed, ready-to-serve copies
 under `../public/data/`.
 
+## Updating: import only what changed
+
+```
+npm run update:data                  # every platform with an importer
+npm run update:data -- --15mincity   # only the platforms named
+npm run update:data -- --dry-run     # list what would be imported, change nothing
+npm run update:data -- --force       # re-import every file, changed or not
+npm run update:data -- --baseline    # record the files as imported, import nothing
+```
+
+`update:data` hashes every file here and compares it with
+`manifest.json`, which records what was imported: each file's SHA-256 and
+a fingerprint of the importer that read it. A file that is new or whose
+content changed is imported, one city per importer run, so a failure names
+its file. Then `test:data` runs, and only if it passes is the manifest
+updated. A failed or rejected run leaves the files looking unimported, and
+the next run offers them again.
+
+- **Content, not dates.** Copying or re-downloading a file changes its
+  date, not its hash, and does not trigger an import.
+- **A removed file does not unpublish its city.** It is reported and its
+  manifest entry stays. Taking a city off the site is done by hand.
+- **An importer change is reported, not acted on.** Files imported by an
+  earlier version of the importer are counted, and `--force` re-imports
+  them.
+- **`--baseline`** is for data already published from these files, so the
+  first run does not re-import every city just to find out it had.
+
+The source folders are ignored by git (too large); `manifest.json` is
+committed alongside the data it describes, so `git log input_data/manifest.json`
+is the history of what was imported and when.
+
+Only 15minCity has an importer so far. P.O.V., CDI and CityChrone are
+recognised (`--pov` says there is no importer yet), and files dropped in
+their folders are reported as skipped rather than ignored.
+
 ## 15minCity
 
 One `*.geojson` per city, in the harmonised full-name schema (properties

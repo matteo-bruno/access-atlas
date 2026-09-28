@@ -37,6 +37,7 @@ import { fileURLToPath } from 'node:url';
 import { latLngToCell, cellToLatLng, cellToBoundary } from 'h3-js';
 import { readDataJSON, resolveDataFile, writeDataFile } from './lib/datafile.mjs';
 import { countryAt } from './lib/country.mjs';
+import { slugify } from './lib/slug.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -108,15 +109,6 @@ const r = (n, d) => {
 };
 const rCoord = (n) => r(n, COORD_DECIMALS);
 const rVal = (n) => r(n, VALUE_DECIMALS);
-
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
 
 function titleCase(slug) {
   return slug

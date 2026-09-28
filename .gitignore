@@ -3,3 +3,7 @@ dist/
 .vite/
 *.local
 .DS_Store
+
+# Source exports are inputs, too large to version; what was imported from
+# them is recorded by hash in input_data/manifest.json, which is committed.
+input_data/*/

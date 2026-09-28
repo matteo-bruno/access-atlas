@@ -674,6 +674,7 @@ Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
 npm run build:atlas        # union meshes + fifteen/citychrone catalogue entries
 npm run import:fifteen     # standalone-format 15minCity files → public/data/fifteen/
+npm run update:data        # only what changed in input_data/, per input_data/manifest.json
 npm run shoot:previews     # platform-card stills, from the running site
 ```
 
