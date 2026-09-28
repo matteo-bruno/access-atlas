@@ -7,14 +7,14 @@ It brings four open research platforms under one identity:
 
 | Platform                       | Measures                                                  | Published here |
 | ------------------------------ | --------------------------------------------------------- | -------------- |
-| **15min-City**                 | Proximity — travel time to ten categories of service       | Milan |
-| **CityChrone++**               | Opportunity — hourly transit scores and isochrones         | Milan |
+| **15min-City**                 | Proximity — travel time to ten categories of service       | Milan, Zurich |
+| **CityChrone++**               | Opportunity — hourly transit scores and isochrones         | Milan, Zurich |
 | **Car Dependency Index**       | Comparison — opportunity by car against by transit         | 22 datasets |
 | **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access  | 18 cities |
 
-Milan is published on one shared H3 grid across all four platforms, and the
-**combined viewer** (`/atlas/milan`) reads them as switchable layers of a
-single mesh.
+Every platform publishes on the standard H3 grid, so each city is one grid
+shared by all its layers, and the **combined viewer** (`/atlas/milan`) reads
+them as switchable layers of a single mesh. Milan and Zurich carry all four.
 
 "Published here" counts what is in `public/data/`, not the coverage of the
 upstream research platforms.
@@ -25,10 +25,9 @@ React + Vite, MapLibre for the maps, bilingual EN/IT.
 an older Node the `.mjs` files are parsed as CommonJS and die on their first
 `import` with a bare `SyntaxError: Unexpected identifier`; `npm run` checks the
 version first and says so instead. The same preflight checks that the packages
-a script imports are installed: the data scripts need `h3-js`, a
-devDependency, so a tree installed with `--omit=dev` or installed before that
-dependency was added answers `ERR_MODULE_NOT_FOUND` instead of running, and
-`npm install` is the fix.
+a script imports are installed: the data scripts need `h3-js`, so a tree
+installed before that dependency was added answers `ERR_MODULE_NOT_FOUND`
+instead of running, and `npm install` is the fix.
 
 ```bash
 nvm use 22           # or any Node ≥ 20
@@ -40,18 +39,21 @@ npm run preview
 
 ## Adding data
 
-Drop upstream files under `input_data/<platform>/` and run the matching
-import script. See [`input_data/README.md`](input_data/README.md) for the
-per-platform schema.
+Drop each platform's export, as the platform hands it over, under
+`input_data/<platform>/` (`15mincity`, `citychrone`, `pov`, `cdi`) and run:
 
 ```bash
-npm run import:fifteen           # input_data/15mincity/*.geojson → public/data/fifteen/
-npm run test:data                # validate what was just written
+npm run update:data              # import whatever changed, then validate
+npm run update:data -- --dry-run # just list it
+npm run import -- pov input_data/pov/zurich_pov.zip   # one source by hand
 ```
 
-Each import script rounds coordinates and values, drops pipeline debris,
-derives the population-scaled cartogram companion, and upserts the city
-into `public/data/index.json` + the platform's `coverage.geojson`.
+[`input_data/README.md`](input_data/README.md) has the formats and the
+options. An import checks every cell against the H3 grid, adds the layer to
+its city (keeping the city's other layers), and updates the catalogue, the
+platform's world-map marker and its compare-view row. `update:data` records
+what it imported in `input_data/manifest.json`, so the next run only touches
+what changed.
 
 The scripts that drive a browser — `smoke`, `smoke:published`,
 `shoot:previews` — also need Playwright, which is deliberately *not* a
@@ -63,8 +65,8 @@ npm install --no-save playwright && npx playwright install chromium
 
 ## Status
 
-**All four platforms render measurements.** 42 city datasets — 153,987 cells —
-are published under `public/data/` and validated on every push. Cities the
+**All four platforms render measurements.** 22 cities, 44 layers — 156,755
+cells — are published under `public/data/` and validated on every push. Cities the
 catalogue does not list still fall back to generated stand-ins labelled as
 illustrative; [`public/data/README.md`](public/data/README.md) documents the
 catalogue that decides which is which.
@@ -194,40 +196,26 @@ A static build; `dist/` can be served by anything.
 
 Two mechanisms, and they stack.
 
-**1. Content reduction, in the import scripts.** Coordinates to 5 decimal
-places (~1 m), values to 1 decimal, pipeline fields nothing reads
-dropped. Roughly 30 % off before anything is compressed.
+**1. Nothing is stored twice.** Each city is one grid file and one file
+per layer (`public/data/cities/<city>/`). Cell outlines are not stored at
+all: every cell is a standard H3 hexagon, so the browser draws it from its
+index. Values are columns keyed to grid positions, and a layer's file is
+fetched only when that layer is opened. Published cartograms are kept as
+small integer offsets from each cell's centre; derived ones need nothing
+but their reference population. CityChrone's travel-time matrices are
+stored with rows and columns in grid order, which puts neighbouring cells
+next to each other and makes them 2 to 3.5 times smaller under gzip,
+losslessly.
 
-**2. gzip.** A platform can store its published files gzipped, and the
-server sends them with `Content-Encoding: gzip` so the browser decodes
-them transparently.
+**2. gzip.** Every published file is stored gzipped (`grid.json.gz`,
+named that way in the catalogue), because the Atlas is served from a
+machine where the size of the data tree is the binding constraint.
 
-**Every platform is stored gzipped** — `fifteen/milan.geojson.gz`, named
-that way in the catalogue — because the Atlas is served from a machine
-where the size of the data tree is the binding constraint.
-`public/data/` went **176 MB → 41 MB**:
-
-| | before | after |
+| | old layout | per-city layout |
 | --- | ---: | ---: |
-| citychrone | 83.63 MB | 23.89 MB |
-| cardep | 47.53 MB | 8.77 MB |
-| pov | 25.28 MB | 4.48 MB |
-| fifteen | 9.72 MB | 1.93 MB |
-| atlas | 9.23 MB | 1.34 MB |
-
-Converting a platform either way:
-
-```bash
-npm run compress:data -- --platform cardep          # convert + repoint catalogue
-npm run compress:data -- --platform cardep --dry-run
-npm run compress:data -- --platform cardep --decompress   # back out
-npm run compress:data -- --all
-```
-
-It rewrites every path the catalogue names — `dataset`, `geoDataset`,
-`cartogramDataset`, `cartograms`, `coverage`, `summary`, scenarios and
-CityChrone's `{hh}` hourly templates — so nothing is left pointing at a
-file that moved. Run `npm run test:data` after.
+| everything but the travel times | 17.6 MB | 2.9 MB |
+| CityChrone travel times, Milan | 21.0 MB | 9.9 MB |
+| `public/data/` in all | 38.6 MB | 15.4 MB, Zurich's new layers included |
 
 Separately, `npm run build` writes `.gz` companions beside every *other*
 text file in `dist/` above 4 KB (`scripts/postbuild-compress.mjs`), which

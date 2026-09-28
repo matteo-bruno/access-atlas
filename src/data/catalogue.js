@@ -21,8 +21,15 @@
 //                      "geoDataset": "pov/rome.geo.geojson",
 //                      "cell": { "h3Resolution": 9, "cellRadiusM": 200 } }]
 //       }
-//     }
+//     },
+//     "atlas": { "cities": [{ "id": "rome", …, "grid": "cities/rome/grid.json.gz",
+//                             "layers": ["cardep", "pov"],
+//                             "layerData": { "pov": "cities/rome/pov.json.gz", … } }] }
 //   }
+//
+// Published cities use the per-city layout (version 2): the atlas entry is
+// how the city view draws them, and each platform row names that city's
+// `layer` file for the world maps, search and compare view.
 // ─────────────────────────────────────────────────────────────────────────
 
 // Relative to public/data/ — `dataUrl` supplies the directory.
@@ -74,14 +81,16 @@ function normaliseCity(raw) {
   // Hourly data (CityChrone): one hexcover/times file pair per hour of day,
   // referenced as path templates with `{hh}` standing for the zero-padded
   // hour. `cells` is the row count shared by every hour's matrix.
+  // A city on the per-city layout carries its scores in the layer file and
+  // only the travel-time template here, so `hexcover` is optional.
   const hourly =
     raw.hourly &&
-    typeof raw.hourly.hexcover === 'string' &&
+    (typeof raw.hourly.hexcover === 'string' || typeof raw.hourly.times === 'string') &&
     Number.isFinite(raw.hourly.hours) &&
     Number.isFinite(raw.hourly.cells)
       ? {
           hours: raw.hourly.hours,
-          hexcover: raw.hourly.hexcover,
+          hexcover: typeof raw.hourly.hexcover === 'string' ? raw.hourly.hexcover : null,
           times: typeof raw.hourly.times === 'string' ? raw.hourly.times : null,
           cells: raw.hourly.cells,
         }
@@ -97,6 +106,16 @@ function normaliseCity(raw) {
     zoom: Number.isFinite(raw.zoom) ? raw.zoom : 10,
     population: Number.isFinite(raw.population) ? raw.population : null,
     dataset: typeof raw.dataset === 'string' ? raw.dataset : null,
+    // The per-city layout (scripts/lib/bundle.mjs): an atlas entry names its
+    // grid and one file per layer; a platform row names its own layer file.
+    grid: typeof raw.grid === 'string' ? raw.grid : null,
+    layerData:
+      raw.layerData && typeof raw.layerData === 'object'
+        ? Object.fromEntries(
+            Object.entries(raw.layerData).filter(([, path]) => typeof path === 'string'),
+          )
+        : {},
+    layer: typeof raw.layer === 'string' ? raw.layer : null,
     // Alternative runs of the same city — the legacy site's "ideal city" and
     // Metro D are these. A static host serves the ones published ahead of
     // time; a backend provider can offer ones computed on demand.
@@ -120,7 +139,7 @@ function normaliseCity(raw) {
     cartogramDataset:
       typeof raw.cartogramDataset === 'string' ? raw.cartogramDataset : null,
     // Whether a cartogram is the platform's own or one the Atlas derived —
-    // the rule is stated in scripts/build-atlas.mjs, and the UI says which it
+    // the rule is stated in scripts/lib/bundle.mjs, and the UI says which it
     // is looking at rather than presenting both as the same kind of thing.
     cartogramSource: raw.cartogramSource === 'derived' ? 'derived' : 'published',
     cartograms:
@@ -205,6 +224,11 @@ export function publishedCity(catalogue, platformId, cityId) {
 /** The combined-viewer (union mesh) entry for a city, or null. */
 export function atlasCity(catalogue, cityId) {
   return catalogue?.atlas?.citiesById?.[cityId] ?? null;
+}
+
+/** Whether a catalogue row has something the city view can draw. */
+export function hasCityData(city) {
+  return Boolean(city?.dataset || city?.hourly || city?.layer || city?.grid);
 }
 
 /** Path inside public/data/ for one hour of an hourly dataset. */

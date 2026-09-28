@@ -1,277 +1,184 @@
-# Dropping real data into the Atlas
+# The published data
 
-Everything the maps draw is GeoJSON. Files in this directory are served
-statically at `/data/…`, so publishing a dataset is a copy plus a catalogue
-entry, not a code change.
+Everything the maps draw is served statically from this directory at
+`/data/…`. It is written by the importers (`npm run update:data`, see
+`input_data/README.md`), never by hand, and `npm run test:data` validates all
+of it.
 
-## What is here now
+## What is here
 
-| File                 | What it is                                                    |
-| -------------------- | ------------------------------------------------------------- |
-| `index.json`         | The **catalogue** — the one file that decides whether the Atlas draws measurements or seed data. |
-| `pov/`               | Accessibility P.O.V. — 18 cities, one GeoJSON each, plus `coverage.geojson`. Measured. |
-| `cardep/`            | Car Dependency Index — 22 city datasets (20 cities plus a Paris metro-area and a Rome Metro D scenario), plus `coverage.geojson`. Measured. |
-| `fifteen/`           | 15minCity — Milan on the standard H3 grid, 20 measures per cell (10 service categories × foot/bicycle). Measured. |
-| `citychrone/`        | CityChrone — Milan, 24 hourly `hexcoverNN.json` score files plus 24 `timesNN.npy` travel-time matrices. Measured. |
-| `atlas/`             | The combined viewer's union meshes — one GeoJSON per harmonised city, every platform's values on the same H3 cells. Derived offline by `scripts/build-atlas.mjs`. |
-| `world-land.geojson` | Natural Earth 110m land polygons, simplified to 2 dp. Draws the paper basemap so the Atlas needs no tile server. Public domain. |
+| Path | What it is |
+| ---- | ---------- |
+| `index.json` | The **catalogue**: the one file that decides whether the Atlas draws measurements or seed data. |
+| `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
+| `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
+| `cities/<city>/citychrone/timesHH.npy.gz` | CityChrone's travel-time matrix for each hour. |
+| `<platform>/coverage.geojson.gz` | One point per city, for the platform's world map and the search. |
+| `pov/summary.json.gz`, `cardep/summary.json.gz` | One row per city, for the compare view. |
+| `world-land.geojson` | Natural Earth 110m land, simplified to 2 dp: the paper basemap. Public domain. |
 
-15minCity's legacy Rome export (letter-keyed, non-H3) has been retired; its
-other cities live in the legacy site's database until they are re-exported on
-the standard grid.
-
-Regenerate everything under `pov/` and `cardep/` from the upstream repositories
-with:
-
-```bash
-npm run build:data -- --pov ../accessibility-pov --cdi ../CDI --fifteen ../15mincity
-```
-
-Rebuild the union meshes and the fifteen/citychrone catalogue entries from the
-files already in this directory with:
-
-```bash
-npm run build:atlas
-```
-
-Both print the counts `src/data/home.js` and `src/data/platforms.js` quote, so
-those stay in step with the data rather than drifting from it.
+Every platform publishes on the standard H3 grid (resolution 9), so a city is
+**one grid shared by every layer**, and a cell's polygon is not stored at all:
+the browser draws it from its index. A layer's file is fetched only when that
+layer is opened. Nothing is stored twice.
 
 ## The catalogue
 
-`index.json` lists what has actually been published. A platform with no entry,
-or a city missing from a platform's list, falls back to the seed data — so the
-site works on a fresh checkout and picks up real outputs one city at a time.
-
 ```json
 {
-  "version": 1,
+  "version": 2,
   "platforms": {
     "pov": {
-      "coverage": "pov/coverage.geojson",
+      "coverage": "pov/coverage.geojson.gz",
+      "summary": "pov/summary.json.gz",
       "cities": [
-        {
-          "id": "rome",
-          "name": "Rome",
-          "center": [12.4964, 41.9028],
-          "zoom": 10.1,
-          "dataset": "pov/rome.geojson",
-          "population": 2610243,
-          "cell": { "h3Resolution": 9, "cellRadiusM": 200 }
-        }
+        { "id": "zurich", "name": "Zurich", "nameIt": "Zurigo",
+          "region": "Switzerland", "regionIt": "Svizzera", "country": "CH",
+          "center": [8.52928, 47.38479], "zoom": 10.5, "population": 404153,
+          "layer": "cities/zurich/pov.json.gz",
+          "cell": { "h3Resolution": 9, "cellRadiusM": 200 },
+          "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } }
       ]
     }
+  },
+  "atlas": {
+    "cities": [
+      { "id": "zurich", "name": "Zurich", "…": "…",
+        "grid": "cities/zurich/grid.json.gz",
+        "layers": ["fifteen", "citychrone", "cardep", "pov"],
+        "layerData": { "pov": "cities/zurich/pov.json.gz", "…": "…" },
+        "cartogramSources": { "pov": "published", "fifteen": "derived", "…": "…" },
+        "hourly": { "hours": 24, "cells": 909,
+                    "times": "cities/zurich/citychrone/times{hh}.npy.gz" } }
+    ]
   }
 }
 ```
 
-Platform keys are the `id` values in `src/data/platforms.js`: `fifteen`,
-`citychrone`, `cardep`, `pov`.
+- **`atlas.cities`** is how the city view (`/atlas/:cityId`) draws a city:
+  its grid, and which layer file to fetch for each layer.
+- **`platforms.<id>.cities`** is one row per city that platform publishes,
+  for the world maps, the search and the compare view. Its `center`, `zoom`
+  and `population` are that layer's own; `layer` names the same file as the
+  atlas entry.
+- Platform keys are the `id` values in `src/data/platforms.js`: `fifteen`,
+  `citychrone`, `cardep`, `pov`.
+- **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. `{hh}` in a
+  path stands for the zero-padded hour.
+- A platform with no entry, or a city missing from a list, falls back to the
+  seed data, so the site works on a fresh checkout.
 
-Two additions beyond the per-platform lists:
-
-- **Hourly datasets** (CityChrone): a city carries `"hourly"` instead of a
-  single `dataset` — `{ "hours": 24, "cells": 1741, "hexcover":
-  "citychrone/milan/hexcover{hh}.json", "times":
-  "citychrone/milan/times{hh}.npy" }`, with `{hh}` standing for the
-  zero-padded hour. Each hexcover is a FeatureCollection with per-cell
-  `new_id`, `pop`, `v_score`, `s_score` (and `coord` as `[lat, lon]` — the one
-  upstream file on that order); each `times` file is a NumPy uint8 matrix of
-  minutes, `cells × cells`, row = origin `new_id`.
-- **The `atlas` section** (top level, beside `platforms`) lists cities with a
-  harmonised union mesh for the combined viewer, each with a `dataset`
-  pointing under `atlas/` and a `layers` array naming the platforms it
-  carries. A city absent here still gets a combined view — the viewer swaps
-  per-platform meshes instead of repainting one. Union meshes are **derived**:
-  regenerate them with `npm run build:atlas` after changing any Milan file,
-  and `npm run test:data` reconciles them against the per-platform files.
-
-- **Alternative geometry.** A city's values sit on one geometry; where the
-  other one is published too, the city entry says which is which. `"geometry"`
-  is `"cartogram"` or `"geographic"` and describes `dataset`'s own polygons;
-  `"geoDataset"` points at the true hexagons beside a cartogram, and an
-  `atlas` city's `"cartograms"` maps a platform id to the cartogram polygons
-  for its cells. A companion file is a `FeatureCollection` whose every feature
-  carries `{ "i": <index into dataset.features> }` and nothing else, so the
-  join is stated rather than positional — and a cartogram companion covers
-  only the cells its platform measures. The viewer offers the switch exactly
-  where a companion exists: 15minCity and CityChrone publish no cartogram, and
-  the UI says so rather than drawing one.
-
-  The geographic companions are **derived**, not copied: every published cell
-  sits on the standard H3 grid, and the cartogram preserves its centroid, so
-  the centroid identifies the cell and the cell determines its hexagon.
-  `build-data.mjs` refuses a centroid more than 10 m off a cell centre, and
-  checks the result against the true hexagons CDI publishes in
-  `hexes.geojson` — they reproduce them exactly.
-
-  Cartograms are derived too where a platform publishes none — 15minCity and
-  CityChrone — by the rule in `build-atlas.mjs`: area proportional to resident
-  population, full hexagon at the city's median cell population.
-  `"cartogramSource"` (and `"cartogramSources"` on an atlas entry) marks each
-  as `published` or `derived`; `"cartogramDataset"` points at the cartogram
-  beside a city published on true geography, the mirror of `geoDataset`.
-- **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. The upstream CDI
-  `index.json` uses `[lat, lon]` — flipping it is the exporter's job.
-- **`cell`** describes the real cell geometry. It cannot be measured from a
-  cartogram, whose polygons are scaled by population, so it is stated here or
-  the map caption is omitted.
-- A city with no `dataset` still appears in the catalogue but has no detail
-  page; the landing map flies to it instead.
-
-## Summary files
-
-One JSON document per platform, listing every published city once — the
-compare view (`/platforms/:slug/compare`) reads this instead of fetching all
-22 city datasets to end up with twenty numbers each. Declared as `"summary"`
-beside `"coverage"` on the platform entry, and written by `build:data` from
-the same features it just published, so a figure here and the same figure on
-a city page cannot drift.
+## The grid
 
 ```json
-{
-  "platform": "cardep",
-  "cities": [
-    {
-      "id": "milan",
-      "cells": 1741,
-      "population": 1201023,
-      "medianCdi": 0.112,
-      "weightedCdi": 0.063,
-      "ptShare": 1.9,
-      "carShare": 72.3,
-      "weightedByCar": 1852.6,
-      "weightedByTransit": 1662,
-      "cdf": [[-1, 0], [-0.9, 0], "… 21 points to +1"]
-    }
-  ]
-}
+{ "format": "atlas-grid", "version": 1, "resolution": 9,
+  "cells": ["891f8d7a0003fff", "…"],
+  "population": [752, "…"] }
 ```
 
-P.O.V.'s rows carry `medianProximity`/`medianOpportunity`, the
-population-weighted means, `thresholds`, and **both** `zoneShares` (per cell)
-and `zonePopulationShares` (per resident). The two differ enough to be worth
-publishing separately: 67.7% of Milan's cells are total isolation, but only
-42.7% of its residents — isolated cells are large and thinly populated.
+Every cell any of the city's layers covers, sorted by H3 index, so the same
+layers always give the same grid. A cell's population is its context figure
+(the Population layer and the city summary): P.O.V. and Car Dependency share
+one population model and win where they cover the cell, then 15minCity, then
+CityChrone.
 
-`cdf` is the cumulative share of a city's *population* at or below each index
-value, 21 points from −1 to +1: enough to draw the distribution curve, small
-enough to publish for every city.
+## A layer
+
+```json
+{ "format": "atlas-layer", "version": 1, "layer": "pov", "cells": 733,
+  "order": "grid", "idx": [12, 1, 1, 3, "…"],
+  "fields": { "population": [], "zone": [], "proximity": [], "opportunity": [] },
+  "meta": { "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } },
+  "cartogram": { "source": "published", "unit": 1e-5, "rings": [[-9, 172, "…"]] } }
+```
+
+- **Rows follow the grid.** `idx` gives each row's grid position,
+  delta-encoded (each entry is the step from the previous one), which
+  compresses to almost nothing.
+- **`fields` are columns**, one value per row, `null` where the platform has
+  none. Kept at the precision the platforms' own viewers show:
+
+  | Layer | Fields |
+  | ----- | ------ |
+  | `pov` | `zone` (0–3), `proximity`, `opportunity` (weighted POI counts, 1 dp) |
+  | `cardep` | `cdi` (3 dp, in [−1, +1]), `o_score_pt`, `o_score_car` (1 dp) |
+  | `fifteen` | `<category>_<mode>` minutes, 1 dp, `99999` = unreachable |
+  | `citychrone` | `hourly.v[hour][row]` (2 dp), `hourly.s[hour][row]` (integer) |
+
+  Every layer carries its own `population` too. 15minCity's
+  `proximity_time_<mode>` is the mean of the nine categories and is computed
+  by the browser rather than stored.
+- **The cartogram.** P.O.V. and Car Dependency publish their own, and those
+  are not scaled hexagons (up to ~10 m off one on small cells), so they are
+  kept: each ring as integer vertex offsets from its cell's H3 centre, in
+  units of 1e-5°, the precision they were published at. 15minCity and
+  CityChrone publish none; the Atlas derives one (`"source": "derived"`):
+  each cell keeps its centre and shape, and its area is proportional to its
+  population, reaching the full hexagon at `reference`, the median over the
+  layer's cells. The population is the grid's, shared by every layer, so a
+  cell of a given population is the same size whichever layer draws it.
+  `test:data` checks the rule stays within 25 m of the published cartograms
+  where both exist. The UI says which of the two is on screen.
+
+CityChrone's travel-time matrices are NumPy `uint8` minutes, `cells × cells`,
+capped at 180 upstream. Row and column *i* are the layer's row *i*, so they
+are stored in grid order, not the export's: neighbouring cells become
+neighbouring rows, and gzip finds them, 2 to 3.5 times smaller than in the
+export's order.
+
+`v_score` is a km/h-like velocity score and `s_score` a sociality score (a
+weighted count of reachable people: a score, not a headcount), both defined
+in the platform paper (doi:10.1098/rsos.190979).
 
 ## Coverage files
 
 One `FeatureCollection` of points per platform, driving the world map and the
 city search. Property names match what the seed list emits, so the two are
-interchangeable:
+interchangeable. Each platform colours by one property, declared as
+`property` in `src/data/platforms.js`:
+
+| Platform | Property |
+| -------- | -------- |
+| `fifteen` | `proximityMinutes`: population-weighted median walking time to all services |
+| `citychrone` | `velocityScore`: population-weighted median velocity score at 08:00 |
+| `cardep` | `cdi`: the index for the average resident (population-weighted mean) |
+| `pov` | `zone`: the zone most residents live in, and `inclusionShare` |
+
+Scenario variants (`paris-fua`, `munich-fua`, `rome-metro-d`) are published
+with a city view but no marker of their own.
+
+## Summary files
+
+One row per city, for the compare view (`/platforms/:slug/compare`), so it
+does not fetch every city's layer to show twenty numbers each. Written by the
+importer from the values as published.
 
 ```json
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [12.4964, 41.9028] },
-      "properties": {
-        "id": "rome",
-        "name": "Rome",
-        "country": "IT",
-        "isStudy": true,
-        "proximityMinutes": 11.3,
-        "velocityScore": 0.42,
-        "cdi": 2.7,
-        "zone": 0
-      }
-    }
-  ]
-}
+{ "platform": "cardep", "cities": [
+  { "id": "milan", "cells": 1741, "population": 1201023,
+    "medianCdi": 0.112, "weightedCdi": 0.063, "ptShare": 1.9, "carShare": 72.3,
+    "weightedByCar": 1852.6, "weightedByTransit": 1662,
+    "cdf": [[-1, 0], [-0.9, 0], "… 21 points to +1"] } ] }
 ```
 
-Each platform reads one property, declared as `property` in
-`src/data/platforms.js` together with its colour `scale` and `stops`. To change
-what the map shows, change that table — not the components.
+P.O.V.'s rows carry `medianProximity` / `medianOpportunity`, the
+population-weighted means, `thresholds`, and **both** `zoneShares` (per cell)
+and `zonePopulationShares` (per resident). The two differ enough to be worth
+publishing separately: 67.7% of Milan's cells are total isolation, but only
+42.7% of its residents, because isolated cells are large and thinly
+populated.
 
-## Per-city datasets
+## Serving it
 
-### Accessibility P.O.V.
-
-The upstream `accessibility-pov` repo ships one self-contained file per city
-(`data/<city>_cartogram.geojson`). Its properties are read directly:
-
-| Property | Meaning |
-| -------- | ------- |
-| `proximity` | walkable access to everyday services, weighted POI count |
-| `opportunity` | access to city-scale resources by transit, weighted POI count |
-| `cell_type` | `inclusion` · `spatial isolation` · `social isolation` · `total isolation` |
-| `population` | people in the cell |
-| `proximity_median_city`, `opportunity_median_city` | city-wide medians, used as the scatter's quadrant thresholds |
-
-`src/data/adapters.js` maps `cell_type` onto the four zones the UI renders and
-normalises the two axes for the scatter plot. A numeric `zone` (0–3) is
-accepted in place of `cell_type`.
-
-Note these files are **population-scaled cartograms**: cells sit in their true
-positions but their area encodes population, so a low-population cell shrinks
-to a fraction of a full hexagon. The true hexagons are published beside them as
-`pov/<city>.geo.geojson` and named by the entry's `geoDataset`, which is what
-the city page's map/cartogram switch draws.
-
-### Car Dependency Index
-
-The upstream `CDI` repo splits each city across three files — `hexes.geojson`
-(true geography), `cartogram.geojson` (population-scaled, and carrying the
-values) and `cdi.csv`, joined on `properties.id` ⇄ `hexagon_id`. The CSV
-duplicates both the geometry and the values that are already in
-`cartogram.geojson`, so a single merged GeoJSON per city is the form to publish
-here.
-
-Values: `o_score_pt`, `o_score_car`, `CDI` (−1 PT-favoured → +1 car-dependent),
-`population`.
-
-### 15minCity
-
-The harmonised exports (Milan onward) key each measure as
-`<category>_<mode>`, in minutes, with full words: categories
-`proximity_time` (the average across all services), `outdoor`, `education`,
-`supplies`, `restaurant`, `transport`, `culture`, `physical`, `services`,
-`healthcare`; modes `foot` and `bicycle`. Each cell also carries
-`centroid_lon`/`centroid_lat`, `radius`, `population`, and `internal_id` —
-the cell's H3 index as a decimal integer (resolution 9).
-
-The legacy letter scheme (`a_f`, with `d_*` ideal-city differences) and its
-two conflicting letter→category tables are retired with the Rome export; no
-published file uses it and `src/data/fifteen.js` no longer knows the letters.
-
-### CityChrone
-
-Published as hourly file pairs rather than one dataset — see the `hourly`
-catalogue entry above. `v_score` is a km/h-like velocity score, `s_score` a
-sociality score (a weighted count of reachable people — a score, not a
-headcount); both are defined in the platform paper (doi:10.1098/rsos.190979).
-The `times` matrices power click-to-draw isochrones in the combined viewer;
-values are capped at 180 minutes upstream.
-
-## Shapefiles
-
-`src/map/loaders.js` reads zipped shapefiles too — `loadDataset({ url:
-'/data/rome.zip' })` detects the format from the extension and converts to
-GeoJSON via `shpjs`, which is imported on demand so it never lands in the main
-bundle. Reprojecting to WGS84 is the exporter's job; MapLibre expects lon/lat.
-
-## Size
-
-Do not zip GeoJSON — every static host, GitHub Pages included, compresses it in
-transit. Rome's P.O.V. cartogram is 5.2 MB on disk but ~0.4 MB over the wire,
-and trimming coordinates to 5 dp roughly halves the raw file with no visible
-change at any zoom the Atlas offers.
-
-MapLibre parses GeoJSON in a worker, so tens of thousands of features are fine.
-Past roughly 10 MB *compressed*, convert to vector tiles (tippecanoe → PMTiles)
-and point `VITE_MAP_STYLE` at a style that includes the tile source instead.
+Every file is stored gzipped and named that way. The app sniffs the gzip
+magic number and decompresses in the browser when the server has not, so no
+server configuration is required; the README's Deployment section has the
+nginx block that lets the browser decode natively instead.
 
 ## Where the data comes from
 
 The Atlas reads published data through a *provider* (`src/data/sources.js`).
-Today there is one, serving these static files. A scenario backend — the piece
-the legacy 15minCity site had, which a static host cannot replace — becomes a
-second provider implementing the same three methods, installed with
+Today there is one, serving these static files. A scenario backend, the piece
+the legacy 15minCity site had and a static host cannot replace, becomes a
+second provider implementing the same methods, installed with
 `setDataProvider()`. No component changes.

@@ -3,8 +3,8 @@
 // `smoke.mjs` exercises the site as it ships — with no published data, every
 // page falls back to the generated seed. That leaves the more important half
 // untested: what happens when real files are dropped in. This script stages a
-// small synthetic dataset in the real upstream schema, asserts the Atlas picks
-// it up instead of the seed, and removes it again.
+// small synthetic city in the published layout, asserts the Atlas picks it up
+// instead of what is there, and removes it again.
 //
 // It exists because the failure it guards against is invisible: a wrong data
 // URL is served the SPA fallback (index.html, HTTP 200) rather than a 404, so
@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { gridDisk, latLngToCell } from 'h3-js';
 
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 const DIST = process.env.DIST ?? 'dist';
@@ -30,42 +31,38 @@ if (!fs.existsSync(DATA)) {
 }
 
 // ── Fixture ──────────────────────────────────────────────────────────
-// Deliberately in the upstream P.O.V. spelling (`cell_type`, weighted POI
-// counts, city medians) so this also pins the adapter to the real schema.
-const CELL_TYPES = ['inclusion', 'spatial isolation', 'social isolation', 'total isolation'];
+// A city in the published layout (scripts/lib/bundle.mjs): a grid of real H3
+// cells and one P.O.V. layer file keyed to it, with a catalogue that names
+// them. Four zones spread unevenly, so the shares are distinctive.
 const CENTER = [12.4964, 41.9028];
 const COUNT = 240;
 
-const cells = Array.from({ length: COUNT }, (_, i) => {
-  const ring = Array.from({ length: 6 }, (_, v) => {
-    const a = (Math.PI / 180) * (60 * v - 30);
-    return [
-      +(CENTER[0] + ((i % 20) - 10) * 0.01 + Math.cos(a) * 0.004).toFixed(5),
-      +(CENTER[1] + (Math.floor(i / 20) - 6) * 0.01 + Math.sin(a) * 0.004).toFixed(5),
-    ];
-  });
-  return {
-    type: 'Feature',
-    geometry: { type: 'Polygon', coordinates: [[...ring, ring[0]]] },
-    properties: {
-      hexagon_id: i,
-      // Spread the four classes unevenly so the shares are distinctive.
-      cell_type: CELL_TYPES[i % 7 === 0 ? 0 : i % 5 === 0 ? 1 : i % 3 === 0 ? 2 : 3],
-      proximity: 100 + (i % 37) * 11,
-      opportunity: 900 + (i % 23) * 47,
-      population: 40 + (i % 17) * 9,
-      proximity_median_city: 2590.5,
-      opportunity_median_city: 9435.4,
-    },
-  };
-});
+const gridCells = gridDisk(latLngToCell(CENTER[1], CENTER[0], 9), 9).sort().slice(0, COUNT);
+const zone = (i) => (i % 7 === 0 ? 0 : i % 5 === 0 ? 1 : i % 3 === 0 ? 2 : 3);
+const population = gridCells.map((_, i) => 40 + (i % 17) * 9);
+
+const grid = { format: 'atlas-grid', version: 1, resolution: 9, cells: gridCells, population };
+const layer = {
+  format: 'atlas-layer',
+  version: 1,
+  layer: 'pov',
+  cells: COUNT,
+  order: 'grid',
+  idx: gridCells.map((_, i) => (i ? 1 : 0)),
+  fields: {
+    population,
+    zone: gridCells.map((_, i) => zone(i)),
+    proximity: gridCells.map((_, i) => 100 + (i % 37) * 11),
+    opportunity: gridCells.map((_, i) => 900 + (i % 23) * 47),
+  },
+  cartogram: { source: 'derived', reference: 100 },
+};
 
 const counts = [0, 0, 0, 0];
-cells.forEach((c) => counts[CELL_TYPES.indexOf(c.properties.cell_type)]++);
+gridCells.forEach((_, i) => counts[zone(i)]++);
 const expected = {
   cellCount: COUNT,
   shares: counts.map((n) => `${((n / COUNT) * 100).toFixed(1)}%`),
-  population: cells.reduce((s, c) => s + c.properties.population, 0),
 };
 
 const coverage = {
@@ -85,47 +82,63 @@ const coverage = {
   ],
 };
 
+const city = {
+  id: 'rome',
+  name: 'Rome',
+  center: CENTER,
+  zoom: 10.1,
+  population: population.reduce((a, b) => a + b, 0),
+  cell: { h3Resolution: 9, cellRadiusM: 200 },
+};
 const catalogue = {
-  version: 1,
+  version: 2,
   platforms: {
     fifteen: { coverage: null, cities: [] },
     citychrone: { coverage: null, cities: [] },
     cardep: { coverage: null, cities: [] },
     pov: {
       coverage: '__smoke__/coverage.geojson',
-      cities: [
-        {
-          id: 'rome',
-          name: 'Rome',
-          center: CENTER,
-          zoom: 10.1,
-          dataset: '__smoke__/rome.geojson',
-          population: expected.population,
-          cell: { h3Resolution: 9, cellRadiusM: 200 },
-        },
-      ],
+      cities: [{ ...city, layer: '__smoke__/pov.json' }],
     },
+  },
+  atlas: {
+    cities: [
+      {
+        ...city,
+        grid: '__smoke__/grid.json',
+        layers: ['pov'],
+        layerData: { pov: '__smoke__/pov.json' },
+        cartogramSources: { pov: 'derived' },
+      },
+    ],
   },
 };
 
-const originalCatalogue = fs.readFileSync(path.join(DATA, 'index.json'), 'utf8');
-// A dedicated directory: staging into data/pov/ would overwrite — and on
-// cleanup delete — the real published datasets sitting in the same build.
-const povDir = path.join(DATA, '__smoke__');
+const cataloguePath = path.join(DATA, 'index.json');
+const originalCatalogue = fs.readFileSync(cataloguePath, 'utf8');
+// The build writes a precompressed twin beside the catalogue, and the preview
+// server serves that twin in preference to the file — so a staged catalogue
+// the twin still shadows is never read, and the page shows the real data.
+// It is moved aside while staged and put back after.
+const twin = `${cataloguePath}.gz`;
+const twinAside = `${twin}.smoke`;
+// A dedicated directory: staging into a platform's directory would overwrite —
+// and on cleanup delete — the real published files sitting in the same build.
+const smokeDir = path.join(DATA, '__smoke__');
 
 function stage() {
-  fs.mkdirSync(povDir, { recursive: true });
-  fs.writeFileSync(
-    path.join(povDir, 'rome.geojson'),
-    JSON.stringify({ type: 'FeatureCollection', features: cells }),
-  );
-  fs.writeFileSync(path.join(povDir, 'coverage.geojson'), JSON.stringify(coverage));
-  fs.writeFileSync(path.join(DATA, 'index.json'), JSON.stringify(catalogue, null, 2));
+  fs.mkdirSync(smokeDir, { recursive: true });
+  fs.writeFileSync(path.join(smokeDir, 'grid.json'), JSON.stringify(grid));
+  fs.writeFileSync(path.join(smokeDir, 'pov.json'), JSON.stringify(layer));
+  fs.writeFileSync(path.join(smokeDir, 'coverage.geojson'), JSON.stringify(coverage));
+  if (fs.existsSync(twin)) fs.renameSync(twin, twinAside);
+  fs.writeFileSync(cataloguePath, JSON.stringify(catalogue, null, 2));
 }
 
 function unstage() {
-  fs.writeFileSync(path.join(DATA, 'index.json'), originalCatalogue);
-  fs.rmSync(povDir, { recursive: true, force: true });
+  fs.writeFileSync(cataloguePath, originalCatalogue);
+  if (fs.existsSync(twinAside)) fs.renameSync(twinAside, twin);
+  fs.rmSync(smokeDir, { recursive: true, force: true });
 }
 
 // ── Checks ───────────────────────────────────────────────────────────
@@ -165,7 +178,8 @@ try {
     check(
       'Catalogue and published mesh are fetched',
       fetched.some((url) => url.startsWith('index.json')) &&
-        fetched.includes('__smoke__/rome.geojson'),
+        fetched.includes('__smoke__/grid.json') &&
+        fetched.includes('__smoke__/pov.json'),
       fetched.join(', ') || '(no /data/ requests)',
     );
     check(

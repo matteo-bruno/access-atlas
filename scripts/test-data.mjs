@@ -8,24 +8,25 @@
 // browser suites check that the wiring works on one city; this checks that
 // every city is actually loadable.
 
-import fs from 'node:fs';
 import path from 'node:path';
-import {
-  meshFromPublished,
-  meshFromPublishedCdi,
-  meshFromPublishedFifteen,
-  meshFromAtlas,
-  citychroneHour,
-  summariseMeasure,
-  citiesFromPublished,
-} from '../src/data/adapters.js';
+import { meshFromAtlas, citiesFromPublished, summariseMeasure } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
+import {
+  citychroneHourFromLayer,
+  gridFeatures,
+  layerCartogram,
+  layerPositions,
+  mergeLayer,
+} from '../src/data/grid.js';
 import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
-import { readDataBuffer, readDataJSON } from './lib/datafile.mjs';
+import { getResolution, cellToLatLng } from 'h3-js';
+import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
+import { VARIANTS } from './lib/bundle.mjs';
+import { PLATFORMS } from '../src/data/platforms.js';
+import { ATLAS_METRICS } from '../src/data/home.js';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
-const CDI_STOPS = [-0.1, 0.1, 0.3, 1];
 
 let failures = 0;
 const check = (name, ok, detail = '') => {
@@ -33,289 +34,195 @@ const check = (name, ok, detail = '') => {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
 };
 
-// Published files may be stored gzipped (15minCity is), so reads go through
-// the shared helper rather than fs directly — see scripts/lib/datafile.mjs.
+// Published files are stored gzipped, so reads go through the shared helper
+// rather than fs directly — see scripts/lib/datafile.mjs.
 const read = (rel) => readDataJSON(path.join(DATA, rel));
 const near = (value, target, tolerance) => Math.abs(value - target) <= tolerance;
+const sum = (values) => values.reduce((a, b) => a + b, 0);
 
 const catalogue = read('index.json');
 check('Catalogue parses', !!catalogue.platforms, `version ${catalogue.version}`);
+const atlasById = new Map((catalogue.atlas?.cities ?? []).map((c) => [c.id, c]));
 
-// A city on the shared grid publishes **one** file: the atlas union, which
-// its platform row also points at rather than duplicating. Those rows need
-// two allowances below — the union carries cells outside this platform's mask
-// (so its feature count is not the layer's cell count), and there is no second
-// copy to reconcile against. Keyed by dataset path, so a row is atlas-backed
-// exactly when it names a file the atlas section also names.
-const ATLAS_DATASETS = new Set(
-  (catalogue.atlas?.cities ?? []).map((c) => c.dataset).filter(Boolean),
-);
-const isAtlasBacked = (city) => ATLAS_DATASETS.has(city.dataset);
-
-/** The subset of an atlas union carrying a platform's own measures. */
-const layerOnly = (collection, key) => ({
-  ...collection,
-  features: collection.features.filter((f) => Number.isFinite(f.properties?.[key])),
-});
-
+// ── Platform lists ───────────────────────────────────────────────────
+// What the world maps, search and compare view read: every row points at a
+// layer file its city's atlas entry also names, every marker is a city the
+// list knows, and every compare row describes the file it sits beside.
 for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   const cities = entry.cities ?? [];
-  if (!cities.length) {
-    check(`${platformId}: no data published`, entry.coverage == null, 'coverage should be null too');
-    continue;
-  }
-
-  // Coverage file exists, parses, and lists only cities the catalogue knows.
-  let coverageIds = [];
-  if (entry.coverage) {
-    const coverage = read(entry.coverage);
-    coverageIds = citiesFromPublished(coverage).map((c) => c.id);
-    const known = new Set(cities.map((c) => c.id));
-    check(
-      `${platformId}: coverage parses and matches the catalogue`,
-      coverageIds.length > 0 && coverageIds.every((id) => known.has(id)),
-      `${coverageIds.length} markers`,
-    );
-  }
-
-  let cells = 0;
-  let bad = [];
+  const bad = [];
+  const known = new Set(cities.map((c) => c.id));
+  const coverage = entry.coverage ? citiesFromPublished(read(entry.coverage)) : [];
+  for (const marker of coverage) if (!known.has(marker.id)) bad.push(`marker ${marker.id} has no row`);
 
   for (const city of cities) {
-    // CityChrone publishes hourly file pairs rather than one dataset: run the
-    // real adapter over every hour's hexcover and check each hour's travel
-    // -time matrix is on disk and big enough for its cells² bytes.
-    if (city.hourly) {
-      try {
-        const { hours, hexcover, times, cells: n } = city.hourly;
-        for (let hour = 0; hour < hours; hour++) {
-          const hh = String(hour).padStart(2, '0');
-          const summary = citychroneHour(read(hexcover.replace('{hh}', hh)));
-          if (summary.cells !== n) {
-            bad.push(`${city.id}: hour ${hh} has ${summary.cells} cells, catalogue says ${n}`);
-          }
-          if (!Number.isFinite(summary.weightedMedianV)) {
-            bad.push(`${city.id}: hour ${hh} has no usable v_score`);
-          }
-          // The matrix may be stored gzipped, so this has to measure the
-          // decoded bytes rather than the file on disk — a compressed 3 MB
-          // matrix is smaller than n² and would read as truncated. Going
-          // through readDataBuffer also proves the gzip stream is intact.
-          const matrix = readDataBuffer(path.join(DATA, times.replace('{hh}', hh)));
-          if (matrix.length < n * n) bad.push(`${city.id}: times ${hh} too small for ${n}×${n}`);
-        }
-        cells += n;
-      } catch (error) {
-        bad.push(`${city.id}: ${error.message}`);
-      }
-      continue;
-    }
-
-    let collection;
-    try {
-      collection = read(city.dataset);
-    } catch (error) {
-      bad.push(`${city.id}: ${error.message}`);
-      continue;
-    }
-
-    try {
-      if (platformId === 'pov') {
-        const mesh = meshFromPublished(collection, city);
-        const total = mesh.stats.zoneShares.reduce((a, b) => a + b, 0);
-        if (!near(total, 100, 0.4)) bad.push(`${city.id}: zone shares sum to ${total}`);
-        if (mesh.stats.cellCount !== collection.features.length) {
-          bad.push(`${city.id}: cell count mismatch`);
-        }
-        if (!mesh.scatter.length) bad.push(`${city.id}: empty scatter`);
-        if (!mesh.thresholds) bad.push(`${city.id}: no thresholds`);
-      } else if (platformId === 'cardep') {
-        const mesh = meshFromPublishedCdi(collection, city, CDI_STOPS);
-        const total = mesh.stats.zoneShares.reduce((a, b) => a + b, 0);
-        if (!near(total, 100, 0.4)) bad.push(`${city.id}: bands sum to ${total}`);
-        // The index is bounded by its own definition; anything outside means
-        // the file is not what it claims to be.
-        const out = collection.features.filter(
-          (f) => !(f.properties.cdi >= -1 && f.properties.cdi <= 1),
-        );
-        if (out.length) bad.push(`${city.id}: ${out.length} cells with CDI outside [−1, +1]`);
-        if (mesh.stats.weightedCdi == null) bad.push(`${city.id}: no population-weighted index`);
-      } else if (platformId === 'fifteen') {
-        // An atlas-backed row's file spans every layer, so the fifteen checks
-        // run over the cells that actually carry fifteen measures.
-        if (isAtlasBacked(city)) collection = layerOnly(collection, 'proximity_time_foot');
-        const mesh = meshFromPublishedFifteen(collection, city);
-        if (mesh.stats.cellCount !== collection.features.length) {
-          bad.push(`${city.id}: cell count mismatch`);
-        }
-        // Every category × mode must be present, or a selector option would
-        // silently colour nothing.
-        const sample = collection.features[0].properties;
-        const missing = [];
-        for (const category of CATEGORIES) {
-          for (const mode of MODES) {
-            const key = measureKey(category.key, mode.key);
-            if (!Number.isFinite(sample[key])) missing.push(key);
-          }
-        }
-        if (missing.length) bad.push(`${city.id}: missing measures ${missing.join(', ')}`);
-
-        const averageKey = measureKey(CATEGORIES[0].key, MODES[0].key);
-        const summary = summariseMeasure(collection, averageKey, BANDS[MODES[0].key]);
-        if (summary.median == null) bad.push(`${city.id}: no median for ${averageKey}`);
-        const shareTotal = summary.shares.reduce((a, b) => a + b, 0);
-        if (!near(shareTotal, 100, 0.4)) bad.push(`${city.id}: ${averageKey} shares sum to ${shareTotal}`);
-      }
-      cells += collection.features.length;
-    } catch (error) {
-      bad.push(`${city.id}: ${error.message}`);
-    }
+    const atlas = atlasById.get(city.id);
+    if (!city.layer) bad.push(`${city.id}: row names no layer file`);
+    else if (atlas?.layerData?.[platformId] !== city.layer) bad.push(`${city.id}: row and atlas entry name different files`);
+    else if (!resolveDataFile(path.join(DATA, city.layer))) bad.push(`${city.id}: ${city.layer} is missing`);
   }
 
-  check(
-    `${platformId}: all ${cities.length} datasets load and adapt`,
-    bad.length === 0,
-    bad.slice(0, 3).join(' | ') || `${cells.toLocaleString('en-GB')} cells`,
-  );
-}
-
-// ── Alternative geometry ─────────────────────────────────────────────
-// A city can publish its cells twice: the values sit on one geometry and a
-// companion file carries the other, joined by the index it states. Nothing
-// downstream can tell that the geometries have drifted apart — a cartogram
-// cell and its hexagon share a centroid, so a mismatch would draw a plausible
-// map of the wrong cells. Check the join here instead: same count, same
-// index per row, and each companion polygon centred on the cell it replaces.
-const centre = (geometry) => {
-  let ring = geometry.coordinates[0];
-  let end = ring.length;
-  while (end > 1 && ring[end - 1][0] === ring[0][0] && ring[end - 1][1] === ring[0][1]) end--;
-  ring = ring.slice(0, end);
-  let x = 0;
-  let y = 0;
-  for (const [px, py] of ring) {
-    x += px;
-    y += py;
-  }
-  return [x / ring.length, y / ring.length];
-};
-const metresApart = (a, b) => {
-  const dLon = (a[0] - b[0]) * 111320 * Math.cos((a[1] * Math.PI) / 180);
-  const dLat = (a[1] - b[1]) * 111320;
-  return Math.hypot(dLon, dLat);
-};
-
-// Every companion the catalogue declares, as [label, values, companion].
-const companions = [];
-for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
-  for (const city of entry.cities ?? []) {
-    if (city.geoDataset) {
-      companions.push([`${platformId}/${city.id} geographic`, city.dataset, city.geoDataset]);
+  if (entry.summary) {
+    for (const row of read(entry.summary).cities) {
+      if (!known.has(row.id)) bad.push(`summary row ${row.id} has no catalogue row`);
     }
-  }
-}
-for (const city of catalogue.atlas?.cities ?? []) {
-  for (const [platformId, file] of Object.entries(city.cartograms ?? {})) {
-    companions.push([`atlas/${city.id} ${platformId} cartogram`, city.dataset, file]);
-  }
-}
-
-{
-  const bad = [];
-  for (const [label, valuesPath, companionPath] of companions) {
-    const values = read(valuesPath).features;
-    const companion = read(companionPath).features;
-    // A cartogram companion covers only the cells its platform measures; a
-    // geographic one covers every cell. Either way each row must name its
-    // index, and that index must exist.
-    if (companion.length > values.length) {
-      bad.push(`${label}: ${companion.length} companion cells vs ${values.length} values`);
-      continue;
-    }
-    let worst = 0;
-    for (const feature of companion) {
-      const i = feature.properties?.i;
-      if (!Number.isInteger(i) || i < 0 || i >= values.length) {
-        bad.push(`${label}: companion row points at index ${i}`);
-        break;
-      }
-      worst = Math.max(worst, metresApart(centre(feature.geometry), centre(values[i].geometry)));
-    }
-    // Both geometries describe the same cell, so they share a centre. The
-    // cartogram scales each cell about its own centroid, which is what makes
-    // this comparison meaningful rather than approximate.
-    if (worst > 10) bad.push(`${label}: geometries up to ${worst.toFixed(1)} m apart`);
   }
   check(
-    'alternative geometries join to the cells they replace',
-    bad.length === 0,
-    bad.length ? bad.slice(0, 3).join(' | ') : `${companions.length} companion files`,
-  );
-}
-
-// The atlas (combined viewer) union meshes: every cell must reconcile with
-// the per-platform files it was built from — same counts, same shares — so a
-// stale union cannot quietly disagree with the platform pages.
-for (const city of catalogue.atlas?.cities ?? []) {
-  const bad = [];
-  try {
-    const mesh = meshFromAtlas(read(city.dataset), city);
-    const { layers } = mesh;
-
-    const povCity = catalogue.platforms.pov?.cities.find((c) => c.id === city.id);
-    if (povCity) {
-      const pov = meshFromPublished(read(povCity.dataset), povCity);
-      if (layers.pov.cells !== pov.stats.cellCount) {
-        bad.push(`pov covers ${layers.pov.cells} union cells vs ${pov.stats.cellCount} published`);
-      }
-      if (layers.pov.zoneShares.join(' ') !== pov.stats.zoneShares.join(' ')) {
-        bad.push(`pov zone shares diverge: ${layers.pov.zoneShares} vs ${pov.stats.zoneShares}`);
-      }
-    }
-
-    const cdiCity = catalogue.platforms.cardep?.cities.find((c) => c.id === city.id);
-    if (cdiCity) {
-      const cdi = meshFromPublishedCdi(read(cdiCity.dataset), cdiCity, CDI_STOPS);
-      if (layers.cardep.cells !== cdi.stats.cellCount) {
-        bad.push(`cardep covers ${layers.cardep.cells} union cells vs ${cdi.stats.cellCount} published`);
-      }
-      if (layers.cardep.weightedCdi !== cdi.stats.weightedCdi) {
-        bad.push(`weighted CDI diverges: ${layers.cardep.weightedCdi} vs ${cdi.stats.weightedCdi}`);
-      }
-    }
-
-    const fifteenCity = catalogue.platforms.fifteen?.cities.find((c) => c.id === city.id);
-    // Skipped when the platform row names the union itself: there is one copy
-    // of these measures, so a comparison would only be the file against
-    // itself. Drift is only possible where two copies exist.
-    if (fifteenCity && !isAtlasBacked(fifteenCity)) {
-      const fifteen = read(fifteenCity.dataset);
-      if (layers.fifteen.cells !== fifteen.features.length) {
-        bad.push(`fifteen covers ${layers.fifteen.cells} union cells vs ${fifteen.features.length} published`);
-      }
-    }
-
-    const ccCity = catalogue.platforms.citychrone?.cities.find((c) => c.id === city.id);
-    if (ccCity?.hourly && layers.citychrone.cells !== ccCity.hourly.cells) {
-      bad.push(`citychrone covers ${layers.citychrone.cells} union cells vs ${ccCity.hourly.cells} hourly`);
-    }
-
-    // Every declared layer must actually have cells, and vice versa.
-    for (const layer of city.layers ?? []) {
-      if (!(layers[layer]?.cells > 0)) bad.push(`declared layer ${layer} has no cells`);
-    }
-
-    const h3Set = new Set(read(city.dataset).features.map((f) => f.properties.h3));
-    if (h3Set.size !== mesh.stats.cellCount) bad.push('duplicate h3 indices in the union mesh');
-  } catch (error) {
-    bad.push(error.message);
-  }
-  check(
-    `atlas: ${city.id} union mesh reconciles with the platform files`,
+    `${platformId}: ${cities.length} rows, ${coverage.length} markers, all pointing at published layers`,
     bad.length === 0,
     bad.slice(0, 3).join(' | '),
   );
 }
+
+// ── Cities ───────────────────────────────────────────────────────────
+// Each city through the same code the viewer runs: the grid becomes hexagons,
+// every layer is merged in, and the figures the panel quotes are computed.
+// A file the viewer could not draw fails here in seconds.
+const summaries = {};
+for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
+  summaries[platformId] = new Map(entry.summary ? read(entry.summary).cities.map((c) => [c.id, c]) : []);
+}
+
+let totalCells = 0;
+const meshes = new Map();
+for (const city of catalogue.atlas?.cities ?? []) {
+  const bad = [];
+  try {
+    const grid = read(city.grid);
+    const n = grid.cells.length;
+    if (grid.population.length !== n) bad.push('grid population is not one per cell');
+    if (new Set(grid.cells).size !== n) bad.push('duplicate cells in the grid');
+    if (grid.cells.some((h3, i) => i && h3 <= grid.cells[i - 1])) bad.push('grid is not sorted');
+    if (grid.cells.some((h3) => getResolution(h3) !== city.cell.h3Resolution)) bad.push('a cell off the stated resolution');
+
+    let features = await gridFeatures(grid);
+    const covered = new Set();
+    const files = {};
+    for (const layer of city.layers) {
+      const file = read(city.layerData[layer]);
+      files[layer] = file;
+      const positions = layerPositions(file);
+      if (positions.length !== file.cells) bad.push(`${layer}: ${positions.length} rows, header says ${file.cells}`);
+      if (positions.some((p, i) => p < 0 || p >= n || (i && p <= positions[i - 1]))) {
+        bad.push(`${layer}: rows do not point at grid cells in order`);
+      }
+      for (const [name, column] of Object.entries(file.fields)) {
+        if (column.length !== file.cells) bad.push(`${layer}: field ${name} has ${column.length} values`);
+      }
+      positions.forEach((p) => covered.add(p));
+      features = mergeLayer(features, layer, file);
+    }
+    // A grid cell no layer covers is a cell nothing draws.
+    if (covered.size !== n) bad.push(`${n - covered.size} grid cells belong to no layer`);
+
+    const mesh = meshFromAtlas({ type: 'FeatureCollection', features }, city);
+    meshes.set(city.id, mesh);
+    totalCells += n;
+    const { layers } = mesh;
+    for (const layer of city.layers) {
+      if (!(layers[layer]?.cells === files[layer].cells)) {
+        bad.push(`${layer}: viewer counts ${layers[layer]?.cells} cells, file has ${files[layer].cells}`);
+      }
+    }
+
+    if (files.pov) {
+      const total = sum(layers.pov.zoneShares);
+      if (!near(total, 100, 0.4)) bad.push(`pov zone shares sum to ${total}`);
+      const row = summaries.pov.get(city.id);
+      if (row && row.zoneShares.join(' ') !== layers.pov.zoneShares.join(' ')) {
+        bad.push(`pov shares ${layers.pov.zoneShares} vs compare row ${row.zoneShares}`);
+      }
+    }
+    if (files.cardep) {
+      const out = files.cardep.fields.cdi.filter((v) => !(v >= -1 && v <= 1));
+      if (out.length) bad.push(`${out.length} cells with CDI outside [−1, +1]`);
+      const row = summaries.cardep.get(city.id);
+      if (layers.cardep.weightedCdi == null) bad.push('no population-weighted CDI');
+      else if (row && !near(layers.cardep.weightedCdi, row.weightedCdi, 0.002)) {
+        bad.push(`weighted CDI ${layers.cardep.weightedCdi} vs compare row ${row.weightedCdi}`);
+      }
+    }
+    if (files.fifteen) {
+      // Every category × mode must be present, or a selector option would
+      // silently colour nothing.
+      const collection = {
+        type: 'FeatureCollection',
+        features: features.filter((f) => Number.isFinite(f.properties.proximity_time_foot)),
+      };
+      const sample = collection.features[0]?.properties ?? {};
+      const missing = [];
+      for (const category of CATEGORIES) {
+        for (const mode of MODES) {
+          if (!Number.isFinite(sample[measureKey(category.key, mode.key)])) missing.push(measureKey(category.key, mode.key));
+        }
+      }
+      if (missing.length) bad.push(`fifteen missing ${missing.join(', ')}`);
+      const summary = summariseMeasure(collection, measureKey(CATEGORIES[0].key, MODES[0].key), BANDS[MODES[0].key]);
+      if (summary.median == null) bad.push('fifteen has no median');
+    }
+    if (files.citychrone) {
+      const { hours, cells } = city.hourly;
+      const file = files.citychrone;
+      if (file.hourly.hours !== hours || file.cells !== cells) bad.push('citychrone hours/cells disagree with the catalogue');
+      for (let hour = 0; hour < hours; hour++) {
+        const summary = citychroneHourFromLayer(file, hour);
+        if (!Number.isFinite(summary?.weightedMedianV)) bad.push(`citychrone hour ${hour} has no usable v_score`);
+        // Decoded size, not size on disk: a compressed matrix is smaller than
+        // n², and reading it through gunzip proves the stream is intact.
+        const matrix = readDataBuffer(path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0'))));
+        if (matrix.length < cells * cells) bad.push(`times ${hour} too small for ${cells}×${cells}`);
+      }
+    }
+
+    // Cartograms: each polygon must sit on the cell it stands for. A
+    // cartogram scales a cell about its own centre, so a drawing far from it
+    // is the wrong cell, which nothing on screen would reveal.
+    const radii = {};
+    for (const layer of city.layers) {
+      const cartogram = await layerCartogram(grid, files[layer]);
+      let worst = 0;
+      radii[layer] = new Map();
+      for (const feature of cartogram.features) {
+        const ring = feature.geometry.coordinates[0].slice(0, -1);
+        const cx = sum(ring.map((p) => p[0])) / ring.length;
+        const cy = sum(ring.map((p) => p[1])) / ring.length;
+        const [lat, lon] = cellToLatLng(grid.cells[feature.properties.i]);
+        const k = Math.cos((lat * Math.PI) / 180);
+        worst = Math.max(worst, Math.hypot((cx - lon) * 111320 * k, (cy - lat) * 111320));
+        radii[layer].set(
+          feature.properties.i,
+          sum(ring.map(([x, y]) => Math.hypot((x - cx) * 111320 * k, (y - cy) * 111320))) / ring.length,
+        );
+      }
+      if (worst > 10) bad.push(`${layer} cartogram drawn up to ${worst.toFixed(1)} m off its cells`);
+    }
+
+    // The derived rule (area ∝ population, full at the median) stands in for
+    // a cartogram where a platform publishes none. Where one is published for
+    // the same cells, the rule must stay close to it, or two layers of one
+    // city would disagree about how big a cell of a given population is.
+    // It lands at ~10–14 m on a ~200 m cell.
+    for (const derived of city.layers.filter((l) => files[l].cartogram.source === 'derived')) {
+      for (const published of city.layers.filter((l) => files[l].cartogram.source === 'published')) {
+        let total = 0;
+        let count = 0;
+        for (const [i, r] of radii[derived]) {
+          const theirs = radii[published].get(i);
+          if (theirs == null) continue;
+          total += Math.abs(r - theirs);
+          count++;
+        }
+        if (count && total / count > 25) {
+          bad.push(`${derived} cartogram rule is ${(total / count).toFixed(1)} m from ${published}'s on average`);
+        }
+      }
+    }
+  } catch (error) {
+    bad.push(error.message);
+  }
+  check(`${city.id}: grid and ${city.layers.join(', ')} load, merge and reconcile`, bad.length === 0, bad.slice(0, 3).join(' | '));
+}
+console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${meshes.size} cities`);
 
 // ── The provider ─────────────────────────────────────────────────────
 // The catalogue is fetched once and shared by every consumer on the page, and
@@ -436,17 +343,43 @@ for (const city of catalogue.atlas?.cities ?? []) {
   }
 }
 
+// The counts the site states in code (a platform card's "N cities", the home
+// page's metrics) are counted here from the catalogue, so publishing a city
+// without updating them fails with the numbers to write in.
+{
+  const bad = [];
+  for (const platform of PLATFORMS) {
+    const published = catalogue.platforms[platform.id]?.cities?.length ?? 0;
+    if (platform.published !== false && platform.cityCount !== published) {
+      bad.push(`platforms.js ${platform.id}.cityCount = ${published}`);
+    }
+  }
+  const cities = [...atlasById.values()].filter((c) => !VARIANTS.has(c.id));
+  const cells = [...atlasById.values()].reduce(
+    (total, city) => total + city.layers.reduce((n, layer) => n + read(city.layerData[layer]).cells, 0),
+    0,
+  );
+  const counted = {
+    cities: cities.length,
+    countries: new Set(cities.map((c) => c.country)).size,
+    cells,
+  };
+  for (const [key, value] of Object.entries(counted)) {
+    const stated = ATLAS_METRICS.find((m) => m.key === key)?.value;
+    if (stated !== value) bad.push(`home.js ATLAS_METRICS ${key} = ${value}`);
+  }
+  check('The counts in the code match the catalogue', bad.length === 0, bad.join(' | ') || JSON.stringify(counted));
+}
+
 // Rome is the city quoted throughout the site; pin its published figures so a
 // bad rebuild cannot quietly change what the copy claims.
 {
-  const rome = catalogue.platforms.pov?.cities.find((c) => c.id === 'rome');
+  const rome = meshes.get('rome');
   if (rome) {
-    const mesh = meshFromPublished(read(rome.dataset), rome);
     check(
       'Rome P.O.V. matches the figures the site quotes',
-      mesh.stats.cellCount === 8089 &&
-        mesh.stats.zoneShares.join(' ') === '12.9 2.7 1.4 83',
-      `${mesh.stats.cellCount} cells · ${mesh.stats.zoneShares.join(' / ')}`,
+      rome.layers.pov.cells === 8089 && rome.layers.pov.zoneShares.join(' ') === '12.9 2.7 1.4 83',
+      `${rome.layers.pov.cells} cells · ${rome.layers.pov.zoneShares.join(' / ')}`,
     );
   }
 }

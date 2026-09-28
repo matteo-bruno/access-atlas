@@ -11,7 +11,8 @@
 // straight into someone else's viewer.
 //
 // Figures quoted in the prose are computed from the published datasets in
-// public/data/ — see scripts/build-data.mjs, which recomputes them.
+// public/data/ — the compare rows in <platform>/summary.json.gz, written by
+// the importers (scripts/lib/bundle.mjs, describeLayer).
 
 import { BRAND } from './brand.js';
 

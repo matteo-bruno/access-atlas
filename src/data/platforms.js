@@ -2,7 +2,9 @@
 // keys.
 //
 // `cityCount` counts cities whose data is actually published in public/data/,
-// not the coverage of the upstream research platform. `published: false` means
+// not the coverage of the upstream research platform. `npm run test:data`
+// counts them from the catalogue and fails, with the right number, when an
+// import leaves one of these behind. `published: false` means
 // the map is still drawing generated stand-ins, and the UI says so rather than
 // presenting a count it cannot support.
 //
@@ -25,7 +27,7 @@ export const PLATFORMS = [
     url: 'https://whatif.sonycsl.it/15mincity',
     // City whose mesh the home-page card falls back to when it has no still.
     previewCity: 'milan',
-    cityCount: 1,
+    cityCount: 2,
     published: true,
     // Diverging scale: cool = close, warm = far. Index i covers stops[i].
     scale: [
@@ -54,7 +56,7 @@ export const PLATFORMS = [
     themeKey: 'opportunity',
     accent: BRAND.navy,
     url: 'https://whatif.sonycsl.it/citychrone',
-    cityCount: 1,
+    cityCount: 2,
     published: true,
     // No per-platform city pages: the combined viewer (/atlas/:cityId) is
     // CityChrone's city-level view, so its landing map routes there.

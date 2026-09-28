@@ -48,7 +48,7 @@ const ROUTES = [
   ['/nope', '404 fallback'],
 ];
 
-// Rome as published in public/data/pov/rome.geojson. Proximity and opportunity
+// Rome as published in public/data/cities/rome/pov.json.gz. Proximity and opportunity
 // are median scores — weighted counts of reachable points of interest — so
 // they carry no unit, which is why neither is asserted with one.
 const ROME_EXPECTED = {
@@ -178,7 +178,8 @@ for (const [route, name] of ROUTES) {
   // The index is signed; losing the sign would invert the reading entirely.
   check(
     'Car Dependency index keeps its sign',
-    /^[+−]/.test(summary[1]),
+    // Cells, area, the index for the average resident, population.
+    /^[+−]/.test(summary[2]),
     summary.join(' | '),
   );
   await page.close();
@@ -343,11 +344,12 @@ for (const [route, name] of ROUTES) {
 }
 
 // ── Map ⇄ cartogram ──────────────────────────────────────────────────
-// The switch is a change of what a polygon claims, not a display preference,
-// so what is asserted here is the claim: that the companion is fetched only
-// when asked for, that the caption says which of the two is on screen, and
-// that a platform publishing no cartogram says so instead of hiding the
-// option — an absent view and an unbuilt one look identical otherwise.
+// A city is a grid file and one file per layer, and the viewer fetches a
+// layer's file only when that layer is opened — which is the whole saving, so
+// it is asserted on what was requested. The cartogram travels inside the
+// layer file (published polygons, or the rule for derived ones), so the
+// switch fetches nothing; what is asserted is that it draws something else.
+const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().screenshot();
 {
   const page = await context.newPage();
   const requested = [];
@@ -355,19 +357,24 @@ for (const [route, name] of ROUTES) {
 
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
+  const layerFiles = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u)).map((u) => u.split('/').pop());
   check(
-    'The cartogram is not fetched until it is asked for',
-    requested.filter((u) => u.includes('cartogram')).length === 0,
+    'A city loads its grid and the open layer, and nothing else',
+    layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
+    layerFiles.join(' '),
   );
 
+  const map = await canvasShot(page);
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2500);
   const pressed = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
+  const cartogram = await canvasShot(page);
   check(
-    'Switching to the cartogram loads the one P.O.V. publishes',
-    requested.filter((u) => u.includes('cartogram-pov')).length === 1 && pressed === 'true',
+    'Switching to the cartogram draws the one P.O.V. publishes, with no extra fetch',
+    pressed === 'true' && !map.equals(cartogram) &&
+      requested.filter((u) => /\/cities\/milan\//.test(u)).length === layerFiles.length,
   );
 
   await page.getByRole('button', { name: 'Map', exact: true }).click();
@@ -389,22 +396,33 @@ for (const [route, name] of ROUTES) {
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2000);
+  // 15-minute city publishes no cartogram; this one is the Atlas's own, and
+  // the viewer has to draw it as readily as a published one.
+  const fifteenCartogram = await canvasShot(page);
   await page.getByRole('button', { name: 'Car Dependency Index' }).click();
   await page.waitForTimeout(2200);
 
   // No layer reuses another's cartogram: the two published ones disagree by
   // up to 9.6 m on cells they share, and the derived ones are per platform
-  // too. Switching layer in cartogram view therefore fetches a second file,
-  // and the choice survives the switch.
+  // too. Switching layer in cartogram view keeps the choice, fetches that
+  // layer's file once, and draws its own.
   const stillCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
+  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('/').pop());
   check(
     'The combined viewer switches geometry per layer',
     stillCartogram === 'true' &&
-      requested.filter((u) => u.includes('cartogram-fifteen')).length === 1 &&
-      requested.filter((u) => u.includes('cartogram-cardep')).length === 1,
-    requested.filter((u) => u.includes('cartogram-')).map((u) => u.split('/').pop()).join(' '),
+      files.filter((f) => f === 'cardep.json.gz').length === 1 &&
+      !fifteenCartogram.equals(await canvasShot(page)),
+    files.join(' '),
+  );
+  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.getByRole('button', { name: '15-minute city' }).click();
+  await page.waitForTimeout(1500);
+  check(
+    '15-minute city can be drawn as a cartogram too',
+    !fifteenCartogram.equals(await canvasShot(page)),
   );
   await page.close();
 }
@@ -450,23 +468,6 @@ for (const [route, name] of ROUTES) {
       (await page.locator('.aa-modal').count()) === 0,
   );
   check('No console errors in the combined viewer', errors.length === 0, errors.slice(0, 2).join(' | '));
-  await page.close();
-}
-
-{
-  const page = await context.newPage();
-  const requested15 = [];
-  page.on('request', (r) => requested15.push(r.url()));
-  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
-  await page.waitForTimeout(3000);
-  await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
-  await page.waitForTimeout(2500);
-  // 15-minute city publishes no cartogram; this one is the Atlas's own, and
-  // the viewer has to draw it as readily as a published one.
-  check(
-    '15-minute city can be drawn as a cartogram too',
-    requested15.filter((u) => u.includes('cartogram-fifteen')).length === 1,
-  );
   await page.close();
 }
 

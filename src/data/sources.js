@@ -14,6 +14,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { loadDataset, loadJSON, whenAborted } from '../map/loaders.js';
+import { layerCartogram } from './grid.js';
 import {
   EMPTY_CATALOGUE,
   atlasCity,
@@ -120,13 +121,38 @@ export function createStaticProvider() {
 
     // The same in reverse for the combined viewer, whose union mesh is
     // already geographic: one platform's cartogram polygons, covering only
-    // the cells that platform measures.
+    // the cells that platform measures. On the per-city layout they are built
+    // from the layer file, which carries them (or the rule for them).
     async atlasGeometry(cityId, platformId, catalogue, { signal } = {}) {
       const profile = atlasCity(catalogue, cityId);
+      if (profile?.grid) {
+        if (!profile.layerData?.[platformId]) return null;
+        const [grid, layer] = await Promise.all([
+          this.cityGrid(cityId, catalogue, { signal }),
+          this.cityLayer(cityId, platformId, catalogue, { signal }),
+        ]);
+        if (!grid || !layer) return null;
+        return { collection: await layerCartogram(grid, layer), profile, kind: 'cartogram' };
+      }
       const dataset = profile?.cartograms?.[platformId];
       if (!dataset) return null;
       const collection = await loadDataset({ url: dataUrl(dataset) }, { signal });
       return { collection, profile, kind: 'cartogram' };
+    },
+
+    // The per-city layout: the city's shared grid (H3 indices and a
+    // population per cell), and one layer's values keyed to it. Both are
+    // plain JSON; the viewer draws the hexagons itself (see grid.js).
+    async cityGrid(cityId, catalogue, { signal } = {}) {
+      const profile = atlasCity(catalogue, cityId);
+      if (!profile?.grid) return null;
+      return loadDataset({ url: dataUrl(profile.grid), format: 'json' }, { signal });
+    },
+
+    async cityLayer(cityId, platformId, catalogue, { signal } = {}) {
+      const path = atlasCity(catalogue, cityId)?.layerData?.[platformId];
+      if (!path) return null;
+      return loadDataset({ url: dataUrl(path), format: 'json' }, { signal });
     },
 
     // Scenarios a static host can offer: whatever the catalogue lists. A
@@ -162,7 +188,8 @@ export function createStaticProvider() {
     // uint8 minutes. ~3 MB per hour, so it is only fetched when the isochrone
     // view asks for it (and then cached by URL like everything else).
     async travelTimes(platformId, cityId, hour, catalogue, { signal } = {}) {
-      const profile = publishedCity(catalogue, platformId, cityId);
+      const atlas = atlasCity(catalogue, cityId);
+      const profile = atlas?.hourly?.times ? atlas : publishedCity(catalogue, platformId, cityId);
       if (!profile?.hourly?.times) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
       const matrix = await loadDataset(
@@ -190,6 +217,9 @@ export function createStaticProvider() {
  *   atlasGeometry(cityId, platformId, catalogue, opts)
  *                                              → { collection, profile, kind } | null
  *   atlasMesh(cityId, catalogue, opts)         → { collection, profile } | null
+ *   cityGrid(cityId, catalogue, opts)          → { cells, population } | null
+ *   cityLayer(cityId, platformId, catalogue, opts)
+ *                                              → layer file (bundle.mjs) | null
  *   hourly(platformId, cityId, hour, catalogue, opts)
  *                                              → { collection, profile, hour } | null
  *   travelTimes(platformId, cityId, hour, catalogue, opts)
