@@ -23,8 +23,8 @@ import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution, cellToLatLng } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
 import { VARIANTS } from './lib/bundle.mjs';
-import { PLATFORMS } from '../src/data/platforms.js';
-import { ATLAS_METRICS } from '../src/data/home.js';
+import { atlasMetrics } from '../src/data/home.js';
+import { normaliseCatalogue } from '../src/data/catalogue.js';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
 
@@ -343,32 +343,23 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
   }
 }
 
-// The counts the site states in code (a platform card's "N cities", the home
-// page's metrics) are counted here from the catalogue, so publishing a city
-// without updating them fails with the numbers to write in.
+// The site counts cities and cells from the catalogue rather than from
+// numbers written in the code, so the catalogue's own counts have to be
+// right: every platform row's `cells` is its layer file's, and a variant is
+// flagged as one exactly when it is one.
 {
   const bad = [];
-  for (const platform of PLATFORMS) {
-    const published = catalogue.platforms[platform.id]?.cities?.length ?? 0;
-    if (platform.published !== false && platform.cityCount !== published) {
-      bad.push(`platforms.js ${platform.id}.cityCount = ${published}`);
+  for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
+    for (const row of entry.cities ?? []) {
+      const cells = row.layer ? read(row.layer).cells : null;
+      if (row.cells !== cells) bad.push(`${platformId}/${row.id} says ${row.cells} cells, file has ${cells}`);
     }
   }
-  const cities = [...atlasById.values()].filter((c) => !VARIANTS.has(c.id));
-  const cells = [...atlasById.values()].reduce(
-    (total, city) => total + city.layers.reduce((n, layer) => n + read(city.layerData[layer]).cells, 0),
-    0,
-  );
-  const counted = {
-    cities: cities.length,
-    countries: new Set(cities.map((c) => c.country)).size,
-    cells,
-  };
-  for (const [key, value] of Object.entries(counted)) {
-    const stated = ATLAS_METRICS.find((m) => m.key === key)?.value;
-    if (stated !== value) bad.push(`home.js ATLAS_METRICS ${key} = ${value}`);
+  for (const city of atlasById.values()) {
+    if (Boolean(city.variant) !== VARIANTS.has(city.id)) bad.push(`${city.id}: variant flag is wrong`);
   }
-  check('The counts in the code match the catalogue', bad.length === 0, bad.join(' | ') || JSON.stringify(counted));
+  const metrics = Object.fromEntries(atlasMetrics(normaliseCatalogue(catalogue)).map((m) => [m.key, m.value]));
+  check('The catalogue\'s own counts match the files', bad.length === 0, bad.slice(0, 3).join(' | ') || JSON.stringify(metrics));
 }
 
 // Rome is the city quoted throughout the site; pin its published figures so a

@@ -116,6 +116,11 @@ function normaliseCity(raw) {
           )
         : {},
     layer: typeof raw.layer === 'string' ? raw.layer : null,
+    // Counted by the importer: the layer's cells for a platform row. A
+    // variant is a scenario of another city (a metro area, Rome Metro D).
+    cells: Number.isFinite(raw.cells) ? raw.cells : null,
+    variant: raw.variant === true,
+    country: typeof raw.country === 'string' ? raw.country : undefined,
     // Alternative runs of the same city — the legacy site's "ideal city" and
     // Metro D are these. A static host serves the ones published ahead of
     // time; a backend provider can offer ones computed on demand.

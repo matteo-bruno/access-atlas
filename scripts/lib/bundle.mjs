@@ -639,6 +639,7 @@ export function updateCatalogue(catalogue, cityId, { grid, encoded, meta, rows }
   const atlasEntry = {
     id: cityId,
     ...meta,
+    ...(VARIANTS.has(cityId) ? { variant: true } : {}),
     center: weightedCentre(grid.cells, grid.population),
     zoom: zoomFor(grid.cells),
     population: Math.round(grid.population.reduce((a, b) => a + b, 0)),
@@ -674,6 +675,7 @@ export function updateCatalogue(catalogue, cityId, { grid, encoded, meta, rows }
       center: weightedCentre(cells, pops),
       zoom: zoomFor(cells),
       population: Math.round(pops.reduce((a, b) => a + (Number(b) || 0), 0)),
+      cells: record.cells,
       layer: layerPath(cityId, layer),
       cell: atlasEntry.cell,
       ...(rows?.[layer] ?? {}),

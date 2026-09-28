@@ -1,29 +1,33 @@
 // Home-page figures. Numbers live here (not in the dictionaries) so both
 // locales format them with Intl — 10,142 in English, 10.142 in Italian.
 //
-// Every figure below is counted from the datasets published under
-// public/data/. `npm run test:data` recounts them from the catalogue and fails
-// with the right value when the data changes — nothing here is an estimate,
-// and nothing is carried over from the design mock.
+// Figures about the published data are counted from the catalogue, not
+// written here, so publishing a city needs no code change — nothing is an
+// estimate, and nothing is carried over from the design mock.
 
 import { BRAND } from './brand.js';
 
-// Nothing renders these at the moment: the landing and the home page both
-// dropped their list of them — counting the Atlas on the way in said nothing a
-// reader could act on. They are kept, and kept correct, because they are
-// counted from the published files like every other figure here (and
-// checked by `test:data`), and putting the list back is one block of JSX.
-export const ATLAS_METRICS = [
-  // 20 distinct cities across the four platforms' datasets.
-  { key: 'cities', value: 20 },
-  { key: 'platforms', value: 4 },
-  // AT CH DE ES FR IT PT SE US
-  { key: 'countries', value: 9 },
-  // Cells across every published layer of every city, scenario variants
-  // included (pov 47,902 · cardep 96,846 · fifteen 9,357 · citychrone 2,650).
-  { key: 'cells', value: 156755 },
-  { key: 'researchers', value: 7 },
-];
+/**
+ * The Atlas by the numbers, counted from a (normalised) catalogue.
+ *
+ * Nothing renders these at the moment: the landing and the home page both
+ * dropped their list of them — counting the Atlas on the way in said nothing
+ * a reader could act on. Putting the list back is one block of JSX over this.
+ * Cities leave out scenario variants (Paris metro area, Rome Metro D);
+ * cells count every published layer of every city, variants included.
+ * Researchers is editorial.
+ */
+export function atlasMetrics(catalogue) {
+  const cities = (catalogue?.atlas?.cities ?? []).filter((city) => !city.variant);
+  const rows = Object.values(catalogue?.platforms ?? {}).flatMap((p) => p.cities ?? []);
+  return [
+    { key: 'cities', value: cities.length },
+    { key: 'platforms', value: 4 },
+    { key: 'countries', value: new Set(cities.map((c) => c.country).filter(Boolean)).size },
+    { key: 'cells', value: rows.reduce((sum, row) => sum + (row.cells ?? 0), 0) },
+    { key: 'researchers', value: 7 },
+  ];
+}
 
 export const NEWS = [
   { key: 'atlas', kind: 'data', color: BRAND.navy },
