@@ -292,6 +292,8 @@ export default {
       body: 'Gli errori capitano! I dati possono mancare o essere fuorvianti. {contact} se sai come si può sistemare.',
       contact: 'Scrivici',
     },
+    // {date} è la data dell'estratto OpenStreetMap, formattata da src/data/osm.js.
+    osmUpdate: 'Ultimo aggiornamento OpenStreetMap: {date}',
     layerCells: 'Celle misurate da {name}',
     isochroneEmpty: 'Clicca una cella per disegnare i tempi di viaggio da lì',
     unavailable: 'Non pubblicato',

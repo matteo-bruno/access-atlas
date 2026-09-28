@@ -29,6 +29,21 @@ export function colorExpression(platform) {
   return stepColor(platform.property, platform.scale, platform.stops);
 }
 
+/**
+ * The same lookup as `colorExpression`, returning `values[i]` wherever the
+ * marker would be drawn in `platform.scale[i]`. Lets an edge colour or width
+ * follow the fill it surrounds.
+ */
+function perScaleValue(platform, values) {
+  if (!platform.stops) {
+    const expr = ['match', ['get', platform.property]];
+    values.forEach((value, i) => expr.push(i, value));
+    expr.push(values[values.length - 1]);
+    return expr;
+  }
+  return stepColor(platform.property, values, platform.stops);
+}
+
 // Markers grow with zoom so a world view stays readable without the dots
 // swamping the map when you zoom into a region.
 const RADIUS = ['interpolate', ['linear'], ['zoom'], 0, 2.4, 2, 4, 5, 7.5, 9, 13];
@@ -45,6 +60,49 @@ const RADIUS_DENSE = ['interpolate', ['linear'], ['zoom'], 0, 1.9, 2, 3.2, 5, 6,
 // edge rather than the dot.
 const MARKER_EDGE = 'rgba(21, 23, 26, 0.5)';
 const MARKER_EDGE_WIDTH = ['interpolate', ['linear'], ['zoom'], 0, 0.6, 5, 1, 9, 1.4];
+
+// A hairline at half alpha was still not enough for the palest steps (a slow
+// CityChrone city, a balanced CDI, a one-platform city on the coverage map),
+// which sit within a few percent of the paper's own lightness. Those get an
+// edge of their own colour taken most of the way to ink, and a wider one, so
+// the dot keeps its hue and gains an outline. Every other colour keeps what it
+// had.
+const INK = [21, 23, 26];
+const PALE_LUMINANCE = 0.6;
+
+function rgbOf(hex) {
+  const v = Number.parseInt(hex.slice(1), 16);
+  return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+}
+
+function isPale(hex) {
+  const [r, g, b] = rgbOf(hex).map((c) => {
+    const x = c / 255;
+    return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > PALE_LUMINANCE;
+}
+
+function darkEdge(hex) {
+  const mixed = rgbOf(hex).map((c, i) => Math.round(c + (INK[i] - c) * 0.6));
+  return `rgb(${mixed.join(', ')})`;
+}
+
+/** Edge colours for a scale: pale steps darkened, the rest `otherwise(color)`. */
+function edgeColours(scale, otherwise) {
+  return scale.map((color) => (isPale(color) ? darkEdge(color) : otherwise(color)));
+}
+
+/** 1 for a pale step, 0 otherwise. */
+function paleFlags(scale) {
+  return scale.map((color) => (isPale(color) ? 1 : 0));
+}
+
+/** MARKER_EDGE_WIDTH, widened where `paleFlag` (an expression, 0 or 1) is 1. */
+function edgeWidth(paleFlag) {
+  const widen = (w) => ['+', w, ['*', paleFlag, 0.7]];
+  return ['interpolate', ['linear'], ['zoom'], 0, widen(0.6), 5, widen(1), 9, widen(1.4)];
+}
 
 /**
  * Circle paint for a platform's city markers.
@@ -65,7 +123,7 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
       'circle-radius': radius,
       'circle-color': color,
       'circle-opacity': 0.18,
-      'circle-stroke-color': color,
+      'circle-stroke-color': perScaleValue(platform, edgeColours(platform.scale, (c) => c)),
       'circle-stroke-width': 1.6,
       'circle-stroke-opacity': 1,
     };
@@ -75,8 +133,8 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
     'circle-radius': radius,
     'circle-color': color,
     'circle-opacity': 0.92,
-    'circle-stroke-color': MARKER_EDGE,
-    'circle-stroke-width': MARKER_EDGE_WIDTH,
+    'circle-stroke-color': perScaleValue(platform, edgeColours(platform.scale, () => MARKER_EDGE)),
+    'circle-stroke-width': edgeWidth(perScaleValue(platform, paleFlags(platform.scale))),
   };
 }
 
@@ -89,12 +147,19 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
 export function coverageCountPaint(scale) {
   // scale[i] is the colour for a city covered by i + 1 platforms.
   const stops = scale.flatMap((color, i) => [i + 1, color]);
+  // Counts are whole numbers, so each city lands on one step exactly.
+  const perCount = (values) => [
+    'match',
+    ['get', 'platformCount'],
+    ...values.flatMap((value, i) => [i + 1, value]),
+    values[values.length - 1],
+  ];
   return {
     'circle-radius': RADIUS_DENSE,
     'circle-color': ['interpolate', ['linear'], ['get', 'platformCount'], ...stops],
     'circle-opacity': 0.92,
-    'circle-stroke-color': MARKER_EDGE,
-    'circle-stroke-width': MARKER_EDGE_WIDTH,
+    'circle-stroke-color': perCount(edgeColours(scale, () => MARKER_EDGE)),
+    'circle-stroke-width': edgeWidth(perCount(paleFlags(scale))),
   };
 }
 

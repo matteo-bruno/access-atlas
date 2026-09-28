@@ -204,6 +204,12 @@ which reads against the paper and disappears into a dark dot, so one value
 works at both ends of every scale; `.aa-swatch` and `.aa-picker__dot` carry
 the same hairline as an inset shadow.
 
+The hairline alone still lost the palest steps on the world maps (a slow
+CityChrone city, a balanced CDI ring, a one-platform city), so a scale step
+whose luminance is above 0.6 gets an edge of its own colour taken 60% of the
+way to ink, and a wider one (`isPale` / `darkEdge` in `map/layers.js`). It is
+derived from the scale, so a new pale colour is covered without a list.
+
 The 15minCity ramp is centred on white at 15 minutes and keeps darkening past
 30 to black at 120. The legend bar stops at 30 and draws the rest as a
 **compressed tail** beside it — a quarter of the width for four times the
@@ -651,6 +657,11 @@ where it read as a control on the map and crowded the geometry switch.
 
 Two things that are easy to get wrong here:
 
+- **A cell where nobody lives is not drawn**, on every layer but
+  Population: the mesh's fill layer carries a filter on the grid's
+  population (`POPULATED` in `AtlasCityPage.jsx`), so the cell cannot be
+  hovered or selected either. The summary's cell count is still the layer's
+  whole mask.
 - **The summary describes the layer, not the mesh.** Its cell count and area
   are the layer's own mask — 1,636 cells over 170 km² for Milan's P.O.V., not
   the union's 7,637 — because the count beside a figure has to be the count
