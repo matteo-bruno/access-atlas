@@ -75,8 +75,8 @@ change are not rewritten, so re-importing the same export changes nothing.
 The catalogue (`public/data/index.json`), the platform's world-map marker
 (`<platform>/coverage.geojson.gz`) and, for P.O.V. and CDI, the compare
 view's row (`<platform>/summary.json.gz`) are updated in the same run.
-Afterwards `test:data` tells you if a count written in the code
-(`src/data/platforms.js`, `src/data/home.js`) needs the new value.
+Nothing in the code needs editing: the site counts cities and cells from
+the catalogue.
 
 ### Where a city is
 

@@ -174,13 +174,13 @@ export function paperForPlatform(platformId) {
   return paper?.url ? paper : null;
 }
 
-// Coverage counts match what is published under public/data/ — see
-// src/data/platforms.js, which carries the same numbers for the maps.
+// How many cities each covers is counted from the published catalogue by the
+// page (`usePublishedCityCounts`), not written here.
 export const DATASETS = [
-  { id: 'pov', platform: 'pov', coverage: 18, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
-  { id: 'cardep', platform: 'cardep', coverage: 22, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
-  { id: 'fifteen', platform: 'fifteen', coverage: 1, format: 'GeoJSON', licence: 'CC BY-NC 4.0' },
-  { id: 'citychrone', platform: 'citychrone', coverage: 1, format: 'GeoJSON + NPY', licence: 'CC BY-NC 4.0' },
+  { id: 'pov', platform: 'pov', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
+  { id: 'cardep', platform: 'cardep', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
+  { id: 'fifteen', platform: 'fifteen', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
+  { id: 'citychrone', platform: 'citychrone', format: 'JSON on H3 + NPY', licence: 'CC BY-NC 4.0' },
 ];
 
 export const CITATION = `Sustainable Cities team, Sony Computer Science Laboratories — Rome.

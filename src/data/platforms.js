@@ -1,12 +1,11 @@
 // The four Atlas platforms. `slug` drives routing, `i18n` points at the copy
 // keys.
 //
-// `cityCount` counts cities whose data is actually published in public/data/,
-// not the coverage of the upstream research platform. `npm run test:data`
-// counts them from the catalogue and fails, with the right number, when an
-// import leaves one of these behind. `published: false` means
-// the map is still drawing generated stand-ins, and the UI says so rather than
-// presenting a count it cannot support.
+// How many cities a platform publishes is not written here: it is counted
+// from the catalogue (`usePublishedCityCounts`), so an import needs no code
+// change. `published: false` means the map is still drawing generated
+// stand-ins, and the UI says so rather than presenting a count it cannot
+// support.
 //
 // `url` is the platform's own live site. The home page sends visitors there
 // while the Atlas's combined viewer — one map with switchable visualisations —
@@ -27,7 +26,6 @@ export const PLATFORMS = [
     url: 'https://whatif.sonycsl.it/15mincity',
     // City whose mesh the home-page card falls back to when it has no still.
     previewCity: 'milan',
-    cityCount: 2,
     published: true,
     // Diverging scale: cool = close, warm = far. Index i covers stops[i].
     scale: [
@@ -56,7 +54,6 @@ export const PLATFORMS = [
     themeKey: 'opportunity',
     accent: BRAND.navy,
     url: 'https://whatif.sonycsl.it/citychrone',
-    cityCount: 2,
     published: true,
     // No per-platform city pages: the combined viewer (/atlas/:cityId) is
     // CityChrone's city-level view, so its landing map routes there.
@@ -77,7 +74,6 @@ export const PLATFORMS = [
     accent: '#a04640',
     url: 'https://mat701.github.io/CDI',
     previewCity: 'rome',
-    cityCount: 22,
     published: true,
     scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
     // CDI = (O_car − O_PT) / (O_car + O_PT), bounded in [−1, +1]: negative
@@ -102,7 +98,6 @@ export const PLATFORMS = [
     accent: BRAND.navy,
     url: 'https://mat701.github.io/accessibility-pov',
     previewCity: 'rome',
-    cityCount: 18,
     published: true,
     // Categorical, not a ramp — index matches ZONES below.
     scale: ['#3b8a4f', BRAND.cyan, '#e0a23a', '#c54a3a'],

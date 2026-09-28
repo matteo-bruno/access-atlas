@@ -10,6 +10,7 @@ import { PLATFORMS } from '../data/platforms.js';
 import { citiesForPlatform } from '../data/cities.js';
 import { postForLayer } from '../data/blog.js';
 import { CITY_TABLE, NEWS, TABLE_SCALE, WORK_IN_PROGRESS } from '../data/home.js';
+import { usePublishedCityCounts } from '../data/useAtlasData.js';
 import { BRAND } from '../data/brand.js';
 import './Home.css';
 
@@ -39,6 +40,7 @@ export default function Home() {
 export function HomeSections({ hero = true }) {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
+  const cityCounts = usePublishedCityCounts();
 
   const platformCities = useMemo(
     () => Object.fromEntries(PLATFORMS.map((p) => [p.id, citiesForPlatform(p)])),
@@ -126,7 +128,8 @@ export function HomeSections({ hero = true }) {
                     <p className="aa-platform__desc">{t(`home.platforms.desc.${platform.id}`)}</p>
                     <div className="aa-platform__foot">
                       <span className="aa-mono aa-platform__count">
-                        {t('home.platforms.cityCount', { count: n(platform.cityCount) })}
+                        {cityCounts &&
+                          t('home.platforms.cityCount', { count: n(cityCounts[platform.id]) })}
                       </span>
                       <span className="aa-platform__open" style={{ color: platform.accent }}>
                         {t('home.platforms.more')}

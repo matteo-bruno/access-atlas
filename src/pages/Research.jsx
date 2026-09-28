@@ -1,7 +1,8 @@
 // The nav has always carried a Research entry; the handoff had no artboard for
 // it, so this page is assembled strictly from the approved design vocabulary
 // (section headings, cards, the by-the-numbers table) rather than inventing new
-// patterns. Bibliography and coverage counts come from data/research.js.
+// patterns. The bibliography comes from data/research.js; coverage is counted
+// from the published catalogue.
 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
@@ -10,10 +11,12 @@ import { Icon } from '../components/Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { CITATION, DATASETS, PAPERS } from '../data/research.js';
 import { PLATFORMS_BY_ID } from '../data/platforms.js';
+import { usePublishedCityCounts } from '../data/useAtlasData.js';
 import './Research.css';
 
 export default function Research() {
   const { t, n } = useI18n();
+  const cityCounts = usePublishedCityCounts();
 
   return (
     <div className="aa-page">
@@ -99,7 +102,7 @@ export default function Research() {
                     <Icon name="arrow" size={13} color="var(--ink-3)" />
                   </Link>
                   <div className="aa-mono">
-                    {t('platform.cityCount', { count: n(dataset.coverage) })}
+                    {cityCounts && t('platform.cityCount', { count: n(cityCounts[dataset.platform]) })}
                   </div>
                   <div>{dataset.format}</div>
                   <div className="aa-mono aa-datasets__licence">{dataset.licence}</div>

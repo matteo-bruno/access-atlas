@@ -452,3 +452,41 @@ export function usePlatformHasSummary(platformId) {
 
   return has;
 }
+
+/**
+ * How many cities each platform publishes, counted from the catalogue — the
+ * "N cities" on the platform cards and the Research page. Counted rather than
+ * written down, so publishing a city needs no code change. Null until the
+ * catalogue answers; callers render nothing rather than a guess.
+ *
+ * @returns {Record<string, number> | null}
+ */
+export function usePublishedCityCounts() {
+  const [counts, setCounts] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const catalogue = await getDataProvider().catalogue({ signal: controller.signal });
+        if (cancelled) return;
+        setCounts(
+          Object.fromEntries(
+            PLATFORMS.map((p) => [p.id, (catalogue?.platforms?.[p.id]?.cities ?? []).filter(hasCityData).length]),
+          ),
+        );
+      } catch (error) {
+        if (error?.name === 'AbortError') return;
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, []);
+
+  return counts;
+}

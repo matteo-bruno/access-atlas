@@ -22,9 +22,14 @@ Two consequences worth internalising before editing copy:
   than show a coverage count it cannot support. A generated city mesh labels
   itself as generated (`city.seeded`).
 
-The counts in `src/data/home.js` and `cityCount` in `src/data/platforms.js`
-are counted from the catalogue by `npm run test:data`, which fails with the
-value to write in when an import changes one. Don't edit them otherwise.
+**Counts of published data are never written in the code.** How many cities
+a platform publishes (the platform cards, the Research page) comes from
+`usePublishedCityCounts()`, and the Atlas's totals from `atlasMetrics()` in
+`src/data/home.js`, both counted from the catalogue — whose rows carry each
+layer's `cells` and a `variant` flag, written by the importer. They used to
+be numbers in `platforms.js` and `home.js` that `test:data` checked, which
+made every new city fail the import until someone edited the code: adding a
+city is a data change, and must stay one.
 
 ## The data layer
 
@@ -358,8 +363,8 @@ CityChrone hours included — and checks the grid is sorted and unique, every
 layer's rows land on grid cells, shares sum to 100, no CDI is outside
 [−1, +1], every 15minCity category × mode is present, each cartogram is drawn
 on its own cells and the derived rule stays within 25 m of the published
-ones, the compare rows agree with the layers, the counts written in the code
-match the catalogue, and that Rome still reports the figures the copy
+ones, the compare rows agree with the layers, the catalogue's own `cells`
+and `variant` fields match the files, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
 seconds what the browser suites take minutes to reach.
 
@@ -404,8 +409,8 @@ title is unchanged — that rule holds for every page.
 
 The screen **counts nothing**: the list of cities, platforms, countries, cells
 and researchers that sat at its foot, and again a screen below it, is gone from
-both. `ATLAS_METRICS` in `src/data/home.js` is still derived and still correct
-— nothing renders it, and putting it back is one block of JSX. What is in the
+both. `atlasMetrics()` in `src/data/home.js` still counts them from the
+catalogue — nothing renders it, and putting it back is one block of JSX. What is in the
 corner instead is the credit: the Sony CSL mark and one line, bottom right.
 
 Two ways past the copy, answering different questions: **scrolling** reads the
