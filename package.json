@@ -9,10 +9,12 @@
     "build": "vite build && node scripts/postbuild-compress.mjs",
     "build:nogzip": "vite build",
     "preview": "vite preview",
+    "citychat": "node scripts/check-node.cjs h3-js && node server/citychat/server.mjs",
     "import": "node scripts/check-node.cjs h3-js && node scripts/import-data.mjs",
     "update:data": "node scripts/check-node.cjs h3-js && node scripts/update-data.mjs",
     "compress:dist": "node scripts/postbuild-compress.mjs",
     "test:data": "node scripts/check-node.cjs && node scripts/test-data.mjs",
+    "test:citychat": "node scripts/check-node.cjs h3-js && node scripts/test-citychat.mjs",
     "shoot:previews": "node scripts/check-node.cjs && node scripts/shoot-previews.mjs",
     "smoke": "node scripts/check-node.cjs playwright && node scripts/smoke.mjs",
     "smoke:published": "node scripts/check-node.cjs playwright && node scripts/smoke-published.mjs"

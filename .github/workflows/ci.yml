@@ -23,6 +23,10 @@ jobs:
       # empty panel further down.
       - run: npm run test:data
 
+      # CityChat's tools, figure check and provider adapters, against scripted
+      # stand-ins: no model, no key, no network.
+      - run: npm run test:citychat
+
       # City maps draw a third-party basemap in the deployed build. The suites
       # must not depend on that host being reachable — an outage there is not a
       # regression in this repository — so they run against a build with the

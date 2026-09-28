@@ -878,6 +878,48 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 - Its card still is shot from the combined viewer's CityChrone layer
   (`scripts/shoot-previews.mjs`).
 
+## CityChat (beta)
+
+`/citychat` is a chat over the published data; the service is
+`server/citychat/` and its README has the configuration, the deploy and the
+model choices. The site's rule applies to it unchanged, and the design
+follows from that:
+
+- **The model states no figure it was not handed.** It calls tools
+  (`tools.mjs`) that run `grid.js` and `adapters.js` over `public/data/`, so
+  the chat and the map compute every figure with the same code. `numbers.mjs`
+  then checks each number in an answer against the tool results, the site
+  copy and the conversation; one correction round, and whatever survives is
+  shown to the reader as possibly wrong. It matches values, not meanings: a
+  rounded figure equal to some *other* figure in the results passes. Do not
+  describe it as proof.
+- **What it knows is the site's own copy.** `knowledge.mjs` puts the English
+  `city.explain.*`, platform and FAQ strings and the four layer posts in the
+  system prompt, plus the rules from "Facts that are easy to get wrong"
+  above. New copy reaches the chat for free; a correction to a measure's
+  description belongs in the dictionary, not in the prompt.
+- **The provider is one environment variable.** `llm/` has Gemini (native
+  API, default) and any OpenAI-compatible server, which covers vLLM,
+  llama.cpp, Ollama and most hosted APIs. Gemini's newer models refuse a
+  follow-up that drops the thought signatures on their function calls, so
+  the adapter replays the model's own parts verbatim: do not rebuild them.
+- **The static site does not depend on it.** A build talks to the service
+  only when built with `VITE_CITYCHAT=1` (always in `npm run dev`); without
+  it the tab says CityChat is not enabled and sends nothing, which is what
+  the CI build and GitHub Pages get, and what `smoke.mjs` asserts. With it,
+  the tab probes `<base>api/citychat/health` and accepts only JSON with `ok`
+  (the SPA fallback answers a missing service with index.html and a 200),
+  and a chat response counts only if it is NDJSON. `vite preview` proxies to
+  the service only with `CITYCHAT_PREVIEW=1`: a proxy with nothing behind it
+  answers 500.
+- **`?cell=<h3>` on the city view** selects that cell and frames the ground
+  around it. It is how the chat's "show on map" buttons land, and works for
+  any link.
+
+The nav gained a tab with it, and ten tabs only fit above 1240 px with the
+closer spacing in `Nav.css`; below that the drawer takes over (it was 1080 px,
+where the tagline already ran under the first tab).
+
 ## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon

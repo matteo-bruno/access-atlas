@@ -94,6 +94,7 @@ Outstanding before launch:
 | `/sustainable-cities`      | Who we are — the research line, the lab, other projects |
 | `/stats`                   | Where cities will be compared; links the per-platform comparisons |
 | `/consulting`              | For policy makers and companies who want to ask |
+| `/citychat`                | CityChat (beta) — questions about the layers, answered from the published data by a model with tools; needs the service in `server/citychat/` |
 
 Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,
 `accessibility-pov`.
@@ -422,7 +423,9 @@ covers the fallback machinery from the other side: it stages a dataset in the
 upstream schema, asserts the Atlas reads it instead of the seed, and removes it
 again. `npm run test:data` needs no browser at all — it runs the real adapters
 over every file in `public/data/` and fails on a malformed one in seconds. All
-three run in CI — see `.github/workflows/ci.yml`.
+three run in CI — see `.github/workflows/ci.yml`, alongside `npm run
+test:citychat`, which checks CityChat's tools and provider adapters with no
+model behind them (`server/citychat/README.md`).
 
 ## Data
 

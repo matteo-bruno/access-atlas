@@ -15,6 +15,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
   const items = [
     { key: 'atlas', to: '/', label: t('nav.atlas') },
     { key: 'platforms', to: '/platforms', label: t('nav.platforms') },
+    { key: 'citychat', to: '/citychat', label: t('nav.citychat'), badge: t('citychat.beta') },
     { key: 'stats', to: '/stats', label: t('nav.stats') },
     { key: 'about', to: '/sustainable-cities', label: t('nav.about') },
     { key: 'consulting', to: '/consulting', label: t('nav.consulting') },
@@ -61,6 +62,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
             }
           >
             {item.label}
+            {item.badge && <span className="aa-nav__badge">{item.badge}</span>}
           </NavLink>
         ))}
       </nav>
@@ -113,6 +115,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
+                  {item.badge && <span className="aa-nav__badge">{item.badge}</span>}
                 </NavLink>
               ))}
               <a

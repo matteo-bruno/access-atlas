@@ -1,0 +1,332 @@
+/* CityChat. One card over the backdrop: it carries its own paper, like every
+   block of reading on the site, and the map stays visible around it. */
+
+.aa-chat__intro {
+  padding-bottom: 28px;
+}
+
+.aa-chat {
+  display: flex;
+  flex-direction: column;
+  max-width: 880px;
+  box-shadow: var(--shadow-soft);
+}
+
+.aa-chat__label {
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ── Who is asking, about where ─────────────────────────────────────── */
+.aa-chat__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--hair);
+}
+
+.aa-chat__personas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.aa-chat__personas .aa-chat__label {
+  margin-right: 4px;
+}
+
+.aa-chat__personas .aa-chip {
+  padding: 6px 11px;
+  font-size: 12.5px;
+}
+
+.aa-chat__city {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aa-chat__city select {
+  padding: 6px 10px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--card);
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+/* ── The conversation ───────────────────────────────────────────────── */
+.aa-chat__log {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 320px;
+  max-height: min(62vh, 640px);
+  overflow-y: auto;
+  padding: 22px 20px;
+}
+
+.aa-chat__empty {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: auto 0;
+}
+
+.aa-chat__suggestions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.aa-chat__suggestion {
+  padding: 10px 14px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.aa-chat__suggestion:hover:not(:disabled) {
+  border-color: var(--ink-4);
+  color: var(--ink);
+}
+
+.aa-chat__suggestion:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.aa-chat__msg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 88%;
+}
+
+.aa-chat__msg--user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.aa-chat__who {
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+
+.aa-chat__bubble {
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.aa-chat__msg--user .aa-chat__bubble {
+  background: var(--navy);
+  color: var(--card);
+  white-space: pre-wrap;
+}
+
+.aa-chat__msg--bot .aa-chat__bubble {
+  background: var(--paper);
+  border: 1px solid var(--hair-soft);
+}
+
+.aa-chat__bubble--error {
+  color: var(--magenta-deep);
+}
+
+.aa-chat__bubble--pending {
+  color: var(--ink-3);
+}
+
+.aa-chat__p + .aa-chat__p,
+.aa-chat__p + .aa-chat__ul,
+.aa-chat__ul + .aa-chat__p {
+  margin-top: 10px;
+}
+
+.aa-chat__ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+.aa-chat__ul li + li {
+  margin-top: 4px;
+}
+
+/* A figure the check could not trace. Magenta: the brand's accent is also
+   the one colour on the page nobody reads as decoration. */
+.aa-chat__warn {
+  margin-top: 12px;
+  padding: 8px 11px;
+  border-left: 3px solid var(--magenta);
+  background: rgba(230, 0, 126, 0.06);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.aa-chat__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.aa-chat__coord {
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-chat__links .aa-chip {
+  padding: 6px 11px;
+  font-size: 12.5px;
+  white-space: normal;
+}
+
+/* What the answer was computed from. Mono, like every other place the site
+   prints something a reader might want to check. */
+.aa-chat__trace {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--hair);
+}
+
+.aa-chat__trace--live {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.aa-chat__trace .aa-chat__label {
+  margin-right: 2px;
+  font-size: 10.5px;
+}
+
+.aa-chat__tool {
+  padding: 2px 7px;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: var(--card);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-2);
+}
+
+.aa-chat__dots {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  vertical-align: 1px;
+  animation: aa-chat-pulse 1s ease-in-out infinite;
+}
+
+@keyframes aa-chat-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-chat__dots {
+    animation: none;
+  }
+}
+
+/* ── Asking ─────────────────────────────────────────────────────────── */
+.aa-chat__composer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  padding: 14px 20px;
+  border-top: 1px solid var(--hair);
+}
+
+.aa-chat__composer textarea {
+  flex: 1;
+  min-height: 48px;
+  max-height: 180px;
+  padding: 11px 13px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font: inherit;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  resize: vertical;
+}
+
+.aa-chat__composer textarea:focus {
+  outline: 2px solid var(--cyan);
+  outline-offset: -1px;
+}
+
+.aa-chat__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.aa-chat__actions .aa-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.aa-chat__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--hair-soft);
+}
+
+.aa-chat__status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.aa-chat__status--offline,
+.aa-chat__status--disabled {
+  color: var(--magenta-deep);
+}
+
+.aa-chat__disclaimer {
+  max-width: 72ch;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+
+@media (max-width: 640px) {
+  .aa-chat__msg {
+    max-width: 100%;
+  }
+
+  .aa-chat__composer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
