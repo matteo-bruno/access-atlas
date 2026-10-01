@@ -158,6 +158,13 @@ export default defineConfig({
   // MapLibre spawns its worker with `{ type: 'module' }`, so Vite must emit
   // workers as ES modules rather than the default IIFE.
   worker: { format: 'es' },
+  // The published data and the exports it is imported from are a directory
+  // per city, and the dev server watching each one exhausts Linux's inotify
+  // limit (ENOSPC) as the Atlas grows. Neither is code: a re-import is seen
+  // by reloading the page, which re-reads the catalogue anyway.
+  server: {
+    watch: { ignored: ['**/public/data/**', '**/input_data/**'] },
+  },
   build: {
     // maplibre-gl is large and only the map routes need it; keeping it in its
     // own chunk means the FAQ/Contact pages don't pay for it.
