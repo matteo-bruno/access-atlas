@@ -91,7 +91,9 @@ were always published at. Encoding them as a scale per cell was measured and
 rejected for that reason. 15minCity and CityChrone publish none, so the Atlas
 derives one by a rule it states: a cell keeps its centre and its shape, and
 its **area is proportional to its population**, reaching the full hexagon at
-the median over the layer's cells. The population is the **grid's**, not the
+the median over the layer's *inhabited* cells. Empty cells are not drawn, and
+counting them pulled Rome's CityChrone reference (a metro-wide mask, 38%
+empty) down to 4 residents, 44.6 m from CDI's cartogram. The population is the **grid's**, not the
 layer's own: 15minCity's population model puts Milan's derived cartogram
 38 m from the published ones, the grid's puts it at ~13 m, and the point is
 that a cell of a given population is the same size whichever layer is on

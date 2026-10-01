@@ -115,7 +115,7 @@ CityChrone.
   CityChrone publish none; the Atlas derives one (`"source": "derived"`):
   each cell keeps its centre and shape, and its area is proportional to its
   population, reaching the full hexagon at `reference`, the median over the
-  layer's cells. The population is the grid's, shared by every layer, so a
+  layer's inhabited cells (empty cells are never drawn). The population is the grid's, shared by every layer, so a
   cell of a given population is the same size whichever layer draws it.
   `test:data` checks the rule stays within 25 m of the published cartograms
   where both exist. The UI says which of the two is on screen.

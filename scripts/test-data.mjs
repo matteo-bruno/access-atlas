@@ -200,7 +200,7 @@ for (const city of catalogue.atlas?.cities ?? []) {
       if (worst > 10) bad.push(`${layer} cartogram drawn up to ${worst.toFixed(1)} m off its cells`);
     }
 
-    // The derived rule (area ∝ population, full at the median) stands in for
+    // The derived rule (area ∝ population, full at the median inhabited cell) stands in for
     // a cartogram where a platform publishes none. Where one is published for
     // the same cells, the rule must stay close to it, or two layers of one
     // city would disagree about how big a cell of a given population is.

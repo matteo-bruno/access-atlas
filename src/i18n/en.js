@@ -427,7 +427,7 @@ export default {
       about: {
         map: 'Every cell is the hexagon it is on the ground, the same size everywhere whatever lives in it. Area says nothing about how many people a measure affects, so a thinly populated edge of the city takes up as much of the picture as the dense centre does.',
         cartogram: 'Every cell sits where it really is, but its area is its resident population rather than the ground it covers: a cell with few residents shrinks to a fraction of a hexagon, a crowded one fills it. It answers a different question — not where a measure is low, but how many people it is low for.',
-        derived: 'This cartogram is the Atlas’s own: {name} publishes none, so the area here is proportional to the cell’s resident population, reaching the full hexagon at the city’s median cell population. The rule is calibrated against the cartograms the other platforms do publish for the same city, and reproduces them to about 12 m on a 200 m cell — so a cell of a given population looks the same size whichever layer you are on.',
+        derived: 'This cartogram is the Atlas’s own: {name} publishes none, so the area here is proportional to the cell’s resident population, reaching the full hexagon at the median population of the city’s inhabited cells. The rule is calibrated against the cartograms the other platforms do publish for the same city, and reproduces them to about 12 m on a 200 m cell — so a cell of a given population looks the same size whichever layer you are on.',
         missing: 'A cartogram is a layout its authors computed, not a transformation of the map, so the Atlas draws the one each platform published rather than deriving one. {name} publishes none.',
       },
     },
