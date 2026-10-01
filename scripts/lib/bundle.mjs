@@ -315,7 +315,10 @@ function encodeColumn(values, decimals) {
 
 /** Median population of a layer's populated cells: the derived cartogram's reference. */
 function cartogramReference(populations) {
-  const sorted = populations.map((p) => Math.max(Number(p) || 0, 0)).sort((a, b) => a - b);
+  // Empty cells are never drawn, and in a metro-wide mask they can be most of
+  // it: counted, they pulled Rome's CityChrone reference down to 4 residents
+  // and drew nearly every cell at full size.
+  const sorted = populations.map((p) => Number(p) || 0).filter((p) => p > 0).sort((a, b) => a - b);
   return sorted[sorted.length >> 1] ?? 0;
 }
 

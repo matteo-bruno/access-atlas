@@ -25,6 +25,26 @@
           }
         },
         {
+          "id": "rome",
+          "name": "Rome",
+          "nameIt": "Roma",
+          "region": "Italy",
+          "regionIt": "Italia",
+          "country": "IT",
+          "center": [
+            12.4994,
+            41.88392
+          ],
+          "zoom": 8.6,
+          "population": 2235742,
+          "cells": 4134,
+          "layer": "cities/rome/fifteen.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 208
+          }
+        },
+        {
           "id": "zurich",
           "name": "Zurich",
           "nameIt": "Zurigo",
@@ -72,6 +92,31 @@
             "hours": 24,
             "cells": 1741,
             "times": "cities/milan/citychrone/times{hh}.npy.gz"
+          }
+        },
+        {
+          "id": "rome",
+          "name": "Rome",
+          "nameIt": "Roma",
+          "region": "Italy",
+          "regionIt": "Italia",
+          "country": "IT",
+          "center": [
+            12.49368,
+            41.88207
+          ],
+          "zoom": 8.5,
+          "population": 2610166,
+          "cells": 11409,
+          "layer": "cities/rome/citychrone.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 208
+          },
+          "hourly": {
+            "hours": 24,
+            "cells": 11409,
+            "times": "cities/rome/citychrone/times{hh}.npy.gz"
           }
         },
         {
@@ -1475,16 +1520,27 @@
           "cellRadiusM": 208
         },
         "layers": [
+          "fifteen",
+          "citychrone",
           "cardep",
           "pov"
         ],
         "layerData": {
+          "fifteen": "cities/rome/fifteen.json.gz",
+          "citychrone": "cities/rome/citychrone.json.gz",
           "cardep": "cities/rome/cardep.json.gz",
           "pov": "cities/rome/pov.json.gz"
         },
         "cartogramSources": {
+          "fifteen": "derived",
+          "citychrone": "derived",
           "cardep": "published",
           "pov": "published"
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 11409,
+          "times": "cities/rome/citychrone/times{hh}.npy.gz"
         }
       },
       {
