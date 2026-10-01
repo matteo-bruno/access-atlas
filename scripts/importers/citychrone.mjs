@@ -123,10 +123,17 @@ export function parse(source) {
     s.push(sh);
   });
 
-  const matrices = times.map((file, hour) => {
-    const buffer = file.read();
-    checkNpy(buffer, n, file.path);
-    return buffer;
+  // Each matrix is n² bytes and a large city's 24 do not fit in memory at
+  // once, so they are checked here one at a time, and handed on as readers
+  // the writer calls hour by hour. That decodes each twice, which is the
+  // price of failing before any file is written rather than halfway through.
+  const matrices = times.map((file) => {
+    checkNpy(file.read(), n, file.path);
+    return () => {
+      const buffer = file.read();
+      checkNpy(buffer, n, file.path);
+      return buffer;
+    };
   });
 
   return {

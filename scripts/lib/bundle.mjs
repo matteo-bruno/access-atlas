@@ -471,7 +471,8 @@ export function writeCity(cityId, records, { dryRun = false } = {}) {
     const template = timesTemplate(cityId);
     const order = records.get('citychrone').rowOrder;
     times.forEach((source, hour) => {
-      const buffer = permuteMatrix(source, order);
+      // A matrix may come as a reader, so only one hour is in memory at a time.
+      const buffer = permuteMatrix(typeof source === 'function' ? source() : source, order);
       const rel = hourPath(template, hour);
       const file = abs(rel);
       const same =

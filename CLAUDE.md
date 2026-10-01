@@ -713,7 +713,11 @@ importers read the platforms' exports as they hand them over — P.O.V.'s two
 GeoJSONs (the cartogram in EPSG:3857), CDI's city folder, 15minCity's
 harmonised GeoJSON, CityChrone's zip of per-hour zips — straight from the zip.
 `scripts/lib/zip.mjs` is a small reader for exactly that (stored and
-deflated members, no zip64), because Node has none.
+deflated members, zip64), because Node has none. It reads the archive from
+disk member by member, never whole: Node will not read a file past 2 GiB
+into one buffer, and Rome's CityChrone export is 3.2 GB. For the same
+reason the importer hands the 24 travel-time matrices to the writer as
+readers, one hour in memory at a time.
 
 `npm run build` also runs `scripts/postbuild-compress.mjs`, which writes
 `<file>.gz` companions for every text-ish file in `dist/` above 4 KB.
