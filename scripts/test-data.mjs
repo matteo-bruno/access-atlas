@@ -84,7 +84,7 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
 }
 
 let totalCells = 0;
-const meshes = new Map();
+const meshes = new Map(); // city id → the viewer's per-layer figures
 for (const city of catalogue.atlas?.cities ?? []) {
   const bad = [];
   try {
@@ -116,7 +116,10 @@ for (const city of catalogue.atlas?.cities ?? []) {
     if (covered.size !== n) bad.push(`${n - covered.size} grid cells belong to no layer`);
 
     const mesh = meshFromAtlas({ type: 'FeatureCollection', features }, city);
-    meshes.set(city.id, mesh);
+    // Keep the figures, not the mesh: its features are every cell's polygon
+    // and every layer's values, and holding them for every city until the
+    // end ran the heap out once enough cities were imported at once.
+    meshes.set(city.id, { layers: mesh.layers });
     totalCells += n;
     const { layers } = mesh;
     for (const layer of city.layers) {
