@@ -57,7 +57,10 @@ export function readDataJSON(file) {
 export function writeDataFile(file, body) {
   const buf = Buffer.from(body);
   const gzipped = file.endsWith('.gz');
-  const payload = gzipped ? zlib.gzipSync(buf, { level: zlib.constants.Z_BEST_COMPRESSION }) : buf;
+  // Level 6, not 9: on a CityChrone matrix 9 took 5.3 s an hour for 1% less
+  // than 6's 0.8 s, which made a big city's import minutes of compression.
+  // Imports compare content, not bytes, so files written at 9 stay as they are.
+  const payload = gzipped ? zlib.gzipSync(buf, { level: 6 }) : buf;
 
   // Written beside the target and renamed over it, because a rename is
   // atomic and a write is not: an import stopped halfway through one of
