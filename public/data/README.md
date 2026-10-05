@@ -62,10 +62,11 @@ layer is opened. Nothing is stored twice.
   from every city's `city.json`, in one pass at the end of an import run
   (`npm run import -- --index` on its own). `test:data` fails when
   rebuilding would change any of them.
-- **`files`** is the content hash of every file the catalogue points at. The
-  site fetches each as `<path>?v=<hash>`, so a file that changes changes
-  URL, and no browser or proxy cache can serve the previous deploy's copy
-  under a new catalogue. The catalogue itself carries the build id.
+- **`files`** is the content hash of every file the catalogue points at: the
+  version of each that this catalogue describes. The site fetches the
+  current version by its plain path (the server's `Cache-Control: no-cache`
+  keeps it fresh); `?v=<hash>` is reserved for asking for a specific,
+  possibly earlier, version. The catalogue itself carries the build id.
 
 - **`atlas.cities`** is how the city view (`/atlas/:cityId`) draws a city:
   its grid, and which layer file to fetch for each layer.

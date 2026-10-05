@@ -380,10 +380,12 @@ one, which does nothing but redirect to HTTPS:
     # Everything else is a client-side route: hand it the shell.
     RewriteRule ^ index.html [L]
 
-    # The shell must be revalidated on every visit: it names the build, and
-    # the build names the catalogue. Everything else is safe to cache —
-    # assets carry a hash in their name, data files one in their URL.
-    <FilesMatch "\.html$">
+    # The shell and the data are revalidated on every use: the browser may
+    # keep a copy, but asks first, and gets a 304 when nothing changed. The
+    # shell names the build, the build names the catalogue, and the data
+    # files sit at plain paths that a deploy rewrites in place. Built assets
+    # carry a hash in their name and cache freely.
+    <FilesMatch "\.(html|json|geojson|gz)$">
         Header set Cache-Control "no-cache"
     </FilesMatch>
 </Directory>
@@ -406,11 +408,14 @@ Four things that cost time here:
   routes unpredictably.
 - **Caching.** Without a `Cache-Control` header Apache leaves caching to
   the browser's heuristics, which keep a file for a tenth of its age. An
-  `index.html` kept that way asks for the previous deploy's catalogue, and
-  before data URLs carried their content hash, a coverage file or a grid
-  kept that way was served under the new catalogue: world maps missing the
-  cities just added, hexagons painted with another cell's values.
-  `scripts/deploy.sh` warns when the shell comes back without `no-cache`.
+  `index.html` kept that way asks for the previous deploy's catalogue, and a
+  coverage file or a grid kept that way was served under the new catalogue:
+  world maps missing the cities just added, hexagons painted with another
+  cell's values. Data files are fetched by their plain path, so the
+  `no-cache` above is what keeps them current. `scripts/deploy.sh` warns
+  when the shell or a data file comes back without it. GitHub Pages cannot
+  be configured: it sends `max-age=600`, so a deploy there can take up to
+  ten minutes to reach a returning visitor.
 - **certbot can rewrite `<name>-le-ssl.conf`.** Not on an ordinary renewal,
   but a re-run of `certbot --apache` for that host will. Keep a copy of the
   block and check it survived any certificate work.

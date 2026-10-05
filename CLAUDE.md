@@ -289,10 +289,15 @@ The files it points at had the same problem one level down, and on the
 self-hosted server it showed: they sat at stable URLs, Apache sends no
 `Cache-Control`, and a browser kept a coverage file or a grid from the last
 deploy under the new catalogue (new cities missing from the world map; a
-grid from one deploy under layers from the next). The catalogue now lists a
-content hash per file (`files`), and `fileUrl()` fetches each as
-`<path>?v=<hash>`. Every URL in `sources.js` goes through it; a new one
-must too.
+grid from one deploy under layers from the next). The current version of
+a file is fetched by its **plain path**, on purpose (a `?v=<hash>` on every
+request was tried and rejected as noise), so what keeps it current is the
+server: Apache sends `Cache-Control: no-cache` on the shell and the data
+(README, Apache section), and a returning browser revalidates and gets a
+304. The catalogue still lists a content hash per file (`files`), which
+names the version it describes; `fileUrl(catalogue, path, version)` tags a
+URL with one only when asked, for a host that will serve earlier versions.
+Every URL in `sources.js` goes through `fileUrl`; a new one must too.
 
 **A shared fetch must not carry one caller's abort signal.** The catalogue is
 memoised, because nearly every route reads it and it cannot change within a

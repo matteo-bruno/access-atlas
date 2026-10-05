@@ -254,12 +254,20 @@ if [ -f dist/data/index.json ]; then
   fi
 fi
 
-# The shell names the build, and the build names the catalogue: an index.html
-# a browser keeps from the last deploy keeps asking for the last catalogue.
-if ! curl -sI "$AA_URL" | grep -qi '^cache-control:.*no-cache'; then
-  warn "index.html is served without Cache-Control: no-cache, so browsers may keep the previous deploy;"
-  warn "see the Apache section of README.md"
-fi
+# The shell names the build and the build names the catalogue, and the data
+# files sit at plain paths a deploy rewrites in place: all of them must be
+# revalidated, or a browser keeps the previous deploy's copy.
+no_cache() { curl -sI "$1" | grep -qi '^cache-control:.*no-cache'; }
+coverage_rel="$(node -e '
+  const c = JSON.parse(require("fs").readFileSync("dist/data/index.json", "utf8"));
+  const p = Object.values(c.platforms ?? {})[0]; if (p) console.log(p.coverage);
+' 2>/dev/null || true)"
+for probe in "$AA_URL|index.html" ${coverage_rel:+"${AA_URL}data/${coverage_rel}|${coverage_rel}"}; do
+  if ! no_cache "${probe%%|*}"; then
+    warn "${probe##*|} is served without Cache-Control: no-cache, so browsers may keep the previous deploy;"
+    warn "see the Apache section of README.md"
+  fi
+done
 
 [ "$checks_failed" = 0 ] || fail "some checks failed; see above"
 

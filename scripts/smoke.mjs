@@ -364,11 +364,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
     layerFiles.join(' '),
   );
-  // Each file carries its content hash from the catalogue, so a deploy that
-  // changes it changes its URL and no cache can serve the old one.
+  // The current version of a file is its plain path; `?v=<hash>` is only for
+  // asking for a specific one.
   check(
-    'City files are fetched under their content hash',
-    cityRequests.length > 0 && cityRequests.every((u) => /\?v=[0-9a-f]{12}$/.test(u)),
+    'City files are fetched by their plain path',
+    cityRequests.length > 0 && cityRequests.every((u) => !u.includes('?')),
     cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 

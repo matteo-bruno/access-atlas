@@ -72,20 +72,27 @@ export function catalogueUrl() {
 }
 
 /**
- * URL for a file the catalogue points at, tagged with its content hash.
+ * URL for a file the catalogue points at.
  *
- * The catalogue lists a hash for every file it names (`files`, written by
- * `buildIndex` in scripts/lib/bundle.mjs). A file that changes therefore
- * changes URL, and one that does not keeps its URL and its cache. Without
- * this every coverage file, grid and layer sat at a stable URL, and a
- * browser or proxy that had cached one kept serving it under the new
- * catalogue: a world map missing the cities just published, or a grid from
- * one deploy under layers from the next — hexagons painted with another
- * cell's values. A path the catalogue has no hash for is fetched plain.
+ * The current version of a file is its plain path. The catalogue also lists
+ * a content hash for every file it names (`files`, written by `buildIndex`
+ * in scripts/lib/bundle.mjs), which identifies the version it describes;
+ * asking for a `version` explicitly tags the URL with it (`?v=<hash>`), for
+ * a host that one day serves earlier versions of the data.
+ *
+ * Plain paths are only safe because the host revalidates them: the server
+ * sends `Cache-Control: no-cache` on the data (README, Apache section), so a
+ * browser asks before reusing a copy and gets a 304 when nothing changed.
+ * Without it, a coverage file or a grid cached from one deploy was served
+ * under the next one's catalogue.
  */
-export function fileUrl(catalogue, path) {
-  const version = catalogue?.files?.[path];
+export function fileUrl(catalogue, path, version) {
   return version ? `${dataUrl(path)}?v=${version}` : dataUrl(path);
+}
+
+/** The content hash the catalogue lists for a file, or null. */
+export function fileVersion(catalogue, path) {
+  return catalogue?.files?.[path] ?? null;
 }
 
 // Coordinates are [lon, lat] throughout the Atlas, matching GeoJSON and
@@ -232,7 +239,7 @@ export function normaliseCatalogue(raw) {
       cities: atlasCities,
       citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
     },
-    // Content hash per data file, for fileUrl().
+    // Content hash per data file: the version the catalogue describes.
     files:
       raw.files && typeof raw.files === 'object'
         ? Object.fromEntries(Object.entries(raw.files).filter(([, v]) => typeof v === 'string'))
