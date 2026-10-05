@@ -1200,7 +1200,12 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
-  await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
+  // The languages sit behind one toggle, not all on the bar.
+  const listedBefore = await page.$$eval('.aa-nav__langbtn', (els) => els.length);
+  await page.click('.aa-nav__langtoggle');
+  const listed = await page.$$eval('.aa-nav__langbtn', (els) => els.length);
+  check('Languages are behind a menu, not on the bar', listedBefore === 0 && listed >= 3, `${listedBefore} → ${listed}`);
+  await page.click('.aa-nav__langbtn[data-lang="it"]');
   await page.waitForTimeout(700);
   const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
   const itMetric = await page.$$eval('.aa-table__value', (els) =>
@@ -1216,6 +1221,20 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(900);
   const faq = await page.$eval('h1', (e) => e.textContent.trim());
   check('Locale persists across routes', /ricorrenti/i.test(faq), faq.replace(/\n/g, ' '));
+
+  // Arabic runs right to left: the document says so, and the nav's own
+  // ends swap, which is what logical CSS properties are for.
+  await page.click('.aa-nav__langtoggle');
+  await page.click('.aa-nav__langbtn[data-lang="ar"]');
+  await page.waitForTimeout(500);
+  const rtl = await page.evaluate(() => {
+    const brand = document.querySelector('.aa-nav__brand').getBoundingClientRect();
+    const tools = document.querySelector('.aa-nav__tools').getBoundingClientRect();
+    return { dir: document.documentElement.dir, lang: document.documentElement.lang, brandRight: brand.left > tools.left };
+  });
+  check('Arabic sets dir="rtl" and mirrors the nav', rtl.dir === 'rtl' && rtl.lang === 'ar' && rtl.brandRight, JSON.stringify(rtl));
+  await page.click('.aa-nav__langtoggle');
+  await page.click('.aa-nav__langbtn[data-lang="en"]');
   await page.close();
 }
 

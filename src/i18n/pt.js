@@ -1,0 +1,740 @@
+// Portuguese copy (Brazil, the larger readership). Mirrors the shape of
+// en.js; `test:data` checks it. Register: você. Names of the Atlas, its
+// platforms and datasets, the postal address and citations stay as
+// published. Blog posts have no Portuguese version and fall back to English.
+
+export default {
+  meta: {
+    locale: 'pt-BR',
+    name: 'Português',
+  },
+
+  nav: {
+    title: 'Accessibility Atlas',
+    tagline: 'Sony CSL · Roma — Cidades Sustentáveis',
+    atlas: 'Início',
+    platforms: 'Atlas',
+    stats: 'Estatísticas',
+    about: 'Cidades sustentáveis',
+    consulting: 'Consultoria',
+    research: 'Pesquisa',
+    blog: 'Blog',
+    faq: 'FAQ',
+    contact: 'Contato',
+    github: 'GitHub',
+    skipToContent: 'Ir para o conteúdo',
+    openMenu: 'Abrir menu',
+    language: 'Idioma',
+  },
+
+  home: {
+    hero: {
+      eyebrow: 'Plataformas de pesquisa abertas · Sony CSL Roma',
+      title: 'Accessibility',
+      titleAccent: 'Atlas',
+      subtitle: 'Mapeando o acesso urbano, cidade por cidade.',
+      headline: 'Um atlas para medir',
+      headlineAccent: 'o acesso das cidades.',
+      lede: 'O que está ao alcance em uma cidade? Meça a {proximity}: os serviços do dia a dia que se alcançam a pé. Meça a {opportunity}: o que o transporte público permite alcançar em um tempo dado. Meça a {cardep}: o quanto o carro é necessário para acessar as oportunidades da cidade. Descubra como o acesso propaga as desigualdades.',
+      ledeProximity: 'proximidade',
+      ledeOpportunity: 'oportunidade',
+      ledeCardep: 'dependência do carro',
+      ctaPrimary: 'Explore a plataforma',
+      ctaSecondary: 'Leia o artigo do referencial teórico ↗',
+    },
+    news: {
+      title: 'Novidades do laboratório',
+      kinds: { paper: 'Artigo', release: 'Versão', data: 'Dados' },
+      items: {
+        pov: 'The dimensions of accessibility — EPJ Data Science',
+        cdi: 'Car Dependency Index: {count} cidades publicadas',
+        atlas: 'Visão combinada: Milão publicada em uma grade única, com as quatro plataformas',
+      },
+      dates: { pov: 'abr. 2026', cdi: 'fev. 2026', atlas: 'ago. 2026' },
+    },
+    landing: {
+      mapLabel: 'Todas as cidades publicadas pelo Atlas',
+      by: 'Um projeto da Sony CSL · Roma',
+    },
+    premise: {
+      lines: [
+        'Cidades são lugares de oportunidades.',
+        'O acesso às oportunidades reduz as desigualdades.',
+        'Um acesso desigual cria sociedades desiguais.',
+      ],
+    },
+    metrics: {
+      cities: 'Cidades publicadas',
+      platforms: 'Plataformas',
+      countries: 'Países',
+      cells: 'Células hexagonais',
+      researchers: 'Pesquisadores',
+    },
+    platforms: {
+      title: 'Camadas de acessibilidade',
+      more: 'Saiba mais',
+      cityCount: '{count} cidades',
+      themes: {
+        fifteen: 'Proximidade',
+        citychrone: 'Oportunidade',
+        cardep: 'Comparação',
+        pov: 'Síntese',
+      },
+      desc: {
+        fifteen:
+          'Tempo a pé e de bicicleta até dez categorias de serviços do dia a dia, lido em relação à referência dos 15 minutos.',
+        citychrone:
+          'Uma geografia dos tempos de viagem: a cidade redesenhada para que a distância seja medida em minutos de transporte público.',
+        cardep:
+          'O quanto o acesso às oportunidades de carro supera o acesso por transporte público, célula por célula.',
+        pov: 'Proximidade e oportunidade cruzadas para dividir a cidade em quatro zonas de acesso.',
+      },
+    },
+    table: {
+      title: 'Compare cidades',
+      statsNote:
+        'Seis cidades em três medidas, a partir dos dados do P.O.V. A tela que compara todas as cidades publicadas, em todas as medidas, é a aba Estatísticas.',
+      statsCta: 'Abrir Estatísticas',
+      headers: {
+        city: 'Cidade',
+        proximity: 'Pontuação mediana de proximidade',
+        opportunity: 'Pontuação mediana de oportunidade',
+        inclusion: 'Zona de inclusão',
+      },
+      note: 'Proximidade e oportunidade são contagens ponderadas de pontos de interesse alcançáveis, comparáveis entre cidades porque todas são medidas da mesma forma. A inclusão é a parcela de células acima das duas medianas ponderadas pela população.',
+    },
+    side: {
+      title: 'Em andamento',
+      kinds: { live: 'No ar', paper: 'Artigo' },
+      items: {
+        shade: {
+          name: 'O direito à sombra',
+          desc: 'A sombra como infraestrutura: quem consegue atravessar uma cidade no verão sem andar ao sol, e quem não consegue.',
+        },
+        weight: {
+          name: 'O peso das desigualdades urbanas',
+          desc: 'A desigualdade de acesso lida em três dimensões, cidade por cidade, como uma superfície e não como uma tabela.',
+        },
+        odMatrices: {
+          name: 'Matrizes OD a partir de dados de GPS',
+          desc: 'Fluxos origem-destino reconstruídos a partir de trajetos de GPS, para comparar os deslocamentos que as pessoas realmente fazem com os que a rede torna possíveis.',
+        },
+        bikeLanes: {
+          name: 'Planejamento de ciclovias',
+          desc: 'Onde a rede cicloviária deveria crescer, considerando a largura das ruas em que precisa caber e as conexões que criaria.',
+        },
+        co2: {
+          name: 'Emissões de CO₂ do transporte',
+          desc: 'O custo em emissões da forma urbana: quanto carbono a mobilidade de uma cidade gasta e quanto a proximidade muda esse número.',
+        },
+        quality: {
+          name: 'A desigualdade da qualidade',
+          desc: 'A terceira dimensão do referencial: não quanto é alcançável, mas quão bom é, e se a qualidade é tão desigualmente distribuída quanto o acesso.',
+        },
+      },
+    },
+  },
+
+  platform: {
+    search: 'Busque sua cidade…',
+    searchHint: '⌘K',
+    paper: 'Artigo ↗',
+    welcome: 'Boas-vindas ao {name}',
+    dismiss: 'Fechar',
+    ctaMap: 'Clique em uma cidade no mapa',
+    learnMore: 'Saiba mais →',
+    attribution: 'Mapa base: Natural Earth · Dados © Sony CSL Roma · CC BY-NC 4.0',
+    cityCount: '{count} cidades',
+    zoomIn: 'Aproximar',
+    zoomOut: 'Afastar',
+    loading: 'Carregando a cobertura…',
+    empty: 'Nenhuma cidade corresponde à busca.',
+    seeded: 'Valores ilustrativos: as medições desta plataforma ainda não foram publicadas.',
+
+    all: {
+      name: 'Todas as camadas',
+      welcome: 'Boas-vindas ao Accessibility Atlas',
+      label: 'Cobertura publicada',
+      pick: 'Escolha um mapa',
+      intro:
+        'Todas as cidades que o Atlas publicou, nas quatro plataformas. Cada plataforma mede algo diferente e cobre um conjunto diferente de cidades: escolha uma para ver o mapa, a escala e as cidades dela. Quanto mais escura a cidade, mais das quatro medidas ela tem publicadas.',
+      legendUnit: 'Plataformas publicadas',
+      legend: ['Uma', 'Duas', 'Três', 'Todas as quatro'],
+      covered: '{count} de 4 plataformas',
+    },
+
+    fifteen: {
+      label: 'Acesso de proximidade',
+      intro:
+        'Tempo de viagem a pé e de bicicleta até dez categorias de serviços do dia a dia (saúde, educação, compras, alimentação, cultura, espaços ao ar livre, atividade física, serviços, mobilidade), calculado para cada célula da cidade e lido em relação à referência dos 15 minutos.',
+      legendUnit: 'Tempo médio até os serviços',
+      legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
+    },
+    citychrone: {
+      label: 'Acesso a oportunidades',
+      intro:
+        'O CityChrone substitui a distância métrica pelo tempo de viagem: o mapa se deforma para que dois lugares fiquem próximos quando o transporte público os liga rapidamente, por mais distantes que estejam no terreno.',
+      legendUnit: 'Pontuação de velocidade',
+      legend: ['Lenta', 'Média', 'Rápida'],
+    },
+    cardep: {
+      label: 'Carro ou transporte público',
+      intro:
+        'O Car Dependency Index compara as oportunidades alcançáveis de carro com as alcançáveis por transporte público no mesmo tempo: CDI = (O_carro − O_TP) / (O_carro + O_TP). Vai de −1, onde o transporte público alcança mais, passando por 0, onde os dois se equilibram, até +1, onde o carro alcança tudo e o transporte público quase nada.',
+      legendUnit: 'Car Dependency Index',
+      legend: ['Favorável ao transporte público', 'Equilibrado', 'Dependente do carro', 'Muito dependente do carro'],
+    },
+    pov: {
+      label: 'Proximidade · Oportunidade · Valor',
+      intro:
+        'Cada célula recebe uma pontuação em dois eixos (a proximidade, os serviços do dia a dia alcançáveis a pé, e a oportunidade, os destinos em escala urbana alcançáveis por transporte público) e é então classificada em relação à mediana da cidade ponderada pela população em cada eixo. Um terceiro eixo, o valor do que é alcançável, está previsto no referencial teórico, mas ainda não foi quantificado.',
+      legendUnit: 'Zona',
+      legend: ['Inclusão', 'Isolamento espacial', 'Isolamento social', 'Isolamento total'],
+    },
+  },
+
+  fifteen: {
+    mapTitle: 'Tempo de viagem até os serviços',
+    minutes: 'min',
+    barsTitle: 'Todas as categorias, a partir desta célula',
+    barsAxis: 'As barras vão até {max} {unit}; acima disso, ficam cheias.',
+    legendValue: 'Tempo de proximidade',
+    statusHint:
+      'Escolha um modo e uma categoria · passe o mouse sobre uma faixa da legenda para isolá-la · role e arraste para navegar',
+    controls: {
+      mode: 'Modo',
+      category: 'Categoria de serviço',
+    },
+    modes: { foot: 'A pé', bike: 'De bicicleta' },
+    hint: 'Tempo médio de viagem de cada célula até os serviços mais próximos desta categoria.',
+    summary: { median: 'Tempo de viagem mediano' },
+    categories: {
+      average: 'Média de todos os serviços',
+      outdoor: 'Atividades ao ar livre',
+      learning: 'Educação',
+      supplies: 'Compras',
+      eating: 'Alimentação',
+      moving: 'Mobilidade',
+      cultural: 'Atividades culturais',
+      exercise: 'Atividade física',
+      services: 'Serviços',
+      healthcare: 'Saúde',
+    },
+  },
+
+  atlas: {
+    label: 'Visão combinada',
+    mapTitle: 'Medido por {name}',
+    controls: {
+      layer: 'Visualização',
+      view: 'Medida',
+      hour: 'Hora do dia',
+      opacity: 'Opacidade da camada',
+    },
+    info: 'Sobre esta camada',
+    hidePanel: 'Ocultar controles',
+    showPanel: 'Controles',
+    fullscreen: 'Tela cheia',
+    exitFullscreen: 'Sair da tela cheia',
+    population: {
+      name: 'População',
+      legend: 'Moradores por célula',
+      tooltip: '{count} moradores',
+      about:
+        'Moradores por célula, segundo a exportação do 15-minute city, em uma escala de cores logarítmica: a população é muito desigual, e uma escala linear deixaria quase todas as células na cor mais clara. É o contexto em que se leem as outras quatro medidas: o mesmo trajeto pesa mais onde mais gente o faz.',
+    },
+    beyond: {
+      fifteen: 'escurecendo até o preto a partir de 120 min',
+      isochrone: 'escurecendo até o preto em 180 min, o máximo publicado',
+    },
+    views: {
+      velocity: 'Velocidade',
+      sociality: 'Sociabilidade',
+      isochrone: 'Isócronas',
+    },
+    viewHint: {
+      velocity:
+        'Com que rapidez o transporte público leva você para longe de cada célula neste horário: uma pontuação parecida com km/h.',
+      sociality:
+        'Quantas pessoas o transporte público coloca ao alcance de cada célula neste horário: uma pontuação, não uma contagem de pessoas.',
+      isochrone: 'Tempo de viagem por transporte público de uma célula escolhida até todas as outras.',
+    },
+    legend: {
+      velocity: 'Pontuação de velocidade (km/h)',
+      sociality: 'Pontuação de sociabilidade',
+      isochrone: 'Minutos a partir da célula selecionada',
+    },
+    summary: { weightedV: 'Velocidade para o morador médio' },
+    mistake: {
+      title: 'Encontrou um erro?',
+      body: 'Erros acontecem! Dados podem estar faltando ou ser enganosos. {contact} se você souber como corrigir.',
+      contact: 'Escreva para nós',
+    },
+    osmUpdate: 'Última atualização do OpenStreetMap: {date}',
+    layerCells: 'Células medidas pelo {name}',
+    isochroneEmpty: 'Clique em uma célula para ver os tempos de viagem a partir dela',
+    unavailable: 'Não publicado',
+    noValue: 'Não medido nesta célula',
+    openPlatform: 'Página do {name}',
+    statusHint:
+      'Uma grade, quatro medições: ao trocar de camada, as mesmas células são recoloridas · role e arraste para navegar',
+    legacyHint:
+      'Esta cidade ainda não foi exportada na grade comum: cada visualização carrega a malha da própria plataforma.',
+    error: 'Não foi possível carregar a malha publicada.',
+  },
+
+  city: {
+    region: '{region} · {count} células',
+    worldMap: 'Mapa-múndi',
+    compare: 'Compare cidades',
+    zoneType: 'Zona',
+    cdiHint:
+      'Negativo onde o transporte público alcança mais que o carro, positivo onde o carro alcança mais. O índice é uma diferença normalizada limitada a ±1, não uma razão.',
+    zones: {
+      inclusion: {
+        name: 'Inclusão',
+        desc: 'Acima da mediana nos dois eixos: bem servida localmente e conectada a toda a cidade',
+      },
+      spatial: {
+        name: 'Isolamento espacial',
+        desc: 'Serviços por perto, mas pouca conexão por transporte público com o resto da cidade',
+      },
+      social: {
+        name: 'Isolamento social',
+        desc: 'Boa conexão por transporte público, mas poucos serviços a uma distância caminhável',
+      },
+      total: {
+        name: 'Isolamento total',
+        desc: 'Abaixo da mediana nos dois eixos: geralmente a periferia',
+      },
+    },
+    summary: {
+      title: 'Resumo da cidade',
+      hexagons: 'Células',
+      area: 'Área coberta',
+      proximity: 'Pontuação mediana de proximidade',
+      medianCdi: 'CDI mediano (por célula)',
+      weightedCdi: 'CDI do morador médio',
+      opportunity: 'Pontuação mediana de oportunidade',
+      population: 'População coberta',
+    },
+    filter: {
+      title: 'Filtrar por índice',
+      reset: 'Redefinir',
+      about: 'Limita o mapa e o gráfico de dispersão às células cujo índice fica entre os dois controles. O restante continua no mapa, atenuado: o filtro é uma forma de olhar, não uma afirmação de que o resto não existe. Os números do resumo não mudam, porque descrevem a cidade inteira.',
+      showing: '{count} de {total} células',
+    },
+    selected: {
+      title: 'Célula selecionada',
+      empty: 'Clique em uma célula, no mapa ou no gráfico de dispersão, para ver tudo o que foi medido nela.',
+      clear: 'Limpar seleção',
+    },
+    cell: {
+      zone: 'Zona',
+      proximity: 'Pontuação de proximidade',
+      opportunity: 'Pontuação de oportunidade',
+      cdi: 'Car Dependency Index',
+      byCar: 'Alcançável de carro',
+      byTransit: 'Alcançável por transporte público',
+      population: 'Moradores',
+      thresholdProximity: 'Limiar da zona, proximidade',
+      thresholdOpportunity: 'Limiar da zona, oportunidade',
+      time: 'Tempo de viagem',
+      velocity: 'Pontuação de velocidade',
+      sociality: 'Pontuação de sociabilidade',
+      grid: 'Célula H3',
+    },
+    explain: {
+      map: {
+        pov: 'Cada célula recebe a cor da zona em que cai: verde acima da mediana nos dois eixos, vermelho abaixo nos dois e, entre eles, os dois casos mistos. Os limiares são as medianas daquela cidade ponderadas pela população, então uma zona compara lugares dentro de uma cidade e nunca uma cidade com outra: o que se compara entre cidades são as pontuações subjacentes.',
+        cardep: 'Azul onde o transporte público alcança mais oportunidades que o carro, branco onde os dois se equilibram, vermelho onde o carro alcança mais. A escala é fixa para todas as cidades em vez de ajustada a cada uma, então a mesma cor é o mesmo índice em qualquer lugar: nenhuma cidade é recolorida para preencher a paleta.',
+        fifteen: 'As células são coloridas pelo tempo necessário para chegar à categoria escolhida com o modo escolhido. O branco fica em 15 minutos, a referência que dá nome à plataforma, e a escala continua escurecendo além de 30 até o preto em 120. A legenda nomeia essa cauda em vez de se esticar até ela, o que espremeria o intervalo em que está quase toda célula. Uma única escala vale para as dez categorias e os dois modos, então uma cor significa a mesma coisa, seja qual for a seleção.',
+      },
+      summary: {
+        pov: '“Células” conta as que o conjunto de dados publicado cobre. Cada mediana é a pontuação da célula mediana: contagens ponderadas de pontos de interesse alcançáveis, e por isso nenhuma tem unidade; não são metros nem empregos. A população é a soma do próprio conjunto de dados sobre suas células, não um número oficial da cidade.',
+        cardep: 'O CDI mediano é o índice da célula mediana. O CDI do morador médio pondera cada célula pelas pessoas que vivem nela, e é o número com que a plataforma ordena as cidades: metade das células de uma cidade pode depender do carro enquanto a maioria dos moradores vive na outra metade.',
+        fifteen: 'A mediana é o tempo da célula mediana para a categoria e o modo na tela. Ela descreve células, não moradores: cada célula conta uma vez, não importa quantas pessoas vivam nela. A população é a soma do próprio conjunto de dados.',
+        atlas: 'Os números são recalculados para a camada na tela. “Células” é a malha união, ou seja, toda célula medida por pelo menos uma plataforma: uma camada que cobre menos indica isso na própria linha.',
+      },
+      more: 'Explicação completa',
+      platformSite: 'O site do {name}',
+      aboutTitle: 'Sobre o {name}',
+      sections: {
+        measure: 'O que mede',
+        map: 'Como ler o mapa',
+        geometry: 'As duas geometrias',
+        summary: 'Os números do painel',
+        source: 'De onde vem',
+      },
+      methodsTitle: 'Dados e métodos',
+      methods: {
+        pov: 'Células H3 de resolução 9, com cerca de 200 m de largura. Tempos a pé com OSRM sobre o OpenStreetMap; transporte público a partir de horários GTFS com o Connection Scan Algorithm; pontos de interesse do OpenStreetMap; população das grades de 100 m do WorldPop, ajustadas às estimativas da ONU.',
+        cardep: 'Células H3 de resolução 9, com cerca de 200 m de largura. Tempos de carro e a pé com OSRM sobre o OpenStreetMap, com uma margem para estacionar e atrasos de trânsito específicos de cada cidade no lado do carro; transporte público a partir de horários GTFS com o Connection Scan Algorithm; pontos de interesse do OpenStreetMap; população do WorldPop.',
+        fifteen: 'Células H3 de resolução 9. Tempos a pé e de bicicleta com OSRM sobre o OpenStreetMap; serviços do OpenStreetMap, agrupados nas dez categorias do seletor; população do WorldPop.',
+        citychrone: 'Células H3 de resolução 9, uma exportação por hora do dia. Transporte público a partir de horários GTFS; as duas pontuações e as isócronas são definidas no artigo da plataforma. Os tempos de viagem são publicados em minutos inteiros, com limite de 180.',
+      },
+      paperNote: 'O método é apresentado por completo no artigo.',
+    },
+    geometry: {
+      label: 'Geometria',
+      map: 'Mapa',
+      cartogram: 'Cartograma',
+      mapTitle: 'Mapa · as células onde estão',
+      mapCaption: 'A área da célula é o terreno que ela cobre',
+      cartogramCaption: 'A área da célula é sua população residente',
+      loading: 'Carregando a outra geometria…',
+      unavailable: 'Nenhum cartograma publicado',
+      about: {
+        map: 'Cada célula é o hexágono que ela ocupa no terreno, do mesmo tamanho em todo lugar, contenha o que contiver. A área não diz nada sobre quantas pessoas uma medida afeta, então uma borda pouco povoada da cidade ocupa na imagem tanto espaço quanto o centro denso.',
+        cartogram: 'Cada célula fica onde realmente está, mas sua área é sua população residente, não o terreno que cobre: uma célula com poucos moradores encolhe para uma fração de hexágono, e uma muito povoada o preenche. Ela responde a outra pergunta: não onde uma medida é baixa, mas para quantas pessoas ela é.',
+        derived: 'Este cartograma é do próprio Atlas: o {name} não publica nenhum. Aqui a área é proporcional à população residente da célula e chega ao hexágono inteiro na população mediana das células habitadas da cidade. A regra é calibrada com os cartogramas que as outras plataformas publicam para a mesma cidade e os reproduz com cerca de 12 m de diferença em uma célula de 200 m, de modo que uma célula com determinada população tem o mesmo tamanho em qualquer camada.',
+        missing: 'Um cartograma é uma disposição calculada por seus autores, não uma transformação do mapa, então o Atlas desenha o que cada plataforma publicou em vez de derivar um. O {name} não publica nenhum.',
+      },
+    },
+    cartogram: {
+      title: 'Cartograma · área da célula ∝ população',
+      caption: 'Resolução H3 {res} · células de ~{size} m',
+      captionSize: 'células de ~{size} m',
+    },
+    scatterCdi: {
+      title: 'Oportunidades de carro e por transporte público',
+      xAxis: 'Alcançável de carro →',
+      yAxis: 'Alcançável por transporte público →',
+      diagonal: 'mesmo alcance',
+    },
+    scatter: {
+      title: 'Proximidade e oportunidade',
+      xAxis: 'Pontuação de oportunidade →',
+      yAxis: 'Pontuação de proximidade →',
+    },
+    statusHint:
+      'Passe o mouse ou clique em uma célula ou em um ponto para destacá-los · role e arraste para navegar',
+    computing: 'Carregando a malha…',
+    seeded:
+      'Malha ilustrativa: as medições desta cidade ainda não foram publicadas, então a disposição das células é gerada.',
+  },
+
+  compare: {
+    label: 'Compare cidades',
+    count: '{count} cidades',
+    lede: 'Todas as cidades que esta plataforma publicou, lado a lado. Os números são calculados a partir dos mesmos arquivos que desenham as páginas das cidades: um número aqui é o mesmo número lá.',
+    back: 'Voltar ao mapa',
+    openCity: 'Abrir {name}',
+    sortBy: 'Ordenar por',
+    sort: {
+      name: 'Nome',
+      population: 'População',
+      weightedCdi: 'Índice do morador médio',
+      medianCdi: 'Índice mediano',
+      ptShare: 'Células favoráveis ao transporte público',
+      inclusion: 'Inclusão',
+      proximity: 'Proximidade mediana',
+      opportunity: 'Oportunidade mediana',
+    },
+    basis: { label: 'Parcelas', cells: 'Por célula', residents: 'Por morador' },
+    ranking: {
+      cardep: 'Cidades ordenadas por índice',
+      pov: 'Composição das zonas por cidade',
+      aboutCardep: 'Cada barra é o índice do morador médio daquela cidade: cada célula ponderada pelas pessoas que vivem nela. À esquerda da linha ficam as cidades em que, para o morador típico, o transporte público alcança mais que o carro; à direita, aquelas em que o carro alcança mais. As barras usam a mesma escala dos mapas.',
+      aboutPov: 'A parcela de cada cidade que cai em cada uma das quatro zonas. As zonas são definidas pelas medianas ponderadas pela população da própria cidade, então aqui se compara a composição interna, e não o nível entre cidades: uma cidade pode ser metade inclusão e ainda assim ser mal servida no geral. Você pode contar por células ou por moradores: as células isoladas são grandes e pouco povoadas, e as duas leituras contam histórias diferentes.',
+    },
+    scatter: {
+      cardep: 'O que o carro alcança e o que o transporte público alcança',
+      pov: 'Proximidade e oportunidade',
+      aboutCardep: 'Um círculo por cidade, posicionado pelo que o morador médio alcança de cada forma e dimensionado pela população. A diagonal é onde os dois alcançam o mesmo: os círculos abaixo dela são cidades onde o carro alcança mais.',
+      aboutPov: 'Um círculo por cidade, posicionado pelas pontuações do seu morador médio e dimensionado pela população. Os dois eixos são contagens ponderadas de pontos de interesse alcançáveis, por isso não têm unidade: a posição compara cidades, e o número sozinho só faz sentido diante de outra cidade no mesmo eixo.',
+    },
+    distribution: {
+      title: 'Onde os moradores de cada cidade ficam no índice',
+      about: 'Cada curva é uma cidade: a parcela de seus moradores que vive em um valor do índice igual ou inferior. Uma curva que sobe cedo e íngreme é uma cidade em que quase todos estão do lado do transporte público; uma que fica plana até a direita é uma cidade em que quase todos dependem do carro. Onde a curva cruza a linha central está a parcela de moradores para quem o carro e o transporte público alcançam mais ou menos o mesmo.',
+    },
+    table: { title: 'Tabela-resumo' },
+    th: {
+      city: 'Cidade',
+      cells: 'Células',
+      population: 'População',
+      medianCdi: 'Mediana',
+      weightedCdi: 'Morador médio',
+      ptCells: 'Células TP',
+      carCells: 'Células carro',
+      proximity: 'Proximidade med.',
+      opportunity: 'Oportunidade med.',
+      inclusion: 'Inclusão',
+      spatial: 'Isol. espacial',
+      social: 'Isol. social',
+      total: 'Isol. total',
+    },
+    loading: 'Carregando as cidades publicadas…',
+    empty: 'Esta plataforma ainda não publicou resumos por cidade.',
+    error: 'Não foi possível carregar o resumo publicado.',
+  },
+
+  faq: {
+    eyebrow: 'Perguntas frequentes',
+    headline: 'Perguntas',
+    headlineAccent: 'frequentes.',
+    lede: 'Respostas curtas para o que mais nos perguntam. Tem outra pergunta? Escreva para {email}.',
+    meta: {
+      updated: 'Última atualização',
+      updatedValue: 'Julho de 2026',
+      entries: 'Itens',
+      languages: 'Idiomas',
+    },
+    items: [
+      {
+        q: 'O que significa “acesso” no Atlas?',
+        a: 'Três coisas mensuráveis, mantidas separadas de propósito. A proximidade é o que se alcança a pé em poucos minutos: lojas, escolas, postos de saúde, áreas verdes. A oportunidade é o que o transporte público coloca ao alcance em um tempo dado: empregos, universidades, hospitais, espaços culturais. O valor é a qualidade e a atratividade do que é alcançável; ele faz parte do referencial teórico, mas ainda não foi quantificado, e nada neste site pretende medi-lo.',
+      },
+      {
+        q: 'Como uma célula é classificada em uma zona?',
+        a: 'Cada célula tem uma pontuação de proximidade e uma de oportunidade. Uma célula é considerada alta em um eixo quando está acima da mediana daquela cidade ponderada pela população para esse eixo; ponderada, para que o limiar reflita onde as pessoas realmente vivem, e não a geometria da malha. As duas respostas sim/não geram quatro zonas: inclusão, isolamento espacial, isolamento social e isolamento total. Como os limiares são próprios de cada cidade, as zonas comparam lugares dentro de uma cidade, não entre cidades; o que se compara entre cidades são as pontuações subjacentes.',
+      },
+      {
+        q: 'De onde vêm os dados?',
+        a: 'As redes de ruas e os pontos de interesse vêm do OpenStreetMap. Os tempos a pé são calculados sobre essas redes com o OSRM. O transporte público usa os horários GTFS abertos das operadoras, avaliados com o Connection Scan Algorithm em vez de uma frequência média. A população vem das grades de 100 m do WorldPop ajustadas às estimativas da ONU. As células são hexágonos H3 de resolução 9, com cerca de 200 m de largura.',
+      },
+      {
+        q: 'Por que minha cidade está errada?',
+        a: 'Pode ser que esteja mesmo. As medições são tão boas quanto os dados de entrada: uma área pouco mapeada no OpenStreetMap, um feed GTFS desatualizado, uma linha inaugurada depois da exportação ou um serviço encerrado antes dela. Tudo isso produz um mapa errado com ar de certeza, e o mapa sozinho não consegue perceber. Se você conhece uma cidade e algo não bate, escreva para nós dizendo onde estão os dados melhores: um feed atualizado, uma fonte oficial ou simplesmente qual parte do mapa não corresponde ao que existe no local. É o jeito mais rápido de uma cidade ser exportada de novo. Todos os dados publicados podem ser baixados, então uma divergência pode ser verificada em vez de discutida.',
+      },
+      {
+        q: 'Por que minha cidade não está incluída?',
+        a: 'A cobertura é limitada pelos dados, não pelo interesse: uma cidade precisa de um bom mapeamento no OpenStreetMap e de um feed GTFS público utilizável. As plataformas de comparação cobrem um conjunto de cidades de estudo bem documentadas em vez de buscar uma cobertura global, porque um feed mal especificado produz números com cara de confiáveis que estão errados. Se a sua cidade tem as duas coisas e não aparece, abra uma issue no GitHub.',
+      },
+      {
+        q: 'Posso citar este trabalho?',
+        a: 'Sim. O referencial teórico é Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. O Car Dependency Index é Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. A página Pesquisa lista os dois junto com os conjuntos de dados.',
+      },
+      {
+        q: 'O Atlas é gratuito?',
+        a: 'Sim. O código de visualização tem licença MIT e os dados publicados são CC BY-NC 4.0: você pode usá-los, compartilhá-los e adaptá-los livremente, citando a fonte, para fins não comerciais. O uso comercial exige permissão por escrito. Os próprios artigos são de acesso aberto, com licença CC BY 4.0.',
+      },
+    ],
+  },
+
+  about: {
+    eyebrow: 'Cidades sustentáveis',
+    headline: 'Uma linha de pesquisa sobre cidades,',
+    headlineAccent: 'não um produto.',
+    lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories – Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
+    labLink: 'Sony CSL ↗',
+    teamLink: 'A equipe →',
+
+    doTitle: 'O que fazemos',
+    do: {
+      measure: {
+        tag: 'Medir',
+        title: 'Medimos a que uma cidade dá acesso',
+        desc: 'Proximidade, oportunidade e, onde dá para fazer com honestidade, o valor do que é alcançável, calculados célula por célula a partir de dados abertos sobre redes de ruas, horários, serviços e população.',
+      },
+      compare: {
+        tag: 'Comparar',
+        title: 'Tornamos as cidades comparáveis',
+        desc: 'Todas as cidades são medidas da mesma forma, na mesma grade, com as mesmas escalas. É isso que faz o número de uma cidade significar algo ao lado do número de outra.',
+      },
+      publish: {
+        tag: 'Publicar',
+        title: 'Publicamos o método e os dados',
+        desc: 'Artigos revisados por pares, dados para download e código aberto. Uma medição que orienta uma decisão de planejamento deveria poder ser verificada pelas pessoas afetadas por essa decisão.',
+      },
+    },
+
+    withTitle: 'Com quem trabalhamos',
+    withBody:
+      'O grupo faz parte da Sony CSL Roma, dentro da iniciativa conjunta com o CREF, e pesquisa com colaboradores da Sapienza e de outras universidades e institutos, na Itália e no exterior. Doutorandas, doutorandos e estudantes de mestrado trabalham no Atlas dentro desse arranjo, e não à parte dele.',
+    withBody2:
+      'Também trabalhamos com prefeituras, grupos de pesquisa e ONGs, em geral porque alguém precisa defender um argumento sobre acesso com dados que o sustentem. Se esse é o seu caso, a página de contato é o ponto de partida.',
+
+    projectsTitle: 'Outros projetos',
+    projectsHint: 'além das quatro camadas',
+    projects: {
+      whatif: {
+        tag: 'Plataforma',
+        name: 'WhatIf',
+        desc: 'A plataforma modular de simulação urbana do laboratório, onde ficam os visualizadores originais do 15-minute city e do CityChrone.',
+      },
+      maps3d: {
+        tag: 'Mapa on-line',
+        name: 'Mapas 3D',
+        desc: 'A desigualdade urbana lida em três dimensões: o peso das diferenças de uma cidade, desenhado como uma superfície.',
+      },
+      bikeLanes: {
+        tag: 'Artigo',
+        name: 'Planejamento de ciclovias',
+        desc: 'Otimização da rede que leva em conta a largura das ruas: onde a rede cicloviária deveria crescer, considerando as ruas em que precisa caber.',
+      },
+    },
+    labCta: 'Visite a Sony CSL',
+  },
+
+  stats: {
+    eyebrow: 'Estatísticas',
+    headline: 'Compare',
+    headlineAccent: 'cidades.',
+    lede: 'Uma única tela com todas as cidades publicadas em todas as medidas (proximidade, oportunidade, dependência do carro, composição das zonas), lado a lado e ordenáveis.',
+    emptyTitle: 'Ainda não disponível',
+    emptyBody:
+      'É nesta aba que as cidades serão comparadas nas quatro camadas ao mesmo tempo. Ela fica vazia de propósito até poder ser preenchida com honestidade: uma página de números com cara de plausíveis seria pior do que uma página que diz que eles não existem. O que já existe está logo abaixo.',
+    availableTitle: 'O que dá para comparar hoje',
+    availableHint: 'uma plataforma de cada vez',
+    compare: {
+      fifteen: 'Todas as cidades que esta plataforma publicou, lado a lado.',
+      citychrone: 'Todas as cidades que esta plataforma publicou, lado a lado.',
+      cardep:
+        'As 22 cidades ordenadas pelo índice do seu morador médio, com a distribuição dos moradores ao longo do índice.',
+      pov: 'As 18 cidades pela composição das quatro zonas, contadas por célula ou por morador, com as pontuações de que derivam.',
+    },
+  },
+
+  consulting: {
+    eyebrow: 'Consultoria',
+    headline: 'Trabalhando em uma cidade?',
+    headlineAccent: 'Vamos conversar.',
+    lede: 'Se você é de uma administração pública, de uma agência ou de uma empresa que precisa medir o acesso (para um plano, um serviço, um investimento ou uma avaliação), pode nos procurar. Conte qual é a pergunta, e diremos com franqueza se nossos métodos conseguem respondê-la.',
+    cta: 'Escreva para nós',
+    whoTitle: 'Para quem é',
+    who: {
+      policy: {
+        tag: 'Setor público',
+        title: 'Gestores públicos',
+        desc: 'Cidades, regiões, órgãos de transporte e agências que precisam decidir onde colocar uma linha, um serviço ou um equipamento, e saber de antemão quem ele realmente alcançaria.',
+      },
+      company: {
+        tag: 'Setor privado',
+        title: 'Empresas',
+        desc: 'Organizações cujas decisões dependem de como se chega a uma cidade: localização, desenho de serviços, mobilidade ou a base empírica de um relatório que precisa resistir a um exame rigoroso.',
+      },
+    },
+    note:
+      'Uma observação sobre a licença: os dados publicados são CC BY-NC 4.0, então o uso comercial exige permissão por escrito. É uma conversa, não uma recusa, e o endereço é o mesmo nos dois casos.',
+  },
+
+  contact: {
+    eyebrow: 'Contato e colaborações',
+    headline: 'Roma, Itália.',
+    headlineAccent: 'Abertos a colaborar.',
+    lede: 'Trabalhamos com prefeituras, grupos de pesquisa, ONGs e qualquer pessoa que queira defender um argumento sobre acesso com dados que o sustentem. Se a sua cidade deveria estar no Atlas, se você quer reutilizar os mapas em um artigo ou se algo aqui parece errado, escreva para nós.',
+    fields: {
+      address: 'Endereço',
+      general: 'Geral',
+      code: 'Código',
+      phone: 'Telefone',
+    },
+    addressValue:
+      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrada: Piazza del Viminale, 1, Roma',
+    teamTitle: 'A equipe',
+    roles: {
+      director: 'Pesquisador principal e diretor',
+      assistant: 'Assistente de pesquisa',
+      staffResearcherM: 'Pesquisador',
+      staffResearcherF: 'Pesquisadora',
+      consultantM: 'Consultor e pesquisador',
+      consultantF: 'Consultora e pesquisadora',
+      sapienzaResearcherM: 'Pesquisador, Sapienza',
+      sapienzaResearcherF: 'Pesquisadora, Sapienza',
+      sapienzaPhdM: 'Doutorando, Sapienza',
+      sapienzaPhdF: 'Doutoranda, Sapienza',
+      visitingPhdM: 'Doutorando visitante',
+      visitingPhdF: 'Doutoranda visitante',
+      communications: 'Gerente sênior de comunicação corporativa e eventos',
+      developerM: 'Desenvolvedor de software full stack',
+      developerF: 'Desenvolvedora de software full stack',
+      admin: 'Administração, sênior',
+      phdM: 'Doutorando',
+      phdF: 'Doutoranda',
+      masterM: 'Mestrando',
+      masterF: 'Mestranda',
+      researcherM: 'Pesquisador',
+      researcherF: 'Pesquisadora',
+      visitingResearcherM: 'Pesquisador visitante',
+      visitingResearcherF: 'Pesquisadora visitante',
+      hiring: 'Trabalhe conosco',
+    },
+    joinName: 'Você?',
+    formerTitle: 'Ex-integrantes',
+  },
+
+  research: {
+    eyebrow: 'Produção científica',
+    headline: 'Artigos, dados',
+    headlineAccent: 'e código.',
+    lede: 'Os métodos por trás do Atlas estão publicados e os dados podem ser baixados. As plataformas cujo artigo ainda está em preparação aparecem marcadas como tal: os mapas são mostrados, a citação não é inventada.',
+    papersTag: '01',
+    papersTitle: 'Artigos',
+    papersHint: 'revisados por pares e preprints',
+    datasetsTag: '02',
+    datasetsTitle: 'Dados e código',
+    datasetsHint: 'CC BY-NC 4.0 · MIT',
+    citeTitle: 'Como citar o Atlas',
+    inPreparation: 'Em preparação',
+    preprint: 'Preprint',
+    columns: { dataset: 'Conjunto de dados', coverage: 'Cobertura', format: 'Formato', licence: 'Licença' },
+  },
+
+  blog: {
+    eyebrow: 'Blog',
+    headline: 'Notas',
+    headlineAccent: 'do Atlas.',
+    lede: 'Textos mais longos sobre o que medimos, como medimos e o que os mapas mostram e não mostram. Os textos estão em inglês e em italiano.',
+    readingTime: '{count} min de leitura',
+    backToBlog: '← Todos os textos',
+    published: 'Publicado em',
+    postsLabel: 'Textos',
+  },
+
+  work: {
+    eyebrow: 'Trabalhe conosco',
+    headline: 'No momento, nenhuma',
+    headlineAccent: 'vaga aberta.',
+    lede: 'No momento não estamos selecionando para nenhuma vaga com financiamento. Mas sempre gostamos de ouvir estudantes que queiram trabalhar a sério com acessibilidade urbana, e essas conversas costumam começar muito antes de existir uma vaga.',
+    openTitle: 'O que está aberto',
+    positionsTitle: 'Vagas atuais',
+    noPositions: 'Não há vagas com financiamento abertas no momento.',
+    noPositionsDetail:
+      'Quando houver uma, ela será publicada aqui e na página de carreiras da Sony CSL. Não existe lista de espera, e candidaturas espontâneas para vagas que não existem não são guardadas.',
+    routes: {
+      phd: {
+        title: 'Doutorado',
+        desc: 'Coorientamos doutorados com universidades da Itália e de outros países, em geral sobre medição da acessibilidade, análise de redes de transporte ou física estatística das cidades. O financiamento normalmente vem do programa de doutorado da universidade anfitriã, e não de nós, então vale a pena começar a conversa alguns meses antes dos prazos desse programa.',
+      },
+      thesis: {
+        title: 'Dissertações de mestrado',
+        desc: 'Recebemos mestrandos que trabalham em uma parte bem definida do Atlas: uma cidade nova, uma comparação metodológica, a validação de um dos índices com dados independentes. Conte com cerca de seis meses, dados reais e um resultado que é publicado se se sustentar.',
+      },
+      internship: {
+        title: 'Estágios',
+        desc: 'Períodos mais curtos e focados, em geral de três a seis meses: pipelines de dados, processamento geoespacial ou desenvolvimento front-end nestas plataformas. Ajuda ter experiência com Python e ferramentas geoespaciais, ou com JavaScript moderno e renderização de mapas.',
+      },
+    },
+    howTitle: 'Como entrar em contato',
+    howBody:
+      'Escreva para {email} com uma breve descrição do que você quer fazer e por quê, um currículo e, se tiver, um link para algo que você construiu ou escreveu. Uma proposta específica, que parta de um artigo ou de uma plataforma, vale muito mais do que uma manifestação genérica de interesse.',
+    expectTitle: 'O que esperar',
+    expectBody:
+      'Lemos tudo e respondemos às propostas a que podemos dar andamento. Somos uma equipe pequena, então não conseguimos dar um retorno detalhado a cada mensagem, e uma resposta demorada não é um julgamento sobre a sua candidatura.',
+    cta: 'Escreva para nós',
+  },
+
+  footer: {
+    description:
+      'Pesquisa aberta sobre o acesso urbano da equipe Cidades Sustentáveis da Sony CSL – Roma. Métodos, mapas e dados, publicados e livres para reutilizar.',
+    platforms: 'Plataforma',
+    research: 'Pesquisa',
+    researchLinks: ['Artigos', 'Dados', 'Blog', 'FAQ'],
+    about: 'Quem somos',
+    aboutLinks: ['Cidades sustentáveis', 'Equipe', 'Contato', 'Consultoria', 'Trabalhe conosco'],
+    touch: 'Fique em contato',
+    touchLinks: ['GitHub', 'Newsletter'],
+    workCta: 'Trabalhe conosco →',
+    copyright: '© 2026 Sony Computer Science Laboratories · Roma',
+    version: 'Código MIT · Dados CC BY-NC 4.0',
+  },
+
+  notFound: {
+    eyebrow: 'Erro 404',
+    headline: 'Fora do',
+    headlineAccent: 'mapa.',
+    lede: 'Esta página não faz parte do Atlas. Tente as plataformas ou volte ao início.',
+    cta: 'Voltar ao Atlas',
+  },
+};

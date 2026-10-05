@@ -29,6 +29,7 @@ export default {
     github: 'GitHub',
     skipToContent: 'Skip to content',
     openMenu: 'Open menu',
+    language: 'Language',
   },
 
   home: {
@@ -524,7 +525,6 @@ export default {
       updatedValue: 'July 2026',
       entries: 'Entries',
       languages: 'Languages',
-      languagesValue: 'EN · IT · JA',
     },
     items: [
       {

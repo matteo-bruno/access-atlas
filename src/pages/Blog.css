@@ -8,8 +8,8 @@
   padding-bottom: 72px;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding-left: var(--page-pad);
-  padding-right: var(--page-pad);
+  padding-inline-start: var(--page-pad);
+  padding-inline-end: var(--page-pad);
 }
 
 .aa-blog__aside {
@@ -169,7 +169,7 @@
 
 .aa-post__list {
   margin: 0 0 22px;
-  padding-left: 20px;
+  padding-inline-start: 20px;
   display: grid;
   gap: 11px;
 }
@@ -193,7 +193,7 @@
 .aa-post__note {
   margin: 0 0 22px;
   padding: 14px 18px;
-  border-left: 2px solid var(--hair);
+  border-inline-start: 2px solid var(--hair);
   background: var(--card);
   border-radius: 0 var(--radius) var(--radius) 0;
   font-size: 14px;

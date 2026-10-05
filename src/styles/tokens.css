@@ -71,3 +71,30 @@
     --chrome-pad: 20px;
   }
 }
+
+/* Chinese and Korean, the same arrangement as Japanese: the Atlas's own faces
+   for Latin letters and figures, the system's for the rest. */
+:root:lang(zh) {
+  --font-sans: 'Roboto', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Noto Sans CJK SC',
+    'Microsoft YaHei', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Songti SC', 'Noto Serif SC', 'Noto Serif CJK SC', serif;
+}
+
+:root:lang(ko) {
+  --font-sans: 'Roboto', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR',
+    'Malgun Gothic', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'AppleMyungjo', 'Noto Serif KR', 'Noto Serif CJK KR', serif;
+}
+
+/* Arabic. The same fallback arrangement, with a naskh behind the serif. */
+:root:lang(ar) {
+  --font-sans: 'Roboto', 'Geeza Pro', 'Noto Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Noto Naskh Arabic', 'Amiri', 'Times New Roman', serif;
+}
+
+/* Arabic is joined script: any letter-spacing pulls the letters of a word
+   apart and breaks the joins, and several titles and labels here are
+   tracked. In Arabic, nothing is. */
+:lang(ar) * {
+  letter-spacing: 0 !important;
+}

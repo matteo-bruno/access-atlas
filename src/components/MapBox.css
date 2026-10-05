@@ -13,12 +13,12 @@
 }
 .aa-mapui--tl {
   top: 12px;
-  left: 12px;
+  inset-inline-start: 12px;
   align-items: flex-start;
 }
 .aa-mapui--tr {
   top: 12px;
-  right: 12px;
+  inset-inline-end: 12px;
   align-items: stretch;
   /* The summary and the selected cell stack here; on a short window they
      scroll rather than run off the bottom of the map. */
@@ -27,10 +27,10 @@
 }
 .aa-mapui--bl {
   bottom: 34px;
-  left: 12px;
+  inset-inline-start: 12px;
 }
 .aa-mapui--br {
-  right: 12px;
+  inset-inline-end: 12px;
   bottom: 34px;
   align-items: flex-end;
 }

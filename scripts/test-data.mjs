@@ -28,8 +28,7 @@ import { VARIANTS } from './lib/bundle.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
-import it from '../src/i18n/it.js';
-import ja from '../src/i18n/ja.js';
+import { localeFor } from '../src/i18n/locales.js';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
 
@@ -434,10 +433,21 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
       return [`${path}:${typeof v}${typeof v === 'string' ? (v.match(/\{\w+\}/g) ?? []).sort().join('') : ''}`];
     });
   const english = new Set(keys(en));
-  for (const [code, dict] of Object.entries({ it, ja })) {
+  // Every dictionary beside en.js, so a new language is checked without
+  // being listed here.
+  const dir = path.join(process.cwd(), 'src', 'i18n');
+  const codes = fs
+    .readdirSync(dir)
+    .filter((f) => /^[a-z]{2}\.js$/.test(f) && f !== 'en.js')
+    .map((f) => f.slice(0, 2));
+  for (const code of codes) {
+    const dict = (await import(path.join(dir, `${code}.js`))).default;
     const theirs = new Set(keys(dict));
     const missing = [...english].filter((k) => !theirs.has(k));
     const extra = [...theirs].filter((k) => !english.has(k));
+    // Dates formatted outside React use locales.js; it must agree with the
+    // dictionary, or a page's figures and its dates come out in two locales.
+    if (localeFor(code) !== dict.meta.locale) missing.push(`locales.js says ${localeFor(code)}, meta.locale ${dict.meta.locale}`);
     check(
       `${code} dictionary matches the English shape and placeholders`,
       !missing.length && !extra.length,

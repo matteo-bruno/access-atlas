@@ -16,7 +16,7 @@
 .aa-city__panel {
   padding: 20px 22px;
   background: var(--card);
-  border-right: 1px solid var(--hair);
+  border-inline-end: 1px solid var(--hair);
   overflow-y: auto;
 }
 
@@ -35,7 +35,7 @@
   border: 0;
   border-radius: 4px;
   background: transparent;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -58,7 +58,7 @@
 }
 
 .aa-zones__pct {
-  margin-left: auto;
+  margin-inline-start: auto;
   font-size: 12px;
   color: var(--ink);
 }
@@ -118,7 +118,7 @@
 
 .aa-city__cartogram {
   position: relative;
-  border-right: 1px solid var(--hair);
+  border-inline-end: 1px solid var(--hair);
 }
 
 /* The controls column's handle, astride the seam between the column and the
@@ -129,7 +129,7 @@
 .aa-city__panelbtn {
   position: absolute;
   top: 50%;
-  left: 0;
+  inset-inline-start: 0;
   z-index: 6;
   transform: translate(-50%, -50%);
   display: flex;
@@ -151,7 +151,7 @@
   color: var(--ink);
 }
 .aa-atlas--nopanel .aa-city__panelbtn {
-  left: 6px;
+  inset-inline-start: 6px;
   transform: translate(0, -50%);
 }
 
@@ -172,7 +172,7 @@
 .aa-city__caption {
   position: absolute;
   bottom: 10px;
-  left: 14px;
+  inset-inline-start: 14px;
   font-size: 11px;
   font-style: italic;
   color: var(--ink-3);
@@ -248,19 +248,19 @@
   }
 
   .aa-city__panel {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--hair);
   }
 
   .aa-city__cartogram {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--hair);
   }
 
   /* Stacked, the column is above the map rather than beside it: there is no
      vertical seam to sit on, so the handle keeps to the map's own left edge. */
   .aa-city__panelbtn {
-    left: 6px;
+    inset-inline-start: 6px;
     transform: translate(0, -50%);
   }
 
@@ -283,3 +283,18 @@
   }
 }
 .aa-scatter__dot { cursor: pointer; }
+
+/* Right to left (Arabic), the column sits on the right and the seam is the
+   map's right edge: the handle straddles it from the other side. Its chevron
+   turns round with every directional icon (.aa-icon--dir in global.css). */
+[dir='rtl'] .aa-city__panelbtn {
+  transform: translate(50%, -50%);
+}
+[dir='rtl'] .aa-atlas--nopanel .aa-city__panelbtn {
+  transform: translate(0, -50%);
+}
+@media (max-width: 1080px) {
+  [dir='rtl'] .aa-city__panelbtn {
+    transform: translate(0, -50%);
+  }
+}

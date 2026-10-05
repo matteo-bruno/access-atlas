@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { isRtl, useI18n } from '../i18n/index.jsx';
 
 /**
  * Renders a translated template with React nodes substituted for {placeholders}:
@@ -9,10 +10,13 @@ import { Fragment } from 'react';
  *   />
  *
  * Keeps sentence structure inside the dictionaries, where translators can move
- * the emphasised words around freely.
+ * the emphasised words around freely. In a right-to-left language each value
+ * is a <bdi>, for the reason t() isolates its values (see i18n/index.jsx).
  */
 export function Interpolate({ template, values }) {
+  const { lang } = useI18n();
   if (typeof template !== 'string') return null;
+  const Value = isRtl(lang) ? 'bdi' : Fragment;
 
   const keys = Object.keys(values ?? {});
   if (!keys.length) return template;
@@ -23,7 +27,7 @@ export function Interpolate({ template, values }) {
   return parts.map((part, index) =>
     // split() with one capture group alternates: text, key, text, key, …
     index % 2 === 1 ? (
-      <Fragment key={index}>{values[part]}</Fragment>
+      <Value key={index}>{values[part]}</Value>
     ) : (
       <Fragment key={index}>{part}</Fragment>
     ),

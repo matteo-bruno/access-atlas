@@ -31,6 +31,7 @@ export default {
     github: 'GitHub',
     skipToContent: '本文へスキップ',
     openMenu: 'メニューを開く',
+    language: '言語',
   },
 
   home: {
@@ -487,7 +488,6 @@ export default {
       updatedValue: '2026年7月',
       entries: '項目数',
       languages: '言語',
-      languagesValue: 'EN · IT · JA',
     },
     items: [
       {

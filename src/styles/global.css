@@ -343,3 +343,34 @@ strong {
     transition: none;
   }
 }
+
+/* ── Right to left ──────────────────────────────────────────────────────
+   Arabic mirrors the page through logical properties; what follows is what
+   mirroring cannot reach. Icons that point along the text turn round. Text
+   that is a Latin name or a figure on its own (a platform name, a count, a
+   value with its unit) takes its direction from its own content, or bidi
+   reorders it: "15-minute city" reads "minute city-15", "2.6 M" reads
+   "M 2.6". Values inside sentences are isolated in t() and <Interpolate>. */
+[dir='rtl'] .aa-icon--dir {
+  transform: scaleX(-1);
+}
+
+[dir='rtl'] :is(
+    .aa-mono,
+    .aa-platform__name,
+    .aa-layers__name,
+    .aa-footer__link,
+    .aa-biblio__authors,
+    .aa-biblio__meta,
+    .aa-details__value,
+    .aa-legend__item,
+    .aa-picker__item,
+    .aa-search__result > span
+  ) {
+  unicode-bidi: plaintext;
+}
+
+/* A Latin heading in an Arabic card keeps the card's alignment. */
+[dir='rtl'] .aa-platform__name {
+  text-align: right;
+}
