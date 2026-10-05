@@ -1,0 +1,182 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "florence",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Florence",
+    "nameIt": "Firenze",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "florence",
+    "name": "Florence",
+    "nameIt": "Firenze",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      11.24518,
+      43.77931
+    ],
+    "zoom": 10.2,
+    "population": 348792,
+    "grid": "cities/florence/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "cardep"
+    ],
+    "layerData": {
+      "cardep": "cities/florence/cardep.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "florence",
+        "name": "Florence",
+        "nameIt": "Firenze",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          11.24518,
+          43.77931
+        ],
+        "zoom": 10.2,
+        "population": 348792,
+        "cells": 938,
+        "layer": "cities/florence/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.24518,
+            43.77931
+          ]
+        },
+        "properties": {
+          "id": "florence",
+          "name": "Florence",
+          "country": "IT",
+          "isStudy": true,
+          "cdi": 0.414,
+          "population": 348792
+        }
+      },
+      "summary": {
+        "id": "florence",
+        "cells": 938,
+        "population": 348792,
+        "medianCdi": 0.674,
+        "weightedCdi": 0.414,
+        "ptShare": 0,
+        "carShare": 99.8,
+        "weightedByCar": 646.1,
+        "weightedByTransit": 307.5,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.1,
+            0.026
+          ],
+          [
+            0.2,
+            0.208
+          ],
+          [
+            0.3,
+            0.487
+          ],
+          [
+            0.4,
+            0.605
+          ],
+          [
+            0.5,
+            0.699
+          ],
+          [
+            0.6,
+            0.771
+          ],
+          [
+            0.7,
+            0.813
+          ],
+          [
+            0.8,
+            0.85
+          ],
+          [
+            0.9,
+            0.897
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    }
+  }
+}

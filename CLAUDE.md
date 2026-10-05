@@ -37,8 +37,9 @@ One idea to understand: **the catalogue decides whether the Atlas draws
 measurements or seed data**, per city, per platform.
 
 ```
-public/data/index.json        catalogue — what is actually published
+public/data/index.json        catalogue — what is actually published, derived from the records
 public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
+  city.json                   the city's record: entries, figures, source hashes, createdAt
 src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
 src/data/grid.js              grid + layer files → the union mesh the viewer draws
@@ -47,7 +48,7 @@ src/data/useAtlasData.js      React bindings (coverage, profile, city pages)
 src/data/useAtlasView.js      React bindings for the combined viewer
 src/workers/useCityMesh.js    published-first, seed fallback
 scripts/import-data.mjs       one platform export → its city (importers/ per platform)
-scripts/update-data.mjs       whatever changed in input_data/, per input_data/manifest.json
+scripts/update-data.mjs       whatever changed in input_data/, per the hashes in each city.json
 ```
 
 **A city is one grid and one file per layer, and nothing is stored twice.**
@@ -117,6 +118,23 @@ caller changes.
 
 Adding a city is dropping its exports in `input_data/` and running
 `npm run update:data`. That is the whole design.
+
+**The catalogue, the coverage files and the summaries are derived, never
+patched.** Each city's record (`cities/<city>/city.json`) holds its atlas
+entry, one catalogue row, marker and compare row per layer, the SHA-256 of
+each export it came from and `createdAt`. An import writes its city and
+that record only; `buildIndex` then rebuilds `index.json`, every
+`coverage.geojson.gz` and every `summary.json.gz` from all the records in
+one pass, at the end of the run. They used to be upserted city by city,
+from inside each import, so an import that died between two of them, or a
+commit that carried one and not the other, left the catalogue and the world
+maps describing different sites. `test:data` fails if a rebuild would change
+anything; `npm run import -- --index` is the repair.
+
+`update:data` skips an export whose hash is on record, so adding cities
+touches only those cities. A published layer with no hash on record is
+*adopted* (hash recorded, nothing re-imported); `--force` recomputes
+everything. Hashes are written last, after `test:data` passed.
 
 ## The grids — read this before touching the combined viewer
 
@@ -264,9 +282,17 @@ nothing 404'd — assert on what was *fetched*.
 visitor was served the previous deploy's copy — Milan's 15minCity and
 CityChrone layers read "Not published" on a site where both were live. It is
 now fetched as `index.json?v=<build id>` (`catalogueUrl()`, id defined in
-`vite.config.js`); the datasets it points at still cache freely. If a symptom
-is "the deployed site disagrees with `public/data/`", suspect the cache before
-the code.
+`vite.config.js`). If a symptom is "the deployed site disagrees with
+`public/data/`", suspect the cache before the code.
+
+The files it points at had the same problem one level down, and on the
+self-hosted server it showed: they sat at stable URLs, Apache sends no
+`Cache-Control`, and a browser kept a coverage file or a grid from the last
+deploy under the new catalogue (new cities missing from the world map; a
+grid from one deploy under layers from the next). The catalogue now lists a
+content hash per file (`files`), and `fileUrl()` fetches each as
+`<path>?v=<hash>`. Every URL in `sources.js` goes through it; a new one
+must too.
 
 **A shared fetch must not carry one caller's abort signal.** The catalogue is
 memoised, because nearly every route reads it and it cannot change within a
@@ -306,6 +332,11 @@ not values.
 
 **`pkill -f "vite preview"` kills the calling shell** (exit 144). Expected, not
 a failure.
+
+**`curl … | head -c 1` under `set -o pipefail` ends a script.** Once the body
+is larger than a pipe buffer, `head` closes the pipe, curl exits 23, and the
+assignment fails `set -e` with no message. `deploy.sh`'s catalogue check did
+exactly that once `index.json` grew. Read the body whole.
 
 **A decorative source must never gate the data layers.** `AtlasMap` mounts its
 children only once the map is ready, and readiness used to wait on MapLibre's
@@ -792,9 +823,8 @@ CityChrone's travel times is under 3 MB.
 
 **An import rebuilds what it cannot read, so it must not fail to read
 quietly.** Every import is additive — the city is rebuilt from what is
-already published plus the new layer, and the coverage file, the summary and
-the catalogue are upserted — and every one of those starts by reading what is
-there. An earlier importer returned null for *any* failed read, so a file
+already published plus the new layer, and its record is rewritten — and
+every one of those starts by reading what is there. An earlier importer returned null for *any* failed read, so a file
 truncated by an interrupted run looked the same as no file, and was answered
 by writing a fresh one: a coverage file holding one city, which on the site
 read as "importing one city deleted all the others". Only an absent file is
@@ -802,6 +832,21 @@ empty now; a file that is there but unreadable stops the run and says how to
 put it back. `writeDataFile` renames a temporary file into place rather than
 writing over the target, so an interrupted import cannot leave a truncated
 file behind.
+
+**A layer file is meaningless without the grid it was written against —
+commit them together.** A layer's rows are grid positions. Adding 15minCity
+to Rome grew the grid by the cells outside CDI's mask and rewrote every
+layer against it; the commit carried the *new* files (`fifteen.json.gz`,
+the CityChrone ones) and not the *rewritten* ones (`grid.json.gz`,
+`index.json`). On the server, deployed from the working tree, Rome was
+right; on GitHub Pages every 15minCity value sat on another cell — its
+population correlated 0.10 with the grid's, against ~0.9 in Milan and
+Zurich — and `test:data` passed, because every position still fell inside
+the smaller grid. The layer could not be rebuilt without the export and
+was taken off (`npm run import -- 15mincity --remove rome`). The grid now
+carries `id`, a hash of its cells, and every layer the `grid` it was
+written for; the importer, `test:data` and the viewer (`checkGrid`) refuse a
+mismatch, and Pages and `deploy.sh` run `test:data` before building.
 
 **The grid is detected, never assumed — and centroid proximity cannot
 detect it.** An H3 cell's centre coincides with the centre of its central

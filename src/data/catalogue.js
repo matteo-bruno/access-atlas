@@ -24,7 +24,8 @@
 //     },
 //     "atlas": { "cities": [{ "id": "rome", …, "grid": "cities/rome/grid.json.gz",
 //                             "layers": ["cardep", "pov"],
-//                             "layerData": { "pov": "cities/rome/pov.json.gz", … } }] }
+//                             "layerData": { "pov": "cities/rome/pov.json.gz", … } }] },
+//     "files": { "cities/rome/grid.json.gz": "3f9a0c…", … }   content hash per file
 //   }
 //
 // Published cities use the per-city layout (version 2): the atlas entry is
@@ -39,6 +40,7 @@ export const EMPTY_CATALOGUE = {
   version: 1,
   platforms: {},
   atlas: { cities: [], citiesById: {} },
+  files: {},
 };
 
 /**
@@ -60,14 +62,30 @@ const BUILD_ID = typeof __BUILD_ID__ === 'string' ? __BUILD_ID__ : 'dev';
 /**
  * URL for the catalogue, tagged with the build id.
  *
- * Every other file is fetched by its plain path and may cache freely. The
- * catalogue may not: it is what tells the app which cities are published, it
- * never changes within a session, and it sits at a stable URL — so a copy
- * cached from an earlier deploy makes newly published cities read as "not
+ * The catalogue is what tells the app which cities are published, it never
+ * changes within a session, and it sits at a stable URL — so a copy cached
+ * from an earlier deploy makes newly published cities read as "not
  * published" long after they went live.
  */
 export function catalogueUrl() {
   return `${dataUrl(CATALOGUE_PATH)}?v=${BUILD_ID}`;
+}
+
+/**
+ * URL for a file the catalogue points at, tagged with its content hash.
+ *
+ * The catalogue lists a hash for every file it names (`files`, written by
+ * `buildIndex` in scripts/lib/bundle.mjs). A file that changes therefore
+ * changes URL, and one that does not keeps its URL and its cache. Without
+ * this every coverage file, grid and layer sat at a stable URL, and a
+ * browser or proxy that had cached one kept serving it under the new
+ * catalogue: a world map missing the cities just published, or a grid from
+ * one deploy under layers from the next — hexagons painted with another
+ * cell's values. A path the catalogue has no hash for is fetched plain.
+ */
+export function fileUrl(catalogue, path) {
+  const version = catalogue?.files?.[path];
+  return version ? `${dataUrl(path)}?v=${version}` : dataUrl(path);
 }
 
 // Coordinates are [lon, lat] throughout the Atlas, matching GeoJSON and
@@ -214,6 +232,11 @@ export function normaliseCatalogue(raw) {
       cities: atlasCities,
       citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
     },
+    // Content hash per data file, for fileUrl().
+    files:
+      raw.files && typeof raw.files === 'object'
+        ? Object.fromEntries(Object.entries(raw.files).filter(([, v]) => typeof v === 'string'))
+        : {},
   };
 }
 

@@ -357,11 +357,19 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
-  const layerFiles = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u)).map((u) => u.split('/').pop());
+  const cityRequests = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u));
+  const layerFiles = cityRequests.map((u) => u.split('?')[0].split('/').pop());
   check(
     'A city loads its grid and the open layer, and nothing else',
     layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
     layerFiles.join(' '),
+  );
+  // Each file carries its content hash from the catalogue, so a deploy that
+  // changes it changes its URL and no cache can serve the old one.
+  check(
+    'City files are fetched under their content hash',
+    cityRequests.length > 0 && cityRequests.every((u) => /\?v=[0-9a-f]{12}$/.test(u)),
+    cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 
   const map = await canvasShot(page);
@@ -409,7 +417,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const stillCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
-  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('/').pop());
+  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('?')[0].split('/').pop());
   check(
     'The combined viewer switches geometry per layer',
     stillCartogram === 'true' &&

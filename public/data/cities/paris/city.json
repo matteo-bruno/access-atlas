@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "paris",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Paris",
+    "nameIt": "Parigi",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "paris",
+    "name": "Paris",
+    "nameIt": "Parigi",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      2.34577,
+      48.86051
+    ],
+    "zoom": 9.9,
+    "population": 2269189,
+    "grid": "cities/paris/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 191
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/paris/cardep.json.gz",
+      "pov": "cities/paris/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "paris",
+        "name": "Paris",
+        "nameIt": "Parigi",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.34577,
+          48.86051
+        ],
+        "zoom": 9.9,
+        "population": 2269189,
+        "cells": 1118,
+        "layer": "cities/paris/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.34577,
+            48.86051
+          ]
+        },
+        "properties": {
+          "id": "paris",
+          "name": "Paris",
+          "country": "FR",
+          "isStudy": true,
+          "cdi": -0.111,
+          "population": 2269189
+        }
+      },
+      "summary": {
+        "id": "paris",
+        "cells": 1118,
+        "population": 2269189,
+        "medianCdi": -0.11,
+        "weightedCdi": -0.111,
+        "ptShare": 75.8,
+        "carShare": 11.1,
+        "weightedByCar": 4250.6,
+        "weightedByTransit": 5359.5,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0.009
+          ],
+          [
+            -0.1,
+            0.657
+          ],
+          [
+            0,
+            0.977
+          ],
+          [
+            0.1,
+            0.993
+          ],
+          [
+            0.2,
+            0.997
+          ],
+          [
+            0.3,
+            0.999
+          ],
+          [
+            0.4,
+            1
+          ],
+          [
+            0.5,
+            1
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            0.7,
+            1
+          ],
+          [
+            0.8,
+            1
+          ],
+          [
+            0.9,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "paris",
+        "name": "Paris",
+        "nameIt": "Parigi",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          2.34577,
+          48.86051
+        ],
+        "zoom": 9.9,
+        "population": 2269189,
+        "cells": 1099,
+        "layer": "cities/paris/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 191
+        },
+        "thresholds": {
+          "proximity": 18162.8,
+          "opportunity": 50355.8
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.34577,
+            48.86051
+          ]
+        },
+        "properties": {
+          "id": "paris",
+          "name": "Paris",
+          "country": "FR",
+          "isStudy": true,
+          "zone": 0,
+          "population": 2269192,
+          "inclusionShare": 36.9
+        }
+      },
+      "summary": {
+        "id": "paris",
+        "cells": 1099,
+        "population": 2269192,
+        "medianProximity": 16899.8,
+        "medianOpportunity": 48266.8,
+        "weightedProximity": 18815.5,
+        "weightedOpportunity": 49870.9,
+        "zoneShares": [
+          36.9,
+          6.6,
+          6.1,
+          50.3
+        ],
+        "zonePopulationShares": [
+          42.6,
+          7.5,
+          7.5,
+          42.5
+        ],
+        "thresholds": {
+          "proximity": 18162.8,
+          "opportunity": 50355.8
+        }
+      }
+    }
+  }
+}

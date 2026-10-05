@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "bordeaux",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Bordeaux",
+    "nameIt": "Bordeaux",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "bordeaux",
+    "name": "Bordeaux",
+    "nameIt": "Bordeaux",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -0.57778,
+      44.84368
+    ],
+    "zoom": 10.6,
+    "population": 251045,
+    "grid": "cities/bordeaux/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/bordeaux/cardep.json.gz",
+      "pov": "cities/bordeaux/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "bordeaux",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.57778,
+          44.84368
+        ],
+        "zoom": 10.6,
+        "population": 251045,
+        "cells": 489,
+        "layer": "cities/bordeaux/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.57778,
+            44.84368
+          ]
+        },
+        "properties": {
+          "id": "bordeaux",
+          "name": "Bordeaux",
+          "country": "FR",
+          "isStudy": true,
+          "cdi": 0.053,
+          "population": 251045
+        }
+      },
+      "summary": {
+        "id": "bordeaux",
+        "cells": 489,
+        "population": 251045,
+        "medianCdi": 0.091,
+        "weightedCdi": 0.053,
+        "ptShare": 1.8,
+        "carShare": 64.8,
+        "weightedByCar": 786.7,
+        "weightedByTransit": 720.9,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0.006
+          ],
+          [
+            0,
+            0.259
+          ],
+          [
+            0.1,
+            0.774
+          ],
+          [
+            0.2,
+            0.965
+          ],
+          [
+            0.3,
+            0.988
+          ],
+          [
+            0.4,
+            0.996
+          ],
+          [
+            0.5,
+            0.998
+          ],
+          [
+            0.6,
+            0.998
+          ],
+          [
+            0.7,
+            0.998
+          ],
+          [
+            0.8,
+            0.998
+          ],
+          [
+            0.9,
+            0.998
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "bordeaux",
+        "name": "Bordeaux",
+        "nameIt": "Bordeaux",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -0.57778,
+          44.84368
+        ],
+        "zoom": 10.6,
+        "population": 251045,
+        "cells": 465,
+        "layer": "cities/bordeaux/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "thresholds": {
+          "proximity": 4236.8,
+          "opportunity": 6698.2
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.57778,
+            44.84368
+          ]
+        },
+        "properties": {
+          "id": "bordeaux",
+          "name": "Bordeaux",
+          "country": "FR",
+          "isStudy": true,
+          "zone": 0,
+          "population": 251048,
+          "inclusionShare": 28.2
+        }
+      },
+      "summary": {
+        "id": "bordeaux",
+        "cells": 465,
+        "population": 251048,
+        "medianProximity": 3393.6,
+        "medianOpportunity": 5755.6,
+        "weightedProximity": 4192.5,
+        "weightedOpportunity": 6658,
+        "zoneShares": [
+          28.2,
+          2.6,
+          2.6,
+          66.7
+        ],
+        "zonePopulationShares": [
+          47,
+          3.3,
+          3.1,
+          46.6
+        ],
+        "thresholds": {
+          "proximity": 4236.8,
+          "opportunity": 6698.2
+        }
+      }
+    }
+  }
+}
