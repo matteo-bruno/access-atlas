@@ -1,8 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import en from './en.js';
 import it from './it.js';
+import ja from './ja.js';
 
-const DICTS = { en, it };
+const DICTS = { en, it, ja };
 export const LANGS = Object.keys(DICTS);
 const STORAGE_KEY = 'access-atlas:lang';
 
@@ -15,8 +16,8 @@ function detectLang() {
   } catch {
     /* private mode — fall through to the browser preference */
   }
-  const pref = typeof navigator !== 'undefined' ? navigator.language : '';
-  return pref && pref.toLowerCase().startsWith('it') ? 'it' : 'en';
+  const pref = typeof navigator !== 'undefined' ? navigator.language.toLowerCase() : '';
+  return LANGS.find((code) => pref.startsWith(code)) ?? 'en';
 }
 
 // Walk a dotted path, e.g. resolve(dict, 'home.hero.lede').
@@ -90,5 +91,8 @@ export function useT() {
 
 export function useLangToggle() {
   const { lang, setLang } = useI18n();
-  return useCallback(() => setLang(lang === 'en' ? 'it' : 'en'), [lang, setLang]);
+  return useCallback(
+    () => setLang(LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]),
+    [lang, setLang],
+  );
 }

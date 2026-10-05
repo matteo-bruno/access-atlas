@@ -27,6 +27,9 @@ import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mj
 import { VARIANTS } from './lib/bundle.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
+import en from '../src/i18n/en.js';
+import it from '../src/i18n/it.js';
+import ja from '../src/i18n/ja.js';
 
 const DATA = path.join(process.cwd(), 'public', 'data');
 
@@ -414,6 +417,31 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
       'Rome P.O.V. matches the figures the site quotes',
       rome.layers.pov.cells === 8089 && rome.layers.pov.zoneShares.join(' ') === '12.9 2.7 1.4 83',
       `${rome.layers.pov.cells} cells · ${rome.layers.pov.zoneShares.join(' / ')}`,
+    );
+  }
+}
+
+// Every dictionary has the shape of the English one: the same keys, the same
+// list lengths, and a string wherever English has one. A missing key falls
+// back to English without a sound in a built site, and a placeholder lost in
+// translation prints the bare "{count}".
+{
+  const keys = (node, prefix = '') =>
+    Object.entries(node).flatMap(([k, v]) => {
+      const path = `${prefix}${k}`;
+      if (Array.isArray(v)) return [`${path}[${v.length}]`, ...keys(Object.assign({}, v), `${path}.`)];
+      if (v && typeof v === 'object') return keys(v, `${path}.`);
+      return [`${path}:${typeof v}${typeof v === 'string' ? (v.match(/\{\w+\}/g) ?? []).sort().join('') : ''}`];
+    });
+  const english = new Set(keys(en));
+  for (const [code, dict] of Object.entries({ it, ja })) {
+    const theirs = new Set(keys(dict));
+    const missing = [...english].filter((k) => !theirs.has(k));
+    const extra = [...theirs].filter((k) => !english.has(k));
+    check(
+      `${code} dictionary matches the English shape and placeholders`,
+      !missing.length && !extra.length,
+      [...missing.map((k) => `missing ${k}`), ...extra.map((k) => `extra ${k}`)].slice(0, 4).join(' | '),
     );
   }
 }

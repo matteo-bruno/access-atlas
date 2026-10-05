@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
+import { localeFor } from '../i18n/locales.js';
 import { POSTS } from '../data/blog.js';
 import './Blog.css';
 
@@ -62,7 +63,7 @@ export default function Blog() {
 
 export function formatDate(iso, lang) {
   const date = new Date(`${iso}T00:00:00Z`);
-  return new Intl.DateTimeFormat(lang === 'it' ? 'it-IT' : 'en-GB', {
+  return new Intl.DateTimeFormat(localeFor(lang), {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

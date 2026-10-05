@@ -19,7 +19,7 @@ them as switchable layers of a single mesh. Milan and Zurich carry all four.
 "Published here" counts what is in `public/data/`, not the coverage of the
 upstream research platforms.
 
-React + Vite, MapLibre for the maps, bilingual EN/IT.
+React + Vite, MapLibre for the maps, in English, Italian and Japanese.
 
 **Node 20 or newer** — the scripts are ES modules and CI builds on Node 22. On
 an older Node the `.mjs` files are parsed as CommonJS and die on their first
@@ -73,7 +73,7 @@ catalogue that decides which is which.
 
 Outstanding before launch:
 
-- **The Italian is a first draft** and needs a native review (`src/i18n/it.js`).
+- **The Italian and the Japanese are first drafts** and need a native review (`src/i18n/it.js`, `src/i18n/ja.js`).
 - **Some editorial figures need the lab's confirmation** — the team headcount,
   the contact addresses, and the dates on the home page's news items.
 - **The licence below needs confirming** with the lab.
@@ -106,7 +106,7 @@ src/
                 GeoJSON + shapefile loaders
   data/         Platform definitions, seed cities, hex-mesh generator, content
   workers/      Off-main-thread compute + the hook that drives it
-  i18n/         en.js · it.js · provider (t() and Intl number formatting)
+  i18n/         en.js · it.js · ja.js · provider (t() and Intl number formatting)
   components/   Nav, Footer, Subhead, Logo, Icon, map layers
   pages/        One file per screen, each with its own stylesheet
   styles/       Design tokens + shared primitives
