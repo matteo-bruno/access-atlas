@@ -363,9 +363,9 @@ npm run smoke:published    # stages a dataset, asserts it is read instead of see
 every published city — grid to hexagons, every layer merged in, all 24
 CityChrone hours included — and checks the grid is sorted and unique, every
 layer's rows land on grid cells, shares sum to 100, no CDI is outside
-[−1, +1], every 15minCity category × mode is present, each cartogram is drawn
-on its own cells and the derived rule stays within 25 m of the published
-ones, the compare rows agree with the layers, the catalogue's own `cells`
+[−1, +1], every 15minCity category × mode is present, the derived
+cartogram rule stays within 25 m of the published ones, every CityChrone
+matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
 and `variant` fields match the files, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
 seconds what the browser suites take minutes to reach.
@@ -774,6 +774,20 @@ mismatch on a real export, r10 gives 138.7 m). An earlier importer hard-coded
 carried over from the *legacy letter-coded* Rome data, which is not. The
 harmonised exports are, exactly.
 
+**The mean of a cell's vertices is not its centre everywhere.** H3 cells
+that cross an edge of its icosahedron come back from `cellToBoundary` with
+seven or more vertices, the extra ones on one side, so the vertex mean sits
+up to 28 m off the true centre. No European city is near such an edge;
+Xiapu (Fujian) is, and a test that took the vertex mean as the centre failed
+there on a correct cartogram. Measure from `cellToLatLng`. The P.O.V. and
+CDI importers still locate a polygon's cell by `ringCentroid`, the vertex
+mean, so an export from such a region may be refused as off the grid;
+15minCity is spared only because its export states each cell's centroid.
+
+**Imports gzip at level 6, not 9.** On a CityChrone matrix 9 took 5.3 s an
+hour for 1% less than 6's 0.8 s. An import compares content, not bytes, so
+files written at 9 are not rewritten for it.
+
 **Where a city is, is derived from its centroid, not passed in.**
 `scripts/lib/country.mjs` answers it from Natural Earth admin-0 1:50m,
 vendored beside it as `countries.geojson.gz` (551 kB, stripped to `iso` /
@@ -822,8 +836,10 @@ Two consequences that bite silently:
   `writeDataFile`). `fs.readFileSync` on a catalogue path is a bug — it will
   hand you gzip bytes. So is `fs.statSync`: `test-data.mjs` once checked
   CityChrone's matrices were at least `cells²` bytes *on disk*, which a
-  compressed matrix is not, so 24 good files read as truncated. It measures
-  the decoded buffer, which also proves the gzip stream is intact.
+  compressed matrix is not, so 24 good files read as truncated. It reads
+  the decoded size from the gzip trailer (ISIZE) and the `.npy` header from
+  the first few kB instead, and never decodes a matrix whole: doing that for
+  Rome's 24 (130 MB each) was most of the suite's run time.
 - **`.gz` is a transport wrapper, not a format.** `formatFor` in
   `map/loaders.js` strips it before deciding, or a compressed
   `times00.npy` would be parsed as GeoJSON. The grid and layer files are

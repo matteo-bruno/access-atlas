@@ -8,7 +8,9 @@
 // browser suites check that the wiring works on one city; this checks that
 // every city is actually loadable.
 
+import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { meshFromAtlas, citiesFromPublished, summariseMeasure } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
 import {
@@ -38,6 +40,47 @@ const check = (name, ok, detail = '') => {
 // rather than fs directly — see scripts/lib/datafile.mjs.
 const read = (rel) => readDataJSON(path.join(DATA, rel));
 const near = (value, target, tolerance) => Math.abs(value - target) <= tolerance;
+
+/**
+ * What is wrong with a travel-time matrix, or null.
+ *
+ * Read from its two ends, never whole: decoding all 24 of Rome's (130 MB
+ * each) took most of this suite's run. The head is the .npy header, inflated
+ * just far enough to read its dtype and shape; the tail is gzip's ISIZE, the
+ * decoded length mod 2³², which a truncated file does not end with. Sizes are
+ * the decoded ones, never the size on disk: a compressed matrix is smaller
+ * than n².
+ */
+function matrixProblem(file, n) {
+  const found = resolveDataFile(file);
+  if (!found) return 'missing';
+  const fd = fs.openSync(found.path, 'r');
+  try {
+    const { size } = fs.fstatSync(fd);
+    const head = Buffer.alloc(Math.min(size, 4096));
+    fs.readSync(fd, head, 0, head.length, 0);
+    let decoded = size;
+    let npy = head;
+    if (found.gzipped) {
+      if (size < 18) return 'truncated';
+      const tail = Buffer.alloc(4);
+      fs.readSync(fd, tail, 0, 4, size - 4);
+      decoded = tail.readUInt32LE(0);
+      npy = zlib.gunzipSync(head, { finishFlush: zlib.constants.Z_SYNC_FLUSH });
+    }
+    if (npy.toString('latin1', 0, 6) !== '\x93NUMPY') return 'not a .npy file';
+    const major = npy[6];
+    const start = major >= 2 ? 12 + npy.readUInt32LE(8) : 10 + npy.readUInt16LE(8);
+    const header = npy.toString('latin1', major >= 2 ? 12 : 10, start);
+    if (!/'descr':\s*'\|u1'/.test(header)) return `dtype is not uint8 (${header.trim()})`;
+    const shape = header.match(/'shape':\s*\((\d+),\s*(\d+)\)/);
+    if (!shape || Number(shape[1]) !== n || Number(shape[2]) !== n) return `shape is not ${n}×${n} (${header.trim()})`;
+    if (decoded !== (start + n * n) % 2 ** 32) return `decodes to ${decoded} bytes, not ${start + n * n}: truncated`;
+    return null;
+  } finally {
+    fs.closeSync(fd);
+  }
+}
 const sum = (values) => values.reduce((a, b) => a + b, 0);
 
 const catalogue = read('index.json');
@@ -170,34 +213,31 @@ for (const city of catalogue.atlas?.cities ?? []) {
       for (let hour = 0; hour < hours; hour++) {
         const summary = citychroneHourFromLayer(file, hour);
         if (!Number.isFinite(summary?.weightedMedianV)) bad.push(`citychrone hour ${hour} has no usable v_score`);
-        // Decoded size, not size on disk: a compressed matrix is smaller than
-        // n², and reading it through gunzip proves the stream is intact.
-        const matrix = readDataBuffer(path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0'))));
-        if (matrix.length < cells * cells) bad.push(`times ${hour} too small for ${cells}×${cells}`);
+        const problem = matrixProblem(path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0'))), cells);
+        if (problem) bad.push(`times ${hour}: ${problem}`);
       }
     }
 
-    // Cartograms: each polygon must sit on the cell it stands for. A
-    // cartogram scales a cell about its own centre, so a drawing far from it
-    // is the wrong cell, which nothing on screen would reveal.
+    // Each cartogram polygon's mean radius, measured from its cell's H3 centre.
+    // There is no check here that a polygon sits on its cell: both kinds are
+    // stored relative to the cell's centre, so the file cannot place one
+    // anywhere else, and the importers already refuse an export whose
+    // polygons are off the grid. Nor is the centre the mean of the vertices:
+    // cells crossing an icosahedron edge of H3 carry extra vertices on one
+    // side, which pulls that mean up to 28 m off the centre (Xiapu).
     const radii = {};
     for (const layer of city.layers) {
       const cartogram = await layerCartogram(grid, files[layer]);
-      let worst = 0;
       radii[layer] = new Map();
       for (const feature of cartogram.features) {
         const ring = feature.geometry.coordinates[0].slice(0, -1);
-        const cx = sum(ring.map((p) => p[0])) / ring.length;
-        const cy = sum(ring.map((p) => p[1])) / ring.length;
         const [lat, lon] = cellToLatLng(grid.cells[feature.properties.i]);
         const k = Math.cos((lat * Math.PI) / 180);
-        worst = Math.max(worst, Math.hypot((cx - lon) * 111320 * k, (cy - lat) * 111320));
         radii[layer].set(
           feature.properties.i,
-          sum(ring.map(([x, y]) => Math.hypot((x - cx) * 111320 * k, (y - cy) * 111320))) / ring.length,
+          sum(ring.map(([x, y]) => Math.hypot((x - lon) * 111320 * k, (y - lat) * 111320))) / ring.length,
         );
       }
-      if (worst > 10) bad.push(`${layer} cartogram drawn up to ${worst.toFixed(1)} m off its cells`);
     }
 
     // The derived rule (area ∝ population, full at the median inhabited cell) stands in for
