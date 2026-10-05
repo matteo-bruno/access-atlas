@@ -847,8 +847,10 @@ the CityChrone ones) and not the *rewritten* ones (`grid.json.gz`,
 right; on GitHub Pages every 15minCity value sat on another cell — its
 population correlated 0.10 with the grid's, against ~0.9 in Milan and
 Zurich — and `test:data` passed, because every position still fell inside
-the smaller grid. The layer could not be rebuilt without the export and
-was taken off (`npm run import -- 15mincity --remove rome`). The grid now
+the smaller grid. It was taken off (`npm run import -- 15mincity --remove
+rome`) and re-imported from the export, which grew the grid to 11,685 cells
+and rewrote every Rome layer, exactly the files the first commit lacked;
+its population now correlates 0.74 with the grid's. The grid now
 carries `id`, a hash of its cells, and every layer the `grid` it was
 written for; the importer, `test:data` and the viewer (`checkGrid`) refuse a
 mismatch, and Pages and `deploy.sh` run `test:data` before building.

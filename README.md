@@ -70,7 +70,7 @@ npm install --no-save playwright && npx playwright install chromium
 
 ## Status
 
-**All four platforms render measurements.** 22 cities, 45 layers — 168,164
+**All four platforms render measurements.** 22 cities, 46 layers — 172,298
 cells — are published under `public/data/` and validated on every push. Cities the
 catalogue does not list still fall back to generated stand-ins labelled as
 illustrative; [`public/data/README.md`](public/data/README.md) documents the

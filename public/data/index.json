@@ -25,6 +25,26 @@
           }
         },
         {
+          "id": "rome",
+          "name": "Rome",
+          "nameIt": "Roma",
+          "region": "Italy",
+          "regionIt": "Italia",
+          "country": "IT",
+          "center": [
+            12.52214,
+            41.88931
+          ],
+          "zoom": 9.2,
+          "population": 2235742,
+          "cells": 4134,
+          "layer": "cities/rome/fifteen.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 208
+          }
+        },
+        {
           "id": "zurich",
           "name": "Zurich",
           "nameIt": "Zurigo",
@@ -1489,27 +1509,30 @@
         "regionIt": "Italia",
         "country": "IT",
         "center": [
-          12.49368,
-          41.88207
+          12.49843,
+          41.88198
         ],
         "zoom": 8.5,
-        "population": 2610166,
+        "population": 2713126,
         "grid": "cities/rome/grid.json.gz",
         "cell": {
           "h3Resolution": 9,
           "cellRadiusM": 208
         },
         "layers": [
+          "fifteen",
           "citychrone",
           "cardep",
           "pov"
         ],
         "layerData": {
+          "fifteen": "cities/rome/fifteen.json.gz",
           "citychrone": "cities/rome/citychrone.json.gz",
           "cardep": "cities/rome/cardep.json.gz",
           "pov": "cities/rome/pov.json.gz"
         },
         "cartogramSources": {
+          "fifteen": "derived",
           "citychrone": "derived",
           "cardep": "published",
           "pov": "published"
@@ -1790,8 +1813,8 @@
     "cities/porto/pov.json.gz": "d0f069572128",
     "cities/rome-metro-d/cardep.json.gz": "95050f1dd425",
     "cities/rome-metro-d/grid.json.gz": "7752c344601a",
-    "cities/rome/cardep.json.gz": "b7dbbc4ae6b1",
-    "cities/rome/citychrone.json.gz": "71d98e854010",
+    "cities/rome/cardep.json.gz": "0876174bec47",
+    "cities/rome/citychrone.json.gz": "cf52cded1d4a",
     "cities/rome/citychrone/times00.npy.gz": "29907b6310b7",
     "cities/rome/citychrone/times01.npy.gz": "7d57b40a2daf",
     "cities/rome/citychrone/times02.npy.gz": "ac7ff83f0fa3",
@@ -1816,8 +1839,9 @@
     "cities/rome/citychrone/times21.npy.gz": "6153b7cbdb81",
     "cities/rome/citychrone/times22.npy.gz": "d10e80a1beb1",
     "cities/rome/citychrone/times23.npy.gz": "576fff9122f7",
-    "cities/rome/grid.json.gz": "7752c344601a",
-    "cities/rome/pov.json.gz": "518a33070f7c",
+    "cities/rome/fifteen.json.gz": "fea9ba016f8e",
+    "cities/rome/grid.json.gz": "d8a7e0c87758",
+    "cities/rome/pov.json.gz": "fd898852e8df",
     "cities/seattle/cardep.json.gz": "9a72b203ddda",
     "cities/seattle/grid.json.gz": "e4409fc0e415",
     "cities/seattle/pov.json.gz": "af539de64b77",
@@ -1860,7 +1884,7 @@
     "cities/zurich/grid.json.gz": "1703818e80cf",
     "cities/zurich/pov.json.gz": "8e713420f5b2",
     "citychrone/coverage.geojson.gz": "5f65fb9c1b1a",
-    "fifteen/coverage.geojson.gz": "38743e287d75",
+    "fifteen/coverage.geojson.gz": "4bedd933a5c1",
     "pov/coverage.geojson.gz": "ce86a6e2964f",
     "pov/summary.json.gz": "3759a48dcb50"
   }

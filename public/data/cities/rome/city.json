@@ -3,7 +3,7 @@
   "version": 1,
   "id": "rome",
   "createdAt": "2026-08-28T13:51:44.000Z",
-  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-10-05T15:00:47.144Z",
   "meta": {
     "name": "Rome",
     "nameIt": "Roma",
@@ -11,7 +11,15 @@
     "regionIt": "Italia",
     "country": "IT"
   },
-  "sources": {},
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rome.geojson",
+      "sha256": "953bd099c620ea2a284d5ffaaf7cbbcdb34643b5af6eb9554440fa365092689c",
+      "size": 4745996,
+      "importer": "e6c6c6347512c08c",
+      "importedAt": "2026-10-05T15:00:55.950Z"
+    }
+  },
   "atlas": {
     "id": "rome",
     "name": "Rome",
@@ -20,27 +28,30 @@
     "regionIt": "Italia",
     "country": "IT",
     "center": [
-      12.49368,
-      41.88207
+      12.49843,
+      41.88198
     ],
     "zoom": 8.5,
-    "population": 2610166,
+    "population": 2713126,
     "grid": "cities/rome/grid.json.gz",
     "cell": {
       "h3Resolution": 9,
       "cellRadiusM": 208
     },
     "layers": [
+      "fifteen",
       "citychrone",
       "cardep",
       "pov"
     ],
     "layerData": {
+      "fifteen": "cities/rome/fifteen.json.gz",
       "citychrone": "cities/rome/citychrone.json.gz",
       "cardep": "cities/rome/cardep.json.gz",
       "pov": "cities/rome/pov.json.gz"
     },
     "cartogramSources": {
+      "fifteen": "derived",
       "citychrone": "derived",
       "cardep": "published",
       "pov": "published"
@@ -52,6 +63,47 @@
     }
   },
   "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.52214,
+          41.88931
+        ],
+        "zoom": 9.2,
+        "population": 2235742,
+        "cells": 4134,
+        "layer": "cities/rome/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.52214,
+            41.88931
+          ]
+        },
+        "properties": {
+          "id": "rome",
+          "name": "Rome",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 2235742
+        }
+      },
+      "summary": null
+    },
     "citychrone": {
       "row": {
         "id": "rome",
