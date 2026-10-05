@@ -523,7 +523,7 @@ export default {
       updatedValue: 'Luglio 2026',
       entries: 'Voci',
       languages: 'Lingue',
-      languagesValue: 'EN · IT',
+      languagesValue: 'EN · IT · JA',
     },
     items: [
       {

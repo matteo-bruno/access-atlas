@@ -53,6 +53,18 @@
   --shadow-lift: 0 18px 44px rgba(20, 20, 15, 0.08);
 }
 
+/* Japanese. Roboto and Instrument Serif carry no kana or kanji, so each face
+   gets the system's Japanese faces behind it: Latin letters and figures still
+   come from the Atlas's own fonts, and only the glyphs they lack fall
+   through. Nothing extra is downloaded. A mincho stands behind the serif, so
+   titles stay a display face rather than turning into the body's gothic. */
+:root:lang(ja) {
+  --font-sans: 'Roboto', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
+    'Yu Gothic', Meiryo, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP',
+    'Noto Serif CJK JP', serif;
+}
+
 @media (max-width: 900px) {
   :root {
     --page-pad: 24px;

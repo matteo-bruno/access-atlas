@@ -689,8 +689,11 @@ rather than a reading.
 
 ## Copy and i18n
 
-`src/i18n/en.js` and `it.js` must keep an identical key shape — `t()` warns on
-missing keys in development, and the smoke suite fails if a locale drifts.
+`src/i18n/en.js`, `it.js` and `ja.js` must keep an identical key shape, and
+every translation must keep the English string's `{placeholders}`. `t()` warns
+on a missing key in development only, and falls back to English silently in a
+build, so `test:data` checks the shape and the placeholders of every
+dictionary against the English one.
 Numbers never appear in the dictionaries; they are formatted with `Intl` from
 `src/data/*.js`, so `156,627` becomes `156.627` in Italian for free.
 
@@ -699,6 +702,17 @@ noun** — `sapienzaPhdM` is "Dottorando", `sapienzaPhdF` "Dottoranda", and both
 are "PhD student, Sapienza" in English, which does not inflect. `src/data/team.js`
 says which form each person takes, and the team stated them: a name is not
 evidence of anyone's gender, so a new member needs asking rather than guessing.
+**Japanese leaves the technical layer in English**: the Atlas's name,
+platform and dataset names, `city.explain.methods`, the postal address and
+the citations. Blog posts have no Japanese version and fall back to English
+(`post[lang] ?? post.en`), and city names come from the catalogue, which
+carries English and Italian only. Roboto and Instrument Serif have no kana or
+kanji, so `:root:lang(ja)` in `tokens.css` puts the system's Japanese faces
+behind each (a mincho behind the serif, so titles stay a display face); no
+font is downloaded for it. The nav labels are the short forms (持続可能な都市,
+連絡先) because the long ones overflowed the bar at 1280 px. Dates that are
+formatted outside React take their locale from `src/i18n/locales.js`.
+
 Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ("Amministrazione, senior") keep a single key.
 
@@ -901,7 +915,8 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
   (`scripts/shoot-previews.mjs`).
 
 ## Open, and needing the lab rather than more code
-- **The Italian is a first draft** and wants a native review.
+- **The Italian is a first draft** and wants a native review. So does the
+  Japanese (`src/i18n/ja.js`), which was machine-drafted.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon
   intensity in urban transport" (Cities 176, 107202). Elsevier DOIs embed a
   year that cannot be derived from the citation, so it is left blank rather

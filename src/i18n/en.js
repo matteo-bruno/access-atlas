@@ -1,4 +1,4 @@
-// English source copy. `it.js` mirrors this shape exactly — if you add a key
+// English source copy. `it.js` and `ja.js` mirror this shape exactly — if you add a key
 // here, add it there too (see i18n/index.jsx, which warns on missing keys in
 // development).
 //
@@ -524,7 +524,7 @@ export default {
       updatedValue: 'July 2026',
       entries: 'Entries',
       languages: 'Languages',
-      languagesValue: 'EN · IT',
+      languagesValue: 'EN · IT · JA',
     },
     items: [
       {

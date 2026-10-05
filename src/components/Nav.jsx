@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Icon } from './Icon.jsx';
 import { Logo } from './Logo.jsx';
-import { useI18n } from '../i18n/index.jsx';
+import { LANGS, useI18n } from '../i18n/index.jsx';
 import './Nav.css';
 
 const GITHUB_URL = 'https://github.com/sony-csl-rome';
@@ -77,7 +77,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
         </a>
 
         <div className="aa-nav__lang" role="group" aria-label="Language">
-          {['en', 'it'].map((code, index) => (
+          {LANGS.map((code, index) => (
             <span key={code}>
               {index > 0 && <span className="aa-nav__langsep">·</span>}
               <button
