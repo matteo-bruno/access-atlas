@@ -1,0 +1,725 @@
+// Simplified Chinese copy (mainland usage). Mirrors the shape of en.js;
+// `test:data` checks it. Full-width punctuation; a space between Chinese and
+// Latin words or figures, as most Chinese technical writing does. Names of the
+// Atlas, its platforms and datasets, the postal address and citations stay as
+// published. Blog posts have no Chinese version and fall back to English.
+
+export default {
+  meta: {
+    locale: 'zh-CN',
+    name: '中文（简体）',
+  },
+
+  nav: {
+    title: 'Accessibility Atlas',
+    tagline: 'Sony CSL · 罗马 · 可持续城市',
+    atlas: '首页',
+    platforms: '地图集',
+    stats: '统计',
+    about: '可持续城市',
+    consulting: '咨询',
+    research: '研究',
+    blog: '博客',
+    faq: '常见问题',
+    contact: '联系我们',
+    github: 'GitHub',
+    skipToContent: '跳到正文',
+    openMenu: '打开菜单',
+    language: '语言',
+  },
+
+  home: {
+    hero: {
+      eyebrow: '开放研究平台 · Sony CSL 罗马',
+      title: 'Accessibility',
+      titleAccent: 'Atlas',
+      subtitle: '逐个城市，绘制城市可达性。',
+      headline: '一部衡量',
+      headlineAccent: '城市可达性的地图集。',
+      lede: '在一座城市里，什么是触手可及的？衡量{proximity}：步行可达的日常服务。衡量{opportunity}：公共交通在给定时间内能带你到达的地方。衡量{cardep}：获取城市机会在多大程度上离不开汽车。看看可达性如何传递不平等。',
+      ledeProximity: '邻近性',
+      ledeOpportunity: '机会可达性',
+      ledeCardep: '汽车依赖度',
+      ctaPrimary: '探索平台',
+      ctaSecondary: '阅读理论框架论文 ↗',
+    },
+    news: {
+      title: '实验室动态',
+      kinds: { paper: '论文', release: '发布', data: '数据' },
+      items: {
+        pov: 'The dimensions of accessibility（EPJ Data Science）',
+        cdi: 'Car Dependency Index：已发布 {count} 座城市',
+        atlas: '组合视图：米兰已在统一网格上发布，四个平台全部覆盖',
+      },
+      dates: { pov: '2026 年 4 月', cdi: '2026 年 2 月', atlas: '2026 年 8 月' },
+    },
+    landing: {
+      mapLabel: '地图集已发布的所有城市',
+      by: 'Sony CSL · 罗马的项目',
+    },
+    premise: {
+      lines: [
+        '城市是机会汇聚之地。',
+        '获得机会，能够缩小不平等。',
+        '不平等的可达性，造就不平等的社会。',
+      ],
+    },
+    metrics: {
+      cities: '已发布城市',
+      platforms: '平台',
+      countries: '国家',
+      cells: '六边形单元',
+      researchers: '研究人员',
+    },
+    platforms: {
+      title: '可达性图层',
+      more: '了解更多',
+      cityCount: '{count} 座城市',
+      themes: {
+        fifteen: '邻近性',
+        citychrone: '机会',
+        cardep: '比较',
+        pov: '综合',
+      },
+      desc: {
+        fifteen: '步行和骑行前往十类日常服务所需的时间，以 15 分钟为参照来解读。',
+        citychrone: '出行时间的地理学：重新绘制城市，用公共交通的分钟数来衡量距离。',
+        cardep: '逐个单元比较：开车获取机会的能力比乘坐公共交通高出多少。',
+        pov: '将邻近性与机会交叉对照，把城市划分为四类可达性区域。',
+      },
+    },
+    table: {
+      title: '比较城市',
+      statsNote:
+        '基于 P.O.V. 数据，比较六座城市的三项指标。比较所有已发布城市、所有指标的页面是“统计”标签页。',
+      statsCta: '打开统计',
+      headers: {
+        city: '城市',
+        proximity: '邻近性得分中位数',
+        opportunity: '机会得分中位数',
+        inclusion: '包容区',
+      },
+      note: '邻近性和机会是可到达兴趣点的加权计数。由于每座城市都以相同方法测量，这些数值可以在城市之间比较。包容是指同时高于两个人口加权中位数的单元所占的比例。',
+    },
+    side: {
+      title: '进行中的研究',
+      kinds: { live: '已上线', paper: '论文' },
+      items: {
+        shade: {
+          name: '遮阴权',
+          desc: '把树荫当作基础设施：夏天谁能不在烈日下步行穿过城市，谁又不能。',
+        },
+        weight: {
+          name: '城市不平等的分量',
+          desc: '逐个城市，以三维方式解读可达性不平等，把它呈现为一个曲面而不是一张表格。',
+        },
+        odMatrices: {
+          name: '基于 GPS 数据的 OD 矩阵',
+          desc: '根据 GPS 轨迹重建起讫点流动，比较人们实际完成的出行与交通网络所能支持的出行。',
+        },
+        bikeLanes: {
+          name: '自行车道规划',
+          desc: '综合考虑道路宽度和可能形成的连接，判断自行车网络下一步应向哪里延伸。',
+        },
+        co2: {
+          name: '交通 CO₂ 排放',
+          desc: '城市形态的排放代价：一座城市的出行消耗了多少碳，邻近性又能让这个数字改变多少。',
+        },
+        quality: {
+          name: '质量的不平等',
+          desc: '理论框架的第三个维度：不是能到达多少，而是到达的东西有多好，以及质量是否像可达性一样分布不均。',
+        },
+      },
+    },
+  },
+
+  platform: {
+    search: '搜索您的城市…',
+    searchHint: '⌘K',
+    paper: '论文 ↗',
+    welcome: '欢迎来到 {name}',
+    dismiss: '关闭',
+    ctaMap: '点击地图上的城市',
+    learnMore: '了解更多 →',
+    attribution: '底图：Natural Earth · 数据 © Sony CSL Rome · CC BY-NC 4.0',
+    cityCount: '{count} 座城市',
+    zoomIn: '放大',
+    zoomOut: '缩小',
+    loading: '正在加载覆盖范围…',
+    empty: '没有符合搜索条件的城市。',
+    seeded: '示意数值：该平台的测量数据尚未发布。',
+
+    all: {
+      name: '所有图层',
+      welcome: '欢迎来到 Accessibility Atlas',
+      label: '已发布的覆盖范围',
+      pick: '选择地图',
+      intro:
+        '地图集在四个平台上发布的所有城市。每个平台测量的内容不同，覆盖的城市也不同：选择其中一个，即可查看它自己的地图、色阶和覆盖的城市。城市颜色越深，表示四项指标中已发布的越多。',
+      legendUnit: '已发布平台数',
+      legend: ['一个', '两个', '三个', '全部四个'],
+      covered: '4 个平台中的 {count} 个',
+    },
+
+    fifteen: {
+      label: '邻近可达性',
+      intro:
+        '计算城市中每个单元步行和骑行前往十类日常服务（医疗、教育、购物、餐饮、文化、户外空间、体育锻炼、生活服务、交通出行）所需的时间，并以 15 分钟为参照来解读。',
+      legendUnit: '前往服务的平均时间',
+      legend: ['0–3 分钟', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
+    },
+    citychrone: {
+      label: '机会可达性',
+      intro:
+        'CityChrone 用出行时间取代几何距离：地图会发生形变，只要公共交通能迅速连通两个地点，它们就会靠得很近，无论在地面上相距多远。',
+      legendUnit: '速度得分',
+      legend: ['慢', '中', '快'],
+    },
+    cardep: {
+      label: '汽车与公共交通',
+      intro:
+        'Car Dependency Index（汽车依赖指数）比较在相同时间内开车可到达的机会与乘坐公共交通可到达的机会：CDI = (O_car − O_PT) / (O_car + O_PT)。取值从 −1（公共交通到达更多）经过 0（两者相当）到 +1（汽车无所不及，而公共交通几乎无法到达）。',
+      legendUnit: 'Car Dependency Index',
+      legend: ['公共交通占优', '大致均衡', '依赖汽车', '高度依赖汽车'],
+    },
+    pov: {
+      label: 'Proximity · Opportunity · Value',
+      intro:
+        '每个单元在两个维度上打分：邻近性，即步行可达的日常服务；机会，即乘坐公共交通可达的城市级目的地。随后在每个维度上与该城市的人口加权中位数比较，进行分类。第三个维度，即可达事物的价值，已在理论框架中提出，但尚未量化。',
+      legendUnit: '区域',
+      legend: ['包容', '空间隔离', '社会隔离', '完全隔离'],
+    },
+  },
+
+  fifteen: {
+    mapTitle: '前往服务的出行时间',
+    minutes: '分钟',
+    barsTitle: '从该单元出发的所有类别',
+    barsAxis: '条形的最大值为 {max} {unit}；超出部分按满格显示。',
+    legendValue: '邻近时间',
+    statusHint: '选择出行方式和类别 · 将鼠标悬停在图例色带上可单独显示 · 滚动和拖动以浏览',
+    controls: {
+      mode: '出行方式',
+      category: '服务类别',
+    },
+    modes: { foot: '步行', bike: '骑行' },
+    hint: '从每个单元前往该类别最近服务的平均出行时间。',
+    summary: { median: '出行时间中位数' },
+    categories: {
+      average: '所有服务的平均值',
+      outdoor: '户外活动',
+      learning: '教育',
+      supplies: '购物',
+      eating: '餐饮',
+      moving: '交通出行',
+      cultural: '文化活动',
+      exercise: '体育锻炼',
+      services: '生活服务',
+      healthcare: '医疗',
+    },
+  },
+
+  atlas: {
+    label: '组合视图',
+    mapTitle: '由 {name} 测量',
+    controls: {
+      layer: '可视化',
+      view: '指标',
+      hour: '时段',
+      opacity: '图层不透明度',
+    },
+    info: '关于此图层',
+    hidePanel: '隐藏控件',
+    showPanel: '控件',
+    fullscreen: '全屏',
+    exitFullscreen: '退出全屏',
+    population: {
+      name: '人口',
+      legend: '每个单元的居民数',
+      tooltip: '{count} 名居民',
+      about:
+        '每个单元的居民数，来自 15-minute city 的导出数据，采用对数色阶：人口分布高度偏斜，若使用线性色阶，几乎所有单元都会落在最浅的颜色里。这是解读其他四项指标的背景：同样一段路程，走的人越多，分量越重。',
+    },
+    beyond: {
+      fifteen: '120 分钟及以上逐渐加深至黑色',
+      isochrone: '在 180 分钟（公开数据的上限）处加深至黑色',
+    },
+    views: {
+      velocity: '速度',
+      sociality: '社会连接',
+      isochrone: '等时线',
+    },
+    viewHint: {
+      velocity: '在这个时段，公共交通能以多快的速度把你从每个单元向外送出：一个类似 km/h 的得分。',
+      sociality: '在这个时段，公共交通能让每个单元触及多少人：这是一个得分，而不是人数。',
+      isochrone: '从选定单元乘坐公共交通前往其他所有单元的出行时间。',
+    },
+    legend: {
+      velocity: '速度得分（km/h）',
+      sociality: '社会连接得分',
+      isochrone: '距选定单元的分钟数',
+    },
+    summary: { weightedV: '普通居民的速度' },
+    mistake: {
+      title: '发现错误了吗？',
+      body: '错误在所难免！数据可能缺失，也可能有误导性。如果您知道如何修正，请{contact}。',
+      contact: '联系我们',
+    },
+    osmUpdate: 'OpenStreetMap 最近更新：{date}',
+    layerCells: '{name} 测量的单元',
+    isochroneEmpty: '点击一个单元，显示从该单元出发的出行时间',
+    unavailable: '未发布',
+    noValue: '该单元未测量',
+    openPlatform: '{name} 页面',
+    statusHint: '一个网格，四种测量：切换图层会重新着色同一批单元 · 滚动和拖动以浏览',
+    legacyHint: '这座城市尚未导出到共享网格上：每种可视化都会加载各自平台的网格。',
+    error: '无法加载已发布的网格。',
+  },
+
+  city: {
+    region: '{region} · {count} 个单元',
+    worldMap: '世界地图',
+    compare: '比较城市',
+    zoneType: '区域',
+    cdiHint: '公共交通到达更多时为负值，汽车到达更多时为正值。该指数是取值在 ±1 之间的归一化差值，而不是比值。',
+    zones: {
+      inclusion: {
+        name: '包容',
+        desc: '两个维度都高于中位数：周边服务完善，并与全城相连',
+      },
+      spatial: {
+        name: '空间隔离',
+        desc: '附近有服务，但通往城市其他地方的公共交通较弱',
+      },
+      social: {
+        name: '社会隔离',
+        desc: '公共交通联系良好，但步行范围内服务较少',
+      },
+      total: {
+        name: '完全隔离',
+        desc: '两个维度都低于中位数：通常位于城市外围',
+      },
+    },
+    summary: {
+      title: '城市概况',
+      hexagons: '单元',
+      area: '覆盖面积',
+      proximity: '邻近性得分中位数',
+      medianCdi: 'CDI 中位数（按单元）',
+      weightedCdi: '普通居民的 CDI',
+      opportunity: '机会得分中位数',
+      population: '覆盖人口',
+    },
+    filter: {
+      title: '按指数筛选',
+      reset: '重置',
+      about: '将地图和散点图限制为指数位于两个滑块之间的单元。其余单元仍留在地图上，只是变淡：这里的筛选是一种观察方式，并不表示其余部分不存在。概况数据不会改变，因为它们描述的是整座城市。',
+      showing: '{total} 个单元中的 {count} 个',
+    },
+    selected: {
+      title: '选定单元',
+      empty: '在地图或散点图上点击任意单元，即可查看该单元的全部测量结果。',
+      clear: '清除',
+    },
+    cell: {
+      zone: '区域',
+      proximity: '邻近性得分',
+      opportunity: '机会得分',
+      cdi: 'Car Dependency Index',
+      byCar: '开车可达',
+      byTransit: '公共交通可达',
+      population: '居民',
+      thresholdProximity: '区域阈值（邻近性）',
+      thresholdOpportunity: '区域阈值（机会）',
+      time: '出行时间',
+      velocity: '速度得分',
+      sociality: '社会连接得分',
+      grid: 'H3 单元',
+    },
+    explain: {
+      map: {
+        pov: '每个单元按其所属区域着色：两个维度都高于中位数为绿色，都低于中位数为红色，两种混合情况居中。阈值是该城市自身的人口加权中位数，因此区域只用于比较同一城市内部的地点，绝不用于城市之间的比较；可以跨城市比较的是底层得分。',
+        cardep: '公共交通能比汽车到达更多机会的地方为蓝色，两者相当的地方为白色，汽车到达更多的地方为红色。所有城市使用同一固定色阶，而不是按每座城市单独拟合，因此同一种颜色在任何地方都代表同一个指数，不会为了填满调色板而给某座城市重新着色。',
+        fifteen: '单元的颜色表示以所选方式到达所选类别所需的时间。白色对应 15 分钟，这正是平台名称的由来；超过 30 分钟后色阶继续加深，到 120 分钟变为黑色。图例只标出这段尾部，而不是把色带一直拉到那里，否则几乎所有单元所在的区间都会被压缩。十个类别和两种方式共用一个色阶，因此无论选择什么，同一种颜色含义都相同。',
+      },
+      summary: {
+        pov: '“单元”统计的是已发布数据集覆盖的单元。每个中位数都是位于中间的那个单元的得分：可到达兴趣点的加权计数，因此两者都没有单位，既不是米，也不是岗位数。人口是数据集在其单元上的合计，而不是该城市的官方数字。',
+        cardep: 'CDI 中位数是位于中间的那个单元的指数。普通居民的 CDI 按居住人数为每个单元加权，平台正是用它给城市排名：一座城市可能有一半单元依赖汽车，而大部分居民却住在另一半。',
+        fifteen: '中位数是屏幕上所选类别和方式下，位于中间的那个单元的时间。它描述的是单元而不是居民：无论住了多少人，每个单元只计一次。人口是数据集自身的合计。',
+        atlas: '数值会针对屏幕上的图层重新计算。“单元”指并集网格，即至少有一个平台测量过的所有单元；覆盖范围更小的图层会在自己那一行注明。',
+      },
+      more: '完整说明',
+      platformSite: '{name} 网站',
+      aboutTitle: '关于 {name}',
+      sections: {
+        measure: '测量什么',
+        map: '如何读图',
+        geometry: '两种几何形态',
+        summary: '面板中的数值',
+        source: '数据来源',
+      },
+      methodsTitle: '数据与方法',
+      methods: {
+        pov: '分辨率为 9 的 H3 单元，宽约 200 米。步行时间基于 OpenStreetMap，用 OSRM 计算；公共交通基于 GTFS 时刻表，用 Connection Scan Algorithm 计算；兴趣点来自 OpenStreetMap；人口来自 WorldPop 100 米网格，并按联合国估计值校正。',
+        cardep: '分辨率为 9 的 H3 单元，宽约 200 米。驾车和步行时间基于 OpenStreetMap，用 OSRM 计算，汽车一侧计入停车时间和各城市特有的交通延误；公共交通基于 GTFS 时刻表，用 Connection Scan Algorithm 计算；兴趣点来自 OpenStreetMap；人口来自 WorldPop。',
+        fifteen: '分辨率为 9 的 H3 单元。步行和骑行时间基于 OpenStreetMap，用 OSRM 计算；服务来自 OpenStreetMap，归入选择器中列出的十个类别；人口来自 WorldPop。',
+        citychrone: '分辨率为 9 的 H3 单元，一天中每小时导出一次。公共交通基于 GTFS 时刻表；两种得分和等时线均在该平台的论文中定义。出行时间以整分钟发布，上限为 180 分钟。',
+      },
+      paperNote: '方法的完整说明见论文。',
+    },
+    geometry: {
+      label: '几何形态',
+      map: '地图',
+      cartogram: '变形地图',
+      mapTitle: '地图 · 单元位于实际位置',
+      mapCaption: '单元面积即其覆盖的地面面积',
+      cartogramCaption: '单元面积即其常住人口',
+      loading: '正在加载另一种几何形态…',
+      unavailable: '未发布变形地图',
+      about: {
+        map: '每个单元都是它在地面上所占的六边形，无论其中有什么，大小处处相同。面积无法说明一项指标影响多少人，因此人口稀少的城市边缘在图上占据的空间与稠密的市中心一样大。',
+        cartogram: '每个单元都位于真实位置，但面积代表的是常住人口，而不是覆盖的地面：居民很少的单元缩小为六边形的一小部分，人口稠密的单元则把它填满。它回答的是另一个问题：不是某项指标在哪里偏低，而是它对多少人偏低。',
+        derived: '这张变形地图是地图集自己生成的：{name} 没有发布变形地图，因此这里的面积与单元的常住人口成正比，当人口达到该城市有人居住单元的中位数时，即为完整的六边形。该规则以其他平台为同一城市发布的变形地图为基准进行校准，在 200 米的单元上误差约为 12 米。因此，人口相同的单元在任何图层上看起来大小都一样。',
+        missing: '变形地图是作者计算出的布局，而不是对地图的变换，因此地图集绘制的是各平台自己发布的版本，而不是另行推导。{name} 没有发布变形地图。',
+      },
+    },
+    cartogram: {
+      title: '变形地图 · 单元面积 ∝ 人口',
+      caption: 'H3 分辨率 {res} · 单元约 {size} 米',
+      captionSize: '单元约 {size} 米',
+    },
+    scatterCdi: {
+      title: '开车与公共交通可达的机会',
+      xAxis: '开车可达 →',
+      yAxis: '公共交通可达 →',
+      diagonal: '可达范围相同',
+    },
+    scatter: {
+      title: '邻近性与机会',
+      xAxis: '机会得分 →',
+      yAxis: '邻近性得分 →',
+    },
+    statusHint: '悬停或点击单元或数据点以相互高亮 · 滚动和拖动以浏览',
+    computing: '正在加载网格…',
+    seeded: '示意网格：这座城市的测量数据尚未发布，因此单元的排布是生成的。',
+  },
+
+  compare: {
+    label: '比较城市',
+    count: '{count} 座城市',
+    lede: '该平台已发布的所有城市并排列出。数值与城市页面使用同一批文件计算，所以这里的数字就是那里的数字。',
+    back: '返回地图',
+    openCity: '打开 {name}',
+    sortBy: '排序方式',
+    sort: {
+      name: '名称',
+      population: '人口',
+      weightedCdi: '普通居民的指数',
+      medianCdi: '指数中位数',
+      ptShare: '公共交通占优的单元',
+      inclusion: '包容',
+      proximity: '邻近性中位数',
+      opportunity: '机会中位数',
+    },
+    basis: { label: '比例', cells: '按单元', residents: '按居民' },
+    ranking: {
+      cardep: '按指数排列的城市',
+      pov: '各城市的区域构成',
+      aboutCardep: '每根条形表示该城市普通居民的指数：每个单元按居住人数加权。线的左侧是对典型居民而言公共交通比汽车到达更多的城市；右侧则是汽车到达更多的城市。条形与地图使用同一色阶。',
+      aboutPov: '每座城市落在四个区域中的比例。区域依据该城市自身的人口加权中位数划分，因此这里比较的是城市内部的构成，而不是城市之间的水平：一座城市可能有一半属于包容区，整体服务却仍然很差。可以按单元计数，也可以按居民计数：隔离单元面积大、人口少，两种算法讲述的是不同的故事。',
+    },
+    scatter: {
+      cardep: '开车所及与公共交通所及',
+      pov: '邻近性与机会',
+      aboutCardep: '每座城市一个圆，位置取决于普通居民用两种方式分别能到达多少，大小取决于人口。对角线表示两者可达范围相同：位于其下方的圆是汽车到达更多的城市。',
+      aboutPov: '每座城市一个圆，位置取决于其普通居民的得分，大小取决于人口。两条轴都是可到达兴趣点的加权计数，因此没有单位：位置用于比较城市，单独的数字只有与同一轴上的另一座城市相比才有意义。',
+    },
+    distribution: {
+      title: '各城市居民在指数上的分布',
+      about: '每条曲线代表一座城市：居住在某一指数值及以下的居民所占的比例。曲线上升得早且陡，说明几乎所有人都在公共交通一侧；曲线一直平缓到右侧，说明几乎所有人都依赖汽车。曲线与中线相交的位置，就是对其而言汽车和公共交通可达范围大致相同的居民比例。',
+    },
+    table: { title: '汇总表' },
+    th: {
+      city: '城市',
+      cells: '单元',
+      population: '人口',
+      medianCdi: '中位数',
+      weightedCdi: '普通居民',
+      ptCells: '公交单元',
+      carCells: '汽车单元',
+      proximity: '邻近性中位数',
+      opportunity: '机会中位数',
+      inclusion: '包容',
+      spatial: '空间隔离',
+      social: '社会隔离',
+      total: '完全隔离',
+    },
+    loading: '正在加载已发布的城市…',
+    empty: '该平台尚未发布城市概况。',
+    error: '无法加载已发布的概况。',
+  },
+
+  faq: {
+    eyebrow: '常见问题',
+    headline: '常见',
+    headlineAccent: '问题。',
+    lede: '对我们最常被问到的问题的简短回答。还有其他问题？请写信至 {email}。',
+    meta: {
+      updated: '最近更新',
+      updatedValue: '2026 年 7 月',
+      entries: '条目',
+      languages: '语言',
+    },
+    items: [
+      {
+        q: '地图集中的“可达性”指什么？',
+        a: '三件可以测量的事，我们有意把它们分开。邻近性是步行几分钟就能到达的东西：商店、学校、诊所、绿地。机会是公共交通在给定时间内能带你到达的东西：工作岗位、大学、医院、文化场所。价值是可达事物的质量和吸引力；它属于理论框架的一部分，但尚未量化，本网站也没有任何内容声称测量了它。',
+      },
+      {
+        q: '单元是如何划分到某个区域的？',
+        a: '每个单元都有一个邻近性得分和一个机会得分。如果某个单元在某一维度上高于该城市在这一维度上的人口加权中位数，就视为在该维度上“高”。之所以加权，是为了让阈值反映人们实际居住的地方，而不是网格的几何形状。两个“是／否”的答案组合成四个区域：包容、空间隔离、社会隔离、完全隔离。由于阈值是各城市各自的，区域只比较同一城市内部的地点，而不比较城市之间；可以跨城市比较的是底层得分。',
+      },
+      {
+        q: '数据来自哪里？',
+        a: '街道网络和兴趣点来自 OpenStreetMap。步行时间在这些网络上用 OSRM 计算。公共交通使用运营方公开的 GTFS 时刻表，并用 Connection Scan Algorithm 评估，而不是使用平均发车频率。人口来自按联合国估计值校正的 WorldPop 100 米网格。单元是分辨率为 9 的 H3 六边形，宽约 200 米。',
+      },
+      {
+        q: '为什么我所在城市的数据不对？',
+        a: '确实有可能不对。测量结果取决于输入数据的质量：OpenStreetMap 上测绘稀疏的区域、过时的 GTFS 数据、导出之后才开通的线路、导出之前已停运的服务，都会产生一张看似可信却是错误的地图，而地图本身无法察觉。如果您熟悉某座城市并发现哪里不对，请写信告诉我们更好的数据在哪里：一份更新的数据源、一个官方来源，或者只是地图上哪一部分与实际情况不符。这是让一座城市重新导出最快的方式。所有已发布的数据集都可以下载，因此分歧可以核实，而不必争论。',
+      },
+      {
+        q: '为什么没有我所在的城市？',
+        a: '覆盖范围受限于数据，而不是兴趣：一座城市需要有完善的 OpenStreetMap 测绘和可用的公开 GTFS 数据。比较平台覆盖的是一组记录完善的研究城市，而不追求全球覆盖，因为规范不佳的数据会产生看似可靠、实则错误的数字。如果您的城市两者兼备却不在其中，请在 GitHub 上提交 issue。',
+      },
+      {
+        q: '我可以引用这项工作吗？',
+        a: '可以。理论框架为 Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8。Car Dependency Index 为 Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019。“研究”页面列出了这两篇论文以及相关数据集。',
+      },
+      {
+        q: '地图集可以免费使用吗？',
+        a: '可以。可视化代码采用 MIT 许可证，已发布的数据集采用 CC BY-NC 4.0：在注明出处的前提下，可出于非商业目的自由使用、分享和改编。商业使用须获得书面许可。论文本身以 CC BY 4.0 许可开放获取。',
+      },
+    ],
+  },
+
+  about: {
+    eyebrow: '可持续城市',
+    headline: '一条关于城市的研究方向，',
+    headlineAccent: '而不是一件产品。',
+    lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories 罗马分部的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
+    labLink: 'Sony CSL ↗',
+    teamLink: '团队成员 →',
+
+    doTitle: '我们做什么',
+    do: {
+      measure: {
+        tag: '测量',
+        title: '我们测量一座城市能让人获得什么',
+        desc: '邻近性、机会，以及在能够诚实做到时，可达事物的价值。这些都基于街道网络、时刻表、服务和人口的开放数据，逐个单元计算。',
+      },
+      compare: {
+        tag: '比较',
+        title: '我们让城市可以相互比较',
+        desc: '每座城市都用同样的方法、同样的网格、同样的色阶测量。正因如此，一座城市的数字放在另一座城市的数字旁边才有意义。',
+      },
+      publish: {
+        tag: '公开',
+        title: '我们公开方法和数据',
+        desc: '同行评审的论文、可下载的数据和开源代码。为规划决策提供依据的测量结果，应当能被受该决策影响的人核查。',
+      },
+    },
+
+    withTitle: '我们的合作伙伴',
+    withBody:
+      '本团队隶属于 Sony CSL 罗马分部，设在其与 CREF 的联合项目之下，与罗马大学以及意大利国内外其他大学和研究机构的合作者共同开展研究。博士生和硕士生正是在这一合作框架内参与地图集的工作，而不是游离于其外。',
+    withBody2:
+      '我们也与城市政府、研究团队和非政府组织合作，通常是因为有人需要用证据来论证可达性问题。如果您正是这样，请从联系页面开始。',
+
+    projectsTitle: '其他项目',
+    projectsHint: '四个图层之外',
+    projects: {
+      whatif: {
+        tag: '平台',
+        name: 'WhatIf',
+        desc: '实验室的模块化城市模拟平台，也是 15-minute city 和 CityChrone 原始查看器的所在地。',
+      },
+      maps3d: {
+        tag: '在线地图',
+        name: '三维地图',
+        desc: '以三维方式解读城市不平等：把一座城市内部差异的分量绘制成一个曲面。',
+      },
+      bikeLanes: {
+        tag: '论文',
+        name: '自行车道规划',
+        desc: '考虑道路宽度的网络优化：结合所需容纳的街道，判断自行车网络下一步应向哪里延伸。',
+      },
+    },
+    labCta: '访问 Sony CSL',
+  },
+
+  stats: {
+    eyebrow: '统计',
+    headline: '比较',
+    headlineAccent: '城市。',
+    lede: '一个页面汇集所有已发布城市的所有指标（邻近性、机会、汽车依赖度、区域构成），并排展示，可以排序。',
+    emptyTitle: '尚未上线',
+    emptyBody:
+      '这个标签页将用于同时在四个图层上比较城市。在能够诚实地完成之前，我们有意让它保持空白：一页看似合理的数字，比一页坦言暂无数据的页面更糟。现有的内容列在下方。',
+    availableTitle: '目前可以比较的内容',
+    availableHint: '每次一个平台',
+    compare: {
+      fifteen: '该平台已发布的所有城市，并排列出。',
+      citychrone: '该平台已发布的所有城市，并排列出。',
+      cardep: '全部 22 座城市按普通居民的指数排序，并显示居民在指数上的分布。',
+      pov: '全部 18 座城市按四个区域的构成展示，可按单元或按居民计数，并附上其所依据的得分。',
+    },
+  },
+
+  consulting: {
+    eyebrow: '咨询',
+    headline: '在为一座城市工作？',
+    headlineAccent: '欢迎与我们交流。',
+    lede: '如果您所在的公共管理部门、机构或企业需要测量可达性（用于规划、服务、投资或评估），欢迎与我们联系。告诉我们您的问题，我们会坦率地告诉您，我们的方法能否回答它。',
+    cta: '写信给我们',
+    whoTitle: '面向哪些对象',
+    who: {
+      policy: {
+        tag: '公共部门',
+        title: '政策制定者',
+        desc: '需要决定一条线路、一项服务或一处设施设在哪里，并事先了解它实际能惠及哪些人的城市、地区、交通主管部门和相关机构。',
+      },
+      company: {
+        tag: '私营部门',
+        title: '企业',
+        desc: '其决策取决于城市可达性的组织：选址、服务设计、出行，或者一份需要经得起严格审视的报告所需的证据基础。',
+      },
+    },
+    note: '关于许可：已发布的数据集采用 CC BY-NC 4.0，因此商业使用须获得书面许可。这是一次沟通的开始，而不是拒绝；两种情况联系的都是同一个地址。',
+  },
+
+  contact: {
+    eyebrow: '联系与合作',
+    headline: '意大利，罗马。',
+    headlineAccent: '欢迎合作。',
+    lede: '我们与城市政府、研究团队、非政府组织，以及所有希望用证据来论证可达性问题的人合作。如果您的城市应该出现在地图集上，如果您想在文章中使用这些地图，或者觉得这里有什么不对，请写信给我们。',
+    fields: {
+      address: '地址',
+      general: '一般事务',
+      code: '代码',
+      phone: '电话',
+    },
+    addressValue:
+      'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
+    teamTitle: '团队',
+    roles: {
+      director: '首席研究员、主任',
+      assistant: '研究助理',
+      staffResearcherM: '研究员',
+      staffResearcherF: '研究员',
+      consultantM: '顾问、研究员',
+      consultantF: '顾问、研究员',
+      sapienzaResearcherM: '研究员（罗马大学）',
+      sapienzaResearcherF: '研究员（罗马大学）',
+      sapienzaPhdM: '博士生（罗马大学）',
+      sapienzaPhdF: '博士生（罗马大学）',
+      visitingPhdM: '访问博士生',
+      visitingPhdF: '访问博士生',
+      communications: '高级企业传播与活动经理',
+      developerM: '全栈软件开发工程师',
+      developerF: '全栈软件开发工程师',
+      admin: '高级行政主管',
+      phdM: '博士生',
+      phdF: '博士生',
+      masterM: '硕士生',
+      masterF: '硕士生',
+      researcherM: '研究员',
+      researcherF: '研究员',
+      visitingResearcherM: '访问研究员',
+      visitingResearcherF: '访问研究员',
+      hiring: '加入我们',
+    },
+    joinName: '下一位是你？',
+    formerTitle: '前成员',
+  },
+
+  research: {
+    eyebrow: '研究成果',
+    headline: '论文、数据',
+    headlineAccent: '与代码。',
+    lede: '地图集背后的方法均已发表，数据集均可下载。论文尚在准备中的平台会如实标注：地图照常展示，但不会编造引用。',
+    papersTag: '01',
+    papersTitle: '论文',
+    papersHint: '同行评审论文与预印本',
+    datasetsTag: '02',
+    datasetsTitle: '数据集与代码',
+    datasetsHint: 'CC BY-NC 4.0 · MIT',
+    citeTitle: '如何引用地图集',
+    inPreparation: '准备中',
+    preprint: '预印本',
+    columns: { dataset: '数据集', coverage: '覆盖范围', format: '格式', licence: '许可' },
+  },
+
+  blog: {
+    eyebrow: '博客',
+    headline: '来自地图集的',
+    headlineAccent: '笔记。',
+    lede: '关于我们测量什么、如何测量，以及地图能说明什么、不能说明什么的长文。文章以英文和意大利文撰写。',
+    readingTime: '阅读约 {count} 分钟',
+    backToBlog: '← 全部文章',
+    published: '发布于',
+    postsLabel: '文章',
+  },
+
+  work: {
+    eyebrow: '加入我们',
+    headline: '目前暂无',
+    headlineAccent: '空缺职位。',
+    lede: '我们目前没有招聘有资助的职位。不过，我们始终欢迎希望认真研究城市可达性的学生与我们联系，而这样的交流往往早在职位出现之前就开始了。',
+    openTitle: '开放的机会',
+    positionsTitle: '当前职位',
+    noPositions: '目前没有开放的有资助职位。',
+    noPositionsDetail: '一旦有职位开放，会在这里和 Sony CSL 的招聘页面上发布。我们没有候补名单，也不保留针对不存在职位的自荐申请。',
+    routes: {
+      phd: {
+        title: '博士研究',
+        desc: '我们与意大利国内外的大学联合指导博士研究，方向通常是可达性测量、交通网络分析或城市统计物理。资助一般来自接收大学的博士项目，而不是我们，因此最好在该项目截止日期前几个月就开始沟通。',
+      },
+      thesis: {
+        title: '硕士论文',
+        desc: '我们接收在地图集某个明确部分开展研究的硕士生：一座新城市、一项方法比较，或用独立数据验证某个指数。预计大约六个月，使用真实数据；结果站得住脚就会发表。',
+      },
+      internship: {
+        title: '实习',
+        desc: '更短、更聚焦的实习，通常为三到六个月：数据管线、地理空间处理，或这些平台的前端开发。熟悉 Python 和地理空间工具，或现代 JavaScript 与地图渲染，会很有帮助。',
+      },
+    },
+    howTitle: '如何联系',
+    howBody:
+      '请写信至 {email}，简要说明您想做什么以及原因，附上简历；如果有的话，再附上您做过或写过的东西的链接。一个从某篇论文或某个平台出发的具体提案，远比泛泛的意向表达更有价值。',
+    expectTitle: '您可以期待什么',
+    expectBody: '我们会阅读每一封来信，并回复我们能够跟进的提案。我们团队规模不大，无法对每条消息给出详细反馈；回复较慢并不代表对您申请的评价。',
+    cta: '写信给我们',
+  },
+
+  footer: {
+    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性的开放研究。方法、地图和数据全部公开，可自由复用。',
+    platforms: '平台',
+    research: '研究',
+    researchLinks: ['论文', '数据集', '博客', '常见问题'],
+    about: '关于',
+    aboutLinks: ['可持续城市', '团队', '联系我们', '咨询', '加入我们'],
+    touch: '保持联系',
+    touchLinks: ['GitHub', '订阅通讯'],
+    workCta: '加入我们 →',
+    copyright: '© 2026 Sony Computer Science Laboratories · Rome',
+    version: '代码 MIT · 数据 CC BY-NC 4.0',
+  },
+
+  notFound: {
+    eyebrow: '错误 404',
+    headline: '超出了',
+    headlineAccent: '地图范围。',
+    lede: '这个页面不属于地图集。请试试各个平台，或返回首页。',
+    cta: '返回地图集',
+  },
+};

@@ -23,6 +23,7 @@ export default {
     github: 'GitHub',
     skipToContent: 'Vai al contenuto',
     openMenu: 'Apri il menu',
+    language: 'Lingua',
   },
 
   home: {
@@ -523,7 +524,6 @@ export default {
       updatedValue: 'Luglio 2026',
       entries: 'Voci',
       languages: 'Lingue',
-      languagesValue: 'EN · IT · JA',
     },
     items: [
       {

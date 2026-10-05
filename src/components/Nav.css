@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: auto;
+  margin-inline-end: auto;
   min-width: 0;
 }
 
@@ -77,41 +77,68 @@
 }
 
 .aa-nav__github {
-  margin-left: 2px;
+  margin-inline-start: 2px;
   padding: 8px 12px;
 }
 
 .aa-nav__lang {
-  display: flex;
+  position: relative;
   flex-shrink: 0;
+}
+
+.aa-nav__langtoggle {
+  display: flex;
   align-items: center;
-  white-space: nowrap;
-  padding: 8px 4px;
+  gap: 4px;
+  padding: 8px 8px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: var(--ink-3);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
 
-.aa-nav__langsep {
-  padding: 0 2px;
-  color: var(--ink-4);
+.aa-nav__langtoggle:hover,
+.aa-nav__langtoggle[aria-expanded='true'] {
+  background: var(--paper-alt);
+  color: var(--ink);
+}
+
+.aa-nav__langlist {
+  position: absolute;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  min-width: 170px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-float);
+  z-index: 30;
 }
 
 .aa-nav__langbtn {
-  padding: 2px 4px;
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
   border: 0;
+  border-radius: 4px;
   background: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-  color: var(--ink-3);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  text-align: start;
+  color: var(--ink-2);
   cursor: pointer;
-  border-radius: 3px;
-  transition: color 0.15s;
 }
 
 .aa-nav__langbtn:hover {
+  background: var(--paper-alt);
   color: var(--ink);
 }
 
@@ -142,7 +169,7 @@
 .aa-nav__drawer {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  inset-inline-end: 0;
   min-width: 190px;
   padding: 6px;
   background: var(--card);
@@ -165,7 +192,9 @@
   color: var(--ink);
 }
 
-@media (max-width: 1080px) {
+/* 1112, not 1080: Spanish and Arabic, the widest bars, overlap the tagline
+   until about 1110 px. Measured by sweeping every language. */
+@media (max-width: 1112px) {
   .aa-nav__links,
   .aa-nav__github {
     display: none;

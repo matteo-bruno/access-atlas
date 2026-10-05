@@ -689,11 +689,44 @@ rather than a reading.
 
 ## Copy and i18n
 
-`src/i18n/en.js`, `it.js` and `ja.js` must keep an identical key shape, and
-every translation must keep the English string's `{placeholders}`. `t()` warns
-on a missing key in development only, and falls back to English silently in a
-build, so `test:data` checks the shape and the placeholders of every
-dictionary against the English one.
+Ten languages: English, Italian, Spanish, French, German, Portuguese
+(Brazil), Chinese (Simplified), Japanese, Korean and Arabic, one dictionary
+each in `src/i18n/`. Every dictionary must keep `en.js`'s key shape and every
+English string's `{placeholders}`. `t()` warns on a missing key in
+development only, and falls back to English silently in a build, so
+`test:data` checks the shape and the placeholders of every `<code>.js` it
+finds there, and that `locales.js` agrees with each `meta.locale`. Adding a
+language is a dictionary, a line in `DICTS` and one in `locales.js`.
+
+**The languages are a menu, not a row.** `LangMenu` in `Nav.jsx` shows the
+current code and lists the rest, each in its own script (`meta.name`), on
+demand; ten codes always on the bar were noise, and pushed the tabs off it.
+With the longest labels (Spanish, Arabic) the bar overlapped its tagline up to
+~1110 px, so the compact menu takes over below 1112 px rather than 1080.
+
+**Arabic is right to left, and three things make that work.** `index.jsx`
+sets `<html dir="rtl">`, and the CSS uses logical properties
+(`margin-inline-start`, `inset-inline-end`, `text-align: start`…) so the page
+mirrors itself; a physical `left`/`right` is a bug unless it is a centring
+`left: 50%` or a chart. Values inside sentences are wrapped in Unicode
+isolates by `t()` and in `<bdi>` by `<Interpolate>`, or bidi reorders them
+("15-minute city" reads "minute city-15", "2.6 M" reads "M 2.6"). Names and
+figures that stand alone take `unicode-bidi: plaintext` from a list in
+`global.css`: add a class there when a new one shows a Latin name or a
+number. Icons that point along the text (`arrow`, the chevrons) carry
+`.aa-icon--dir` and turn round. Charts and the ramps are not mirrored, so
+axis arrows keep pointing the way values grow. Arabic uses Western digits
+(`ar-u-nu-latn`), as every legend does, and `letter-spacing` is zeroed for it:
+tracking breaks the joins of a cursive script.
+
+**What stays in English, in every language**: the Atlas's name, platform and
+dataset names, the postal address and the citations. City and country names
+come from the catalogue, which carries English and Italian only. Blog posts
+have no versions beyond English and Italian; the fallback copy is marked
+`lang="en" dir="ltr"` (`postCopy` in `Blog.jsx`) so it is not laid out right
+to left in Arabic, and each blog lede says the posts are in English and
+Italian. Roboto and Instrument Serif have no CJK or Arabic glyphs: `tokens.css`
+puts the system's faces behind them per language, and downloads nothing.
 Numbers never appear in the dictionaries; they are formatted with `Intl` from
 `src/data/*.js`, so `156,627` becomes `156.627` in Italian for free.
 
@@ -702,16 +735,8 @@ noun** — `sapienzaPhdM` is "Dottorando", `sapienzaPhdF` "Dottoranda", and both
 are "PhD student, Sapienza" in English, which does not inflect. `src/data/team.js`
 says which form each person takes, and the team stated them: a name is not
 evidence of anyone's gender, so a new member needs asking rather than guessing.
-**Japanese leaves the technical layer in English**: the Atlas's name,
-platform and dataset names, `city.explain.methods`, the postal address and
-the citations. Blog posts have no Japanese version and fall back to English
-(`post[lang] ?? post.en`), and city names come from the catalogue, which
-carries English and Italian only. Roboto and Instrument Serif have no kana or
-kanji, so `:root:lang(ja)` in `tokens.css` puts the system's Japanese faces
-behind each (a mincho behind the serif, so titles stay a display face); no
-font is downloaded for it. The nav labels are the short forms (持続可能な都市,
-連絡先) because the long ones overflowed the bar at 1280 px. Dates that are
-formatted outside React take their locale from `src/i18n/locales.js`.
+Japanese also leaves `city.explain.methods` in English; the other languages
+translate it. Its nav labels are the short forms (持続可能な都市, 連絡先).
 
 Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ("Amministrazione, senior") keep a single key.
@@ -915,8 +940,9 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
   (`scripts/shoot-previews.mjs`).
 
 ## Open, and needing the lab rather than more code
-- **The Italian is a first draft** and wants a native review. So does the
-  Japanese (`src/i18n/ja.js`), which was machine-drafted.
+- **The Italian is a first draft** and wants a native review. So do the
+  other eight translations, which were machine-drafted; Arabic most of all,
+  since it also tests the right-to-left layout.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon
   intensity in urban transport" (Cities 176, 107202). Elsevier DOIs embed a
   year that cannot be derived from the citation, so it is left blank rather
