@@ -481,7 +481,7 @@ export default {
       cardep: 'Cities ranked by index',
       pov: 'Zone mix by city',
       aboutCardep: 'Each bar is the index for that city’s average resident: every cell weighted by the people living in it. Left of the line is a city where public transport reaches more than a car for the typical resident; right of it, one where the car does. Bars use the same scale as the maps.',
-      aboutPov: 'The share of each city that falls in each of the four zones. Zones are decided against that city’s own population-weighted medians, so this compares the *mix* within cities and not the level between them — a city can be half inclusion and still be poorly served overall. Switch between counting cells and counting residents: isolated cells are large and thinly populated, so the two tell different stories.',
+      aboutPov: 'The share of each city that falls in each of the four zones. Zones are decided against that city’s own population-weighted medians, so this compares the mix within cities and not the level between them — a city can be half inclusion and still be poorly served overall. Switch between counting cells and counting residents: isolated cells are large and thinly populated, so the two tell different stories.',
     },
     scatter: {
       cardep: 'What a car reaches against what transit reaches',
