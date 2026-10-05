@@ -57,8 +57,20 @@ record keeps the hash of each export the city was imported from and the date
 it was first published, so the next `update:data` skips every city whose
 export has not changed (`--force` recomputes everything).
 
-After an import, commit **all** of `public/data` (`git add -A public/data`),
-not only the new files: an import rewrites files that were already there.
+When a run changed a city, `update:data` then asks whether to recompute the
+statistics the Stats page shows (`npm run stats`; `--stats` / `--no-stats`
+answer in advance, and outside a terminal it never asks). Declining is safe:
+a city whose data changed is left off the Stats page until its statistics are
+recomputed, never shown with figures for data that is no longer published.
+
+```bash
+npm run stats                    # recompute the cities whose data changed
+npm run stats -- --status        # just list them
+```
+
+After an import, commit **all** of `public/data` and `statistics/`
+(`git add -A public/data statistics`), not only the new files: an import
+rewrites files that were already there.
 
 The scripts that drive a browser — `smoke`, `smoke:published`,
 `shoot:previews` — also need Playwright, which is deliberately *not* a
@@ -97,7 +109,7 @@ Outstanding before launch:
 | `/faq`                     | Common questions |
 | `/contact`                 | Team, address, collaboration |
 | `/sustainable-cities`      | Who we are — the research line, the lab, other projects |
-| `/stats`                   | Where cities will be compared; links the per-platform comparisons |
+| `/stats`                   | Every city on every measure: ranking, map, scatter, matrix, curves, by city or by country; state in the query string |
 | `/consulting`              | For policy makers and companies who want to ask |
 
 Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,

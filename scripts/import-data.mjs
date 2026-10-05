@@ -66,6 +66,10 @@ function reindex() {
       `${changed.length ? `${changed.length} file(s) ${dryRun ? 'would change' : 'rewritten'}` : 'unchanged'}`,
   );
   for (const f of changed) console.log(`    ${f.rel}${f.removed ? '  (removed)' : ''}`);
+  // A city whose files changed has left the Stats page until its figures
+  // are recomputed; update:data asks, a hand import only says so.
+  const left = report.stats.omitted.map((o) => o.id);
+  if (left.length) console.log(`statistics: ${left.join(', ')} not on the Stats page until \`npm run stats\``);
 }
 
 if (flag('index')) {

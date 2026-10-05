@@ -40,6 +40,7 @@ export const EMPTY_CATALOGUE = {
   version: 1,
   platforms: {},
   atlas: { cities: [], citiesById: {} },
+  stats: null,
   files: {},
 };
 
@@ -239,6 +240,9 @@ export function normaliseCatalogue(raw) {
       cities: atlasCities,
       citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
     },
+    // Every city on every measure, for the Stats page (scripts/lib/stats.mjs).
+    // Absent until statistics have been computed for at least one city.
+    stats: typeof raw.stats === 'string' ? raw.stats : null,
     // Content hash per data file: the version the catalogue describes.
     files:
       raw.files && typeof raw.files === 'object'

@@ -26,7 +26,8 @@ import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution, cellToLatLng } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
-import { VARIANTS, buildIndex, cataloguePaths, gridId } from './lib/bundle.mjs';
+import { VARIANTS, buildIndex, cataloguePaths, gridId, readCityRecord } from './lib/bundle.mjs';
+import { computeCityStats, readCityStats } from './lib/stats.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
@@ -463,6 +464,102 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
       `${rome.layers.pov.cells} cells · ${rome.layers.pov.zoneShares.join(' / ')}`,
     );
   }
+}
+
+// ── Statistics ───────────────────────────────────────────────────────
+// The Stats page reads one file (scripts/lib/stats.mjs). Every city in it
+// must be one whose files are what its figures were computed from (the
+// rebuild check above already fails otherwise), every figure must be what
+// computing it again gives, and the figures it shares with the compare
+// summaries and the world-map markers must be theirs: one number, wherever
+// a reader meets it.
+if (catalogue.stats) {
+  const stats = read(catalogue.stats);
+  const bad = [];
+  const ids = stats.cities.map((c) => c.id);
+  const listed = new Set([...ids, ...stats.omitted.map((o) => o.id)]);
+  for (const id of atlasById.keys()) if (!listed.has(id)) bad.push(`${id} is neither in the statistics nor omitted`);
+  for (const id of ids) if (!atlasById.has(id)) bad.push(`${id} has statistics but is not published`);
+
+  for (const measure of stats.measures) {
+    const column = stats.values[measure.id];
+    if (!Array.isArray(column) || column.length !== ids.length) {
+      bad.push(`${measure.id}: ${column?.length} values for ${ids.length} cities`);
+      continue;
+    }
+    column.forEach((stat, i) => {
+      if (!stat) return;
+      const where = `${ids[i]} ${measure.id}`;
+      if (stat.shares?.some((s) => !(s >= 0 && s <= 100))) bad.push(`${where}: a share outside 0–100`);
+      if (stat.q?.some((v, k) => k && v < stat.q[k - 1])) bad.push(`${where}: quantiles out of order`);
+      if (measure.kind === 'zones' && !near(sum(stat.shares), 100, 0.4)) bad.push(`${where}: zones sum to ${sum(stat.shares)}`);
+      if (measure.kind === 'correlation' && !(stat.value >= -1 && stat.value <= 1)) bad.push(`${where}: ${stat.value}`);
+      if (stat.gini != null && !(stat.gini >= 0 && stat.gini <= 1)) bad.push(`${where}: Gini ${stat.gini}`);
+    });
+  }
+  for (const country of stats.countries) {
+    for (const id of country.cities) {
+      if (atlasById.get(id)?.variant) bad.push(`${country.iso} pools ${id}, a variant: its residents are counted twice`);
+    }
+  }
+  check(
+    `Statistics: ${ids.length} cities × ${stats.measures.length} measures, ${stats.countries.length} countries, well formed`,
+    bad.length === 0,
+    bad.slice(0, 3).join(' | ') || (stats.omitted.length ? `omitted: ${stats.omitted.map((o) => `${o.id} (${o.reason})`).join(', ')}` : ''),
+  );
+
+  // Recomputed from the files, city by city. A difference with matching
+  // inputs means the method changed without STATS_VERSION.
+  const drift = [];
+  for (const id of ids) {
+    const stored = readCityStats(id)?.current;
+    const fresh = computeCityStats(readCityRecord(id).atlas);
+    for (const key of ['inputs', 'population', 'layers', 'measures']) {
+      if (JSON.stringify(stored?.[key]) !== JSON.stringify(fresh[key])) drift.push(`${id}: ${key}`);
+    }
+  }
+  check(
+    'Statistics are what the published files give today',
+    drift.length === 0,
+    drift.length ? `${drift.slice(0, 4).join(', ')} — bump STATS_VERSION in scripts/lib/stats.mjs and run \`npm run stats\`` : '',
+  );
+
+  // The figures the statistics share with the summaries and the markers.
+  const disagree = [];
+  const column = (id) => new Map(ids.map((c, i) => [c, stats.values[id]?.[i]]));
+  const markers = (platformId) =>
+    new Map(
+      catalogue.platforms[platformId]?.coverage
+        ? read(catalogue.platforms[platformId].coverage).features.map((f) => [f.properties.id, f.properties])
+        : [],
+    );
+  // The summaries were computed at import from values before they were
+  // rounded for publishing (populations to whole residents, scores to 0.1),
+  // so a weighted mean may move in its fourth significant digit.
+  const close = (a, b, floor) => near(a, b, Math.max(floor, Math.abs(b) * 1e-4));
+  const pov = column('pov.proximity');
+  const zones = column('pov.zonesCity');
+  for (const [id, row] of summaries.pov ?? []) {
+    if (pov.get(id) && !close(pov.get(id).mean, row.weightedProximity, 0.06)) disagree.push(`${id} proximity ${pov.get(id).mean} vs ${row.weightedProximity}`);
+    if (zones.get(id) && zones.get(id).shares.some((v, k) => !near(v, row.zonePopulationShares[k], 0.11))) {
+      disagree.push(`${id} zones ${zones.get(id).shares} vs ${row.zonePopulationShares}`);
+    }
+  }
+  const cdi = column('cardep.cdi');
+  for (const [id, row] of summaries.cardep ?? []) {
+    if (cdi.get(id) && !close(cdi.get(id).mean, row.weightedCdi, 0.0006)) disagree.push(`${id} CDI ${cdi.get(id).mean} vs ${row.weightedCdi}`);
+  }
+  const walk = column('fifteen.proximity_time.foot');
+  for (const [id, marker] of markers('fifteen')) {
+    if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
+  }
+  const velocity = column('citychrone.velocity.08');
+  for (const [id, marker] of markers('citychrone')) {
+    if (velocity.get(id) && !near(velocity.get(id).q[2], marker.velocityScore, 0.011)) disagree.push(`${id} velocity ${velocity.get(id).q[2]} vs marker ${marker.velocityScore}`);
+  }
+  check('Statistics agree with the compare summaries and the world-map markers', disagree.length === 0, disagree.slice(0, 3).join(' | '));
+} else {
+  check('No statistics published', !resolveDataFile(path.join(DATA, 'stats', 'stats.json.gz')), 'a stats file the catalogue does not list');
 }
 
 // Every dictionary has the shape of the English one: the same keys, the same
