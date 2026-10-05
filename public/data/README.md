@@ -9,7 +9,8 @@ of it.
 
 | Path | What it is |
 | ---- | ---------- |
-| `index.json` | The **catalogue**: the one file that decides whether the Atlas draws measurements or seed data. |
+| `index.json` | The **catalogue**: the one file that decides whether the Atlas draws measurements or seed data. Derived from the city records. |
+| `cities/<city>/city.json` | The city's **record**: its names, catalogue entries, markers and compare rows, the hash of each export it was imported from, and when it was first published. Not read by the site. |
 | `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
 | `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
 | `cities/<city>/citychrone/timesHH.npy.gz` | CityChrone's travel-time matrix for each hour. |
@@ -51,9 +52,21 @@ layer is opened. Nothing is stored twice.
         "hourly": { "hours": 24, "cells": 909,
                     "times": "cities/zurich/citychrone/times{hh}.npy.gz" } }
     ]
-  }
+  },
+  "files": { "cities/zurich/grid.json.gz": "1b8fdf4a4267", "…": "…" }
 }
 ```
+
+- **The catalogue is derived, never edited.** `buildIndex` in
+  `scripts/lib/bundle.mjs` writes it, the coverage files and the summaries
+  from every city's `city.json`, in one pass at the end of an import run
+  (`npm run import -- --index` on its own). `test:data` fails when
+  rebuilding would change any of them.
+- **`files`** is the content hash of every file the catalogue points at: the
+  version of each that this catalogue describes. The site fetches the
+  current version by its plain path (the server's `Cache-Control: no-cache`
+  keeps it fresh); `?v=<hash>` is reserved for asking for a specific,
+  possibly earlier, version. The catalogue itself carries the build id.
 
 - **`atlas.cities`** is how the city view (`/atlas/:cityId`) draws a city:
   its grid, and which layer file to fetch for each layer.
@@ -71,7 +84,7 @@ layer is opened. Nothing is stored twice.
 ## The grid
 
 ```json
-{ "format": "atlas-grid", "version": 1, "resolution": 9,
+{ "format": "atlas-grid", "version": 1, "id": "45b4e684554f4443", "resolution": 9,
   "cells": ["891f8d7a0003fff", "…"],
   "population": [752, "…"] }
 ```
@@ -80,12 +93,12 @@ Every cell any of the city's layers covers, sorted by H3 index, so the same
 layers always give the same grid. A cell's population is its context figure
 (the Population layer and the city summary): P.O.V. and Car Dependency share
 one population model and win where they cover the cell, then 15minCity, then
-CityChrone.
+CityChrone. `id` is a hash of the cells, in order.
 
 ## A layer
 
 ```json
-{ "format": "atlas-layer", "version": 1, "layer": "pov", "cells": 733,
+{ "format": "atlas-layer", "version": 1, "layer": "pov", "grid": "45b4e684554f4443", "cells": 733,
   "order": "grid", "idx": [12, 1, 1, 3, "…"],
   "fields": { "population": [], "zone": [], "proximity": [], "opportunity": [] },
   "meta": { "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } },
@@ -95,6 +108,11 @@ CityChrone.
 - **Rows follow the grid.** `idx` gives each row's grid position,
   delta-encoded (each entry is the step from the previous one), which
   compresses to almost nothing.
+- **`grid` is the id of the grid the layer was written against.** Positions
+  mean nothing on any other grid, yet decode and draw there, every value on
+  the wrong cell: that is what Rome's 15minCity layer did when it was
+  committed without the grid its import had grown. The importer, `test:data`
+  and the viewer all refuse a layer whose `grid` is not its city's.
 - **`fields` are columns**, one value per row, `null` where the platform has
   none. Kept at the precision the platforms' own viewers show:
 
@@ -150,8 +168,9 @@ with a city view but no marker of their own.
 ## Summary files
 
 One row per city, for the compare view (`/platforms/:slug/compare`), so it
-does not fetch every city's layer to show twenty numbers each. Written by the
-importer from the values as published.
+does not fetch every city's layer to show twenty numbers each. Computed by the
+importer from the values as published, kept in each city's record, and
+gathered here by `buildIndex`.
 
 ```json
 { "platform": "cardep", "cities": [

@@ -357,11 +357,19 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
-  const layerFiles = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u)).map((u) => u.split('/').pop());
+  const cityRequests = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u));
+  const layerFiles = cityRequests.map((u) => u.split('?')[0].split('/').pop());
   check(
     'A city loads its grid and the open layer, and nothing else',
     layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
     layerFiles.join(' '),
+  );
+  // The current version of a file is its plain path; `?v=<hash>` is only for
+  // asking for a specific one.
+  check(
+    'City files are fetched by their plain path',
+    cityRequests.length > 0 && cityRequests.every((u) => !u.includes('?')),
+    cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 
   const map = await canvasShot(page);
@@ -409,7 +417,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const stillCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
-  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('/').pop());
+  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('?')[0].split('/').pop());
   check(
     'The combined viewer switches geometry per layer',
     stillCartogram === 'true' &&

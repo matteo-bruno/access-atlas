@@ -24,31 +24,55 @@ suffix is dropped, accents and spaces become a slug: `New York` →
 npm run update:data                  # every platform
 npm run update:data -- --pov --cdi   # only the platforms named (--15mincity, --citychrone, --pov, --cdi)
 npm run update:data -- --dry-run     # list what would be imported, change nothing
-npm run update:data -- --force       # re-import every file, changed or not
-npm run update:data -- --baseline    # record the files as imported, import nothing
+npm run update:data -- --force       # re-import and recompute every file, changed or not
 ```
 
-`update:data` hashes every source here and compares it with
-`manifest.json`, which records what was imported: each source's SHA-256
-and a fingerprint of the importer that read it. A source that is new or
-whose content changed is imported on its own, so a failure names its file.
-Then `test:data` runs, and only if it passes is the manifest updated. A
-failed or rejected run leaves the files looking unimported, and the next
-run offers them again.
+Each city keeps its own record, `public/data/cities/<city>/city.json`, and
+in it, per layer, the SHA-256 of the export it was imported from, the
+file's name, a fingerprint of the importer that read it and when. The
+record also keeps `createdAt`, the date the city was first published, which
+never moves, and `updatedAt`, the last time anything in it changed.
+
+`update:data` hashes every source here and compares it with those records:
+
+- **New** (the city or the layer is not published): imported.
+- **Changed** (a different hash on record): imported again.
+- **Same hash**: skipped. Adding a few new cities touches only those.
+- **Published, no hash on record** (cities published before records kept
+  one): *adopted*. The hash is recorded and nothing is re-imported, so the
+  cities already on the site stay exactly as they are.
+- **`--force`**: everything is re-imported and recomputed.
+
+Each import runs on its own, so a failure names its file, and writes its
+city only. Then, **once, at the end**, the catalogue (`public/data/index.json`),
+the world maps' coverage files and the compare summaries are rebuilt from
+every city's record, and `test:data` runs. Only if it passes are the hashes
+recorded; a failed or rejected run leaves the files looking unimported, and
+the next run offers them again.
 
 - **Content, not dates.** Copying or re-downloading a file changes its
   date, not its hash, and does not trigger an import.
 - **A removed file does not unpublish its city.** It is reported and its
-  manifest entry stays. Taking a city off the site is done by hand.
+  record stays. Taking a layer off the site is a command of its own:
+  `npm run import -- 15mincity --remove rome`.
 - **An importer change is reported, not acted on.** Files imported by an
   earlier version of the importer are counted, and `--force` re-imports
   them.
-- **`--baseline`** is for data already published from these files, so the
-  first run does not re-import every city just to find out it had.
+- **The catalogue is derived, so it can always be rebuilt**:
+  `npm run import -- --index`. `update:data` does it on every run, which
+  also repairs an index or a coverage file edited or reverted by hand.
 
-The source folders are ignored by git (too large); `manifest.json` is
-committed alongside the data it describes, so `git log input_data/manifest.json`
-is the history of what was imported and when.
+The source folders are ignored by git (too large); the records are
+committed with the data they describe, so `git log public/data/cities/<city>/city.json`
+is the history of what was imported for that city and when.
+
+**Commit all of `public/data` after an import** (`git add -A public/data`).
+An import rewrites files that were already there (a new layer can grow the
+city's grid, and every other layer is rewritten against it), and committing
+only the files it created publishes layers against a grid that is not in
+the commit. That is what scrambled Rome's 15minCity layer on GitHub Pages;
+`test:data`, which now runs before every Pages deploy and every
+`scripts/deploy.sh`, fails on it.
 
 One source by hand, with the options `update:data` does not pass:
 
@@ -56,6 +80,8 @@ One source by hand, with the options `update:data` does not pass:
 npm run import -- pov input_data/pov/zurich_pov.zip
 npm run import -- cdi path/to/zurich/ --city zurich --dry-run
 npm run import -- 15mincity Acilia.geojson --name Acilia --name-it Acilia --country IT
+npm run import -- 15mincity --remove rome      # take a layer off the site
+npm run import -- --index                      # rebuild the catalogue from the records
 ```
 
 ## What an import does
@@ -72,11 +98,13 @@ layer. Importing P.O.V. for a city that has 15minCity keeps 15minCity;
 re-importing a layer replaces that layer only. Files whose content did not
 change are not rewritten, so re-importing the same export changes nothing.
 
-The catalogue (`public/data/index.json`), the platform's world-map marker
-(`<platform>/coverage.geojson.gz`) and, for P.O.V. and CDI, the compare
-view's row (`<platform>/summary.json.gz`) are updated in the same run.
-Nothing in the code needs editing: the site counts cities and cells from
-the catalogue.
+The city's record (`cities/<city>/city.json`) is written with it: the
+city's catalogue entries, and the layer's world-map marker and compare-view
+row, computed from the values as imported. The catalogue
+(`public/data/index.json`), the world maps (`<platform>/coverage.geojson.gz`)
+and, for P.O.V. and CDI, the compare view (`<platform>/summary.json.gz`) are
+then rebuilt from all the records. Nothing in the code needs editing: the
+site counts cities and cells from the catalogue.
 
 ### Where a city is
 
@@ -87,7 +115,7 @@ inside its country's drawn outline at this generalisation (Stockholm's sits
 3.9 km off Sweden's coast), so the lookup falls back to the nearest coast
 within 25 km and says so; past that it leaves the fields blank and warns.
 
-A city already in the catalogue keeps its names and region, because some
+A city already published keeps the names and region in its record, because some
 were written by hand. Override when either is wrong:
 
 ```

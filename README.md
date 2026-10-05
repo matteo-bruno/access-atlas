@@ -50,10 +50,15 @@ npm run import -- pov input_data/pov/zurich_pov.zip   # one source by hand
 
 [`input_data/README.md`](input_data/README.md) has the formats and the
 options. An import checks every cell against the H3 grid, adds the layer to
-its city (keeping the city's other layers), and updates the catalogue, the
-platform's world-map marker and its compare-view row. `update:data` records
-what it imported in `input_data/manifest.json`, so the next run only touches
-what changed.
+its city (keeping the city's other layers) and writes the city's record,
+`public/data/cities/<city>/city.json`. The catalogue, the world maps' markers
+and the compare-view rows are then rebuilt from every record, once. The
+record keeps the hash of each export the city was imported from and the date
+it was first published, so the next `update:data` skips every city whose
+export has not changed (`--force` recomputes everything).
+
+After an import, commit **all** of `public/data` (`git add -A public/data`),
+not only the new files: an import rewrites files that were already there.
 
 The scripts that drive a browser — `smoke`, `smoke:published`,
 `shoot:previews` — also need Playwright, which is deliberately *not* a
@@ -65,7 +70,7 @@ npm install --no-save playwright && npx playwright install chromium
 
 ## Status
 
-**All four platforms render measurements.** 22 cities, 44 layers — 156,755
+**All four platforms render measurements.** 22 cities, 46 layers — 172,298
 cells — are published under `public/data/` and validated on every push. Cities the
 catalogue does not list still fall back to generated stand-ins labelled as
 illustrative; [`public/data/README.md`](public/data/README.md) documents the
@@ -309,6 +314,7 @@ once per deploy is the failure mode rather than the safeguard.
 scripts/deploy.sh                 # build, upload, install, verify
 scripts/deploy.sh --skip-build    # publish the dist/ already on disk
 scripts/deploy.sh --verify-only   # re-run the checks against the live URL
+scripts/deploy.sh --skip-data-check   # build without running test:data first
 ```
 
 Its defaults are the live deployment: `https://whatif.sonycsl.it/atlas/`,
@@ -338,6 +344,14 @@ published". That is also why the post-deploy check reads the *body* of
 `data/index.json` rather than its status code, which is 200 either way. It
 refuses a build with no `404.html` too, and one carrying no catalogue at all.
 
+It runs `test:data` before building and warns when `public/data` has
+uncommitted changes: the server gets the working tree, GitHub Pages gets the
+commit. It installs with `rsync --checksum --delay-updates`, so a file is
+never skipped as unchanged by size and date, and every changed file lands at
+the end, together. After the upload it compares the server's catalogue,
+coverage files and summaries with the build byte for byte, and says which
+one is stale.
+
 The script copies files. The rewrite rule is the server's own, and has to be
 installed once by hand.
 
@@ -365,14 +379,23 @@ one, which does nothing but redirect to HTTPS:
 
     # Everything else is a client-side route: hand it the shell.
     RewriteRule ^ index.html [L]
+
+    # The shell and the data are revalidated on every use: the browser may
+    # keep a copy, but asks first, and gets a 304 when nothing changed. The
+    # shell names the build, the build names the catalogue, and the data
+    # files sit at plain paths that a deploy rewrites in place. Built assets
+    # carry a hash in their name and cache freely.
+    <FilesMatch "\.(html|json|geojson|gz)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
 </Directory>
 ```
 
-Then `sudo a2enmod rewrite`, `sudo apachectl configtest`, `sudo systemctl
+Then `sudo a2enmod rewrite headers`, `sudo apachectl configtest`, `sudo systemctl
 reload apache2`. The configtest before the reload is not optional on a vhost
 that also serves something else.
 
-Three things that cost time here:
+Four things that cost time here:
 
 - **In the vhost, not in `.htaccess`.** An `.htaccess` under `AA_TARGET` is
   deleted by the next deploy, because `rsync --delete` mirrors `dist/` and
@@ -383,6 +406,16 @@ Three things that cost time here:
 - **`Options -MultiViews`.** With MultiViews on, Apache resolves extensionless
   URLs against files on disk before `mod_rewrite` runs, which breaks the
   routes unpredictably.
+- **Caching.** Without a `Cache-Control` header Apache leaves caching to
+  the browser's heuristics, which keep a file for a tenth of its age. An
+  `index.html` kept that way asks for the previous deploy's catalogue, and a
+  coverage file or a grid kept that way was served under the new catalogue:
+  world maps missing the cities just added, hexagons painted with another
+  cell's values. Data files are fetched by their plain path, so the
+  `no-cache` above is what keeps them current. `scripts/deploy.sh` warns
+  when the shell or a data file comes back without it. GitHub Pages cannot
+  be configured: it sends `max-age=600`, so a deploy there can take up to
+  ten minutes to reach a returning visitor.
 - **certbot can rewrite `<name>-le-ssl.conf`.** Not on an ordinary renewal,
   but a re-run of `certbot --apache` for that host will. Keep a copy of the
   block and check it survived any certificate work.

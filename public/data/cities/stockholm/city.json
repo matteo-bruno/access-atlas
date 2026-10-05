@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "stockholm",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Stockholm",
+    "nameIt": "Stoccolma",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "stockholm",
+    "name": "Stockholm",
+    "nameIt": "Stoccolma",
+    "region": "Sweden",
+    "regionIt": "Svezia",
+    "country": "SE",
+    "center": [
+      18.01134,
+      59.32144
+    ],
+    "zoom": 9.5,
+    "population": 996902,
+    "grid": "cities/stockholm/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 176
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/stockholm/cardep.json.gz",
+      "pov": "cities/stockholm/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "stockholm",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          18.01134,
+          59.32144
+        ],
+        "zoom": 9.5,
+        "population": 996902,
+        "cells": 2700,
+        "layer": "cities/stockholm/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.01134,
+            59.32144
+          ]
+        },
+        "properties": {
+          "id": "stockholm",
+          "name": "Stockholm",
+          "country": "SE",
+          "isStudy": true,
+          "cdi": 0.094,
+          "population": 996902
+        }
+      },
+      "summary": {
+        "id": "stockholm",
+        "cells": 2700,
+        "population": 996902,
+        "medianCdi": 0.153,
+        "weightedCdi": 0.094,
+        "ptShare": 1.4,
+        "carShare": 84.3,
+        "weightedByCar": 1257.1,
+        "weightedByTransit": 1082.6,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0.006
+          ],
+          [
+            0,
+            0.206
+          ],
+          [
+            0.1,
+            0.552
+          ],
+          [
+            0.2,
+            0.866
+          ],
+          [
+            0.3,
+            0.969
+          ],
+          [
+            0.4,
+            0.992
+          ],
+          [
+            0.5,
+            0.996
+          ],
+          [
+            0.6,
+            0.997
+          ],
+          [
+            0.7,
+            0.997
+          ],
+          [
+            0.8,
+            0.997
+          ],
+          [
+            0.9,
+            0.997
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "stockholm",
+        "name": "Stockholm",
+        "nameIt": "Stoccolma",
+        "region": "Sweden",
+        "regionIt": "Svezia",
+        "country": "SE",
+        "center": [
+          18.01134,
+          59.32144
+        ],
+        "zoom": 9.5,
+        "population": 996902,
+        "cells": 2322,
+        "layer": "cities/stockholm/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 176
+        },
+        "thresholds": {
+          "proximity": 2854.4,
+          "opportunity": 9322.9
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            18.01135,
+            59.32144
+          ]
+        },
+        "properties": {
+          "id": "stockholm",
+          "name": "Stockholm",
+          "country": "SE",
+          "isStudy": true,
+          "zone": 0,
+          "population": 996903,
+          "inclusionShare": 23.5
+        }
+      },
+      "summary": {
+        "id": "stockholm",
+        "cells": 2322,
+        "population": 996903,
+        "medianProximity": 1864.8,
+        "medianOpportunity": 7535.5,
+        "weightedProximity": 3184.6,
+        "weightedOpportunity": 9613.9,
+        "zoneShares": [
+          23.5,
+          6.5,
+          5,
+          65
+        ],
+        "zonePopulationShares": [
+          44.9,
+          5.1,
+          5.1,
+          44.9
+        ],
+        "thresholds": {
+          "proximity": 2854.4,
+          "opportunity": 9322.9
+        }
+      }
+    }
+  }
+}

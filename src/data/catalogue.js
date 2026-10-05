@@ -24,7 +24,8 @@
 //     },
 //     "atlas": { "cities": [{ "id": "rome", …, "grid": "cities/rome/grid.json.gz",
 //                             "layers": ["cardep", "pov"],
-//                             "layerData": { "pov": "cities/rome/pov.json.gz", … } }] }
+//                             "layerData": { "pov": "cities/rome/pov.json.gz", … } }] },
+//     "files": { "cities/rome/grid.json.gz": "3f9a0c…", … }   content hash per file
 //   }
 //
 // Published cities use the per-city layout (version 2): the atlas entry is
@@ -39,6 +40,7 @@ export const EMPTY_CATALOGUE = {
   version: 1,
   platforms: {},
   atlas: { cities: [], citiesById: {} },
+  files: {},
 };
 
 /**
@@ -60,14 +62,37 @@ const BUILD_ID = typeof __BUILD_ID__ === 'string' ? __BUILD_ID__ : 'dev';
 /**
  * URL for the catalogue, tagged with the build id.
  *
- * Every other file is fetched by its plain path and may cache freely. The
- * catalogue may not: it is what tells the app which cities are published, it
- * never changes within a session, and it sits at a stable URL — so a copy
- * cached from an earlier deploy makes newly published cities read as "not
+ * The catalogue is what tells the app which cities are published, it never
+ * changes within a session, and it sits at a stable URL — so a copy cached
+ * from an earlier deploy makes newly published cities read as "not
  * published" long after they went live.
  */
 export function catalogueUrl() {
   return `${dataUrl(CATALOGUE_PATH)}?v=${BUILD_ID}`;
+}
+
+/**
+ * URL for a file the catalogue points at.
+ *
+ * The current version of a file is its plain path. The catalogue also lists
+ * a content hash for every file it names (`files`, written by `buildIndex`
+ * in scripts/lib/bundle.mjs), which identifies the version it describes;
+ * asking for a `version` explicitly tags the URL with it (`?v=<hash>`), for
+ * a host that one day serves earlier versions of the data.
+ *
+ * Plain paths are only safe because the host revalidates them: the server
+ * sends `Cache-Control: no-cache` on the data (README, Apache section), so a
+ * browser asks before reusing a copy and gets a 304 when nothing changed.
+ * Without it, a coverage file or a grid cached from one deploy was served
+ * under the next one's catalogue.
+ */
+export function fileUrl(catalogue, path, version) {
+  return version ? `${dataUrl(path)}?v=${version}` : dataUrl(path);
+}
+
+/** The content hash the catalogue lists for a file, or null. */
+export function fileVersion(catalogue, path) {
+  return catalogue?.files?.[path] ?? null;
 }
 
 // Coordinates are [lon, lat] throughout the Atlas, matching GeoJSON and
@@ -214,6 +239,11 @@ export function normaliseCatalogue(raw) {
       cities: atlasCities,
       citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
     },
+    // Content hash per data file: the version the catalogue describes.
+    files:
+      raw.files && typeof raw.files === 'object'
+        ? Object.fromEntries(Object.entries(raw.files).filter(([, v]) => typeof v === 'string'))
+        : {},
   };
 }
 

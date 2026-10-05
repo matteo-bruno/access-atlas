@@ -1,0 +1,361 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "rome",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-10-05T15:00:47.144Z",
+  "meta": {
+    "name": "Rome",
+    "nameIt": "Roma",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Rome.geojson",
+      "sha256": "953bd099c620ea2a284d5ffaaf7cbbcdb34643b5af6eb9554440fa365092689c",
+      "size": 4745996,
+      "importer": "e6c6c6347512c08c",
+      "importedAt": "2026-10-05T15:00:55.950Z"
+    }
+  },
+  "atlas": {
+    "id": "rome",
+    "name": "Rome",
+    "nameIt": "Roma",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      12.49843,
+      41.88198
+    ],
+    "zoom": 8.5,
+    "population": 2713126,
+    "grid": "cities/rome/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 208
+    },
+    "layers": [
+      "fifteen",
+      "citychrone",
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "fifteen": "cities/rome/fifteen.json.gz",
+      "citychrone": "cities/rome/citychrone.json.gz",
+      "cardep": "cities/rome/cardep.json.gz",
+      "pov": "cities/rome/pov.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
+      "cardep": "published",
+      "pov": "published"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 11409,
+      "times": "cities/rome/citychrone/times{hh}.npy.gz"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.52214,
+          41.88931
+        ],
+        "zoom": 9.2,
+        "population": 2235742,
+        "cells": 4134,
+        "layer": "cities/rome/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.52214,
+            41.88931
+          ]
+        },
+        "properties": {
+          "id": "rome",
+          "name": "Rome",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 10.5,
+          "population": 2235742
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.49368,
+          41.88207
+        ],
+        "zoom": 8.5,
+        "population": 2610166,
+        "cells": 11409,
+        "layer": "cities/rome/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 11409,
+          "times": "cities/rome/citychrone/times{hh}.npy.gz"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.49368,
+            41.88207
+          ]
+        },
+        "properties": {
+          "id": "rome",
+          "name": "Rome",
+          "country": "IT",
+          "isStudy": true,
+          "velocityScore": 4.58,
+          "population": 2610166
+        }
+      },
+      "summary": null
+    },
+    "cardep": {
+      "row": {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.49368,
+          41.88207
+        ],
+        "zoom": 8.5,
+        "population": 2610166,
+        "cells": 11409,
+        "layer": "cities/rome/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.49368,
+            41.88207
+          ]
+        },
+        "properties": {
+          "id": "rome",
+          "name": "Rome",
+          "country": "IT",
+          "isStudy": true,
+          "cdi": 0.335,
+          "population": 2610166
+        }
+      },
+      "summary": {
+        "id": "rome",
+        "cells": 11409,
+        "population": 2610166,
+        "medianCdi": 0.747,
+        "weightedCdi": 0.335,
+        "ptShare": 0,
+        "carShare": 99.8,
+        "weightedByCar": 2024.3,
+        "weightedByTransit": 1124,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.1,
+            0.054
+          ],
+          [
+            0.2,
+            0.273
+          ],
+          [
+            0.3,
+            0.524
+          ],
+          [
+            0.4,
+            0.699
+          ],
+          [
+            0.5,
+            0.803
+          ],
+          [
+            0.6,
+            0.892
+          ],
+          [
+            0.7,
+            0.961
+          ],
+          [
+            0.8,
+            0.982
+          ],
+          [
+            0.9,
+            0.99
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "rome",
+        "name": "Rome",
+        "nameIt": "Roma",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          12.49368,
+          41.88207
+        ],
+        "zoom": 8.5,
+        "population": 2610166,
+        "cells": 8089,
+        "layer": "cities/rome/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 208
+        },
+        "thresholds": {
+          "proximity": 2590.5,
+          "opportunity": 9435.4
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            12.49368,
+            41.88207
+          ]
+        },
+        "properties": {
+          "id": "rome",
+          "name": "Rome",
+          "country": "IT",
+          "isStudy": true,
+          "zone": 0,
+          "population": 2610243,
+          "inclusionShare": 12.9
+        }
+      },
+      "summary": {
+        "id": "rome",
+        "cells": 8089,
+        "population": 2610243,
+        "medianProximity": 643.6,
+        "medianOpportunity": 2656.6,
+        "weightedProximity": 3006.4,
+        "weightedOpportunity": 9353.3,
+        "zoneShares": [
+          12.9,
+          2.7,
+          1.4,
+          83
+        ],
+        "zonePopulationShares": [
+          46.2,
+          3.8,
+          3.9,
+          46.1
+        ],
+        "thresholds": {
+          "proximity": 2590.5,
+          "opportunity": 9435.4
+        }
+      }
+    }
+  }
+}

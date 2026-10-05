@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "new-york",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "New York",
+    "nameIt": "New York",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "new-york",
+    "name": "New York",
+    "nameIt": "New York",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US",
+    "center": [
+      -73.92293,
+      40.72503
+    ],
+    "zoom": 8.5,
+    "population": 8038108,
+    "grid": "cities/new-york/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/new-york/cardep.json.gz",
+      "pov": "cities/new-york/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "new-york",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -73.92293,
+          40.72503
+        ],
+        "zoom": 8.5,
+        "population": 8038108,
+        "cells": 11520,
+        "layer": "cities/new-york/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.92293,
+            40.72503
+          ]
+        },
+        "properties": {
+          "id": "new-york",
+          "name": "New York",
+          "country": "US",
+          "isStudy": true,
+          "cdi": 0.241,
+          "population": 8038108
+        }
+      },
+      "summary": {
+        "id": "new-york",
+        "cells": 11520,
+        "population": 8038108,
+        "medianCdi": 0.413,
+        "weightedCdi": 0.241,
+        "ptShare": 0,
+        "carShare": 98.2,
+        "weightedByCar": 6412.8,
+        "weightedByTransit": 4095.1,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.013
+          ],
+          [
+            0.1,
+            0.14
+          ],
+          [
+            0.2,
+            0.358
+          ],
+          [
+            0.3,
+            0.707
+          ],
+          [
+            0.4,
+            0.904
+          ],
+          [
+            0.5,
+            0.987
+          ],
+          [
+            0.6,
+            0.997
+          ],
+          [
+            0.7,
+            0.997
+          ],
+          [
+            0.8,
+            0.997
+          ],
+          [
+            0.9,
+            0.998
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "new-york",
+        "name": "New York",
+        "nameIt": "New York",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -73.92293,
+          40.72503
+        ],
+        "zoom": 8.5,
+        "population": 8038108,
+        "cells": 6970,
+        "layer": "cities/new-york/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "thresholds": {
+          "proximity": 6531.1,
+          "opportunity": 31609.3
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.92293,
+            40.72503
+          ]
+        },
+        "properties": {
+          "id": "new-york",
+          "name": "New York",
+          "country": "US",
+          "isStudy": true,
+          "zone": 0,
+          "population": 8038165,
+          "inclusionShare": 22.9
+        }
+      },
+      "summary": {
+        "id": "new-york",
+        "cells": 6970,
+        "population": 8038165,
+        "medianProximity": 5714.8,
+        "medianOpportunity": 24840.2,
+        "weightedProximity": 7928.6,
+        "weightedOpportunity": 33086.6,
+        "zoneShares": [
+          22.9,
+          17.4,
+          5.6,
+          54.1
+        ],
+        "zonePopulationShares": [
+          41,
+          9,
+          9,
+          41
+        ],
+        "thresholds": {
+          "proximity": 6531.1,
+          "opportunity": 31609.3
+        }
+      }
+    }
+  }
+}

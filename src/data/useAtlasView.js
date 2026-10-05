@@ -9,7 +9,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { citychroneHour, meshFromAtlas } from './adapters.js';
 import { atlasCity, hasCityData, publishedCity } from './catalogue.js';
-import { gridFeatures, mergeLayer } from './grid.js';
+import { checkGrid, gridFeatures, mergeLayer } from './grid.js';
 import { getDataProvider } from './sources.js';
 import { PLATFORMS } from './platforms.js';
 
@@ -201,6 +201,7 @@ export function useAtlasMesh(cityId, layer, enabled = true) {
         const catalogue = await provider.catalogue();
         const file = await provider.cityLayer(cityId, layer, catalogue);
         if (store.current !== current) return;
+        checkGrid(current.grid, file, layer);
         current.features = mergeLayer(current.features, layer, file);
         current.files[layer] = file;
         current.layerStatus[layer] = 'ready';

@@ -1,0 +1,182 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "boston",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Boston",
+    "nameIt": "Boston",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "boston",
+    "name": "Boston",
+    "nameIt": "Boston",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US",
+    "center": [
+      -71.09007,
+      42.3233
+    ],
+    "zoom": 9.8,
+    "population": 615409,
+    "grid": "cities/boston/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 205
+    },
+    "layers": [
+      "cardep"
+    ],
+    "layerData": {
+      "cardep": "cities/boston/cardep.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "boston",
+        "name": "Boston",
+        "nameIt": "Boston",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -71.09007,
+          42.3233
+        ],
+        "zoom": 9.8,
+        "population": 615409,
+        "cells": 1196,
+        "layer": "cities/boston/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 205
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -71.09007,
+            42.3233
+          ]
+        },
+        "properties": {
+          "id": "boston",
+          "name": "Boston",
+          "country": "US",
+          "isStudy": true,
+          "cdi": 0.223,
+          "population": 615409
+        }
+      },
+      "summary": {
+        "id": "boston",
+        "cells": 1196,
+        "population": 615409,
+        "medianCdi": 0.295,
+        "weightedCdi": 0.223,
+        "ptShare": 0.1,
+        "carShare": 94.6,
+        "weightedByCar": 901.8,
+        "weightedByTransit": 601.5,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.019
+          ],
+          [
+            0.1,
+            0.229
+          ],
+          [
+            0.2,
+            0.413
+          ],
+          [
+            0.3,
+            0.685
+          ],
+          [
+            0.4,
+            0.941
+          ],
+          [
+            0.5,
+            0.984
+          ],
+          [
+            0.6,
+            0.997
+          ],
+          [
+            0.7,
+            0.997
+          ],
+          [
+            0.8,
+            0.997
+          ],
+          [
+            0.9,
+            0.997
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    }
+  }
+}

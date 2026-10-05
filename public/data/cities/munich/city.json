@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "munich",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Munich",
+    "nameIt": "Monaco di Baviera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "munich",
+    "name": "Munich",
+    "nameIt": "Monaco di Baviera",
+    "region": "Germany",
+    "regionIt": "Germania",
+    "country": "DE",
+    "center": [
+      11.55614,
+      48.14381
+    ],
+    "zoom": 9.4,
+    "population": 1606031,
+    "grid": "cities/munich/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 198
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/munich/cardep.json.gz",
+      "pov": "cities/munich/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "munich",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.55614,
+          48.14381
+        ],
+        "zoom": 9.4,
+        "population": 1606031,
+        "cells": 3045,
+        "layer": "cities/munich/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.55614,
+            48.14381
+          ]
+        },
+        "properties": {
+          "id": "munich",
+          "name": "Munich",
+          "country": "DE",
+          "isStudy": true,
+          "cdi": 0.102,
+          "population": 1606031
+        }
+      },
+      "summary": {
+        "id": "munich",
+        "cells": 3045,
+        "population": 1606031,
+        "medianCdi": 0.13,
+        "weightedCdi": 0.102,
+        "ptShare": 1.4,
+        "carShare": 75.8,
+        "weightedByCar": 2833.9,
+        "weightedByTransit": 2414.4,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.157
+          ],
+          [
+            0.1,
+            0.607
+          ],
+          [
+            0.2,
+            0.864
+          ],
+          [
+            0.3,
+            0.954
+          ],
+          [
+            0.4,
+            0.977
+          ],
+          [
+            0.5,
+            0.983
+          ],
+          [
+            0.6,
+            0.986
+          ],
+          [
+            0.7,
+            0.988
+          ],
+          [
+            0.8,
+            0.99
+          ],
+          [
+            0.9,
+            0.99
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "munich",
+        "name": "Munich",
+        "nameIt": "Monaco di Baviera",
+        "region": "Germany",
+        "regionIt": "Germania",
+        "country": "DE",
+        "center": [
+          11.55614,
+          48.14381
+        ],
+        "zoom": 9.4,
+        "population": 1606031,
+        "cells": 2848,
+        "layer": "cities/munich/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 198
+        },
+        "thresholds": {
+          "proximity": 5605,
+          "opportunity": 21572.1
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11.55614,
+            48.14381
+          ]
+        },
+        "properties": {
+          "id": "munich",
+          "name": "Munich",
+          "country": "DE",
+          "isStudy": true,
+          "zone": 0,
+          "population": 1606059,
+          "inclusionShare": 29.8
+        }
+      },
+      "summary": {
+        "id": "munich",
+        "cells": 2848,
+        "population": 1606059,
+        "medianProximity": 4420.3,
+        "medianOpportunity": 17742.8,
+        "weightedProximity": 6331.4,
+        "weightedOpportunity": 21248,
+        "zoneShares": [
+          29.8,
+          6.9,
+          4.7,
+          58.5
+        ],
+        "zonePopulationShares": [
+          43.3,
+          6.8,
+          6.7,
+          43.2
+        ],
+        "thresholds": {
+          "proximity": 5605,
+          "opportunity": 21572.1
+        }
+      }
+    }
+  }
+}

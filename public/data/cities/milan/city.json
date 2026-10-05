@@ -1,0 +1,353 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "milan",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Milan",
+    "nameIt": "Milano",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "milan",
+    "name": "Milan",
+    "nameIt": "Milano",
+    "region": "Italy",
+    "regionIt": "Italia",
+    "country": "IT",
+    "center": [
+      9.18876,
+      45.52519
+    ],
+    "zoom": 8.6,
+    "population": 3067071,
+    "grid": "cities/milan/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "fifteen",
+      "citychrone",
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "fifteen": "cities/milan/fifteen.json.gz",
+      "citychrone": "cities/milan/citychrone.json.gz",
+      "cardep": "cities/milan/cardep.json.gz",
+      "pov": "cities/milan/pov.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
+      "cardep": "published",
+      "pov": "published"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 1741,
+      "times": "cities/milan/citychrone/times{hh}.npy.gz"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "milan",
+        "name": "Milan",
+        "nameIt": "Milano",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.18765,
+          45.52334
+        ],
+        "zoom": 8.6,
+        "population": 3231186,
+        "cells": 7498,
+        "layer": "cities/milan/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.18876,
+            45.52519
+          ]
+        },
+        "properties": {
+          "id": "milan",
+          "name": "Milan",
+          "country": "IT",
+          "isStudy": true,
+          "proximityMinutes": 8.8,
+          "population": 3231186
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "milan",
+        "name": "Milan",
+        "nameIt": "Milano",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.17987,
+          45.47426
+        ],
+        "zoom": 9.9,
+        "population": 1201023,
+        "cells": 1741,
+        "layer": "cities/milan/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 1741,
+          "times": "cities/milan/citychrone/times{hh}.npy.gz"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.18876,
+            45.52519
+          ]
+        },
+        "properties": {
+          "id": "milan",
+          "name": "Milan",
+          "country": "IT",
+          "isStudy": true,
+          "velocityScore": 5.5,
+          "population": 1201023
+        }
+      },
+      "summary": null
+    },
+    "cardep": {
+      "row": {
+        "id": "milan",
+        "name": "Milan",
+        "nameIt": "Milano",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.17987,
+          45.47426
+        ],
+        "zoom": 9.9,
+        "population": 1201023,
+        "cells": 1741,
+        "layer": "cities/milan/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.17987,
+            45.47426
+          ]
+        },
+        "properties": {
+          "id": "milan",
+          "name": "Milan",
+          "country": "IT",
+          "isStudy": true,
+          "cdi": 0.063,
+          "population": 1201023
+        }
+      },
+      "summary": {
+        "id": "milan",
+        "cells": 1741,
+        "population": 1201023,
+        "medianCdi": 0.112,
+        "weightedCdi": 0.063,
+        "ptShare": 1.9,
+        "carShare": 72.3,
+        "weightedByCar": 1852.6,
+        "weightedByTransit": 1662,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.171
+          ],
+          [
+            0.1,
+            0.765
+          ],
+          [
+            0.2,
+            0.958
+          ],
+          [
+            0.3,
+            0.995
+          ],
+          [
+            0.4,
+            0.998
+          ],
+          [
+            0.5,
+            0.999
+          ],
+          [
+            0.6,
+            0.999
+          ],
+          [
+            0.7,
+            0.999
+          ],
+          [
+            0.8,
+            0.999
+          ],
+          [
+            0.9,
+            0.999
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "milan",
+        "name": "Milan",
+        "nameIt": "Milano",
+        "region": "Italy",
+        "regionIt": "Italia",
+        "country": "IT",
+        "center": [
+          9.17987,
+          45.47426
+        ],
+        "zoom": 9.9,
+        "population": 1201023,
+        "cells": 1636,
+        "layer": "cities/milan/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "thresholds": {
+          "proximity": 6157.8,
+          "opportunity": 15203.7
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            9.17987,
+            45.47426
+          ]
+        },
+        "properties": {
+          "id": "milan",
+          "name": "Milan",
+          "country": "IT",
+          "isStudy": true,
+          "zone": 0,
+          "population": 1201028,
+          "inclusionShare": 23.2
+        }
+      },
+      "summary": {
+        "id": "milan",
+        "cells": 1636,
+        "population": 1201028,
+        "medianProximity": 4134.6,
+        "medianOpportunity": 12258.4,
+        "weightedProximity": 6093.4,
+        "weightedOpportunity": 15007.3,
+        "zoneShares": [
+          23.2,
+          4.1,
+          5,
+          67.7
+        ],
+        "zonePopulationShares": [
+          42.8,
+          7.2,
+          7.3,
+          42.7
+        ],
+        "thresholds": {
+          "proximity": 6157.8,
+          "opportunity": 15203.7
+        }
+      }
+    }
+  }
+}

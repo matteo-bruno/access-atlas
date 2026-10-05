@@ -37,9 +37,26 @@
 // A city is always rebuilt whole from what is on disk plus the layer being
 // imported, and written deterministically, so importing one layer rewrites
 // another layer's file only when the grid itself changed.
+//
+// The grid carries an `id`, a hash of its cells, and every layer file carries
+// the id of the grid it was written against (`grid`). A layer's rows are only
+// positions, so a layer file paired with any other grid still decodes and
+// still draws, onto the wrong cells. That happened: Rome's 15minCity file was
+// committed without the grid its import had grown, and the map on GitHub
+// showed every value on a stranger's hexagon. A mismatch is now refused by
+// the importer, by test:data and by the viewer.
+//
+// What a city *is* lives in its own record, `cities/<city>/city.json`: its
+// names, its atlas entry, one catalogue row, marker and compare row per layer,
+// the hash of each source it was imported from and the date it was first
+// published. The catalogue, the coverage files and the compare summaries are
+// derived from those records in one pass (`buildIndex`), at the end of a
+// run, rather than patched city by city, so they cannot disagree with each
+// other or with the cities.
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { cellToBoundary, cellToLatLng, getResolution, latLngToCell } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile, writeDataFile } from './datafile.mjs';
@@ -234,6 +251,7 @@ export function ringOffsets(h3, ring) {
 
 // ── paths ────────────────────────────────────────────────────────────
 export const cityDir = (cityId) => `cities/${cityId}`;
+export const cityRecordPath = (cityId) => `${cityDir(cityId)}/city.json`;
 export const gridPath = (cityId) => `${cityDir(cityId)}/grid.json.gz`;
 export const layerPath = (cityId, layer) => `${cityDir(cityId)}/${layer}.json.gz`;
 export const timesTemplate = (cityId) => `${cityDir(cityId)}/citychrone/times{hh}.npy.gz`;
@@ -250,7 +268,7 @@ const abs = (rel) => path.join(DATA, rel);
  * stops the run: rebuilding a city from what could be read would publish it
  * without the layers that could not, which is a deletion nobody asked for.
  */
-export function readCity(cityId) {
+export function readCity(cityId, { skip = null } = {}) {
   const layers = new Map();
   const gridFile = resolveDataFile(abs(gridPath(cityId)));
   if (!gridFile) return layers;
@@ -263,16 +281,33 @@ export function readCity(cityId) {
   }
   for (const layer of LAYER_ORDER) {
     const rel = layerPath(cityId, layer);
-    if (!resolveDataFile(abs(rel))) continue;
+    if (layer === skip || !resolveDataFile(abs(rel))) continue;
     let file;
     try {
       file = readDataJSON(abs(rel));
     } catch (error) {
       throw new Error(`${rel} exists but cannot be read (${error.message}); restore it from git`);
     }
+    if (file.grid && grid.id && file.grid !== grid.id) {
+      throw new Error(
+        `${rel} was written against grid ${file.grid}, but ${gridPath(cityId)} is ${grid.id}: ` +
+          'the two come from different imports (a partial commit?). Restore both from the same ' +
+          'commit, or remove the layer and import it again',
+      );
+    }
     layers.set(layer, decodeLayer(file, grid.cells, rel));
   }
   return layers;
+}
+
+/**
+ * The id of a grid: a hash of its cells, in order.
+ *
+ * A layer's rows are grid positions, so the cells (not their populations) are
+ * what a layer file depends on.
+ */
+export function gridId(cells) {
+  return crypto.createHash('sha256').update(cells.join('\n')).digest('hex').slice(0, 16);
 }
 
 function decodeIdx(file) {
@@ -322,7 +357,7 @@ function cartogramReference(populations) {
   return sorted[sorted.length >> 1] ?? 0;
 }
 
-function encodeLayer(record, position, gridPopulation) {
+function encodeLayer(record, position, gridPopulation, grid) {
   const spec = LAYERS[record.layer];
   // Rows follow the grid, which is sorted by H3 index. That order is a
   // property of the cells alone, so a layer's rows never move when another
@@ -336,6 +371,7 @@ function encodeLayer(record, position, gridPopulation) {
     format: 'atlas-layer',
     version: 1,
     layer: record.layer,
+    grid,
     cells: idx.length,
     order: 'grid',
     idx: idx.map((v, i) => (i ? v - idx[i - 1] : v)),
@@ -453,14 +489,15 @@ export function writeCity(cityId, records, { dryRun = false } = {}) {
   const population = gridPopulation(cells, records);
 
   const files = [];
-  const grid = { format: 'atlas-grid', version: 1, resolution: RESOLUTION, cells, population };
+  const id = gridId(cells);
+  const grid = { format: 'atlas-grid', version: 1, id, resolution: RESOLUTION, cells, population };
   files.push(putFile(gridPath(cityId), stableJSON(grid), dryRun));
 
   const encoded = new Map();
   for (const layer of LAYER_ORDER) {
     const record = records.get(layer);
     if (!record) continue;
-    const { out, order } = encodeLayer(record, position, population);
+    const { out, order } = encodeLayer(record, position, population, id);
     encoded.set(layer, out);
     if (layer === 'citychrone') record.rowOrder = order;
     files.push(putFile(layerPath(cityId, layer), stableJSON(out), dryRun));
@@ -545,62 +582,97 @@ export function cellRadius(cells) {
   return Math.round(median(radii));
 }
 
-// ── the catalogue ────────────────────────────────────────────────────
+// ── the city record ──────────────────────────────────────────────────
+//
+//   {
+//     "format": "atlas-city", "version": 1, "id": "zurich",
+//     "createdAt": "…",      first published (never moves)
+//     "updatedAt": "…",      last time anything in the city changed
+//     "meta":    { name, nameIt, region, regionIt, country },
+//     "sources": { "pov": { "file": "pov/zurich_pov.zip", "sha256": "…",
+//                           "size": 259174, "importer": "…", "importedAt": "…" } },
+//     "atlas":   the city's catalogue entry,
+//     "platforms": { "pov": { "row": …, "marker": … | null, "summary": … | null } }
+//   }
+//
+// `sources` is what `npm run update:data` compares an export with to decide
+// whether a city needs importing at all. It is written by update-data only
+// once the import *and* test:data have passed, so a run that failed leaves
+// the export looking unimported and the next run offers it again.
 
-const CATALOGUE = 'index.json';
-
-export function readCatalogue() {
-  const file = abs(CATALOGUE);
-  if (!fs.existsSync(file)) return { version: 2, platforms: {}, atlas: { cities: [] } };
+export function readCityRecord(cityId) {
+  const file = abs(cityRecordPath(cityId));
+  if (!fs.existsSync(file)) return null;
   try {
-    return JSON.parse(fs.readFileSync(file, 'utf8'));
+    const record = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (record?.format !== 'atlas-city' || record.id !== cityId) {
+      throw new Error('not this city\'s atlas-city record');
+    }
+    return record;
   } catch (error) {
-    throw new Error(`public/data/index.json cannot be read (${error.message}); restore it from git`);
+    throw new Error(`${cityRecordPath(cityId)} exists but cannot be read (${error.message}); restore it from git`);
   }
 }
 
-export function writeCatalogue(catalogue, { dryRun = false } = {}) {
-  if (dryRun) return;
-  const tmp = `${abs(CATALOGUE)}.tmp-${process.pid}`;
-  fs.writeFileSync(tmp, `${JSON.stringify(catalogue, null, 2)}\n`);
-  fs.renameSync(tmp, abs(CATALOGUE));
+/** The id of every city with a record, sorted as the catalogue lists them. */
+export function listCities() {
+  const dir = abs('cities');
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((id) => fs.existsSync(abs(cityRecordPath(id))))
+    .sort((a, b) => a.localeCompare(b));
 }
 
-/** Every place the catalogue already describes this city, for its editorial fields. */
-function knownMeta(catalogue, cityId) {
-  const entries = [
-    ...(catalogue.atlas?.cities ?? []),
-    ...Object.values(catalogue.platforms ?? {}).flatMap((p) => p.cities ?? []),
-  ].filter((c) => c.id === cityId);
-  const pick = (key) => entries.map((e) => e[key]).find((v) => typeof v === 'string' && v);
-  return {
-    name: pick('name'),
-    nameIt: pick('nameIt'),
-    region: pick('region'),
-    regionIt: pick('regionIt'),
-    country: pick('country'),
+const RECORD_ORDER = ['format', 'version', 'id', 'createdAt', 'updatedAt', 'meta', 'sources', 'atlas', 'platforms'];
+
+/**
+ * Write a city's record, plain and pretty-printed: it is read in diffs, not
+ * by the site. `createdAt` is kept from the record already there; `updatedAt`
+ * moves only when something in the record, or one of the city's files
+ * (`touched`), changed — a re-import of the same export writes nothing.
+ */
+export function writeCityRecord(record, { dryRun = false, touched = false } = {}) {
+  const previous = readCityRecord(record.id);
+  const now = new Date().toISOString();
+  const next = {
+    ...record,
+    format: 'atlas-city',
+    version: 1,
+    createdAt: previous?.createdAt ?? record.createdAt ?? now,
   };
-}
-
-function coverageCountry(cityId) {
-  for (const platform of LAYER_ORDER) {
-    const file = abs(`${platform}/coverage.geojson.gz`);
-    if (!resolveDataFile(file)) continue;
-    const marker = readDataJSON(file).features.find((f) => f.properties?.id === cityId);
-    if (marker?.properties?.country) return marker.properties.country;
-  }
-  return null;
+  const comparable = (r) => JSON.stringify(Object.fromEntries(RECORD_ORDER.map((k) => [k, k === 'updatedAt' ? null : r[k]])));
+  next.updatedAt =
+    previous && !touched && comparable(previous) === comparable(next) ? previous.updatedAt : record.updatedAt ?? now;
+  const ordered = Object.fromEntries(RECORD_ORDER.map((k) => [k, next[k] ?? null]));
+  return putFile(cityRecordPath(record.id), `${JSON.stringify(ordered, null, 2)}\n`, dryRun);
 }
 
 /**
- * A city's name and place. What the catalogue already says wins — names are
+ * Record what a layer was imported from, without touching anything else.
+ * update-data calls this after test:data has passed.
+ */
+export function recordSource(cityId, layer, source, { dryRun = false } = {}) {
+  const record = readCityRecord(cityId);
+  if (!record) throw new Error(`${cityId} has no record, so its source cannot be recorded`);
+  if (!record.platforms?.[layer]) throw new Error(`${cityId} has no ${layer} layer to record a source for`);
+  record.sources = Object.fromEntries(
+    Object.entries({ ...(record.sources ?? {}), [layer]: source }).sort(
+      ([a], [b]) => LAYER_ORDER.indexOf(a) - LAYER_ORDER.indexOf(b),
+    ),
+  );
+  return writeCityRecord(record, { dryRun });
+}
+
+/**
+ * A city's name and place. What its record already says wins — names are
  * editorial, and some were written by hand — and anything missing is derived
  * from the city's own centre (scripts/lib/country.mjs). `overrides` are the
  * command-line flags, for when the derivation is wrong.
  */
-export function cityMeta(catalogue, cityId, centre, overrides = {}) {
-  const known = knownMeta(catalogue, cityId);
-  let country = overrides.country ?? known.country ?? coverageCountry(cityId);
+export function cityMeta(previous, cityId, centre, overrides = {}) {
+  const known = previous?.meta ?? {};
+  let country = overrides.country ?? known.country;
   let region = overrides.region ?? known.region;
   let regionIt = overrides.regionIt ?? known.regionIt;
   let place = null;
@@ -625,22 +697,13 @@ export function cityMeta(catalogue, cityId, centre, overrides = {}) {
   };
 }
 
-const PLATFORM_KEYS = { pov: ['summary'], cardep: ['summary'], fifteen: [], citychrone: [] };
-
-function upsertRow(list, row) {
-  const next = list.filter((c) => c.id !== row.id);
-  next.push(row);
-  return next.sort((a, b) => a.id.localeCompare(b.id));
-}
-
 /**
- * Point the catalogue at a city's files: its atlas entry, and one row per
- * layer on the platform lists that the world maps, search and compare view
- * read. `rows` carries each layer's extra fields (thresholds, hourly).
+ * A city's catalogue entries: its atlas entry, and one row per layer for the
+ * platform lists that the world maps, search and compare view read.
  */
-export function updateCatalogue(catalogue, cityId, { grid, encoded, meta, rows }) {
+export function cityEntries(cityId, { grid, encoded, meta }) {
   const layers = LAYER_ORDER.filter((l) => encoded.has(l));
-  const atlasEntry = {
+  const atlas = {
     id: cityId,
     ...meta,
     ...(VARIANTS.has(cityId) ? { variant: true } : {}),
@@ -654,81 +717,145 @@ export function updateCatalogue(catalogue, cityId, { grid, encoded, meta, rows }
     cartogramSources: Object.fromEntries(layers.map((l) => [l, encoded.get(l).cartogram.source])),
   };
   if (encoded.has('citychrone')) {
-    atlasEntry.hourly = {
+    atlas.hourly = {
       hours: encoded.get('citychrone').hourly.hours,
       cells: encoded.get('citychrone').cells,
       times: timesTemplate(cityId),
     };
   }
 
-  catalogue.version = 2;
-  catalogue.atlas = catalogue.atlas ?? { cities: [] };
-  catalogue.atlas.cities = upsertRow(catalogue.atlas.cities ?? [], atlasEntry);
-  catalogue.platforms = catalogue.platforms ?? {};
-
+  const rows = {};
   for (const layer of layers) {
-    const record = encoded.get(layer);
-    const cells = decodeIdx(record).map((i) => grid.cells[i]);
-    const pops = record.fields.population;
-    const platform = catalogue.platforms[layer] ?? { coverage: `${layer}/coverage.geojson.gz`, cities: [] };
-    platform.coverage = platform.coverage ?? `${layer}/coverage.geojson.gz`;
-    for (const key of PLATFORM_KEYS[layer]) platform[key] = platform[key] ?? `${layer}/${key}.json.gz`;
+    const file = encoded.get(layer);
+    const cells = decodeIdx(file).map((i) => grid.cells[i]);
+    const pops = file.fields.population;
     const row = {
       id: cityId,
       ...meta,
       center: weightedCentre(cells, pops),
       zoom: zoomFor(cells),
       population: Math.round(pops.reduce((a, b) => a + (Number(b) || 0), 0)),
-      cells: record.cells,
+      cells: file.cells,
       layer: layerPath(cityId, layer),
-      cell: atlasEntry.cell,
-      ...(rows?.[layer] ?? {}),
+      cell: atlas.cell,
     };
-    if (layer === 'pov' && record.meta?.thresholds) row.thresholds = record.meta.thresholds;
-    if (layer === 'citychrone') row.hourly = atlasEntry.hourly;
-    platform.cities = upsertRow(platform.cities ?? [], row);
-    catalogue.platforms[layer] = platform;
+    if (layer === 'pov' && file.meta?.thresholds) row.thresholds = file.meta.thresholds;
+    if (layer === 'citychrone') row.hourly = atlas.hourly;
+    rows[layer] = row;
   }
-  return atlasEntry;
+  return { atlas, rows };
 }
 
-// ── coverage markers and compare-view rows ───────────────────────────
+// ── the catalogue, coverage and compare rows: derived, never patched ──
 
-function readCollection(rel) {
-  const file = abs(rel);
-  if (!resolveDataFile(file)) return { type: 'FeatureCollection', features: [] };
+const CATALOGUE = 'index.json';
+const SUMMARY_LAYERS = new Set(['pov', 'cardep']);
+export const coveragePath = (layer) => `${layer}/coverage.geojson.gz`;
+export const summaryPath = (layer) => (SUMMARY_LAYERS.has(layer) ? `${layer}/summary.json.gz` : null);
+
+/** Short content hash of a file as it is stored, i.e. as it is served. */
+function fileVersion(rel) {
+  const found = resolveDataFile(abs(rel));
+  if (!found) return null;
+  const hash = crypto.createHash('sha256');
+  const fd = fs.openSync(found.path, 'r');
+  const buf = Buffer.allocUnsafe(1 << 20);
   try {
-    return readDataJSON(file);
-  } catch (error) {
-    throw new Error(`${rel} exists but cannot be read (${error.message}); restore it from git`);
+    let n;
+    while ((n = fs.readSync(fd, buf, 0, buf.length, null)) > 0) hash.update(buf.subarray(0, n));
+  } finally {
+    fs.closeSync(fd);
   }
+  return hash.digest('hex').slice(0, 12);
 }
 
-/** Put one city's marker on a platform's world map, or take it off. */
-export function upsertCoverage(catalogue, layer, cityId, marker, { dryRun = false } = {}) {
-  const rel = catalogue.platforms[layer].coverage;
-  const collection = readCollection(rel);
-  const features = collection.features.filter((f) => f.properties?.id !== cityId);
-  if (marker) features.push(marker);
-  features.sort((a, b) => a.properties.id.localeCompare(b.properties.id));
-  return putFile(rel, JSON.stringify({ type: 'FeatureCollection', features }), dryRun);
-}
-
-/** One city's row in a platform's compare-view summary. */
-export function upsertSummary(catalogue, layer, row, { dryRun = false } = {}) {
-  const rel = catalogue.platforms[layer].summary;
-  if (!rel) return null;
-  const file = abs(rel);
-  let summary = { platform: layer, cities: [] };
-  if (resolveDataFile(file)) {
-    try {
-      summary = readDataJSON(file);
-    } catch (error) {
-      throw new Error(`${rel} exists but cannot be read (${error.message}); restore it from git`);
+/** Every data file a catalogue points at. */
+export function cataloguePaths(catalogue) {
+  const paths = new Set();
+  for (const entry of Object.values(catalogue.platforms ?? {})) {
+    if (entry.coverage) paths.add(entry.coverage);
+    if (entry.summary) paths.add(entry.summary);
+    for (const row of entry.cities ?? []) if (row.layer) paths.add(row.layer);
+  }
+  for (const city of catalogue.atlas?.cities ?? []) {
+    if (city.grid) paths.add(city.grid);
+    for (const rel of Object.values(city.layerData ?? {})) paths.add(rel);
+    if (city.hourly?.times) {
+      for (let hour = 0; hour < city.hourly.hours; hour++) paths.add(hourPath(city.hourly.times, hour));
     }
   }
-  summary.cities = upsertRow(summary.cities ?? [], row);
-  return putFile(rel, JSON.stringify(summary), dryRun);
+  return [...paths].sort();
+}
+
+/**
+ * Rebuild the catalogue, every coverage file and every compare summary from
+ * the cities' records, in one pass.
+ *
+ * Nothing here is computed from a city's cells: the figures were computed
+ * when its layers were imported and stored in its record. This only gathers
+ * them, so it takes a second however many cities there are, and running it
+ * twice changes nothing. A file is written only when its content changed.
+ *
+ * The catalogue also lists a content hash for every file it points at
+ * (`files`), which the site appends to the file's URL. The catalogue itself
+ * is fetched fresh on every deploy (`?v=<build id>`); without per-file
+ * versions, everything it points at sat at a stable URL that a browser or a
+ * proxy could keep serving from cache after a deploy — the previous
+ * coverage under a new catalogue, or a previous grid under new layers.
+ */
+export function buildIndex({ dryRun = false } = {}) {
+  const records = listCities().map(readCityRecord);
+  const files = [];
+
+  const platforms = {};
+  for (const layer of LAYER_ORDER) {
+    const carrying = records.filter((r) => r.platforms?.[layer]);
+    const coverage = coveragePath(layer);
+    const summary = summaryPath(layer);
+    if (!carrying.length) {
+      // A platform nobody publishes any more leaves no file behind for an
+      // older catalogue to find.
+      for (const rel of [coverage, summary].filter(Boolean)) {
+        if (resolveDataFile(abs(rel))) {
+          if (!dryRun) removeDataFile(rel);
+          files.push({ rel, changed: true, removed: true });
+        }
+      }
+      continue;
+    }
+    platforms[layer] = {
+      coverage,
+      ...(summary ? { summary } : {}),
+      cities: carrying.map((r) => r.platforms[layer].row),
+    };
+
+    const features = carrying
+      .map((r) => r.platforms[layer].marker)
+      .filter(Boolean)
+      .sort((a, b) => a.properties.id.localeCompare(b.properties.id));
+    files.push(putFile(coverage, JSON.stringify({ type: 'FeatureCollection', features }), dryRun));
+    if (summary) {
+      const rows = carrying.map((r) => r.platforms[layer].summary).filter(Boolean);
+      files.push(putFile(summary, JSON.stringify({ platform: layer, cities: rows }), dryRun));
+    }
+  }
+
+  const catalogue = { version: 2, platforms, atlas: { cities: records.map((r) => r.atlas) } };
+  const missing = [];
+  catalogue.files = {};
+  for (const rel of cataloguePaths(catalogue)) {
+    const version = fileVersion(rel);
+    if (version) catalogue.files[rel] = version;
+    else missing.push(rel);
+  }
+  // In a dry run a file that would be written is not on disk yet; only a
+  // real run can say a file is missing.
+  if (missing.length && !dryRun) {
+    throw new Error(`the catalogue points at ${missing.length} file(s) that do not exist: ${missing.slice(0, 3).join(', ')}`);
+  }
+  files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue, null, 2)}\n`, dryRun));
+
+  return { cities: records.length, platforms: Object.keys(platforms), files, catalogue };
 }
 
 // ── per-layer figures, from a layer's own rows ───────────────────────
@@ -864,8 +991,9 @@ export function removeDataFile(rel) {
 // ── one import, end to end ───────────────────────────────────────────
 
 /**
- * Publish one layer of one city: rebuild the city with it, point the
- * catalogue at the result, and update the platform's marker and summary row.
+ * Publish one layer of one city: rebuild the city with it and write its
+ * record. The catalogue, coverage and summaries are not touched here; they
+ * are rebuilt from every record by `buildIndex`, once, at the end of a run.
  *
  * @param {object} input
  * @param {string} input.cityId
@@ -876,30 +1004,44 @@ export function removeDataFile(rel) {
  * @param {object} [input.overrides] name / place flags
  */
 export function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false }) {
-  const catalogue = readCatalogue();
+  const previous = readCityRecord(cityId);
   const records = readCity(cityId);
   const replaced = records.has(record.layer);
   records.set(record.layer, record);
 
   const { grid, encoded, files } = writeCity(cityId, records, { dryRun });
   const centre = weightedCentre(grid.cells, grid.population);
-  const { meta, derived } = cityMeta(catalogue, cityId, centre, overrides);
-  updateCatalogue(catalogue, cityId, { grid, encoded, meta });
+  const { meta, derived } = cityMeta(previous, cityId, centre, overrides);
+  const { atlas, rows: entries } = cityEntries(cityId, { grid, encoded, meta });
 
-  const row = catalogue.platforms[record.layer].cities.find((c) => c.id === cityId);
   const described =
     figures ??
     describeLayer(record.layer, rows, {
       id: cityId,
       name: meta.name,
       country: meta.country,
-      centre: row.center,
+      centre: entries[record.layer].center,
       thresholds: record.meta?.thresholds,
       hourly: record.hourly,
     });
-  files.push(upsertCoverage(catalogue, record.layer, cityId, described.marker, { dryRun }));
-  if (described.summary) files.push(upsertSummary(catalogue, record.layer, described.summary, { dryRun }));
-  writeCatalogue(catalogue, { dryRun });
+
+  const platforms = {};
+  for (const layer of atlas.layers) {
+    const figuresOf = layer === record.layer ? described : (previous?.platforms?.[layer] ?? {});
+    platforms[layer] = { row: entries[layer], marker: figuresOf.marker ?? null, summary: figuresOf.summary ?? null };
+  }
+  // The source this layer came from is recorded by update-data once the run
+  // has passed test:data. A hand import replaces the layer, so whatever was
+  // recorded for it no longer describes what is published.
+  const sources = { ...(previous?.sources ?? {}) };
+  delete sources[record.layer];
+
+  files.push(
+    writeCityRecord(
+      { id: cityId, meta, sources, atlas, platforms },
+      { dryRun, touched: files.some((f) => f?.changed) },
+    ),
+  );
 
   return {
     cityId,
@@ -912,4 +1054,49 @@ export function publishLayer({ cityId, record, rows, figures, overrides = {}, dr
     derived,
     files,
   };
+}
+
+/**
+ * Take one layer of a city off the site: the city is rebuilt from its other
+ * layers, and a city with none left is removed whole. The layer's own file
+ * is not read, so a broken one can be removed too.
+ */
+export function unpublishLayer({ cityId, layer, dryRun = false }) {
+  const previous = readCityRecord(cityId);
+  if (!previous?.platforms?.[layer]) throw new Error(`${cityId} publishes no ${layer} layer`);
+  const records = readCity(cityId, { skip: layer });
+
+  const files = [];
+  const remove = (rel) => {
+    if (!resolveDataFile(abs(rel))) return;
+    if (!dryRun) removeDataFile(rel);
+    files.push({ rel, changed: true, removed: true });
+  };
+
+  if (!records.size) {
+    if (!dryRun) fs.rmSync(abs(cityDir(cityId)), { recursive: true, force: true });
+    files.push({ rel: cityDir(cityId), changed: true, removed: true });
+    return { cityId, layer, layers: [], files };
+  }
+
+  const { grid, encoded, files: written } = writeCity(cityId, records, { dryRun });
+  files.push(...written);
+  remove(layerPath(cityId, layer));
+  if (layer === 'citychrone') {
+    for (let hour = 0; hour < 100; hour++) {
+      const rel = hourPath(timesTemplate(cityId), hour);
+      if (!resolveDataFile(abs(rel))) break;
+      remove(rel);
+    }
+  }
+
+  const { atlas, rows: entries } = cityEntries(cityId, { grid, encoded, meta: previous.meta });
+  const platforms = {};
+  for (const l of atlas.layers) {
+    platforms[l] = { ...previous.platforms[l], row: entries[l] };
+  }
+  const sources = { ...(previous.sources ?? {}) };
+  delete sources[layer];
+  files.push(writeCityRecord({ ...previous, sources, atlas, platforms }, { dryRun, touched: true }));
+  return { cityId, layer, layers: atlas.layers, files };
 }

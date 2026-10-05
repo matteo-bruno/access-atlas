@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "nantes",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Nantes",
+    "nameIt": "Nantes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "nantes",
+    "name": "Nantes",
+    "nameIt": "Nantes",
+    "region": "France",
+    "regionIt": "Francia",
+    "country": "FR",
+    "center": [
+      -1.55358,
+      47.22516
+    ],
+    "zoom": 10.4,
+    "population": 276956,
+    "grid": "cities/nantes/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/nantes/cardep.json.gz",
+      "pov": "cities/nantes/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "nantes",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.55358,
+          47.22516
+        ],
+        "zoom": 10.4,
+        "population": 276956,
+        "cells": 656,
+        "layer": "cities/nantes/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.55358,
+            47.22516
+          ]
+        },
+        "properties": {
+          "id": "nantes",
+          "name": "Nantes",
+          "country": "FR",
+          "isStudy": true,
+          "cdi": 0.013,
+          "population": 276956
+        }
+      },
+      "summary": {
+        "id": "nantes",
+        "cells": 656,
+        "population": 276956,
+        "medianCdi": 0.036,
+        "weightedCdi": 0.013,
+        "ptShare": 8.7,
+        "carShare": 41.5,
+        "weightedByCar": 1067.8,
+        "weightedByTransit": 1076.7,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0.055
+          ],
+          [
+            0,
+            0.526
+          ],
+          [
+            0.1,
+            0.914
+          ],
+          [
+            0.2,
+            0.967
+          ],
+          [
+            0.3,
+            0.984
+          ],
+          [
+            0.4,
+            0.987
+          ],
+          [
+            0.5,
+            0.988
+          ],
+          [
+            0.6,
+            0.988
+          ],
+          [
+            0.7,
+            0.989
+          ],
+          [
+            0.8,
+            0.989
+          ],
+          [
+            0.9,
+            0.989
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "nantes",
+        "name": "Nantes",
+        "nameIt": "Nantes",
+        "region": "France",
+        "regionIt": "Francia",
+        "country": "FR",
+        "center": [
+          -1.55358,
+          47.22516
+        ],
+        "zoom": 10.4,
+        "population": 276956,
+        "cells": 647,
+        "layer": "cities/nantes/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "thresholds": {
+          "proximity": 5570.7,
+          "opportunity": 10168.8
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -1.55358,
+            47.22516
+          ]
+        },
+        "properties": {
+          "id": "nantes",
+          "name": "Nantes",
+          "country": "FR",
+          "isStudy": true,
+          "zone": 0,
+          "population": 276965,
+          "inclusionShare": 24.3
+        }
+      },
+      "summary": {
+        "id": "nantes",
+        "cells": 647,
+        "population": 276965,
+        "medianProximity": 4121.3,
+        "medianOpportunity": 8682.3,
+        "weightedProximity": 5636.6,
+        "weightedOpportunity": 10029.8,
+        "zoneShares": [
+          24.3,
+          3.4,
+          4.3,
+          68
+        ],
+        "zonePopulationShares": [
+          46.2,
+          3.8,
+          3.9,
+          46
+        ],
+        "thresholds": {
+          "proximity": 5570.7,
+          "opportunity": 10168.8
+        }
+      }
+    }
+  }
+}

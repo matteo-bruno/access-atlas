@@ -19,7 +19,7 @@ import {
   EMPTY_CATALOGUE,
   atlasCity,
   catalogueUrl,
-  dataUrl,
+  fileUrl,
   hourlyPath,
   normaliseCatalogue,
   platformEntry,
@@ -72,13 +72,13 @@ export function createStaticProvider() {
       if (!entry?.summary) return null;
       // Plain JSON, not a dataset: loadDataset would hand a .json file to the
       // GeoJSON loader, which asserts a FeatureCollection.
-      return loadJSON(dataUrl(entry.summary), { signal });
+      return loadJSON(fileUrl(catalogue, entry.summary), { signal });
     },
 
     async coverage(platformId, catalogue, { signal } = {}) {
       const entry = platformEntry(catalogue, platformId);
       if (!entry?.coverage) return null;
-      return loadDataset({ url: dataUrl(entry.coverage) }, { signal });
+      return loadDataset({ url: fileUrl(catalogue, entry.coverage) }, { signal });
     },
 
     async cityMesh(platformId, cityId, catalogue, { signal, scenario } = {}) {
@@ -95,7 +95,7 @@ export function createStaticProvider() {
         : profile.dataset;
       if (!dataset) return null;
 
-      const collection = await loadDataset({ url: dataUrl(dataset) }, { signal });
+      const collection = await loadDataset({ url: fileUrl(catalogue, dataset) }, { signal });
       return { collection, profile, scenario: scenario ?? null };
     },
 
@@ -105,7 +105,7 @@ export function createStaticProvider() {
     async cityGeometry(platformId, cityId, catalogue, { signal } = {}) {
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile?.geoDataset) return null;
-      const collection = await loadDataset({ url: dataUrl(profile.geoDataset) }, { signal });
+      const collection = await loadDataset({ url: fileUrl(catalogue, profile.geoDataset) }, { signal });
       return { collection, profile, kind: 'geographic' };
     },
 
@@ -115,7 +115,7 @@ export function createStaticProvider() {
     async cityCartogram(platformId, cityId, catalogue, { signal } = {}) {
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile?.cartogramDataset) return null;
-      const collection = await loadDataset({ url: dataUrl(profile.cartogramDataset) }, { signal });
+      const collection = await loadDataset({ url: fileUrl(catalogue, profile.cartogramDataset) }, { signal });
       return { collection, profile, kind: 'cartogram' };
     },
 
@@ -136,7 +136,7 @@ export function createStaticProvider() {
       }
       const dataset = profile?.cartograms?.[platformId];
       if (!dataset) return null;
-      const collection = await loadDataset({ url: dataUrl(dataset) }, { signal });
+      const collection = await loadDataset({ url: fileUrl(catalogue, dataset) }, { signal });
       return { collection, profile, kind: 'cartogram' };
     },
 
@@ -146,13 +146,13 @@ export function createStaticProvider() {
     async cityGrid(cityId, catalogue, { signal } = {}) {
       const profile = atlasCity(catalogue, cityId);
       if (!profile?.grid) return null;
-      return loadDataset({ url: dataUrl(profile.grid), format: 'json' }, { signal });
+      return loadDataset({ url: fileUrl(catalogue, profile.grid), format: 'json' }, { signal });
     },
 
     async cityLayer(cityId, platformId, catalogue, { signal } = {}) {
       const path = atlasCity(catalogue, cityId)?.layerData?.[platformId];
       if (!path) return null;
-      return loadDataset({ url: dataUrl(path), format: 'json' }, { signal });
+      return loadDataset({ url: fileUrl(catalogue, path), format: 'json' }, { signal });
     },
 
     // Scenarios a static host can offer: whatever the catalogue lists. A
@@ -167,7 +167,7 @@ export function createStaticProvider() {
     async atlasMesh(cityId, catalogue, { signal } = {}) {
       const profile = atlasCity(catalogue, cityId);
       if (!profile?.dataset) return null;
-      const collection = await loadDataset({ url: dataUrl(profile.dataset) }, { signal });
+      const collection = await loadDataset({ url: fileUrl(catalogue, profile.dataset) }, { signal });
       return { collection, profile };
     },
 
@@ -178,7 +178,7 @@ export function createStaticProvider() {
       if (!profile?.hourly) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
       const collection = await loadDataset(
-        { url: dataUrl(hourlyPath(profile.hourly.hexcover, clamped)) },
+        { url: fileUrl(catalogue, hourlyPath(profile.hourly.hexcover, clamped)) },
         { signal },
       );
       return { collection, profile, hour: clamped };
@@ -193,7 +193,7 @@ export function createStaticProvider() {
       if (!profile?.hourly?.times) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
       const matrix = await loadDataset(
-        { url: dataUrl(hourlyPath(profile.hourly.times, clamped)) },
+        { url: fileUrl(catalogue, hourlyPath(profile.hourly.times, clamped)) },
         { signal },
       );
       return { matrix, profile, hour: clamped };

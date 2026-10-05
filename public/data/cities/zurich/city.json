@@ -1,0 +1,382 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "zurich",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Zurich",
+    "nameIt": "Zurigo",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Zurich.geojson",
+      "sha256": "c23652b47b16d6cc206df9a0be24c94d88d01e6b3e36fdd702eeacd08676bf33",
+      "size": 2105758,
+      "importer": "f89b1c3a2bf4d92d",
+      "importedAt": "2026-09-28T12:04:05.007Z"
+    },
+    "citychrone": {
+      "file": "citychrone/Zurich.zip",
+      "sha256": "98766bdc7850f77211121fc6f52fc71a89fa5067541e60ae7189a0e4eabcd3a8",
+      "size": 27631492,
+      "importer": "2bb86427a02920af",
+      "importedAt": "2026-09-28T12:04:05.007Z"
+    },
+    "cardep": {
+      "file": "cdi/zurich_cdi.zip",
+      "sha256": "e844b1b66846545939db98b640c2a331d377f6d87b6cece4d45dc249cecdf14d",
+      "size": 220160,
+      "importer": "ce93c04cf1b4a609",
+      "importedAt": "2026-09-28T12:04:05.007Z"
+    },
+    "pov": {
+      "file": "pov/zurich_pov.zip",
+      "sha256": "ed0ca7d0ec8dfdf36c77b76d20e91b789123d9d386ee8af7953505c89089587b",
+      "size": 259174,
+      "importer": "0cd87214d2ef5457",
+      "importedAt": "2026-09-28T12:04:05.007Z"
+    }
+  },
+  "atlas": {
+    "id": "zurich",
+    "name": "Zurich",
+    "nameIt": "Zurigo",
+    "region": "Switzerland",
+    "regionIt": "Svizzera",
+    "country": "CH",
+    "center": [
+      8.53579,
+      47.38022
+    ],
+    "zoom": 9.5,
+    "population": 697916,
+    "grid": "cities/zurich/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 197
+    },
+    "layers": [
+      "fifteen",
+      "citychrone",
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "fifteen": "cities/zurich/fifteen.json.gz",
+      "citychrone": "cities/zurich/citychrone.json.gz",
+      "cardep": "cities/zurich/cardep.json.gz",
+      "pov": "cities/zurich/pov.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived",
+      "citychrone": "derived",
+      "cardep": "published",
+      "pov": "published"
+    },
+    "hourly": {
+      "hours": 24,
+      "cells": 909,
+      "times": "cities/zurich/citychrone/times{hh}.npy.gz"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "zurich",
+        "name": "Zurich",
+        "nameIt": "Zurigo",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          8.53678,
+          47.37953
+        ],
+        "zoom": 9.5,
+        "population": 716896,
+        "cells": 1859,
+        "layer": "cities/zurich/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.53678,
+            47.37953
+          ]
+        },
+        "properties": {
+          "id": "zurich",
+          "name": "Zurich",
+          "country": "CH",
+          "isStudy": true,
+          "proximityMinutes": 6,
+          "population": 716896
+        }
+      },
+      "summary": null
+    },
+    "citychrone": {
+      "row": {
+        "id": "zurich",
+        "name": "Zurich",
+        "nameIt": "Zurigo",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          8.52928,
+          47.38479
+        ],
+        "zoom": 10.4,
+        "population": 404151,
+        "cells": 909,
+        "layer": "cities/zurich/citychrone.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "hourly": {
+          "hours": 24,
+          "cells": 909,
+          "times": "cities/zurich/citychrone/times{hh}.npy.gz"
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.52928,
+            47.38479
+          ]
+        },
+        "properties": {
+          "id": "zurich",
+          "name": "Zurich",
+          "country": "CH",
+          "isStudy": true,
+          "velocityScore": 5.64,
+          "population": 404151
+        }
+      },
+      "summary": null
+    },
+    "cardep": {
+      "row": {
+        "id": "zurich",
+        "name": "Zurich",
+        "nameIt": "Zurigo",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          8.52928,
+          47.38479
+        ],
+        "zoom": 10.4,
+        "population": 404151,
+        "cells": 909,
+        "layer": "cities/zurich/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.52928,
+            47.38479
+          ]
+        },
+        "properties": {
+          "id": "zurich",
+          "name": "Zurich",
+          "country": "CH",
+          "isStudy": true,
+          "cdi": -0.02,
+          "population": 404151
+        }
+      },
+      "summary": {
+        "id": "zurich",
+        "cells": 909,
+        "population": 404151,
+        "medianCdi": 0.015,
+        "weightedCdi": -0.02,
+        "ptShare": 16,
+        "carShare": 38.7,
+        "weightedByCar": 1711.2,
+        "weightedByTransit": 1803,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0.019
+          ],
+          [
+            0,
+            0.734
+          ],
+          [
+            0.1,
+            0.969
+          ],
+          [
+            0.2,
+            0.996
+          ],
+          [
+            0.3,
+            0.998
+          ],
+          [
+            0.4,
+            0.998
+          ],
+          [
+            0.5,
+            0.998
+          ],
+          [
+            0.6,
+            0.998
+          ],
+          [
+            0.7,
+            0.998
+          ],
+          [
+            0.8,
+            0.998
+          ],
+          [
+            0.9,
+            0.998
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "zurich",
+        "name": "Zurich",
+        "nameIt": "Zurigo",
+        "region": "Switzerland",
+        "regionIt": "Svizzera",
+        "country": "CH",
+        "center": [
+          8.52928,
+          47.38479
+        ],
+        "zoom": 10.5,
+        "population": 404151,
+        "cells": 733,
+        "layer": "cities/zurich/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 197
+        },
+        "thresholds": {
+          "proximity": 7358.9,
+          "opportunity": 17314.2
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            8.52928,
+            47.38479
+          ]
+        },
+        "properties": {
+          "id": "zurich",
+          "name": "Zurich",
+          "country": "CH",
+          "isStudy": true,
+          "zone": 0,
+          "population": 404153,
+          "inclusionShare": 25.9
+        }
+      },
+      "summary": {
+        "id": "zurich",
+        "cells": 733,
+        "population": 404153,
+        "medianProximity": 6218.5,
+        "medianOpportunity": 15478.9,
+        "weightedProximity": 7365.8,
+        "weightedOpportunity": 16862.5,
+        "zoneShares": [
+          25.9,
+          8,
+          6.1,
+          59.9
+        ],
+        "zonePopulationShares": [
+          41.8,
+          8.4,
+          8.3,
+          41.5
+        ],
+        "thresholds": {
+          "proximity": 7358.9,
+          "opportunity": 17314.2
+        }
+      }
+    }
+  }
+}

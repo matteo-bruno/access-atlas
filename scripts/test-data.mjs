@@ -10,10 +10,12 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import zlib from 'node:zlib';
 import { meshFromAtlas, citiesFromPublished, summariseMeasure } from '../src/data/adapters.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../src/data/fifteen.js';
 import {
+  checkGrid,
   citychroneHourFromLayer,
   gridFeatures,
   layerCartogram,
@@ -24,7 +26,7 @@ import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution, cellToLatLng } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
-import { VARIANTS } from './lib/bundle.mjs';
+import { VARIANTS, buildIndex, cataloguePaths, gridId } from './lib/bundle.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
@@ -139,6 +141,7 @@ for (const city of catalogue.atlas?.cities ?? []) {
     if (new Set(grid.cells).size !== n) bad.push('duplicate cells in the grid');
     if (grid.cells.some((h3, i) => i && h3 <= grid.cells[i - 1])) bad.push('grid is not sorted');
     if (grid.cells.some((h3) => getResolution(h3) !== city.cell.h3Resolution)) bad.push('a cell off the stated resolution');
+    if (grid.id !== gridId(grid.cells)) bad.push(`grid id ${grid.id} is not the hash of its cells`);
 
     let features = await gridFeatures(grid);
     const covered = new Set();
@@ -146,6 +149,14 @@ for (const city of catalogue.atlas?.cities ?? []) {
     for (const layer of city.layers) {
       const file = read(city.layerData[layer]);
       files[layer] = file;
+      // Rows are grid positions: a layer from another import's grid decodes
+      // and draws, onto the wrong cells. Rome's 15minCity did, on GitHub.
+      if (file.grid !== grid.id) bad.push(`${layer}: written against grid ${file.grid ?? '(none)'}, the city's is ${grid.id}`);
+      try {
+        checkGrid(grid, file, layer);
+      } catch (error) {
+        bad.push(error.message);
+      }
       const positions = layerPositions(file);
       if (positions.length !== file.cells) bad.push(`${layer}: ${positions.length} rows, header says ${file.cells}`);
       if (positions.some((p, i) => p < 0 || p >= n || (i && p <= positions[i - 1]))) {
@@ -405,6 +416,40 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
   }
   const metrics = Object.fromEntries(atlasMetrics(normaliseCatalogue(catalogue)).map((m) => [m.key, m.value]));
   check('The catalogue\'s own counts match the files', bad.length === 0, bad.slice(0, 3).join(' | ') || JSON.stringify(metrics));
+}
+
+// The catalogue, the coverage files and the compare summaries are derived
+// from the cities' records (cities/<id>/city.json) by buildIndex. Rebuilding
+// them must change nothing: a difference means one of them was edited, or
+// half-committed, without the others — the state in which the world map and
+// the catalogue disagree about what is published.
+{
+  const report = buildIndex({ dryRun: true });
+  const drifted = report.files.filter((f) => f?.changed).map((f) => f.rel);
+  check(
+    'Catalogue, coverage and summaries are exactly what the city records give',
+    drifted.length === 0,
+    drifted.length ? `would change: ${drifted.join(', ')} — run \`npm run import -- --index\`` : `${report.cities} records`,
+  );
+}
+
+// Every file the catalogue names is listed with its content hash, and the
+// hash is the file's: the site fetches each file as `<path>?v=<hash>`, so a
+// stale hash is a stale cache.
+{
+  const bad = [];
+  const paths = cataloguePaths(catalogue);
+  for (const rel of paths) {
+    const listed = catalogue.files?.[rel];
+    const found = resolveDataFile(path.join(DATA, rel));
+    if (!listed) bad.push(`${rel} has no hash`);
+    else if (!found) bad.push(`${rel} is missing`);
+    else {
+      const actual = crypto.createHash('sha256').update(fs.readFileSync(found.path)).digest('hex').slice(0, 12);
+      if (actual !== listed) bad.push(`${rel} is ${actual}, catalogue says ${listed}`);
+    }
+  }
+  check(`Every published file is listed under its content hash`, bad.length === 0, bad.slice(0, 3).join(' | ') || `${paths.length} files`);
 }
 
 // Rome is the city quoted throughout the site; pin its published figures so a
