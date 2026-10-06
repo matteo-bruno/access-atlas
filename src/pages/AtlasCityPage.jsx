@@ -426,6 +426,18 @@ function AtlasScreen({ cityId, view }) {
       : unified
         ? atlas.data?.layers[layer]?.cells
         : stats?.cellCount;
+  // Residents of the cells this layer measures, as the layer counts them: the
+  // catalogue row's own sum, the figure its compare row and markers carry.
+  // The mesh's own total is the grid's, every layer together, which beside
+  // one layer's cell count would describe other cells (Rome's P.O.V.: 8,089
+  // cells and 2.6 M residents, not the grid's 2.7 M). Population, which is
+  // the grid, keeps the grid's.
+  const layerPopulation = !layerLoaded
+    ? null
+    : isPopulation || !unified
+      ? stats?.population ?? null
+      : platformProfiles[layer]?.population ?? null;
+
   // Ground covered by the cells this layer measures. Only the union mesh is
   // drawn in true geography, so only it can be measured — a cartogram's
   // polygons are a population, not a place.
@@ -434,21 +446,6 @@ function AtlasScreen({ cityId, view }) {
       ? atlas.data?.stats.areaKm2
       : atlas.data?.layers[layer]?.areaKm2
     : null;
-  // The population beside a layer's figures is that layer's own: its
-  // dataset's sum over its own cells, as city.explain.summary says. The
-  // grid's total covers every layer's cells and is the Population layer's
-  // figure only. The two used to agree for Rome by coincidence (P.O.V.'s
-  // cells and population were the grid's), and parted when 15minCity added
-  // cells P.O.V. does not cover: 2.7 M beside P.O.V.'s 8,089 cells, whose
-  // dataset counts 2.6 M.
-  const layerFile = unified && !isPopulation ? atlas.data?.files?.[layer] : null;
-  const layerPopulation = useMemo(() => {
-    if (!layerLoaded) return null;
-    if (!layerFile) return stats?.population ?? null;
-    const values = layerFile.fields?.population;
-    if (!Array.isArray(values)) return null;
-    return values.reduce((sum, v) => sum + (Number.isFinite(v) ? v : 0), 0);
-  }, [layerLoaded, layerFile, stats]);
 
   const ccForFeature = (feature) =>
     unified ? feature.properties?.cc : feature.properties?.new_id;

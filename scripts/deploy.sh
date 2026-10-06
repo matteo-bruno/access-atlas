@@ -228,7 +228,7 @@ fi
 
 # What the server now holds must be what was built: the catalogue and every
 # file whose name does not change from one deploy to the next (coverage,
-# summaries). A random query keeps any cache between here and the files out
+# summaries, statistics). A random query keeps any cache between here and the files out
 # of the comparison. Skipped with --verify-only when there is no build here.
 if [ -f dist/data/index.json ]; then
   sha() { if command -v sha256sum >/dev/null; then sha256sum | cut -d' ' -f1; else shasum -a 256 | cut -d' ' -f1; fi; }
@@ -238,6 +238,7 @@ if [ -f dist/data/index.json ]; then
   for rel in index.json $(node -e '
     const c = JSON.parse(require("fs").readFileSync("dist/data/index.json", "utf8"));
     for (const p of Object.values(c.platforms ?? {})) for (const f of [p.coverage, p.summary]) if (f) console.log(f);
+    if (c.stats) console.log(c.stats);
   '); do
     checked=$((checked + 1))
     here="$(sha < "dist/data/$rel")"
@@ -248,7 +249,7 @@ if [ -f dist/data/index.json ]; then
     fi
   done
   if [ "$mismatched" = 0 ]; then
-    printf '  \033[32mSAME\033[0m  catalogue, coverage and summaries match the build (%s files)\n' "$checked"
+    printf '  \033[32mSAME\033[0m  catalogue, coverage, summaries and statistics match the build (%s files)\n' "$checked"
   else
     checks_failed=1
   fi

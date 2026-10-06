@@ -9,6 +9,7 @@ import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
 import { CITIES, citiesForPlatform } from './cities.js';
 import { PLATFORMS } from './platforms.js';
+import { normaliseStats } from './stats.js';
 
 /**
  * City coverage for a platform's world map and search.
@@ -418,6 +419,44 @@ export function usePlatformSummary(platformId) {
       controller.abort();
     };
   }, [platformId]);
+
+  return state;
+}
+
+/**
+ * The published statistics, normalised (src/data/stats.js).
+ *
+ * `empty` means none are published — the page then says so rather than
+ * drawing anything; there is no seed version of a statistic.
+ *
+ * @returns {{ status: 'pending'|'ready'|'empty'|'error', stats: object|null }}
+ */
+export function useStats() {
+  const [state, setState] = useState({ status: 'pending', stats: null });
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue({ signal: controller.signal });
+        const raw = await provider.stats(catalogue, { signal: controller.signal });
+        if (cancelled) return;
+        const stats = normaliseStats(raw);
+        setState(stats ? { status: 'ready', stats } : { status: 'empty', stats: null });
+      } catch (error) {
+        if (error?.name === 'AbortError' || cancelled) return;
+        setState({ status: 'error', stats: null });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, []);
 
   return state;
 }

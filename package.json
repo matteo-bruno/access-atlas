@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Accessibility Atlas \u2014 Sustainable Cities team, Sony CSL Rome",
+  "description": "Accessibility Atlas — Sustainable Cities team, Sony CSL Rome",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/postbuild-compress.mjs",
@@ -12,6 +12,7 @@
     "citychat": "node scripts/check-node.cjs h3-js && node server/citychat/server.mjs",
     "import": "node scripts/check-node.cjs h3-js && node scripts/import-data.mjs",
     "update:data": "node scripts/check-node.cjs h3-js && node scripts/update-data.mjs",
+    "stats": "node scripts/check-node.cjs h3-js && node scripts/build-stats.mjs",
     "compress:dist": "node scripts/postbuild-compress.mjs",
     "test:data": "node scripts/check-node.cjs && node scripts/test-data.mjs",
     "test:citychat": "node scripts/check-node.cjs h3-js && node scripts/test-citychat.mjs",

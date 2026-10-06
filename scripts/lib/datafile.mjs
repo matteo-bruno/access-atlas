@@ -13,6 +13,7 @@
 // tree working while a platform is being converted.
 
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import zlib from 'node:zlib';
 
 /**
@@ -79,4 +80,24 @@ export function writeDataFile(file, body) {
     if (fs.existsSync(plain)) fs.rmSync(plain);
   }
   return { raw: buf.length, stored: payload.length };
+}
+
+/**
+ * Short content hash of a data file as it is stored, i.e. as it is served:
+ * the version the catalogue lists for it (`files`), and what the statistics
+ * record they were computed from. Null when the file is absent.
+ */
+export function storedVersion(file) {
+  const found = resolveDataFile(file);
+  if (!found) return null;
+  const hash = crypto.createHash('sha256');
+  const fd = fs.openSync(found.path, 'r');
+  const buf = Buffer.allocUnsafe(1 << 20);
+  try {
+    let n;
+    while ((n = fs.readSync(fd, buf, 0, buf.length, null)) > 0) hash.update(buf.subarray(0, n));
+  } finally {
+    fs.closeSync(fd);
+  }
+  return hash.digest('hex').slice(0, 12);
 }
