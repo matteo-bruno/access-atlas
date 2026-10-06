@@ -515,7 +515,7 @@ if (catalogue.stats) {
   for (const id of ids) {
     const stored = readCityStats(id)?.current;
     const fresh = computeCityStats(readCityRecord(id).atlas);
-    for (const key of ['inputs', 'population', 'layers', 'measures']) {
+    for (const key of ['inputs', 'population', 'layers', 'measures', 'cells']) {
       if (JSON.stringify(stored?.[key]) !== JSON.stringify(fresh[key])) drift.push(`${id}: ${key}`);
     }
   }

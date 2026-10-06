@@ -360,9 +360,6 @@ export const HEADLINES = [
 export function cityFlags(row, layer) {
   if (row.kind === 'country') return row.cities?.length === 1 ? [{ key: 'single' }] : [];
   const flags = [];
-  // Shown only when the reader asked for hidden cities; the row says why it
-  // is hidden by default.
-  if (row.city?.hidden) flags.push({ key: row.city.hidden === 'population' ? 'hiddenPopulation' : 'hiddenProximity' });
   if (row.city?.variant) flags.push({ key: 'variant' });
   const coverage = row.city?.layers?.[layer]?.coverage;
   // A layer that covers less than nine in ten of the residents the Atlas has

@@ -223,9 +223,13 @@ page (`/stats`) reads, whole. The method is at the top of
 - **A country pools its cities' residents**, for means and shares only,
   which pool exactly, and for now for 15minCity only; variants and hidden
   cities are left out of the pool.
+- **`pov.zonesCommon`** splits every city at the Atlas median: the
+  population-weighted medians of all P.O.V. residents of the cities shown by
+  default, together, stated as the measure's `zoneThresholds`
+  (`proximity`, `opportunity`, `cities`).
 - **`hidden`** on a city (`"population"` or `"proximity"`) marks data too
   thin to compare, by the rule in `scripts/lib/quality.mjs`, whose numbers
-  are `hiddenRule`. The page leaves such a city out unless asked. The same
+  are `hiddenRule`. The page never shows such a city. The same
   rule flags its markers in the coverage files with the same `hidden`
   property, and the world maps skip them.
 - **Only current figures are published.** A city whose grid or layer files

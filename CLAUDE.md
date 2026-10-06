@@ -151,8 +151,24 @@ in the accent). It opens on 15minCity, the share of residents within 15
 minutes on foot of the services on average, for cities of at least 1,000,000
 residents (`DEFAULTS` in `Stats.jsx`). **Only cities that have the figure are
 drawn anywhere**, on the map included: a city without the layer is not listed
-as missing. Countries are a menu, not a row of chips, and population is a
-logarithmic slider with a number box beside it.
+as missing. The layout is **one row of buttons on top** (the layers, then the
+views) and **a sidebar** with the figure, the filters and the highlighted
+cities. Countries are a menu, not a row of chips, and population is one
+logarithmic slider with two handles (min and max; the top end means no
+maximum) and a number box under each.
+
+**Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
+each platform is read with, from the same statistics file, so the filters
+and highlights apply. 15minCity: median time to every service, city by city,
+on the platform's own ramp, and residents within 15 minutes on foot against
+by bicycle. CityChrone: each city's 24 hours, median with the middle half as
+a band, one scale per score across cities. Car Dependency: the index for the
+average resident, residents by index band (from the shares above the CDI
+thresholds) and reach by car against by transit. P.O.V.: residents by zone,
+on the Atlas median beside the city's own, and median proximity against
+opportunity with the Atlas medians drawn as the quadrant lines. Across
+layers: every correlation, city by city. The per-platform compare pages for
+P.O.V. and CDI are linked from their focus, not listed under the dashboard.
 
 **Computed per city, only when its data changed, and never shown stale.**
 `npm run stats` (`scripts/build-stats.mjs`, method at the top of
@@ -176,8 +192,9 @@ in `scripts/lib/quality.mjs`: fewer than 10,000 residents, or a 15minCity
 median walk to services over 60 minutes (the figure its marker carries).
 They stay published, city view and all. `buildIndex` flags their world-map
 markers `hidden` and `citiesFromPublished` skips them unless asked
-(`includeHidden`); the statistics flag them too, pool them into no country,
-and the page shows them only with "Show hidden cities". The rule's numbers
+(`includeHidden`); the statistics flag them too, pool them into no country
+and into no Atlas median, and the Stats page never shows them: there is no
+button for it, only a note counting how many it left out. The rule's numbers
 travel in the stats file (`hiddenRule`) so the page never keeps a copy. Every
 run that rebuilds the maps or the statistics prints how many it hid, and
 `test:data` checks the markers and the statistics follow the same rule.
@@ -199,10 +216,16 @@ What is easy to get wrong:
   city. Never fit them to what is on screen.
 - **P.O.V. has two kinds of zones here.** `pov.zonesCity` is the platform's
   own, at each city's medians: `comparability: 'within-city'`, so the
-  ranking shows no rank numbers and says why. `pov.zonesCommon` classifies
-  every cell against one pair of thresholds for all cities (proximity 5,000,
-  opportunity 20,000), which *does* compare cities. It is what the lab asked
-  for to compare populations across cities.
+  ranking shows no rank numbers and says why. `pov.zonesCommon` splits every
+  city at **the Atlas median**: the population-weighted median proximity and
+  opportunity of every P.O.V. resident of every city shown by default,
+  together, so "inclusion" reads "better than half the Atlas's residents on
+  both scores". It depends on every city, so it is not computed per city: a
+  city's computation keeps its inhabited P.O.V. cells (`cells.pov`, dropped
+  when the computation moves into history) and `assembleStats` derives the
+  medians and every city's shares when it gathers the file. The medians move
+  a little with every city added, and the file states them
+  (`zoneThresholds`, with the number of cities they came from).
 - **A country pools, never averages.** Only means and shares of residents
   pool exactly (a population-weighted mean of population-weighted figures),
   so a country offers no median, percentile, Gini or correlation. Variants

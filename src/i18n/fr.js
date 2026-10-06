@@ -574,13 +574,6 @@ export default {
     emptyTitle: 'Aucune statistique publiée pour l’instant',
     emptyBody:
       'Les statistiques sont calculées à partir des données publiées par un script, ville par ville, et aucune n’a encore été publiée sur ce site. Ce que l’on peut déjà comparer se trouve ci-dessous.',
-    availableTitle: 'Une plateforme à la fois',
-    compare: {
-      fifteen: 'Toutes les villes publiées par cette plateforme, côte à côte.',
-      citychrone: 'Toutes les villes publiées par cette plateforme, côte à côte.',
-      cardep: 'Toutes les villes classées selon l’indice de leur résident moyen, avec la répartition des résidents le long de l’indice.',
-      pov: 'Toutes les villes selon leur répartition entre les quatre zones, comptée par cellule ou par résident, avec les scores qui les sous-tendent.',
-    },
     caveat: {
       title: 'À lire avant de comparer.',
       body: 'Les villes sont mesurées à partir de données de sources, d’exhaustivité et de dates différentes, sur des périmètres tracés de manières différentes. Un écart entre deux villes est une question à examiner, pas un verdict.',
@@ -611,7 +604,7 @@ export default {
         },
         zones: {
           title: 'Les zones de P.O.V. comparent des lieux au sein d’une ville',
-          body: 'P.O.V. découpe chaque ville selon ses propres médianes pondérées par la population : ses quatre zones disent comment un lieu se situe par rapport au reste de sa ville, et chaque ville a environ la moitié de ses résidents au-dessus de chaque ligne. Pour comparer les villes, l’Atlas classe aussi chaque cellule selon une paire de seuils commune à toutes (les zones à seuils communs).',
+          body: 'P.O.V. découpe chaque ville selon ses propres médianes pondérées par la population : ses quatre zones disent comment un lieu se situe par rapport au reste de sa ville, et chaque ville a environ la moitié de ses résidents au-dessus de chaque ligne. Pour comparer les villes, l’Atlas découpe aussi chaque ville aux médianes de tous ses résidents P.O.V. ensemble (les zones sur la médiane de l’Atlas) : un résident en « inclusion » y est mieux loti que la moitié des résidents de l’Atlas sur les deux scores.',
         },
         countries: {
           title: 'Un pays, ce sont ses villes publiées, regroupées',
@@ -627,7 +620,7 @@ export default {
         },
         hidden: {
           title: 'Certaines villes sont masquées par défaut',
-          body: 'Une ville de moins de {population} résidents, ou dont les résidents marcheraient en médiane plus de {minutes} minutes pour atteindre les services, n’apparaît ni sur la page Statistiques ni sur les cartes du monde, sauf si vous le demandez. Ses valeurs sont calculées fidèlement mais renseignent davantage sur les données que sur le lieu : la ville est très petite, ou OpenStreetMap a à peine cartographié ses services. La ville reste publiée et sa carte s’ouvre comme avant.',
+          body: 'Une ville de moins de {population} résidents, ou dont les résidents marcheraient en médiane plus de {minutes} minutes pour atteindre les services, n’apparaît ni sur la page Statistiques ni sur les cartes du monde. Ses valeurs sont calculées fidèlement mais renseignent davantage sur les données que sur le lieu : la ville est très petite, ou OpenStreetMap a à peine cartographié ses services. La ville reste publiée et sa carte s’ouvre comme avant.',
         },
       },
     },
@@ -647,10 +640,10 @@ export default {
     },
     filters: {
       population: 'Résidents',
-      populationAbout: 'N’affiche que les villes comptant au moins ce nombre de résidents, comptés sur toute la ville telle que l’Atlas la publie. Faites glisser, ou tapez un nombre.',
+      populationAbout: 'N’affiche que les villes dont les résidents se situent entre les deux poignées, comptés sur toute la ville telle que l’Atlas la publie. Faites-les glisser ou tapez les nombres ; l’extrémité droite signifie aucun maximum.',
       any: 'tous',
-      hidden: 'Afficher les villes masquées ({count})',
-      hiddenAbout: 'Masquées par défaut : les villes de moins de {population} résidents, ou dont le temps médian à pied vers les services dépasse {minutes} minutes. Là, les données sont trop minces pour comparer : le lieu est très petit, ou ses services sont à peine cartographiés.',
+      popMin: 'Min',
+      popMax: 'Max',
     },
     kpi: {
       cities: 'Villes',
@@ -673,7 +666,7 @@ export default {
     measures: {
       proximity: 'Score de proximité',
       opportunity: 'Score d’opportunité',
-      zonesCommon: 'Zones à seuils communs',
+      zonesCommon: 'Zones sur la médiane de l’Atlas',
       zonesCity: 'Zones selon les médianes de chaque ville',
       cdi: 'Indice de dépendance à la voiture',
       car: 'Accessibilité en voiture',
@@ -684,7 +677,7 @@ export default {
     about: {
       proximity: 'Combien de points d’intérêt un résident peut atteindre à pied depuis sa cellule, pondérés. Un score, pas une distance.',
       opportunity: 'Combien de points d’intérêt un résident peut atteindre dans toute la ville à pied et en transports publics, pondérés. Un score, pas un nombre d’emplois.',
-      zonesCommon: 'Les quatre zones de P.O.V., tracées avec une seule paire de seuils pour toutes les villes au lieu des médianes de chacune, afin que la part de résidents dans chaque zone compare une ville à une autre.',
+      zonesCommon: 'Les quatre zones de P.O.V., découpées pour chaque ville aux deux mêmes lignes : la médiane de proximité et la médiane d’opportunité de tous les résidents P.O.V. de l’Atlas ensemble. « Inclusion » signifie mieux que la moitié des résidents de l’Atlas sur les deux scores, donc la part des résidents de chaque zone compare une ville à une autre.',
       zonesCity: 'Les quatre zones de P.O.V. telles que la plateforme les publie, découpées selon les médianes pondérées de chaque ville. Elles décrivent des lieux au sein d’une ville : chaque ville a environ la moitié de ses résidents de chaque côté de chaque ligne.',
       cdi: 'La différence normalisée entre ce qu’atteignent depuis une cellule la voiture et les transports publics, de −1 (les transports atteignent plus) à +1 (la voiture atteint plus). Pas un rapport.',
       car: 'Les opportunités accessibles en voiture depuis une cellule, telles que les compte Car Dependency : un score pondéré.',
@@ -736,6 +729,7 @@ export default {
     },
     views: {
       label: 'Vues',
+      focus: 'Focus',
       ranking: 'Classement',
       map: 'Carte',
       scatter: 'Nuage',
@@ -743,11 +737,62 @@ export default {
       curves: 'Courbes',
     },
     viewAbout: {
+      focus: 'Une couche selon ses propres termes : les graphiques avec lesquels se lit sa plateforme, pour chaque ville que laissent les filtres.',
       ranking: 'Une ligne par ville, dans l’ordre. Derrière un niveau, la boîte est l’endroit où vit la moitié centrale des résidents et la ligne va du 10e au 90e centile : la dispersion qu’un seul nombre cache. Le ! signale une valeur à lire avec prudence.',
       map: 'Où se trouvent les villes, colorées selon la valeur choisie sur une échelle fixe et dimensionnées selon leurs résidents. Cliquez sur une ville pour la mettre en évidence.',
       scatter: 'Deux valeurs face à face, un point par ville, dimensionné selon ses résidents. Choisissez la seconde valeur dans la ligne qui apparaît au-dessus.',
       matrix: 'Chaque ville face aux valeurs principales. La teinte est la position de la ville parmi celles affichées, plus foncée pour mieux, car les colonnes ne partagent pas d’unité ; la valeur est écrite dans la cellule. Cliquez sur une colonne pour la choisir.',
       curves: 'La part des résidents à chaque seuil, ou pour CityChrone la valeur à chaque heure de la journée. Les villes mises en évidence sont en couleur et nommées ; les autres sont en gris.',
+    },
+    sidebar: {
+      label: 'Valeur et filtres',
+      figure: 'Valeur',
+      filters: 'Filtres',
+    },
+    focus: {
+      more: 'Comparaison complète',
+      fifteen: {
+        title: 'Chaque service, ville par ville',
+        lede: 'Le temps que mettent les résidents pour atteindre chaque type de service, et combien vivent à moins de 15 minutes de ce dont ils ont besoin, à pied et à vélo.',
+        profile: 'Temps médian vers chaque service, {mode}',
+        profileAbout: 'Chaque case est le temps que met le résident du milieu de la ville pour atteindre le service le plus proche de la catégorie. La couleur est l’échelle de la ville du quart d’heure : blanc à 15 minutes, bleu en dessous, rouge au-dessus.',
+        within: 'Résidents à moins de 15 min',
+        modes: 'Résidents à moins de 15 minutes, à pied et à vélo',
+        modesAbout: 'La part des résidents qui atteignent en moyenne les services de toutes les catégories en moins de 15 minutes, à pied (bleu) et à vélo (rouge). L’écart entre les deux points est ce qu’apporte le vélo.',
+      },
+      citychrone: {
+        title: 'Une journée de transports publics',
+        lede: 'Comment les transports publics desservent chaque ville sur 24 heures : les scores de vitesse et de socialité de son résident du milieu, avec la moitié centrale de ses résidents en bande.',
+        day: 'La journée, heure par heure',
+        dayAbout: 'La ligne est le score du résident médian à chaque heure ; la bande va du 25e au 75e centile. Toutes les villes partagent une échelle par score, donc les courbes se comparent directement.',
+        peak: 'pic',
+        low: 'minimum',
+      },
+      cardep: {
+        title: 'Voiture ou transports publics',
+        lede: 'Si, depuis l’endroit où vivent les résidents, la voiture ou les transports publics atteignent davantage : l’indice du résident moyen, la répartition des résidents le long de l’indice, et les deux accessibilités qui le fondent.',
+        index: 'L’indice du résident moyen',
+        indexAbout: 'La moyenne pondérée par la population de l’indice de dépendance à la voiture : sous zéro les transports publics atteignent davantage, au-dessus la voiture.',
+        bands: 'Résidents par tranche de l’indice',
+        bandsAbout: 'La part des résidents de chaque ville dans chaque tranche de l’indice, de très favorable aux transports (bleu) à très favorable à la voiture (rouge).',
+        reach: 'Accessibilité en voiture et en transports publics',
+        reachAbout: 'L’accessibilité du résident moyen en voiture et en transports publics, en scores pondérés. Les villes sur la ligne pointillée atteignent autant des deux façons.',
+        equal: 'accessibilité égale',
+      },
+      pov: {
+        title: 'Proximité et opportunité',
+        lede: 'Ce que les résidents atteignent à pied face à ce qu’ils atteignent dans toute la ville, réparti dans les quatre zones d’accès de P.O.V.',
+        zones: 'Résidents par zone',
+        zonesAbout: 'À gauche, les zones sur la médiane de l’Atlas : chaque ville découpée aux deux mêmes lignes, proximité {proximity} et opportunité {opportunity}, les médianes des résidents des {count} villes. À droite, les zones de la plateforme, découpées aux médianes de chaque ville.',
+        scores: 'Proximité médiane et opportunité médiane',
+        scoresAbout: 'Le résident du milieu de chaque ville sur les deux scores. Les lignes pointillées sont les médianes de l’Atlas où sont découpées les zones communes.',
+        atlasMedian: 'Médiane de l’Atlas',
+      },
+      cross: {
+        title: 'Comment les couches vont ensemble',
+        lede: 'Dans chaque ville, comment la mesure d’une couche va avec celle d’une autre, cellule par cellule.',
+        about: 'La corrélation de rang de Spearman sur les cellules habitées que couvrent les deux couches : bleu là où elles baissent ensemble, rouge là où l’une monte quand l’autre baisse.',
+      },
     },
     order: {
       best: 'de la meilleure à la moins bonne',
@@ -774,12 +819,10 @@ export default {
       variant: 'Un second périmètre d’une ville déjà listée, tracé autrement. Ses résidents ne sont pas regroupés dans le pays.',
       coverage: 'Cette couche couvre {share} % des résidents que l’Atlas compte pour cette ville : la valeur décrit cette partie.',
       single: 'Une seule ville publiée : la valeur du pays est celle de cette ville.',
-      hiddenPopulation: 'Moins de {population} résidents : masquée par défaut, trop petite pour comparer.',
-      hiddenProximity: 'Temps médian à pied vers les services de plus de {minutes} minutes : masquée par défaut, ses services sont sans doute à peine cartographiés.',
     },
     note: {
       withinCity: 'Ces zones sont tracées selon les médianes de chaque ville : elles comparent des lieux au sein d’une ville, pas des villes. Pour comparer des villes, utilisez les zones à seuils communs.',
-      zonesCommon: 'Zones communes : proximité à {proximity}, opportunité à {opportunity}, les mêmes pour toutes les villes.',
+      zonesCommon: 'Les zones communes sont découpées à la médiane des résidents P.O.V. des {count} villes : proximité {proximity}, opportunité {opportunity}. Elles bougent un peu chaque fois qu’une ville est ajoutée.',
       thresholds: 'Les seuils sont fixes et identiques dans chaque ville.',
       correlation: 'Une corrélation décrit comment deux mesures vont ensemble au sein d’une ville. Elle ne dit pas quelle ville est la mieux desservie.',
       citychrone: 'Les scores de CityChrone n’ont pas de conversion d’unité vérifiée : comparez-les entre villes, pas avec des valeurs extérieures.',
@@ -790,6 +833,7 @@ export default {
       matrix: 'La teinte compare les villes affichées, elle change donc avec le filtre ; les valeurs, non.',
       curvesThresholds: 'Mesuré aux seuils seulement : les lignes relient ces points et ne disent rien de ce qui se trouve entre eux.',
       curvesNone: 'Une corrélation n’a ni seuil ni heure le long desquels tracer une courbe.',
+      hidden: '{count} villes ayant cette valeur sont écartées : leurs données sont trop minces pour comparer.',
     },
     footer: {
       computed: 'Statistiques calculées le {date} à partir des fichiers publiés.',

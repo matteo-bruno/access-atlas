@@ -623,13 +623,6 @@ export default {
     emptyTitle: 'No statistics published yet',
     emptyBody:
       'Statistics are computed from the published data by a script, city by city, and none have been published on this site yet. What can already be compared is below.',
-    availableTitle: 'One platform at a time',
-    compare: {
-      fifteen: 'Every city this platform has published, side by side.',
-      citychrone: 'Every city this platform has published, side by side.',
-      cardep: 'Every city ranked by the index for its average resident, with the distribution of residents across the index.',
-      pov: 'Every city by its mix of the four zones, counted by cell or by resident, with the scores behind them.',
-    },
     caveat: {
       title: 'Read before comparing.',
       body: 'Cities are measured from data of different sources, completeness and dates, over perimeters drawn in different ways. A gap between two cities is a question to look into, not a verdict.',
@@ -660,7 +653,7 @@ export default {
         },
         zones: {
           title: 'P.O.V.’s own zones compare places within a city',
-          body: 'P.O.V. splits each city at its own population-weighted medians, so its four zones say how a place compares with the rest of its city, and every city has about half its residents above each line. To compare cities, the Atlas also classifies every cell against one pair of thresholds shared by all of them (the common zones).',
+          body: 'P.O.V. splits each city at its own population-weighted medians, so its four zones say how a place compares with the rest of its city, and every city has about half its residents above each line. To compare cities, the Atlas also splits every city at the medians of all its P.O.V. residents together (the zones on the Atlas median): a resident in “inclusion” there is better off than half the Atlas’s residents on both scores.',
         },
         countries: {
           title: 'A country is its published cities, pooled',
@@ -676,7 +669,7 @@ export default {
         },
         hidden: {
           title: 'Some cities are hidden by default',
-          body: 'A city with fewer than {population} residents, or whose residents would walk a median of more than {minutes} minutes to reach services, is left off the Stats page and the world maps unless you ask for it. Its figures are computed faithfully but say more about the data than about the place: the city is very small, or OpenStreetMap has barely mapped its services. The city stays published, and its map opens as before.',
+          body: 'A city with fewer than {population} residents, or whose residents would walk a median of more than {minutes} minutes to reach services, is left off the Stats page and the world maps. Its figures are computed faithfully but say more about the data than about the place: the city is very small, or OpenStreetMap has barely mapped its services. The city stays published, and its map opens as before.',
         },
       },
     },
@@ -696,10 +689,10 @@ export default {
     },
     filters: {
       population: 'Residents',
-      populationAbout: 'Shows only the cities with at least this many residents, counted over the whole city as the Atlas publishes it. Slide, or type a number.',
+      populationAbout: 'Shows only the cities whose residents fall between the two handles, counted over the whole city as the Atlas publishes it. Drag them, or type the numbers; the right end means no maximum.',
       any: 'any',
-      hidden: 'Show hidden cities ({count})',
-      hiddenAbout: 'Hidden by default: cities with fewer than {population} residents, or where the median walk to services is over {minutes} minutes. There the data is too thin to compare: the place is very small, or its services are barely mapped.',
+      popMin: 'Min',
+      popMax: 'Max',
     },
     kpi: {
       cities: 'Cities',
@@ -722,7 +715,7 @@ export default {
     measures: {
       proximity: 'Proximity score',
       opportunity: 'Opportunity score',
-      zonesCommon: 'Zones on common thresholds',
+      zonesCommon: 'Zones on the Atlas median',
       zonesCity: 'Zones on each city’s medians',
       cdi: 'Car Dependency Index',
       car: 'Reach by car',
@@ -733,7 +726,7 @@ export default {
     about: {
       proximity: 'How many points of interest a resident can reach on foot from their cell, weighted. A score, not a distance.',
       opportunity: 'How many points of interest a resident can reach across the city by walking and public transport, weighted. A score, not a count of jobs.',
-      zonesCommon: 'P.O.V.’s four zones, drawn with one pair of thresholds for every city instead of each city’s own medians, so the share of residents in each zone compares one city with another.',
+      zonesCommon: 'P.O.V.’s four zones, split for every city at the same two lines: the median proximity and the median opportunity of all the Atlas’s P.O.V. residents together. “Inclusion” means better than half the Atlas’s residents on both scores, so the share of residents in each zone compares one city with another.',
       zonesCity: 'P.O.V.’s four zones as the platform publishes them, split at each city’s own population-weighted medians. They describe places within a city: every city has about half its residents on each side of each line.',
       cdi: 'The normalised difference between what a car and public transport reach from a cell, from −1 (transit reaches more) to +1 (the car reaches more). Not a ratio.',
       car: 'Opportunities reachable by car from a cell, as Car Dependency counts them: a weighted score.',
@@ -785,6 +778,7 @@ export default {
     },
     views: {
       label: 'Views',
+      focus: 'Focus',
       ranking: 'Ranking',
       map: 'Map',
       scatter: 'Scatter',
@@ -792,11 +786,62 @@ export default {
       curves: 'Curves',
     },
     viewAbout: {
+      focus: 'One layer on its own terms: the charts its platform is read with, for every city the filters leave.',
       ranking: 'One row per city, in order. Behind a level, the box is where the middle half of its residents live and the line runs from the 10th to the 90th percentile: the spread one number hides. The ! marks a figure to read with care.',
       map: 'Where the cities are, coloured by the figure picked on a fixed scale and sized by residents. Click a city to highlight it.',
       scatter: 'Two figures against each other, one dot per city, sized by residents. Pick the second figure in the row that appears above.',
       matrix: 'Every city against the headline figures. Shading is the city’s position among the cities shown, darker for better, because the columns share no unit; the value is printed in the cell. Click a column to pick it.',
       curves: 'The share of residents at each threshold, or for CityChrone the figure at each hour of the day. Highlighted cities are coloured and named; the rest are grey.',
+    },
+    sidebar: {
+      label: 'Figure and filters',
+      figure: 'Figure',
+      filters: 'Filters',
+    },
+    focus: {
+      more: 'Full comparison',
+      fifteen: {
+        title: 'Every service, city by city',
+        lede: 'How long residents take to reach each kind of service, and how many live within 15 minutes of what they need, on foot and by bicycle.',
+        profile: 'Median time to each service, {mode}',
+        profileAbout: 'Each cell is the time the middle resident of the city takes to reach the nearest service of the category. The colour is the 15-minute city’s own scale: white at 15 minutes, blue below, red above.',
+        within: 'Residents within 15 min',
+        modes: 'Residents within 15 minutes, on foot and by bicycle',
+        modesAbout: 'The share of residents who reach the services of all categories on average within 15 minutes, walking (blue) and cycling (red). The gap between the two dots is what a bicycle adds.',
+      },
+      citychrone: {
+        title: 'A day of public transport',
+        lede: 'How public transport serves each city through the 24 hours: the velocity and sociality scores of its middle resident, with the middle half of its residents as a band.',
+        day: 'The day, hour by hour',
+        dayAbout: 'The line is the median resident’s score at each hour; the band runs from the 25th to the 75th percentile. Every city shares one scale per score, so the curves compare directly.',
+        peak: 'peak',
+        low: 'lowest',
+      },
+      cardep: {
+        title: 'Car or public transport',
+        lede: 'Whether a car or public transport reaches more from where residents live: the index for the average resident, how residents spread across it, and the two reaches behind it.',
+        index: 'The index for the average resident',
+        indexAbout: 'The population-weighted mean of the Car Dependency Index: below zero public transport reaches more, above zero the car does.',
+        bands: 'Residents by index band',
+        bandsAbout: 'The share of each city’s residents in each band of the index, from strongly transit-favoured (blue) to strongly car-favoured (red).',
+        reach: 'Reach by car against reach by public transport',
+        reachAbout: 'The average resident’s reach by car and by public transport, as weighted scores. Cities on the dashed line reach as much either way.',
+        equal: 'equal reach',
+      },
+      pov: {
+        title: 'Proximity and opportunity',
+        lede: 'What residents reach on foot against what they reach across the city, split into P.O.V.’s four zones of access.',
+        zones: 'Residents by zone',
+        zonesAbout: 'Left, the zones on the Atlas median: every city split at the same two lines, proximity {proximity} and opportunity {opportunity}, the medians of all {count} cities’ residents. Right, the platform’s own zones, split at each city’s medians.',
+        scores: 'Median proximity against median opportunity',
+        scoresAbout: 'Each city’s middle resident on the two scores. The dashed lines are the Atlas medians the common zones are split at.',
+        atlasMedian: 'Atlas median',
+      },
+      cross: {
+        title: 'How the layers go together',
+        lede: 'Within each city, how one layer’s measure goes with another’s, cell by cell.',
+        about: 'Spearman’s rank correlation over the inhabited cells both layers cover: blue where the two fall together, red where one rises as the other falls.',
+      },
     },
     order: {
       best: 'best first',
@@ -823,12 +868,10 @@ export default {
       variant: 'A second perimeter of a city also listed, drawn differently. Its residents are not pooled into the country.',
       coverage: 'This layer covers {share}% of the residents the Atlas has for this city: the figure describes that part.',
       single: 'One published city: the country’s figure is that city’s.',
-      hiddenPopulation: 'Fewer than {population} residents: hidden by default, too small to compare.',
-      hiddenProximity: 'Median walk to services over {minutes} minutes: hidden by default, its services are probably barely mapped.',
     },
     note: {
       withinCity: 'These zones are drawn at each city’s own medians, so they compare places within a city, not cities. For a comparison between cities use the zones on common thresholds.',
-      zonesCommon: 'Common zones: proximity at {proximity}, opportunity at {opportunity}, the same for every city.',
+      zonesCommon: 'Common zones are split at the median of all {count} cities’ P.O.V. residents: proximity {proximity}, opportunity {opportunity}. They move a little whenever a city is added.',
       thresholds: 'Thresholds are fixed and the same in every city.',
       correlation: 'A correlation describes how two measures go together inside one city. It says nothing about which city is better served.',
       citychrone: 'CityChrone’s scores have no verified unit conversion: compare them between cities, not with outside figures.',
@@ -839,6 +882,7 @@ export default {
       matrix: 'Shading compares the cities shown, so it changes with the filter; the values do not.',
       curvesThresholds: 'Measured at the thresholds only: the lines join those points and say nothing about what lies between.',
       curvesNone: 'A correlation has no threshold or hour to draw a curve along.',
+      hidden: '{count} cities with this figure are left out: their data is too thin to compare.',
     },
     footer: {
       computed: 'Statistics computed on {date} from the published files.',

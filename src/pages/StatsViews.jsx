@@ -57,7 +57,7 @@ export function Tip({ tip }) {
 }
 
 /** A tooltip's body: the name, then the figures, value first. */
-function TipBody({ title, lines = [], note }) {
+export function TipBody({ title, lines = [], note }) {
   return (
     <>
       <div className="aa-stats__tiptitle">{title}</div>
@@ -93,7 +93,7 @@ function distributionLines(measure, stat, ctx) {
 // ── marks shared by the views ────────────────────────────────────────
 
 /** A highlighted row's colour key; nothing for the rest. */
-function Key({ slot }) {
+export function Key({ slot }) {
   if (slot == null) return null;
   return <span className="aa-stats__key" style={{ background: HIGHLIGHT[slot] }} aria-hidden="true" />;
 }
@@ -143,7 +143,7 @@ function ranksOf(ordered, key, index) {
 }
 
 /** Evenly spaced round ticks covering [lo, hi]. */
-function niceTicks(lo, hi, count = 5) {
+export function niceTicks(lo, hi, count = 5) {
   const span = hi - lo || 1;
   const raw = span / (count - 1);
   const mag = 10 ** Math.floor(Math.log10(raw));

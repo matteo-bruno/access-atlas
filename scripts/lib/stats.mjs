@@ -61,7 +61,7 @@ export const HISTORY_DIR = path.join(ROOT, 'statistics', 'cities');
 export const STATS_PATH = 'stats/stats.json.gz';
 
 // Bump whenever a figure is added, removed or computed differently.
-export const STATS_VERSION = 1;
+export const STATS_VERSION = 2;
 
 const UNREACHABLE = 99999;
 
@@ -80,10 +80,14 @@ const HOURS = 24;
 // opportunity p10 7,507 · p50 20,646 · p90 48,509 (max 74,880).
 const POV_PROXIMITY = [1000, 2500, 5000, 10000, 20000];
 const POV_OPPORTUNITY = [5000, 10000, 20000, 40000, 60000];
-// The four zones again, on one pair of thresholds for every city instead of
-// each city's own medians: round numbers next to the pooled weighted medians
-// above. On these a zone *does* compare one city with another.
-export const COMMON_ZONE_THRESHOLDS = { proximity: 5000, opportunity: 20000 };
+// The four zones again, split for every city at one pair of thresholds: the
+// population-weighted medians of every P.O.V. resident the Atlas publishes,
+// all cities together. On these a zone *does* compare one city with another,
+// and the rule says itself: "inclusion" is better than half the Atlas's
+// residents on both scores. They depend on every city, so they are computed
+// when the published file is gathered (assembleStats), from the cells each
+// city's computation keeps (`cells.pov`), and move a little whenever a city
+// is added. Hidden cities and variants are left out of the medians.
 
 // Car Dependency. CDI pooled p10 −0.02 · p50 0.19 · p90 0.41. Opportunities
 // reachable by car p10 1,411 · p90 8,761; by public transport p10 857 ·
@@ -415,12 +419,9 @@ export function computeCityStats(atlas) {
     };
 
     for (const measure of MEASURES.filter((m) => m.layer === layer)) {
+      if (measure.id === 'pov.zonesCommon') continue; // gathered across cities, below
       if (measure.kind === 'zones') {
-        const zones =
-          measure.id === 'pov.zonesCity'
-            ? file.fields.zone
-            : file.fields.proximity.map((p, i) => zoneClass(p, file.fields.opportunity[i], COMMON_ZONE_THRESHOLDS));
-        const stat = zoneShares(zones, weights);
+        const stat = zoneShares(file.fields.zone, weights);
         if (stat) measures[measure.id] = stat;
         continue;
       }
@@ -452,6 +453,20 @@ export function computeCityStats(atlas) {
     if (value != null) measures[measure.id] = { cells: xs.length, value: round(value, measure.decimals) };
   }
 
+  // What the common zones need from this city: its inhabited P.O.V. cells,
+  // as published. Kept in the city's computation, never served.
+  const cells = {};
+  if (files.pov) {
+    const pov = { proximity: [], opportunity: [], population: [] };
+    files.pov.fields.population.forEach((w, i) => {
+      if (!(Number(w) > 0)) return;
+      pov.proximity.push(files.pov.fields.proximity[i]);
+      pov.opportunity.push(files.pov.fields.opportunity[i]);
+      pov.population.push(w);
+    });
+    cells.pov = pov;
+  }
+
   return {
     method: STATS_VERSION,
     computedAt: new Date().toISOString(),
@@ -459,6 +474,7 @@ export function computeCityStats(atlas) {
     population: Math.round(gridTotal),
     layers,
     measures,
+    cells,
   };
 }
 
@@ -483,7 +499,11 @@ export function readCityStats(cityId) {
 export function writeCityStats(cityId, entry) {
   const previous = readCityStats(cityId);
   const history = [...(previous?.history ?? [])];
-  if (previous?.current) history.push(previous.current);
+  // The history keeps the figures, not the cells they were gathered from.
+  if (previous?.current) {
+    const { cells, ...figures } = previous.current;
+    history.push(figures);
+  }
   const record = { format: 'atlas-city-stats', version: 1, id: cityId, current: entry, history };
   fs.mkdirSync(HISTORY_DIR, { recursive: true });
   writeDataFile(historyPath(cityId), JSON.stringify(record));
@@ -531,7 +551,6 @@ function describeMeasure(m) {
   if (m.signed) out.signed = true;
   if (m.sentinel != null) out.sentinel = m.sentinel;
   if (m.pair) out.pair = m.pair;
-  if (m.id === 'pov.zonesCommon') out.zoneThresholds = COMMON_ZONE_THRESHOLDS;
   return out;
 }
 
@@ -563,6 +582,37 @@ function pool(stats) {
 }
 
 /**
+ * P.O.V.'s zones on the Atlas's own medians: the population-weighted median
+ * proximity and opportunity of every P.O.V. resident of every city shown by
+ * default (not hidden, not a variant), and each city's residents per zone on
+ * those two lines. Null when no city publishes P.O.V.
+ */
+function commonZones(cities) {
+  const pooled = cities.filter((c) => c.entry.cells?.pov && !c.hidden && !c.record.atlas.variant);
+  if (!pooled.length) return null;
+  const median = (key) => {
+    const pairs = [];
+    for (const c of pooled) {
+      const cells = c.entry.cells.pov;
+      cells[key].forEach((v, i) => pairs.push([v, cells.population[i]]));
+    }
+    pairs.sort((a, b) => a[0] - b[0]);
+    const total = pairs.reduce((s, [, w]) => s + w, 0);
+    return weightedQuantiles(pairs, total, [0.5])[0];
+  };
+  const thresholds = { proximity: round(median('proximity'), 1), opportunity: round(median('opportunity'), 1) };
+  const byCity = new Map();
+  for (const c of cities) {
+    const cells = c.entry.cells?.pov;
+    if (!cells) continue;
+    const zones = cells.proximity.map((p, i) => zoneClass(p, cells.opportunity[i], thresholds));
+    const stat = zoneShares(zones, cells.population);
+    if (stat) byCity.set(c.record.id, stat);
+  }
+  return { thresholds: { ...thresholds, cities: pooled.length }, byCity };
+}
+
+/**
  * The published statistics, from every city's current computation. Cities
  * whose computation no longer matches their files are listed in `omitted`
  * and nothing else. Null when no city has statistics to publish.
@@ -584,8 +634,10 @@ export function assembleStats(records) {
   }
   if (!cities.length) return null;
 
-  const measures = MEASURES.filter((m) => cities.some((c) => c.entry.measures[m.id]));
-  const values = Object.fromEntries(measures.map((m) => [m.id, cities.map((c) => c.entry.measures[m.id] ?? null)]));
+  const common = commonZones(cities);
+  const figure = (c, id) => (id === 'pov.zonesCommon' ? common?.byCity.get(c.record.id) : c.entry.measures[id]) ?? null;
+  const measures = MEASURES.filter((m) => cities.some((c) => figure(c, m.id)));
+  const values = Object.fromEntries(measures.map((m) => [m.id, cities.map((c) => figure(c, m.id))]));
 
   const countries = new Map();
   for (const { record, hidden } of cities) {
@@ -611,7 +663,10 @@ export function assembleStats(records) {
   const published = {
     format: 'atlas-stats',
     version: STATS_VERSION,
-    measures: measures.map(describeMeasure),
+    measures: measures.map((m) => ({
+      ...describeMeasure(m),
+      ...(m.id === 'pov.zonesCommon' && common ? { zoneThresholds: common.thresholds } : {}),
+    })),
     quantiles: QUANTILES,
     // The rule a city is hidden by default under (scripts/lib/quality.mjs),
     // so the page can say what it is without a copy of it.
