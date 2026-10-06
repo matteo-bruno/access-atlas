@@ -380,11 +380,19 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
-  const layerFiles = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u)).map((u) => u.split('/').pop());
+  const cityRequests = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u));
+  const layerFiles = cityRequests.map((u) => u.split('?')[0].split('/').pop());
   check(
     'A city loads its grid and the open layer, and nothing else',
     layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
     layerFiles.join(' '),
+  );
+  // The current version of a file is its plain path; `?v=<hash>` is only for
+  // asking for a specific one.
+  check(
+    'City files are fetched by their plain path',
+    cityRequests.length > 0 && cityRequests.every((u) => !u.includes('?')),
+    cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 
   const map = await canvasShot(page);
@@ -432,7 +440,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const stillCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
-  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('/').pop());
+  const files = requested.filter((u) => /\/cities\/milan\//.test(u)).map((u) => u.split('?')[0].split('/').pop());
   check(
     'The combined viewer switches geometry per layer',
     stillCartogram === 'true' &&
@@ -1223,7 +1231,12 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
-  await page.click('.aa-nav__langbtn:not(.aa-nav__langbtn--active)');
+  // The languages sit behind one toggle, not all on the bar.
+  const listedBefore = await page.$$eval('.aa-nav__langbtn', (els) => els.length);
+  await page.click('.aa-nav__langtoggle');
+  const listed = await page.$$eval('.aa-nav__langbtn', (els) => els.length);
+  check('Languages are behind a menu, not on the bar', listedBefore === 0 && listed >= 3, `${listedBefore} → ${listed}`);
+  await page.click('.aa-nav__langbtn[data-lang="it"]');
   await page.waitForTimeout(700);
   const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
   const itMetric = await page.$$eval('.aa-table__value', (els) =>
@@ -1239,6 +1252,20 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(900);
   const faq = await page.$eval('h1', (e) => e.textContent.trim());
   check('Locale persists across routes', /ricorrenti/i.test(faq), faq.replace(/\n/g, ' '));
+
+  // Arabic runs right to left: the document says so, and the nav's own
+  // ends swap, which is what logical CSS properties are for.
+  await page.click('.aa-nav__langtoggle');
+  await page.click('.aa-nav__langbtn[data-lang="ar"]');
+  await page.waitForTimeout(500);
+  const rtl = await page.evaluate(() => {
+    const brand = document.querySelector('.aa-nav__brand').getBoundingClientRect();
+    const tools = document.querySelector('.aa-nav__tools').getBoundingClientRect();
+    return { dir: document.documentElement.dir, lang: document.documentElement.lang, brandRight: brand.left > tools.left };
+  });
+  check('Arabic sets dir="rtl" and mirrors the nav', rtl.dir === 'rtl' && rtl.lang === 'ar' && rtl.brandRight, JSON.stringify(rtl));
+  await page.click('.aa-nav__langtoggle');
+  await page.click('.aa-nav__langbtn[data-lang="en"]');
   await page.close();
 }
 

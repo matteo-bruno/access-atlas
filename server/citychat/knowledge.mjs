@@ -29,6 +29,20 @@ const PERSONAS = {
 
 export const PERSONA_IDS = Object.keys(PERSONAS);
 
+// The site's languages (src/i18n/), named for the model.
+export const LANGUAGES = {
+  en: 'English',
+  it: 'Italian',
+  es: 'Spanish',
+  fr: 'French',
+  de: 'German',
+  pt: 'Brazilian Portuguese',
+  zh: 'Simplified Chinese',
+  ja: 'Japanese',
+  ko: 'Korean',
+  ar: 'Arabic',
+};
+
 const RULES = `
 You are CityChat, the assistant of the Accessibility Atlas, published by the Sustainable Cities team at Sony CSL Rome. You help people read four accessibility layers for the cities the Atlas publishes, and understand what they say about different areas of a city.
 
@@ -100,7 +114,9 @@ export function systemPrompt({ persona, city, lang } = {}) {
   const parts = [RULES];
   if (PERSONAS[persona]) parts.push(`## Who you are talking to\n${PERSONAS[persona]}`);
   if (city) parts.push(`## Context\nThe user opened the chat on the city with id "${city}". Assume questions are about it unless they say otherwise.`);
-  if (lang === 'it') parts.push('The interface is in Italian: answer in Italian unless the user writes in another language.');
+  if (LANGUAGES[lang] && lang !== 'en') {
+    parts.push(`The interface is in ${LANGUAGES[lang]}: answer in ${LANGUAGES[lang]} unless the user writes in another language.`);
+  }
   parts.push(`# Reference: the Atlas's own copy\n\n${corpus()}`);
   return parts.join('\n\n');
 }

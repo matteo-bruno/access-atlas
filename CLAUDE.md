@@ -37,8 +37,9 @@ One idea to understand: **the catalogue decides whether the Atlas draws
 measurements or seed data**, per city, per platform.
 
 ```
-public/data/index.json        catalogue — what is actually published
+public/data/index.json        catalogue — what is actually published, derived from the records
 public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
+  city.json                   the city's record: entries, figures, source hashes, createdAt
 src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
 src/data/grid.js              grid + layer files → the union mesh the viewer draws
@@ -47,7 +48,7 @@ src/data/useAtlasData.js      React bindings (coverage, profile, city pages)
 src/data/useAtlasView.js      React bindings for the combined viewer
 src/workers/useCityMesh.js    published-first, seed fallback
 scripts/import-data.mjs       one platform export → its city (importers/ per platform)
-scripts/update-data.mjs       whatever changed in input_data/, per input_data/manifest.json
+scripts/update-data.mjs       whatever changed in input_data/, per the hashes in each city.json
 ```
 
 **A city is one grid and one file per layer, and nothing is stored twice.**
@@ -91,7 +92,9 @@ were always published at. Encoding them as a scale per cell was measured and
 rejected for that reason. 15minCity and CityChrone publish none, so the Atlas
 derives one by a rule it states: a cell keeps its centre and its shape, and
 its **area is proportional to its population**, reaching the full hexagon at
-the median over the layer's cells. The population is the **grid's**, not the
+the median over the layer's *inhabited* cells. Empty cells are not drawn, and
+counting them pulled Rome's CityChrone reference (a metro-wide mask, 38%
+empty) down to 4 residents, 44.6 m from CDI's cartogram. The population is the **grid's**, not the
 layer's own: 15minCity's population model puts Milan's derived cartogram
 38 m from the published ones, the grid's puts it at ~13 m, and the point is
 that a cell of a given population is the same size whichever layer is on
@@ -115,6 +118,23 @@ caller changes.
 
 Adding a city is dropping its exports in `input_data/` and running
 `npm run update:data`. That is the whole design.
+
+**The catalogue, the coverage files and the summaries are derived, never
+patched.** Each city's record (`cities/<city>/city.json`) holds its atlas
+entry, one catalogue row, marker and compare row per layer, the SHA-256 of
+each export it came from and `createdAt`. An import writes its city and
+that record only; `buildIndex` then rebuilds `index.json`, every
+`coverage.geojson.gz` and every `summary.json.gz` from all the records in
+one pass, at the end of the run. They used to be upserted city by city,
+from inside each import, so an import that died between two of them, or a
+commit that carried one and not the other, left the catalogue and the world
+maps describing different sites. `test:data` fails if a rebuild would change
+anything; `npm run import -- --index` is the repair.
+
+`update:data` skips an export whose hash is on record, so adding cities
+touches only those cities. A published layer with no hash on record is
+*adopted* (hash recorded, nothing re-imported); `--force` recomputes
+everything. Hashes are written last, after `test:data` passed.
 
 ## The grids — read this before touching the combined viewer
 
@@ -262,9 +282,22 @@ nothing 404'd — assert on what was *fetched*.
 visitor was served the previous deploy's copy — Milan's 15minCity and
 CityChrone layers read "Not published" on a site where both were live. It is
 now fetched as `index.json?v=<build id>` (`catalogueUrl()`, id defined in
-`vite.config.js`); the datasets it points at still cache freely. If a symptom
-is "the deployed site disagrees with `public/data/`", suspect the cache before
-the code.
+`vite.config.js`). If a symptom is "the deployed site disagrees with
+`public/data/`", suspect the cache before the code.
+
+The files it points at had the same problem one level down, and on the
+self-hosted server it showed: they sat at stable URLs, Apache sends no
+`Cache-Control`, and a browser kept a coverage file or a grid from the last
+deploy under the new catalogue (new cities missing from the world map; a
+grid from one deploy under layers from the next). The current version of
+a file is fetched by its **plain path**, on purpose (a `?v=<hash>` on every
+request was tried and rejected as noise), so what keeps it current is the
+server: Apache sends `Cache-Control: no-cache` on the shell and the data
+(README, Apache section), and a returning browser revalidates and gets a
+304. The catalogue still lists a content hash per file (`files`), which
+names the version it describes; `fileUrl(catalogue, path, version)` tags a
+URL with one only when asked, for a host that will serve earlier versions.
+Every URL in `sources.js` goes through `fileUrl`; a new one must too.
 
 **A shared fetch must not carry one caller's abort signal.** The catalogue is
 memoised, because nearly every route reads it and it cannot change within a
@@ -304,6 +337,11 @@ not values.
 
 **`pkill -f "vite preview"` kills the calling shell** (exit 144). Expected, not
 a failure.
+
+**`curl … | head -c 1` under `set -o pipefail` ends a script.** Once the body
+is larger than a pipe buffer, `head` closes the pipe, curl exits 23, and the
+assignment fails `set -e` with no message. `deploy.sh`'s catalogue check did
+exactly that once `index.json` grew. Read the body whole.
 
 **A decorative source must never gate the data layers.** `AtlasMap` mounts its
 children only once the map is ready, and readiness used to wait on MapLibre's
@@ -361,9 +399,9 @@ npm run smoke:published    # stages a dataset, asserts it is read instead of see
 every published city — grid to hexagons, every layer merged in, all 24
 CityChrone hours included — and checks the grid is sorted and unique, every
 layer's rows land on grid cells, shares sum to 100, no CDI is outside
-[−1, +1], every 15minCity category × mode is present, each cartogram is drawn
-on its own cells and the derived rule stays within 25 m of the published
-ones, the compare rows agree with the layers, the catalogue's own `cells`
+[−1, +1], every 15minCity category × mode is present, the derived
+cartogram rule stays within 25 m of the published ones, every CityChrone
+matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
 and `variant` fields match the files, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
 seconds what the browser suites take minutes to reach.
@@ -687,8 +725,44 @@ rather than a reading.
 
 ## Copy and i18n
 
-`src/i18n/en.js` and `it.js` must keep an identical key shape — `t()` warns on
-missing keys in development, and the smoke suite fails if a locale drifts.
+Ten languages: English, Italian, Spanish, French, German, Portuguese
+(Brazil), Chinese (Simplified), Japanese, Korean and Arabic, one dictionary
+each in `src/i18n/`. Every dictionary must keep `en.js`'s key shape and every
+English string's `{placeholders}`. `t()` warns on a missing key in
+development only, and falls back to English silently in a build, so
+`test:data` checks the shape and the placeholders of every `<code>.js` it
+finds there, and that `locales.js` agrees with each `meta.locale`. Adding a
+language is a dictionary, a line in `DICTS` and one in `locales.js`.
+
+**The languages are a menu, not a row.** `LangMenu` in `Nav.jsx` shows the
+current code and lists the rest, each in its own script (`meta.name`), on
+demand; ten codes always on the bar were noise, and pushed the tabs off it.
+With the longest labels (Spanish, Arabic) the bar overlapped its tagline up to
+~1110 px, so the compact menu takes over below 1112 px rather than 1080.
+
+**Arabic is right to left, and three things make that work.** `index.jsx`
+sets `<html dir="rtl">`, and the CSS uses logical properties
+(`margin-inline-start`, `inset-inline-end`, `text-align: start`…) so the page
+mirrors itself; a physical `left`/`right` is a bug unless it is a centring
+`left: 50%` or a chart. Values inside sentences are wrapped in Unicode
+isolates by `t()` and in `<bdi>` by `<Interpolate>`, or bidi reorders them
+("15-minute city" reads "minute city-15", "2.6 M" reads "M 2.6"). Names and
+figures that stand alone take `unicode-bidi: plaintext` from a list in
+`global.css`: add a class there when a new one shows a Latin name or a
+number. Icons that point along the text (`arrow`, the chevrons) carry
+`.aa-icon--dir` and turn round. Charts and the ramps are not mirrored, so
+axis arrows keep pointing the way values grow. Arabic uses Western digits
+(`ar-u-nu-latn`), as every legend does, and `letter-spacing` is zeroed for it:
+tracking breaks the joins of a cursive script.
+
+**What stays in English, in every language**: the Atlas's name, platform and
+dataset names, the postal address and the citations. City and country names
+come from the catalogue, which carries English and Italian only. Blog posts
+have no versions beyond English and Italian; the fallback copy is marked
+`lang="en" dir="ltr"` (`postCopy` in `Blog.jsx`) so it is not laid out right
+to left in Arabic, and each blog lede says the posts are in English and
+Italian. Roboto and Instrument Serif have no CJK or Arabic glyphs: `tokens.css`
+puts the system's faces behind them per language, and downloads nothing.
 Numbers never appear in the dictionaries; they are formatted with `Intl` from
 `src/data/*.js`, so `156,627` becomes `156.627` in Italian for free.
 
@@ -697,6 +771,9 @@ noun** — `sapienzaPhdM` is "Dottorando", `sapienzaPhdF` "Dottoranda", and both
 are "PhD student, Sapienza" in English, which does not inflect. `src/data/team.js`
 says which form each person takes, and the team stated them: a name is not
 evidence of anyone's gender, so a new member needs asking rather than guessing.
+Japanese also leaves `city.explain.methods` in English; the other languages
+translate it. Its nav labels are the short forms (持続可能な都市, 連絡先).
+
 Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ("Amministrazione, senior") keep a single key.
 
@@ -713,7 +790,11 @@ importers read the platforms' exports as they hand them over — P.O.V.'s two
 GeoJSONs (the cartogram in EPSG:3857), CDI's city folder, 15minCity's
 harmonised GeoJSON, CityChrone's zip of per-hour zips — straight from the zip.
 `scripts/lib/zip.mjs` is a small reader for exactly that (stored and
-deflated members, no zip64), because Node has none.
+deflated members, zip64), because Node has none. It reads the archive from
+disk member by member, never whole: Node will not read a file past 2 GiB
+into one buffer, and Rome's CityChrone export is 3.2 GB. For the same
+reason the importer hands the 24 travel-time matrices to the writer as
+readers, one hour in memory at a time.
 
 `npm run build` also runs `scripts/postbuild-compress.mjs`, which writes
 `<file>.gz` companions for every text-ish file in `dist/` above 4 KB.
@@ -747,9 +828,8 @@ CityChrone's travel times is under 3 MB.
 
 **An import rebuilds what it cannot read, so it must not fail to read
 quietly.** Every import is additive — the city is rebuilt from what is
-already published plus the new layer, and the coverage file, the summary and
-the catalogue are upserted — and every one of those starts by reading what is
-there. An earlier importer returned null for *any* failed read, so a file
+already published plus the new layer, and its record is rewritten — and
+every one of those starts by reading what is there. An earlier importer returned null for *any* failed read, so a file
 truncated by an interrupted run looked the same as no file, and was answered
 by writing a fresh one: a coverage file holding one city, which on the site
 read as "importing one city deleted all the others". Only an absent file is
@@ -757,6 +837,23 @@ empty now; a file that is there but unreadable stops the run and says how to
 put it back. `writeDataFile` renames a temporary file into place rather than
 writing over the target, so an interrupted import cannot leave a truncated
 file behind.
+
+**A layer file is meaningless without the grid it was written against —
+commit them together.** A layer's rows are grid positions. Adding 15minCity
+to Rome grew the grid by the cells outside CDI's mask and rewrote every
+layer against it; the commit carried the *new* files (`fifteen.json.gz`,
+the CityChrone ones) and not the *rewritten* ones (`grid.json.gz`,
+`index.json`). On the server, deployed from the working tree, Rome was
+right; on GitHub Pages every 15minCity value sat on another cell — its
+population correlated 0.10 with the grid's, against ~0.9 in Milan and
+Zurich — and `test:data` passed, because every position still fell inside
+the smaller grid. It was taken off (`npm run import -- 15mincity --remove
+rome`) and re-imported from the export, which grew the grid to 11,685 cells
+and rewrote every Rome layer, exactly the files the first commit lacked;
+its population now correlates 0.74 with the grid's. The grid now
+carries `id`, a hash of its cells, and every layer the `grid` it was
+written for; the importer, `test:data` and the viewer (`checkGrid`) refuse a
+mismatch, and Pages and `deploy.sh` run `test:data` before building.
 
 **The grid is detected, never assumed — and centroid proximity cannot
 detect it.** An H3 cell's centre coincides with the centre of its central
@@ -767,6 +864,20 @@ mismatch on a real export, r10 gives 138.7 m). An earlier importer hard-coded
 `h3Resolution: null` with a comment claiming these exports are not H3 —
 carried over from the *legacy letter-coded* Rome data, which is not. The
 harmonised exports are, exactly.
+
+**The mean of a cell's vertices is not its centre everywhere.** H3 cells
+that cross an edge of its icosahedron come back from `cellToBoundary` with
+seven or more vertices, the extra ones on one side, so the vertex mean sits
+up to 28 m off the true centre. No European city is near such an edge;
+Xiapu (Fujian) is, and a test that took the vertex mean as the centre failed
+there on a correct cartogram. Measure from `cellToLatLng`. The P.O.V. and
+CDI importers still locate a polygon's cell by `ringCentroid`, the vertex
+mean, so an export from such a region may be refused as off the grid;
+15minCity is spared only because its export states each cell's centroid.
+
+**Imports gzip at level 6, not 9.** On a CityChrone matrix 9 took 5.3 s an
+hour for 1% less than 6's 0.8 s. An import compares content, not bytes, so
+files written at 9 are not rewritten for it.
 
 **Where a city is, is derived from its centroid, not passed in.**
 `scripts/lib/country.mjs` answers it from Natural Earth admin-0 1:50m,
@@ -816,8 +927,10 @@ Two consequences that bite silently:
   `writeDataFile`). `fs.readFileSync` on a catalogue path is a bug — it will
   hand you gzip bytes. So is `fs.statSync`: `test-data.mjs` once checked
   CityChrone's matrices were at least `cells²` bytes *on disk*, which a
-  compressed matrix is not, so 24 good files read as truncated. It measures
-  the decoded buffer, which also proves the gzip stream is intact.
+  compressed matrix is not, so 24 good files read as truncated. It reads
+  the decoded size from the gzip trailer (ISIZE) and the `.npy` header from
+  the first few kB instead, and never decodes a matrix whole: doing that for
+  Rome's 24 (130 MB each) was most of the suite's run time.
 - **`.gz` is a transport wrapper, not a format.** `formatFor` in
   `map/loaders.js` strips it before deciding, or a compressed
   `times00.npy` would be parsed as GeoJSON. The grid and layer files are
@@ -935,7 +1048,9 @@ closer spacing in `Nav.css`; below that the drawer takes over (it was 1080 px,
 where the tagline already ran under the first tab).
 
 ## Open, and needing the lab rather than more code
-- **The Italian is a first draft** and wants a native review.
+- **The Italian is a first draft** and wants a native review. So do the
+  other eight translations, which were machine-drafted; Arabic most of all,
+  since it also tests the right-to-left layout.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon
   intensity in urban transport" (Cities 176, 107202). Elsevier DOIs embed a
   year that cannot be derived from the citation, so it is left blank rather

@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
-import { useI18n } from '../i18n/index.jsx';
+import { LANGS, useI18n } from '../i18n/index.jsx';
 import { CONTACT } from '../data/team.js';
 import './FAQ.css';
 
@@ -51,7 +51,7 @@ export default function FAQ() {
           <dl className="aa-faq__meta">
             <MetaRow label={t('faq.meta.updated')} value={t('faq.meta.updatedValue')} />
             <MetaRow label={t('faq.meta.entries')} value={n(items.length)} />
-            <MetaRow label={t('faq.meta.languages')} value={t('faq.meta.languagesValue')} />
+            <MetaRow label={t('faq.meta.languages')} value={n(LANGS.length)} />
           </dl>
         </div>
 

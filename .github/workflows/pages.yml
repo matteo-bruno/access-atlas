@@ -34,6 +34,12 @@ jobs:
 
       - run: npm ci
 
+      # A data commit that does not hold together is not deployed. Rome's
+      # 15minCity layer was published here against a grid that was never
+      # committed, and drew every value on the wrong hexagon; test:data now
+      # fails on exactly that, in seconds.
+      - run: npm run test:data
+
       - name: Build
         run: npm run build
         env:

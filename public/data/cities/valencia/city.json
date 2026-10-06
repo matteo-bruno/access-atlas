@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "valencia",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Valencia",
+    "nameIt": "Valencia",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "valencia",
+    "name": "Valencia",
+    "nameIt": "Valencia",
+    "region": "Spain",
+    "regionIt": "Spagna",
+    "country": "ES",
+    "center": [
+      -0.37262,
+      39.46653
+    ],
+    "zoom": 9.1,
+    "population": 770448,
+    "grid": "cities/valencia/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 200
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/valencia/cardep.json.gz",
+      "pov": "cities/valencia/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "valencia",
+        "name": "Valencia",
+        "nameIt": "Valencia",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -0.37262,
+          39.46653
+        ],
+        "zoom": 9.1,
+        "population": 770448,
+        "cells": 1297,
+        "layer": "cities/valencia/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.37262,
+            39.46653
+          ]
+        },
+        "properties": {
+          "id": "valencia",
+          "name": "Valencia",
+          "country": "ES",
+          "isStudy": true,
+          "cdi": 0.102,
+          "population": 770448
+        }
+      },
+      "summary": {
+        "id": "valencia",
+        "cells": 1297,
+        "population": 770448,
+        "medianCdi": 0.364,
+        "weightedCdi": 0.102,
+        "ptShare": 0.5,
+        "carShare": 83.7,
+        "weightedByCar": 1025.7,
+        "weightedByTransit": 883.5,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.198
+          ],
+          [
+            0.1,
+            0.71
+          ],
+          [
+            0.2,
+            0.838
+          ],
+          [
+            0.3,
+            0.914
+          ],
+          [
+            0.4,
+            0.96
+          ],
+          [
+            0.5,
+            0.973
+          ],
+          [
+            0.6,
+            0.977
+          ],
+          [
+            0.7,
+            0.977
+          ],
+          [
+            0.8,
+            0.978
+          ],
+          [
+            0.9,
+            0.979
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "valencia",
+        "name": "Valencia",
+        "nameIt": "Valencia",
+        "region": "Spain",
+        "regionIt": "Spagna",
+        "country": "ES",
+        "center": [
+          -0.37262,
+          39.46653
+        ],
+        "zoom": 9.1,
+        "population": 770448,
+        "cells": 937,
+        "layer": "cities/valencia/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 200
+        },
+        "thresholds": {
+          "proximity": 4636.6,
+          "opportunity": 8684.8
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.37262,
+            39.46653
+          ]
+        },
+        "properties": {
+          "id": "valencia",
+          "name": "Valencia",
+          "country": "ES",
+          "isStudy": true,
+          "zone": 0,
+          "population": 770439,
+          "inclusionShare": 21.2
+        }
+      },
+      "summary": {
+        "id": "valencia",
+        "cells": 937,
+        "population": 770439,
+        "medianProximity": 2318.4,
+        "medianOpportunity": 5090.8,
+        "weightedProximity": 4376.2,
+        "weightedOpportunity": 8077.7,
+        "zoneShares": [
+          21.2,
+          2.2,
+          1.9,
+          74.6
+        ],
+        "zonePopulationShares": [
+          46.1,
+          4,
+          3.9,
+          45.9
+        ],
+        "thresholds": {
+          "proximity": 4636.6,
+          "opportunity": 8684.8
+        }
+      }
+    }
+  }
+}

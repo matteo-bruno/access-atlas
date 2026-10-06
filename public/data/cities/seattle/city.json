@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "seattle",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Seattle",
+    "nameIt": "Seattle",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "seattle",
+    "name": "Seattle",
+    "nameIt": "Seattle",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US",
+    "center": [
+      -122.33241,
+      47.62875
+    ],
+    "zoom": 9.4,
+    "population": 643867,
+    "grid": "cities/seattle/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 190
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/seattle/cardep.json.gz",
+      "pov": "cities/seattle/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "seattle",
+        "name": "Seattle",
+        "nameIt": "Seattle",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -122.33241,
+          47.62875
+        ],
+        "zoom": 9.4,
+        "population": 643867,
+        "cells": 2334,
+        "layer": "cities/seattle/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.33241,
+            47.62875
+          ]
+        },
+        "properties": {
+          "id": "seattle",
+          "name": "Seattle",
+          "country": "US",
+          "isStudy": true,
+          "cdi": 0.188,
+          "population": 643867
+        }
+      },
+      "summary": {
+        "id": "seattle",
+        "cells": 2334,
+        "population": 643867,
+        "medianCdi": 0.207,
+        "weightedCdi": 0.188,
+        "ptShare": 0,
+        "carShare": 97.6,
+        "weightedByCar": 1290.2,
+        "weightedByTransit": 917.8,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.006
+          ],
+          [
+            0.1,
+            0.179
+          ],
+          [
+            0.2,
+            0.631
+          ],
+          [
+            0.3,
+            0.908
+          ],
+          [
+            0.4,
+            0.958
+          ],
+          [
+            0.5,
+            0.986
+          ],
+          [
+            0.6,
+            0.992
+          ],
+          [
+            0.7,
+            0.993
+          ],
+          [
+            0.8,
+            0.993
+          ],
+          [
+            0.9,
+            0.995
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "seattle",
+        "name": "Seattle",
+        "nameIt": "Seattle",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -122.33241,
+          47.62875
+        ],
+        "zoom": 9.4,
+        "population": 643867,
+        "cells": 2208,
+        "layer": "cities/seattle/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 190
+        },
+        "thresholds": {
+          "proximity": 2886,
+          "opportunity": 7909.5
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.33241,
+            47.62875
+          ]
+        },
+        "properties": {
+          "id": "seattle",
+          "name": "Seattle",
+          "country": "US",
+          "isStudy": true,
+          "zone": 0,
+          "population": 643859,
+          "inclusionShare": 30.8
+        }
+      },
+      "summary": {
+        "id": "seattle",
+        "cells": 2208,
+        "population": 643859,
+        "medianProximity": 2164.3,
+        "medianOpportunity": 6906.2,
+        "weightedProximity": 2966.3,
+        "weightedOpportunity": 7962.9,
+        "zoneShares": [
+          30.8,
+          3.8,
+          3.7,
+          61.7
+        ],
+        "zonePopulationShares": [
+          46.6,
+          3.5,
+          3.5,
+          46.5
+        ],
+        "thresholds": {
+          "proximity": 2886,
+          "opportunity": 7909.5
+        }
+      }
+    }
+  }
+}

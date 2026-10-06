@@ -58,6 +58,20 @@ export function layerPositions(file) {
   return out;
 }
 
+/**
+ * Refuse a layer written against another grid.
+ *
+ * A layer's rows are only grid positions, so a layer file paired with any
+ * other grid still decodes and still draws — every value on someone else's
+ * cell. The importer stamps the grid's id on each layer it writes; files
+ * from before the stamp carry none and are let through.
+ */
+export function checkGrid(grid, file, layer) {
+  if (file?.grid && grid?.id && file.grid !== grid.id) {
+    throw new Error(`${layer ?? file.layer}: written against grid ${file.grid}, but the city's grid is ${grid.id}`);
+  }
+}
+
 const closedRing = (boundary) => {
   const ring = boundary.map(([lat, lon]) => [lon, lat]);
   ring.push(ring[0]);
@@ -177,6 +191,7 @@ export function citychroneHourFromLayer(file, hour) {
  * the same size whichever layer draws it), full size at `reference`.
  */
 export async function layerCartogram(grid, file) {
+  checkGrid(grid, file);
   const { cellToBoundary, cellToLatLng } = await loadH3();
   const positions = layerPositions(file);
   const cartogram = file.cartogram ?? {};

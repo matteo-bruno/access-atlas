@@ -13,7 +13,7 @@
 .aa-mapstage__attribution {
   position: absolute;
   bottom: 14px;
-  left: var(--chrome-pad);
+  inset-inline-start: var(--chrome-pad);
   font-size: 10.5px;
   color: var(--ink-3);
   z-index: 2;
@@ -24,7 +24,7 @@
 .aa-welcome {
   position: absolute;
   top: 24px;
-  left: var(--chrome-pad);
+  inset-inline-start: var(--chrome-pad);
   width: 360px;
   max-width: calc(100% - var(--chrome-pad) * 2);
   padding: 22px 24px;
@@ -97,7 +97,7 @@
 .aa-legend {
   position: absolute;
   top: 116px;
-  right: var(--chrome-pad);
+  inset-inline-end: var(--chrome-pad);
   min-width: 200px;
   padding: 16px 18px;
   box-shadow: var(--shadow-float);
@@ -177,7 +177,7 @@
 /* Zoom controls */
 .aa-zoom {
   position: absolute;
-  right: var(--chrome-pad);
+  inset-inline-end: var(--chrome-pad);
   bottom: 32px;
   display: flex;
   flex-direction: column;
@@ -231,7 +231,7 @@
   .aa-legend {
     top: auto;
     bottom: 84px;
-    right: var(--chrome-pad);
+    inset-inline-end: var(--chrome-pad);
     min-width: 0;
     padding: 12px 14px;
   }
@@ -247,9 +247,9 @@
   .aa-welcome {
     top: auto;
     bottom: 84px;
-    left: var(--chrome-pad);
+    inset-inline-start: var(--chrome-pad);
     width: auto;
-    right: var(--chrome-pad);
+    inset-inline-end: var(--chrome-pad);
     max-width: none;
   }
 

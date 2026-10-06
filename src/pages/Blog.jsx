@@ -3,6 +3,7 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
+import { localeFor } from '../i18n/locales.js';
 import { POSTS } from '../data/blog.js';
 import './Blog.css';
 
@@ -32,7 +33,7 @@ export default function Blog() {
 
         <div className="aa-blog__list">
           {posts.map((post) => {
-            const copy = post[lang] ?? post.en;
+            const { copy, attrs } = postCopy(post, lang);
             return (
               <article key={post.slug} className="aa-card aa-lift aa-postcard">
                 <div className="aa-postcard__kicker">
@@ -41,10 +42,12 @@ export default function Blog() {
                   <span aria-hidden="true">·</span>
                   <span>{t('blog.readingTime', { count: n(post.readingTime) })}</span>
                 </div>
-                <h2 className="aa-postcard__title">
+                <h2 className="aa-postcard__title" {...attrs}>
                   <Link to={`/blog/${post.slug}`}>{copy.title}</Link>
                 </h2>
-                <p className="aa-postcard__lede">{copy.lede}</p>
+                <p className="aa-postcard__lede" {...attrs}>
+                  {copy.lede}
+                </p>
                 <Link className="aa-postcard__more" to={`/blog/${post.slug}`}>
                   {t('platform.learnMore')}
                   <Icon name="arrow" size={13} color="var(--ink-3)" />
@@ -60,9 +63,18 @@ export default function Blog() {
   );
 }
 
+// A post in the reader's language, or the English one marked as English: in
+// Arabic an English paragraph left in the page's right-to-left direction
+// moves its full stop to the wrong end, and a screen reader reads it with the
+// wrong voice.
+export function postCopy(post, lang) {
+  const own = post[lang];
+  return { copy: own ?? post.en, attrs: own || lang === 'en' ? {} : { lang: 'en', dir: 'ltr' } };
+}
+
 export function formatDate(iso, lang) {
   const date = new Date(`${iso}T00:00:00Z`);
-  return new Intl.DateTimeFormat(lang === 'it' ? 'it-IT' : 'en-GB', {
+  return new Intl.DateTimeFormat(localeFor(lang), {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

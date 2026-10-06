@@ -1,29 +1,39 @@
 #!/usr/bin/env node
-// Import whatever in `input_data/` has changed since it was last imported,
-// and nothing else.
+// Import whatever in `input_data/` is new or has changed, and nothing else.
 //
 //   npm run update:data                     every platform
 //   npm run update:data -- --15mincity      only the platforms named (--citychrone, --pov, --cdi)
 //   npm run update:data -- --dry-run        list what would be imported
 //   npm run update:data -- --force          re-import every file, changed or not
-//   npm run update:data -- --baseline       record the files as imported, import nothing
 //
-// What has been imported is recorded in `input_data/manifest.json`, one entry
-// per source file: its SHA-256, and a fingerprint of the importer that read
-// it. The manifest is committed; the source files are not.
+// What a city was imported from is recorded in the city's own record,
+// `public/data/cities/<city>/city.json`: per layer, the export's SHA-256, its
+// file name, and a fingerprint of the importer that read it. The record also
+// keeps `createdAt`, the date the city was first published. An export whose
+// hash matches its record is skipped, so adding a few cities touches only
+// those cities; `--force` recomputes everything.
 //
-// Three decisions worth knowing before changing this:
+// Decisions worth knowing before changing this:
 //
 //   • **Content, not dates.** A file is new or changed when its hash is. A
 //     re-download or a copy between machines resets a file's mtime without
 //     changing a byte of it, and would re-import every city for nothing.
-//   • **The manifest is written last.** Only after the import succeeded *and*
+//   • **A layer that is published and has no hash on record is adopted, not
+//     re-imported.** Its export's hash is recorded and nothing else changes:
+//     the cities published before hashes were recorded stay exactly as they
+//     are. `--force` re-imports them.
+//   • **The catalogue, coverage and summaries are rebuilt once, at the end**,
+//     from every city's record, not patched after each city. A run therefore
+//     cannot leave the catalogue pointing at one state of a city and a world
+//     map showing another, and the rebuild also repairs index files edited or
+//     reverted by hand.
+//   • **Hashes are recorded last.** Only after the imports, the rebuild *and*
 //     `test:data` passed. An interrupted or rejected run therefore leaves the
-//     file looking unimported, and the next run offers it again, rather than
-//     recording as published a city that is not.
+//     export looking unimported, and the next run offers it again, rather
+//     than recording as published a city that is not.
 //   • **A source removed from `input_data/` does not unpublish its city.** It
-//     is reported, and the manifest keeps its entry. Taking a city off the
-//     site should be a decision, not the side effect of a tidied folder.
+//     is reported, and the record keeps it. Taking a city off the site is a
+//     decision: `npm run import -- <platform> --remove <city>`.
 //
 // A change to the importer itself (or to the helpers it reads) is reported as
 // such, and not acted on unless `--force` is given: a refactor would
@@ -40,6 +50,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { slugify } from './lib/slug.mjs';
+import { buildIndex, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
 import * as fifteen from './importers/fifteen.mjs';
@@ -50,7 +61,6 @@ const IMPORTERS = { '15mincity': fifteen, citychrone, pov, cdi };
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const INPUT = path.join(ROOT, 'input_data');
-const MANIFEST = path.join(INPUT, 'manifest.json');
 
 // ── platforms ────────────────────────────────────────────────────────
 // One per input folder. Each changed source is imported on its own with
@@ -71,6 +81,7 @@ const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
   const module = `scripts/importers/${importer.layer === 'cardep' ? 'cdi' : importer.layer}.mjs`;
   return {
     id,
+    layer: importer.layer,
     dir: importer.dir,
     accepts: importer.accepts,
     slug: (f) => slugify(importer.cityName(f)),
@@ -79,7 +90,7 @@ const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
 });
 
 // ── args ─────────────────────────────────────────────────────────────
-const OPTIONS = new Set(['dry-run', 'force', 'baseline', 'help']);
+const OPTIONS = new Set(['dry-run', 'force', 'help']);
 const argv = process.argv.slice(2);
 const opts = new Set();
 const named = [];
@@ -93,11 +104,10 @@ for (const a of argv) {
 
 if (opts.has('help')) {
   const text = fs.readFileSync(fileURLToPath(import.meta.url), 'utf8');
-  const usage = text.split('\n').slice(4, 9).map((l) => l.replace(/^\/\/ ?/, ''));
+  const usage = text.split('\n').slice(3, 7).map((l) => l.replace(/^\/\/ ?/, ''));
   console.log(usage.join('\n'));
   process.exit(0);
 }
-if (opts.has('force') && opts.has('baseline')) fail('--force and --baseline contradict each other');
 
 const DRY_RUN = opts.has('dry-run');
 const selected = named.length ? PLATFORMS.filter((p) => named.includes(p.id)) : PLATFORMS;
@@ -146,27 +156,6 @@ function fingerprintOf(platform) {
   return hash.digest('hex').slice(0, 16);
 }
 
-// An absent manifest is a first run. A manifest that is there and cannot be
-// read is not: treating it as empty would re-import everything and then
-// overwrite the record of what had been imported.
-function readManifest() {
-  if (!fs.existsSync(MANIFEST)) return { version: 1, files: {} };
-  try {
-    const m = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
-    if (!m || typeof m.files !== 'object') throw new Error('no "files" object');
-    return m;
-  } catch (err) {
-    fail(`${path.relative(ROOT, MANIFEST)} is unreadable (${err.message}); restore it from git before running again`);
-  }
-}
-
-function writeManifest(manifest) {
-  const sorted = Object.fromEntries(Object.entries(manifest.files).sort(([a], [b]) => a.localeCompare(b)));
-  const tmp = `${MANIFEST}.tmp`;
-  fs.writeFileSync(tmp, `${JSON.stringify({ ...manifest, files: sorted }, null, 2)}\n`);
-  fs.renameSync(tmp, MANIFEST);
-}
-
 function run(script, args) {
   const res = spawnSync(process.execPath, [path.join(ROOT, script), ...args], {
     cwd: ROOT,
@@ -175,7 +164,6 @@ function run(script, args) {
   return res.status === 0;
 }
 
-const rel = (p) => path.relative(ROOT, p);
 
 function sizeOf(file) {
   const stat = fs.statSync(file);
@@ -184,8 +172,11 @@ function sizeOf(file) {
 }
 
 // ── scan ─────────────────────────────────────────────────────────────
-const manifest = readManifest();
+// What is on record, per city and layer, read from the cities' own records.
+const records = new Map(listCities().map((id) => [id, readCityRecord(id)]));
+
 const plan = []; // { platform, key, file, slug, sha, size, reason }
+const adopt = []; // the same, for a published layer with no hash on record
 const removed = [];
 const stale = [];
 let tracked = 0;
@@ -212,23 +203,29 @@ for (const platform of selected) {
   for (const f of files) {
     const key = `${platform.dir}/${f}`;
     const file = path.join(dir, f);
+    const slug = platform.slug(f);
+    const record = records.get(slug);
+    const prev = record?.sources?.[platform.layer];
+    const published = Boolean(record?.platforms?.[platform.layer]);
+    seen.add(`${slug}/${platform.layer}`);
     const size = sizeOf(file);
     const sha = sha256(file);
-    const prev = manifest.files[key];
-    seen.add(key);
+    const item = { platform, key, file, slug, sha, size };
 
     let reason = null;
-    if (!prev) reason = 'new';
+    if (opts.has('force')) reason = prev || published ? 'forced' : 'new';
+    else if (!published) reason = 'new';
+    else if (!prev) adopt.push({ ...item, reason: 'adopted' });
     else if (prev.sha256 !== sha) reason = 'changed';
-    else if (opts.has('force')) reason = 'forced';
     else if (prev.importer !== fingerprint) stale.push(key);
+    else tracked += 1;
 
-    if (reason) plan.push({ platform, key, file, slug: platform.slug(f), sha, size, reason });
-    else if (prev.importer === fingerprint) tracked += 1;
+    if (reason) plan.push({ ...item, reason });
   }
 
-  for (const key of Object.keys(manifest.files)) {
-    if (key.startsWith(`${platform.dir}/`) && !seen.has(key)) removed.push(key);
+  for (const [id, record] of records) {
+    const source = record.sources?.[platform.layer];
+    if (source && !seen.has(`${id}/${platform.layer}`)) removed.push(source.file);
   }
 }
 
@@ -237,11 +234,15 @@ const mb = (n) => `${(n / 1024 / 1024).toFixed(1)} MB`;
 console.log(
   `update-data: ${selected.map((p) => p.id).join(', ')}: ` +
     `${plan.length} to import, ${tracked} up to date` +
+    (adopt.length ? `, ${adopt.length} already published` : '') +
     (stale.length ? `, ${stale.length} from an older importer` : '') +
     (DRY_RUN ? ' (dry run)' : ''),
 );
 for (const item of plan) {
   console.log(`  ${item.reason.padEnd(8)} ${item.key}  → ${item.slug}  (${mb(item.size)})`);
+}
+for (const item of adopt) {
+  console.log(`  adopted  ${item.key}  → ${item.slug}  already published; hash recorded, not re-imported (--force to)`);
 }
 for (const key of removed) {
   console.log(`  missing  ${key}  no longer in input_data/, its city stays published`);
@@ -253,45 +254,69 @@ if (stale.length) {
   );
 }
 
-if (!plan.length) {
-  console.log('nothing to import.');
-  process.exit(0);
-}
-if (DRY_RUN) process.exit(0);
-
-// ── baseline: record without importing ──────────────────────────────
-// For a tree whose published data already came from these files: without it
-// the first run would re-import every city just to learn that it had.
-if (opts.has('baseline')) {
-  const now = new Date().toISOString();
-  for (const item of plan) {
-    manifest.files[item.key] = {
+// ── record ───────────────────────────────────────────────────────────
+function record(items, now) {
+  for (const item of items) {
+    recordSource(item.slug, item.platform.layer, {
+      file: item.key,
       sha256: item.sha,
       size: item.size,
       importer: item.platform.currentFingerprint,
-      importedAt: now,
-      baseline: true,
-    };
+      // An adopted layer was published from this export before hashes were
+      // recorded; when it was imported is not known, only when it was adopted.
+      ...(item.reason === 'adopted' ? { adoptedAt: now } : { importedAt: now }),
+    });
   }
-  writeManifest(manifest);
-  console.log(`recorded ${plan.length} file(s) in ${rel(MANIFEST)} without importing them.`);
+}
+
+if (DRY_RUN) process.exit(0);
+
+// The catalogue is rebuilt even when nothing is imported: it is derived from
+// the cities' records, so this is what puts back an index or a coverage file
+// that drifted from them (edited by hand, reverted, half-committed).
+function reindex() {
+  const report = buildIndex();
+  const changed = report.files.filter((f) => f?.changed);
+  console.log(
+    `catalogue: ${report.cities} cities on ${report.platforms.length} platforms, ` +
+      (changed.length ? `${changed.length} file(s) rewritten: ${changed.map((f) => f.rel).join(', ')}` : 'unchanged'),
+  );
+  return changed.length;
+}
+
+if (!plan.length) {
+  // Adopting changes no published file, so it needs no test:data.
+  if (adopt.length) {
+    record(adopt, new Date().toISOString());
+    console.log(`recorded ${adopt.length} hash(es) for layers already published.`);
+  }
+  const changed = reindex();
+  if (!changed && !adopt.length) console.log('nothing to import.');
+  else if (changed) {
+    console.log('\n── test:data');
+    if (!run('scripts/test-data.mjs', [])) process.exit(1);
+  }
   process.exit(0);
 }
 
 // ── import ───────────────────────────────────────────────────────────
 // One importer process per city, so a failure is attributed to the file that
 // caused it: the importer carries on past a failed city and reports it only
-// through its exit code, which for a batch would not say which one.
+// through its exit code, which for a batch would not say which one. Each
+// writes its city only; the catalogue is rebuilt once, below.
 const done = [];
 const failed = [];
 for (const item of plan) {
   console.log(`\n── ${item.platform.id}: ${item.slug} (${item.reason})`);
-  if (run('scripts/import-data.mjs', [item.platform.id, item.file])) done.push(item);
+  if (run('scripts/import-data.mjs', [item.platform.id, item.file, '--no-index'])) done.push(item);
   else failed.push(item);
 }
 
+console.log('\n── catalogue');
+reindex();
+
 if (!done.length) {
-  console.error(`\nevery import failed (${failed.map((i) => i.key).join(', ')}); manifest unchanged.`);
+  console.error(`\nevery import failed (${failed.map((i) => i.key).join(', ')}); no hash recorded.`);
   process.exit(1);
 }
 
@@ -299,27 +324,21 @@ if (!done.length) {
 console.log('\n── test:data');
 if (!run('scripts/test-data.mjs', [])) {
   console.error(
-    '\ntest:data failed on the imported data, so the manifest is unchanged and the next run will offer ' +
+    '\ntest:data failed on the imported data, so no hash was recorded and the next run will offer ' +
       'the same files again.\nInspect with `git status public/data`. If the import is at fault, ' +
       '`git checkout -- public/data` puts back the files it changed; the ones it created show as untracked.',
   );
   process.exit(1);
 }
 
-const now = new Date().toISOString();
-for (const item of done) {
-  manifest.files[item.key] = {
-    sha256: item.sha,
-    size: item.size,
-    importer: item.platform.currentFingerprint,
-    importedAt: now,
-  };
-}
-writeManifest(manifest);
-
-console.log(`\nimported ${done.length} file(s); ${rel(MANIFEST)} updated.`);
+record([...done, ...adopt], new Date().toISOString());
+console.log(`\nimported ${done.length} file(s); their hashes are recorded in each city's city.json.`);
 if (failed.length) {
   console.error(`${failed.length} failed and stay pending: ${failed.map((i) => i.key).join(', ')}`);
   process.exit(1);
 }
-console.log('next: review `git status`, commit public/data and the manifest, then scripts/deploy.sh.');
+console.log(
+  'next: commit **all** of public/data (`git add -A public/data`: an import rewrites files that were\n' +
+    'already there, and committing only the new ones publishes layers against a grid that is not in the\n' +
+    'commit), then scripts/deploy.sh.',
+);

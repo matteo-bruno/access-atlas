@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "vienna",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Vienna",
+    "nameIt": "Vienna",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "vienna",
+    "name": "Vienna",
+    "nameIt": "Vienna",
+    "region": "Austria",
+    "regionIt": "Austria",
+    "country": "AT",
+    "center": [
+      16.3743,
+      48.20471
+    ],
+    "zoom": 9.2,
+    "population": 1920660,
+    "grid": "cities/vienna/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 201
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/vienna/cardep.json.gz",
+      "pov": "cities/vienna/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "vienna",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          16.3743,
+          48.20471
+        ],
+        "zoom": 9.2,
+        "population": 1920660,
+        "cells": 3980,
+        "layer": "cities/vienna/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.3743,
+            48.20471
+          ]
+        },
+        "properties": {
+          "id": "vienna",
+          "name": "Vienna",
+          "country": "AT",
+          "isStudy": true,
+          "cdi": 0.129,
+          "population": 1920660
+        }
+      },
+      "summary": {
+        "id": "vienna",
+        "cells": 3980,
+        "population": 1920660,
+        "medianCdi": 0.196,
+        "weightedCdi": 0.129,
+        "ptShare": 0.2,
+        "carShare": 87.2,
+        "weightedByCar": 3792.2,
+        "weightedByTransit": 3058.8,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.083
+          ],
+          [
+            0.1,
+            0.466
+          ],
+          [
+            0.2,
+            0.821
+          ],
+          [
+            0.3,
+            0.946
+          ],
+          [
+            0.4,
+            0.972
+          ],
+          [
+            0.5,
+            0.981
+          ],
+          [
+            0.6,
+            0.985
+          ],
+          [
+            0.7,
+            0.986
+          ],
+          [
+            0.8,
+            0.988
+          ],
+          [
+            0.9,
+            0.988
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "vienna",
+        "name": "Vienna",
+        "nameIt": "Vienna",
+        "region": "Austria",
+        "regionIt": "Austria",
+        "country": "AT",
+        "center": [
+          16.3743,
+          48.20471
+        ],
+        "zoom": 9.3,
+        "population": 1920660,
+        "cells": 3222,
+        "layer": "cities/vienna/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 201
+        },
+        "thresholds": {
+          "proximity": 7111.7,
+          "opportunity": 26305.1
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            16.3743,
+            48.20471
+          ]
+        },
+        "properties": {
+          "id": "vienna",
+          "name": "Vienna",
+          "country": "AT",
+          "isStudy": true,
+          "zone": 0,
+          "population": 1920674,
+          "inclusionShare": 25.8
+        }
+      },
+      "summary": {
+        "id": "vienna",
+        "cells": 3222,
+        "population": 1920674,
+        "medianProximity": 4941.2,
+        "medianOpportunity": 21104.6,
+        "weightedProximity": 8040.7,
+        "weightedOpportunity": 26797.6,
+        "zoneShares": [
+          25.8,
+          7.3,
+          5.2,
+          61.7
+        ],
+        "zonePopulationShares": [
+          42.3,
+          7.7,
+          7.7,
+          42.3
+        ],
+        "thresholds": {
+          "proximity": 7111.7,
+          "opportunity": 26305.1
+        }
+      }
+    }
+  }
+}

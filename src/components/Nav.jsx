@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Icon } from './Icon.jsx';
 import { Logo } from './Logo.jsx';
-import { useI18n } from '../i18n/index.jsx';
+import { LANGS, LANG_NAMES, isRtl, useI18n } from '../i18n/index.jsx';
 import './Nav.css';
 
 const GITHUB_URL = 'https://github.com/sony-csl-rome';
@@ -78,21 +78,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
           {t('nav.github')}
         </a>
 
-        <div className="aa-nav__lang" role="group" aria-label="Language">
-          {['en', 'it'].map((code, index) => (
-            <span key={code}>
-              {index > 0 && <span className="aa-nav__langsep">·</span>}
-              <button
-                type="button"
-                className={`aa-nav__langbtn${lang === code ? ' aa-nav__langbtn--active' : ''}`}
-                aria-pressed={lang === code}
-                onClick={() => setLang(code)}
-              >
-                {code.toUpperCase()}
-              </button>
-            </span>
-          ))}
-        </div>
+        <LangMenu lang={lang} setLang={setLang} label={t('nav.language')} />
 
         <div className="aa-nav__menu" ref={menuRef}>
           <button
@@ -131,5 +117,67 @@ export function Nav({ active = 'atlas', sticky = true }) {
         </div>
       </div>
     </header>
+  );
+}
+
+// The language switcher: the current language's code, and the full list only
+// when asked for. Each name is written in its own language and script, so a
+// reader finds theirs without reading the one on screen.
+function LangMenu({ lang, setLang, label }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const close = (event) => {
+      if (!ref.current?.contains(event.target)) setOpen(false);
+    };
+    const onKey = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('pointerdown', close);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', close);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  return (
+    <div className="aa-nav__lang" ref={ref}>
+      <button
+        type="button"
+        className="aa-nav__langtoggle"
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-label={`${label}: ${LANG_NAMES[lang]}`}
+        onClick={() => setOpen((value) => !value)}
+      >
+        {lang.toUpperCase()}
+        <Icon name="chevronDown" size={12} />
+      </button>
+      {open && (
+        <ul className="aa-nav__langlist" aria-label={label}>
+          {LANGS.map((code) => (
+            <li key={code}>
+              <button
+                type="button"
+                lang={code}
+                dir={isRtl(code) ? 'rtl' : 'ltr'}
+                data-lang={code}
+                className={`aa-nav__langbtn${lang === code ? ' aa-nav__langbtn--active' : ''}`}
+                aria-current={lang === code ? 'true' : undefined}
+                onClick={() => {
+                  setLang(code);
+                  setOpen(false);
+                }}
+              >
+                {LANG_NAMES[code]}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

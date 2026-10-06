@@ -26,7 +26,7 @@ import { providerFromEnv } from './llm/index.mjs';
 import { ProviderError } from './llm/http.mjs';
 import { createDataStore, createTools } from './tools.mjs';
 import { runChat } from './chat.mjs';
-import { PERSONA_IDS } from './knowledge.mjs';
+import { LANGUAGES, PERSONA_IDS } from './knowledge.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const env = process.env;
@@ -113,7 +113,7 @@ function validate(body) {
     messages: clean,
     persona: PERSONA_IDS.includes(body.persona) ? body.persona : undefined,
     city: typeof body.city === 'string' && /^[a-z0-9-]{1,40}$/.test(body.city) ? body.city : undefined,
-    lang: body.lang === 'it' ? 'it' : 'en',
+    lang: Object.hasOwn(LANGUAGES, body.lang) ? body.lang : 'en',
   };
 }
 

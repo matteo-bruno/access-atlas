@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "chicago",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Chicago",
+    "nameIt": "Chicago",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "chicago",
+    "name": "Chicago",
+    "nameIt": "Chicago",
+    "region": "United States",
+    "regionIt": "Stati Uniti",
+    "country": "US",
+    "center": [
+      -87.68386,
+      41.86533
+    ],
+    "zoom": 8.7,
+    "population": 2504511,
+    "grid": "cities/chicago/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 202
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/chicago/cardep.json.gz",
+      "pov": "cities/chicago/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "chicago",
+        "name": "Chicago",
+        "nameIt": "Chicago",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -87.68386,
+          41.86533
+        ],
+        "zoom": 8.7,
+        "population": 2504511,
+        "cells": 5641,
+        "layer": "cities/chicago/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.68386,
+            41.86533
+          ]
+        },
+        "properties": {
+          "id": "chicago",
+          "name": "Chicago",
+          "country": "US",
+          "isStudy": true,
+          "cdi": 0.27,
+          "population": 2504511
+        }
+      },
+      "summary": {
+        "id": "chicago",
+        "cells": 5641,
+        "population": 2504511,
+        "medianCdi": 0.301,
+        "weightedCdi": 0.27,
+        "ptShare": 0,
+        "carShare": 99.6,
+        "weightedByCar": 2366.2,
+        "weightedByTransit": 1412.7,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.001
+          ],
+          [
+            0.1,
+            0.021
+          ],
+          [
+            0.2,
+            0.231
+          ],
+          [
+            0.3,
+            0.669
+          ],
+          [
+            0.4,
+            0.906
+          ],
+          [
+            0.5,
+            0.983
+          ],
+          [
+            0.6,
+            0.994
+          ],
+          [
+            0.7,
+            0.996
+          ],
+          [
+            0.8,
+            0.997
+          ],
+          [
+            0.9,
+            0.997
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "chicago",
+        "name": "Chicago",
+        "nameIt": "Chicago",
+        "region": "United States",
+        "regionIt": "Stati Uniti",
+        "country": "US",
+        "center": [
+          -87.68386,
+          41.86533
+        ],
+        "zoom": 8.7,
+        "population": 2504511,
+        "cells": 4854,
+        "layer": "cities/chicago/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 202
+        },
+        "thresholds": {
+          "proximity": 2271.8,
+          "opportunity": 11547
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.68386,
+            41.86533
+          ]
+        },
+        "properties": {
+          "id": "chicago",
+          "name": "Chicago",
+          "country": "US",
+          "isStudy": true,
+          "zone": 0,
+          "population": 2504515,
+          "inclusionShare": 32
+        }
+      },
+      "summary": {
+        "id": "chicago",
+        "cells": 4854,
+        "population": 2504515,
+        "medianProximity": 1848.5,
+        "medianOpportunity": 10299.4,
+        "weightedProximity": 2751.3,
+        "weightedOpportunity": 11793.2,
+        "zoneShares": [
+          32,
+          5.3,
+          7.4,
+          55.3
+        ],
+        "zonePopulationShares": [
+          43.2,
+          6.8,
+          6.8,
+          43.2
+        ],
+        "thresholds": {
+          "proximity": 2271.8,
+          "opportunity": 11547
+        }
+      }
+    }
+  }
+}

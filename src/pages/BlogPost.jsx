@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { postBySlug } from '../data/blog.js';
-import { formatDate } from './Blog.jsx';
+import { formatDate, postCopy } from './Blog.jsx';
 import './Blog.css';
 
 export default function BlogPost() {
@@ -16,7 +16,7 @@ export default function BlogPost() {
 
 function PostScreen({ post }) {
   const { t, n, lang } = useI18n();
-  const copy = post[lang] ?? post.en;
+  const { copy, attrs } = postCopy(post, lang);
 
   return (
     <div className="aa-page">
@@ -28,8 +28,12 @@ function PostScreen({ post }) {
           </Link>
 
           <Eyebrow>{t('blog.eyebrow')}</Eyebrow>
-          <h1 className="aa-post__headline">{copy.title}</h1>
-          <p className="aa-post__lede">{copy.lede}</p>
+          <h1 className="aa-post__headline" {...attrs}>
+            {copy.title}
+          </h1>
+          <p className="aa-post__lede" {...attrs}>
+            {copy.lede}
+          </p>
 
           <div className="aa-post__meta aa-mono">
             <time dateTime={post.date}>{formatDate(post.date, lang)}</time>
@@ -37,7 +41,7 @@ function PostScreen({ post }) {
             <span>{t('blog.readingTime', { count: n(post.readingTime) })}</span>
           </div>
 
-          <div className="aa-post__body">
+          <div className="aa-post__body" {...attrs}>
             {copy.body.map((block, index) => (
               <Block key={index} block={block} />
             ))}

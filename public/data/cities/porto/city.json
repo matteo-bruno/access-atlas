@@ -1,0 +1,255 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "porto",
+  "createdAt": "2026-08-28T13:51:44.000Z",
+  "updatedAt": "2026-08-28T13:51:44.000Z",
+  "meta": {
+    "name": "Porto",
+    "nameIt": "Porto",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT"
+  },
+  "sources": {},
+  "atlas": {
+    "id": "porto",
+    "name": "Porto",
+    "nameIt": "Porto",
+    "region": "Portugal",
+    "regionIt": "Portogallo",
+    "country": "PT",
+    "center": [
+      -8.62145,
+      41.16225
+    ],
+    "zoom": 10.6,
+    "population": 230048,
+    "grid": "cities/porto/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 210
+    },
+    "layers": [
+      "cardep",
+      "pov"
+    ],
+    "layerData": {
+      "cardep": "cities/porto/cardep.json.gz",
+      "pov": "cities/porto/pov.json.gz"
+    },
+    "cartogramSources": {
+      "cardep": "published",
+      "pov": "published"
+    }
+  },
+  "platforms": {
+    "cardep": {
+      "row": {
+        "id": "porto",
+        "name": "Porto",
+        "nameIt": "Porto",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.62145,
+          41.16225
+        ],
+        "zoom": 10.6,
+        "population": 230048,
+        "cells": 360,
+        "layer": "cities/porto/cardep.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.62145,
+            41.16225
+          ]
+        },
+        "properties": {
+          "id": "porto",
+          "name": "Porto",
+          "country": "PT",
+          "isStudy": true,
+          "cdi": 0.091,
+          "population": 230048
+        }
+      },
+      "summary": {
+        "id": "porto",
+        "cells": 360,
+        "population": 230048,
+        "medianCdi": 0.095,
+        "weightedCdi": 0.091,
+        "ptShare": 0,
+        "carShare": 72.2,
+        "weightedByCar": 1409.4,
+        "weightedByTransit": 1189,
+        "cdf": [
+          [
+            -1,
+            0
+          ],
+          [
+            -0.9,
+            0
+          ],
+          [
+            -0.8,
+            0
+          ],
+          [
+            -0.7,
+            0
+          ],
+          [
+            -0.6,
+            0
+          ],
+          [
+            -0.5,
+            0
+          ],
+          [
+            -0.4,
+            0
+          ],
+          [
+            -0.3,
+            0
+          ],
+          [
+            -0.2,
+            0
+          ],
+          [
+            -0.1,
+            0
+          ],
+          [
+            0,
+            0.029
+          ],
+          [
+            0.1,
+            0.631
+          ],
+          [
+            0.2,
+            0.94
+          ],
+          [
+            0.3,
+            0.997
+          ],
+          [
+            0.4,
+            0.998
+          ],
+          [
+            0.5,
+            0.998
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            0.7,
+            1
+          ],
+          [
+            0.8,
+            1
+          ],
+          [
+            0.9,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "pov": {
+      "row": {
+        "id": "porto",
+        "name": "Porto",
+        "nameIt": "Porto",
+        "region": "Portugal",
+        "regionIt": "Portogallo",
+        "country": "PT",
+        "center": [
+          -8.62145,
+          41.16225
+        ],
+        "zoom": 10.6,
+        "population": 230048,
+        "cells": 360,
+        "layer": "cities/porto/pov.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 210
+        },
+        "thresholds": {
+          "proximity": 6733.4,
+          "opportunity": 11145.1
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -8.62145,
+            41.16225
+          ]
+        },
+        "properties": {
+          "id": "porto",
+          "name": "Porto",
+          "country": "PT",
+          "isStudy": true,
+          "zone": 0,
+          "population": 230046,
+          "inclusionShare": 37.5
+        }
+      },
+      "summary": {
+        "id": "porto",
+        "cells": 360,
+        "population": 230046,
+        "medianProximity": 6263.3,
+        "medianOpportunity": 10671.7,
+        "weightedProximity": 6408.1,
+        "weightedOpportunity": 10983.7,
+        "zoneShares": [
+          37.5,
+          6.4,
+          4.2,
+          51.9
+        ],
+        "zonePopulationShares": [
+          44.2,
+          6.2,
+          6.1,
+          43.5
+        ],
+        "thresholds": {
+          "proximity": 6733.4,
+          "opportunity": 11145.1
+        }
+      }
+    }
+  }
+}

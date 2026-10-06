@@ -6,7 +6,7 @@
 .aa-faq__aside {
   padding: 52px 36px;
   background: var(--card);
-  border-right: 1px solid var(--hair);
+  border-inline-end: 1px solid var(--hair);
 }
 
 .aa-faq__headline {
@@ -70,7 +70,7 @@
   padding: 22px 0;
   border: 0;
   background: transparent;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
 }
 
@@ -97,7 +97,7 @@
 .aa-faq__answer {
   max-width: 680px;
   margin: 0 0 22px;
-  padding-left: 42px;
+  padding-inline-start: 42px;
   font-size: 14.5px;
   line-height: 1.65;
   color: var(--ink-2);
@@ -110,7 +110,7 @@
 
   .aa-faq__aside {
     padding: 36px var(--chrome-pad);
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--hair);
   }
 
@@ -133,6 +133,6 @@
   }
 
   .aa-faq__answer {
-    padding-left: 32px;
+    padding-inline-start: 32px;
   }
 }
