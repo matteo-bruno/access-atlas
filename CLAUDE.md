@@ -145,6 +145,15 @@ it and colours it, and `StatsViews.jsx` draws it five ways (ranking, map,
 scatter, matrix, curves), by city or by country. What is on screen lives in
 the query string.
 
+**The page opens on the dashboard, nothing above it.** No eyebrow, headline
+or lede: the page's `<h1>` is the figure on screen (measure in ink, statistic
+in the accent). It opens on 15minCity, the share of residents within 15
+minutes on foot of the services on average, for cities of at least 1,000,000
+residents (`DEFAULTS` in `Stats.jsx`). **Only cities that have the figure are
+drawn anywhere**, on the map included: a city without the layer is not listed
+as missing. Countries are a menu, not a row of chips, and population is a
+logarithmic slider with a number box beside it.
+
 **Computed per city, only when its data changed, and never shown stale.**
 `npm run stats` (`scripts/build-stats.mjs`, method at the top of
 `scripts/lib/stats.mjs`) computes a city's figures from its published grid and
@@ -158,7 +167,20 @@ import, an import that changes a city takes that city's figures off the site
 in the same run. `update:data` then asks whether to recompute
 (`--stats` / `--no-stats`; never asks outside a terminal). Declining leaves the
 city absent from the Stats page, which is the point: the user decided that
-out-of-date statistics are kept as history, not shown.
+out-of-date statistics are kept as history, not shown. `npm run stats` does
+**not** run `test:data` (update:data has just run it on the same data, and the
+next `test:data` recomputes every city's statistics anyway).
+
+**Cities with data too thin to compare are hidden by default**, by one rule
+in `scripts/lib/quality.mjs`: fewer than 10,000 residents, or a 15minCity
+median walk to services over 60 minutes (the figure its marker carries).
+They stay published, city view and all. `buildIndex` flags their world-map
+markers `hidden` and `citiesFromPublished` skips them unless asked
+(`includeHidden`); the statistics flag them too, pool them into no country,
+and the page shows them only with "Show hidden cities". The rule's numbers
+travel in the stats file (`hiddenRule`) so the page never keeps a copy. Every
+run that rebuilds the maps or the statistics prints how many it hid, and
+`test:data` checks the markers and the statistics follow the same rule.
 
 **`STATS_VERSION` is the method.** Add a figure, or compute one differently,
 and bump it. `test:data` recomputes every published city and fails if a
@@ -185,7 +207,9 @@ What is easy to get wrong:
   pool exactly (a population-weighted mean of population-weighted figures),
   so a country offers no median, percentile, Gini or correlation. Variants
   are left out of the pool, because their residents are their city's,
-  counted again.
+  counted again. **For now only 15minCity is pooled** (`COUNTRY_LAYERS` in
+  `stats.mjs`), the layer meant to cover whole countries; the page reads
+  which layers have countries from the file and disables the others.
 - **15minCity's `99999`** ("not reachable") stays in quantiles and shares as
   a time longer than any threshold, but makes a mean or an inequality index
   meaningless, so those are null where anyone lives in such a cell.

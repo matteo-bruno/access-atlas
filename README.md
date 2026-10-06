@@ -68,6 +68,10 @@ npm run stats                    # recompute the cities whose data changed
 npm run stats -- --status        # just list them
 ```
 
+Cities whose data is too thin to compare (fewer than 10,000 residents, or a
+median walk to services over 60 minutes) stay published but are hidden by
+default from the world maps and the Stats page; every run says how many.
+
 After an import, commit **all** of `public/data` and `statistics/`
 (`git add -A public/data statistics`), not only the new files: an import
 rewrites files that were already there.
@@ -109,7 +113,7 @@ Outstanding before launch:
 | `/faq`                     | Common questions |
 | `/contact`                 | Team, address, collaboration |
 | `/sustainable-cities`      | Who we are — the research line, the lab, other projects |
-| `/stats`                   | Every city on every measure: ranking, map, scatter, matrix, curves, by city or by country; state in the query string |
+| `/stats`                   | Every city on every measure: ranking, map, scatter, matrix, curves, by city or by country, filtered by country and population; state in the query string |
 | `/consulting`              | For policy makers and companies who want to ask |
 
 Platform slugs: `15min-city`, `citychrone`, `car-dependency-index`,

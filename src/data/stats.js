@@ -27,13 +27,27 @@ export function normaliseStats(raw) {
     values: raw.values,
     countries: Array.isArray(raw.countries) ? raw.countries : [],
     omitted: Array.isArray(raw.omitted) ? raw.omitted : [],
+    hiddenRule: raw.hiddenRule ?? { population: null, minutes: null },
     computedAt: computed.length ? computed[computed.length - 1] : null,
   };
 }
 
 // ── the layers and measures, as the pickers list them ────────────────
 
-export const STATS_LAYERS = ['pov', 'cardep', 'fifteen', 'citychrone', 'cross'];
+// In the site's platform order, then the cross-layer figures.
+export const STATS_LAYERS = ['fifteen', 'citychrone', 'cardep', 'pov', 'cross'];
+
+/** The layers countries are pooled for: those any country has a figure on. */
+export function countryLayers(stats) {
+  const layers = new Set();
+  for (const country of stats.countries) {
+    for (const id of Object.keys(country.values ?? {})) {
+      const layer = stats.measuresById[id]?.layer;
+      if (layer) layers.add(layer);
+    }
+  }
+  return layers;
+}
 
 /** The layers the file has any measure for, in the site's order. */
 export function layersOf(stats) {
@@ -346,6 +360,9 @@ export const HEADLINES = [
 export function cityFlags(row, layer) {
   if (row.kind === 'country') return row.cities?.length === 1 ? [{ key: 'single' }] : [];
   const flags = [];
+  // Shown only when the reader asked for hidden cities; the row says why it
+  // is hidden by default.
+  if (row.city?.hidden) flags.push({ key: row.city.hidden === 'population' ? 'hiddenPopulation' : 'hiddenProximity' });
   if (row.city?.variant) flags.push({ key: 'variant' });
   const coverage = row.city?.layers?.[layer]?.coverage;
   // A layer that covers less than nine in ten of the residents the Atlas has

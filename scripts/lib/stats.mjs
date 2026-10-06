@@ -39,7 +39,12 @@
 //     residents, which is why only those are pooled. A median, a quantile, a
 //     Gini of several cities cannot be had from the cities' own, so a country
 //     carries none. Variants (a metro area beside its city) are left out of
-//     the pool: their residents are the city's, counted again.
+//     the pool: their residents are the city's, counted again, and so are
+//     cities hidden for thin data. For now only 15minCity is pooled
+//     (COUNTRY_LAYERS): it is the layer that will cover whole countries.
+//   • **Cities with data too thin to compare are flagged, not dropped**
+//     (`hidden`, rule in scripts/lib/quality.mjs). The page leaves them out
+//     unless asked, as the world maps do.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -47,6 +52,7 @@ import { fileURLToPath } from 'node:url';
 import { readDataBuffer, readDataJSON, resolveDataFile, storedVersion, writeDataFile } from './datafile.mjs';
 import { layerPositions } from '../../src/data/grid.js';
 import { CATEGORIES as FIFTEEN_CATEGORIES, MODES as FIFTEEN_MODES } from '../../src/data/fifteen.js';
+import { MAX_PROXIMITY_MINUTES, MIN_POPULATION, recordHiddenReason } from './quality.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
@@ -58,6 +64,9 @@ export const STATS_PATH = 'stats/stats.json.gz';
 export const STATS_VERSION = 1;
 
 const UNREACHABLE = 99999;
+
+// The layers a country is pooled for.
+export const COUNTRY_LAYERS = new Set(['fifteen']);
 const HOURS = 24;
 
 // ── what is measured ─────────────────────────────────────────────────
@@ -570,7 +579,8 @@ export function assembleStats(records) {
       omitted.push({ id: record.id, reason });
       continue;
     }
-    cities.push({ record, entry });
+    const hidden = recordHiddenReason(record, entry.measures['fifteen.proximity_time.foot']?.q?.[2] ?? null);
+    cities.push({ record, entry, hidden });
   }
   if (!cities.length) return null;
 
@@ -578,9 +588,9 @@ export function assembleStats(records) {
   const values = Object.fromEntries(measures.map((m) => [m.id, cities.map((c) => c.entry.measures[m.id] ?? null)]));
 
   const countries = new Map();
-  for (const { record } of cities) {
+  for (const { record, hidden } of cities) {
     const meta = record.meta ?? {};
-    if (!meta.country || record.atlas.variant) continue;
+    if (!meta.country || record.atlas.variant || hidden) continue;
     if (!countries.has(meta.country)) {
       countries.set(meta.country, { iso: meta.country, name: meta.region ?? meta.country, nameIt: meta.regionIt ?? meta.region ?? meta.country, cities: [] });
     }
@@ -592,7 +602,7 @@ export function assembleStats(records) {
     country.values = {};
     for (const m of measures) {
       // Medians, quantiles, inequality and correlations do not pool.
-      if (m.kind === 'correlation') continue;
+      if (m.kind === 'correlation' || !COUNTRY_LAYERS.has(m.layer)) continue;
       const pooled = pool(cities.map((c, i) => (members.has(c.record.id) ? values[m.id][i] : null)));
       if (pooled) country.values[m.id] = pooled;
     }
@@ -603,7 +613,10 @@ export function assembleStats(records) {
     version: STATS_VERSION,
     measures: measures.map(describeMeasure),
     quantiles: QUANTILES,
-    cities: cities.map(({ record, entry }) => ({
+    // The rule a city is hidden by default under (scripts/lib/quality.mjs),
+    // so the page can say what it is without a copy of it.
+    hiddenRule: { population: MIN_POPULATION, minutes: MAX_PROXIMITY_MINUTES },
+    cities: cities.map(({ record, entry, hidden }) => ({
       id: record.id,
       name: record.meta?.name ?? record.id,
       nameIt: record.meta?.nameIt ?? record.meta?.name ?? record.id,
@@ -611,6 +624,7 @@ export function assembleStats(records) {
       region: record.meta?.region ?? null,
       regionIt: record.meta?.regionIt ?? null,
       ...(record.atlas.variant ? { variant: true } : {}),
+      ...(hidden ? { hidden } : {}),
       center: record.atlas.center,
       population: entry.population,
       layers: entry.layers,
@@ -620,7 +634,12 @@ export function assembleStats(records) {
     countries: countryList,
     omitted,
   };
-  return { text: JSON.stringify(published), cities: cities.length, omitted };
+  return {
+    text: JSON.stringify(published),
+    cities: cities.length,
+    omitted,
+    hidden: cities.filter((c) => c.hidden).map((c) => ({ id: c.record.id, reason: c.hidden })),
+  };
 }
 
 export const measureById = (id) => MEASURE_BY_ID.get(id) ?? null;

@@ -62,6 +62,7 @@ import { cellToBoundary, cellToLatLng, getResolution, latLngToCell } from 'h3-js
 import { readDataBuffer, readDataJSON, resolveDataFile, storedVersion, writeDataFile } from './datafile.mjs';
 import { countryAt } from './country.mjs';
 import { STATS_PATH, assembleStats } from './stats.mjs';
+import { recordHiddenReason } from './quality.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '..', '..');
@@ -795,6 +796,12 @@ export function cataloguePaths(catalogue) {
 export function buildIndex({ dryRun = false } = {}) {
   const records = listCities().map(readCityRecord);
   const files = [];
+  // Cities whose data is too thin to compare (scripts/lib/quality.mjs) keep
+  // their markers, flagged `hidden`, and the world maps leave them out.
+  const hidden = records
+    .map((r) => ({ id: r.id, reason: recordHiddenReason(r) }))
+    .filter((h) => h.reason);
+  const hiddenById = new Map(hidden.map((h) => [h.id, h.reason]));
 
   const platforms = {};
   for (const layer of LAYER_ORDER) {
@@ -819,7 +826,11 @@ export function buildIndex({ dryRun = false } = {}) {
     };
 
     const features = carrying
-      .map((r) => r.platforms[layer].marker)
+      .map((r) => {
+        const marker = r.platforms[layer].marker;
+        if (!marker || !hiddenById.has(r.id)) return marker;
+        return { ...marker, properties: { ...marker.properties, hidden: hiddenById.get(r.id) } };
+      })
       .filter(Boolean)
       .sort((a, b) => a.properties.id.localeCompare(b.properties.id));
     files.push(putFile(coverage, JSON.stringify({ type: 'FeatureCollection', features }), dryRun));
@@ -865,7 +876,8 @@ export function buildIndex({ dryRun = false } = {}) {
     platforms: Object.keys(platforms),
     files,
     catalogue,
-    stats: stats ? { cities: stats.cities, omitted: stats.omitted } : { cities: 0, omitted: [] },
+    stats: stats ? { cities: stats.cities, omitted: stats.omitted, hidden: stats.hidden } : { cities: 0, omitted: [], hidden: [] },
+    hidden,
   };
 }
 

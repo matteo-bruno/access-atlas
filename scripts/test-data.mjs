@@ -27,7 +27,8 @@ import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution, cellToLatLng } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
 import { VARIANTS, buildIndex, cataloguePaths, gridId, readCityRecord } from './lib/bundle.mjs';
-import { computeCityStats, readCityStats } from './lib/stats.mjs';
+import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs';
+import { recordHiddenReason } from './lib/quality.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
@@ -100,7 +101,7 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   const cities = entry.cities ?? [];
   const bad = [];
   const known = new Set(cities.map((c) => c.id));
-  const coverage = entry.coverage ? citiesFromPublished(read(entry.coverage)) : [];
+  const coverage = entry.coverage ? citiesFromPublished(read(entry.coverage), { includeHidden: true }) : [];
   for (const marker of coverage) if (!known.has(marker.id)) bad.push(`marker ${marker.id} has no row`);
 
   for (const city of cities) {
@@ -558,6 +559,34 @@ if (catalogue.stats) {
     if (velocity.get(id) && !near(velocity.get(id).q[2], marker.velocityScore, 0.011)) disagree.push(`${id} velocity ${velocity.get(id).q[2]} vs marker ${marker.velocityScore}`);
   }
   check('Statistics agree with the compare summaries and the world-map markers', disagree.length === 0, disagree.slice(0, 3).join(' | '));
+
+  // Thin data is hidden by one rule (scripts/lib/quality.mjs), and the Stats
+  // page and the world maps must agree on whom it hides; a hidden city is in
+  // no country's pool, and countries are pooled only for COUNTRY_LAYERS.
+  const hiddenBad = [];
+  const walkAt = column('fifteen.proximity_time.foot');
+  for (const city of stats.cities) {
+    const want = recordHiddenReason(readCityRecord(city.id), walkAt.get(city.id)?.q?.[2] ?? null);
+    if ((city.hidden ?? null) !== want) hiddenBad.push(`stats ${city.id}: ${city.hidden ?? 'shown'}, rule says ${want ?? 'shown'}`);
+  }
+  for (const entry of Object.values(catalogue.platforms)) {
+    for (const f of entry.coverage ? read(entry.coverage).features : []) {
+      const want = recordHiddenReason(readCityRecord(f.properties.id));
+      if ((f.properties.hidden ?? null) !== want) hiddenBad.push(`marker ${f.properties.id}: ${f.properties.hidden ?? 'shown'}`);
+    }
+  }
+  const hiddenIds = new Set(stats.cities.filter((c) => c.hidden).map((c) => c.id));
+  for (const country of stats.countries) {
+    for (const id of country.cities) if (hiddenIds.has(id)) hiddenBad.push(`${country.iso} pools hidden ${id}`);
+    for (const id of Object.keys(country.values)) {
+      if (!COUNTRY_LAYERS.has(stats.measures.find((m) => m.id === id)?.layer)) hiddenBad.push(`${country.iso} pools ${id}`);
+    }
+  }
+  check(
+    `Cities with thin data are hidden by one rule (${hiddenIds.size} hidden)`,
+    hiddenBad.length === 0,
+    hiddenBad.slice(0, 3).join(' | '),
+  );
 } else {
   check('No statistics published', !resolveDataFile(path.join(DATA, 'stats', 'stats.json.gz')), 'a stats file the catalogue does not list');
 }

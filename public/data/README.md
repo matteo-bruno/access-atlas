@@ -211,6 +211,7 @@ page (`/stats`) reads, whole. The method is at the top of
   "countries": [{ "iso": "IT", "cities": ["florence", "milan", "rome"],
                   "values": { "pov.proximity": { "cities": 2, "population": 3811189,
                                                  "mean": 3979.279, "shares": ["…"] } } }],
+  "hiddenRule": { "population": 10000, "minutes": 60 },
   "omitted": [{ "id": "zurich", "reason": "data" }] }
 ```
 
@@ -220,7 +221,13 @@ page (`/stats`) reads, whole. The method is at the top of
 - **`values[m][i]` is `cities[i]`'s figure**, `null` where the city does not
   publish that layer.
 - **A country pools its cities' residents**, for means and shares only,
-  which pool exactly; variants are left out of the pool.
+  which pool exactly, and for now for 15minCity only; variants and hidden
+  cities are left out of the pool.
+- **`hidden`** on a city (`"population"` or `"proximity"`) marks data too
+  thin to compare, by the rule in `scripts/lib/quality.mjs`, whose numbers
+  are `hiddenRule`. The page leaves such a city out unless asked. The same
+  rule flags its markers in the coverage files with the same `hidden`
+  property, and the world maps skip them.
 - **Only current figures are published.** A city whose grid or layer files
   changed since its figures were computed is listed in `omitted` and has no
   values. Every computation, current and earlier, is kept in

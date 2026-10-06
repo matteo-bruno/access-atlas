@@ -101,7 +101,14 @@ function Key({ slot }) {
 /** A warning beside a row, explained on hover. */
 function Flags({ flags, ctx, name, show, hide }) {
   if (!flags.length) return <span />;
-  const text = flags.map((f) => ctx.t(`stats.flag.${f.key}`, { share: f.share != null ? ctx.n(f.share) : '', name }));
+  const text = flags.map((f) =>
+    ctx.t(`stats.flag.${f.key}`, {
+      share: f.share != null ? ctx.n(f.share) : '',
+      name,
+      population: ctx.rule?.population != null ? ctx.n(ctx.rule.population) : '',
+      minutes: ctx.rule?.minutes != null ? ctx.n(ctx.rule.minutes) : '',
+    }),
+  );
   return (
     <button
       type="button"
@@ -184,7 +191,6 @@ export function RankingView({ rows, spec, unit, slots, onToggle, reverse, ctx })
   const { measure, key, index } = spec;
   const { show, hide } = ctx.tipApi;
   const ordered = orderRows(rows, measure, key, index, reverse);
-  const missing = rows.filter((r) => statValue(r.stat, key, index) == null);
   const ranked = measure.comparability !== 'within-city';
   const ranks = ranksOf(ordered, key, index);
   const [lo, hi] = domainFor(measure, key, ordered, index);
@@ -246,6 +252,9 @@ export function RankingView({ rows, spec, unit, slots, onToggle, reverse, ctx })
               )}
             </span>
             <span className="aa-stats__track">
+              {ticks.map((v) => (
+                <span key={v} className="aa-stats__grid" style={{ left: x(v) }} />
+              ))}
               {glyph && q ? (
                 <>
                   <span className={`aa-stats__whisker${over(q[4]) ? ' aa-stats__whisker--open' : ''}`} style={{ left: x(q[0]), right: `calc(100% - ${x(Math.min(q[4], over(q[4]) ? hi : q[4]))})` }} />
@@ -280,13 +289,6 @@ export function RankingView({ rows, spec, unit, slots, onToggle, reverse, ctx })
           </div>
         );
       })}
-      {missing.length > 0 && (
-        <p className="aa-stats__missing">
-          {ctx.t(unit === 'country' ? 'stats.noDataCountries' : 'stats.noData', {
-            names: missing.map((r) => rowName(r, ctx.lang)).join(', '),
-          })}
-        </p>
-      )}
     </div>
   );
 }
@@ -315,7 +317,8 @@ export function MapView({ rows, spec, slots, onToggle, ctx }) {
     return () => controller.abort();
   }, []);
 
-  const placed = rows.filter((r) => Array.isArray(r.center));
+  // Only cities with this figure: a city without the layer is not on this map.
+  const placed = rows.filter((r) => Array.isArray(r.center) && statValue(r.stat, key, index) != null);
   const frame = useMemo(() => {
     if (!placed.length) return null;
     const xs = placed.map((r) => r.center[0]);
@@ -389,10 +392,9 @@ export function MapView({ rows, spec, slots, onToggle, ctx }) {
                 cx={cx}
                 cy={cy}
                 r={r}
-                fill={value == null ? 'var(--card)' : ramp ? colorAt(ramp, value) : 'var(--ink-3)'}
+                fill={ramp ? colorAt(ramp, value) : 'var(--ink-3)'}
                 stroke={slot != null ? HIGHLIGHT[slot] : 'rgba(21, 23, 26, 0.5)'}
                 strokeWidth={slot != null ? 3 : 0.8}
-                strokeDasharray={value == null ? '2 2' : undefined}
               />
               {slot != null && (
                 <text x={cx} y={cy - r - 5} textAnchor="middle" className="aa-stats__svglabel">
@@ -537,7 +539,8 @@ export function MatrixView({ stats, unit, rows, spec, slots, onToggle, onPick, c
   const { show, hide } = ctx.tipApi;
   const columns = useMemo(() => {
     const list = HEADLINES.map(([id, key, index = 0]) => ({ id, key: unit === 'country' && key.startsWith('p') ? 'mean' : key, index }))
-      .filter((c) => stats.measuresById[c.id]);
+      .filter((c) => stats.measuresById[c.id])
+      .filter((c) => unit === 'city' || stats.countries.some((country) => country.values?.[c.id]));
     const current = { id: spec.measure.id, key: spec.key, index: spec.index };
     if (!list.some((c) => c.id === current.id && c.key === current.key && c.index === current.index)) list.unshift(current);
     return list.map((c) => ({ ...c, measure: stats.measuresById[c.id] }));

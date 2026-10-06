@@ -1260,7 +1260,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const page = await context.newPage();
   const fetched = [];
   page.on('response', (r) => /\/data\/stats\/stats\.json/.test(r.url()) && fetched.push(r.status()));
-  await page.goto(`${BASE}/stats?m=pov.proximity&s=p50`, { waitUntil: 'load' });
+  await page.goto(`${BASE}/stats?m=pov.proximity&s=p50&pop=0`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-stats__rrow:not(.aa-stats__rrow--axis)', { timeout: 8000 }).catch(() => {});
   const drawn = await page.$$eval('.aa-stats__rrow:not(.aa-stats__rrow--axis)', (rows) => rows.length);
   const expected = await page.evaluate(async (base) => {
@@ -1272,7 +1272,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
     }
     const stats = JSON.parse(new TextDecoder().decode(body));
-    return stats.values['pov.proximity'].filter(Boolean).length;
+    // Hidden cities (thin data) are off the page by default.
+    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden).length;
   }, BASE);
   check(
     'Stats page reads the published statistics',

@@ -60,6 +60,7 @@ import { spawnSync } from 'node:child_process';
 import readline from 'node:readline/promises';
 import { fileURLToPath } from 'node:url';
 import { slugify } from './lib/slug.mjs';
+import { describeHidden } from './lib/quality.mjs';
 import { staleCities } from './lib/stats.mjs';
 import { buildIndex, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
 import * as pov from './importers/pov.mjs';
@@ -292,6 +293,7 @@ function reindex() {
     `catalogue: ${report.cities} cities on ${report.platforms.length} platforms, ` +
       (changed.length ? `${changed.length} file(s) rewritten: ${changed.map((f) => f.rel).join(', ')}` : 'unchanged'),
   );
+  console.log(`world maps: ${describeHidden(report.hidden)} for thin data`);
   return changed.length;
 }
 
