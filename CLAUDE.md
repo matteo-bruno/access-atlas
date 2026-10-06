@@ -818,7 +818,11 @@ Two things that are easy to get wrong here:
   the union's 7,637 — because the count beside a figure has to be the count
   that figure came from. Area comes from `meshFromAtlas`, measured on the
   true hexagons. Until the layer's own file has arrived the count reads "—":
-  a zero there would be a claim, not a placeholder.
+  a zero there would be a claim, not a placeholder. **Population too** is
+  the layer's own, from its catalogue row: the mesh's cells carry the grid's
+  population, and summing those gave Rome's P.O.V. 2.7 M (the grid, grown by
+  15minCity's cells) beside P.O.V.'s 8,089 cells, whose residents are 2.6 M.
+  Only the Population layer shows the grid's total.
 - **The basemap's terms are MapLibre's own control, and they are not compact.**
   OpenFreeMap serves the tiles keylessly and asks to be credited with
   OpenMapTiles and OpenStreetMap; the credit travels inside the style's
