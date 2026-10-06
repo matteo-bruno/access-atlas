@@ -35,7 +35,17 @@ const ROUTES = [
   ['/atlas/milan', 'Milan combined viewer'],
   ['/atlas/milan?layer=citychrone&view=isochrone', 'Milan combined viewer, CityChrone isochrones'],
   ['/sustainable-cities', 'Sustainable cities — who we are'],
-  ['/stats', 'Stats — the comparison screen, before it exists'],
+  ['/stats', 'Stats: ranking'],
+  ['/stats?view=map', 'Stats: map'],
+  ['/stats?view=scatter&sel=rome,milan', 'Stats: scatter'],
+  ['/stats?view=matrix', 'Stats: matrix'],
+  ['/stats?view=curves&m=citychrone.velocity.08&sel=rome', 'Stats: CityChrone by hour'],
+  ['/stats?unit=country&m=cardep.cdi&s=share&t=1', 'Stats: countries'],
+  ['/stats?view=focus&pop=0', 'Stats: focus, 15-minute city'],
+  ['/stats?view=focus&pop=0&m=citychrone.velocity.08', 'Stats: focus, CityChrone'],
+  ['/stats?view=focus&pop=0&m=cardep.cdi&s=mean', 'Stats: focus, Car Dependency'],
+  ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: focus, P.O.V.'],
+  ['/stats?view=focus&pop=0&m=corr.pov.opportunity~cardep.cdi&s=value', 'Stats: focus, across layers'],
   ['/consulting', 'Consulting'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
@@ -1243,6 +1253,43 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   check('Arabic sets dir="rtl" and mirrors the nav', rtl.dir === 'rtl' && rtl.lang === 'ar' && rtl.brandRight, JSON.stringify(rtl));
   await page.click('.aa-nav__langtoggle');
   await page.click('.aa-nav__langbtn[data-lang="en"]');
+  await page.close();
+}
+
+// ── The Stats page draws the published statistics ────────────────────
+// Provenance, not values: the page must have fetched the statistics the
+// catalogue names, and drawn one ranking row per city that file gives a
+// figure for. There is no seed version of a statistic, so an empty page is
+// the failure this catches, not a plausible wrong one.
+{
+  const page = await context.newPage();
+  const fetched = [];
+  page.on('response', (r) => /\/data\/stats\/stats\.json/.test(r.url()) && fetched.push(r.status()));
+  await page.goto(`${BASE}/stats?m=pov.proximity&s=p50&pop=0`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-stats__rrow:not(.aa-stats__rrow--axis)', { timeout: 8000 }).catch(() => {});
+  const drawn = await page.$$eval('.aa-stats__rrow:not(.aa-stats__rrow--axis)', (rows) => rows.length);
+  const expected = await page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    if (!catalogue.stats) return null;
+    const res = await fetch(`${base}/data/${catalogue.stats}`);
+    let body = new Uint8Array(await res.arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    const stats = JSON.parse(new TextDecoder().decode(body));
+    // Hidden cities (thin data) are off the page by default.
+    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden).length;
+  }, BASE);
+  check(
+    'Stats page reads the published statistics',
+    expected != null && fetched.includes(200) && drawn === expected,
+    `fetched ${fetched.join(',') || 'nothing'} · ${drawn} rows drawn, file has ${expected}`,
+  );
+
+  // Highlighting follows the city into the URL, so a view can be linked to.
+  await page.click('.aa-stats__rrow:not(.aa-stats__rrow--axis) .aa-stats__pick');
+  await page.waitForTimeout(300);
+  check('Stats highlight is kept in the URL', /[?&]sel=/.test(page.url()), page.url().replace(BASE, ''));
   await page.close();
 }
 

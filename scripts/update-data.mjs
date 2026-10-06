@@ -5,6 +5,8 @@
 //   npm run update:data -- --15mincity      only the platforms named (--citychrone, --pov, --cdi)
 //   npm run update:data -- --dry-run        list what would be imported
 //   npm run update:data -- --force          re-import every file, changed or not
+//   npm run update:data -- --stats          then recompute the statistics without asking
+//   npm run update:data -- --no-stats       … or leave them, without asking
 //
 // What a city was imported from is recorded in the city's own record,
 // `public/data/cities/<city>/city.json`: per layer, the export's SHA-256, its
@@ -35,6 +37,13 @@
 //     is reported, and the record keeps it. Taking a city off the site is a
 //     decision: `npm run import -- <platform> --remove <city>`.
 //
+//   • **The statistics are offered, not imposed.** A run that changed a city
+//     leaves that city's statistics out of date, and the rebuild above takes
+//     them off the Stats page. The run then asks whether to recompute them
+//     (`npm run stats`); in a terminal it waits for an answer, anywhere else
+//     it says how and moves on. Declining is safe: out-of-date figures are
+//     never published, only missing until computed.
+//
 // A change to the importer itself (or to the helpers it reads) is reported as
 // such, and not acted on unless `--force` is given: a refactor would
 // otherwise re-import every city, and a fix that should reach published data
@@ -48,8 +57,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import readline from 'node:readline/promises';
 import { fileURLToPath } from 'node:url';
 import { slugify } from './lib/slug.mjs';
+import { describeHidden } from './lib/quality.mjs';
+import { staleCities } from './lib/stats.mjs';
 import { buildIndex, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
@@ -90,7 +102,7 @@ const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
 });
 
 // ── args ─────────────────────────────────────────────────────────────
-const OPTIONS = new Set(['dry-run', 'force', 'help']);
+const OPTIONS = new Set(['dry-run', 'force', 'help', 'stats', 'no-stats']);
 const argv = process.argv.slice(2);
 const opts = new Set();
 const named = [];
@@ -104,7 +116,7 @@ for (const a of argv) {
 
 if (opts.has('help')) {
   const text = fs.readFileSync(fileURLToPath(import.meta.url), 'utf8');
-  const usage = text.split('\n').slice(3, 7).map((l) => l.replace(/^\/\/ ?/, ''));
+  const usage = text.split('\n').slice(3, 9).map((l) => l.replace(/^\/\/ ?/, ''));
   console.log(usage.join('\n'));
   process.exit(0);
 }
@@ -281,7 +293,36 @@ function reindex() {
     `catalogue: ${report.cities} cities on ${report.platforms.length} platforms, ` +
       (changed.length ? `${changed.length} file(s) rewritten: ${changed.map((f) => f.rel).join(', ')}` : 'unchanged'),
   );
+  console.log(`world maps: ${describeHidden(report.hidden)} for thin data`);
   return changed.length;
+}
+
+// The statistics of every city whose data changed are out of date, and the
+// rebuild has already left them off the Stats page. Offer to recompute them.
+async function offerStats() {
+  const stale = staleCities(listCities().map(readCityRecord));
+  if (!stale.length) return true;
+  console.log(
+    `\n── statistics\n${stale.length} cit${stale.length === 1 ? 'y has' : 'ies have'} no up-to-date statistics ` +
+      `(${stale.map((c) => c.id).join(', ')}) and ${stale.length === 1 ? 'is' : 'are'} not on the Stats page until computed.`,
+  );
+  let yes;
+  if (opts.has('stats')) yes = true;
+  else if (opts.has('no-stats')) yes = false;
+  else if (process.stdin.isTTY && process.stdout.isTTY) {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    const answer = (await rl.question('Compute them now? [Y/n] ')).trim().toLowerCase();
+    rl.close();
+    yes = answer === '' || answer.startsWith('y') || answer.startsWith('s');
+  } else {
+    console.log('Not a terminal, so not asking: `npm run stats` computes them, or pass --stats.');
+    return true;
+  }
+  if (!yes) {
+    console.log('Left as they are: `npm run stats` computes them whenever you like.');
+    return true;
+  }
+  return run('scripts/build-stats.mjs', []);
 }
 
 if (!plan.length) {
@@ -296,7 +337,7 @@ if (!plan.length) {
     console.log('\n── test:data');
     if (!run('scripts/test-data.mjs', [])) process.exit(1);
   }
-  process.exit(0);
+  process.exit((await offerStats()) ? 0 : 1);
 }
 
 // ── import ───────────────────────────────────────────────────────────
@@ -333,12 +374,14 @@ if (!run('scripts/test-data.mjs', [])) {
 
 record([...done, ...adopt], new Date().toISOString());
 console.log(`\nimported ${done.length} file(s); their hashes are recorded in each city's city.json.`);
+const statsOk = await offerStats();
 if (failed.length) {
   console.error(`${failed.length} failed and stay pending: ${failed.map((i) => i.key).join(', ')}`);
   process.exit(1);
 }
+if (!statsOk) process.exit(1);
 console.log(
-  'next: commit **all** of public/data (`git add -A public/data`: an import rewrites files that were\n' +
+  'next: commit **all** of public/data and statistics/ (`git add -A public/data statistics`: an import rewrites files that were\n' +
     'already there, and committing only the new ones publishes layers against a grid that is not in the\n' +
     'commit), then scripts/deploy.sh.',
 );

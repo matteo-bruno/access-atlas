@@ -549,13 +549,17 @@ export function citychroneHour(collection) {
  * Property names match what `citiesToGeoJSON` emits for the seed list, so the
  * two are interchangeable downstream.
  */
-export function citiesFromPublished(collection) {
+export function citiesFromPublished(collection, { includeHidden = false } = {}) {
   const features = collection?.features;
   if (!Array.isArray(features)) throw new AdapterError('Coverage is not a FeatureCollection');
 
   return features
     .map((feature) => {
       const p = feature?.properties ?? {};
+      // A city whose data is too thin to compare is published with its
+      // marker flagged `hidden` (scripts/lib/quality.mjs), and the world
+      // maps and the search leave it out by default.
+      if (p.hidden && !includeHidden) return null;
       const coords = feature?.geometry?.coordinates;
       const id = p.id ?? feature.id;
       if (typeof id !== 'string' || !Array.isArray(coords) || coords.length < 2) return null;

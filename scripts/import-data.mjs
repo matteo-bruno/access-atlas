@@ -31,6 +31,7 @@
 import path from 'node:path';
 import { buildIndex, publishLayer, unpublishLayer } from './lib/bundle.mjs';
 import { slugify } from './lib/slug.mjs';
+import { describeHidden } from './lib/quality.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
 import * as fifteen from './importers/fifteen.mjs';
@@ -66,6 +67,11 @@ function reindex() {
       `${changed.length ? `${changed.length} file(s) ${dryRun ? 'would change' : 'rewritten'}` : 'unchanged'}`,
   );
   for (const f of changed) console.log(`    ${f.rel}${f.removed ? '  (removed)' : ''}`);
+  // A city whose files changed has left the Stats page until its figures
+  // are recomputed; update:data asks, a hand import only says so.
+  console.log(`world maps: ${describeHidden(report.hidden)} for thin data`);
+  const left = report.stats.omitted.map((o) => o.id);
+  if (left.length) console.log(`statistics: ${left.join(', ')} not on the Stats page until \`npm run stats\``);
 }
 
 if (flag('index')) {

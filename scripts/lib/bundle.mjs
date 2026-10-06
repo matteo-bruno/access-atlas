@@ -59,8 +59,10 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { cellToBoundary, cellToLatLng, getResolution, latLngToCell } from 'h3-js';
-import { readDataBuffer, readDataJSON, resolveDataFile, writeDataFile } from './datafile.mjs';
+import { readDataBuffer, readDataJSON, resolveDataFile, storedVersion, writeDataFile } from './datafile.mjs';
 import { countryAt } from './country.mjs';
+import { STATS_PATH, assembleStats } from './stats.mjs';
+import { recordHiddenReason } from './quality.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '..', '..');
@@ -754,20 +756,7 @@ export const coveragePath = (layer) => `${layer}/coverage.geojson.gz`;
 export const summaryPath = (layer) => (SUMMARY_LAYERS.has(layer) ? `${layer}/summary.json.gz` : null);
 
 /** Short content hash of a file as it is stored, i.e. as it is served. */
-function fileVersion(rel) {
-  const found = resolveDataFile(abs(rel));
-  if (!found) return null;
-  const hash = crypto.createHash('sha256');
-  const fd = fs.openSync(found.path, 'r');
-  const buf = Buffer.allocUnsafe(1 << 20);
-  try {
-    let n;
-    while ((n = fs.readSync(fd, buf, 0, buf.length, null)) > 0) hash.update(buf.subarray(0, n));
-  } finally {
-    fs.closeSync(fd);
-  }
-  return hash.digest('hex').slice(0, 12);
-}
+const fileVersion = (rel) => storedVersion(abs(rel));
 
 /** Every data file a catalogue points at. */
 export function cataloguePaths(catalogue) {
@@ -784,6 +773,7 @@ export function cataloguePaths(catalogue) {
       for (let hour = 0; hour < city.hourly.hours; hour++) paths.add(hourPath(city.hourly.times, hour));
     }
   }
+  if (catalogue.stats) paths.add(catalogue.stats);
   return [...paths].sort();
 }
 
@@ -806,6 +796,12 @@ export function cataloguePaths(catalogue) {
 export function buildIndex({ dryRun = false } = {}) {
   const records = listCities().map(readCityRecord);
   const files = [];
+  // Cities whose data is too thin to compare (scripts/lib/quality.mjs) keep
+  // their markers, flagged `hidden`, and the world maps leave them out.
+  const hidden = records
+    .map((r) => ({ id: r.id, reason: recordHiddenReason(r) }))
+    .filter((h) => h.reason);
+  const hiddenById = new Map(hidden.map((h) => [h.id, h.reason]));
 
   const platforms = {};
   for (const layer of LAYER_ORDER) {
@@ -830,7 +826,11 @@ export function buildIndex({ dryRun = false } = {}) {
     };
 
     const features = carrying
-      .map((r) => r.platforms[layer].marker)
+      .map((r) => {
+        const marker = r.platforms[layer].marker;
+        if (!marker || !hiddenById.has(r.id)) return marker;
+        return { ...marker, properties: { ...marker.properties, hidden: hiddenById.get(r.id) } };
+      })
       .filter(Boolean)
       .sort((a, b) => a.properties.id.localeCompare(b.properties.id));
     files.push(putFile(coverage, JSON.stringify({ type: 'FeatureCollection', features }), dryRun));
@@ -840,7 +840,23 @@ export function buildIndex({ dryRun = false } = {}) {
     }
   }
 
-  const catalogue = { version: 2, platforms, atlas: { cities: records.map((r) => r.atlas) } };
+  // The statistics: every city's current computation (scripts/lib/stats.mjs),
+  // leaving out any city whose files changed since it was made. Gathered
+  // here, not by the stats script alone, so that an import which changes a
+  // city takes its out-of-date figures off the site in the same run.
+  const stats = assembleStats(records);
+  if (stats) files.push(putFile(STATS_PATH, stats.text, dryRun));
+  else if (resolveDataFile(abs(STATS_PATH))) {
+    if (!dryRun) removeDataFile(STATS_PATH);
+    files.push({ rel: STATS_PATH, changed: true, removed: true });
+  }
+
+  const catalogue = {
+    version: 2,
+    platforms,
+    atlas: { cities: records.map((r) => r.atlas) },
+    ...(stats ? { stats: STATS_PATH } : {}),
+  };
   const missing = [];
   catalogue.files = {};
   for (const rel of cataloguePaths(catalogue)) {
@@ -855,7 +871,14 @@ export function buildIndex({ dryRun = false } = {}) {
   }
   files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue, null, 2)}\n`, dryRun));
 
-  return { cities: records.length, platforms: Object.keys(platforms), files, catalogue };
+  return {
+    cities: records.length,
+    platforms: Object.keys(platforms),
+    files,
+    catalogue,
+    stats: stats ? { cities: stats.cities, omitted: stats.omitted, hidden: stats.hidden } : { cities: 0, omitted: [], hidden: [] },
+    hidden,
+  };
 }
 
 // ── per-layer figures, from a layer's own rows ───────────────────────

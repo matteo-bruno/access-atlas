@@ -136,6 +136,118 @@ touches only those cities. A published layer with no hash on record is
 *adopted* (hash recorded, nothing re-imported); `--force` recomputes
 everything. Hashes are written last, after `test:data` passed.
 
+## Statistics — the Stats page
+
+`/stats` is a dashboard over one file, `public/data/stats/stats.json.gz`,
+named as `stats` in the catalogue. Nothing on the page computes a figure from
+cells: `src/data/stats.js` picks one out of a published figure object, orders
+it and colours it, and `StatsViews.jsx` draws it five ways (ranking, map,
+scatter, matrix, curves), by city or by country. What is on screen lives in
+the query string.
+
+**The page opens on the dashboard, nothing above it.** No eyebrow, headline
+or lede: the page's `<h1>` is the figure on screen (measure in ink, statistic
+in the accent). It opens on 15minCity, the share of residents within 15
+minutes on foot of the services on average, for cities of at least 1,000,000
+residents (`DEFAULTS` in `Stats.jsx`). **Only cities that have the figure are
+drawn anywhere**, on the map included: a city without the layer is not listed
+as missing. The layout is **one row of buttons on top** (the layers, then the
+views) and **a sidebar** with the figure, the filters and the highlighted
+cities. Countries are a menu, not a row of chips, and population is one
+logarithmic slider with two handles (min and max; the top end means no
+maximum) and a number box under each.
+
+**Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
+each platform is read with, from the same statistics file, so the filters
+and highlights apply. 15minCity: median time to every service, city by city,
+on the platform's own ramp, and residents within 15 minutes on foot against
+by bicycle. CityChrone: each city's 24 hours, median with the middle half as
+a band, one scale per score across cities. Car Dependency: the index for the
+average resident, residents by index band (from the shares above the CDI
+thresholds) and reach by car against by transit. P.O.V.: residents by zone,
+on the Atlas median beside the city's own, and median proximity against
+opportunity with the Atlas medians drawn as the quadrant lines. Across
+layers: every correlation, city by city. The per-platform compare pages for
+P.O.V. and CDI are linked from their focus, not listed under the dashboard.
+
+**Computed per city, only when its data changed, and never shown stale.**
+`npm run stats` (`scripts/build-stats.mjs`, method at the top of
+`scripts/lib/stats.mjs`) computes a city's figures from its published grid and
+layer files and records the stored hash of each (`inputs`). It skips a city
+whose hashes and `STATS_VERSION` are unchanged. The previous computation moves
+into the city's history, `statistics/cities/<city>.json.gz` at the repository
+root, which is **not served**. `buildIndex` then gathers the published file
+from every city's current computation **whose inputs still match its files**,
+and lists the rest as `omitted`. Because `buildIndex` runs at the end of every
+import, an import that changes a city takes that city's figures off the site
+in the same run. `update:data` then asks whether to recompute
+(`--stats` / `--no-stats`; never asks outside a terminal). Declining leaves the
+city absent from the Stats page, which is the point: the user decided that
+out-of-date statistics are kept as history, not shown. `npm run stats` does
+**not** run `test:data` (update:data has just run it on the same data, and the
+next `test:data` recomputes every city's statistics anyway).
+
+**Cities with data too thin to compare are hidden by default**, by one rule
+in `scripts/lib/quality.mjs`: fewer than 10,000 residents, or a 15minCity
+median walk to services over 60 minutes (the figure its marker carries).
+They stay published, city view and all. `buildIndex` flags their world-map
+markers `hidden` and `citiesFromPublished` skips them unless asked
+(`includeHidden`); the statistics flag them too, pool them into no country
+and into no Atlas median, and the Stats page never shows them: there is no
+button for it, only a note counting how many it left out. The rule's numbers
+travel in the stats file (`hiddenRule`) so the page never keeps a copy. Every
+run that rebuilds the maps or the statistics prints how many it hid, and
+`test:data` checks the markers and the statistics follow the same rule.
+
+**`STATS_VERSION` is the method.** Add a figure, or compute one differently,
+and bump it. `test:data` recomputes every published city and fails if a
+figure differs from the file with the same inputs, which is what catches a
+method change made without the bump.
+
+What is easy to get wrong:
+
+- **Weighted by the layer's own population**, the same residents its summary
+  and markers weight by. So `pov.proximity`'s mean is the compare view's
+  `weightedProximity`, and `test:data` checks that it is, along with the
+  CDI mean, the zone shares and the 15minCity and CityChrone markers.
+- **Thresholds are fixed round numbers**, chosen once against the pooled
+  published range (the comment above each list says which measurements),
+  like a ramp's domain. A share "within 15 minutes" means the same in every
+  city. Never fit them to what is on screen.
+- **P.O.V. has two kinds of zones here.** `pov.zonesCity` is the platform's
+  own, at each city's medians: `comparability: 'within-city'`, so the
+  ranking shows no rank numbers and says why. `pov.zonesCommon` splits every
+  city at **the Atlas median**: the population-weighted median proximity and
+  opportunity of every P.O.V. resident of every city shown by default,
+  together, so "inclusion" reads "better than half the Atlas's residents on
+  both scores". It depends on every city, so it is not computed per city: a
+  city's computation keeps its inhabited P.O.V. cells (`cells.pov`, dropped
+  when the computation moves into history) and `assembleStats` derives the
+  medians and every city's shares when it gathers the file. The medians move
+  a little with every city added, and the file states them
+  (`zoneThresholds`, with the number of cities they came from).
+- **A country pools, never averages.** Only means and shares of residents
+  pool exactly (a population-weighted mean of population-weighted figures),
+  so a country offers no median, percentile, Gini or correlation. Variants
+  are left out of the pool, because their residents are their city's,
+  counted again. **For now only 15minCity is pooled** (`COUNTRY_LAYERS` in
+  `stats.mjs`), the layer meant to cover whole countries; the page reads
+  which layers have countries from the file and disables the others.
+- **15minCity's `99999`** ("not reachable") stays in quantiles and shares as
+  a time longer than any threshold, but makes a mean or an inequality index
+  meaningless, so those are null where anyone lives in such a cell.
+- **The caveats are part of the page, not decoration.** One standing note
+  and the "Method and limits" dialog, notes under the view that apply only to
+  what is on screen (`contextNotes` in `Stats.jsx`), and a `!` beside a row
+  for a variant or for a layer covering under nine in ten of its city's
+  residents (`cityFlags`). New copy that would apply everywhere belongs in the
+  dialog, not as another standing note.
+- **Highlight colours follow the city, not its position.** `sel` in the URL
+  holds four slots, possibly empty, so removing one highlighted city never
+  repaints the others. The four are the first slots of the dataviz reference
+  palette, validated together for lines; two are below 3:1 contrast, which
+  is why every highlighted line and dot is also named.
+
 ## The grids — read this before touching the combined viewer
 
 **One standard H3 grid per city, shared by every platform — and every
@@ -402,7 +514,8 @@ layer's rows land on grid cells, shares sum to 100, no CDI is outside
 [−1, +1], every 15minCity category × mode is present, the derived
 cartogram rule stays within 25 m of the published ones, every CityChrone
 matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
-and `variant` fields match the files, and that Rome still reports the figures the copy
+and `variant` fields match the files, the statistics are what recomputing them gives
+and agree with the summaries and markers, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
 seconds what the browser suites take minutes to reach.
 
@@ -675,10 +788,10 @@ block is where the platform and its paper are handed over. A card labelled
 "More info" that dropped a first-time reader straight into someone else's
 viewer was the thing this replaced.
 
-Three tabs exist mostly to be filled in: `/sustainable-cities` says who the
-group is, `/stats` says the all-city comparison is not built and links the two
-per-platform ones that are, and `/consulting` gives an address. They share
-`Prose.css`.
+Two tabs exist mostly to be filled in: `/sustainable-cities` says who the
+group is and `/consulting` gives an address. `/stats` is the statistics
+dashboard (see "Statistics" above), with the per-platform comparisons linked
+under it. They share `Prose.css`.
 
 ## The map is the page
 
@@ -780,7 +893,8 @@ Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ## Regenerating things
 
 ```bash
-npm run update:data        # import whatever changed in input_data/, then test:data
+npm run update:data        # import whatever changed in input_data/, then test:data, then offers stats
+npm run stats              # recompute the statistics of every city whose data changed (--status, --force)
 npm run import -- pov input_data/pov/zurich_pov.zip   # one export by hand (--dry-run, --city, --country …)
 npm run shoot:previews     # platform-card stills, from the running site
 ```

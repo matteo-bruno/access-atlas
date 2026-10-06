@@ -16,6 +16,7 @@ of it.
 | `cities/<city>/citychrone/timesHH.npy.gz` | CityChrone's travel-time matrix for each hour. |
 | `<platform>/coverage.geojson.gz` | One point per city, for the platform's world map and the search. |
 | `pov/summary.json.gz`, `cardep/summary.json.gz` | One row per city, for the compare view. |
+| `stats/stats.json.gz` | Every city on every measure, for the Stats page. Written by `npm run stats`, gathered by `buildIndex`. |
 | `world-land.geojson` | Natural Earth 110m land, simplified to 2 dp: the paper basemap. Public domain. |
 
 Every platform publishes on the standard H3 grid (resolution 9), so a city is
@@ -186,6 +187,56 @@ and `zonePopulationShares` (per resident). The two differ enough to be worth
 publishing separately: 67.7% of Milan's cells are total isolation, but only
 42.7% of its residents, because isolated cells are large and thinly
 populated.
+
+## Statistics
+
+`stats/stats.json.gz`, listed in the catalogue as `stats`, is what the Stats
+page (`/stats`) reads, whole. The method is at the top of
+`scripts/lib/stats.mjs`; the shape:
+
+```json
+{ "format": "atlas-stats", "version": 1,
+  "measures": [{ "id": "pov.proximity", "layer": "pov", "kind": "score",
+                 "direction": "up", "comparability": "cross-city", "decimals": 1,
+                 "thresholds": [1000, 2500, 5000, 10000, 20000], "side": "atLeast" }],
+  "quantiles": [0.1, 0.25, 0.5, 0.75, 0.9],
+  "cities": [{ "id": "milan", "name": "Milan", "country": "IT", "population": 3067071,
+               "layers": { "pov": { "cells": 1636, "population": 1201023,
+                                    "coverage": 39.2, "empty": 5.7 } },
+               "computedAt": "…" }],
+  "values": { "pov.proximity": [{ "cells": 1636, "population": 1201023,
+                                  "mean": 6093.45, "q": [3034.4, 4334.2, 6157.8, 7863.8, 9158],
+                                  "gini": 0.212, "theil": 0.073, "ratio": 3.02,
+                                  "shares": [99.7, 94.3, 67, 3.2, 0] }, "… one per city, or null"] },
+  "countries": [{ "iso": "IT", "cities": ["florence", "milan", "rome"],
+                  "values": { "pov.proximity": { "cities": 2, "population": 3811189,
+                                                 "mean": 3979.279, "shares": ["…"] } } }],
+  "hiddenRule": { "population": 10000, "minutes": 60 },
+  "omitted": [{ "id": "zurich", "reason": "data" }] }
+```
+
+- **Every figure is about residents**, weighted by the layer's own
+  population per cell. `shares[i]` is the share of residents on the
+  `side` of `thresholds[i]`; thresholds are fixed, never fitted.
+- **`values[m][i]` is `cities[i]`'s figure**, `null` where the city does not
+  publish that layer.
+- **A country pools its cities' residents**, for means and shares only,
+  which pool exactly, and for now for 15minCity only; variants and hidden
+  cities are left out of the pool.
+- **`pov.zonesCommon`** splits every city at the Atlas median: the
+  population-weighted medians of all P.O.V. residents of the cities shown by
+  default, together, stated as the measure's `zoneThresholds`
+  (`proximity`, `opportunity`, `cities`).
+- **`hidden`** on a city (`"population"` or `"proximity"`) marks data too
+  thin to compare, by the rule in `scripts/lib/quality.mjs`, whose numbers
+  are `hiddenRule`. The page never shows such a city. The same
+  rule flags its markers in the coverage files with the same `hidden`
+  property, and the world maps skip them.
+- **Only current figures are published.** A city whose grid or layer files
+  changed since its figures were computed is listed in `omitted` and has no
+  values. Every computation, current and earlier, is kept in
+  `statistics/cities/<city>.json.gz` at the repository root, which is not
+  served.
 
 ## Serving it
 

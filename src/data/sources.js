@@ -75,6 +75,13 @@ export function createStaticProvider() {
       return loadJSON(fileUrl(catalogue, entry.summary), { signal });
     },
 
+    // The statistics: every city on every measure, computed offline. Null
+    // until any have been published, which is how the Stats page knows.
+    async stats(catalogue, { signal } = {}) {
+      if (!catalogue?.stats) return null;
+      return loadDataset({ url: fileUrl(catalogue, catalogue.stats), format: 'json' }, { signal });
+    },
+
     async coverage(platformId, catalogue, { signal } = {}) {
       const entry = platformEntry(catalogue, platformId);
       if (!entry?.coverage) return null;
@@ -207,6 +214,7 @@ export function createStaticProvider() {
  *   catalogue({ signal })                      → normalised catalogue
  *   coverage(platformId, catalogue, opts)      → FeatureCollection | null
  *   summary(platformId, catalogue, opts)       → { platform, cities } | null
+ *   stats(catalogue, opts)                     → statistics (scripts/lib/stats.mjs) | null
  *   cityMesh(platformId, cityId, catalogue, opts)
  *                                              → { collection, profile, scenario } | null
  *   scenarios(platformId, cityId, catalogue)   → [{ id, name, dataset }]
