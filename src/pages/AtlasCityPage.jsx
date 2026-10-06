@@ -434,6 +434,21 @@ function AtlasScreen({ cityId, view }) {
       ? atlas.data?.stats.areaKm2
       : atlas.data?.layers[layer]?.areaKm2
     : null;
+  // The population beside a layer's figures is that layer's own: its
+  // dataset's sum over its own cells, as city.explain.summary says. The
+  // grid's total covers every layer's cells and is the Population layer's
+  // figure only. The two used to agree for Rome by coincidence (P.O.V.'s
+  // cells and population were the grid's), and parted when 15minCity added
+  // cells P.O.V. does not cover: 2.7 M beside P.O.V.'s 8,089 cells, whose
+  // dataset counts 2.6 M.
+  const layerFile = unified && !isPopulation ? atlas.data?.files?.[layer] : null;
+  const layerPopulation = useMemo(() => {
+    if (!layerLoaded) return null;
+    if (!layerFile) return stats?.population ?? null;
+    const values = layerFile.fields?.population;
+    if (!Array.isArray(values)) return null;
+    return values.reduce((sum, v) => sum + (Number.isFinite(v) ? v : 0), 0);
+  }, [layerLoaded, layerFile, stats]);
 
   const ccForFeature = (feature) =>
     unified ? feature.properties?.cc : feature.properties?.new_id;
@@ -944,9 +959,9 @@ function AtlasScreen({ cityId, view }) {
                   <SummaryRow
                     label={t('city.summary.population')}
                     value={
-                      stats?.population == null
+                      layerPopulation == null
                         ? '—'
-                        : `${n(stats.population / 1e6, {
+                        : `${n(layerPopulation / 1e6, {
                             minimumFractionDigits: 1,
                             maximumFractionDigits: 1,
                           })} M`
