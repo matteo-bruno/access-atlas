@@ -55,6 +55,11 @@ Everything is environment variables; no code changes to switch.
 | `CITYCHAT_TEMPERATURE` | `0.3` | |
 | `CITYCHAT_FIRST_BYTE_MS` | `90000` | how long a model may think before it starts answering; past it, the next model |
 | `CITYCHAT_IDLE_MS` | `120000` | how long a stream may then go silent before it counts as stalled |
+| `CITYCHAT_LOCAL_URL` | | an OpenAI-compatible server of your own (Ollama, llama.cpp, vLLM), e.g. `http://127.0.0.1:11434/v1` |
+| `CITYCHAT_LOCAL_MODEL` | | its model(s), comma-separated, e.g. `qwen3:8b` |
+| `CITYCHAT_LOCAL_FIRST` | off | `1` puts the local model before Gemini; otherwise it is the last resort |
+| `CITYCHAT_LOCAL_FIRST_BYTE_MS` | `300000` | the local model's wait for a first byte: a CPU reads a long prompt slowly |
+| `CITYCHAT_LOCAL_API_KEY` | | only if the local server asks for one |
 | `CITYCHAT_PORT` / `CITYCHAT_HOST` | `3100` / `127.0.0.1` | |
 | `CITYCHAT_DATA_DIR` | `public/data` | the data to answer from |
 | `CITYCHAT_RATE_MAX` | `30` | questions per IP per 10 minutes |
@@ -76,8 +81,11 @@ vllm serve Qwen/Qwen3-30B-A3B-Instruct-2507 --enable-auto-tool-choice --tool-cal
 CITYCHAT_PROVIDER=openai CITYCHAT_BASE_URL=http://127.0.0.1:8000/v1 \
 CITYCHAT_MODEL=Qwen/Qwen3-30B-A3B-Instruct-2507 npm run citychat
 
-# Ollama (CPU is fine for trying it; slow for a public service)
-CITYCHAT_PROVIDER=openai CITYCHAT_BASE_URL=http://127.0.0.1:11434/v1 CITYCHAT_MODEL=qwen3:8b npm run citychat
+# Ollama, alone: no question leaves the machine (see "A model of your own")
+CITYCHAT_LOCAL_URL=http://127.0.0.1:11434/v1 CITYCHAT_LOCAL_MODEL=qwen3:8b npm run citychat
+
+# Ollama first, Gemini when it fails or is busy
+CITYCHAT_LOCAL_URL=http://127.0.0.1:11434/v1 CITYCHAT_LOCAL_MODEL=qwen3:8b CITYCHAT_LOCAL_FIRST=1 GEMINI_API_KEY=… npm run citychat
 
 # llama.cpp
 llama-server -m model.gguf --jinja --port 8080
@@ -149,15 +157,91 @@ the length of the answer (`postSSE` in `llm/http.mjs`):
   between two chunks stops it, as a stalled connection. However long the
   answer takes, as long as it keeps coming it is let finish.
 
-Between the service and the page the same holds: while the model writes the
-page is told so ("Writing the answer…"), and every ten seconds the service
-sends a `ping` line whatever is happening, so no proxy on the way closes a
-connection that looks idle. The page never times a question out itself.
+Between the service and the page the same holds: the answer streams to the
+page as it is written, and every ten seconds the service sends a `ping` line
+whatever is happening, so no proxy on the way closes a connection that looks
+idle. The page never times a question out itself.
 
-The answer is shown when it is complete and its figures have been checked,
-not word by word: a draft is exactly the text the figure check has not seen
-yet (see below), and a figure on screen that is then taken back is still a
-figure that was published.
+**What streams is a draft, and says so.** The text arrives as `draft` events
+(gathered every 80 ms) and is shown under a "Figures being checked" mark,
+because it is exactly the text the figure check (below) has not seen yet.
+When the answer event arrives, the checked answer replaces it. A draft is
+dropped when it turns out to be the run-up to a tool call, or when the check
+sends the answer back for correction; the corrected answer then streams from
+its start. A local reasoning model's `<think>` block never reaches a draft,
+not even half-written.
+
+## A model of your own
+
+Everything above works with a model on your own machine or cluster instead of
+Gemini, and then no question leaves it. The service needs nothing but an
+OpenAI-compatible endpoint, which Ollama, llama.cpp's `llama-server` and vLLM
+all provide.
+
+**`deploy/compose.yaml` is the whole of it for one machine:** the service
+and Ollama side by side, the local model first and Gemini as its fallback if
+a key is given, alone otherwise.
+
+```bash
+cd server/citychat/deploy
+docker compose up -d --build
+docker compose exec ollama ollama pull qwen3:8b    # once; kept in a volume
+curl -s 127.0.0.1:3100/api/citychat/health        # {"ok":true,"provider":"local:qwen3:8b@ollama:11434"}
+```
+
+then proxy `/atlas/api/citychat` to `127.0.0.1:3100` as in "Deploying next
+to the static site" below, and build the site with `VITE_CITYCHAT=1`. On a
+cluster without Docker, the same two processes run as two services (Ollama's
+own package or `llama-server`, and `npm run citychat` with the variables in
+`compose.yaml`).
+
+**Which model.** What decides it is tool calling, then the languages, then
+size:
+
+- *Tool calling* is the job. A model that does not call the tools answers
+  from memory, which the figure check will catch but cannot fix. Qwen3 and
+  recent Llama, Mistral and gpt-oss models are trained for it; most small
+  "chat" models are not.
+- *Languages*: the site speaks ten. Qwen models are the strongest small
+  multilingual ones, including Chinese, Japanese, Korean and Arabic.
+- *Size*: quantised to 4 bits, a 4B model needs about 3 GB of memory, an 8B
+  about 6 GB, a 14B about 10 GB, plus the context (below).
+
+Check the current tags in Ollama's library before pinning one: names move.
+
+**What it costs to run.** The answer is fast to write and slow to start,
+because the model first reads the prompt: ~7,500 tokens of rules and site
+copy, plus the tool results.
+
+| Hardware | 8B model, first answer | Following answers | Fits |
+| --- | --- | --- | --- |
+| CPU only, 8 to 16 cores | 1 to 3 minutes | seconds to start, then ~5 to 15 words/s | a demo, one or two readers at a time |
+| One GPU, 12 to 24 GB | a few seconds | ~30 to 80 words/s | a public service at modest traffic |
+| One GPU, 48 GB or more (vLLM) | a few seconds | fast, many at once | 14B to 32B models, real traffic |
+
+These are orders of magnitude from published benchmarks of this class of
+hardware, not measurements of CityChat: measure on the cluster before
+promising anything. The "following answers" row depends on the prompt cache,
+which is why the prompt is built with everything that does not change first
+(`knowledge.mjs`): llama.cpp and vLLM keep its work between requests, so
+only the reader's persona, city and language, and the tool results, are read
+anew.
+
+**Two settings that fail silently.**
+
+- *Context length.* Ollama's default context is shorter than the prompt, and
+  it drops the excess from the **front**, which is where the rules are. The
+  model then answers fluently and without error, having never read them.
+  `compose.yaml` sets `OLLAMA_CONTEXT_LENGTH=16384`; `llama-server`'s `-c` is
+  the total, shared by its parallel slots, so pass 16384 times `-np`; vLLM
+  uses the model's own.
+- *Tool calling on the server.* `llama-server` needs `--jinja`; vLLM needs
+  `--enable-auto-tool-choice` and the model's `--tool-call-parser`. Without
+  them the model's tool calls arrive as text, and nothing is computed.
+
+**Reasoning ("thinking") models** work, and their reasoning is kept out of
+the answer and the draft, but on a CPU they spend minutes thinking before
+the first word. Prefer an instruct (non-thinking) variant there.
 
 ## What the model can call
 
@@ -246,5 +330,6 @@ Questions and answers are not logged; the service logs one line per request
 with the provider, persona, city, tools called, token counts, outcome and
 time. They are, however, sent to the model provider. On Gemini's free tier
 Google may use prompts to improve its products; use a paid tier, or a local
-model, before opening this to the public. The page tells readers not to
+model (above), before opening this to the public. With a local model and no
+Gemini key, no question leaves the machine. The page tells readers not to
 include personal information.

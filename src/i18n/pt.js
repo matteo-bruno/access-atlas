@@ -617,7 +617,6 @@ export default {
     working: 'Lendo os dados…',
     answeredBy: 'Resposta de {model}',
     switching: '{model} assume…',
-    writing: 'Escrevendo a resposta…',
     verifying: 'Números em verificação',
     checking: 'Conferindo os números…',
     consulted: 'Calculado a partir de',

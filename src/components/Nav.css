@@ -43,6 +43,12 @@
   letter-spacing: 0.02em;
   color: var(--ink-3);
   white-space: nowrap;
+  /* The safety net under the breakpoint below: where a language's tabs are
+     wider than it allows for (Spanish, Portuguese, Arabic and Japanese, up to
+     ~1340 px with the CityChat tab), the tagline ends in an ellipsis rather
+     than running under the first tab. */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .aa-nav__links {

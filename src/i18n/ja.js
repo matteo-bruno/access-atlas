@@ -626,7 +626,6 @@ export default {
     working: 'データを読み込んでいます…',
     answeredBy: '回答モデル：{model}',
     switching: '{model} に切り替えています…',
-    writing: '回答を書いています…',
     verifying: '数値を確認中',
     checking: '数値を確認しています…',
     consulted: '計算元',

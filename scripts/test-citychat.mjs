@@ -205,6 +205,7 @@ const base = `http://127.0.0.1:${mock.address().port}`;
   check('OpenAI-compatible: streams from /chat/completions with a bearer key', one?.url === '/v1/chat/completions' && one.headers.authorization === 'Bearer x' && one.body.stream === true);
   check('OpenAI-compatible: system prompt first, tools as functions', one?.body.messages[0].role === 'system' && one.body.tools.every((t) => t.type === 'function'));
   check('OpenAI-compatible: tool result keyed to its call id', two?.body.messages.at(-1)?.role === 'tool' && two.body.messages.at(-1).tool_call_id === 't1');
+  check('OpenAI-compatible: <think> never reaches a draft', !events.some((e) => e.type === 'draft' && /think|hm/.test(e.text)), JSON.stringify(events.filter((e) => e.type === 'draft')));
   check('OpenAI-compatible: <think> is stripped from the answer', events.at(-1)?.text === 'Milano: 72,3% delle celle.', events.at(-1)?.text);
 }
 mock.close();
@@ -349,7 +350,12 @@ mock.close();
     answer?.type === 'answer' && answer.text === 'parola '.repeat(12).trim() && Date.now() - t0 > 1500,
     `${Date.now() - t0} ms`,
   );
-  check('Streaming: the page hears that the answer is being written', events.some((e) => e.type === 'progress' && e.phase === 'writing' && e.chars > 0));
+  const drafts = events.filter((e) => e.type === 'draft');
+  check(
+    'Streaming: the answer reaches the page as it is written, and the drafts add up to it',
+    drafts.length >= 3 && drafts.map((d) => d.text).join('').trim() === answer?.text,
+    `${drafts.length} drafts`,
+  );
 
   const fallback = await ask('mute,long');
   check('Streaming: a model silent past the first-byte wait hands over to the next', fallback.at(-1)?.model === 'gemini:long' && fallback.some((e) => e.status === 'fallback'));
@@ -362,6 +368,41 @@ mock.close();
   }
   check('Streaming: a stream that goes quiet mid-answer is a stall, not an answer', stalled?.failures?.[0]?.model === 'gemini:stall' && /stalled/.test(stalled.failures[0].reason) && stalled.failures[0].started, stalled?.failures?.[0]?.reason);
   slow.close();
+}
+
+// ── A local model beside, or instead of, Gemini ──────────────────────
+{
+  const hits = [];
+  const both = http.createServer(async (req, res) => {
+    for await (const _ of req);
+    if (req.url.includes(':streamGenerateContent')) {
+      hits.push('gemini');
+      res.statusCode = 429;
+      res.setHeader('Content-Type', 'application/json');
+      return res.end(JSON.stringify({ error: { code: 429 } }));
+    }
+    hits.push('local');
+    sse(res, [{ choices: [{ delta: { role: 'assistant', content: 'Dal modello locale.' } }] }, '[DONE]']);
+  });
+  await new Promise((r) => both.listen(0, '127.0.0.1', r));
+  const url = `http://127.0.0.1:${both.address().port}`;
+  const local = { CITYCHAT_LOCAL_URL: `${url}/v1`, CITYCHAT_LOCAL_MODEL: 'qwen3:8b' };
+  const ask = (provider) => collect(runChat({ provider, runTool, messages: [{ role: 'user', text: 'Ciao' }] }));
+
+  const alone = providerFromEnv({ ...local });
+  let events = await ask(alone);
+  check('Local: with no Gemini key, the local model answers alone', hits.join() === 'local' && events.at(-1)?.model?.startsWith('local:qwen3:8b@'), `${hits} ${events.at(-1)?.model}`);
+
+  hits.length = 0;
+  const backup = providerFromEnv({ ...local, GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: 'gemini-9-flash' });
+  events = await ask(backup);
+  check('Local: Gemini over quota hands the turn to the local model', hits.join() === 'gemini,local' && events.at(-1)?.text === 'Dal modello locale.', hits.join());
+
+  hits.length = 0;
+  const first = providerFromEnv({ ...local, CITYCHAT_LOCAL_FIRST: '1', GEMINI_API_KEY: 'k', CITYCHAT_BASE_URL: url, CITYCHAT_MODEL: 'gemini-9-flash' });
+  await ask(first);
+  check('Local: CITYCHAT_LOCAL_FIRST puts it before Gemini', hits.join() === 'local' && /^local:.* > gemini:/.test(first.name), first.name);
+  both.close();
 }
 
 {

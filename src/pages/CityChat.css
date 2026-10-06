@@ -150,6 +150,33 @@
   color: var(--magenta-deep);
 }
 
+.aa-chat__bubble--draft {
+  color: var(--ink-2);
+}
+
+/* "Figures being checked" over a streaming answer. The same magenta outline
+   as the nav's beta badge: it marks the text as not yet the Atlas's. */
+.aa-chat__verifying {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 2px 8px 2px 6px;
+  border: 1px solid var(--magenta);
+  border-radius: 3px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--magenta-deep);
+}
+
+.aa-chat__verifying .aa-chat__dots {
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  background: var(--magenta);
+}
+
 .aa-chat__bubble--pending {
   color: var(--ink-3);
 }

@@ -82,9 +82,8 @@ async function* runTurn({ provider, runTool, messages, persona, city, lang }) {
   let usage = { input: 0, output: 0 };
 
   for (let step = 0; step < MAX_STEPS; step++) {
-    // The model streams; while it does, the page hears that it is writing,
-    // which is also what keeps every proxy between here and it from closing
-    // a connection that has gone quiet.
+    // The model streams, and the page sees the answer as it is written
+    // (marked as unchecked until the answer event replaces it).
     let res;
     for await (const item of whileWaiting((onProgress) =>
       provider.complete({ system, messages: convo, tools: TOOL_DEFINITIONS, onProgress }),
@@ -166,32 +165,43 @@ function collectLinks(result, links) {
   visit(result);
 }
 
-// How often the page may be told the answer has grown, at most.
-const PROGRESS_EVERY_MS = 700;
+// How long text is gathered before it goes to the page as one `draft` event:
+// short enough to read as streaming, long enough that a model emitting one
+// token at a time does not send hundreds of lines.
+const DRAFT_EVERY_MS = 80;
 
 /**
- * Run `start(onProgress)` and yield its progress as `progress` events while
- * it runs, then its result as `{ done: true, value }`. Writing progress is
- * throttled, and only reported once the model is writing prose rather than
- * calling a tool: a tool call is announced by its own event.
+ * Run `start(onProgress)`, yielding the text it streams as `draft` events
+ * while it runs and then its result as `{ done: true, value }`.
+ *
+ * A draft is what the model has written so far, before the figure check has
+ * seen it; the page shows it as such, and replaces it with the checked
+ * answer. Text written before a tool call is a draft too, and the tool
+ * event that follows tells the page to drop it.
  */
 async function* whileWaiting(start) {
   const queue = [];
   let wake = null;
   let settled = null;
+  let gathered = '';
   let lastAt = 0;
   const notify = () => {
     wake?.();
     wake = null;
   };
-  start(({ chars, calls }) => {
-    const now = Date.now();
-    if (calls || !chars || now - lastAt < PROGRESS_EVERY_MS) return;
-    lastAt = now;
-    queue.push({ done: false, value: { type: 'progress', phase: 'writing', chars } });
+  const flush = () => {
+    if (!gathered) return;
+    queue.push({ done: false, value: { type: 'draft', text: gathered } });
+    gathered = '';
+    lastAt = Date.now();
     notify();
+  };
+  start(({ text }) => {
+    gathered += text;
+    if (Date.now() - lastAt >= DRAFT_EVERY_MS) flush();
   }).then(
     (value) => {
+      flush();
       settled = { value };
       notify();
     },

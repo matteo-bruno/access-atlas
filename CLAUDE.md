@@ -1028,8 +1028,21 @@ follows from that:
   the model's thinking time, then 120 s between chunks. A non-streamed call
   with one deadline on the whole cut off exactly the answers that took the
   most work. The service also writes a `ping` line every 10 s so no proxy
-  closes the page's connection, and it shows "writing" rather than the
-  draft: a draft is the text the figure check has not seen yet.
+  closes the page's connection.
+- **The answer streams as a draft, and the page says so.** `draft` events
+  carry the text as it is written; the page shows it under "Figures being
+  checked" and replaces it with the answer event, the checked text. A tool
+  call or a correction round drops the draft. Keep the mark: a draft is the
+  text the figure check has not seen yet, so it may show a figure the
+  answer will not.
+- **A local model is one more segment of the chain** (`CITYCHAT_LOCAL_URL`,
+  `CITYCHAT_LOCAL_MODEL`): last resort by default, first with
+  `CITYCHAT_LOCAL_FIRST=1`, alone with no Gemini key. `deploy/compose.yaml`
+  runs it with Ollama. The system prompt puts what never changes first,
+  because local servers cache a prompt by its prefix: a persona ahead of the
+  copy made every change of persona re-read ~7,500 tokens, minutes on a CPU.
+  Ollama's default context is shorter than that prompt and cuts it from the
+  front, where the rules are, without an error; `compose.yaml` raises it.
 - **The static site does not depend on it.** A build talks to the service
   only when built with `VITE_CITYCHAT=1` (always in `npm run dev`); without
   it the tab says CityChat is not enabled and sends nothing, which is what
@@ -1043,9 +1056,12 @@ follows from that:
   around it. It is how the chat's "show on map" buttons land, and works for
   any link.
 
-The nav gained a tab with it, and ten tabs only fit above 1240 px with the
-closer spacing in `Nav.css`; below that the drawer takes over (it was 1080 px,
-where the tagline already ran under the first tab).
+The nav gained a tab with it, and the tabs only fit above 1240 px with the
+closer spacing in `Nav.css`; below that the drawer takes over (main's sweep
+put it at 1112 px before the tab). Spanish, Portuguese, Arabic and Japanese
+are wider still, up to ~1340 px, and there the tagline ends in an ellipsis
+rather than running under the first tab: a drawer at 1340 px for every
+language would have hidden the tabs on ordinary laptops.
 
 ## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review. So do the

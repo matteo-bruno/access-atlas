@@ -607,7 +607,6 @@ export default {
     working: '데이터를 읽는 중…',
     answeredBy: '답변 모델: {model}',
     switching: '{model}(으)로 전환 중…',
-    writing: '답변을 작성하는 중…',
     verifying: '수치 확인 중',
     checking: '수치를 확인하는 중…',
     consulted: '계산 근거',

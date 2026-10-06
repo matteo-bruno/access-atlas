@@ -59,7 +59,7 @@ export default function CityChat() {
 
   const [messages, setMessages] = useState([]);
   const [draft, setDraft] = useState('');
-  const [pending, setPending] = useState(null); // { tools: [], checking }
+  const [pending, setPending] = useState(null); // { tools, text, checking, switching }
   const abortRef = useRef(null);
   const listRef = useRef(null);
   const inputRef = useRef(null);
@@ -76,7 +76,7 @@ export default function CityChat() {
     const history = [...messages.filter((m) => !m.error), { role: 'user', text: question }];
     setMessages((m) => [...m, { role: 'user', text: question }]);
     setDraft('');
-    setPending({ tools: [], checking: false });
+    setPending({ tools: [], text: '', checking: false });
 
     const controller = new AbortController();
     abortRef.current = controller;
@@ -88,13 +88,17 @@ export default function CityChat() {
         lang,
         signal: controller.signal,
         onEvent: (event) => {
-          if (event.type === 'tool') setPending((p) => p && { ...p, writing: false, tools: [...p.tools, event] });
-          if (event.type === 'progress') setPending((p) => p && { ...p, writing: true });
+          // The answer streams in as drafts. A draft is dropped when the
+          // model turns out to be calling a tool rather than answering, and
+          // when the figure check sends it back to be corrected: what then
+          // streams is the corrected answer, from its start.
+          if (event.type === 'draft') setPending((p) => p && { ...p, text: p.text + event.text });
+          if (event.type === 'tool') setPending((p) => p && { ...p, text: '', tools: [...p.tools, event] });
           if (event.type === 'status' && event.status === 'fallback') {
             // The turn starts over on the next model: what the last one
             // looked up is not what this answer will be built from.
-            setPending((p) => p && { tools: [], checking: false, switching: modelName(event.to) });
-          } else if (event.type === 'status') setPending((p) => p && { ...p, checking: true });
+            setPending((p) => p && { tools: [], text: '', checking: false, switching: modelName(event.to) });
+          } else if (event.type === 'status') setPending((p) => p && { ...p, text: '', checking: true });
         },
       });
       setMessages((m) => [
@@ -178,7 +182,7 @@ export default function CityChat() {
               </label>
             </div>
 
-            <div className="aa-chat__log" ref={listRef} aria-live="polite">
+            <div className="aa-chat__log" ref={listRef} aria-live="polite" aria-busy={pending ? true : undefined}>
               {messages.length === 0 && !pending && (
                 <div className="aa-chat__empty">
                   <div className="aa-chat__label">{t('citychat.suggestionsTitle')}</div>
@@ -244,17 +248,28 @@ export default function CityChat() {
               {pending && (
                 <div className="aa-chat__msg aa-chat__msg--bot">
                   <div className="aa-chat__who">{t('citychat.assistant')}</div>
-                  <div className="aa-chat__bubble aa-chat__bubble--pending">
-                    <span className="aa-chat__dots" aria-hidden="true" />
-                    {pending.checking
-                      ? t('citychat.checking')
-                      : pending.writing
-                        ? t('citychat.writing')
+                  {pending.text ? (
+                    // The answer as it is written, before the figure check has
+                    // seen it: marked as such, and replaced by the checked one.
+                    <div className="aa-chat__bubble aa-chat__bubble--draft">
+                      <span className="aa-chat__verifying">
+                        <span className="aa-chat__dots" aria-hidden="true" />
+                        {t('citychat.verifying')}
+                      </span>
+                      <Answer text={pending.text} />
+                      {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
+                    </div>
+                  ) : (
+                    <div className="aa-chat__bubble aa-chat__bubble--pending">
+                      <span className="aa-chat__dots" aria-hidden="true" />
+                      {pending.checking
+                        ? t('citychat.checking')
                         : pending.switching
                           ? t('citychat.switching', { model: pending.switching })
                           : t('citychat.working')}
-                    {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
-                  </div>
+                      {pending.tools.length > 0 && <ToolTrace tools={pending.tools} cityName={cityName} live />}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -609,7 +609,6 @@ export default {
     working: 'جارٍ قراءة البيانات…',
     answeredBy: 'أجاب {model}',
     switching: 'يتولى {model} الإجابة…',
-    writing: 'جارٍ كتابة الإجابة…',
     verifying: 'الأرقام قيد التحقق',
     checking: 'جارٍ التحقق من الأرقام…',
     consulted: 'محسوب من',

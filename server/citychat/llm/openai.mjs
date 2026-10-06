@@ -15,7 +15,7 @@
 
 import { ProviderError, postSSE } from './http.mjs';
 
-export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firstByteMs, idleMs }) {
+export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firstByteMs, idleMs, prefix = 'openai' }) {
   if (!model) throw new Error('CITYCHAT_PROVIDER=openai needs CITYCHAT_MODEL');
   const url = `${baseUrl.replace(/\/$/, '')}/chat/completions`;
 
@@ -43,7 +43,7 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firs
   };
 
   return {
-    name: `openai:${model}@${new URL(baseUrl).host}`,
+    name: `${prefix}:${model}@${new URL(baseUrl).host}`,
     async complete({ system, messages, tools, onProgress }) {
       const body = {
         model,
@@ -65,6 +65,7 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firs
       const calls = [];
       let usage = null;
       let seen = false;
+      let shown = 0; // how much of the visible text has been passed on
       await postSSE(url, body, {
         headers: apiKey ? { Authorization: `Bearer ${apiKey}` } : {},
         firstByteMs,
@@ -83,7 +84,13 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firs
             if (piece.function?.name) calls[at].name += piece.function.name;
             if (piece.function?.arguments) calls[at].arguments += piece.function.arguments;
           }
-          onProgress?.({ chars: content.length, calls: calls.length > 0 });
+          // Only what a reader would see: a <think> block, finished or
+          // still open, is the model's reasoning and never reaches the draft.
+          const visible = withoutThinking(content);
+          if (visible.length > shown) {
+            onProgress?.({ text: visible.slice(shown) });
+            shown = visible.length;
+          }
         },
       });
       if (!seen) throw new ProviderError('Model server returned no message');
@@ -95,7 +102,7 @@ export function createOpenAIProvider({ apiKey, model, baseUrl, temperature, firs
       }));
       // Reasoning models served locally often put their thinking in the
       // content between <think> tags; it is not part of the answer.
-      const text = String(content).replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+      const text = withoutThinking(content).trim();
       return {
         text,
         toolCalls,
@@ -113,4 +120,18 @@ function parseArgs(value) {
   } catch {
     return {};
   }
+}
+
+/**
+ * Text with its reasoning taken out: closed <think> blocks, and an open one
+ * at the end that is still being written. While a tag is half-arrived
+ * ("<thi") the tail is held back too, so it cannot flash into the draft.
+ */
+export function withoutThinking(content) {
+  let out = String(content).replace(/<think>[\s\S]*?<\/think>/g, '');
+  const open = out.indexOf('<think>');
+  if (open >= 0) out = out.slice(0, open);
+  const partial = out.lastIndexOf('<');
+  if (partial >= 0 && '<think>'.startsWith(out.slice(partial))) out = out.slice(0, partial);
+  return out.replace(/^\s+/, '');
 }

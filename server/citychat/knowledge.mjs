@@ -109,14 +109,24 @@ function corpus() {
   return cached;
 }
 
-/** The system prompt for one request. */
+/**
+ * The system prompt for one request.
+ *
+ * What never changes comes first and what a request chooses comes last.
+ * Model servers cache a prompt by its prefix (llama.cpp, vLLM, Gemini's
+ * implicit cache), so with the rules and the ~7,500-token copy up front every
+ * request reuses the same work, and only the few lines about this reader are
+ * read anew. With the persona first, changing it re-read the whole prompt:
+ * free on Gemini, minutes on a model running on a CPU.
+ */
 export function systemPrompt({ persona, city, lang } = {}) {
-  const parts = [RULES];
-  if (PERSONAS[persona]) parts.push(`## Who you are talking to\n${PERSONAS[persona]}`);
-  if (city) parts.push(`## Context\nThe user opened the chat on the city with id "${city}". Assume questions are about it unless they say otherwise.`);
+  const parts = [RULES, `# Reference: the Atlas's own copy\n\n${corpus()}`];
+  const request = [];
+  if (PERSONAS[persona]) request.push(`## Who you are talking to\n${PERSONAS[persona]}`);
+  if (city) request.push(`## Context\nThe user opened the chat on the city with id "${city}". Assume questions are about it unless they say otherwise.`);
   if (LANGUAGES[lang] && lang !== 'en') {
-    parts.push(`The interface is in ${LANGUAGES[lang]}: answer in ${LANGUAGES[lang]} unless the user writes in another language.`);
+    request.push(`The interface is in ${LANGUAGES[lang]}: answer in ${LANGUAGES[lang]} unless the user writes in another language.`);
   }
-  parts.push(`# Reference: the Atlas's own copy\n\n${corpus()}`);
+  if (request.length) parts.push(`# This conversation\n\n${request.join('\n\n')}`);
   return parts.join('\n\n');
 }

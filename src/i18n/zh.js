@@ -607,7 +607,6 @@ export default {
     working: '正在读取数据…',
     answeredBy: '回答模型：{model}',
     switching: '改由 {model} 回答…',
-    writing: '正在撰写回答…',
     verifying: '数字核对中',
     checking: '正在核对数字…',
     consulted: '计算依据',

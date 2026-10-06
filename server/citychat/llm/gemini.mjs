@@ -60,7 +60,6 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, firs
       let finishReason = null;
       let blockReason = null;
       let usageMetadata = null;
-      let chars = 0;
       await postSSE(url, body, {
         headers: { 'x-goog-api-key': apiKey },
         firstByteMs,
@@ -68,14 +67,15 @@ export function createGeminiProvider({ apiKey, model, baseUrl, temperature, firs
         label: 'Gemini',
         onData: (chunk) => {
           const candidate = chunk.candidates?.[0];
+          let text = '';
           for (const part of candidate?.content?.parts ?? []) {
             parts.push(part);
-            if (typeof part.text === 'string' && !part.thought) chars += part.text.length;
+            if (typeof part.text === 'string' && !part.thought) text += part.text;
           }
           finishReason = candidate?.finishReason ?? finishReason;
           blockReason = chunk.promptFeedback?.blockReason ?? blockReason;
           usageMetadata = chunk.usageMetadata ?? usageMetadata;
-          onProgress?.({ chars, calls: parts.some((p) => p.functionCall) });
+          if (text) onProgress?.({ text });
         },
       });
 
