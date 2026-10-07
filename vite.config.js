@@ -162,9 +162,6 @@ export default defineConfig({
     // free to stay cached.
     __BUILD_ID__: JSON.stringify(Date.now().toString(36)),
   },
-  // CityChat's service (server/citychat/) in development: `npm run citychat`
-  // beside `npm run dev`. In production the web server proxies the same path.
-  server: { proxy: citychatProxy },
   // Preview proxies it only when asked (CITYCHAT_PREVIEW=1). The browser
   // suites run against preview with no service behind it, and a proxy with
   // nothing to reach answers 500, which they rightly count as a failure;
@@ -178,8 +175,15 @@ export default defineConfig({
   // per city, and the dev server watching each one exhausts Linux's inotify
   // limit (ENOSPC) as the Atlas grows. Neither is code: a re-import is seen
   // by reloading the page, which re-reads the catalogue anyway.
+  //
+  // One `server` key, holding both: an object literal keeps only the last of
+  // two, without a word, and a second `server` here once dropped the
+  // CityChat proxy from `npm run dev`.
   server: {
     watch: { ignored: ['**/public/data/**', '**/input_data/**'] },
+    // CityChat's service (server/citychat/) in development: `npm run citychat`
+    // beside `npm run dev`. In production the web server proxies the same path.
+    proxy: citychatProxy,
   },
   build: {
     // maplibre-gl is large and only the map routes need it; keeping it in its

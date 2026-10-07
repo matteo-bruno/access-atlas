@@ -425,6 +425,18 @@ check(
     JSON.stringify(['gemini-3-flash', 'gemini-3-flash-preview', 'gemini-2.5-flash', 'gemini-2.5-flash-lite']),
 );
 
+// `npm run dev` reaches the service through Vite's proxy. The browser suites
+// run on a build and cannot see it go missing, which it once did: a second
+// `server` key in the config replaced the first, proxy and all.
+{
+  const config = (await import('../vite.config.js')).default;
+  check(
+    'npm run dev proxies /api/citychat to the service',
+    Object.keys(config.server?.proxy ?? {}).some((path) => path.endsWith('api/citychat')),
+    JSON.stringify(Object.keys(config.server ?? {})),
+  );
+}
+
 check('Every tool has a description and an object schema', TOOL_DEFINITIONS.every((t) => t.description && t.parameters?.type === 'object'));
 
 console.log(failures ? `\n${failures} failed` : '\nAll passed');
