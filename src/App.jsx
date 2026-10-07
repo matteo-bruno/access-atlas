@@ -67,6 +67,12 @@ const FADE_MS = 170;
  * selection in the query string, and fading the map every time someone
  * changes a dropdown would be worse than not fading at all.
  */
+// Which screen a path is, for the cross-fade. A city's core and its metro
+// area (`/atlas/tokyo`, `/atlas/tokyo-fua`) are one screen on two
+// boundaries: the city view swaps its mesh under the same map rather than
+// fading out and building another.
+const screenOf = (pathname) => pathname.replace(/^(\/atlas\/[^/]+?)-fua\/?$/, '$1');
+
 function FadingRoutes({ children }) {
   const location = useLocation();
   const [shown, setShown] = useState(location);
@@ -74,7 +80,7 @@ function FadingRoutes({ children }) {
   const [pending] = useTransition();
 
   useEffect(() => {
-    if (location.pathname === shown.pathname) {
+    if (screenOf(location.pathname) === screenOf(shown.pathname)) {
       // Same screen, new query: swap without a fade.
       if (location !== shown) setShown(location);
       return undefined;

@@ -132,6 +132,7 @@ export function useAtlasMesh(cityId, layer, enabled = true, scenario = null) {
     const collection = { type: 'FeatureCollection', features: current.features };
     const data = meshFromAtlas(collection, current.profile);
     data.files = { ...current.files };
+    data.cityId = current.cityId;
     setState((previous) => ({
       status: 'ready',
       data,
@@ -148,7 +149,10 @@ export function useAtlasMesh(cityId, layer, enabled = true, scenario = null) {
     }
     let cancelled = false;
     const controller = new AbortController();
-    setState({ status: 'pending', data: null, error: null, layerStatus: {} });
+    // The previous city's mesh stays (status 'pending', its layers no longer
+    // ready) until this one's grid is in: switching a city's boundary keeps
+    // the map on screen and repaints it, rather than emptying the frame.
+    setState((previous) => ({ status: 'pending', data: previous.data, error: null, layerStatus: {} }));
 
     (async () => {
       try {
@@ -188,7 +192,10 @@ export function useAtlasMesh(cityId, layer, enabled = true, scenario = null) {
   // The open layer, on first open. Nothing is cancelled when the layer
   // changes again before it arrives: the file is small, and merging it
   // anyway means switching back is instant.
-  const gridReady = state.status === 'ready';
+  // Which city's grid is in, not merely whether one is: going back to a
+  // city whose files are cached, "pending" and "ready" land in one render,
+  // and a flag would not change at all.
+  const gridReady = state.status === 'ready' ? (state.data?.cityId ?? null) : null;
   useEffect(() => {
     const current = store.current;
     if (!gridReady || !current || current.cityId !== cityId || !layer) return;

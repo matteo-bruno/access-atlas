@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
@@ -75,10 +75,15 @@ const GRID_BOUND_PARAMS = ['from'];
 export default function AtlasCityPage() {
   const { cityId } = useParams();
   const view = useAtlasView(cityId);
+  // The screen is not keyed by the city: stepping between a city's core and
+  // its metro area keeps it, and its map, and repaints. While the next city
+  // resolves, the last one stays on screen.
+  const last = useRef(null);
+  if (view.status === 'ready' && view.profile) last.current = { cityId, view };
 
-  if (view.status === 'pending') return <div className="aa-page" />;
-  if (view.status === 'missing' || !view.profile) return <Navigate to="/" replace />;
-  return <AtlasScreen key={cityId} cityId={cityId} view={view} />;
+  if (view.status === 'missing' || (view.status === 'ready' && !view.profile)) return <Navigate to="/" replace />;
+  if (!last.current) return <div className="aa-page" />;
+  return <AtlasScreen cityId={last.current.cityId} view={last.current.view} />;
 }
 
 function AtlasScreen({ cityId, view }) {
@@ -116,6 +121,18 @@ function AtlasScreen({ cityId, view }) {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [fullscreen]);
+  // Another city on the same screen (a boundary switch): a cell or an
+  // isochrone origin is a position on the last city's grid. `?cell=` is an H3
+  // index and is selected again on the new grid below.
+  const firstCity = useRef(cityId);
+  useEffect(() => {
+    if (firstCity.current === cityId) return;
+    firstCity.current = cityId;
+    setSelectedCell(null);
+    setHoverCell(null);
+    setActiveZone(null);
+  }, [cityId]);
+
   // Car Dependency's index filter, on the same bounds as its own viewer.
   // Whether it is actually filtering depends on the active layer, which is
   // resolved from the URL further down.
@@ -277,8 +294,10 @@ function AtlasScreen({ cityId, view }) {
       return baseGeojson;
     }
   }, [baseGeojson, cartogramOn, cartogram.status, cartogram.collection]);
+  // The union mesh is drawable once a grid is in: this city's, or the last
+  // city's while this one's loads (a boundary switch keeps the map).
   const meshReady = unified
-    ? atlas.status === 'ready'
+    ? atlas.data != null
     : layer === 'citychrone'
       ? Boolean(ccHour.collection)
       : swapMesh.status === 'ready';
@@ -430,7 +449,9 @@ function AtlasScreen({ cityId, view }) {
   // The index filter reads the index, not a difference of two.
   const rangeOn = layer === 'cardep' && !diffShown && (range[0] > -1 || range[1] < 1);
 
-  const waiting = unified && !isPopulationLayer(layer) && !layerLoaded;
+  // The last city's mesh, kept on screen while this one's grid loads.
+  const gridLoading = unified && atlas.status === 'pending';
+  const waiting = unified && !isPopulationLayer(layer) && (!layerLoaded || gridLoading);
   const fillPaint = useMemo(() => {
     // While the layer's own file is on its way, the grid is already here:
     // the city's cells are drawn faintly, so the map shows where the colours
@@ -1073,6 +1094,8 @@ function AtlasScreen({ cityId, view }) {
                 zoom={cityZoom(profile)}
                 bounds={bounds}
                 fitPadding={24}
+                // A boundary switch moves the camera to the other extent.
+                fitDuration={600}
                 graticule={false}
                 basemap
                 // Full-bleed: it takes over from the site's backdrop, which
@@ -1134,11 +1157,13 @@ function AtlasScreen({ cityId, view }) {
 
             {/* The grid is drawn; a layer, or a scenario of it, is still on
                 its way. Said over the map rather than left as a pale city. */}
-            {meshReady && geojson && (waiting || scenarioStatus === 'pending') && (
+            {meshReady && geojson && (gridLoading || waiting || scenarioStatus === 'pending') && (
               <div className="aa-atlas__prompt aa-atlas__prompt--loading" role="status">
-                {t('atlas.loading.layer', {
-                  name: scenario && !waiting ? (lang === 'it' ? scenario.nameIt ?? scenario.name : scenario.name) : platform.name,
-                })}
+                {gridLoading
+                  ? t('city.computing')
+                  : t('atlas.loading.layer', {
+                      name: scenario && !waiting ? (lang === 'it' ? scenario.nameIt ?? scenario.name : scenario.name) : platform.name,
+                    })}
                 {largeCity && <span className="aa-atlas__loadinghint">{t('atlas.loading.large')}</span>}
               </div>
             )}

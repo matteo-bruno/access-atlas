@@ -140,7 +140,14 @@ the core's names when it has none). Its catalogue entry says
 `extent: 'fua', core: '<city>'`, derived from the id (`extentOf` in
 `bundle.mjs`); the city view offers "City (core) / Metro (FUA)" wherever both
 exist and keeps the query string across, less `from` (a CityChrone row of
-one grid). One dot per place on the world maps: a metro area's marker is
+one grid). **The switch is a repaint, not a new page**, and three things keep
+it one: `FadingRoutes` counts `/atlas/x` and `/atlas/x-fua` as one screen
+(`screenOf`), so there is no cross-fade; `AtlasScreen` is not keyed by the
+city, so the map and its WebGL context stay; and `useAtlasMesh` keeps the
+last city's mesh (painted grey) until the next grid is in, then the camera
+eases to the new extent (`fitDuration`). Its layer effects wait on *which*
+city's grid is in, not on a ready flag: back to a cached city, "pending" and
+"ready" land in one render and a flag never changes. One dot per place on the world maps: a metro area's marker is
 dropped where its core publishes the same layer. Lists that set the two side
 by side (compare view, CityChat) label it with `cityLabel`.
 

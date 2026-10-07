@@ -86,6 +86,9 @@ export function AtlasMap({
   basemap = false,
   bounds = null,
   fitPadding = 40,
+  // How long a refit to new bounds takes once the map has been framed: 0
+  // jumps. The first framing always jumps, before the first frame.
+  fitDuration = 0,
   fitWorldWidth = false,
   // Zoom levels past the world-width fit. The site's two coverage maps — the
   // backdrop and the platform screen — share one value (WORLD_ZOOM_BOOST in
@@ -328,9 +331,16 @@ export function AtlasMap({
     const container = containerRef.current;
     if (!map || !ready || !bounds) return undefined;
     const fit = () => map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-    fit();
+    if (fitDuration > 0) map.fitBounds(bounds, { padding: fitPadding, duration: fitDuration });
+    else fit();
     if (typeof ResizeObserver === 'undefined') return undefined;
-    const observer = new ResizeObserver(fit);
+    // An observer reports once as soon as it observes: that is not a resize,
+    // and jumping there would cut short the animated refit above.
+    let first = true;
+    const observer = new ResizeObserver(() => {
+      if (first) first = false;
+      else fit();
+    });
     observer.observe(container);
     return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
