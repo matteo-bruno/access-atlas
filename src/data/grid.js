@@ -93,50 +93,136 @@ export async function gridFeatures(grid) {
   }));
 }
 
-/** 15minCity's average over the nine categories, exactly as the importer rounds it. */
-function modeAverage(properties, mode) {
-  let sum = 0;
-  let count = 0;
-  for (const category of FIFTEEN_CATEGORIES) {
-    const v = properties[`${category}_${mode}`];
-    if (Number.isFinite(v) && v !== UNREACHABLE) {
-      sum += v;
-      count++;
-    }
+/**
+ * The property a scenario's value is merged under: `metro-d:cdi`. The
+ * baseline keeps the plain name, so every paint expression written for a
+ * layer reads the baseline, and the scenario, or the difference, is the same
+ * expression on another key.
+ */
+export const scenarioKey = (scenario, name) => (scenario ? `${scenario}:${name}` : name);
+
+/**
+ * A function that builds a feature's properties in one object literal: the
+ * keys it already has, then the layer's. One builder per set of keys, made
+ * once.
+ *
+ * Why not copy the object and add the layer's values one by one: an object
+ * grown past a couple of dozen properties that way drops into V8's slow
+ * dictionary mode, and on a metro area of 120,000 cells that was a second of
+ * the page's load in the merge alone, and more again in everything that read
+ * the features afterwards (the summary, the map's copy of them). An object
+ * literal keeps its fast shape: 50 ms for the same merge.
+ */
+const builders = new Map();
+function builderFor(baseKeys, addKeys) {
+  const signature = `${baseKeys.join('\u0000')}\u0001${addKeys.join('\u0000')}`;
+  let build = builders.get(signature);
+  if (build) return build;
+  const own = new Set(addKeys);
+  const kept = baseKeys.filter((k) => !own.has(k));
+  try {
+    // Keys are written as JSON strings, so no key can be read as code.
+    const body = [
+      ...kept.map((k) => `${JSON.stringify(k)}: b[${JSON.stringify(k)}]`),
+      ...addKeys.map((k, i) => `${JSON.stringify(k)}: v[${i}]`),
+    ].join(',');
+    // eslint-disable-next-line no-new-func
+    build = new Function('b', 'v', `return {${body}};`);
+  } catch {
+    // A page whose content security policy forbids it: the slow way, same result.
+    build = (b, v) => {
+      const out = {};
+      for (const k of kept) out[k] = b[k];
+      addKeys.forEach((k, i) => {
+        out[k] = v[i];
+      });
+      return out;
+    };
   }
-  return count ? Math.round((sum / count) * 10) / 10 : null;
+  builders.set(signature, build);
+  return build;
 }
 
 /**
- * Put a layer's values on the features that carry them.
+ * Put a layer's values on the features that carry them; with `scenario`, a
+ * scenario's values, under `scenarioKey` names.
  *
  * Returns a new array; features the layer touches are new objects, so a
- * consumer holding the previous array sees the change.
+ * consumer holding the previous array sees the change. A cell gets a key
+ * only where it has a value, so `['has', key]` in a paint expression still
+ * means "this cell carries the measure".
  */
-export function mergeLayer(features, layer, file) {
+export function mergeLayer(features, layer, file, { scenario = null } = {}) {
   const positions = layerPositions(file);
   const names = PROPERTIES[layer] ?? [];
+  const columns = names.map((name) => file.fields[name]);
+  const keys = names.map((name) => scenarioKey(scenario, name));
+  const fifteen = layer === 'fifteen';
+  const averageKeys = fifteen ? FIFTEEN_MODES.map((mode) => scenarioKey(scenario, `proximity_time_${mode}`)) : [];
+  const averageFallback = fifteen ? FIFTEEN_MODES.map((mode) => file.fields[`proximity_time_${mode}`]) : [];
+  const categoryAt = fifteen
+    ? FIFTEEN_MODES.map((mode) => FIFTEEN_CATEGORIES.map((c) => names.indexOf(`${c}_${mode}`)))
+    : [];
+  const withCc = layer === 'citychrone' && !scenario;
+
   const out = features.slice();
+  // The keys a cell gets, and the builder for them, change only when the
+  // cell's existing keys or its missing values do: a handful of shapes.
+  let lastBase = null;
+  let lastMask = -1;
+  let lastBaseSig = '';
+  let build = null;
+  const present = [];
+  const values = [];
   for (let row = 0; row < positions.length; row++) {
     const at = positions[row];
     const feature = out[at];
     if (!feature) throw new Error(`${layer}: row ${row} points at grid position ${at}`);
-    const properties = { ...feature.properties };
-    for (const name of names) {
-      const value = file.fields[name]?.[row];
-      if (value != null) properties[name] = value;
-    }
-    if (layer === 'fifteen') {
-      for (const mode of FIFTEEN_MODES) {
-        const key = `proximity_time_${mode}`;
-        const value = modeAverage(properties, mode) ?? file.fields[key]?.[row] ?? null;
-        if (value != null) properties[key] = value;
+    const base = feature.properties;
+
+    present.length = 0;
+    values.length = 0;
+    let mask = 0;
+    for (let k = 0; k < names.length; k++) {
+      const value = columns[k]?.[row];
+      if (value != null) {
+        present.push(keys[k]);
+        values.push(value);
+        mask |= 1 << (k % 30);
       }
     }
-    // CityChrone's hourly values are joined as feature-state by row number;
-    // the property says which row a cell is.
-    if (layer === 'citychrone') properties.cc = row;
-    out[at] = { ...feature, properties };
+    for (let m = 0; m < averageKeys.length; m++) {
+      // 15minCity's average over the nine categories, exactly as the importer rounds it.
+      let sum = 0;
+      let count = 0;
+      for (const k of categoryAt[m]) {
+        const v = columns[k]?.[row];
+        if (Number.isFinite(v) && v !== UNREACHABLE) {
+          sum += v;
+          count++;
+        }
+      }
+      const value = count ? Math.round((sum / count) * 10) / 10 : averageFallback[m]?.[row] ?? null;
+      if (value != null) {
+        present.push(averageKeys[m]);
+        values.push(value);
+        mask |= 1 << (30 - m);
+      }
+    }
+    if (withCc) {
+      present.push('cc');
+      values.push(row);
+    }
+
+    const baseKeys = Object.keys(base);
+    const baseSig = baseKeys.length === (lastBase?.length ?? -1) && baseKeys.every((k, i) => k === lastBase[i]) ? lastBaseSig : baseKeys.join('\u0000');
+    if (!build || mask !== lastMask || baseSig !== lastBaseSig) {
+      build = builderFor(baseKeys, present.slice());
+      lastMask = mask;
+      lastBaseSig = baseSig;
+    }
+    lastBase = baseKeys;
+    out[at] = { type: 'Feature', id: feature.id, geometry: feature.geometry, properties: build(base, values) };
   }
   return out;
 }

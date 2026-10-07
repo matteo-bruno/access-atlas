@@ -389,6 +389,12 @@ export const TOOL_DEFINITIONS = [
   },
 ];
 
+/** Which GHS boundary a city is published on, in words the model can repeat. */
+const boundaryOf = (city) =>
+  city.extent === 'fua'
+    ? `metro area (GHS Functional Urban Area) of ${city.core}`
+    : 'city core (GHS Urban Centre)';
+
 export function createTools(store) {
   const list_cities = () => {
     const cat = store.getCatalogue();
@@ -398,6 +404,8 @@ export function createTools(store) {
         name: c.name,
         nameIt: c.nameIt,
         country: c.region,
+        // A metro area is published as a city of its own, named as its core.
+        boundary: boundaryOf(c),
         layers: c.layers,
       })),
       platforms: LAYERS.map((id) => ({ id, name: PLATFORMS_BY_ID[id]?.name })),
@@ -412,6 +420,7 @@ export function createTools(store) {
       city: c.entry.id,
       name: c.entry.name,
       country: c.entry.region,
+      boundary: boundaryOf(c.entry),
       gridCells: c.mesh.stats.cellCount,
       gridAreaKm2: c.mesh.stats.areaKm2,
       gridPopulation: Math.round(c.mesh.stats.population ?? 0),

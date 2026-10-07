@@ -233,6 +233,25 @@ export default {
 
   atlas: {
     label: '統合ビュー',
+    extent: {
+      label: '範囲',
+      core: '都市（中心部）',
+      fua: '都市圏（FUA）',
+      about: 'どちらも Global Human Settlement Layer（GHS）による二つの範囲です。都市の中心部である Urban Centre と、周辺の通勤圏を加えた都市圏 Functional Urban Area。それぞれ別に公開・測定されており、切り替えると同じ表示をもう一方で開きます。',
+    },
+    scenario: {
+      label: 'シナリオ',
+      current: '現状',
+      view: { scenario: 'シナリオ', diff: '差分' },
+      about: '同じセルの上で、何かを変えて（たとえば新しい地下鉄路線）このレイヤーを計算し直したものです。単独で、または現状の測定との差分として表示できます。',
+      legendDiff: '変化：{scenario} − 現状',
+      change: '変化',
+      diffAbout: {
+        cardep: 'ゼロより小さいと、そのシナリオでセルの自動車依存が下がります。公共交通が自動車に比べて相対的に多くに届きます。白いセルは変化しません。',
+        fifteen: 'ゼロより小さいと、そのシナリオでサービスが近くなります（短縮された分数）。ゼロより大きいと遠くなります。白いセルは変化しません。',
+      },
+    },
+    loading: { large: '大きな都市は読み込みに時間がかかることがあります…', layer: '{name} を読み込み中…' },
     mapTitle: '{name} による測定',
     controls: {
       layer: '表示',
@@ -715,6 +734,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: '範囲',
+      core: '都市（中心部）',
+      fua: '都市圏（FUA）',
+      about: '都市は一度に一つの範囲で比較します。どちらも GHS によるもので、中心部（Urban Centre）か都市圏（Functional Urban Area）です。都市圏は中心部を含むため、両者を混ぜたり一つの国にまとめたりはしません。',
+    },
     unit: {
       label: '比較の単位',
       city: '都市',
@@ -907,7 +932,6 @@ export default {
     yAxis: '縦軸',
     unreachableValue: '到達不可',
     flag: {
-      variant: 'すでに掲載されている都市の、別の引き方をした範囲です。住民は国の集計に含めません。',
       coverage: 'このレイヤーは、Atlas がこの都市について把握する住民の{share}%を覆っています。値はその部分を表します。',
       single: '公開済みの都市が1つだけです。国の値はその都市の値です。',
     },

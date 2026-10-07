@@ -66,11 +66,13 @@
         },
         {
           "id": "tokyo-fua",
-          "name": "Tokyo Fua",
-          "nameIt": "Tokyo Fua",
+          "name": "Tokyo",
+          "nameIt": "Tokyo",
           "region": "Japan",
           "regionIt": "Giappone",
           "country": "JP",
+          "extent": "fua",
+          "core": "tokyo",
           "center": [
             139.6738,
             35.68866
@@ -452,11 +454,13 @@
         },
         {
           "id": "paris-fua",
-          "name": "Paris (metro area)",
-          "nameIt": "Parigi (area metropolitana)",
+          "name": "Paris",
+          "nameIt": "Parigi",
           "region": "France",
           "regionIt": "Francia",
           "country": "FR",
+          "extent": "fua",
+          "core": "paris",
           "center": [
             2.3375,
             48.85446
@@ -505,26 +509,6 @@
           "population": 2610166,
           "cells": 11409,
           "layer": "cities/rome/cardep.json.gz",
-          "cell": {
-            "h3Resolution": 9,
-            "cellRadiusM": 208
-          }
-        },
-        {
-          "id": "rome-metro-d",
-          "name": "Rome (Metro D scenario)",
-          "nameIt": "Roma (scenario Metro D)",
-          "region": "Italy",
-          "regionIt": "Italia",
-          "country": "IT",
-          "center": [
-            12.49368,
-            41.88207
-          ],
-          "zoom": 8.5,
-          "population": 2610166,
-          "cells": 11409,
-          "layer": "cities/rome-metro-d/cardep.json.gz",
           "cell": {
             "h3Resolution": 9,
             "cellRadiusM": 208
@@ -1483,12 +1467,13 @@
       },
       {
         "id": "paris-fua",
-        "name": "Paris (metro area)",
-        "nameIt": "Parigi (area metropolitana)",
+        "name": "Paris",
+        "nameIt": "Parigi",
         "region": "France",
         "regionIt": "Francia",
         "country": "FR",
-        "variant": true,
+        "extent": "fua",
+        "core": "paris",
         "center": [
           2.3375,
           48.85446
@@ -1581,36 +1566,23 @@
           "hours": 24,
           "cells": 11409,
           "times": "cities/rome/citychrone/times{hh}.npy.gz"
-        }
-      },
-      {
-        "id": "rome-metro-d",
-        "name": "Rome (Metro D scenario)",
-        "nameIt": "Roma (scenario Metro D)",
-        "region": "Italy",
-        "regionIt": "Italia",
-        "country": "IT",
-        "variant": true,
-        "center": [
-          12.49368,
-          41.88207
-        ],
-        "zoom": 8.5,
-        "population": 2610166,
-        "grid": "cities/rome-metro-d/grid.json.gz",
-        "cell": {
-          "h3Resolution": 9,
-          "cellRadiusM": 208
         },
-        "layers": [
-          "cardep"
-        ],
-        "layerData": {
-          "cardep": "cities/rome-metro-d/cardep.json.gz"
-        },
-        "cartogramSources": {
-          "cardep": "published"
-        }
+        "scenarios": [
+          {
+            "id": "metro-d",
+            "name": "Metro D",
+            "nameIt": "Metro D",
+            "layers": [
+              "cardep"
+            ],
+            "layerData": {
+              "cardep": "cities/rome/scenarios/metro-d/cardep.json.gz"
+            },
+            "cells": {
+              "cardep": 11409
+            }
+          }
+        ]
       },
       {
         "id": "seattle",
@@ -1704,11 +1676,13 @@
       },
       {
         "id": "tokyo-fua",
-        "name": "Tokyo Fua",
-        "nameIt": "Tokyo Fua",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
         "region": "Japan",
         "regionIt": "Giappone",
         "country": "JP",
+        "extent": "fua",
+        "core": "tokyo",
         "center": [
           139.6738,
           35.68866
@@ -1839,7 +1813,7 @@
   "stats": "stats/stats.json.gz",
   "files": {
     "cardep/coverage.geojson.gz": "c2654abe6e64",
-    "cardep/summary.json.gz": "a0078d76e7af",
+    "cardep/summary.json.gz": "5590efb9b580",
     "cities/barcelona/cardep.json.gz": "c8509bdec936",
     "cities/barcelona/grid.json.gz": "7fa07d97d97e",
     "cities/barcelona/pov.json.gz": "a3358d8fd86d",
@@ -1908,8 +1882,6 @@
     "cities/porto/cardep.json.gz": "59216814b46b",
     "cities/porto/grid.json.gz": "9dcfef6c655d",
     "cities/porto/pov.json.gz": "d0f069572128",
-    "cities/rome-metro-d/cardep.json.gz": "95050f1dd425",
-    "cities/rome-metro-d/grid.json.gz": "7752c344601a",
     "cities/rome/cardep.json.gz": "0876174bec47",
     "cities/rome/citychrone.json.gz": "cf52cded1d4a",
     "cities/rome/citychrone/times00.npy.gz": "29907b6310b7",
@@ -1939,6 +1911,7 @@
     "cities/rome/fifteen.json.gz": "fea9ba016f8e",
     "cities/rome/grid.json.gz": "d8a7e0c87758",
     "cities/rome/pov.json.gz": "fd898852e8df",
+    "cities/rome/scenarios/metro-d/cardep.json.gz": "30cb6ceff790",
     "cities/seattle/cardep.json.gz": "9a72b203ddda",
     "cities/seattle/grid.json.gz": "e4409fc0e415",
     "cities/seattle/pov.json.gz": "af539de64b77",
@@ -1985,9 +1958,9 @@
     "cities/zurich/grid.json.gz": "1703818e80cf",
     "cities/zurich/pov.json.gz": "8e713420f5b2",
     "citychrone/coverage.geojson.gz": "5f65fb9c1b1a",
-    "fifteen/coverage.geojson.gz": "6ab293975110",
+    "fifteen/coverage.geojson.gz": "38675d9f6807",
     "pov/coverage.geojson.gz": "ce86a6e2964f",
     "pov/summary.json.gz": "3759a48dcb50",
-    "stats/stats.json.gz": "d9258f2fc251"
+    "stats/stats.json.gz": "cd5f8add2a14"
   }
 }

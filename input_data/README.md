@@ -18,6 +18,32 @@ The file name gives the city: `Zurich.geojson`, `Zurich.zip`,
 suffix is dropped, accents and spaces become a slug: `New York` →
 `new-york`). A zip can also be given unpacked, as a folder of the same name.
 
+### Metro areas and scenarios
+
+```
+15mincity/  Tokyo.geojson            the city: its GHS core (Urban Centre)
+            Tokyo_FUA.geojson        its metro area (GHS Functional Urban Area)
+cdi/        rome_cdi.zip             Rome
+            rome__metro-d_cdi.zip    scenario "metro-d" of Rome's Car Dependency
+```
+
+- **`<City>_FUA`** is the city's metro area, published as the city
+  `<city>-fua` beside the core, with the core's names: the city view
+  switches between "City (core)" and "Metro (FUA)", and the Stats page
+  compares one boundary at a time. Either can be published without the other.
+- **`<city>__<scenario>`** (two underscores) is a scenario of that layer of
+  the city: stored with the city, on its grid, shown in the city view on its
+  own or as the difference from the current layer. The city must already
+  publish the layer (a scenario of a metro area: `paris_FUA__new-line_cdi.zip`).
+  Its name is the id, title-cased ("Metro D"); to name it otherwise import it
+  by hand with `--scenario-name` / `--scenario-name-it`. Scenarios are not in
+  the statistics. CityChrone scenarios are not supported yet.
+
+```
+npm run import -- cdi input_data/cdi/rome__metro-d_cdi.zip --scenario-name "Metro D"
+npm run import -- cdi --remove rome --scenario metro-d
+```
+
 ## Updating: import only what changed
 
 ```

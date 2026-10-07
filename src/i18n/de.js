@@ -227,6 +227,25 @@ export default {
 
   atlas: {
     label: 'Kombinierte Ansicht',
+    extent: {
+      label: 'Abgrenzung',
+      core: 'Stadt (Kern)',
+      fua: 'Metropolregion (FUA)',
+      about: 'Zwei Abgrenzungen aus dem Global Human Settlement Layer (GHS): der Kern der Stadt, ihr Urban Centre, und ihre Metropolregion, die Functional Urban Area, die das Pendlergebiet ringsum hinzunimmt. Jede wird für sich veröffentlicht und gemessen; der Umschalter öffnet dieselbe Ansicht für die andere.',
+    },
+    scenario: {
+      label: 'Szenario',
+      current: 'Aktuell',
+      view: { scenario: 'Szenario', diff: 'Differenz' },
+      about: 'Ein weiterer Lauf dieser Ebene, in dem sich etwas ändert (etwa eine neue U-Bahn-Linie), auf denselben Zellen. Allein anzeigen oder als Differenz zur aktuellen Messung.',
+      legendDiff: 'Änderung: {scenario} minus aktuell',
+      change: 'Änderung',
+      diffAbout: {
+        cardep: 'Unter null macht das Szenario die Zelle weniger autoabhängig: Der öffentliche Verkehr erreicht relativ mehr von dem, was das Auto erreicht. Weiße Zellen ändern sich nicht.',
+        fifteen: 'Unter null rückt das Szenario die Angebote näher: gesparte Minuten. Über null rücken sie weiter weg. Weiße Zellen ändern sich nicht.',
+      },
+    },
+    loading: { large: 'Große Städte brauchen etwas länger zum Laden…', layer: '{name} wird geladen…' },
     mapTitle: 'Gemessen von {name}',
     controls: {
       layer: 'Darstellung',
@@ -708,6 +727,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: 'Abgrenzung',
+      core: 'Städte (Kern)',
+      fua: 'Metropolregionen (FUA)',
+      about: 'Städte werden auf einer Abgrenzung zugleich verglichen, beide aus dem GHS: ihre Kerne (Urban Centres) oder ihre Metropolregionen (Functional Urban Areas). Eine Metropolregion enthält ihren Kern, daher werden beide nie vermischt und nie zu einem Land zusammengefasst.',
+    },
     unit: {
       label: 'Vergleichen',
       city: 'Städte',
@@ -900,7 +925,6 @@ export default {
     yAxis: 'Vertikale Achse',
     unreachableValue: 'nicht erreichbar',
     flag: {
-      variant: 'Ein zweites Gebiet einer bereits aufgeführten Stadt, anders gezogen. Seine Bewohner fließen nicht in das Land ein.',
       coverage: 'Diese Ebene deckt {share} % der Bewohner ab, die der Atlas für diese Stadt hat: Der Wert beschreibt diesen Teil.',
       single: 'Eine einzige veröffentlichte Stadt: Der Wert des Landes ist der dieser Stadt.',
     },

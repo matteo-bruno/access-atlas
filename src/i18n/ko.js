@@ -222,6 +222,25 @@ export default {
 
   atlas: {
     label: '통합 보기',
+    extent: {
+      label: '경계',
+      core: '도시(핵심)',
+      fua: '광역권(FUA)',
+      about: '두 경계 모두 GHS(Global Human Settlement Layer)에서 왔습니다. 도시의 핵심인 Urban Centre와, 주변 통근권을 더한 광역권인 Functional Urban Area입니다. 각각 따로 공개하고 측정하며, 전환하면 같은 보기를 다른 쪽에서 엽니다.',
+    },
+    scenario: {
+      label: '시나리오',
+      current: '현재',
+      view: { scenario: '시나리오', diff: '차이' },
+      about: '같은 셀 위에서 무언가를 바꿔(예: 새 지하철 노선) 이 레이어를 다시 계산한 것입니다. 단독으로 보거나 현재 측정과의 차이로 볼 수 있습니다.',
+      legendDiff: '변화: {scenario} 빼기 현재',
+      change: '변화',
+      diffAbout: {
+        cardep: '0보다 작으면 시나리오에서 셀의 자동차 의존도가 낮아집니다. 대중교통이 자동차에 비해 상대적으로 더 많이 닿습니다. 흰 셀은 변하지 않습니다.',
+        fifteen: '0보다 작으면 시나리오에서 서비스가 가까워집니다(절약된 분). 0보다 크면 멀어집니다. 흰 셀은 변하지 않습니다.',
+      },
+    },
+    loading: { large: '큰 도시는 불러오는 데 시간이 걸릴 수 있습니다…', layer: '{name} 불러오는 중…' },
     mapTitle: '{name} 측정',
     controls: {
       layer: '시각화',
@@ -696,6 +715,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: '경계',
+      core: '도시(핵심)',
+      fua: '광역권(FUA)',
+      about: '도시는 한 번에 하나의 경계로 비교하며, 둘 다 GHS에서 왔습니다. 핵심(Urban Centre) 또는 광역권(Functional Urban Area)입니다. 광역권은 핵심을 포함하므로 둘을 섞거나 한 나라로 합치지 않습니다.',
+    },
     unit: {
       label: '비교 단위',
       city: '도시',
@@ -888,7 +913,6 @@ export default {
     yAxis: '세로축',
     unreachableValue: '도달 불가',
     flag: {
-      variant: '이미 목록에 있는 도시를 다르게 그은 두 번째 범위입니다. 거주자는 나라에 합치지 않습니다.',
       coverage: '이 레이어는 Atlas가 이 도시에 대해 가진 거주자의 {share}%를 포괄합니다. 값은 그 부분을 나타냅니다.',
       single: '공개된 도시가 하나뿐입니다. 나라의 값은 그 도시의 값입니다.',
     },

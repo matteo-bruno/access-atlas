@@ -432,10 +432,14 @@ export function GeoJSONLayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, layerId, sourceId, type, anchor]);
 
-  // Data updates.
+  // Data updates. The first one is the source's own creation above: setting
+  // it again copied the whole collection to MapLibre's worker a second time,
+  // which on a metro area of 120,000 cells is seconds.
+  const sent = useRef(data);
   useEffect(() => {
     const source = map?.getSource(sourceId);
-    if (source) source.setData(data);
+    if (source && sent.current !== data) source.setData(data);
+    sent.current = data;
   }, [map, sourceId, data]);
 
   // Paint updates.

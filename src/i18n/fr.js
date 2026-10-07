@@ -226,6 +226,25 @@ export default {
 
   atlas: {
     label: 'Vue combinée',
+    extent: {
+      label: 'Périmètre',
+      core: 'Ville (centre)',
+      fua: 'Aire métropolitaine (FUA)',
+      about: 'Deux périmètres du Global Human Settlement Layer (GHS) : le cœur de la ville, son Urban Centre, et son aire métropolitaine, la Functional Urban Area, qui y ajoute la zone de navettes alentour. Chacun est publié et mesuré séparément ; le bouton ouvre la même vue sur l’autre.',
+    },
+    scenario: {
+      label: 'Scénario',
+      current: 'Actuel',
+      view: { scenario: 'Scénario', diff: 'Différence' },
+      about: 'Une autre exécution de cette couche avec un changement (une nouvelle ligne de métro, par exemple), sur les mêmes cellules. Affichez-la seule ou en différence avec la mesure actuelle.',
+      legendDiff: 'Variation : {scenario} moins actuel',
+      change: 'Variation',
+      diffAbout: {
+        cardep: 'Sous zéro, le scénario rend la cellule moins dépendante de la voiture : les transports en commun atteignent relativement plus de ce qu’atteint la voiture. Les cellules blanches ne changent pas.',
+        fifteen: 'Sous zéro, le scénario rapproche les services : des minutes gagnées. Au-dessus de zéro, il les éloigne. Les cellules blanches ne changent pas.',
+      },
+    },
+    loading: { large: 'Les grandes villes peuvent mettre un moment à charger…', layer: 'Chargement de {name}…' },
     mapTitle: 'Mesuré par {name}',
     controls: {
       layer: 'Visualisation',
@@ -707,6 +726,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: 'Périmètre',
+      core: 'Villes (centre)',
+      fua: 'Aires métropolitaines (FUA)',
+      about: 'Les villes se comparent sur un périmètre à la fois, tous deux issus du GHS : leurs centres (Urban Centres) ou leurs aires métropolitaines (Functional Urban Areas). Une aire métropolitaine inclut son centre : les deux ne sont jamais mélangés ni regroupés dans un même pays.',
+    },
     unit: {
       label: 'Comparer',
       city: 'Villes',
@@ -899,7 +924,6 @@ export default {
     yAxis: 'Axe vertical',
     unreachableValue: 'inaccessible',
     flag: {
-      variant: 'Un second périmètre d’une ville déjà listée, tracé autrement. Ses résidents ne sont pas regroupés dans le pays.',
       coverage: 'Cette couche couvre {share} % des résidents que l’Atlas compte pour cette ville : la valeur décrit cette partie.',
       single: 'Une seule ville publiée : la valeur du pays est celle de cette ville.',
     },

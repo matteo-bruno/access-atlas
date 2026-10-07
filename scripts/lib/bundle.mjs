@@ -97,9 +97,31 @@ export const FIFTEEN_MODES = ['foot', 'bicycle'];
 // 15minCity's "not reachable" sentinel, kept so the ramp's tail paints it.
 export const UNREACHABLE = 99999;
 
-// Variants sit on top of their base city: published, with a city view, but no
-// marker of their own on the world map.
-export const VARIANTS = new Set(['paris-fua', 'munich-fua', 'rome-metro-d']);
+// ── boundaries and scenarios ─────────────────────────────────────────
+//
+// A city can be published on two boundaries, both from the GHS (Global Human
+// Settlement) layer: its core (the Urban Centre, the default) and its metro
+// area (the Functional Urban Area). The metro area is a city of its own,
+// `<city>-fua`, imported from `<City>_FUA.<ext>`: its own grid, layers,
+// record and statistics. Nothing is shared with the core but the name, so
+// either can be published without the other. The catalogue marks it
+// (`extent: 'fua'`, `core: '<city>'`) and the viewer and the Stats page use
+// that to offer the switch between the two.
+//
+// A scenario is an alternative run of one layer of a city (Rome's Metro D:
+// Car Dependency with a metro line that does not exist yet). It is not a
+// city: it is stored with the city it is a scenario of, on that city's grid,
+// so its rows line up with the baseline's and the viewer can paint either or
+// the difference between the two without loading a second grid. Imported
+// from `<city>__<scenario>` (two underscores) in any platform's folder.
+export const FUA_SUFFIX = '-fua';
+
+/** Which boundary a city id is, and the id of its core. */
+export function extentOf(cityId) {
+  return cityId.endsWith(FUA_SUFFIX) && cityId.length > FUA_SUFFIX.length
+    ? { extent: 'fua', core: cityId.slice(0, -FUA_SUFFIX.length) }
+    : { extent: 'core', core: cityId };
+}
 
 // Decimals kept per field. Everything is published at the precision the
 // platforms' own viewers show, never coarser.
@@ -256,6 +278,8 @@ export const cityDir = (cityId) => `cities/${cityId}`;
 export const cityRecordPath = (cityId) => `${cityDir(cityId)}/city.json`;
 export const gridPath = (cityId) => `${cityDir(cityId)}/grid.json.gz`;
 export const layerPath = (cityId, layer) => `${cityDir(cityId)}/${layer}.json.gz`;
+export const scenarioDir = (cityId, scenarioId) => `${cityDir(cityId)}/scenarios/${scenarioId}`;
+export const scenarioLayerPath = (cityId, scenarioId, layer) => `${scenarioDir(cityId, scenarioId)}/${layer}.json.gz`;
 export const timesTemplate = (cityId) => `${cityDir(cityId)}/citychrone/times{hh}.npy.gz`;
 export const hourPath = (template, hour) => template.replace('{hh}', String(hour).padStart(2, '0'));
 
@@ -272,34 +296,64 @@ const abs = (rel) => path.join(DATA, rel);
  */
 export function readCity(cityId, { skip = null } = {}) {
   const layers = new Map();
-  const gridFile = resolveDataFile(abs(gridPath(cityId)));
-  if (!gridFile) return layers;
-
-  let grid;
-  try {
-    grid = readDataJSON(abs(gridPath(cityId)));
-  } catch (error) {
-    throw new Error(`${gridPath(cityId)} exists but cannot be read (${error.message}); restore it from git`);
-  }
+  const grid = readGrid(cityId);
+  if (!grid) return layers;
   for (const layer of LAYER_ORDER) {
     const rel = layerPath(cityId, layer);
     if (layer === skip || !resolveDataFile(abs(rel))) continue;
-    let file;
-    try {
-      file = readDataJSON(abs(rel));
-    } catch (error) {
-      throw new Error(`${rel} exists but cannot be read (${error.message}); restore it from git`);
-    }
-    if (file.grid && grid.id && file.grid !== grid.id) {
-      throw new Error(
-        `${rel} was written against grid ${file.grid}, but ${gridPath(cityId)} is ${grid.id}: ` +
-          'the two come from different imports (a partial commit?). Restore both from the same ' +
-          'commit, or remove the layer and import it again',
-      );
-    }
-    layers.set(layer, decodeLayer(file, grid.cells, rel));
+    layers.set(layer, readLayerFile(rel, grid, cityId));
   }
   return layers;
+}
+
+/**
+ * Every scenario published for a city, decoded like its layers: scenario id →
+ * layer id → record. Read from the city's record, which says which exist.
+ */
+export function readScenarios(cityId, { skip = null } = {}) {
+  const scenarios = new Map();
+  const listed = readCityRecord(cityId)?.scenarios ?? {};
+  const grid = Object.keys(listed).length ? readGrid(cityId) : null;
+  for (const [scenarioId, entry] of Object.entries(listed)) {
+    const layers = new Map();
+    for (const layer of LAYER_ORDER) {
+      if (!entry.layers?.[layer]) continue;
+      if (skip && skip.scenario === scenarioId && skip.layer === layer) continue;
+      const rel = scenarioLayerPath(cityId, scenarioId, layer);
+      if (!grid || !resolveDataFile(abs(rel))) {
+        throw new Error(`${cityId}'s record lists scenario ${scenarioId} (${layer}), but ${rel} is missing; restore it from git`);
+      }
+      layers.set(layer, readLayerFile(rel, grid, cityId));
+    }
+    if (layers.size) scenarios.set(scenarioId, layers);
+  }
+  return scenarios;
+}
+
+function readGrid(cityId) {
+  if (!resolveDataFile(abs(gridPath(cityId)))) return null;
+  try {
+    return readDataJSON(abs(gridPath(cityId)));
+  } catch (error) {
+    throw new Error(`${gridPath(cityId)} exists but cannot be read (${error.message}); restore it from git`);
+  }
+}
+
+function readLayerFile(rel, grid, cityId) {
+  let file;
+  try {
+    file = readDataJSON(abs(rel));
+  } catch (error) {
+    throw new Error(`${rel} exists but cannot be read (${error.message}); restore it from git`);
+  }
+  if (file.grid && grid.id && file.grid !== grid.id) {
+    throw new Error(
+      `${rel} was written against grid ${file.grid}, but ${gridPath(cityId)} is ${grid.id}: ` +
+        'the two come from different imports (a partial commit?). Restore both from the same ' +
+        'commit, or remove the layer and import it again',
+    );
+  }
+  return decodeLayer(file, grid.cells, rel);
 }
 
 /**
@@ -434,9 +488,21 @@ function permuteMatrix(npy, order) {
   return out;
 }
 
-/** The context population of each grid cell, by the precedence above. */
-function gridPopulation(cells, records) {
+/**
+ * The context population of each grid cell, by the precedence above. A cell
+ * only a scenario covers takes the scenario's, below every layer's.
+ */
+function gridPopulation(cells, records, scenarios = new Map()) {
   const byCell = new Map();
+  for (const [, layers] of [...scenarios].sort(([a], [b]) => b.localeCompare(a))) {
+    for (const layer of [...POPULATION_PRECEDENCE].reverse()) {
+      const record = layers.get(layer);
+      record?.cells.forEach((h3, i) => {
+        const value = Number(record.fields.population[i]);
+        if (Number.isFinite(value)) byCell.set(h3, Math.round(value));
+      });
+    }
+  }
   for (const layer of [...POPULATION_PRECEDENCE].reverse()) {
     const record = records.get(layer);
     if (!record) continue;
@@ -474,9 +540,10 @@ function putFile(rel, text, dryRun) {
  * @param {Map<string, object>} records  layer id → record
  * @returns {{ grid: { cells: string[], population: number[] }, files: object[] }}
  */
-export function writeCity(cityId, records, { dryRun = false } = {}) {
+export function writeCity(cityId, records, { dryRun = false, scenarios = new Map() } = {}) {
   const all = new Set();
-  for (const record of records.values()) {
+  const everyRecord = [...records.values(), ...[...scenarios.values()].flatMap((layers) => [...layers.values()])];
+  for (const record of everyRecord) {
     for (const h3 of record.cells) {
       if (getResolution(h3) !== RESOLUTION) throw new Error(`${record.layer}: ${h3} is not r${RESOLUTION}`);
       all.add(h3);
@@ -485,10 +552,11 @@ export function writeCity(cityId, records, { dryRun = false } = {}) {
       throw new Error(`${cityId}/${record.layer}: two rows name the same cell`);
     }
   }
-  // Sorted, so the same layers always produce the same grid.
+  // Sorted, so the same layers always produce the same grid. A scenario's
+  // cells are on it too, so its rows are positions on the city's own grid.
   const cells = [...all].sort();
   const position = new Map(cells.map((h3, i) => [h3, i]));
-  const population = gridPopulation(cells, records);
+  const population = gridPopulation(cells, records, scenarios);
 
   const files = [];
   const id = gridId(cells);
@@ -503,6 +571,18 @@ export function writeCity(cityId, records, { dryRun = false } = {}) {
     encoded.set(layer, out);
     if (layer === 'citychrone') record.rowOrder = order;
     files.push(putFile(layerPath(cityId, layer), stableJSON(out), dryRun));
+  }
+
+  const encodedScenarios = new Map();
+  for (const [scenarioId, layers] of [...scenarios].sort(([a], [b]) => a.localeCompare(b))) {
+    const out = new Map();
+    for (const layer of LAYER_ORDER) {
+      const record = layers.get(layer);
+      if (!record) continue;
+      out.set(layer, encodeLayer(record, position, population, id).out);
+      files.push(putFile(scenarioLayerPath(cityId, scenarioId, layer), stableJSON(out.get(layer)), dryRun));
+    }
+    encodedScenarios.set(scenarioId, out);
   }
 
   // Travel-time matrices come with a fresh CityChrone import only; otherwise
@@ -537,7 +617,7 @@ export function writeCity(cityId, records, { dryRun = false } = {}) {
     }
   }
 
-  return { grid, encoded, files };
+  return { grid, encoded, encodedScenarios, files };
 }
 
 // ── figures a catalogue row carries ──────────────────────────────────
@@ -626,7 +706,10 @@ export function listCities() {
     .sort((a, b) => a.localeCompare(b));
 }
 
-const RECORD_ORDER = ['format', 'version', 'id', 'createdAt', 'updatedAt', 'meta', 'sources', 'atlas', 'platforms'];
+const RECORD_ORDER = ['format', 'version', 'id', 'createdAt', 'updatedAt', 'meta', 'sources', 'atlas', 'platforms', 'scenarios'];
+// Written only where there is one, so a city without scenarios keeps the
+// record it always had.
+const OPTIONAL_RECORD_KEYS = new Set(['scenarios']);
 
 /**
  * Write a city's record, plain and pretty-printed: it is read in diffs, not
@@ -646,7 +729,12 @@ export function writeCityRecord(record, { dryRun = false, touched = false } = {}
   const comparable = (r) => JSON.stringify(Object.fromEntries(RECORD_ORDER.map((k) => [k, k === 'updatedAt' ? null : r[k]])));
   next.updatedAt =
     previous && !touched && comparable(previous) === comparable(next) ? previous.updatedAt : record.updatedAt ?? now;
-  const ordered = Object.fromEntries(RECORD_ORDER.map((k) => [k, next[k] ?? null]));
+  const ordered = Object.fromEntries(
+    RECORD_ORDER.filter((k) => !OPTIONAL_RECORD_KEYS.has(k) || (next[k] && Object.keys(next[k]).length)).map((k) => [
+      k,
+      next[k] ?? null,
+    ]),
+  );
   return putFile(cityRecordPath(record.id), `${JSON.stringify(ordered, null, 2)}\n`, dryRun);
 }
 
@@ -654,15 +742,23 @@ export function writeCityRecord(record, { dryRun = false, touched = false } = {}
  * Record what a layer was imported from, without touching anything else.
  * update-data calls this after test:data has passed.
  */
-export function recordSource(cityId, layer, source, { dryRun = false } = {}) {
+export function recordSource(cityId, layer, source, { dryRun = false, scenario = null } = {}) {
   const record = readCityRecord(cityId);
   if (!record) throw new Error(`${cityId} has no record, so its source cannot be recorded`);
+  const byLayer = (sources) =>
+    Object.fromEntries(
+      Object.entries({ ...(sources ?? {}), [layer]: source }).sort(
+        ([a], [b]) => LAYER_ORDER.indexOf(a) - LAYER_ORDER.indexOf(b),
+      ),
+    );
+  if (scenario) {
+    const entry = record.scenarios?.[scenario];
+    if (!entry?.layers?.[layer]) throw new Error(`${cityId} has no ${layer} scenario ${scenario} to record a source for`);
+    entry.sources = byLayer(entry.sources);
+    return writeCityRecord(record, { dryRun });
+  }
   if (!record.platforms?.[layer]) throw new Error(`${cityId} has no ${layer} layer to record a source for`);
-  record.sources = Object.fromEntries(
-    Object.entries({ ...(record.sources ?? {}), [layer]: source }).sort(
-      ([a], [b]) => LAYER_ORDER.indexOf(a) - LAYER_ORDER.indexOf(b),
-    ),
-  );
+  record.sources = byLayer(record.sources);
   return writeCityRecord(record, { dryRun });
 }
 
@@ -673,7 +769,7 @@ export function recordSource(cityId, layer, source, { dryRun = false } = {}) {
  * command-line flags, for when the derivation is wrong.
  */
 export function cityMeta(previous, cityId, centre, overrides = {}) {
-  const known = previous?.meta ?? {};
+  const known = previous?.meta ?? coreMeta(cityId);
   let country = overrides.country ?? known.country;
   let region = overrides.region ?? known.region;
   let regionIt = overrides.regionIt ?? known.regionIt;
@@ -700,15 +796,33 @@ export function cityMeta(previous, cityId, centre, overrides = {}) {
 }
 
 /**
+ * A new metro area's names and place, from its core's record: it is the same
+ * city on a wider boundary, and the boundary is said by the viewer
+ * ("metro (FUA)"), not by the name. Nothing when it is no metro area, or its
+ * core is not published; its own id then names it ("Tokyo" for tokyo-fua).
+ */
+function coreMeta(cityId) {
+  const { extent, core } = extentOf(cityId);
+  if (extent !== 'fua') return {};
+  const meta = readCityRecord(core)?.meta;
+  return meta ? { ...meta } : { name: titleCase(core) };
+}
+
+/**
  * A city's catalogue entries: its atlas entry, and one row per layer for the
  * platform lists that the world maps, search and compare view read.
+ *
+ * `scenarios` is scenario id → layer id → encoded layer file, and
+ * `scenarioMeta` their names, as the city's record keeps them.
  */
-export function cityEntries(cityId, { grid, encoded, meta }) {
+export function cityEntries(cityId, { grid, encoded, meta, scenarios = new Map(), scenarioMeta = {} }) {
   const layers = LAYER_ORDER.filter((l) => encoded.has(l));
+  const { extent, core } = extentOf(cityId);
+  const boundary = extent === 'fua' ? { extent, core } : {};
   const atlas = {
     id: cityId,
     ...meta,
-    ...(VARIANTS.has(cityId) ? { variant: true } : {}),
+    ...boundary,
     center: weightedCentre(grid.cells, grid.population),
     zoom: zoomFor(grid.cells),
     population: Math.round(grid.population.reduce((a, b) => a + b, 0)),
@@ -725,6 +839,21 @@ export function cityEntries(cityId, { grid, encoded, meta }) {
       times: timesTemplate(cityId),
     };
   }
+  if (scenarios.size) {
+    atlas.scenarios = [...scenarios.keys()].sort().map((scenarioId) => {
+      const files = scenarios.get(scenarioId);
+      const of = LAYER_ORDER.filter((l) => files.has(l));
+      const names = scenarioMeta[scenarioId] ?? {};
+      return {
+        id: scenarioId,
+        name: names.name ?? titleCase(scenarioId),
+        nameIt: names.nameIt ?? names.name ?? titleCase(scenarioId),
+        layers: of,
+        layerData: Object.fromEntries(of.map((l) => [l, scenarioLayerPath(cityId, scenarioId, l)])),
+        cells: Object.fromEntries(of.map((l) => [l, files.get(l).cells])),
+      };
+    });
+  }
 
   const rows = {};
   for (const layer of layers) {
@@ -734,6 +863,7 @@ export function cityEntries(cityId, { grid, encoded, meta }) {
     const row = {
       id: cityId,
       ...meta,
+      ...boundary,
       center: weightedCentre(cells, pops),
       zoom: zoomFor(cells),
       population: Math.round(pops.reduce((a, b) => a + (Number(b) || 0), 0)),
@@ -769,6 +899,9 @@ export function cataloguePaths(catalogue) {
   for (const city of catalogue.atlas?.cities ?? []) {
     if (city.grid) paths.add(city.grid);
     for (const rel of Object.values(city.layerData ?? {})) paths.add(rel);
+    for (const scenario of city.scenarios ?? []) {
+      for (const rel of Object.values(scenario.layerData ?? {})) paths.add(rel);
+    }
     if (city.hourly?.times) {
       for (let hour = 0; hour < city.hourly.hours; hour++) paths.add(hourPath(city.hourly.times, hour));
     }
@@ -825,8 +958,13 @@ export function buildIndex({ dryRun = false } = {}) {
       cities: carrying.map((r) => r.platforms[layer].row),
     };
 
+    // One dot per place: a metro area whose core publishes the same layer is
+    // reached from the core's city view, through its boundary switch.
+    const ids = new Set(carrying.map((r) => r.id));
     const features = carrying
       .map((r) => {
+        const { extent, core } = extentOf(r.id);
+        if (extent === 'fua' && ids.has(core)) return null;
         const marker = r.platforms[layer].marker;
         if (!marker || !hiddenById.has(r.id)) return marker;
         return { ...marker, properties: { ...marker.properties, hidden: hiddenById.get(r.id) } };
@@ -909,14 +1047,11 @@ function populationCdf(rows, value, from, to, steps = 20) {
  */
 export function describeLayer(layer, rows, { id, name, country, centre, thresholds, hourly }) {
   const population = Math.round(rows.reduce((s, r) => s + r.population, 0));
-  const marker = (properties) =>
-    VARIANTS.has(id)
-      ? null
-      : {
-          type: 'Feature',
-          geometry: { type: 'Point', coordinates: centre },
-          properties: { id, name, country, isStudy: true, ...properties },
-        };
+  const marker = (properties) => ({
+    type: 'Feature',
+    geometry: { type: 'Point', coordinates: centre },
+    properties: { id, name, country, isStudy: true, ...properties },
+  });
 
   if (layer === 'pov') {
     const counts = [0, 0, 0, 0];
@@ -1029,13 +1164,20 @@ export function removeDataFile(rel) {
 export function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false }) {
   const previous = readCityRecord(cityId);
   const records = readCity(cityId);
+  const scenarios = readScenarios(cityId);
   const replaced = records.has(record.layer);
   records.set(record.layer, record);
 
-  const { grid, encoded, files } = writeCity(cityId, records, { dryRun });
+  const { grid, encoded, encodedScenarios, files } = writeCity(cityId, records, { dryRun, scenarios });
   const centre = weightedCentre(grid.cells, grid.population);
   const { meta, derived } = cityMeta(previous, cityId, centre, overrides);
-  const { atlas, rows: entries } = cityEntries(cityId, { grid, encoded, meta });
+  const { atlas, rows: entries } = cityEntries(cityId, {
+    grid,
+    encoded,
+    meta,
+    scenarios: encodedScenarios,
+    scenarioMeta: previous?.scenarios,
+  });
 
   const described =
     figures ??
@@ -1061,7 +1203,7 @@ export function publishLayer({ cityId, record, rows, figures, overrides = {}, dr
 
   files.push(
     writeCityRecord(
-      { id: cityId, meta, sources, atlas, platforms },
+      { id: cityId, meta, sources, atlas, platforms, scenarios: previous?.scenarios },
       { dryRun, touched: files.some((f) => f?.changed) },
     ),
   );
@@ -1087,7 +1229,17 @@ export function publishLayer({ cityId, record, rows, figures, overrides = {}, dr
 export function unpublishLayer({ cityId, layer, dryRun = false }) {
   const previous = readCityRecord(cityId);
   if (!previous?.platforms?.[layer]) throw new Error(`${cityId} publishes no ${layer} layer`);
+  const dependent = Object.entries(previous.scenarios ?? {})
+    .filter(([, entry]) => entry.layers?.[layer])
+    .map(([id]) => id);
+  if (dependent.length) {
+    throw new Error(
+      `${layer} is the baseline of scenario ${dependent.join(', ')}: remove ` +
+        `${dependent.length === 1 ? 'it' : 'them'} first (--remove ${cityId} --scenario <id>)`,
+    );
+  }
   const records = readCity(cityId, { skip: layer });
+  const scenarios = readScenarios(cityId);
 
   const files = [];
   const remove = (rel) => {
@@ -1102,7 +1254,7 @@ export function unpublishLayer({ cityId, layer, dryRun = false }) {
     return { cityId, layer, layers: [], files };
   }
 
-  const { grid, encoded, files: written } = writeCity(cityId, records, { dryRun });
+  const { grid, encoded, encodedScenarios, files: written } = writeCity(cityId, records, { dryRun, scenarios });
   files.push(...written);
   remove(layerPath(cityId, layer));
   if (layer === 'citychrone') {
@@ -1113,7 +1265,13 @@ export function unpublishLayer({ cityId, layer, dryRun = false }) {
     }
   }
 
-  const { atlas, rows: entries } = cityEntries(cityId, { grid, encoded, meta: previous.meta });
+  const { atlas, rows: entries } = cityEntries(cityId, {
+    grid,
+    encoded,
+    meta: previous.meta,
+    scenarios: encodedScenarios,
+    scenarioMeta: previous.scenarios,
+  });
   const platforms = {};
   for (const l of atlas.layers) {
     platforms[l] = { ...previous.platforms[l], row: entries[l] };
@@ -1122,4 +1280,126 @@ export function unpublishLayer({ cityId, layer, dryRun = false }) {
   delete sources[layer];
   files.push(writeCityRecord({ ...previous, sources, atlas, platforms }, { dryRun, touched: true }));
   return { cityId, layer, layers: atlas.layers, files };
+}
+
+// ── scenarios ────────────────────────────────────────────────────────
+
+/**
+ * Publish one layer of a scenario of a city. The city is rebuilt with it, so
+ * the scenario's rows are positions on the city's own grid (which grows if
+ * the scenario covers a cell no layer does), and the city's record lists it.
+ *
+ * A scenario is an alternative to a published layer, so the city must
+ * publish that layer: the viewer draws the two side by side, and the
+ * difference between them, and has nothing to subtract from otherwise.
+ * CityChrone's travel-time matrices are not carried for a scenario yet.
+ *
+ * @param {object} input
+ * @param {string} input.cityId
+ * @param {string} input.scenarioId   slug, `metro-d`
+ * @param {object} input.record       the layer, H3-keyed (see LAYERS)
+ * @param {{ name?: string, nameIt?: string }} [input.names]
+ */
+export function publishScenario({ cityId, scenarioId, record, names = {}, dryRun = false }) {
+  const previous = readCityRecord(cityId);
+  if (!previous?.platforms?.[record.layer]) {
+    throw new Error(
+      `${cityId} publishes no ${record.layer} layer, so there is no baseline for scenario ${scenarioId}: ` +
+        'import the city itself first',
+    );
+  }
+  if (record.layer === 'citychrone') throw new Error('CityChrone scenarios are not supported yet (travel-time matrices)');
+  const records = readCity(cityId);
+  const scenarios = readScenarios(cityId);
+  const replaced = Boolean(scenarios.get(scenarioId)?.has(record.layer));
+  if (!scenarios.has(scenarioId)) scenarios.set(scenarioId, new Map());
+  scenarios.get(scenarioId).set(record.layer, record);
+
+  const { grid, encoded, encodedScenarios, files } = writeCity(cityId, records, { dryRun, scenarios });
+  const known = previous.scenarios?.[scenarioId] ?? {};
+  const name = names.name ?? known.name ?? titleCase(scenarioId);
+  const entry = {
+    name,
+    nameIt: names.nameIt ?? known.nameIt ?? name,
+    layers: {
+      ...(known.layers ?? {}),
+      [record.layer]: {
+        cells: record.cells.length,
+        population: Math.round(record.fields.population.reduce((a, b) => a + (Number(b) || 0), 0)),
+      },
+    },
+    // Recorded by update-data once the run has passed test:data, as for a layer.
+    sources: Object.fromEntries(Object.entries(known.sources ?? {}).filter(([l]) => l !== record.layer)),
+  };
+  const scenarioMeta = { ...(previous.scenarios ?? {}), [scenarioId]: entry };
+  const { atlas, rows: entries } = cityEntries(cityId, {
+    grid,
+    encoded,
+    meta: previous.meta,
+    scenarios: encodedScenarios,
+    scenarioMeta,
+  });
+  const platforms = {};
+  for (const l of atlas.layers) platforms[l] = { ...previous.platforms[l], row: entries[l] };
+  const sortedMeta = Object.fromEntries(Object.entries(scenarioMeta).sort(([a], [b]) => a.localeCompare(b)));
+  files.push(
+    writeCityRecord(
+      { ...previous, atlas, platforms, scenarios: sortedMeta },
+      { dryRun, touched: files.some((f) => f?.changed) },
+    ),
+  );
+  return {
+    cityId,
+    scenarioId,
+    layer: record.layer,
+    name: entry.name,
+    replaced,
+    cells: record.cells.length,
+    gridCells: grid.cells.length,
+    files,
+  };
+}
+
+/** Take one layer of a scenario off the site; a scenario with none left goes whole. */
+export function unpublishScenario({ cityId, scenarioId, layer, dryRun = false }) {
+  const previous = readCityRecord(cityId);
+  if (!previous?.scenarios?.[scenarioId]?.layers?.[layer]) {
+    throw new Error(`${cityId} publishes no ${layer} scenario ${scenarioId}`);
+  }
+  const records = readCity(cityId);
+  const scenarios = readScenarios(cityId, { skip: { scenario: scenarioId, layer } });
+  const { grid, encoded, encodedScenarios, files } = writeCity(cityId, records, { dryRun, scenarios });
+
+  const rel = scenarioLayerPath(cityId, scenarioId, layer);
+  if (resolveDataFile(abs(rel))) {
+    if (!dryRun) removeDataFile(rel);
+    files.push({ rel, changed: true, removed: true });
+  }
+  const scenarioMeta = { ...previous.scenarios };
+  const entry = { ...scenarioMeta[scenarioId], layers: { ...scenarioMeta[scenarioId].layers } };
+  delete entry.layers[layer];
+  if (entry.sources) {
+    entry.sources = { ...entry.sources };
+    delete entry.sources[layer];
+  }
+  if (Object.keys(entry.layers).length) scenarioMeta[scenarioId] = entry;
+  else {
+    delete scenarioMeta[scenarioId];
+    const dir = abs(scenarioDir(cityId, scenarioId));
+    if (!dryRun && fs.existsSync(dir) && !fs.readdirSync(dir).length) fs.rmdirSync(dir);
+  }
+  const parent = abs(`${cityDir(cityId)}/scenarios`);
+  if (!dryRun && fs.existsSync(parent) && !fs.readdirSync(parent).length) fs.rmdirSync(parent);
+
+  const { atlas, rows: entries } = cityEntries(cityId, {
+    grid,
+    encoded,
+    meta: previous.meta,
+    scenarios: encodedScenarios,
+    scenarioMeta,
+  });
+  const platforms = {};
+  for (const l of atlas.layers) platforms[l] = { ...previous.platforms[l], row: entries[l] };
+  files.push(writeCityRecord({ ...previous, atlas, platforms, scenarios: scenarioMeta }, { dryRun, touched: true }));
+  return { cityId, scenarioId, layer, left: Object.keys(entry.layers), files };
 }

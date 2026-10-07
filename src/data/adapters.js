@@ -353,6 +353,39 @@ export function summariseMeasure(collection, key, bands) {
 }
 
 /**
+ * Population-weighted mean of one property over the cells that carry it,
+ * weighted by the grid's population as `meshFromAtlas` weights the CDI, so a
+ * scenario's figure and the baseline's are the same computation.
+ */
+export function weightedMean(collection, key, decimals = 3) {
+  let sum = 0;
+  let weight = 0;
+  for (const feature of collection?.features ?? []) {
+    const value = feature.properties?.[key];
+    if (!Number.isFinite(value)) continue;
+    const pop = Number(feature.properties.population) || 0;
+    sum += value * pop;
+    weight += pop;
+  }
+  if (!weight) return null;
+  const m = 10 ** decimals;
+  return Math.round((sum / weight) * m) / m;
+}
+
+/** P.O.V.'s zone shares, % of the cells carrying `key`, as `meshFromAtlas` counts them. */
+export function zoneSharesOf(collection, key) {
+  const counts = [0, 0, 0, 0];
+  let total = 0;
+  for (const feature of collection?.features ?? []) {
+    const zone = feature.properties?.[key];
+    if (!Number.isFinite(zone) || zone < 0 || zone > 3) continue;
+    counts[zone]++;
+    total++;
+  }
+  return total ? counts.map((c) => Math.round((c / total) * 1000) / 10) : null;
+}
+
+/**
  * A combined-viewer union mesh → what /atlas/:cityId renders.
  *
  * One FeatureCollection on the standard H3 grid, every platform's values on

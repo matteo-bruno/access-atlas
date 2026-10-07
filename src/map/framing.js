@@ -33,8 +33,8 @@ const CITY_ZOOM_BOOST = 1.1;
  * function's output, not an independent design choice — if the frame is
  * wrong, the padding or the clamp below is what wants changing.
  */
-export const WORLD_ZOOM_BOOST = 1.04;
-export const WORLD_CENTER = [-52.16, 49.29];
+export const WORLD_ZOOM_BOOST = 0.27;
+export const WORLD_CENTER = [-101.16, 48.87];
 
 /**
  * How much wider than the coverage itself the frame is drawn.

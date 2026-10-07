@@ -60,7 +60,23 @@
       "hours": 24,
       "cells": 11409,
       "times": "cities/rome/citychrone/times{hh}.npy.gz"
-    }
+    },
+    "scenarios": [
+      {
+        "id": "metro-d",
+        "name": "Metro D",
+        "nameIt": "Metro D",
+        "layers": [
+          "cardep"
+        ],
+        "layerData": {
+          "cardep": "cities/rome/scenarios/metro-d/cardep.json.gz"
+        },
+        "cells": {
+          "cardep": 11409
+        }
+      }
+    ]
   },
   "platforms": {
     "fifteen": {
@@ -356,6 +372,19 @@
           "opportunity": 9435.4
         }
       }
+    }
+  },
+  "scenarios": {
+    "metro-d": {
+      "name": "Metro D",
+      "nameIt": "Metro D",
+      "layers": {
+        "cardep": {
+          "cells": 11409,
+          "population": 2610166
+        }
+      },
+      "sources": {}
     }
   }
 }

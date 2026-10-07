@@ -30,8 +30,8 @@ export function hiddenReason({ population, proximityMinutes }) {
 }
 
 /**
- * The rule applied to a city's record. A variant has no marker of its own, so
- * its walking time comes from the statistics when the caller has them.
+ * The rule applied to a city's record. A record with no 15minCity marker takes
+ * its walking time from the statistics when the caller has them.
  */
 export function recordHiddenReason(record, fallbackMinutes = null) {
   const marker = record.platforms?.fifteen?.marker?.properties?.proximityMinutes;
