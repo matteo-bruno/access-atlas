@@ -1109,6 +1109,78 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 - Its card still is shot from the combined viewer's CityChrone layer
   (`scripts/shoot-previews.mjs`).
 
+## CityChat (beta)
+
+`/citychat` is a chat over the published data; the service is
+`server/citychat/` and its README has the configuration, the deploy and the
+model choices. The site's rule applies to it unchanged, and the design
+follows from that:
+
+- **The model states no figure it was not handed.** It calls tools
+  (`tools.mjs`) that run `grid.js` and `adapters.js` over `public/data/`, so
+  the chat and the map compute every figure with the same code. `numbers.mjs`
+  then checks each number in an answer against the tool results, the site
+  copy and the conversation; one correction round, and whatever survives is
+  shown to the reader as possibly wrong. It matches values, not meanings: a
+  rounded figure equal to some *other* figure in the results passes. Do not
+  describe it as proof.
+- **What it knows is the site's own copy.** `knowledge.mjs` puts the English
+  `city.explain.*`, platform and FAQ strings and the four layer posts in the
+  system prompt, plus the rules from "Facts that are easy to get wrong"
+  above. New copy reaches the chat for free; a correction to a measure's
+  description belongs in the dictionary, not in the prompt.
+- **The provider is one environment variable.** `llm/` has Gemini (native
+  API, default) and any OpenAI-compatible server, which covers vLLM,
+  llama.cpp, Ollama and most hosted APIs. Gemini's newer models refuse a
+  follow-up that drops the thought signatures on their function calls, so
+  the adapter replays the model's own parts verbatim: do not rebuild them.
+- **It is configured with a list of models, not a model** (`CITYCHAT_MODEL`,
+  default `auto`: every Flash the key can call, newest first, from the
+  API's own model list). A 429, 404, 403, 5xx or timeout hands the turn to
+  the next model, which starts it **over**: another model refuses the first
+  one's thought signatures, which is also why `gemini.mjs` replays `raw`
+  only when it carries its own model name. A failed model rests for as long
+  as the 429 said (`llm/chain.mjs`). A 400 is never retried elsewhere.
+- **No answer is timed out for being long.** Every model call streams, and
+  the deadline is on silence (`postSSE`): 90 s for the first byte, which is
+  the model's thinking time, then 120 s between chunks. A non-streamed call
+  with one deadline on the whole cut off exactly the answers that took the
+  most work. The service also writes a `ping` line every 10 s so no proxy
+  closes the page's connection.
+- **The answer streams as a draft, and the page says so.** `draft` events
+  carry the text as it is written; the page shows it under "Figures being
+  checked" and replaces it with the answer event, the checked text. A tool
+  call or a correction round drops the draft. Keep the mark: a draft is the
+  text the figure check has not seen yet, so it may show a figure the
+  answer will not.
+- **A local model is one more segment of the chain** (`CITYCHAT_LOCAL_URL`,
+  `CITYCHAT_LOCAL_MODEL`): last resort by default, first with
+  `CITYCHAT_LOCAL_FIRST=1`, alone with no Gemini key. `deploy/compose.yaml`
+  runs it with Ollama. The system prompt puts what never changes first,
+  because local servers cache a prompt by its prefix: a persona ahead of the
+  copy made every change of persona re-read ~7,500 tokens, minutes on a CPU.
+  Ollama's default context is shorter than that prompt and cuts it from the
+  front, where the rules are, without an error; `compose.yaml` raises it.
+- **The static site does not depend on it.** A build talks to the service
+  only when built with `VITE_CITYCHAT=1` (always in `npm run dev`); without
+  it the tab says CityChat is not enabled and sends nothing, which is what
+  the CI build and GitHub Pages get, and what `smoke.mjs` asserts. With it,
+  the tab probes `<base>api/citychat/health` and accepts only JSON with `ok`
+  (the SPA fallback answers a missing service with index.html and a 200),
+  and a chat response counts only if it is NDJSON. `vite preview` proxies to
+  the service only with `CITYCHAT_PREVIEW=1`: a proxy with nothing behind it
+  answers 500.
+- **`?cell=<h3>` on the city view** selects that cell and frames the ground
+  around it. It is how the chat's "show on map" buttons land, and works for
+  any link.
+
+The nav gained a tab with it, and the tabs only fit above 1240 px with the
+closer spacing in `Nav.css`; below that the drawer takes over (main's sweep
+put it at 1112 px before the tab). Spanish, Portuguese, Arabic and Japanese
+are wider still, up to ~1340 px, and there the tagline ends in an ellipsis
+rather than running under the first tab: a drawer at 1340 px for every
+language would have hidden the tabs on ordinary laptops.
+
 ## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review. So do the
   other eight translations, which were machine-drafted; Arabic most of all,

@@ -248,7 +248,24 @@ function AtlasScreen({ cityId, view }) {
   // The union mesh's extent, so the frame is the city and not the layer:
   // switching between a platform covering 7,498 cells and one covering 1,636
   // must not move the camera.
-  const bounds = useMemo(() => meshBounds(baseGeojson), [baseGeojson]);
+  //
+  // A cell named in the URL (`?cell=<h3>`, what CityChat's "show on map"
+  // links carry) is selected once the mesh has it, and the frame closes in on
+  // the ground around it instead. The frame is still the same across layers:
+  // the cell is one cell of the union mesh, whichever layer is on screen.
+  const focusH3 = params.get('cell');
+  const focusId = useMemo(() => {
+    if (!focusH3 || !baseGeojson?.features) return null;
+    const at = baseGeojson.features.findIndex((f) => f.properties?.h3 === focusH3);
+    return at >= 0 ? at : null;
+  }, [focusH3, baseGeojson]);
+  useEffect(() => {
+    if (focusId != null) setSelectedCell(focusId);
+  }, [focusId]);
+  const bounds = useMemo(() => {
+    const cell = focusId != null ? baseGeojson?.features?.[focusId] : null;
+    return cell ? aroundCell(cell) : meshBounds(baseGeojson);
+  }, [baseGeojson, focusId]);
 
   // ── What the active layer measures ─────────────────────────────────
   // One description per layer: the value expression to colour by, the ramp
@@ -1132,4 +1149,20 @@ function signedOrDash(value, n) {
 function formatCoord(value, axes) {
   const hemisphere = value >= 0 ? axes[0] : axes[1];
   return `${Math.abs(value).toFixed(3)}°${hemisphere}`;
+}
+
+// The ground about a kilometre and a half either side of one cell: enough of
+// the city around it to see where it is.
+const FOCUS_PAD_DEG = 0.014;
+function aroundCell(feature) {
+  const ring = feature.geometry?.coordinates?.[0] ?? [];
+  if (!ring.length) return null;
+  const lons = ring.map(([x]) => x);
+  const lats = ring.map(([, y]) => y);
+  const lat = (Math.min(...lats) + Math.max(...lats)) / 2;
+  const padLon = FOCUS_PAD_DEG / Math.cos((lat * Math.PI) / 180);
+  return [
+    [Math.min(...lons) - padLon, Math.min(...lats) - FOCUS_PAD_DEG],
+    [Math.max(...lons) + padLon, Math.max(...lats) + FOCUS_PAD_DEG],
+  ];
 }

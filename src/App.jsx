@@ -32,6 +32,7 @@ const Work = lazy(() => import('./pages/Work.jsx'));
 const SustainableCities = lazy(() => import('./pages/SustainableCities.jsx'));
 const Stats = lazy(() => import('./pages/Stats.jsx'));
 const Consulting = lazy(() => import('./pages/Consulting.jsx'));
+const CityChat = lazy(() => import('./pages/CityChat.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 /** An old per-platform city URL → the combined viewer on that layer. */
@@ -116,6 +117,7 @@ function FadingRoutes({ children }) {
 const TABS = [
   ['/platforms', 'platforms'],
   ['/atlas', 'platforms'],
+  ['/citychat', 'citychat'],
   ['/sustainable-cities', 'about'],
   ['/stats', 'stats'],
   ['/consulting', 'consulting'],
@@ -199,6 +201,7 @@ export default function App() {
               and options ride the query string so any view is linkable. */}
           <Route path="/atlas/:cityId" element={<AtlasCityPage />} />
           <Route path="/sustainable-cities" element={<SustainableCities />} />
+          <Route path="/citychat" element={<CityChat />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/consulting" element={<Consulting />} />
           <Route path="/research" element={<Research />} />

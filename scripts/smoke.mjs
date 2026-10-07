@@ -46,6 +46,8 @@ const ROUTES = [
   ['/stats?view=focus&pop=0&m=cardep.cdi&s=mean', 'Stats: focus, Car Dependency'],
   ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: focus, P.O.V.'],
   ['/stats?view=focus&pop=0&m=corr.pov.opportunity~cardep.cdi&s=value', 'Stats: focus, across layers'],
+  // No service behind it in the suites: the page has to say so, not break.
+  ['/citychat', 'CityChat (beta), with no service running'],
   ['/consulting', 'Consulting'],
   ['/research', 'Research'],
   ['/blog', 'Blog index'],
@@ -114,6 +116,27 @@ for (const [route, name] of ROUTES) {
   );
   errors.slice(0, 3).forEach((e) => console.log(`        console: ${e.slice(0, 180)}`));
   badResponses.slice(0, 3).forEach((u) => console.log(`        http:    ${u.slice(0, 180)}`));
+  await page.close();
+}
+
+// ── CityChat without its service ─────────────────────────────────────
+// The suites build without VITE_CITYCHAT, so the tab must say it is off,
+// make no request to a service that is not there, and leave nothing to type
+// into. The chat itself is covered by `npm run test:citychat`.
+{
+  const page = await context.newPage();
+  const calls = [];
+  page.on('request', (r) => r.url().includes('/api/citychat') && calls.push(r.url()));
+  await page.goto(`${BASE}/citychat`, { waitUntil: 'load' });
+  await page.waitForTimeout(800);
+  const status = await page.locator('.aa-chat__status').innerText();
+  const disabled = await page.locator('.aa-chat__composer textarea').isDisabled();
+  const tab = await page.locator('.aa-nav__link--active').innerText();
+  check(
+    'CityChat says it is off, and asks nothing of a missing service',
+    /not enabled/i.test(status) && disabled && calls.length === 0 && /CityChat/.test(tab),
+    `${status} · textarea disabled=${disabled} · requests=${calls.length} · tab=${tab.replace(/\n/g, ' ')}`,
+  );
   await page.close();
 }
 

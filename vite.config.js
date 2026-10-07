@@ -141,6 +141,13 @@ const servePrecompressed = () => ({
   },
 });
 
+const citychatProxy = {
+  [`${(process.env.VITE_BASE ?? '/').replace(/\/?$/, '/')}api/citychat`]: {
+    target: process.env.CITYCHAT_DEV_TARGET ?? 'http://127.0.0.1:3100',
+    changeOrigin: true,
+  },
+};
+
 // `base` is configurable so the Atlas can also be served from a sub-path
 // (e.g. https://sonycsl.example/access-atlas/) without a rebuild of the source.
 export default defineConfig({
@@ -155,6 +162,12 @@ export default defineConfig({
     // free to stay cached.
     __BUILD_ID__: JSON.stringify(Date.now().toString(36)),
   },
+  // Preview proxies it only when asked (CITYCHAT_PREVIEW=1). The browser
+  // suites run against preview with no service behind it, and a proxy with
+  // nothing to reach answers 500, which they rightly count as a failure;
+  // without one the path falls to the SPA shell, and the tab says the
+  // service is not there, which is what they check.
+  preview: { proxy: process.env.CITYCHAT_PREVIEW ? citychatProxy : {} },
   // MapLibre spawns its worker with `{ type: 'module' }`, so Vite must emit
   // workers as ES modules rather than the default IIFE.
   worker: { format: 'es' },
@@ -162,8 +175,15 @@ export default defineConfig({
   // per city, and the dev server watching each one exhausts Linux's inotify
   // limit (ENOSPC) as the Atlas grows. Neither is code: a re-import is seen
   // by reloading the page, which re-reads the catalogue anyway.
+  //
+  // One `server` key, holding both: an object literal keeps only the last of
+  // two, without a word, and a second `server` here once dropped the
+  // CityChat proxy from `npm run dev`.
   server: {
     watch: { ignored: ['**/public/data/**', '**/input_data/**'] },
+    // CityChat's service (server/citychat/) in development: `npm run citychat`
+    // beside `npm run dev`. In production the web server proxies the same path.
+    proxy: citychatProxy,
   },
   build: {
     // maplibre-gl is large and only the map routes need it; keeping it in its

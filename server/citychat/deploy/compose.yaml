@@ -1,0 +1,57 @@
+# CityChat with a model of its own: the service, and Ollama beside it.
+#
+#   cd server/citychat/deploy
+#   docker compose up -d --build
+#   docker compose exec ollama ollama pull qwen3:8b     # once; the volume keeps it
+#
+# With no GEMINI_API_KEY the local model answers alone and no question leaves
+# the machine. With one, CITYCHAT_LOCAL_FIRST decides which goes first and
+# the other is the fallback (server/citychat/README.md, "A model of your own").
+#
+# The site is not in here: it stays static, and the web server proxies
+# /atlas/api/citychat to 127.0.0.1:3100 as in the README.
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama:/root/.ollama
+    environment:
+      # The system prompt alone is ~7,500 tokens. Ollama's default context is
+      # smaller, and it cuts a longer prompt silently from the front, which
+      # removes the rules: the model then answers, wrongly, without error.
+      OLLAMA_CONTEXT_LENGTH: "16384"
+      # Questions answered at once; each costs its own context in memory.
+      OLLAMA_NUM_PARALLEL: "2"
+      # Keep the model loaded; reloading it costs seconds to minutes.
+      OLLAMA_KEEP_ALIVE: "24h"
+    # On a machine with an NVIDIA GPU and the container toolkit installed:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  citychat:
+    build:
+      context: ../../..
+      dockerfile: server/citychat/deploy/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    ports:
+      - "127.0.0.1:3100:3100"
+    environment:
+      CITYCHAT_LOCAL_URL: http://ollama:11434/v1
+      CITYCHAT_LOCAL_MODEL: ${CITYCHAT_LOCAL_MODEL:-qwen3:8b}
+      CITYCHAT_LOCAL_FIRST: ${CITYCHAT_LOCAL_FIRST:-1}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    # To answer from data newer than the image, without a rebuild:
+    # volumes:
+    #   - /var/www/whatif/atlas/data:/app/public/data:ro
+
+volumes:
+  ollama:

@@ -43,6 +43,12 @@
   letter-spacing: 0.02em;
   color: var(--ink-3);
   white-space: nowrap;
+  /* The safety net under the breakpoint below: where a language's tabs are
+     wider than it allows for (Spanish, Portuguese, Arabic and Japanese, up to
+     ~1340 px with the CityChat tab), the tagline ends in an ellipsis rather
+     than running under the first tab. */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .aa-nav__links {
@@ -70,6 +76,21 @@
   background: var(--paper-alt);
 }
 
+/* "beta" beside a tab that is an experiment. Magenta, the brand's accent,
+   at a size that marks the tab without competing with its name. */
+.aa-nav__badge {
+  margin-left: 5px;
+  padding: 1px 4px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+  color: var(--magenta);
+}
+
 .aa-nav__tools {
   display: flex;
   align-items: center;
@@ -88,6 +109,8 @@
 
 .aa-nav__langtoggle {
   display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
   align-items: center;
   gap: 4px;
   padding: 8px 8px;
@@ -192,9 +215,26 @@
   color: var(--ink);
 }
 
-/* 1112, not 1080: Spanish and Arabic, the widest bars, overlap the tagline
-   until about 1110 px. Measured by sweeping every language. */
-@media (max-width: 1112px) {
+/* Ten tabs and the brand share one bar. Between the drawer breakpoint and a
+   wide screen they only fit if the tabs close up a little: at 1280px the
+   tagline otherwise runs under the first tab and the language switch wraps. */
+@media (max-width: 1440px) {
+  .aa-nav {
+    gap: 16px;
+  }
+
+  .aa-nav__links {
+    gap: 2px;
+  }
+
+  .aa-nav__link {
+    padding: 8px 10px;
+  }
+}
+
+/* 1240, not 1112: the CityChat tab widens the bar; measured by sweeping every
+   language, as below. */
+@media (max-width: 1240px) {
   .aa-nav__links,
   .aa-nav__github {
     display: none;
