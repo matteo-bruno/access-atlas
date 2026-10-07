@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tokyo",
+  "createdAt": "2026-10-07T15:41:07.363Z",
+  "updatedAt": "2026-10-07T15:41:07.363Z",
+  "meta": {
+    "name": "Tokyo",
+    "nameIt": "Tokyo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tokyo.geojson",
+      "sha256": "0aea88ca9aff446c49507451f41d23399ef6f681ca9538edcdc202e9d924d400",
+      "size": 61325033,
+      "importer": "a0324d2ac120d48f",
+      "importedAt": "2026-10-07T15:41:18.525Z"
+    }
+  },
+  "atlas": {
+    "id": "tokyo",
+    "name": "Tokyo",
+    "nameIt": "Tokyo",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      139.6591,
+      35.67185
+    ],
+    "zoom": 8.5,
+    "population": 33277420,
+    "grid": "cities/tokyo/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tokyo/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tokyo",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6591,
+          35.67185
+        ],
+        "zoom": 8.5,
+        "population": 33277420,
+        "cells": 53321,
+        "layer": "cities/tokyo/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.6591,
+            35.67185
+          ]
+        },
+        "properties": {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 9.5,
+          "population": 33277420
+        }
+      },
+      "summary": null
+    }
+  }
+}

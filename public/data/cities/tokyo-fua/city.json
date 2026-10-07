@@ -1,0 +1,94 @@
+{
+  "format": "atlas-city",
+  "version": 1,
+  "id": "tokyo-fua",
+  "createdAt": "2026-10-07T15:41:11.928Z",
+  "updatedAt": "2026-10-07T15:41:11.928Z",
+  "meta": {
+    "name": "Tokyo Fua",
+    "nameIt": "Tokyo Fua",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP"
+  },
+  "sources": {
+    "fifteen": {
+      "file": "15mincity/Tokyo_FUA.geojson",
+      "sha256": "f3e35585c3eaea09e4360a4669b15e47e943e07048a14e44ed10a652be553951",
+      "size": 142819960,
+      "importer": "a0324d2ac120d48f",
+      "importedAt": "2026-10-07T15:41:18.525Z"
+    }
+  },
+  "atlas": {
+    "id": "tokyo-fua",
+    "name": "Tokyo Fua",
+    "nameIt": "Tokyo Fua",
+    "region": "Japan",
+    "regionIt": "Giappone",
+    "country": "JP",
+    "center": [
+      139.6738,
+      35.68866
+    ],
+    "zoom": 8.5,
+    "population": 36354124,
+    "grid": "cities/tokyo-fua/grid.json.gz",
+    "cell": {
+      "h3Resolution": 9,
+      "cellRadiusM": 193
+    },
+    "layers": [
+      "fifteen"
+    ],
+    "layerData": {
+      "fifteen": "cities/tokyo-fua/fifteen.json.gz"
+    },
+    "cartogramSources": {
+      "fifteen": "derived"
+    }
+  },
+  "platforms": {
+    "fifteen": {
+      "row": {
+        "id": "tokyo-fua",
+        "name": "Tokyo Fua",
+        "nameIt": "Tokyo Fua",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6738,
+          35.68866
+        ],
+        "zoom": 8.5,
+        "population": 36354124,
+        "cells": 123555,
+        "layer": "cities/tokyo-fua/fifteen.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        }
+      },
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.6738,
+            35.68866
+          ]
+        },
+        "properties": {
+          "id": "tokyo-fua",
+          "name": "Tokyo Fua",
+          "country": "JP",
+          "isStudy": true,
+          "proximityMinutes": 9.9,
+          "population": 36354124
+        }
+      },
+      "summary": null
+    }
+  }
+}

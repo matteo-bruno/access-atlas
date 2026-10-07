@@ -45,6 +45,46 @@
           }
         },
         {
+          "id": "tokyo",
+          "name": "Tokyo",
+          "nameIt": "Tokyo",
+          "region": "Japan",
+          "regionIt": "Giappone",
+          "country": "JP",
+          "center": [
+            139.6591,
+            35.67185
+          ],
+          "zoom": 8.5,
+          "population": 33277420,
+          "cells": 53321,
+          "layer": "cities/tokyo/fifteen.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 193
+          }
+        },
+        {
+          "id": "tokyo-fua",
+          "name": "Tokyo Fua",
+          "nameIt": "Tokyo Fua",
+          "region": "Japan",
+          "regionIt": "Giappone",
+          "country": "JP",
+          "center": [
+            139.6738,
+            35.68866
+          ],
+          "zoom": 8.5,
+          "population": 36354124,
+          "cells": 123555,
+          "layer": "cities/tokyo-fua/fifteen.json.gz",
+          "cell": {
+            "h3Resolution": 9,
+            "cellRadiusM": 193
+          }
+        },
+        {
           "id": "zurich",
           "name": "Zurich",
           "nameIt": "Zurigo",
@@ -1635,6 +1675,62 @@
         }
       },
       {
+        "id": "tokyo",
+        "name": "Tokyo",
+        "nameIt": "Tokyo",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6591,
+          35.67185
+        ],
+        "zoom": 8.5,
+        "population": 33277420,
+        "grid": "cities/tokyo/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        },
+        "layers": [
+          "fifteen"
+        ],
+        "layerData": {
+          "fifteen": "cities/tokyo/fifteen.json.gz"
+        },
+        "cartogramSources": {
+          "fifteen": "derived"
+        }
+      },
+      {
+        "id": "tokyo-fua",
+        "name": "Tokyo Fua",
+        "nameIt": "Tokyo Fua",
+        "region": "Japan",
+        "regionIt": "Giappone",
+        "country": "JP",
+        "center": [
+          139.6738,
+          35.68866
+        ],
+        "zoom": 8.5,
+        "population": 36354124,
+        "grid": "cities/tokyo-fua/grid.json.gz",
+        "cell": {
+          "h3Resolution": 9,
+          "cellRadiusM": 193
+        },
+        "layers": [
+          "fifteen"
+        ],
+        "layerData": {
+          "fifteen": "cities/tokyo-fua/fifteen.json.gz"
+        },
+        "cartogramSources": {
+          "fifteen": "derived"
+        }
+      },
+      {
         "id": "valencia",
         "name": "Valencia",
         "nameIt": "Valencia",
@@ -1849,6 +1945,10 @@
     "cities/stockholm/cardep.json.gz": "74db92403b62",
     "cities/stockholm/grid.json.gz": "ebb6ac9f7919",
     "cities/stockholm/pov.json.gz": "47d9eaecfb06",
+    "cities/tokyo-fua/fifteen.json.gz": "a19312f07c2d",
+    "cities/tokyo-fua/grid.json.gz": "fdbcf792a277",
+    "cities/tokyo/fifteen.json.gz": "e3dbe462ffad",
+    "cities/tokyo/grid.json.gz": "478b07727a6d",
     "cities/valencia/cardep.json.gz": "5012b117fb1a",
     "cities/valencia/grid.json.gz": "d225839d4e16",
     "cities/valencia/pov.json.gz": "472f283ebfd7",
@@ -1885,9 +1985,9 @@
     "cities/zurich/grid.json.gz": "1703818e80cf",
     "cities/zurich/pov.json.gz": "8e713420f5b2",
     "citychrone/coverage.geojson.gz": "5f65fb9c1b1a",
-    "fifteen/coverage.geojson.gz": "4bedd933a5c1",
+    "fifteen/coverage.geojson.gz": "6ab293975110",
     "pov/coverage.geojson.gz": "ce86a6e2964f",
     "pov/summary.json.gz": "3759a48dcb50",
-    "stats/stats.json.gz": "c8f4fd1dcc35"
+    "stats/stats.json.gz": "d9258f2fc251"
   }
 }
