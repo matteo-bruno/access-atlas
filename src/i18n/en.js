@@ -155,6 +155,7 @@ export default {
   platform: {
     search: 'Search your city…',
     searchHint: '⌘K',
+    searchClear: 'Clear search',
     paper: 'Paper ↗',
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',

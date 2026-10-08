@@ -11,9 +11,14 @@
 // with SMOKE_URL.
 
 import { chromium } from 'playwright';
-// Plain module, no dependencies — the checks below reproject against the very
-// constants the app frames its coverage maps with.
-import { WORLD_CENTER, WORLD_ZOOM_BOOST } from '../src/map/framing.js';
+// The checks below reproject cities with the very function the world maps
+// are posed with, over the coverage the page itself was given.
+import {
+  coverageFraming,
+  worldProjection,
+  WORLD_CENTER,
+  WORLD_ZOOM_BOOST,
+} from '../src/map/framing.js';
 
 const BASE = process.env.SMOKE_URL ?? 'http://localhost:4321';
 
@@ -76,6 +81,40 @@ const check = (name, ok, detail = '') => {
   if (!ok) failures++;
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
 };
+
+/**
+ * Every published city marker, as the world maps draw them: one per city,
+ * hidden ones left out (see citiesFromPublished).
+ */
+async function publishedMarkers(page) {
+  return page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    const byId = new Map();
+    for (const platform of Object.values(catalogue.platforms ?? {})) {
+      if (!platform.coverage) continue;
+      const collection = await (await fetch(`${base}/data/${platform.coverage}`)).json();
+      for (const feature of collection.features) {
+        if (feature.properties.hidden) continue;
+        const [lon, lat] = feature.geometry.coordinates;
+        byId.set(feature.properties.id, { name: feature.properties.name, lon, lat });
+      }
+    }
+    return [...byId.values()];
+  }, BASE);
+}
+
+/**
+ * Where a world map in `box` puts a [lon, lat]: the pose `coverageFraming`
+ * derives from the published coverage, through `worldProjection`, exactly
+ * as WorldMap draws it before anyone pans.
+ */
+function worldPixel(box, cities) {
+  const { projection } = worldProjection(box, coverageFraming(cities));
+  return (coords) => {
+    const [x, y] = projection(coords);
+    return [box.x + x, box.y + y];
+  };
+}
 
 const browser = await chromium.launch({
   executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined,
@@ -339,14 +378,7 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(300);
 
   const box = await page.locator('.aa-mapstage canvas').boundingBox();
-  const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
-  const mercator = (lat) =>
-    0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
-  let delta = 12.4964 - WORLD_CENTER[0];
-  while (delta > 180) delta -= 360;
-  while (delta < -180) delta += 360;
-  const x = box.x + box.width / 2 + (delta / 360) * worldPx;
-  const y = box.y + box.height / 2 + (mercator(41.9028) - mercator(WORLD_CENTER[1])) * worldPx;
+  const [x, y] = worldPixel(box, await publishedMarkers(page))([12.4964, 41.9028]);
 
   await page.mouse.click(x, y);
   await page.waitForTimeout(2500);
@@ -921,12 +953,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     // with — the backdrop's box is the platform map's box, which is the whole
     // point of the handover.
     const box = await page.locator('.aa-backdrop canvas').boundingBox();
-    const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
-    const mercY = (lat) => 0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
-    const marker = {
-      x: Math.round(box.x + box.width / 2 + ((9.19 - WORLD_CENTER[0]) / 360) * worldPx),
-      y: Math.round(box.y + box.height / 2 + (mercY(45.46) - mercY(WORLD_CENTER[1])) * worldPx),
-    };
+    const [mx, my] = worldPixel(box, await publishedMarkers(page))([9.19, 45.46]);
+    const marker = { x: Math.round(mx), y: Math.round(my) };
 
     const client = await context.newCDPSession(page);
     const frames = [];
@@ -1122,20 +1150,20 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(300);
 
   const box = await page.locator('.aa-mapstage canvas').boundingBox();
-  // MapLibre spans the world across 512px at zoom 0, and a world view's zoom
-  // is the one that fits the container's width, plus the boost.
-  const worldPx = box.width * 2 ** WORLD_ZOOM_BOOST;
-  const mercatorY = (lat) =>
-    0.5 - Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) / (2 * Math.PI);
-  const project = ([lon, lat]) => {
-    let delta = lon - WORLD_CENTER[0];
-    while (delta > 180) delta -= 360;
-    while (delta < -180) delta += 360;
-    return [
-      box.x + box.width / 2 + (delta / 360) * worldPx,
-      box.y + box.height / 2 + (mercatorY(lat) - mercatorY(WORLD_CENTER[1])) * worldPx,
-    ];
-  };
+  const cities = await publishedMarkers(page);
+  const project = worldPixel(box, cities);
+
+  // The pose the maps fall back to before the catalogue answers is a cache
+  // of the one derived from it, and a stale cache is a world that re-frames
+  // on every cold load (see WORLD_CENTER in map/framing.js).
+  const derived = coverageFraming(cities);
+  check(
+    'The fallback world pose is the one the published coverage gives',
+    Math.abs(derived.center[0] - WORLD_CENTER[0]) < 0.5 &&
+      Math.abs(derived.center[1] - WORLD_CENTER[1]) < 0.5 &&
+      Math.abs(derived.zoomBoost - WORLD_ZOOM_BOOST) < 0.02,
+    `derived ${derived.center.join(', ')} @ ${derived.zoomBoost}, cached ${WORLD_CENTER.join(', ')} @ ${WORLD_ZOOM_BOOST}`,
+  );
 
   // Milan is the city published on every platform, so it is on this map
   // whatever else changes.
@@ -1151,24 +1179,12 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   // And the frame still holds every published city: this is the Atlas's own
   // coverage map, and a city cropped out of it reads as one we do not have.
-  const cities = await page.evaluate(async (url) => {
-    const catalogue = await (await fetch(url)).json();
-    const points = [];
-    for (const platform of Object.values(catalogue.platforms ?? {})) {
-      if (!platform.coverage) continue;
-      const collection = await (await fetch(`/data/${platform.coverage}`)).json();
-      for (const feature of collection.features) {
-        points.push([feature.properties.name, feature.geometry.coordinates]);
-      }
-    }
-    return points;
-  }, `${BASE}/data/index.json`);
   const outside = cities
-    .filter(([, coords]) => {
-      const [px, py] = project(coords);
+    .filter(({ lon, lat }) => {
+      const [px, py] = project([lon, lat]);
       return px < box.x || px > box.x + box.width || py < box.y || py > box.y + box.height;
     })
-    .map(([name]) => name);
+    .map(({ name }) => name);
   check(
     'Every published city is inside the coverage frame',
     cities.length > 0 && outside.length === 0,

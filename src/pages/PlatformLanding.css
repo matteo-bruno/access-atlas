@@ -210,14 +210,6 @@
 
 /* ── Responsive ───────────────────────────────────────────────── */
 
-@media (max-width: 1080px) {
-  .aa-search {
-    order: 10;
-    flex: 1 1 100%;
-    min-width: 0;
-  }
-}
-
 @media (max-width: 860px) {
   /* The picker leads on a phone: it is how you get to any other map. */
   .aa-picker {
@@ -259,15 +251,33 @@
   }
 }
 
-/* Same stack on the world map: search, then the source. It owns the top
-   right corner, so the legend below clears it. */
+/* The search owns the top right corner, so the legend below clears it.
+
+   Not a `.aa-mapui` box: those scroll when they run out of room, and a
+   scrolling box clips what its children paint outside it, which is exactly
+   where the results open. The menu was cut off at the box's edge and never
+   seen. Above the legend, which the open menu covers. */
 .aa-mapstage__tools {
-  align-items: flex-end;
-  z-index: 4;
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 12px;
+  z-index: 5;
+  width: min(300px, calc(100% - 24px));
 }
 .aa-mapstage__tools .aa-search {
-  min-width: 260px;
   box-shadow: 0 2px 10px rgba(21, 23, 26, 0.1);
+}
+
+/* On a phone the picker drops into the flow at the top (above), and the
+   search goes first in that flow rather than over it. */
+@media (max-width: 860px) {
+  .aa-mapstage__tools {
+    position: relative;
+    top: auto;
+    inset-inline-end: auto;
+    width: auto;
+    margin: var(--chrome-pad) var(--chrome-pad) 0;
+  }
 }
 
 /* The stage is a component now, so the page around it supplies the column it

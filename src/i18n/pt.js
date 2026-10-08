@@ -139,6 +139,7 @@ export default {
   platform: {
     search: 'Busque sua cidade…',
     searchHint: '⌘K',
+    searchClear: 'Limpar a busca',
     paper: 'Artigo ↗',
     welcome: 'Boas-vindas ao {name}',
     dismiss: 'Fechar',

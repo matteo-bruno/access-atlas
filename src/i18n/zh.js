@@ -137,6 +137,7 @@ export default {
   platform: {
     search: '搜索您的城市…',
     searchHint: '⌘K',
+    searchClear: '清除搜索',
     paper: '论文 ↗',
     welcome: '欢迎来到 {name}',
     dismiss: '关闭',

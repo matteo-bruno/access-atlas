@@ -147,6 +147,7 @@ export default {
   platform: {
     search: '都市を検索…',
     searchHint: '⌘K',
+    searchClear: '検索をクリア',
     paper: '論文 ↗',
     welcome: '{name} へようこそ',
     dismiss: '閉じる',

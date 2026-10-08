@@ -139,6 +139,7 @@ export default {
   platform: {
     search: 'ابحث عن مدينتك…',
     searchHint: '⌘K',
+    searchClear: 'مسح البحث',
     paper: 'الورقة البحثية ↗',
     welcome: 'مرحبًا بك في {name}',
     dismiss: 'إغلاق',

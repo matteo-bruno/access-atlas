@@ -137,6 +137,7 @@ export default {
   platform: {
     search: '도시 검색…',
     searchHint: '⌘K',
+    searchClear: '검색 지우기',
     paper: '논문 ↗',
     welcome: '{name}에 오신 것을 환영합니다',
     dismiss: '닫기',

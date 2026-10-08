@@ -141,6 +141,7 @@ export default {
   platform: {
     search: 'Ihre Stadt suchen…',
     searchHint: '⌘K',
+    searchClear: 'Suche löschen',
     paper: 'Artikel ↗',
     welcome: 'Willkommen bei {name}',
     dismiss: 'Schließen',

@@ -1,53 +1,50 @@
-// Paint expressions that turn a platform's colour scale into MapLibre styling.
-// Keeping these declarative means a new platform only needs an entry in
+// How the world maps draw a city marker, from a platform's colour scale.
+//
+// The world maps are drawn on a canvas by WorldMap.jsx (MapLibre cannot draw
+// Equal Earth; see map/framing.js), so a marker's style is a plain function
+// of the city and the zoom rather than a MapLibre expression. Keeping it
+// declarative still means a new platform only needs an entry in
 // data/platforms.js — no new component code.
+//
+// The zoom is MapLibre's (`worldZoom` in map/framing.js): the sizes below
+// were tuned on MapLibre maps, and are kept the size they were.
 
 import { ZONE_COLORS } from '../data/platforms.js';
 
-/**
- * Continuous scale → a `step` expression.
- * scale[i] applies below stops[i]; the last colour catches everything above.
- */
-export function stepColor(property, scale, stops) {
-  const expr = ['step', ['get', property], scale[0]];
-  for (let i = 0; i < stops.length - 1; i++) {
-    expr.push(stops[i], scale[Math.min(i + 1, scale.length - 1)]);
+/** Piecewise-linear interpolation over `[x, y]` stops, clamped at both ends. */
+function interpolate(stops, x) {
+  if (x <= stops[0][0]) return stops[0][1];
+  for (let i = 1; i < stops.length; i++) {
+    const [x1, y1] = stops[i];
+    if (x <= x1) {
+      const [x0, y0] = stops[i - 1];
+      return y0 + ((y1 - y0) * (x - x0)) / (x1 - x0);
+    }
   }
-  return expr;
-}
-
-/** Categorical zone index → colour. */
-export function zoneColor(property = 'zone') {
-  const expr = ['match', ['get', property]];
-  ZONE_COLORS.forEach((color, i) => expr.push(i, color));
-  expr.push(ZONE_COLORS[ZONE_COLORS.length - 1]);
-  return expr;
-}
-
-export function colorExpression(platform) {
-  if (!platform.stops) return zoneColor(platform.property);
-  return stepColor(platform.property, platform.scale, platform.stops);
+  return stops[stops.length - 1][1];
 }
 
 /**
- * The same lookup as `colorExpression`, returning `values[i]` wherever the
- * marker would be drawn in `platform.scale[i]`. Lets an edge colour or width
- * follow the fill it surrounds.
+ * Which step of a platform's scale a value falls in. Continuous scales are
+ * stepped by `stops` (scale[i] applies below stops[i]; the last colour
+ * catches everything above); P.O.V.'s zones are categories, and the zone is
+ * the index. Null for a city that has no value to place.
  */
-function perScaleValue(platform, values) {
+function scaleIndex(platform, value) {
+  if (!Number.isFinite(value)) return null;
   if (!platform.stops) {
-    const expr = ['match', ['get', platform.property]];
-    values.forEach((value, i) => expr.push(i, value));
-    expr.push(values[values.length - 1]);
-    return expr;
+    const zone = Math.trunc(value);
+    return zone >= 0 && zone < ZONE_COLORS.length ? zone : ZONE_COLORS.length - 1;
   }
-  return stepColor(platform.property, values, platform.stops);
+  let i = 0;
+  while (i < platform.stops.length - 1 && value >= platform.stops[i]) i += 1;
+  return Math.min(i, platform.scale.length - 1);
 }
 
 // Markers grow with zoom so a world view stays readable without the dots
 // swamping the map when you zoom into a region.
-const RADIUS = ['interpolate', ['linear'], ['zoom'], 0, 2.4, 2, 4, 5, 7.5, 9, 13];
-const RADIUS_DENSE = ['interpolate', ['linear'], ['zoom'], 0, 1.9, 2, 3.2, 5, 6, 9, 11];
+const RADIUS = [[0, 2.4], [2, 4], [5, 7.5], [9, 13]];
+const RADIUS_DENSE = [[0, 1.9], [2, 3.2], [5, 6], [9, 11]];
 
 // Every filled marker carries a hairline of ink rather than of white.
 //
@@ -59,7 +56,7 @@ const RADIUS_DENSE = ['interpolate', ['linear'], ['zoom'], 0, 1.9, 2, 3.2, 5, 6,
 // value works at both ends of every scale. Kept thin enough that it draws the
 // edge rather than the dot.
 const MARKER_EDGE = 'rgba(21, 23, 26, 0.5)';
-const MARKER_EDGE_WIDTH = ['interpolate', ['linear'], ['zoom'], 0, 0.6, 5, 1, 9, 1.4];
+const MARKER_EDGE_WIDTH = [[0, 0.6], [5, 1], [9, 1.4]];
 
 // A hairline at half alpha was still not enough for the palest steps (a slow
 // CityChrone city, a balanced CDI, a one-platform city on the coverage map),
@@ -75,7 +72,7 @@ function rgbOf(hex) {
   return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
 }
 
-function isPale(hex) {
+export function isPale(hex) {
   const [r, g, b] = rgbOf(hex).map((c) => {
     const x = c / 255;
     return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
@@ -83,58 +80,52 @@ function isPale(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b > PALE_LUMINANCE;
 }
 
-function darkEdge(hex) {
+export function darkEdge(hex) {
   const mixed = rgbOf(hex).map((c, i) => Math.round(c + (INK[i] - c) * 0.6));
   return `rgb(${mixed.join(', ')})`;
 }
 
-/** Edge colours for a scale: pale steps darkened, the rest `otherwise(color)`. */
-function edgeColours(scale, otherwise) {
-  return scale.map((color) => (isPale(color) ? darkEdge(color) : otherwise(color)));
-}
+// A city with no value on the open layer's scale. Not expected on a
+// platform's own coverage, which only lists cities it measured.
+const NO_VALUE = '#bdb8ab';
 
-/** 1 for a pale step, 0 otherwise. */
-function paleFlags(scale) {
-  return scale.map((color) => (isPale(color) ? 1 : 0));
-}
-
-/** MARKER_EDGE_WIDTH, widened where `paleFlag` (an expression, 0 or 1) is 1. */
-function edgeWidth(paleFlag) {
-  const widen = (w) => ['+', w, ['*', paleFlag, 0.7]];
-  return ['interpolate', ['linear'], ['zoom'], 0, widen(0.6), 5, widen(1), 9, widen(1.4)];
+/**
+ * A filled marker's edge: ink at half alpha, or for a pale step its own
+ * colour darkened and a wider line.
+ */
+function filledEdge(color, zoom) {
+  const pale = isPale(color);
+  return {
+    stroke: pale ? darkEdge(color) : MARKER_EDGE,
+    strokeWidth: interpolate(MARKER_EDGE_WIDTH, zoom) + (pale ? 0.7 : 0),
+  };
 }
 
 /**
- * Circle paint for a platform's city markers.
+ * A platform's city markers, as `(city, zoom) => style`.
+ *
  * `ring` platforms (Car Dependency, P.O.V.) draw a hollow marker with a soft
  * halo, matching the design; the others draw filled dots.
+ *
+ * @returns {(city: object, zoom: number) => { radius: number, fill: string,
+ *           fillOpacity: number, stroke: string, strokeWidth: number }}
  */
-export function cityCirclePaint(platform, { hoveredId = null } = {}) {
-  const color = colorExpression(platform);
-  const dense = platform.coversAllCities;
-  const base = dense ? RADIUS_DENSE : RADIUS;
-
-  const radius = hoveredId == null
-    ? base
-    : ['case', ['==', ['get', 'id'], hoveredId], ['*', base, 1.45], base];
-
-  if (platform.markerStyle === 'ring') {
-    return {
-      'circle-radius': radius,
-      'circle-color': color,
-      'circle-opacity': 0.18,
-      'circle-stroke-color': perScaleValue(platform, edgeColours(platform.scale, (c) => c)),
-      'circle-stroke-width': 1.6,
-      'circle-stroke-opacity': 1,
-    };
-  }
-
-  return {
-    'circle-radius': radius,
-    'circle-color': color,
-    'circle-opacity': 0.92,
-    'circle-stroke-color': perScaleValue(platform, edgeColours(platform.scale, () => MARKER_EDGE)),
-    'circle-stroke-width': edgeWidth(perScaleValue(platform, paleFlags(platform.scale))),
+export function cityMarkerStyle(platform) {
+  const radii = platform.coversAllCities ? RADIUS_DENSE : RADIUS;
+  return (city, zoom) => {
+    const index = scaleIndex(platform, city[platform.property]);
+    const color = index == null ? NO_VALUE : platform.scale[index];
+    const radius = interpolate(radii, zoom);
+    if (platform.markerStyle === 'ring') {
+      return {
+        radius,
+        fill: color,
+        fillOpacity: 0.18,
+        stroke: isPale(color) ? darkEdge(color) : color,
+        strokeWidth: 1.6,
+      };
+    }
+    return { radius, fill: color, fillOpacity: 0.92, ...filledEdge(color, zoom) };
   };
 }
 
@@ -143,34 +134,18 @@ export function cityCirclePaint(platform, { hoveredId = null } = {}) {
  * lenses a city has published data for. That is the one thing worth reading
  * off a map that mixes platforms: a decorative palette would say nothing, and
  * any single platform's scale would be a category error there.
+ *
+ * `scale[i]` is the colour for a city covered by i + 1 platforms.
  */
-export function coverageCountPaint(scale) {
-  // scale[i] is the colour for a city covered by i + 1 platforms.
-  const stops = scale.flatMap((color, i) => [i + 1, color]);
-  // Counts are whole numbers, so each city lands on one step exactly.
-  const perCount = (values) => [
-    'match',
-    ['get', 'platformCount'],
-    ...values.flatMap((value, i) => [i + 1, value]),
-    values[values.length - 1],
-  ];
-  return {
-    'circle-radius': RADIUS_DENSE,
-    'circle-color': ['interpolate', ['linear'], ['get', 'platformCount'], ...stops],
-    'circle-opacity': 0.92,
-    'circle-stroke-color': perCount(edgeColours(scale, () => MARKER_EDGE)),
-    'circle-stroke-width': edgeWidth(perCount(paleFlags(scale))),
-  };
-}
-
-/** Fill paint for a city hex mesh, coloured by P.O.V. zone. */
-export function meshFillPaint({ selectedId = null } = {}) {
-  return {
-    'fill-color': zoneColor('zone'),
-    'fill-opacity':
-      selectedId == null
-        ? 0.88
-        : ['case', ['==', ['id'], selectedId], 1, 0.55],
-    'fill-outline-color': 'rgba(0,0,0,0)',
+export function coverageMarkerStyle(scale) {
+  return (city, zoom) => {
+    const count = Math.min(scale.length, Math.max(1, Math.round(city.platformCount ?? 1)));
+    const color = scale[count - 1];
+    return {
+      radius: interpolate(RADIUS_DENSE, zoom),
+      fill: color,
+      fillOpacity: 0.92,
+      ...filledEdge(color, zoom),
+    };
   };
 }

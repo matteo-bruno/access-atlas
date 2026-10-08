@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
-import { CityLayer } from './CityLayer.jsx';
+import { WorldMap } from '../map/WorldMap.jsx';
+import { cityMarkerStyle } from '../map/layers.js';
 import { useCityProfile } from '../data/useAtlasData.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
 import { BANDS, CATEGORIES, MODES, measureKey } from '../data/fifteen.js';
@@ -54,11 +55,19 @@ export function PlatformPreview({ platform, cities }) {
   return <WorldPreview platform={platform} cities={cities} />;
 }
 
+// The whole world across the card, in the projection the site's other world
+// maps use.
+const WHOLE_WORLD = { center: [10, 20], zoomBoost: 0 };
+
 function WorldPreview({ platform, cities }) {
+  const markerStyle = useMemo(() => cityMarkerStyle(platform), [platform]);
   return (
-    <AtlasMap fitWorldWidth center={[10, 20]} interactive={false} label={platform.name}>
-      <CityLayer platform={platform} cities={cities} interactive={false} />
-    </AtlasMap>
+    <WorldMap
+      frame={WHOLE_WORLD}
+      cities={cities}
+      markerStyle={markerStyle}
+      label={platform.name}
+    />
   );
 }
 
