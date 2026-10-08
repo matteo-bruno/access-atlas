@@ -380,10 +380,17 @@ export function AtlasMap({
  *                   via setFeatureState so paint can read values the GeoJSON
  *                   does not carry (e.g. hourly scores joined at runtime).
  *                   Pass a new Map to swap the whole set; null clears it.
+ * @param {number}   [props.tolerance] MapLibre's simplification tolerance,
+ *                   in tile pixels. Its default (0.375) also *drops* any
+ *                   polygon smaller than that, so a mesh of 200 m cells
+ *                   zoomed out to a metro area (Tokyo's FUA) vanished whole
+ *                   at its own opening zoom on a laptop screen. 0 keeps every
+ *                   cell at every zoom.
  */
 export function GeoJSONLayer({
   id,
   data,
+  tolerance,
   type = 'circle',
   paint,
   layout,
@@ -412,7 +419,12 @@ export function GeoJSONLayer({
   useEffect(() => {
     if (!map) return undefined;
 
-    map.addSource(sourceId, { type: 'geojson', data, promoteId });
+    map.addSource(sourceId, {
+      type: 'geojson',
+      data,
+      promoteId,
+      ...(tolerance != null ? { tolerance } : {}),
+    });
     map.addLayer(
       {
         id: layerId,

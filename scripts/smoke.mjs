@@ -1388,6 +1388,39 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.close();
 }
 
+// ── A metro area is drawn at its own opening zoom ───────────────────
+// Tokyo's FUA opens zoomed out to 11,900 km², where one 200 m cell is under
+// a pixel. MapLibre's default simplification drops polygons that small, so
+// on a laptop-sized window the whole mesh vanished. Read off the compositor:
+// the ramp's colours, which neither the paper nor the placeholder paint.
+{
+  const page = await browser.newPage({ viewport: { width: 1100, height: 700 } });
+  await page.goto(`${BASE}/atlas/tokyo-fua`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-ramp, .aa-city__summary, .aa-summary', { timeout: 30000 }).catch(() => {});
+  let coloured = 0;
+  for (let i = 0; i < 30 && coloured < 0.05; i++) {
+    await page.waitForTimeout(1000);
+    const shot = await page.locator('.aa-city__canvas canvas').first().screenshot().catch(() => null);
+    if (!shot) continue;
+    coloured = await page.evaluate(async (bytes) => {
+      const bmp = await createImageBitmap(new Blob([new Uint8Array(bytes)], { type: 'image/png' }));
+      const canvas = new OffscreenCanvas(bmp.width, bmp.height);
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(bmp, 0, 0);
+      const d = ctx.getImageData(0, 0, bmp.width, bmp.height).data;
+      let n = 0;
+      let total = 0;
+      for (let k = 0; k < d.length; k += 4 * 53) {
+        total++;
+        if (Math.abs(d[k] - d[k + 2]) > 40 || Math.abs(d[k] - d[k + 1]) > 40) n++;
+      }
+      return n / total;
+    }, Array.from(shot));
+  }
+  check('A metro area\'s cells are drawn at its opening zoom', coloured >= 0.05, `${(coloured * 100).toFixed(1)}% of the map coloured`);
+  await page.close();
+}
+
 await browser.close();
 console.log(failures ? `\n${failures} check(s) failed` : '\nAll smoke checks passed');
 process.exit(failures ? 1 : 0);

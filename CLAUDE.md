@@ -542,7 +542,10 @@ added properties one by one, which past a couple of dozen drops V8 objects
 into dictionary mode (930 ms against 50 ms with a literal per shape,
 `builderFor` in `grid.js`). The page also says so while it loads ("Large
 cities can take a while…", above `LARGE_CITY_CELLS`) and draws the grid
-faintly before the layer's colours arrive. What is left is
+faintly before the layer's colours arrive. And the mesh's source has
+`tolerance: 0`: MapLibre's default simplification *drops* polygons smaller
+than a fraction of a pixel, so at a metro area's own opening zoom on a
+laptop screen every 200 m cell went, and the map was empty. What is left is
 `cellToBoundary` on every cell (~0.6 s) and MapLibre's own copy and tiling;
 vector tiles made at import would remove both, at the cost of the
 FeatureCollection every panel reads.

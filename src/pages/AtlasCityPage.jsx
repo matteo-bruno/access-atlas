@@ -1106,6 +1106,9 @@ function AtlasScreen({ cityId, view }) {
                 <GeoJSONLayer
                   id="atlas-mesh"
                   data={geojson}
+                  // Every cell at every zoom: the default tolerance drops
+                  // cells smaller than a pixel, which is all of a metro area.
+                  tolerance={0}
                   type="fill"
                   paint={fillPaint}
                   filter={meshFilter}
