@@ -1,5 +1,8 @@
 // Small pieces every importer needs.
 
+import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt, ringCentroid } from '../lib/bundle.mjs';
+import { openSource } from '../lib/zip.mjs';
+
 /** A source file's JSON, BOM and all. */
 export function parseJSON(file) {
   const text = file.read().toString('utf8').replace(/^﻿/, '');
@@ -10,27 +13,49 @@ export function parseJSON(file) {
   }
 }
 
-const R = 6378137;
-const fromMercator = ([x, y]) => [
-  ((x / R) * 180) / Math.PI,
-  ((2 * Math.atan(Math.exp(y / R)) - Math.PI / 2) * 180) / Math.PI,
-];
-
 /**
- * A function that brings a collection's coordinates to lon/lat.
+ * One city's layer as P.O.V., Car Dependency and 15minCity all hand it over:
+ * one GeoJSON FeatureCollection in lon/lat, one feature per H3 r9 cell, drawn
+ * as the cell's own hexagon, the platform's values as its properties.
  *
- * P.O.V. ships its cartogram in Web Mercator metres, the rest in degrees. The
- * `crs` member says which when it is there; a coordinate outside ±180 says so
- * when it is not. Any other projection is refused rather than guessed.
+ * Every cell is proved to be on the grid, not assumed to be: its centre within
+ * 10 m of an r9 cell centre and its outline within 10 m of that cell's own
+ * boundary (a centre alone matches r9 whether the mesh is r9 or finer). The
+ * centre is the file's `centroid_lon` / `centroid_lat` when it states them,
+ * else the mean of the vertices, which sits up to 28 m off near an edge of
+ * H3's icosahedron (see CLAUDE.md).
+ *
+ * @returns {{ path: string, cells: { h3: string, properties: object }[], worstBoundary: number }}
  */
-export function toLonLat(collection, label) {
-  const name = String(collection.crs?.properties?.name ?? '');
-  const first = collection.features?.[0]?.geometry?.coordinates?.[0]?.[0];
-  const mercator = /3857|900913|3785/.test(name) || (first && Math.abs(first[0]) > 180);
-  if (mercator) return fromMercator;
-  if (name && !/4326|CRS84/i.test(name)) throw new Error(`${label}: unsupported CRS ${name}`);
-  return (p) => p;
-}
+export function readCells(source) {
+  const files = openSource(source);
+  if (files.length !== 1) throw new Error(`${source}: expected one GeoJSON file, found ${files.length}`);
+  const [file] = files;
+  const collection = parseJSON(file);
+  if (collection.type !== 'FeatureCollection') throw new Error(`${file.path}: not a FeatureCollection`);
+  const crs = String(collection.crs?.properties?.name ?? '');
+  if (crs && !/4326|CRS84/i.test(crs)) throw new Error(`${file.path}: unsupported CRS ${crs}, expected lon/lat (EPSG:4326)`);
 
-export const metresApart = ([lon1, lat1], [lon2, lat2]) =>
-  Math.hypot((lon2 - lon1) * 111320 * Math.cos((lat1 * Math.PI) / 180), (lat2 - lat1) * 111320);
+  const cells = [];
+  let worstBoundary = 0;
+  for (const feature of collection.features) {
+    const p = feature.properties ?? {};
+    const ring = feature.geometry?.coordinates?.[0];
+    if (feature.geometry?.type !== 'Polygon' || !ring) throw new Error(`${file.path}: a feature is not a Polygon`);
+    if (Math.abs(ring[0][0]) > 180 || Math.abs(ring[0][1]) > 90) {
+      throw new Error(`${file.path}: coordinates are not lon/lat (EPSG:4326)`);
+    }
+    const centre =
+      Number.isFinite(Number(p.centroid_lon)) && Number.isFinite(Number(p.centroid_lat))
+        ? [Number(p.centroid_lon), Number(p.centroid_lat)]
+        : ringCentroid(ring);
+    const h3 = cellAt(centre, file.path);
+    const off = boundaryMismatchM(h3, ring);
+    if (off > GRID_TOLERANCE_M) {
+      throw new Error(`${file.path}: a cell is ${off.toFixed(1)} m from its H3 r9 outline — not on the standard grid`);
+    }
+    worstBoundary = Math.max(worstBoundary, off);
+    cells.push({ h3, properties: p });
+  }
+  return { path: file.path, cells, worstBoundary };
+}

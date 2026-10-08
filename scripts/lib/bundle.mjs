@@ -17,8 +17,7 @@
 //     "idx": [...], "order": "grid",           grid position of each row, delta-encoded
 //     "fields": { "population": [...], "zone": [...], ... },
 //     "meta": { ... },                          per-layer facts (thresholds)
-//     "cartogram": { "source": "published", "unit": 1e-5, "rings": [...] }
-//              or { "source": "derived", "reference": 412 },
+//     "cartogram": { "source": "derived", "reference": 412 },
 //     "hourly": { "hours": 24, "v": [[...], ...], "s": [[...], ...] } }
 //
 // Rows follow the grid (`order: "grid"`) and `idx` is delta-encoded — each
@@ -26,13 +25,11 @@
 // compress to almost nothing. CityChrone's travel-time matrices are stored in
 // the same row order, so a layer row number indexes both.
 //
-// Cartograms: P.O.V. and Car Dependency publish their own, and those are not
-// scaled hexagons (up to ~10 m off one on small cells), so they are kept, as
-// integer vertex offsets from the cell's H3 centre in units of 1e-5° — the
-// precision they were already published at. The other two publish none; the
-// Atlas derives one by a stated rule (area ∝ population, full hexagon at the
-// grid's median population over the layer's cells), which needs nothing
-// stored but that median.
+// Cartograms: the Atlas derives every layer's by one stated rule (area ∝ the
+// grid's population, full hexagon at the median over the layer's inhabited
+// cells), which needs nothing stored but that median. P.O.V. and Car
+// Dependency publish cartograms of their own; they are not imported, so a
+// cell of a given population is the same size whichever layer draws it.
 //
 // A city is always rebuilt whole from what is on disk plus the layer being
 // imported, and written deterministically, so importing one layer rewrites
@@ -128,11 +125,9 @@ export function extentOf(cityId) {
 export const LAYERS = {
   pov: {
     fields: { population: 0, zone: 0, proximity: 1, opportunity: 1 },
-    cartogram: 'published',
   },
   cardep: {
     fields: { population: 0, cdi: 3, o_score_pt: 1, o_score_car: 1 },
-    cartogram: 'published',
   },
   fifteen: {
     fields: {
@@ -143,12 +138,10 @@ export const LAYERS = {
     },
     // Only written when some cell has no category to average (see fifteen.mjs).
     optional: Object.fromEntries(FIFTEEN_MODES.map((m) => [`proximity_time_${m}`, 1])),
-    cartogram: 'derived',
   },
   citychrone: {
     fields: { population: 0 },
     hourly: { v: 2, s: 0 },
-    cartogram: 'derived',
   },
 };
 
@@ -251,26 +244,6 @@ export function boundaryMismatchM(h3, ring) {
     worst = Math.max(worst, nearest);
   }
   return worst;
-}
-
-/** A cartogram polygon as integer offsets from its cell's centre (1e-5°). */
-export function ringOffsets(h3, ring) {
-  const [cx, cy] = cellCentre(h3);
-  const out = [];
-  let last = null;
-  for (const [x, y] of openRing(ring)) {
-    const dx = Math.round((x - cx) * 1e5);
-    const dy = Math.round((y - cy) * 1e5);
-    // Tiny cells collapse to repeated vertices at this precision; one copy of
-    // each is the same polygon.
-    if (last && last[0] === dx && last[1] === dy) continue;
-    out.push(dx, dy);
-    last = [dx, dy];
-  }
-  if (out.length > 2 && out[0] === out[out.length - 2] && out[1] === out[out.length - 1]) {
-    out.length -= 2;
-  }
-  return out;
 }
 
 // ── paths ────────────────────────────────────────────────────────────
@@ -389,10 +362,6 @@ function decodeLayer(file, gridCells, label) {
     cells,
     fields: file.fields,
     meta: file.meta ?? {},
-    cartogram:
-      file.cartogram?.source === 'published'
-        ? { source: 'published', offsets: file.cartogram.rings }
-        : { source: 'derived' },
   };
   if (file.hourly) record.hourly = file.hourly;
   return record;
@@ -452,16 +421,10 @@ function encodeLayer(record, position, gridPopulation, grid) {
     }
   }
 
-  out.cartogram =
-    spec.cartogram === 'published'
-      ? { source: 'published', unit: 1e-5, rings: order.map((i) => record.cartogram.offsets[i]) }
-      : // The rule reads the grid's population, not the layer's own: the grid's
-        // is the one every layer of the city shares, so a cell of a given
-        // population is drawn the same size whichever layer is on screen —
-        // and it is what keeps the rule within 25 m of the published
-        // cartograms (checked by test:data). 15minCity's own population
-        // model misses them by ~38 m in Milan.
-        { source: 'derived', reference: cartogramReference(idx.map((i) => gridPopulation[i])) };
+  // The rule reads the grid's population, not the layer's own: the grid's is
+  // the one every layer of the city shares, so a cell of a given population
+  // is drawn the same size whichever layer is on screen.
+  out.cartogram = { source: 'derived', reference: cartogramReference(idx.map((i) => gridPopulation[i])) };
   return { out, order };
 }
 

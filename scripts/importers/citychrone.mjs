@@ -145,7 +145,6 @@ export function parse(source) {
       meta: {},
       hourly: { hours, v, s },
       times: matrices,
-      cartogram: { source: 'derived' },
     },
     notes: [`${n} cells × ${hours} hours, order stable across hours`],
   };
