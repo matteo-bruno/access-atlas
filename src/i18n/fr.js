@@ -144,7 +144,6 @@ export default {
     paper: 'Article ↗',
     welcome: 'Bienvenue sur {name}',
     dismiss: 'Fermer',
-    ctaMap: 'Cliquez sur une ville de la carte',
     learnMore: 'En savoir plus →',
     attribution: 'Fond de carte : Natural Earth · Données © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} villes',
@@ -170,6 +169,8 @@ export default {
       label: 'Accès de proximité',
       intro:
         'Temps de trajet à pied et à vélo vers dix catégories de services du quotidien (santé, éducation, courses, restauration, culture, espaces extérieurs, activité physique, services, mobilité), calculé pour chaque cellule de la ville et lu au regard de la référence des 15 minutes.',
+      welcomeIntro:
+        'Découvrez les temps de trajet vers les services du quotidien depuis n’importe quel lieu de n’importe quelle ville, et comparez-les à la référence des 15 minutes.',
       legendUnit: 'Temps moyen jusqu’aux services',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

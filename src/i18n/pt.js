@@ -143,7 +143,6 @@ export default {
     paper: 'Artigo ↗',
     welcome: 'Boas-vindas ao {name}',
     dismiss: 'Fechar',
-    ctaMap: 'Clique em uma cidade no mapa',
     learnMore: 'Saiba mais →',
     attribution: 'Mapa base: Natural Earth · Dados © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} cidades',
@@ -169,6 +168,8 @@ export default {
       label: 'Acesso de proximidade',
       intro:
         'Tempo de viagem a pé e de bicicleta até dez categorias de serviços do dia a dia (saúde, educação, compras, alimentação, cultura, espaços ao ar livre, atividade física, serviços, mobilidade), calculado para cada célula da cidade e lido em relação à referência dos 15 minutos.',
+      welcomeIntro:
+        'Veja os tempos de deslocamento até os serviços do dia a dia a partir de qualquer lugar de qualquer cidade e compare-os com a referência dos 15 minutos.',
       legendUnit: 'Tempo médio até os serviços',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

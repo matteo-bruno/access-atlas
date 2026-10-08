@@ -141,7 +141,6 @@ export default {
     paper: '논문 ↗',
     welcome: '{name}에 오신 것을 환영합니다',
     dismiss: '닫기',
-    ctaMap: '지도에서 도시를 클릭하세요',
     learnMore: '자세히 보기 →',
     attribution: '기본 지도: Natural Earth · 데이터 © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count}개 도시',
@@ -167,6 +166,8 @@ export default {
       label: '근접 접근성',
       intro:
         '의료, 교육, 장보기, 음식, 문화, 야외 공간, 운동, 생활 서비스, 이동 등 열 가지 일상 서비스까지 걷거나 자전거로 가는 시간을 도시의 모든 셀에 대해 계산하고, 15분 기준에 비추어 읽습니다.',
+      welcomeIntro:
+        '어느 도시의 어느 곳에서든 일상 서비스까지의 이동 시간을 확인하고 15분 기준과 비교해 보세요.',
       legendUnit: '서비스까지 평균 시간',
       legend: ['0–3분', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

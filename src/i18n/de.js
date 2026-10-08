@@ -145,7 +145,6 @@ export default {
     paper: 'Artikel ↗',
     welcome: 'Willkommen bei {name}',
     dismiss: 'Schließen',
-    ctaMap: 'Klicken Sie auf eine Stadt in der Karte',
     learnMore: 'Mehr erfahren →',
     attribution: 'Grundkarte: Natural Earth · Daten © Sony CSL Rom · CC BY-NC 4.0',
     cityCount: '{count} Städte',
@@ -171,6 +170,8 @@ export default {
       label: 'Erreichbarkeit im Nahbereich',
       intro:
         'Reisezeit zu Fuß und mit dem Rad zu zehn Kategorien alltäglicher Dienste (Gesundheit, Bildung, Einkauf, Essen, Kultur, Freiflächen, Bewegung, Dienstleistungen, Mobilität), berechnet für jede Zelle der Stadt und gelesen am Maßstab der 15 Minuten.',
+      welcomeIntro:
+        'Sehen Sie die Wegezeiten zu Einrichtungen des täglichen Bedarfs von jedem Ort jeder Stadt aus und vergleichen Sie sie mit dem 15-Minuten-Maßstab.',
       legendUnit: 'Mittlere Zeit zu den Diensten',
       legend: ['0–3 Min.', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

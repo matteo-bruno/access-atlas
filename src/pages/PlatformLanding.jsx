@@ -21,6 +21,18 @@ import { paperForPlatform } from '../data/research.js';
 import '../components/MapBox.css';
 import './PlatformLanding.css';
 
+// Every city of a layer side by side, on the Stats page. All populations
+// (`pop=0`): the page's default floor of a million residents is a choice for
+// its ranking, not for a layer's own comparison.
+const STATS_FOCUS = {
+  fifteen: '/stats?view=focus&pop=0',
+  citychrone: '/stats?view=focus&pop=0&m=citychrone.velocity.08',
+};
+
+// Layers whose welcome card has copy of its own, shorter than the `intro` the
+// "about this layer" dialog reads; the others introduce themselves with it.
+const WELCOME_INTRO = new Set(['fifteen']);
+
 /**
  * A picker dot is a miniature of the scale the map behind it draws with.
  *
@@ -94,6 +106,14 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
   const all = useAllCoverage();
   const single = useCityCoverage(platform ?? PLATFORMS[0]);
   const hasSummary = usePlatformHasSummary(platform?.id);
+  // Where "compare cities" goes: the layer's own comparison table where it
+  // publishes one (P.O.V., Car Dependency), otherwise the Stats page's focus
+  // on that layer, which compares its cities from the statistics file.
+  const compareTo = !platform
+    ? null
+    : hasSummary
+      ? `/platforms/${platform.slug}/compare`
+      : STATS_FOCUS[platform.id] ?? null;
   const cities = platform ? single.cities : all.cities;
   // Always the merged coverage, never the open tab's — see the WorldMap props.
   const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
@@ -256,36 +276,33 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
                 <Icon name="close" size={13} color="var(--ink-3)" />
               </button>
             </div>
-            <p className="aa-welcome__body">{t(`${copyKey}.intro`)}</p>
-            <div className="aa-welcome__actions">
-              <button
-                type="button"
-                className="aa-welcome__cta"
-                style={{
-                  background: platform ? platform.accent : COVERAGE_SCALE[COVERAGE_SCALE.length - 1],
-                }}
-                onClick={() => searchRef.current?.focus()}
-              >
-                {t('platform.ctaMap')}
-                <Icon name="arrow" size={13} color="#FBFAF4" />
-              </button>
-              {platform && hasSummary && (
-                <Link className="aa-welcome__more" to={`/platforms/${platform.slug}/compare`}>
-                  {t('compare.label')}
-                </Link>
-              )}
-              {paper && (
-                <a
-                  className="aa-welcome__more"
-                  href={paper.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {t('platform.learnMore')}
-                </a>
-              )}
-            </div>
+            <p className="aa-welcome__body">
+              {t(`${copyKey}.${WELCOME_INTRO.has(platform?.id) ? 'welcomeIntro' : 'intro'}`)}
+            </p>
           </section>
+        )}
+
+        {/* The two ways onward, each in a bottom corner of the map rather than
+            inside the welcome card, so they outlive its dismissal. */}
+        {compareTo && (
+          <Link
+            className="aa-mapstage__action aa-mapstage__action--start aa-fadein"
+            to={compareTo}
+            style={{ background: platform.accent }}
+          >
+            {t('compare.label')}
+            <Icon name="arrow" size={13} color="#FBFAF4" />
+          </Link>
+        )}
+        {paper && (
+          <a
+            className="aa-card aa-mapstage__action aa-mapstage__action--end aa-fadein"
+            href={paper.url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {t('platform.learnMore')}
+          </a>
         )}
 
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>

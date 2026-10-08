@@ -141,7 +141,6 @@ export default {
     paper: '论文 ↗',
     welcome: '欢迎来到 {name}',
     dismiss: '关闭',
-    ctaMap: '点击地图上的城市',
     learnMore: '了解更多 →',
     attribution: '底图：Natural Earth · 数据 © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} 座城市',
@@ -167,6 +166,8 @@ export default {
       label: '邻近可达性',
       intro:
         '计算城市中每个单元步行和骑行前往十类日常服务（医疗、教育、购物、餐饮、文化、户外空间、体育锻炼、生活服务、交通出行）所需的时间，并以 15 分钟为参照来解读。',
+      welcomeIntro:
+        '查看任意城市中任意地点前往日常服务的出行时间，并与15分钟基准进行比较。',
       legendUnit: '前往服务的平均时间',
       legend: ['0–3 分钟', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

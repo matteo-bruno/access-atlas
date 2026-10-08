@@ -159,7 +159,6 @@ export default {
     paper: 'Paper ↗',
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',
-    ctaMap: 'Click a city on the map',
     learnMore: 'Learn more →',
     attribution: 'Basemap: Natural Earth · Data © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} cities',
@@ -187,6 +186,10 @@ export default {
       label: 'Proximity access',
       intro:
         'Travel time on foot and by bicycle to ten categories of everyday service — healthcare, learning, supplies, eating, culture, outdoor space, exercise, services, mobility — computed for every cell of the city and read against the 15-minute reference.',
+      // The welcome card on the world map: shorter than `intro`, which the
+      // "about this layer" dialog and the city view's panel still use.
+      welcomeIntro:
+        'See the travel times to everyday services from any place in any city and see how it compares to the 15-minute benchmark.',
       legendUnit: 'Average time to services',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },

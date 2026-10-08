@@ -786,9 +786,17 @@ the landing can be reverted by pointing `/` back at it.
 
 The world map at `/platforms` has no bar above it either: the search
 (`CitySearch`, which owns its own ⌘K and its own CSS so it can sit anywhere)
-and the source link float on the map, the platform's paper and comparison
-moved into the welcome card that introduces it, and the legend sits below the
-search rather than under it.
+and the source link float on the map, and the legend sits below the
+search rather than under it. The welcome card (top left) is a short,
+translucent introduction with nothing to act on but its close button: the two
+ways onward sit in the map's bottom corners, so they outlive the card.
+**"Compare cities" is on every layer** (bottom left, in the layer's accent):
+P.O.V. and Car Dependency link their compare table, 15minCity and CityChrone
+the Stats page's focus on that layer (`STATS_FOCUS` in `PlatformLanding.jsx`);
+the platform's paper is bottom right, beside the zoom. A layer may give the
+card copy of its own, `platform.<id>.welcomeIntro` (listed in
+`WELCOME_INTRO`), shorter than `intro`, which the "about this layer" dialog
+and the city view still read.
 
 **The search looks through every published city, whatever tab is open**, with
 the catalogue's names in both languages, its region and its boundary (a metro

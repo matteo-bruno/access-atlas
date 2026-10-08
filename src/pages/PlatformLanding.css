@@ -12,7 +12,7 @@
 
 .aa-mapstage__attribution {
   position: absolute;
-  bottom: 14px;
+  bottom: 10px;
   inset-inline-start: var(--chrome-pad);
   font-size: 10.5px;
   color: var(--ink-3);
@@ -20,15 +20,20 @@
   pointer-events: none;
 }
 
-/* Welcome card */
+/* Welcome card: a short introduction, translucent so the map shows
+   through, and nothing to act on but its close button. What it used to hold
+   (compare, learn more) sits in the map's bottom corners instead, where it
+   stays after the card is dismissed. */
 .aa-welcome {
   position: absolute;
   top: 24px;
   inset-inline-start: var(--chrome-pad);
-  width: 360px;
+  width: 300px;
   max-width: calc(100% - var(--chrome-pad) * 2);
-  padding: 22px 24px;
-  box-shadow: var(--shadow-float);
+  padding: 14px 16px 16px;
+  background: color-mix(in srgb, var(--card) 84%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-soft);
   z-index: 3;
 }
 
@@ -37,7 +42,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .aa-welcome__close {
@@ -54,41 +59,49 @@
 }
 
 .aa-welcome__body {
-  margin-bottom: 18px;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--ink-2);
 }
 
-.aa-welcome__actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-top: 14px;
-  border-top: 1px solid var(--hair-soft);
-}
-
-.aa-welcome__cta {
+/* The ways onward, one per bottom corner: compare at the start, beside the
+   source line, and the platform's paper at the end, beside the zoom. Both
+   sit on the zoom control's baseline. */
+.aa-mapstage__action {
+  position: absolute;
+  bottom: 32px;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 14px;
-  border: 0;
+  height: 36px;
+  padding: 0 14px;
   border-radius: var(--radius);
-  color: var(--card);
   font-size: 13px;
   font-weight: 500;
-  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
 }
 
-.aa-welcome__more {
-  padding: 9px 14px;
-  font-size: 13px;
+.aa-mapstage__action--start {
+  inset-inline-start: var(--chrome-pad);
+  color: var(--card);
+}
+
+.aa-mapstage__action--start:hover {
+  filter: brightness(1.08);
+}
+
+/* Left of the zoom control: its width (36px) and a gap. */
+.aa-mapstage__action--end {
+  inset-inline-end: calc(var(--chrome-pad) + 48px);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  backdrop-filter: blur(4px);
   color: var(--ink-2);
-  cursor: pointer;
+  font-weight: 400;
 }
 
-.aa-welcome__more:hover {
+.aa-mapstage__action--end:hover {
   color: var(--ink);
 }
 
@@ -96,11 +109,12 @@
    the scale is read against the map, not against the chrome. */
 .aa-legend {
   position: absolute;
-  top: 116px;
+  top: 76px;
   inset-inline-end: var(--chrome-pad);
-  min-width: 200px;
-  padding: 16px 18px;
-  box-shadow: var(--shadow-float);
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--card) 84%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-soft);
   z-index: 3;
 }
 
@@ -162,16 +176,22 @@
 .aa-legend__items {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-top: 12px;
+  gap: 3px;
+  margin-top: 8px;
 }
 
 .aa-legend__item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.35;
   color: var(--ink-2);
+}
+
+.aa-legend__item .aa-swatch {
+  width: 10px;
+  height: 10px;
 }
 
 /* Zoom controls */
@@ -222,7 +242,7 @@
 
   .aa-legend {
     top: auto;
-    bottom: 84px;
+    bottom: 92px;
     inset-inline-end: var(--chrome-pad);
     min-width: 0;
     padding: 12px 14px;
@@ -238,7 +258,7 @@
 
   .aa-welcome {
     top: auto;
-    bottom: 84px;
+    bottom: 92px;
     inset-inline-start: var(--chrome-pad);
     width: auto;
     inset-inline-end: var(--chrome-pad);
@@ -248,6 +268,20 @@
   /* Both floating cards at once would bury the map on a phone. */
   .aa-welcome ~ .aa-legend {
     display: none;
+  }
+
+  /* A phone pinches to zoom, and the buttons would sit under the cards. */
+  .aa-zoom {
+    display: none;
+  }
+
+  /* Above the source line, which wraps to two lines here. */
+  .aa-mapstage__action {
+    bottom: 44px;
+  }
+
+  .aa-mapstage__action--end {
+    inset-inline-end: var(--chrome-pad);
   }
 }
 

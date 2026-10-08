@@ -408,6 +408,35 @@ for (const [route, name] of ROUTES) {
   await page.close();
 }
 
+// ── Every layer's map offers a comparison of its cities ─────────────
+// P.O.V. and Car Dependency publish a compare table; 15minCity and
+// CityChrone are compared on the Stats page's focus. The button sits in the
+// map's corner, outside the welcome card, so it survives the card's close.
+{
+  const page = await context.newPage();
+  const expected = {
+    '15min-city': /^\/stats\?view=focus/,
+    citychrone: /^\/stats\?view=focus.*m=citychrone/,
+    'car-dependency-index': /^\/platforms\/car-dependency-index\/compare$/,
+    'accessibility-pov': /^\/platforms\/accessibility-pov\/compare$/,
+  };
+  const seen = {};
+  for (const slug of Object.keys(expected)) {
+    await page.goto(`${BASE}/platforms/${slug}`, { waitUntil: 'load' });
+    await page.waitForTimeout(1500);
+    await page.click('.aa-welcome__close').catch(() => {});
+    seen[slug] = await page
+      .$eval('.aa-mapstage__action--start', (a) => a.getAttribute('href'))
+      .catch(() => null);
+  }
+  check(
+    'Every layer map links to a comparison of its cities',
+    Object.entries(expected).every(([slug, re]) => re.test(seen[slug] ?? '')),
+    JSON.stringify(seen),
+  );
+  await page.close();
+}
+
 // ── Map ⇄ cartogram ──────────────────────────────────────────────────
 // A city is a grid file and one file per layer, and the viewer fetches a
 // layer's file only when that layer is opened — which is the whole saving, so
