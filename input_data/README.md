@@ -1,46 +1,66 @@
 # Source data staging
 
-Drop each platform's export here, exactly as the platform hands it over,
-and run `npm run update:data`. Nothing in this folder is served by the
-site: the importers read from here and write compact, ready-to-serve files
-under `../public/data/cities/<city>/`.
+Drop each city's files here, one per platform, and run
+`npm run update:data`. Nothing in this folder is served by the site: the
+importers read from here and write compact, ready-to-serve files under
+`../public/data/cities/<city>/`.
 
 ```
 input_data/
   15mincity/    Zurich.geojson
+  pov/          Zurich.geojson
+  cdi/          Zurich.geojson
   citychrone/   Zurich.zip
-  pov/          zurich_pov.zip
-  cdi/          zurich_cdi.zip
 ```
 
-The file name gives the city: `Zurich.geojson`, `Zurich.zip`,
-`zurich_pov.zip` and `zurich_cdi.zip` are all `zurich` (the `_pov` / `_cdi`
-suffix is dropped, accents and spaces become a slug: `New York` →
-`new-york`). A zip can also be given unpacked, as a folder of the same name.
+The folder gives the platform and the file name gives the city, and nothing
+else: `Zurich.geojson` is `zurich` in every folder (accents and spaces become
+a slug: `New York` → `new-york`).
+
+### The files
+
+P.O.V., Car Dependency and 15minCity take **one GeoJSON per city**: a
+FeatureCollection in lon/lat (EPSG:4326), one feature per H3 resolution 9
+cell, drawn as the cell's own hexagon, with the platform's values as its
+properties. Any other property is ignored.
+
+| Folder | Properties |
+| ------ | ---------- |
+| `pov/` | `population`, `proximity`, `opportunity`, `cell_type` (`inclusion`, `spatial isolation`, `social isolation`, `total isolation`) |
+| `cdi/` | `population`, `CDI` (or `cdi`, in [−1, +1]), `o_score_pt`, `o_score_car`; a cell with no CDI is left out |
+| `15mincity/` | `population`, `<category>_<mode>` minutes (`education_foot`, …, `99999` = unreachable) |
+
+`centroid_lon` / `centroid_lat` are optional in all three, and used to find
+the cell when present. The platforms' own cartograms are not imported: the
+Atlas derives every layer's cartogram by one rule.
+
+CityChrone is the one exception, because its travel-time matrices are not
+GeoJSON: `<City>.zip` (or the same folder unpacked) holding the hourly
+`hexcoverHH.json` and `timesHH.npy`, each plain or zipped on its own.
 
 ### Metro areas and scenarios
 
 ```
-15mincity/  Tokyo.geojson            the city: its GHS core (Urban Centre)
-            Tokyo_FUA.geojson        its metro area (GHS Functional Urban Area)
-cdi/        rome_cdi.zip             Rome
-            rome__metro-d_cdi.zip    scenario "metro-d" of Rome's Car Dependency
+15mincity/  Tokyo.geojson                     the city: its GHS core (Urban Centre)
+            Tokyo_FUA.geojson                 its metro area (GHS Functional Urban Area)
+cdi/        Rome.geojson                      Rome
+            Rome_scenario_metro-d.geojson     scenario "metro-d" of Rome's Car Dependency
 ```
 
 - **`<City>_FUA`** is the city's metro area, published as the city
   `<city>-fua` beside the core, with the core's names: the city view
   switches between "City (core)" and "Metro (FUA)", and the Stats page
   compares one boundary at a time. Either can be published without the other.
-- **`<city>__<scenario>`** (two underscores) is a scenario of that layer of
-  the city: stored with the city, on its grid, shown in the city view on its
-  own or as the difference from the current layer. The city must already
-  publish the layer (a scenario of a metro area: `paris_FUA__new-line_cdi.zip`).
+- **`<City>_scenario_<id>`** is a scenario of that layer of the city: stored
+  with the city, on its grid, shown in the city view on its own or as the
+  difference from the current layer. The city must already publish the
+  layer (a scenario of a metro area: `Paris_FUA_scenario_new-line.geojson`).
   Its name is the id, title-cased ("Metro D"); to name it otherwise import it
   by hand with `--scenario-name` / `--scenario-name-it`. Scenarios are not in
   the statistics. CityChrone scenarios are not supported yet.
 
 ```
-npm run import -- cdi input_data/cdi/rome__metro-d_cdi.zip --scenario-name "Metro D"
+npm run import -- cdi input_data/cdi/Rome_scenario_metro-d.geojson --scenario-name "Metro D"
 npm run import -- cdi --remove rome --scenario metro-d
 ```
 
@@ -103,8 +123,8 @@ the commit. That is what scrambled Rome's 15minCity layer on GitHub Pages;
 One source by hand, with the options `update:data` does not pass:
 
 ```
-npm run import -- pov input_data/pov/zurich_pov.zip
-npm run import -- cdi path/to/zurich/ --city zurich --dry-run
+npm run import -- pov input_data/pov/Zurich.geojson
+npm run import -- cdi path/to/zurich.geojson --city zurich --dry-run
 npm run import -- 15mincity Acilia.geojson --name Acilia --name-it Acilia --country IT
 npm run import -- 15mincity --remove rome      # take a layer off the site
 npm run import -- --index                      # rebuild the catalogue from the records
@@ -148,7 +168,7 @@ were written by hand. Override when either is wrong:
 npm run import -- 15mincity Paris.geojson --country FR --region France --region-it Francia --name-it Parigi
 ```
 
-## The four formats
+## The formats, one by one
 
 ### 15minCity: `15mincity/<City>.geojson`
 
@@ -181,30 +201,15 @@ hour selector is instant. The matrices stay one file per hour, fetched only
 for isochrones, with rows and columns re-ordered to grid order: lossless,
 and 2 to 3.5 times smaller.
 
-### P.O.V.: `pov/<city>_pov.zip`
+### P.O.V.: `pov/<City>.geojson`
 
-The two files the platform exports:
+The true hexagons, with `population`, `proximity`, `opportunity` and
+`cell_type`. The zone thresholds are recomputed as population-weighted
+medians, and the import stops if classifying any cell against them does not
+reproduce its `cell_type`.
 
-```
-zurich.geojson             true hexagons
-zurich_cartogram.geojson   the platform's cartogram (EPSG:3857 metres)
-```
+### Car Dependency Index: `cdi/<City>.geojson`
 
-both with `hexagon_id`, `population`, `proximity`, `opportunity` and
-`cell_type`. The hexagons give each cell its H3 index; the cartogram is
-kept as the platform drew it. The zone thresholds are recomputed as
-population-weighted medians, and the import stops if classifying any cell
-against them does not reproduce its `cell_type`.
-
-### Car Dependency Index: `cdi/<city>_cdi.zip`
-
-The city's folder as the CDI repository publishes it:
-
-```
-zurich/cartogram.geojson   values (CDI, o_score_pt, o_score_car, population) and the cartogram
-zurich/hexes.geojson       true hexagons (any hexes*.geojson)
-zurich/cdi.csv             the same values again, not read
-```
-
-Cells with no CDI are left out, as the upstream viewer does. A CDI outside
-[−1, +1] stops the import.
+The true hexagons, with `population`, `CDI`, `o_score_pt` and
+`o_score_car`. Cells with no CDI are left out, as the upstream viewer does.
+A CDI outside [−1, +1] stops the import.

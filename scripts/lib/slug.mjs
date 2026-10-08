@@ -13,22 +13,23 @@ export function slugify(name) {
     .replace(/^-+|-+$/g, '');
 }
 
-// Two underscores separate a city from a scenario of it: `rome__metro-d_cdi.zip`
-// is scenario `metro-d` of `rome`. One underscore stays part of the city, so
-// `Tokyo_FUA.geojson` is the city `tokyo-fua` (its metro area).
-export const SCENARIO_SEPARATOR = '__';
+// A source is named after its city and nothing else: `Rome.geojson` is the
+// city `rome` (its GHS core), `Rome_FUA.geojson` its metro area `rome-fua`,
+// and `Rome_scenario_metro-d.geojson` the scenario `metro-d` of Rome
+// (`Paris_FUA_scenario_new-line.geojson`: of Paris's metro area).
+export const SCENARIO_SEPARATOR = /_scenario_/i;
 
 /**
  * What a source names, from the importer's reading of its file name
- * (`importer.cityName`, extension and platform suffix already dropped).
+ * (`importer.cityName`, extension already dropped).
  *
  * @returns {{ city: string, scenario: string | null }}
  */
 export function parseSourceName(name) {
-  const at = name.indexOf(SCENARIO_SEPARATOR);
-  if (at < 0) return { city: slugify(name), scenario: null };
+  const match = name.match(SCENARIO_SEPARATOR);
+  if (!match) return { city: slugify(name), scenario: null };
   return {
-    city: slugify(name.slice(0, at)),
-    scenario: slugify(name.slice(at + SCENARIO_SEPARATOR.length)) || null,
+    city: slugify(name.slice(0, match.index)),
+    scenario: slugify(name.slice(match.index + match[0].length)) || null,
   };
 }

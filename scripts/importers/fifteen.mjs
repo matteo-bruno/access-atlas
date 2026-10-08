@@ -14,7 +14,7 @@ import { readCells } from './common.mjs';
 export const layer = 'fifteen';
 export const dir = '15mincity';
 export const accepts = (name) => /\.geojson$/i.test(name);
-export const cityName = (name) => name.replace(/\.geojson$/i, '').replace(/[_-]15mincity$/i, '');
+export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 /** The mean of a cell's category minutes for one mode, as the site computes it. */
 export function modeAverage(properties, mode) {

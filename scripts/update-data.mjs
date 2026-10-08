@@ -49,12 +49,12 @@
 // otherwise re-import every city, and a fix that should reach published data
 // is something to decide on, not to have happen.
 //
-// A source is whatever the platform hands over: a zip, the same folder
-// unpacked, or (15minCity) one GeoJSON. Its file name gives the city:
-// `zurich_pov.zip`, `zurich_cdi.zip`, `Zurich.zip`, `Zurich.geojson` → `zurich`.
-// `Tokyo_FUA.geojson` is the city `tokyo-fua`, Tokyo's metro area, and two
-// underscores name a scenario of a city: `rome__metro-d_cdi.zip` is scenario
-// `metro-d` of Rome's Car Dependency, recorded in Rome's record (`scenarios`).
+// A source is one GeoJSON per city and layer (`<City>.geojson`), and for
+// CityChrone a zip (`<City>.zip`) or the same folder unpacked. Its folder
+// gives the platform and its file name the city: `pov/Zurich.geojson` →
+// `zurich`. `Tokyo_FUA.geojson` is the city `tokyo-fua`, Tokyo's metro area,
+// and `Rome_scenario_metro-d.geojson` in `cdi/` is scenario `metro-d` of
+// Rome's Car Dependency, recorded in Rome's record (`scenarios`).
 // A city's files are imported before its scenarios, which need the baseline.
 
 import fs from 'node:fs';

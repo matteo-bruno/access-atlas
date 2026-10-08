@@ -12,7 +12,7 @@ import { readCells } from './common.mjs';
 export const layer = 'cardep';
 export const dir = 'cdi';
 export const accepts = (name) => /\.geojson$/i.test(name);
-export const cityName = (name) => name.replace(/\.geojson$/i, '').replace(/[_-](cdi|cardep)$/i, '');
+export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 export function parse(source) {
   const { path, cells: read, worstBoundary } = readCells(source);

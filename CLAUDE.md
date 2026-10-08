@@ -84,24 +84,19 @@ layer file: `layerCartogram` produces a `FeatureCollection` of
 loaded features onto it, keeping each feature's id so highlights and
 feature-state do not notice.
 
-**Cartograms come from two places, and the catalogue says which.** P.O.V. and
-Car Dependency publish theirs, and those are **not** scaled hexagons — up to
-~10 m off one on small cells — so they are kept as the platform drew them:
-integer vertex offsets from the cell's H3 centre, in 1e-5°, the precision they
-were always published at. Encoding them as a scale per cell was measured and
-rejected for that reason. 15minCity and CityChrone publish none, so the Atlas
-derives one by a rule it states: a cell keeps its centre and its shape, and
-its **area is proportional to its population**, reaching the full hexagon at
-the median over the layer's *inhabited* cells. Empty cells are not drawn, and
-counting them pulled Rome's CityChrone reference (a metro-wide mask, 38%
-empty) down to 4 residents, 44.6 m from CDI's cartogram. The population is the **grid's**, not the
-layer's own: 15minCity's population model puts Milan's derived cartogram
-38 m from the published ones, the grid's puts it at ~13 m, and the point is
-that a cell of a given population is the same size whichever layer is on
-screen. `test:data` fails if the rule drifts past 25 m from a published
-cartogram of the same city. `cartogramSources` marks each as `published` or
-`derived`, and the UI says which one is on screen. No layer reuses another's:
-even the two published ones disagree by up to 9.6 m on cells they share.
+**Every cartogram is the Atlas's own, by one rule.** A cell keeps its
+centre and its shape, and its **area is proportional to its population**,
+reaching the full hexagon at the median over the layer's *inhabited* cells.
+Empty cells are not drawn, and counting them pulled Rome's CityChrone
+reference (a metro-wide mask, 38% empty) down to 4 residents. The population
+is the **grid's**, not the layer's own, so a cell of a given population is
+the same size whichever layer is on screen. P.O.V. and Car Dependency publish
+cartograms of their own; they used to be stored as the platforms drew them
+(not scaled hexagons, up to ~10 m off one, and up to 9.6 m off each other)
+and are no longer imported: one rule for every layer was judged worth more
+than each platform's own layout, and the rule lands ~10-14 m from theirs on a
+~200 m cell. Nothing checks it against them any more, on purpose.
+`cartogramSources` still says `derived` per layer, and the UI says so.
 
 Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at
@@ -157,7 +152,7 @@ is stored with its city, `cities/<city>/scenarios/<id>/<layer>.json.gz`,
 **written against the city's own grid** (whose cells now include any a
 scenario covers), listed in the record's `scenarios` and the atlas entry's
 `scenarios`, and rewritten with the city whenever the grid moves. Imported
-from `<city>__<scenario>` (two underscores) in any platform folder; the city
+from `<city>_scenario_<scenario>` in any platform folder; the city
 must publish that layer, because the viewer subtracts one from the other.
 The viewer merges its values beside the baseline's under `<id>:<name>`
 (`scenarioKey` in `grid.js`), so "Scenario" and "Difference" (`sc=`, `cmp=diff`)
@@ -568,8 +563,8 @@ npm run smoke:published    # stages a dataset, asserts it is read instead of see
 every published city — grid to hexagons, every layer merged in, all 24
 CityChrone hours included — and checks the grid is sorted and unique, every
 layer's rows land on grid cells, shares sum to 100, no CDI is outside
-[−1, +1], every 15minCity category × mode is present, the derived
-cartogram rule stays within 25 m of the published ones, every CityChrone
+[−1, +1], every 15minCity category × mode is present, every layer's
+cartogram is the derived rule and draws one polygon per row, every CityChrone
 matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
 and `extent` fields match the files, every scenario sits on its city's grid, the statistics are what recomputing them gives
 and agree with the summaries and markers, and that Rome still reports the figures the copy
@@ -992,15 +987,18 @@ Roles whose Italian is invariable ("Assistente di ricerca") or names a function
 ```bash
 npm run update:data        # import whatever changed in input_data/, then test:data, then offers stats
 npm run stats              # recompute the statistics of every city whose data changed (--status, --force)
-npm run import -- pov input_data/pov/zurich_pov.zip   # one export by hand (--dry-run, --city, --country …)
+npm run import -- pov input_data/pov/Zurich.geojson   # one file by hand (--dry-run, --city, --country …)
 npm run shoot:previews     # platform-card stills, from the running site
 ```
 
-`input_data/README.md` has the four export formats and the options. The
-importers read the platforms' exports as they hand them over — P.O.V.'s two
-GeoJSONs (the cartogram in EPSG:3857), CDI's city folder, 15minCity's
-harmonised GeoJSON, CityChrone's zip of per-hour zips — straight from the zip.
-`scripts/lib/zip.mjs` is a small reader for exactly that (stored and
+`input_data/README.md` has the formats and the options. P.O.V., Car
+Dependency and 15minCity are one GeoJSON per city (`<City>.geojson`, true
+hexagons in lon/lat, values as properties), read by one function
+(`readCells` in `importers/common.mjs`) that proves the grid; each importer
+only checks its own fields. CityChrone is the one zip, of per-hour zips,
+because its travel-time matrices are not GeoJSON. File names are only the
+city: `<City>`, `<City>_FUA` for its metro area, `<City>_scenario_<id>` for
+a scenario. `scripts/lib/zip.mjs` is a small reader for exactly that (stored and
 deflated members, zip64), because Node has none. It reads the archive from
 disk member by member, never whole: Node will not read a file past 2 GiB
 into one buffer, and Rome's CityChrone export is 3.2 GB. For the same
@@ -1081,10 +1079,10 @@ that cross an edge of its icosahedron come back from `cellToBoundary` with
 seven or more vertices, the extra ones on one side, so the vertex mean sits
 up to 28 m off the true centre. No European city is near such an edge;
 Xiapu (Fujian) is, and a test that took the vertex mean as the centre failed
-there on a correct cartogram. Measure from `cellToLatLng`. The P.O.V. and
-CDI importers still locate a polygon's cell by `ringCentroid`, the vertex
-mean, so an export from such a region may be refused as off the grid;
-15minCity is spared only because its export states each cell's centroid.
+there on a correct cartogram. Measure from `cellToLatLng`. The importers
+locate a polygon's cell by `ringCentroid`, the vertex mean, unless the file
+states `centroid_lon` / `centroid_lat` (15minCity's does), so an export from
+such a region without them may be refused as off the grid.
 
 **Imports gzip at level 6, not 9.** On a CityChrone matrix 9 took 5.3 s an
 hour for 1% less than 6's 0.8 s. An import compares content, not bytes, so

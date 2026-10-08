@@ -11,7 +11,7 @@ import { readCells } from './common.mjs';
 export const layer = 'pov';
 export const dir = 'pov';
 export const accepts = (name) => /\.geojson$/i.test(name);
-export const cityName = (name) => name.replace(/\.geojson$/i, '').replace(/[_-]pov$/i, '');
+export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 export function parse(source) {
   const { path, cells: read, worstBoundary } = readCells(source);

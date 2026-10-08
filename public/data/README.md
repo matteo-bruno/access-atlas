@@ -50,7 +50,7 @@ layer is opened. Nothing is stored twice.
         "grid": "cities/zurich/grid.json.gz",
         "layers": ["fifteen", "citychrone", "cardep", "pov"],
         "layerData": { "pov": "cities/zurich/pov.json.gz", "…": "…" },
-        "cartogramSources": { "pov": "published", "fifteen": "derived", "…": "…" },
+        "cartogramSources": { "pov": "derived", "fifteen": "derived", "…": "…" },
         "hourly": { "hours": 24, "cells": 909,
                     "times": "cities/zurich/citychrone/times{hh}.npy.gz" } }
     ]
@@ -123,7 +123,7 @@ CityChrone. `id` is a hash of the cells, in order.
   "order": "grid", "idx": [12, 1, 1, 3, "…"],
   "fields": { "population": [], "zone": [], "proximity": [], "opportunity": [] },
   "meta": { "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } },
-  "cartogram": { "source": "published", "unit": 1e-5, "rings": [[-9, 172, "…"]] } }
+  "cartogram": { "source": "derived", "reference": 412 } }
 ```
 
 - **Rows follow the grid.** `idx` gives each row's grid position,
@@ -147,17 +147,13 @@ CityChrone. `id` is a hash of the cells, in order.
   Every layer carries its own `population` too. 15minCity's
   `proximity_time_<mode>` is the mean of the nine categories and is computed
   by the browser rather than stored.
-- **The cartogram.** P.O.V. and Car Dependency publish their own, and those
-  are not scaled hexagons (up to ~10 m off one on small cells), so they are
-  kept: each ring as integer vertex offsets from its cell's H3 centre, in
-  units of 1e-5°, the precision they were published at. 15minCity and
-  CityChrone publish none; the Atlas derives one (`"source": "derived"`):
+- **The cartogram** is the Atlas's own on every layer (`"source": "derived"`):
   each cell keeps its centre and shape, and its area is proportional to its
   population, reaching the full hexagon at `reference`, the median over the
-  layer's inhabited cells (empty cells are never drawn). The population is the grid's, shared by every layer, so a
-  cell of a given population is the same size whichever layer draws it.
-  `test:data` checks the rule stays within 25 m of the published cartograms
-  where both exist. The UI says which of the two is on screen.
+  layer's inhabited cells (empty cells are never drawn). The population is
+  the grid's, shared by every layer, so a cell of a given population is the
+  same size whichever layer draws it. P.O.V. and Car Dependency publish
+  cartograms of their own; they are not imported.
 
 CityChrone's travel-time matrices are NumPy `uint8` minutes, `cells × cells`,
 capped at 180 upstream. Row and column *i* are the layer's row *i*, so they

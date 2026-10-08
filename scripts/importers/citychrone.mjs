@@ -17,7 +17,7 @@ import { baseName, fromZip, openSource } from '../lib/zip.mjs';
 export const layer = 'citychrone';
 export const dir = 'citychrone';
 export const accepts = (name) => /\.zip$/i.test(name) || !/\.[a-z0-9]+$/i.test(name);
-export const cityName = (name) => name.replace(/\.zip$/i, '').replace(/[_-]citychrone$/i, '');
+export const cityName = (name) => name.replace(/\.zip$/i, '');
 
 /** Every hourly member, unzipped where it came zipped: `{ hexcover: [], times: [] }`. */
 function hourlyFiles(source) {

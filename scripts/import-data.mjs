@@ -4,7 +4,8 @@
 //   npm run import -- <platform> <source> [options]
 //
 //   platform   15mincity | citychrone | pov | cdi
-//   source     the export as the platform hands it over (see input_data/README.md)
+//   source     the city's file: <City>.geojson, or <City>.zip for CityChrone
+//              (see input_data/README.md)
 //
 //   npm run import -- <platform> --remove <city>    take a city's layer off the site
 //   npm run import -- <platform> --remove <city> --scenario <id>
@@ -13,7 +14,7 @@
 //
 //   --city <id>          city id, when the file name does not give the right one
 //   --scenario <id>      import as a scenario of the city rather than the city
-//                        itself (`rome__metro-d_cdi.zip` says so on its own)
+//                        itself (`Rome_scenario_metro-d.geojson` says so on its own)
 //   --scenario-name / --scenario-name-it   the scenario's name, English / Italian
 //                        (default: from its id, `metro-d` → "Metro D")
 //   --dry-run            check and report, write nothing

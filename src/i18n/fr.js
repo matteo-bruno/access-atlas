@@ -410,8 +410,7 @@ export default {
       about: {
         map: 'Chaque cellule est l’hexagone qu’elle occupe sur le terrain, de la même taille partout, quoi qu’elle contienne. L’aire ne dit rien du nombre de personnes concernées par une mesure : une frange peu peuplée de la ville occupe donc autant de place dans l’image que le centre dense.',
         cartogram: 'Chaque cellule reste à sa vraie place, mais son aire représente sa population résidente et non le terrain qu’elle couvre : une cellule peu habitée se réduit à une fraction d’hexagone, une cellule très peuplée le remplit. Elle répond à une autre question : non pas où une mesure est faible, mais pour combien de personnes elle l’est.',
-        derived: 'Ce cartogramme est propre à l’Atlas : {name} n’en publie pas. L’aire y est donc proportionnelle à la population résidente de la cellule, et atteint l’hexagone entier à la population médiane des cellules habitées de la ville. La règle est calibrée sur les cartogrammes que les autres plateformes publient pour la même ville, et les reproduit à environ 12 m près sur une cellule de 200 m : une cellule d’une population donnée a ainsi la même taille quelle que soit la couche affichée.',
-        missing: 'Un cartogramme est une disposition calculée par ses auteurs, pas une transformation de la carte : l’Atlas dessine donc celui que chaque plateforme a publié au lieu d’en dériver un. {name} n’en publie pas.',
+        derived: 'Ce cartogramme est propre à l’Atlas et suit une seule règle pour toutes les couches : l’aire est proportionnelle à la population résidente de la cellule, et atteint l’hexagone entier à la population médiane des cellules habitées de la ville. La population est celle que partagent toutes les couches de la ville : une cellule d’une population donnée a ainsi la même taille quelle que soit la couche affichée.',
       },
     },
     cartogram: {

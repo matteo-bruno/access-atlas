@@ -110,7 +110,7 @@ export const UNREACHABLE = 99999;
 // city: it is stored with the city it is a scenario of, on that city's grid,
 // so its rows line up with the baseline's and the viewer can paint either or
 // the difference between the two without loading a second grid. Imported
-// from `<city>__<scenario>` (two underscores) in any platform's folder.
+// from `<city>_scenario_<scenario>` in any platform's folder.
 export const FUA_SUFFIX = '-fua';
 
 /** Which boundary a city id is, and the id of its core. */

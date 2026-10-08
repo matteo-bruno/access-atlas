@@ -441,8 +441,8 @@ for (const [route, name] of ROUTES) {
 // A city is a grid file and one file per layer, and the viewer fetches a
 // layer's file only when that layer is opened — which is the whole saving, so
 // it is asserted on what was requested. The cartogram travels inside the
-// layer file (published polygons, or the rule for derived ones), so the
-// switch fetches nothing; what is asserted is that it draws something else.
+// layer file (the rule's one number), so the switch fetches nothing; what is
+// asserted is that it draws something else.
 const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().screenshot();
 {
   const page = await context.newPage();
@@ -474,7 +474,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     .getAttribute('aria-pressed');
   const cartogram = await canvasShot(page);
   check(
-    'Switching to the cartogram draws the one P.O.V. publishes, with no extra fetch',
+    'Switching to the cartogram draws one, with no extra fetch',
     pressed === 'true' && !map.equals(cartogram) &&
       requested.filter((u) => /\/cities\/milan\//.test(u)).length === layerFiles.length,
   );
@@ -498,16 +498,13 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2000);
-  // 15-minute city publishes no cartogram; this one is the Atlas's own, and
-  // the viewer has to draw it as readily as a published one.
+  // Every cartogram is the Atlas's own rule, on every layer.
   const fifteenCartogram = await canvasShot(page);
   await page.getByRole('button', { name: 'Car Dependency Index' }).click();
   await page.waitForTimeout(2200);
 
-  // No layer reuses another's cartogram: the two published ones disagree by
-  // up to 9.6 m on cells they share, and the derived ones are per platform
-  // too. Switching layer in cartogram view keeps the choice, fetches that
-  // layer's file once, and draws its own.
+  // Switching layer in cartogram view keeps the choice, fetches that layer's
+  // file once, and draws its own (its own cells, its own colours).
   const stillCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
@@ -530,8 +527,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 }
 
 // ── The combined viewer's defaults and detail ────────────────────────
-// Opens on proximity, offers the cartogram on every layer (two platforms
-// publish one, two are the Atlas’s own), answers a click with all nine
+// Opens on proximity, offers the cartogram on every layer, answers a click with all nine
 // categories and their average at once, and keeps the long explanation behind "full
 // explanation" rather than in the panel.
 {
