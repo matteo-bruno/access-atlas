@@ -1,3 +1,5 @@
+import { geoEqualEarth } from 'd3-geo';
+
 // How a city map frames its city.
 //
 // The catalogue's `zoom` is a fit computed offline from the extent of the
@@ -9,8 +11,6 @@
 // catalogue, which would put a presentation choice into the published data.
 
 const CITY_ZOOM_BOOST = 1.1;
-
-import { geoEqualEarth } from 'd3-geo';
 
 /**
  * The projection the site's world maps are drawn in: Equal Earth, on the
