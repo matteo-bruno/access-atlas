@@ -6,11 +6,12 @@
 // cartogram by one rule (scripts/lib/bundle.mjs).
 
 import { ZONE_TYPES, r1, weightedMedian } from '../lib/bundle.mjs';
-import { readCells } from './common.mjs';
+import { locateCells, readCells } from './common.mjs';
 
 export const layer = 'pov';
 export const dir = 'pov';
 export const accepts = (name) => /\.geojson$/i.test(name);
+export const locate = locateCells;
 export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 export function parse(source) {

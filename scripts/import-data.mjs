@@ -19,6 +19,9 @@
 //                        (default: from its id, `metro-d` → "Metro D")
 //   --dry-run            check and report, write nothing
 //   --name / --name-it   the city's name, English / Italian
+//   --default-name       the name a new city takes when no --name is given
+//                        (default: the file's own, `Al 'Azīzīyah.geojson`
+//                        → "Al 'Azīzīyah"); a published city keeps its own
 //   --country <ISO>      and --region / --region-it: where it is, when the
 //                        lookup from its centre is wrong
 //   --no-index           leave the catalogue, coverage and summaries alone
@@ -173,6 +176,7 @@ try {
     overrides: {
       name: arg('name'),
       nameIt: arg('name-it'),
+      defaultName: arg('default-name') ?? named.name,
       country: arg('country'),
       region: arg('region'),
       regionIt: arg('region-it'),

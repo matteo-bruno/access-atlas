@@ -745,7 +745,9 @@ export function cityMeta(previous, cityId, centre, overrides = {}) {
     region = region ?? place.name ?? null;
     regionIt = regionIt ?? place.nameIt ?? region;
   }
-  const name = overrides.name ?? known.name ?? titleCase(cityId);
+  // A city already published keeps its name (some were written by hand); a
+  // new one takes the name its file was given, accents and all.
+  const name = overrides.name ?? known.name ?? overrides.defaultName ?? titleCase(extentOf(cityId).core);
   return {
     meta: {
       name,
@@ -768,7 +770,7 @@ function coreMeta(cityId) {
   const { extent, core } = extentOf(cityId);
   if (extent !== 'fua') return {};
   const meta = readCityRecord(core)?.meta;
-  return meta ? { ...meta } : { name: titleCase(core) };
+  return meta ? { ...meta } : {};
 }
 
 /**

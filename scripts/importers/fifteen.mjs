@@ -9,11 +9,12 @@
 // with no category to average keeps the file's own figure.
 
 import { FIFTEEN_CATEGORIES, FIFTEEN_MODES, UNREACHABLE, r1 } from '../lib/bundle.mjs';
-import { readCells } from './common.mjs';
+import { locateCells, readCells } from './common.mjs';
 
 export const layer = 'fifteen';
 export const dir = '15mincity';
 export const accepts = (name) => /\.geojson$/i.test(name);
+export const locate = locateCells;
 export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 /** The mean of a cell's category minutes for one mode, as the site computes it. */

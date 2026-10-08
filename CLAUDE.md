@@ -991,6 +991,17 @@ npm run import -- pov input_data/pov/Zurich.geojson   # one file by hand (--dry-
 npm run shoot:previews     # platform-card stills, from the running site
 ```
 
+**Two cities with one name are told apart by their country, in the id and
+on the site.** An id is the file name's slug, so `Al 'Azīzīyah` and
+`` Al `Aziziyah `` collide; `update-data` locates every file with a contested
+name (`importer.locate`, the population-weighted centre, then `countryAt`)
+and imports it as `<city>-<country>`, named "<Name> <Country>", like the
+hand-named "London Canada". A recorded file keeps its city and a published
+plain id is never renamed. Two files still one city of one platform: the
+larger wins, the other is reported and skipped, and the run goes on. A new
+city's name is its file name, accents and all (`--default-name`, which a
+published city's record overrides).
+
 `input_data/README.md` has the formats and the options. P.O.V., Car
 Dependency and 15minCity are one GeoJSON per city (`<City>.geojson`, true
 hexagons in lon/lat, values as properties), read by one function

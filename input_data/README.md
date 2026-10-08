@@ -15,7 +15,20 @@ input_data/
 
 The folder gives the platform and the file name gives the city, and nothing
 else: `Zurich.geojson` is `zurich` in every folder (accents and spaces become
-a slug: `New York` → `new-york`).
+a slug: `New York` → `new-york`). A new city is shown under the name its file
+was given, accents and all (`São Paulo.geojson` → "São Paulo"; a name all in
+lower case is title-cased). A city already published keeps its name.
+
+**Two cities with one name.** Names that differ only in accents or signs make
+the same id (`Al 'Azīzīyah` and `` Al `Aziziyah `` are both `al-aziziyah`).
+`update-data` then places every file with that name by its country, which
+joins the id and the name: `al-aziziyah-iraq`, "Al 'Azīzīyah Iraq", the way a
+file named `London Canada.geojson` would. Two things never move: a file
+already imported stays in the city it went to, and a file in the same country
+as the city already published under the plain name goes to that city. If two
+files of one platform are still the same city (same name, same country), the
+larger is imported and the smaller is skipped and named in the report; the
+rest of the run goes on.
 
 ### The files
 

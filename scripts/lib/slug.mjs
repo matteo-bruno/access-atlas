@@ -23,13 +23,25 @@ export const SCENARIO_SEPARATOR = /_scenario_/i;
  * What a source names, from the importer's reading of its file name
  * (`importer.cityName`, extension already dropped).
  *
- * @returns {{ city: string, scenario: string | null }}
+ * `name` is the city's name as the file writes it, accents and all, for a
+ * city the catalogue does not know yet: `Al 'Azīzīyah.geojson` is shown as
+ * "Al 'Azīzīyah", not as its id. A name written all in lower case
+ * (`zurich.geojson`) is title-cased, since that is a file name, not a choice.
+ *
+ * @returns {{ city: string, scenario: string | null, name: string }}
  */
 export function parseSourceName(name) {
   const match = name.match(SCENARIO_SEPARATOR);
-  if (!match) return { city: slugify(name), scenario: null };
+  const cityPart = match ? name.slice(0, match.index) : name;
   return {
-    city: slugify(name.slice(0, match.index)),
-    scenario: slugify(name.slice(match.index + match[0].length)) || null,
+    city: slugify(cityPart),
+    scenario: match ? slugify(name.slice(match.index + match[0].length)) || null : null,
+    name: displayName(cityPart),
   };
+}
+
+function displayName(cityPart) {
+  const name = cityPart.replace(/[_ -]fua$/i, '').trim().replace(/\s+/g, ' ');
+  if (name !== name.toLowerCase()) return name;
+  return name.replace(/(^|[\s-])(\p{L})/gu, (_, sep, letter) => sep + letter.toUpperCase());
 }

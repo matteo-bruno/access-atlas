@@ -7,11 +7,12 @@
 // read: the Atlas derives every layer's cartogram by one rule
 // (scripts/lib/bundle.mjs).
 
-import { readCells } from './common.mjs';
+import { locateCells, readCells } from './common.mjs';
 
 export const layer = 'cardep';
 export const dir = 'cdi';
 export const accepts = (name) => /\.geojson$/i.test(name);
+export const locate = locateCells;
 export const cityName = (name) => name.replace(/\.geojson$/i, '');
 
 export function parse(source) {

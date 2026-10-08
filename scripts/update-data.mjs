@@ -54,7 +54,8 @@
 // gives the platform and its file name the city: `pov/Zurich.geojson` →
 // `zurich`. `Tokyo_FUA.geojson` is the city `tokyo-fua`, Tokyo's metro area,
 // and `Rome_scenario_metro-d.geojson` in `cdi/` is scenario `metro-d` of
-// Rome's Car Dependency, recorded in Rome's record (`scenarios`).
+// Rome's Car Dependency, recorded in Rome's record (`scenarios`). Two cities
+// whose names make the same id are told apart by country (see below).
 // A city's files are imported before its scenarios, which need the baseline.
 
 import fs from 'node:fs';
@@ -63,10 +64,11 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import readline from 'node:readline/promises';
 import { fileURLToPath } from 'node:url';
-import { parseSourceName } from './lib/slug.mjs';
+import { parseSourceName, slugify } from './lib/slug.mjs';
+import { countryAt } from './lib/country.mjs';
 import { describeHidden } from './lib/quality.mjs';
 import { staleCities } from './lib/stats.mjs';
-import { buildIndex, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
+import { FUA_SUFFIX, buildIndex, extentOf, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
 import * as fifteen from './importers/fifteen.mjs';
@@ -100,6 +102,7 @@ const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
     layer: importer.layer,
     dir: importer.dir,
     accepts: importer.accepts,
+    locate: importer.locate,
     // Which city, and which scenario of it if any, a file is.
     target: (f) => parseSourceName(importer.cityName(f)),
     fingerprint: [module, ...SHARED],
@@ -198,32 +201,102 @@ const removed = [];
 const stale = [];
 let tracked = 0;
 
-for (const platform of selected) {
+// ── which city each file is ──────────────────────────────────────────
+// A file's name is its city's: `Rome.geojson` is `rome`. Two different
+// cities can share a name, and then their files make the same id
+// (`Al 'Azīzīyah` and `Al \`Aziziyah` are both `al-aziziyah`), so every file
+// with a contested name is placed by its country instead, which joins the id
+// and the name the way a file named "London Canada" would:
+// `al-aziziyah-iraq`, "Al 'Azīzīyah Iraq". A file already imported keeps the
+// city it went to (its record says which), and so does one whose country is
+// that of the city already published under the plain name: a published id
+// never moves. Every folder is read, not only the platforms a run names, so
+// an id does not depend on which platforms were asked for.
+const recorded = new Map(); // file key → { city, scenario }
+for (const [id, record] of records) {
+  for (const source of Object.values(record?.sources ?? {})) recorded.set(source.file, { city: id, scenario: null });
+  for (const [scenario, entry] of Object.entries(record?.scenarios ?? {})) {
+    for (const source of Object.values(entry.sources ?? {})) recorded.set(source.file, { city: id, scenario });
+  }
+}
+
+const sources = [];
+for (const platform of PLATFORMS) {
   const dir = path.join(INPUT, platform.dir);
+  if (!fs.existsSync(dir)) continue;
+  for (const name of fs.readdirSync(dir).filter((f) => !f.startsWith('.') && platform.accepts(f)).sort()) {
+    const file = path.join(dir, name);
+    sources.push({ platform, key: `${platform.dir}/${name}`, file, size: sizeOf(file), named: platform.target(name) });
+  }
+}
+
+const label = ({ city, scenario }) => (scenario ? `${city}__${scenario}` : city);
+const perPlatform = (platform, target) => `${platform.id}/${label(target)}`;
+
+const contested = new Set();
+const byName = new Map();
+for (const source of sources) {
+  const k = perPlatform(source.platform, source.named);
+  if (byName.has(k)) contested.add(extentOf(source.named.city).core);
+  else byName.set(k, source);
+}
+
+const unplaced = []; // contested files whose country could not be told
+for (const source of sources) {
+  const { named } = source;
+  const kept = recorded.get(source.key);
+  const { core, extent } = extentOf(named.city);
+  if (kept) source.target = { ...kept, name: named.name };
+  else if (!contested.has(core)) source.target = { city: named.city, scenario: named.scenario, name: named.name };
+  else {
+    let place = null;
+    try {
+      place = countryAt(...source.platform.locate(source.file));
+    } catch (error) {
+      unplaced.push(`${source.key}: ${error.message}`);
+      continue;
+    }
+    if (!place?.name) {
+      unplaced.push(`${source.key}: no country near its centre; import it by hand with --city`);
+      continue;
+    }
+    const plain = records.get(named.city);
+    source.place = place.name;
+    source.target =
+      plain?.meta?.country === place.iso
+        ? { city: named.city, scenario: named.scenario, name: named.name }
+        : {
+            city: `${core}-${slugify(place.name)}${extent === 'fua' ? FUA_SUFFIX : ''}`,
+            scenario: named.scenario,
+            name: `${named.name} ${place.name}`,
+          };
+  }
+}
+
+// Two files that are still one city of one platform (the same name in the
+// same country): the larger is imported, the other left out and named.
+const clashes = [];
+const chosen = new Map();
+for (const source of sources.filter((s) => s.target).sort((a, b) => b.size - a.size)) {
+  const k = perPlatform(source.platform, source.target);
+  const winner = chosen.get(k);
+  if (winner) {
+    clashes.push(`${source.key}: the same city as ${winner.key} (${label(source.target)}); the larger, ${winner.key}, is imported`);
+    source.target = null;
+  } else chosen.set(k, source);
+}
+
+for (const platform of selected) {
   const fingerprint = fingerprintOf(platform);
   platform.currentFingerprint = fingerprint;
-
-  const files = fs.existsSync(dir)
-    ? fs.readdirSync(dir).filter((f) => !f.startsWith('.') && platform.accepts(f)).sort()
-    : [];
   const seen = new Set();
 
-  // Two files mapping to one slug would each overwrite the other's city,
-  // and which one ends up published would depend on the order of a loop.
-  const bySlug = new Map();
-  const label = ({ city, scenario }) => (scenario ? `${city}__${scenario}` : city);
-  for (const f of files) {
-    const s = label(platform.target(f));
-    if (bySlug.has(s)) fail(`${platform.dir}/${bySlug.get(s)} and ${platform.dir}/${f} are both "${s}"; rename one`);
-    bySlug.set(s, f);
-  }
-
   // A city before its scenarios: a scenario needs its baseline published.
-  const ordered = [...files].sort((a, b) => Number(Boolean(platform.target(a).scenario)) - Number(Boolean(platform.target(b).scenario)));
-  for (const f of ordered) {
-    const key = `${platform.dir}/${f}`;
-    const file = path.join(dir, f);
-    const { city: slug, scenario } = platform.target(f);
+  const ordered = sources
+    .filter((s) => s.platform === platform && s.target)
+    .sort((a, b) => Number(Boolean(a.target.scenario)) - Number(Boolean(b.target.scenario)));
+  for (const { key, file, size, target, place } of ordered) {
+    const { city: slug, scenario, name } = target;
     const record = records.get(slug);
     const prev = scenario
       ? record?.scenarios?.[scenario]?.sources?.[platform.layer]
@@ -232,9 +305,8 @@ for (const platform of selected) {
       scenario ? record?.scenarios?.[scenario]?.layers?.[platform.layer] : record?.platforms?.[platform.layer],
     );
     seen.add(`${label({ city: slug, scenario })}/${platform.layer}`);
-    const size = sizeOf(file);
     const sha = sha256(file);
-    const item = { platform, key, file, slug, scenario, sha, size };
+    const item = { platform, key, file, slug, scenario, name, place, sha, size };
 
     let reason = null;
     if (opts.has('force')) reason = prev || published ? 'forced' : 'new';
@@ -266,7 +338,9 @@ console.log(
     (stale.length ? `, ${stale.length} from an older importer` : '') +
     (DRY_RUN ? ' (dry run)' : ''),
 );
-const target = (item) => (item.scenario ? `${item.slug}, scenario ${item.scenario}` : item.slug);
+const target = (item) =>
+  (item.scenario ? `${item.slug}, scenario ${item.scenario}` : item.slug) +
+  (item.place ? ` (${item.place}: "${item.name}")` : '');
 for (const item of plan) {
   console.log(`  ${item.reason.padEnd(8)} ${item.key}  → ${target(item)}  (${mb(item.size)})`);
 }
@@ -276,6 +350,8 @@ for (const item of adopt) {
 for (const key of removed) {
   console.log(`  missing  ${key}  no longer in input_data/, its city stays published`);
 }
+for (const line of clashes) console.log(`  skipped  ${line}`);
+for (const line of unplaced) console.log(`  skipped  ${line}`);
 if (stale.length) {
   console.log(
     `  ${stale.length} file(s) were imported by an earlier version of the importer; ` +
@@ -371,7 +447,9 @@ const done = [];
 const failed = [];
 for (const item of plan) {
   console.log(`\n── ${item.platform.id}: ${target(item)} (${item.reason})`);
-  if (run('scripts/import-data.mjs', [item.platform.id, item.file, '--no-index'])) done.push(item);
+  const args = [item.platform.id, item.file, '--no-index', '--city', item.slug, '--default-name', item.name];
+  if (item.scenario) args.push('--scenario', item.scenario);
+  if (run('scripts/import-data.mjs', args)) done.push(item);
   else failed.push(item);
 }
 

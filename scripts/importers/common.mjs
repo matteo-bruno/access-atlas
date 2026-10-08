@@ -1,6 +1,6 @@
 // Small pieces every importer needs.
 
-import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt, ringCentroid } from '../lib/bundle.mjs';
+import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt, ringCentroid, weightedCentre } from '../lib/bundle.mjs';
 import { openSource } from '../lib/zip.mjs';
 
 /** A source file's JSON, BOM and all. */
@@ -58,4 +58,17 @@ export function readCells(source) {
     cells.push({ h3, properties: p });
   }
   return { path: file.path, cells, worstBoundary };
+}
+
+/**
+ * Where a GeoJSON source's city is: its population-weighted centre, as
+ * [lon, lat], the point the importer takes its country from. update-data
+ * asks it only to tell apart two cities whose names make the same id.
+ */
+export function locateCells(source) {
+  const { cells } = readCells(source);
+  return weightedCentre(
+    cells.map((c) => c.h3),
+    cells.map((c) => Number(c.properties.population) || 0),
+  );
 }
