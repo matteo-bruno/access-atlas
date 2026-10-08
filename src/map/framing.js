@@ -1,3 +1,5 @@
+import { geoEqualEarth } from 'd3-geo';
+
 // How a city map frames its city.
 //
 // The catalogue's `zoom` is a fit computed offline from the extent of the
@@ -11,6 +13,31 @@
 const CITY_ZOOM_BOOST = 1.1;
 
 /**
+ * The projection the site's world maps are drawn in: Equal Earth, on the
+ * Greenwich meridian.
+ *
+ * An equal-area projection, because what these maps show is where in the
+ * world the Atlas has data, and Mercator answered that with a Europe and a
+ * North America twice the size of Africa. MapLibre cannot draw it (version 6
+ * registers mercator, globe and vertical-perspective, and nothing else), so
+ * the world maps are drawn by `WorldMap.jsx` with d3-geo, and only the city
+ * view is MapLibre.
+ *
+ * The central meridian is fixed at 0° rather than following the coverage:
+ * a world that rotates as cities are added is a different map each time.
+ * The price is that coverage straddling the antimeridian (Auckland and
+ * Honolulu) is framed the long way round, which is what a flat map with one
+ * seam is.
+ */
+export const worldProjectionAt = (scale = 1) => geoEqualEarth().rotate([0, 0]).scale(scale);
+
+const UNIT = worldProjectionAt(1).translate([0, 0]);
+// Equal Earth at scale 1: half the world's width (at the equator) and half
+// its height (at the poles).
+const HALF_WIDTH = UNIT([180, 0])[0];
+const HALF_HEIGHT = -UNIT([0, 90])[1];
+
+/**
  * How far past the world-width fit the site's coverage maps sit, and the
  * centre they look at, when the published coverage is not known yet.
  *
@@ -22,19 +49,19 @@ const CITY_ZOOM_BOOST = 1.1;
  * and fall back to these two constants only for the frame or two before the
  * catalogue has answered.
  *
- * The longitude span is `360 / 2^boost` at any width (the fit zoom already
- * scales with the container), so zero is the plain fit — the whole world
- * across the container — and each step of boost halves it. These values are
- * what `coverageFraming()` derives for the coverage published today; keeping
- * the fallback equal to the derived pose is what stops a cold load from
- * visibly re-framing when the catalogue arrives.
+ * The world's width is `container / 2^-boost` at any size, so zero is the
+ * plain fit (the whole world across the container) and each step of boost
+ * halves the part of it on screen. These values are what
+ * `coverageFraming()` derives for the coverage published today; keeping the
+ * fallback equal to the derived pose is what stops a cold load from visibly
+ * re-framing when the catalogue arrives.
  *
  * **Do not hand-tune these to suit one screenshot.** They are a cache of the
  * function's output, not an independent design choice — if the frame is
  * wrong, the padding or the clamp below is what wants changing.
  */
-export const WORLD_ZOOM_BOOST = 0.27;
-export const WORLD_CENTER = [-101.16, 48.87];
+export const WORLD_ZOOM_BOOST = 0.33;
+export const WORLD_CENTER = [14.27, 46.7];
 
 /**
  * How much wider than the coverage itself the frame is drawn.
@@ -51,46 +78,9 @@ const COVERAGE_PADDING = 1.25;
  * Without a ceiling, an Atlas publishing a single city would zoom its world
  * map to that city's rooftops — the coverage map's job is to say where in the
  * world the Atlas has data, which needs the world visible around it. 2.4 is
- * about 68° of longitude, roughly Europe end to end.
+ * about a fifth of the world's width, roughly Europe end to end.
  */
 const MAX_COVERAGE_BOOST = 2.4;
-
-const mercatorY = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
-const inverseMercatorY = (y) => ((Math.atan(Math.exp(y)) - Math.PI / 4) * 360) / Math.PI;
-
-/**
- * The shortest arc of longitude containing every point.
- *
- * Not `max - min`: coverage that straddles the antimeridian (Auckland at
- * +174°, Honolulu at −157°) is 29° of world across the date line, and a plain
- * bbox reads it as 331° the long way round and frames the entire globe to
- * show two cities that are neighbours. The arc is the complement of the
- * *largest gap* between consecutive longitudes, which is that 29°.
- *
- * @returns {{ span: number, center: number }} degrees, centre in [−180, 180]
- */
-function longitudeArc(lons) {
-  const sorted = [...lons].sort((a, b) => a - b);
-  if (sorted.length === 1) return { span: 0, center: sorted[0] };
-
-  let widestGap = -1;
-  let gapStartsAt = sorted[0];
-  for (let i = 0; i < sorted.length; i++) {
-    const from = sorted[i];
-    // The last point's gap wraps around the world to the first.
-    const to = i === sorted.length - 1 ? sorted[0] + 360 : sorted[i + 1];
-    if (to - from > widestGap) {
-      widestGap = to - from;
-      gapStartsAt = from;
-    }
-  }
-
-  const span = 360 - widestGap;
-  // The data starts where the widest gap ends and runs `span` degrees east.
-  const west = gapStartsAt + widestGap;
-  const center = ((((west + span / 2) % 360) + 540) % 360) - 180;
-  return { span, center };
-}
 
 /**
  * Where the site's two coverage maps should look, derived from the coverage
@@ -104,38 +94,102 @@ function longitudeArc(lons) {
  * failure is visible to a test that only asks whether the markers are inside
  * the frame, so the frame follows the data instead of being asserted about.
  *
+ * Measured in the projection, not in degrees: Equal Earth's meridians bend,
+ * so a degree of longitude is narrower at Oslo than at Rome, and the box
+ * that holds the markers on screen is the box of their projected positions.
+ * `extent` is that box, at scale 1, so `worldProjection` can also fit it
+ * against a box that is shorter than it is wide.
+ *
  * Both callers pass the *merged* coverage — every platform, not the one whose
  * tab is open — so switching platform never moves the world.
  *
  * @param {{lon: number, lat: number}[]} cities
- * @returns {{ center: [number, number], zoomBoost: number }}
+ * @returns {{ center: [number, number], zoomBoost: number,
+ *             extent: [[number, number], [number, number]] | null }}
  */
 export function coverageFraming(cities) {
-  const points = (cities ?? []).filter(
-    (city) => Number.isFinite(city?.lon) && Number.isFinite(city?.lat),
-  );
+  const points = (cities ?? [])
+    .filter((city) => Number.isFinite(city?.lon) && Number.isFinite(city?.lat))
+    .map((city) => UNIT([city.lon, city.lat]));
   if (points.length === 0) {
-    return { center: WORLD_CENTER, zoomBoost: WORLD_ZOOM_BOOST };
+    return { center: WORLD_CENTER, zoomBoost: WORLD_ZOOM_BOOST, extent: null };
   }
 
-  const { span, center: centerLon } = longitudeArc(points.map((c) => c.lon));
+  const xs = points.map(([x]) => x);
+  const ys = points.map(([, y]) => y);
+  const extent = [
+    [Math.min(...xs), Math.min(...ys)],
+    [Math.max(...xs), Math.max(...ys)],
+  ];
+  const span = extent[1][0] - extent[0][0];
 
-  // Latitude's midpoint is taken in Mercator rather than in degrees: the
-  // projection stretches toward the poles, so the degree-midpoint of 37°N and
-  // 59°N sits visibly north of the middle of the drawn band.
-  const lats = points.map((c) => c.lat);
-  const centerLat = inverseMercatorY(
-    (mercatorY(Math.min(...lats)) + mercatorY(Math.max(...lats))) / 2,
-  );
-
-  // A single city (or several at one longitude) has no span to fit, so it
+  // A single city (or several on one meridian) has no span to fit, so it
   // takes the ceiling rather than dividing by zero.
   const zoomBoost =
     span > 0
-      ? Math.min(MAX_COVERAGE_BOOST, Math.max(0, Math.log2(360 / (span * COVERAGE_PADDING))))
+      ? Math.min(
+          MAX_COVERAGE_BOOST,
+          Math.max(0, Math.log2((2 * HALF_WIDTH) / (span * COVERAGE_PADDING))),
+        )
       : MAX_COVERAGE_BOOST;
 
-  return { center: [centerLon, centerLat], zoomBoost };
+  const [lon, lat] = UNIT.invert([
+    (extent[0][0] + extent[1][0]) / 2,
+    (extent[0][1] + extent[1][1]) / 2,
+  ]);
+  const round = (v) => Math.round(v * 100) / 100;
+  return { center: [round(lon), round(lat)], zoomBoost: round(zoomBoost), extent };
+}
+
+/**
+ * The projection a world map of this size draws with, posed by a frame from
+ * `coverageFraming()` (or any `{ center, zoomBoost }`).
+ *
+ * The one place a world map's pose is computed: `WorldMap` draws with it and
+ * `smoke.mjs` reprojects published cities with it, so the test asks where
+ * the map put a city rather than restating the arithmetic.
+ *
+ * - The scale spans the world across the width, times `2^zoomBoost`, and
+ *   backs off if the coverage would not fit the height (a wide, short box).
+ * - The centre is then clamped the way a map is: along an axis where the
+ *   world is smaller than the box it is centred, and along one where it is
+ *   larger no paper shows past its edge. At the plain fit that centres the
+ *   whole world; framed on Europe, it keeps the frame full.
+ *
+ * @param {{ width: number, height: number }} size  CSS pixels
+ * @param {{ center?: [number, number], zoomBoost?: number, extent?: object }} frame
+ * @returns {{ projection: Function, scale: number, worldWidth: number }}
+ */
+export function worldProjection({ width, height }, { center = [0, 0], zoomBoost = 0, extent = null } = {}) {
+  const fit = Math.max(width, 1) / (2 * HALF_WIDTH);
+  let scale = fit * 2 ** zoomBoost;
+  if (extent) {
+    const tall = (extent[1][1] - extent[0][1]) * COVERAGE_PADDING;
+    if (tall > 0 && tall * scale > height) scale = Math.max(fit, height / tall);
+  }
+
+  const projection = worldProjectionAt(scale).translate([0, 0]);
+  const [cx, cy] = projection(center);
+  const clamp = (offset, half, box) => {
+    // `offset` puts the world's centre at this screen coordinate.
+    if (2 * half <= box) return box / 2;
+    return Math.min(half, Math.max(box - half, offset));
+  };
+  const tx = clamp(width / 2 - cx, HALF_WIDTH * scale, width);
+  const ty = clamp(height / 2 - cy, HALF_HEIGHT * scale, height);
+  projection.translate([tx, ty]);
+
+  return { projection, scale, worldWidth: 2 * HALF_WIDTH * scale };
+}
+
+/**
+ * The MapLibre-equivalent zoom of a world drawn `worldWidth` pixels wide:
+ * MapLibre draws the world 512 px wide at zoom 0. Marker sizes are written
+ * against MapLibre zooms (see map/layers.js), and this keeps them the size
+ * they were.
+ */
+export function worldZoom(worldWidth) {
+  return Math.log2(Math.max(worldWidth, 1) / 512);
 }
 
 export function cityZoom(profile, boost = CITY_ZOOM_BOOST) {

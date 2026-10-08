@@ -27,10 +27,10 @@ export const POSTS = [
 
     en: {
       title: '15-minute city: the layer that measures proximity',
-      lede: 'How long it takes to walk or cycle to the things a day is made of — ten categories of everyday service, cell by cell, read against the 15-minute reference.',
+      lede: 'How long it takes to walk or cycle to the things a day is made of — nine categories of everyday service, cell by cell, read against the 15-minute reference.',
       body: [
         {
-          p: 'The proximity layer answers one question for every 200 m cell of a city: how long does it take, from here, to reach the nearest pharmacy, school, bakery, park, gym, bus stop? It answers it ten times over — once per category of service — and twice again, on foot and by bicycle.',
+          p: 'The proximity layer answers one question for every 200 m cell of a city: how long does it take, from here, to reach the nearest pharmacy, school, bakery, park, gym, bus stop? It answers it nine times over — once per category of service — and twice again, on foot and by bicycle.',
         },
         {
           p: 'The times are not straight-line distances. They are computed on the real street network from OpenStreetMap with OSRM, so a river without a bridge, a railway without a crossing, or a motorway with no pavement all cost what they cost in practice.',
@@ -40,7 +40,7 @@ export const POSTS = [
           p: 'White sits at 15 minutes — the reference the idea is named after. Cooler colours are quicker than that, warmer ones slower, and the scale keeps darkening past 30 minutes rather than stopping there, because in most cities a real share of cells sit well beyond half an hour from some category of service.',
         },
         {
-          p: 'One scale serves all ten categories and both modes. That is deliberate: a colour means the same number of minutes whatever is selected, so switching from healthcare to schools shows you a difference rather than recolouring the same city.',
+          p: 'One scale serves all nine categories and both modes. That is deliberate: a colour means the same number of minutes whatever is selected, so switching from healthcare to schools shows you a difference rather than recolouring the same city.',
         },
         { h2: 'What it does not say' },
         {
@@ -67,10 +67,10 @@ export const POSTS = [
 
     it: {
       title: 'Città dei 15 minuti: il layer che misura la prossimità',
-      lede: 'Quanto ci vuole, a piedi o in bicicletta, per raggiungere le cose di cui è fatta una giornata — dieci categorie di servizi quotidiani, cella per cella, lette rispetto al riferimento dei 15 minuti.',
+      lede: 'Quanto ci vuole, a piedi o in bicicletta, per raggiungere le cose di cui è fatta una giornata — nove categorie di servizi quotidiani, cella per cella, lette rispetto al riferimento dei 15 minuti.',
       body: [
         {
-          p: 'Il layer della prossimità risponde a una domanda per ogni cella da 200 m di una città: quanto ci vuole, da qui, per raggiungere la farmacia, la scuola, il forno, il parco, la palestra, la fermata più vicini? Risponde dieci volte — una per categoria di servizio — e altre due, a piedi e in bicicletta.',
+          p: 'Il layer della prossimità risponde a una domanda per ogni cella da 200 m di una città: quanto ci vuole, da qui, per raggiungere la farmacia, la scuola, il forno, il parco, la palestra, la fermata più vicini? Risponde nove volte — una per categoria di servizio — e altre due, a piedi e in bicicletta.',
         },
         {
           p: 'I tempi non sono distanze in linea d’aria: sono calcolati sulla rete stradale reale di OpenStreetMap con OSRM, quindi un fiume senza ponte, una ferrovia senza attraversamento o una tangenziale senza marciapiede costano quello che costano davvero.',
@@ -80,7 +80,7 @@ export const POSTS = [
           p: 'Il bianco sta a 15 minuti — il riferimento da cui l’idea prende il nome. I colori freddi sono più rapidi, quelli caldi più lenti, e la scala continua a scurirsi oltre i 30 minuti invece di fermarsi lì: nella maggior parte delle città una quota reale di celle sta ben oltre la mezz’ora da qualche categoria di servizio.',
         },
         {
-          p: 'Una sola scala vale per tutte e dieci le categorie e per entrambe le modalità. È voluto: un colore significa lo stesso numero di minuti qualunque cosa sia selezionata, così passare dalla sanità alle scuole mostra una differenza invece di ricolorare la stessa città.',
+          p: 'Una sola scala vale per tutte e nove le categorie e per entrambe le modalità. È voluto: un colore significa lo stesso numero di minuti qualunque cosa sia selezionata, così passare dalla sanità alle scuole mostra una differenza invece di ricolorare la stessa città.',
         },
         { h2: 'Cosa non dice' },
         {

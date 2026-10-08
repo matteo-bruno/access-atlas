@@ -90,7 +90,7 @@ export default {
       },
       desc: {
         fifteen:
-          'Tempo a piedi e in bicicletta verso dieci categorie di servizi quotidiani, letto rispetto al riferimento dei 15 minuti.',
+          'Tempo a piedi e in bicicletta verso nove categorie di servizi quotidiani, letto rispetto al riferimento dei 15 minuti.',
         citychrone:
           'Geografia dei tempi di viaggio — la città ridisegnata misurando la distanza in minuti di trasporto pubblico.',
         cardep:
@@ -148,10 +148,10 @@ export default {
   platform: {
     search: 'Cerca la tua città…',
     searchHint: '⌘K',
+    searchClear: 'Cancella la ricerca',
     paper: 'Articolo ↗',
     welcome: 'Benvenuti in {name}',
     dismiss: 'Chiudi',
-    ctaMap: 'Clicca su una città nella mappa',
     learnMore: 'Scopri di più →',
     attribution: 'Cartografia di base: Natural Earth · Dati © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} città',
@@ -178,7 +178,9 @@ export default {
     fifteen: {
       label: 'Accesso di prossimità',
       intro:
-        'Tempo di viaggio a piedi e in bicicletta verso dieci categorie di servizi quotidiani — sanità, istruzione, spesa, ristorazione, cultura, spazi aperti, attività fisica, servizi, mobilità — calcolato per ogni cella della città e letto rispetto al riferimento dei 15 minuti.',
+        'Tempo di viaggio a piedi e in bicicletta verso nove categorie di servizi quotidiani — sanità, istruzione, spesa, ristorazione, cultura, spazi aperti, attività fisica, servizi, mobilità — calcolato per ogni cella della città e letto rispetto al riferimento dei 15 minuti.',
+      welcomeIntro:
+        'Guarda i tempi di viaggio verso i servizi quotidiani da qualsiasi punto di qualsiasi città e confrontali con il riferimento dei 15 minuti.',
       legendUnit: 'Tempo medio verso i servizi',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
@@ -210,11 +212,11 @@ export default {
     },
   },
 
-  // Vista città di 15minCity: dieci categorie × due modi, scelti a runtime.
+  // Vista città di 15minCity: nove categorie × due modi, scelti a runtime.
   fifteen: {
     mapTitle: 'Tempo di viaggio verso i servizi',
     minutes: 'min',
-    // Le dieci categorie della cella selezionata, tutte insieme.
+    // Le nove categorie della cella selezionata, tutte insieme.
     barsTitle: 'Tutte le categorie, da questa cella',
     barsAxis: 'Le barre arrivano a {max} {unit}; oltre, la riempiono.',
     legendValue: 'Tempo di prossimità',
@@ -405,7 +407,7 @@ export default {
       map: {
         pov: 'Ogni cella prende il colore della zona in cui ricade: verde sopra la mediana su entrambi gli assi, rosso sotto su entrambi, e nel mezzo i due casi misti. Le soglie sono le mediane pesate per popolazione di quella città, quindi una zona confronta luoghi dentro una città e mai una città con un’altra — a confrontarsi fra città sono i punteggi sottostanti.',
         cardep: 'Blu dove il trasporto pubblico raggiunge più opportunità dell’auto, bianco dove le due si equivalgono, rosso dove l’auto ne raggiunge di più. La scala è fissa per tutte le città invece di essere adattata a ciascuna, così lo stesso colore è lo stesso indice ovunque: una città non viene mai ricolorata per riempire la tavolozza.',
-        fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala vale per tutte e dieci le categorie ed entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
+        fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala vale per tutte e nove le categorie ed entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
       },
       summary: {
         pov: '«Celle» conta quelle coperte dal dataset pubblicato. Ogni mediana è il punteggio della cella mediana: conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuna delle due porta un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale della città.',
@@ -427,7 +429,7 @@ export default {
       methods: {
         pov: 'Celle H3 di risoluzione 9, larghe circa 200 m. Tempi a piedi da OSRM su OpenStreetMap; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione dalle griglie WorldPop a 100 m, riscalate sulle stime ONU.',
         cardep: 'Celle H3 di risoluzione 9, larghe circa 200 m. Tempi in auto e a piedi da OSRM su OpenStreetMap, con un margine per il parcheggio e ritardi da traffico specifici per città sul lato auto; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione da WorldPop.',
-        fifteen: 'Celle H3 di risoluzione 9. Tempi a piedi e in bicicletta da OSRM su OpenStreetMap; servizi da OpenStreetMap, raggruppati nelle dieci categorie elencate nel selettore; popolazione da WorldPop.',
+        fifteen: 'Celle H3 di risoluzione 9. Tempi a piedi e in bicicletta da OSRM su OpenStreetMap; servizi da OpenStreetMap, raggruppati nelle nove categorie elencate nel selettore; popolazione da WorldPop.',
         citychrone: 'Celle H3 di risoluzione 9, un export per ogni ora del giorno. Trasporto pubblico da orari GTFS; entrambi i punteggi e le isocrone sono definiti nell’articolo della piattaforma. I tempi di viaggio sono pubblicati in minuti interi con un tetto a 180.',
       },
       paperNote: 'Il metodo è esposto per esteso nell’articolo.',

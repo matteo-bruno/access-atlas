@@ -83,7 +83,7 @@ export default {
       },
       desc: {
         fifteen:
-          'Tiempo a pie y en bicicleta hasta diez categorías de servicios cotidianos, leído frente a la referencia de los 15 minutos.',
+          'Tiempo a pie y en bicicleta hasta nueve categorías de servicios cotidianos, leído frente a la referencia de los 15 minutos.',
         citychrone:
           'Geografía de los tiempos de viaje: la ciudad redibujada para que la distancia se mida en minutos de transporte público.',
         cardep:
@@ -139,10 +139,10 @@ export default {
   platform: {
     search: 'Busca tu ciudad…',
     searchHint: '⌘K',
+    searchClear: 'Borrar la búsqueda',
     paper: 'Artículo ↗',
     welcome: 'Te damos la bienvenida a {name}',
     dismiss: 'Cerrar',
-    ctaMap: 'Haz clic en una ciudad del mapa',
     learnMore: 'Más información →',
     attribution: 'Mapa base: Natural Earth · Datos © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} ciudades',
@@ -167,7 +167,9 @@ export default {
     fifteen: {
       label: 'Acceso de proximidad',
       intro:
-        'Tiempo a pie y en bicicleta hasta diez categorías de servicios cotidianos (salud, educación, compras, restauración, cultura, espacios al aire libre, actividad física, servicios, movilidad), calculado para cada celda de la ciudad y leído frente a la referencia de los 15 minutos.',
+        'Tiempo a pie y en bicicleta hasta nueve categorías de servicios cotidianos (salud, educación, compras, restauración, cultura, espacios al aire libre, actividad física, servicios, movilidad), calculado para cada celda de la ciudad y leído frente a la referencia de los 15 minutos.',
+      welcomeIntro:
+        'Consulta los tiempos de viaje a los servicios cotidianos desde cualquier lugar de cualquier ciudad y compáralos con la referencia de los 15 minutos.',
       legendUnit: 'Tiempo medio hasta los servicios',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
@@ -368,7 +370,7 @@ export default {
       map: {
         pov: 'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana en ambos ejes, rojo por debajo en ambos y, entre medias, los dos casos mixtos. Los umbrales son las medianas ponderadas por población de esa ciudad, así que una zona compara lugares dentro de una ciudad y nunca una ciudad con otra: lo que se compara entre ciudades son las puntuaciones subyacentes.',
         cardep: 'Azul donde el transporte público llega a más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche llega a más. La escala es fija para todas las ciudades en lugar de ajustarse a cada una, así que el mismo color es el mismo índice en todas partes: ninguna ciudad se recolorea para llenar la paleta.',
-        fifteen: 'Las celdas se colorean según el tiempo que se tarda en llegar a la categoría elegida con el medio elegido. El blanco está en 15 minutos, la referencia que da nombre a la plataforma, y la escala sigue oscureciéndose más allá de 30 hasta el negro a 120. La leyenda nombra ese tramo final en lugar de estirarse hasta él, lo que aplastaría el intervalo en el que está casi cada celda. Una sola escala sirve para las diez categorías y los dos medios, así que un color significa lo mismo sea cual sea la selección.',
+        fifteen: 'Las celdas se colorean según el tiempo que se tarda en llegar a la categoría elegida con el medio elegido. El blanco está en 15 minutos, la referencia que da nombre a la plataforma, y la escala sigue oscureciéndose más allá de 30 hasta el negro a 120. La leyenda nombra ese tramo final en lugar de estirarse hasta él, lo que aplastaría el intervalo en el que está casi cada celda. Una sola escala sirve para las nueve categorías y los dos medios, así que un color significa lo mismo sea cual sea la selección.',
       },
       summary: {
         pov: '«Celdas» cuenta las que cubre el conjunto de datos publicado. Cada mediana es la puntuación de la celda mediana: recuentos ponderados de puntos de interés alcanzables, y por eso ninguna lleva unidad: no son metros ni empleos. La población es la suma del propio conjunto de datos sobre sus celdas, no una cifra oficial de la ciudad.',
@@ -390,7 +392,7 @@ export default {
       methods: {
         pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
         cardep: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos en coche y a pie con OSRM sobre OpenStreetMap, con un margen para aparcar y retrasos de tráfico propios de cada ciudad en el lado del coche; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de WorldPop.',
-        fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las diez categorías que muestra el selector; población de WorldPop.',
+        fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las nueve categorías que muestra el selector; población de WorldPop.',
         citychrone: 'Celdas H3 de resolución 9, una exportación por cada hora del día. Transporte público a partir de horarios GTFS; las dos puntuaciones y las isócronas se definen en el artículo de la plataforma. Los tiempos de viaje se publican en minutos enteros, con un máximo de 180.',
       },
       paperNote: 'El método se expone por completo en el artículo.',

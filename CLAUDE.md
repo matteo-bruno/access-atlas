@@ -361,7 +361,7 @@ readable:
   makes two maps uncomparable. Each domain is a round number covering the
   published range, and the comment above it states the measurements it was
   checked against — update both together. 15minCity shares one scale across
-  all ten categories and both modes for the same reason.
+  all nine categories and both modes for the same reason.
 
 **A pale swatch needs an edge, and the edge is ink.** Every scale here runs
 pale at one end, and on this paper the palest step has no outline of its own:
@@ -634,17 +634,36 @@ and is the Atlas's own data rather than a texture that resembles it. The
 landing only leaves it a viewport of clear space; its own sections scroll over
 it as before.
 
+**The world maps are Equal Earth, drawn with d3-geo, not MapLibre.** The
+backdrop, the platform screen and the platform cards' world thumbnails are
+`WorldMap` (`src/map/WorldMap.jsx`): one canvas, paper, the projection's own
+outline, a 30° graticule, Natural Earth's land and the markers, in
+`geoEqualEarth` on the Greenwich meridian. Mercator drew Europe and North
+America twice the size of Africa on the map whose job is to say where in the
+world the Atlas has data. The central meridian is fixed, not fitted: a world
+that rotates as cities are added is a different map each time. Pan and zoom
+are d3-zoom on top of the frame (`MAX_ZOOM` 6, about a region: a city is
+opened, not zoomed into), the tooltip is a positioned `.aa-map-popup`, and
+hit-testing is a quadtree over the drawn markers. Marker styles are plain
+functions of the city and the zoom (`cityMarkerStyle`,
+`coverageMarkerStyle` in `map/layers.js`), at the sizes the MapLibre
+expressions had, through `worldZoom`. Only the city view is MapLibre now.
+
 **The coverage frame is derived from the coverage, not written down.**
 `coverageFraming()` in `map/framing.js` takes the merged city list and
-returns the centre and zoom boost both coverage maps use. The longitude span
-is `360 / 2^boost` at any width, so the arithmetic is exact: it fits the
-*shortest arc* containing every city (not `max − min` — coverage straddling
-the antimeridian would otherwise frame the whole globe to show two
-neighbours), pads it by 1.25, and clamps the result to at most 2.4 so an
-Atlas publishing one city still draws a world rather than that city's
-rooftops. Latitude's midpoint is taken in Mercator, because the projection
-stretches toward the poles and the degree-midpoint sits visibly north of the
-middle of the drawn band.
+returns the centre and zoom boost both coverage maps use, measured on the
+cities' projected positions (Equal Earth's meridians bend, so degrees are
+the wrong ruler). The world is `2^boost` container widths wide, so the
+arithmetic is exact: it fits the projected span of every city, pads it by
+1.25, and clamps the result to at most 2.4 so an Atlas publishing one city
+still draws a world rather than that city's rooftops. `worldProjection(size,
+frame)` turns a frame into the projection for a box: it also backs off if
+the coverage would not fit the box's height, and clamps the centre the way a
+map does (an axis where the world is smaller than the box is centred; one
+where it is larger shows no paper past the world's edge). It is the one
+place a pose is computed: `WorldMap` draws with it and `smoke.mjs`
+reprojects with it. Coverage straddling the antimeridian is framed the long
+way round: a flat map with one seam cannot do otherwise.
 
 A pose written down once goes wrong in both directions as coverage grows:
 too tight crops new continents off the sides, too loose shrinks the cities
@@ -660,16 +679,11 @@ Do not hand-tune them; change the padding or the clamp instead.
 Both callers pass the **merged** coverage (`all.cities`), never the open
 tab's, so switching platform never moves the world — and so the backdrop and
 the platform screen stay one map. `smoke.mjs` reprojects the published
-coverage and fails if any marker lands outside.
-
-**A world view must re-apply its centre with its zoom** (`applyWorldWidthZoom`).
-MapLibre clamps the centre latitude so a viewport cannot show past the poles,
-and at the construction zoom the whole world is barely taller than the box —
-the clamp there is about ±18.6°. A map given `center: [-40, 47]` was quietly
-pulled to 19°N and never let back when `setZoom` arrived, which is a bug
-nothing else could see: the map rendered, had markers, and passed every other
-check. The smoke suite now hovers the pixel a known city projects to, which
-pins centre and zoom together.
+coverage and fails if any marker lands outside, hovers the pixel Milan
+projects to (which pins centre and zoom together: a MapLibre centre clamp
+once pulled a map asked for 47°N down to 19°N, and nothing else could see
+it), and checks the cached `WORLD_CENTER` / `WORLD_ZOOM_BOOST` still equal
+the pose the published coverage gives.
 
 **The backdrop and the platform screen are one map, and must stay one.** Same
 centre and same zoom past the world-width fit (`WORLD_CENTER` and
@@ -696,18 +710,19 @@ unreadable over it, give that block a background; do not reach for the veil.
 
 **The backdrop is dismissed by the map that replaces it, never by the route.**
 The two screens that *are* a full-bleed map — `/platforms` and
-`/atlas/:cityId` — end up with a second WebGL context drawing nothing behind
-an opaque one, so the backdrop does go; but dropping it the moment the URL
+`/atlas/:cityId` — end up with a second map drawing nothing behind an opaque
+one, so the backdrop does go; but dropping it the moment the URL
 changed emptied the frame while the new map was still being built, and the
 world left and came back on a step that is meant to be one world throughout.
 So a covering map reports itself once it has painted (`useCoversBackdrop` in
-`src/map/backdrop.js`, passed as `coversBackdrop` to `AtlasMap`) and only then
+`src/map/backdrop.js`, passed as `coversBackdrop` to `WorldMap` and
+`AtlasMap`) and only then
 is the backdrop let go — hidden with `visibility`, not unmounted, so stepping
 back out returns the same map instead of building a second one, and the box
 stays measurable so the world-width fit survives a resize it cannot see. The
 veil goes earlier, on the route, so what the incoming map fades up over is the
 bare world it is about to be. Opening the site straight onto one of those two
-screens still builds one context, not two: the backdrop is created the first
+screens still builds one map, not two: the backdrop is created the first
 time a page actually wants it.
 
 **Holding the backdrop is not enough on its own: nothing may paint over it
@@ -724,7 +739,9 @@ so the box is the world until the map fills it; and the backdrop's own fade out
 is timed to start *after* that fade in has finished, so the two overlap rather
 than trade places.
 
-**A map is painted when its own sources are, not when its style is.** Style
+**A map is painted when its own sources are, not when its style is.** For
+`WorldMap` that is simple: it is painted once it has drawn the land and the
+markers it was given, synchronously, in the same commit. For `AtlasMap`: style
 load is the paper and the *declaration* of everything else; the data behind it
 arrives after. The city markers landed about 200 ms behind the world, so a map
 that faded in on style load covered the backdrop's markers with its own empty
@@ -769,9 +786,28 @@ the landing can be reverted by pointing `/` back at it.
 
 The world map at `/platforms` has no bar above it either: the search
 (`CitySearch`, which owns its own ⌘K and its own CSS so it can sit anywhere)
-and the source link float on the map, the platform's paper and comparison
-moved into the welcome card that introduces it, and the legend sits below the
-search rather than under it.
+and the source link float on the map, and the legend sits below the
+search rather than under it. The welcome card (top left) is a short,
+translucent introduction with nothing to act on but its close button: the two
+ways onward sit in the map's bottom corners, so they outlive the card.
+**"Compare cities" is on every layer** (bottom left, in the layer's accent):
+P.O.V. and Car Dependency link their compare table, 15minCity and CityChrone
+the Stats page's focus on that layer (`STATS_FOCUS` in `PlatformLanding.jsx`);
+the platform's paper is bottom right, beside the zoom. A layer may give the
+card copy of its own, `platform.<id>.welcomeIntro` (listed in
+`WELCOME_INTRO`), shorter than `intro`, which the "about this layer" dialog
+and the city view still read.
+
+**The search looks through every published city, whatever tab is open**, with
+the catalogue's names in both languages, its region and its boundary (a metro
+area has no marker where its core has one, and still has to be findable).
+Accents are folded, a name prefix beats a word prefix beats a substring beats
+a country, and a city opens on the open layer only if it has it. It is an
+ARIA combobox: arrows, Enter, Escape (clear, then leave), and the highlighted
+result is drawn large on the map. **It must not sit in a `.aa-mapui` box**:
+those scroll when short of room, a scrolling box clips what its children
+paint outside it, and the results menu opens outside it. That is how the
+menu went unseen for a while: typing produced nothing on screen at all.
 
 **It opens on a layer, not on a count of layers.** `/platforms` is the first
 layer — 15-minute city — and the merged map has its own address at
@@ -1077,18 +1113,13 @@ States", not Natural Earth's "United States of America") and a new layer
 should not rename a city. `--name`, `--name-it`, `--country`, `--region`,
 `--region-it` override.
 
-**MapLibre 6 has no Equal Earth.** `createProjectionFromName` registers
+**MapLibre 6 has no Equal Earth**, which is why the world maps are not
+MapLibre (see "The front door"). `createProjectionFromName` registers
 exactly `mercator`, `globe` and `vertical-perspective`; the style spec's
 projection type takes those names or a zoom interpolation between them,
-not an arbitrary projection. A flat equal-area world would mean drawing
-the two world maps with d3-geo instead of MapLibre — feasible, since they
-render only our own paper, graticule, land and dots — but it would take
-the backdrop/platform handover machinery with it (`coversBackdrop`, the
-fade timing, `applyWorldWidthZoom`, `coverageFraming`, and the smoke
-checks that reproject coverage to pixels all assume a MapLibre map).
-Pre-projecting the GeoJSON and feeding MapLibre the result as lon/lat is
-the trap: every geographic operation downstream would keep working and
-quietly give wrong positions.
+not an arbitrary projection. Pre-projecting the GeoJSON and feeding
+MapLibre the result as lon/lat is the trap: every geographic operation
+downstream would keep working and quietly give wrong positions.
 
 **Git already stores every blob zlib-compressed**, so gzipping does not
 shrink the *repository* much, and it costs delta compression, since a

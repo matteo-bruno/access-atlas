@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AtlasMap } from '../map/AtlasMap.jsx';
+import { WorldMap } from '../map/WorldMap.jsx';
 import { useBackdropCovered } from '../map/backdrop.js';
 import { coverageFraming } from '../map/framing.js';
-import { CoverageLayer } from './CityLayer.jsx';
+import { coverageMarkerStyle } from '../map/layers.js';
+import { COVERAGE_SCALE } from '../data/platforms.js';
 import { useAllCoverage } from '../data/useAtlasData.js';
 import './Backdrop.css';
 
@@ -43,9 +44,9 @@ const OWN_MAP = ['/platforms', '/atlas'];
  * and the outgoing one fades off one that is still there behind it.
  *
  * Covered is hidden rather than unmounted, so returning is instant and the
- * WebGL context is built once. It costs nothing to composite while hidden,
- * and `visibility` rather than `display` keeps the box measurable, which is
- * what lets the map keep its world-width fit across a resize it cannot see.
+ * map is built once. It costs nothing to composite while hidden, and
+ * `visibility` rather than `display` keeps the box measurable, which is what
+ * lets the map keep its world-width fit across a resize it cannot see.
  */
 export function Backdrop() {
   const { pathname } = useLocation();
@@ -54,8 +55,8 @@ export function Backdrop() {
   // framed on the data as cities are published beyond the original clusters
   // (see coverageFraming). The platform screen derives it from the same
   // merged list, which is what keeps the two maps one map.
-  const { center, zoomBoost } = coverageFraming(cities);
-  const mapRef = useRef(null);
+  const frame = useMemo(() => coverageFraming(cities), [cities]);
+  const markerStyle = useMemo(() => coverageMarkerStyle(COVERAGE_SCALE), []);
   const ownMap = OWN_MAP.some((prefix) => pathname.startsWith(prefix));
   // Both halves have to hold, and they answer different questions.
   //
@@ -69,17 +70,11 @@ export function Backdrop() {
 
   // Built the first time a page actually wants it, and kept from then on.
   // Opening the site straight onto a full-bleed map screen therefore still
-  // costs one WebGL context, not two.
+  // builds one map, not two.
   const [built, setBuilt] = useState(!ownMap);
   useEffect(() => {
     if (!ownMap) setBuilt(true);
   }, [ownMap]);
-
-  // Coming back out from under a covering map: ask for a frame rather than
-  // trusting the compositor to have kept the one it was hidden with.
-  useEffect(() => {
-    if (!covered) mapRef.current?.map?.triggerRepaint();
-  }, [covered]);
 
   if (!built) return null;
 
@@ -90,16 +85,7 @@ export function Backdrop() {
       }`}
       aria-hidden="true"
     >
-      <AtlasMap
-        ref={mapRef}
-        fitWorldWidth
-        worldZoomBoost={zoomBoost}
-        center={center}
-        interactive={false}
-        label=""
-      >
-        <CoverageLayer cities={cities} interactive={false} />
-      </AtlasMap>
+      <WorldMap frame={frame} cities={cities} markerStyle={markerStyle} label="" />
       <div className="aa-backdrop__veil" />
     </div>
   );

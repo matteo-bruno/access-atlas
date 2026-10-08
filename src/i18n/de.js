@@ -85,7 +85,7 @@ export default {
       },
       desc: {
         fifteen:
-          'Fuß- und Radwege zu zehn Kategorien alltäglicher Dienste, gelesen am Maßstab der 15 Minuten.',
+          'Fuß- und Radwege zu neun Kategorien alltäglicher Dienste, gelesen am Maßstab der 15 Minuten.',
         citychrone:
           'Eine Geografie der Reisezeiten: die Stadt so neu gezeichnet, dass Entfernung in Minuten mit dem öffentlichen Verkehr gemessen wird.',
         cardep:
@@ -141,10 +141,10 @@ export default {
   platform: {
     search: 'Ihre Stadt suchen…',
     searchHint: '⌘K',
+    searchClear: 'Suche löschen',
     paper: 'Artikel ↗',
     welcome: 'Willkommen bei {name}',
     dismiss: 'Schließen',
-    ctaMap: 'Klicken Sie auf eine Stadt in der Karte',
     learnMore: 'Mehr erfahren →',
     attribution: 'Grundkarte: Natural Earth · Daten © Sony CSL Rom · CC BY-NC 4.0',
     cityCount: '{count} Städte',
@@ -169,7 +169,9 @@ export default {
     fifteen: {
       label: 'Erreichbarkeit im Nahbereich',
       intro:
-        'Reisezeit zu Fuß und mit dem Rad zu zehn Kategorien alltäglicher Dienste (Gesundheit, Bildung, Einkauf, Essen, Kultur, Freiflächen, Bewegung, Dienstleistungen, Mobilität), berechnet für jede Zelle der Stadt und gelesen am Maßstab der 15 Minuten.',
+        'Reisezeit zu Fuß und mit dem Rad zu neun Kategorien alltäglicher Dienste (Gesundheit, Bildung, Einkauf, Essen, Kultur, Freiflächen, Bewegung, Dienstleistungen, Mobilität), berechnet für jede Zelle der Stadt und gelesen am Maßstab der 15 Minuten.',
+      welcomeIntro:
+        'Sehen Sie die Wegezeiten zu Einrichtungen des täglichen Bedarfs von jedem Ort jeder Stadt aus und vergleichen Sie sie mit dem 15-Minuten-Maßstab.',
       legendUnit: 'Mittlere Zeit zu den Diensten',
       legend: ['0–3 Min.', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
@@ -370,7 +372,7 @@ export default {
       map: {
         pov: 'Jede Zelle nimmt die Farbe ihrer Zone an: grün über dem Median auf beiden Achsen, rot darunter auf beiden, dazwischen die beiden gemischten Fälle. Die Schwellen sind die bevölkerungsgewichteten Mediane der jeweiligen Stadt. Eine Zone vergleicht also Orte innerhalb einer Stadt und nie eine Stadt mit einer anderen: Zwischen Städten vergleichbar sind die zugrunde liegenden Werte.',
         cardep: 'Blau, wo der öffentliche Verkehr mehr Chancen erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Die Skala ist für alle Städte gleich, statt an jede angepasst zu werden: Dieselbe Farbe bedeutet überall denselben Index, und keine Stadt wird umgefärbt, um die Palette zu füllen.',
-        fifteen: 'Die Zellen sind danach gefärbt, wie lange es dauert, die gewählte Kategorie mit dem gewählten Verkehrsmittel zu erreichen. Weiß liegt bei 15 Minuten, dem Maßstab, der der Plattform ihren Namen gibt, und die Skala wird über 30 hinaus weiter dunkler bis Schwarz bei 120. Die Legende benennt diesen Ausläufer, statt sich bis dorthin zu strecken, was den Bereich stauchen würde, in dem fast jede Zelle liegt. Eine einzige Skala gilt für alle zehn Kategorien und beide Verkehrsmittel: Eine Farbe bedeutet dasselbe, was auch gewählt ist.',
+        fifteen: 'Die Zellen sind danach gefärbt, wie lange es dauert, die gewählte Kategorie mit dem gewählten Verkehrsmittel zu erreichen. Weiß liegt bei 15 Minuten, dem Maßstab, der der Plattform ihren Namen gibt, und die Skala wird über 30 hinaus weiter dunkler bis Schwarz bei 120. Die Legende benennt diesen Ausläufer, statt sich bis dorthin zu strecken, was den Bereich stauchen würde, in dem fast jede Zelle liegt. Eine einzige Skala gilt für alle neun Kategorien und beide Verkehrsmittel: Eine Farbe bedeutet dasselbe, was auch gewählt ist.',
       },
       summary: {
         pov: '„Zellen“ zählt die vom veröffentlichten Datensatz abgedeckten. Jeder Median ist der Wert der mittleren Zelle: gewichtete Zählungen erreichbarer Orte von Interesse, weshalb keiner eine Einheit trägt. Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl der Stadt.',
@@ -392,7 +394,7 @@ export default {
       methods: {
         pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
         cardep: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Fahr- und Gehzeiten mit OSRM auf OpenStreetMap, auf der Autoseite mit einem Zuschlag für die Parkplatzsuche und stadtspezifischen Verkehrsverzögerungen; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus WorldPop.',
-        fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die zehn Kategorien der Auswahl; Bevölkerung aus WorldPop.',
+        fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die neun Kategorien der Auswahl; Bevölkerung aus WorldPop.',
         citychrone: 'H3-Zellen der Auflösung 9, ein Export pro Tagesstunde. Öffentlicher Verkehr aus GTFS-Fahrplänen; beide Werte und die Isochronen sind im Artikel der Plattform definiert. Reisezeiten werden in ganzen Minuten veröffentlicht, gedeckelt bei 180.',
       },
       paperNote: 'Die Methode ist im Artikel vollständig beschrieben.',

@@ -1,15 +1,16 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
-import { AtlasMap } from '../map/AtlasMap.jsx';
+import { WorldMap } from '../map/WorldMap.jsx';
 import { coverageFraming } from '../map/framing.js';
-import { CityLayer, CoverageLayer } from '../components/CityLayer.jsx';
+import { cityMarkerStyle, coverageMarkerStyle } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
 import {
   useAllCoverage,
+  useAtlasCities,
   useAtlasCityIds,
   useCityCoverage,
   usePlatformHasSummary,
@@ -19,6 +20,18 @@ import { paperForPlatform } from '../data/research.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
+
+// Every city of a layer side by side, on the Stats page. All populations
+// (`pop=0`): the page's default floor of a million residents is a choice for
+// its ranking, not for a layer's own comparison.
+const STATS_FOCUS = {
+  fifteen: '/stats?view=focus&pop=0',
+  citychrone: '/stats?view=focus&pop=0&m=citychrone.velocity.08',
+};
+
+// Layers whose welcome card has copy of its own, shorter than the `intro` the
+// "about this layer" dialog reads; the others introduce themselves with it.
+const WELCOME_INTRO = new Set(['fifteen']);
 
 /**
  * A picker dot is a miniature of the scale the map behind it draws with.
@@ -93,12 +106,56 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
   const all = useAllCoverage();
   const single = useCityCoverage(platform ?? PLATFORMS[0]);
   const hasSummary = usePlatformHasSummary(platform?.id);
+  // Where "compare cities" goes: the layer's own comparison table where it
+  // publishes one (P.O.V., Car Dependency), otherwise the Stats page's focus
+  // on that layer, which compares its cities from the statistics file.
+  const compareTo = !platform
+    ? null
+    : hasSummary
+      ? `/platforms/${platform.slug}/compare`
+      : STATS_FOCUS[platform.id] ?? null;
   const cities = platform ? single.cities : all.cities;
-  // Always the merged coverage, never the open tab's — see the AtlasMap props.
-  const worldFrame = coverageFraming(all.cities);
+  // Always the merged coverage, never the open tab's — see the WorldMap props.
+  const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
+  const markerStyle = useMemo(
+    () => (platform ? cityMarkerStyle(platform) : coverageMarkerStyle(COVERAGE_SCALE)),
+    [platform],
+  );
 
   const cityPageIds = useCityPageIds(platform?.id);
   const atlasCityIds = useAtlasCityIds();
+  const atlasCities = useAtlasCities();
+  const [searched, setSearched] = useState(null);
+
+  // What the search looks through: every published city, not the open
+  // tab's, with the catalogue's names in both languages, its region and its
+  // boundary. The coverage files carry only an English name and a country
+  // code, and a metro area has no marker where its core has one, so neither
+  // "Milano" nor Tokyo's metro area could be found.
+  const searchable = useMemo(() => {
+    const meta = new Map(atlasCities.map((city) => [city.id, city]));
+    const describe = (city, entry) => ({
+      ...city,
+      nameIt: entry?.nameIt,
+      region: entry?.region,
+      regionIt: entry?.regionIt,
+      extent: entry?.extent,
+      population: entry?.population ?? city.population,
+      layers: entry?.layers,
+    });
+    const list = all.cities.map((city) => describe(city, meta.get(city.id)));
+    const listed = new Set(list.map((city) => city.id));
+    for (const entry of atlasCities) {
+      if (listed.has(entry.id) || entry.extent !== 'fua' || !listed.has(entry.core)) continue;
+      const [lon, lat] = entry.center ?? [];
+      list.push(describe({ id: entry.id, name: entry.name, country: entry.country, lon, lat }, entry));
+    }
+    return list;
+  }, [all.cities, atlasCities]);
+  const layersOf = useMemo(
+    () => new Map(searchable.map((city) => [city.id, city.layers])),
+    [searchable],
+  );
   const paper = platform ? paperForPlatform(platform.id) : null;
   const copyKey = platform ? `platform.${platform.id}` : 'platform.all';
   const legend = t(`${copyKey}.legend`);
@@ -111,17 +168,21 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
     // mesh and a legacy one by swapping per-platform meshes, so it works for
     // every published city — there is nothing left for a per-platform page to
     // do that this does not.
+    //
+    // The search finds cities the open layer does not cover, and those open
+    // on a layer they have rather than on one they would draw nothing for.
     if (atlasCityIds.has(city.id) || cityPageIds.has(city.id)) {
-      navigate(platform ? `/atlas/${city.id}?layer=${platform.id}` : `/atlas/${city.id}`);
+      const layers = layersOf.get(city.id);
+      const onLayer = platform && (!layers || layers.includes(platform.id));
+      navigate(onLayer ? `/atlas/${city.id}?layer=${platform.id}` : `/atlas/${city.id}`);
       return;
     }
-    mapRef.current?.flyTo({ center: [city.lon, city.lat], zoom: 6, duration: 900 });
+    // Nothing to open (a seed city on a fresh checkout): show where it is.
+    mapRef.current?.flyTo({ center: [city.lon, city.lat], zoom: 5 });
   };
 
-  const tooltip = (feature) =>
-    platform
-      ? formatTooltip(platform, feature.properties, n)
-      : coverageTooltip(feature.properties, t, n);
+  const tooltip = (city) =>
+    platform ? formatTooltip(platform, city, n) : coverageTooltip(city, t, n);
 
   const title = platform ? platform.name : t('platform.all.name');
   const label = platform
@@ -132,9 +193,8 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
     <div className="aa-mapstage">
       {/* The map first, and always: it is what the landing holds behind its
           words, and what this screen is built around. */}
-      <AtlasMap
+      <WorldMap
         ref={mapRef}
-        fitWorldWidth
         // The same framing as the backdrop behind every other page: one world,
         // however you arrived at it (see coverageFraming). Which is also why
         // this map takes the backdrop's place rather than the route doing it:
@@ -144,33 +204,16 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         // Derived from `all.cities`, never from the open tab's `cities`: the
         // world must not move when the reader switches platform, and a tab
         // showing one city would otherwise frame itself to that city.
-        worldZoomBoost={worldFrame.zoomBoost}
-        center={worldFrame.center}
+        frame={worldFrame}
+        cities={cities}
+        markerStyle={markerStyle}
         coversBackdrop
         interactive={interactive}
+        tooltip={interactive ? tooltip : undefined}
+        onSelect={interactive ? openCity : undefined}
+        highlight={searched ? (searched.core ?? searched.id) : null}
         label={title}
-      >
-        {platform ? (
-          <CityLayer
-            platform={platform}
-            cities={cities}
-            interactive={interactive}
-            tooltip={interactive ? tooltip : undefined}
-            onSelect={
-              interactive ? (properties) => openCity({ ...properties, id: properties.id }) : undefined
-            }
-          />
-        ) : (
-          <CoverageLayer
-            cities={cities}
-            interactive={interactive}
-            tooltip={interactive ? tooltip : undefined}
-            onSelect={
-              interactive ? (properties) => openCity({ ...properties, id: properties.id }) : undefined
-            }
-          />
-        )}
-      </AtlasMap>
+      />
 
       {chrome && (
         <>
@@ -179,8 +222,13 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             its city count — the picker and the welcome card already say, and
             the repository link that sat here went with it: this screen is for
             reading the map, and the code is linked from the footer. */}
-        <div className="aa-mapui aa-mapui--tr aa-mapstage__tools aa-fadein">
-          <CitySearch cities={cities} onOpen={openCity} inputRef={searchRef} />
+        <div className="aa-mapstage__tools aa-fadein">
+          <CitySearch
+            cities={searchable}
+            onOpen={openCity}
+            onActive={setSearched}
+            inputRef={searchRef}
+          />
         </div>
 
         {/* Which set of cities the map draws — the four platforms, or all of
@@ -228,36 +276,33 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
                 <Icon name="close" size={13} color="var(--ink-3)" />
               </button>
             </div>
-            <p className="aa-welcome__body">{t(`${copyKey}.intro`)}</p>
-            <div className="aa-welcome__actions">
-              <button
-                type="button"
-                className="aa-welcome__cta"
-                style={{
-                  background: platform ? platform.accent : COVERAGE_SCALE[COVERAGE_SCALE.length - 1],
-                }}
-                onClick={() => searchRef.current?.focus()}
-              >
-                {t('platform.ctaMap')}
-                <Icon name="arrow" size={13} color="#FBFAF4" />
-              </button>
-              {platform && hasSummary && (
-                <Link className="aa-welcome__more" to={`/platforms/${platform.slug}/compare`}>
-                  {t('compare.label')}
-                </Link>
-              )}
-              {paper && (
-                <a
-                  className="aa-welcome__more"
-                  href={paper.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {t('platform.learnMore')}
-                </a>
-              )}
-            </div>
+            <p className="aa-welcome__body">
+              {t(`${copyKey}.${WELCOME_INTRO.has(platform?.id) ? 'welcomeIntro' : 'intro'}`)}
+            </p>
           </section>
+        )}
+
+        {/* The two ways onward, each in a bottom corner of the map rather than
+            inside the welcome card, so they outlive its dismissal. */}
+        {compareTo && (
+          <Link
+            className="aa-mapstage__action aa-mapstage__action--start aa-fadein"
+            to={compareTo}
+            style={{ background: platform.accent }}
+          >
+            {t('compare.label')}
+            <Icon name="arrow" size={13} color="#FBFAF4" />
+          </Link>
+        )}
+        {paper && (
+          <a
+            className="aa-card aa-mapstage__action aa-mapstage__action--end aa-fadein"
+            href={paper.url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {t('platform.learnMore')}
+          </a>
         )}
 
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>

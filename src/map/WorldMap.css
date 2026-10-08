@@ -1,0 +1,44 @@
+/* The world maps (map/WorldMap.jsx): one canvas the size of the box. */
+
+.aa-worldmap {
+  overflow: hidden;
+}
+
+.aa-worldmap__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* d3-zoom takes the gestures; the browser must not scroll or pinch the
+     page underneath them. */
+  touch-action: none;
+}
+
+.aa-worldmap__canvas:focus {
+  outline: none;
+}
+
+/* The hover tooltip, as the MapLibre one was styled: a small Atlas card,
+   above the marker it names. Positioned by transform from the top left, then
+   lifted by its own size, so it never needs to be measured. */
+.aa-worldmap__tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  padding: 7px 11px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--ink);
+  white-space: nowrap;
+  translate: -50% calc(-100% - 12px);
+  unicode-bidi: plaintext;
+}
+
+.aa-worldmap__tip[hidden] {
+  display: none;
+}
