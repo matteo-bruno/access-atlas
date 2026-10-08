@@ -91,7 +91,7 @@ export default {
       },
       desc: {
         fifteen:
-          '10種類の日常サービスまでの徒歩・自転車での所要時間を、15分という基準に照らして読み解きます。',
+          '9種類の日常サービスまでの徒歩・自転車での所要時間を、15分という基準に照らして読み解きます。',
         citychrone:
           '所要時間の地理学。距離を公共交通での所要分数で測るように、都市を描き直します。',
         cardep:
@@ -175,7 +175,7 @@ export default {
     fifteen: {
       label: '近接性アクセス',
       intro:
-        '医療、学習、買い物、飲食、文化、屋外空間、運動、各種サービス、移動など、10種類の日常サービスまでの徒歩と自転車での所要時間を、都市のすべてのセルについて計算し、15分という基準に照らして読み解きます。',
+        '医療、学習、買い物、飲食、文化、屋外空間、運動、各種サービス、移動など、9種類の日常サービスまでの徒歩と自転車での所要時間を、都市のすべてのセルについて計算し、15分という基準に照らして読み解きます。',
       welcomeIntro:
         'どの都市のどの場所からでも、日常的なサービスまでの移動時間を確認し、15分の基準と比べてみましょう。',
       legendUnit: 'サービスまでの平均時間',
@@ -378,7 +378,7 @@ export default {
       map: {
         pov: '各セルは、属するゾーンの色で塗られます。両方の軸で中央値を上回れば緑、両方で下回れば赤、その中間が2つの混合ケースです。閾値はその都市自身の人口重み付き中央値なので、ゾーンは1つの都市の中の場所どうしを比べるものであり、都市どうしを比べるものではありません。都市間で比べられるのは、もとになるスコアの方です。',
         cardep: '公共交通の方が車より多くの機会に到達できる場所は青、両者が釣り合う場所は白、車の方が多く到達できる場所は赤です。尺度は都市ごとに合わせず全都市で固定しているため、同じ色はどこでも同じ指数を意味します。パレットを埋めるために都市の色を塗り直すことはありません。',
-        fifteen: 'セルは、選んだカテゴリーに選んだ移動手段で到達するのにかかる時間で色付けされます。プラットフォームの名前の由来である15分が白で、尺度は30分を過ぎても濃くなり続け、120分で黒になります。凡例はこの延長部分を伸ばさずに名前で示します。伸ばすと、ほぼすべてのセルが収まる範囲が押しつぶされてしまうからです。10のカテゴリーと2つの移動手段で同じ尺度を使うため、何を選んでも同じ色は同じ意味です。',
+        fifteen: 'セルは、選んだカテゴリーに選んだ移動手段で到達するのにかかる時間で色付けされます。プラットフォームの名前の由来である15分が白で、尺度は30分を過ぎても濃くなり続け、120分で黒になります。凡例はこの延長部分を伸ばさずに名前で示します。伸ばすと、ほぼすべてのセルが収まる範囲が押しつぶされてしまうからです。9つのカテゴリーと2つの移動手段で同じ尺度を使うため、何を選んでも同じ色は同じ意味です。',
       },
       summary: {
         pov: 'セル数は、公開データセットがカバーする範囲を数えたものです。各中央値は真ん中のセルのスコアで、到達可能な地点の重み付き件数です。そのためどちらにも単位はなく、メートルでも雇用数でもありません。人口はデータセット自身のセルの合計であり、その都市の公式な数字ではありません。',
@@ -401,7 +401,7 @@ export default {
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
         cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
-        fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the ten categories the selector lists; population from WorldPop.',
+        fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
         citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are published as whole minutes capped at 180.',
       },
       paperNote: '手法の詳細は論文に記載されています。',

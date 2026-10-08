@@ -84,7 +84,7 @@ export default {
       },
       desc: {
         fifteen:
-          'Temps à pied et à vélo vers dix catégories de services du quotidien, lu au regard de la référence des 15 minutes.',
+          'Temps à pied et à vélo vers neuf catégories de services du quotidien, lu au regard de la référence des 15 minutes.',
         citychrone:
           'Une géographie des temps de trajet : la ville redessinée pour que la distance se mesure en minutes de transports en commun.',
         cardep:
@@ -168,7 +168,7 @@ export default {
     fifteen: {
       label: 'Accès de proximité',
       intro:
-        'Temps de trajet à pied et à vélo vers dix catégories de services du quotidien (santé, éducation, courses, restauration, culture, espaces extérieurs, activité physique, services, mobilité), calculé pour chaque cellule de la ville et lu au regard de la référence des 15 minutes.',
+        'Temps de trajet à pied et à vélo vers neuf catégories de services du quotidien (santé, éducation, courses, restauration, culture, espaces extérieurs, activité physique, services, mobilité), calculé pour chaque cellule de la ville et lu au regard de la référence des 15 minutes.',
       welcomeIntro:
         'Découvrez les temps de trajet vers les services du quotidien depuis n’importe quel lieu de n’importe quelle ville, et comparez-les à la référence des 15 minutes.',
       legendUnit: 'Temps moyen jusqu’aux services',
@@ -371,7 +371,7 @@ export default {
       map: {
         pov: 'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane sur les deux axes, rouge en dessous sur les deux, et entre les deux les deux cas mixtes. Les seuils sont les médianes de cette ville pondérées par la population : une zone compare donc des lieux au sein d’une même ville, jamais une ville à une autre. Ce sont les scores sous-jacents qui se comparent d’une ville à l’autre.',
         cardep: 'Bleu là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint davantage. L’échelle est la même pour toutes les villes au lieu d’être ajustée à chacune : une même couleur correspond partout au même indice, et aucune ville n’est recolorée pour remplir la palette.',
-        fifteen: 'Les cellules sont colorées selon le temps nécessaire pour atteindre la catégorie choisie avec le mode choisi. Le blanc correspond à 15 minutes, la référence qui donne son nom à la plateforme, et l’échelle continue de foncer au-delà de 30 jusqu’au noir à 120. La légende nomme cette queue au lieu de s’étirer jusqu’à elle, ce qui écraserait l’intervalle où se trouve presque chaque cellule. Une seule échelle vaut pour les dix catégories et les deux modes : une couleur signifie la même chose quelle que soit la sélection.',
+        fifteen: 'Les cellules sont colorées selon le temps nécessaire pour atteindre la catégorie choisie avec le mode choisi. Le blanc correspond à 15 minutes, la référence qui donne son nom à la plateforme, et l’échelle continue de foncer au-delà de 30 jusqu’au noir à 120. La légende nomme cette queue au lieu de s’étirer jusqu’à elle, ce qui écraserait l’intervalle où se trouve presque chaque cellule. Une seule échelle vaut pour les neuf catégories et les deux modes : une couleur signifie la même chose quelle que soit la sélection.',
       },
       summary: {
         pov: '« Cellules » compte celles que couvre le jeu de données publié. Chaque médiane est le score de la cellule médiane : des décomptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité. Ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, et non un chiffre officiel de la ville.',
@@ -393,7 +393,7 @@ export default {
       methods: {
         pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
         cardep: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps en voiture et à pied calculés avec OSRM sur OpenStreetMap, avec une marge pour le stationnement et des retards de circulation propres à chaque ville côté voiture ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue de WorldPop.',
-        fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les dix catégories du sélecteur ; population issue de WorldPop.',
+        fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les neuf catégories du sélecteur ; population issue de WorldPop.',
         citychrone: 'Cellules H3 de résolution 9, un export par heure de la journée. Transports en commun à partir des horaires GTFS ; les deux scores et les isochrones sont définis dans l’article de la plateforme. Les temps de trajet sont publiés en minutes entières, plafonnés à 180.',
       },
       paperNote: 'La méthode est exposée en détail dans l’article.',

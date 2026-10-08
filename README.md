@@ -7,7 +7,7 @@ It brings four open research platforms under one identity:
 
 | Platform                       | Measures                                                  | Published here |
 | ------------------------------ | --------------------------------------------------------- | -------------- |
-| **15min-City**                 | Proximity — travel time to ten categories of service       | Milan, Zurich |
+| **15min-City**                 | Proximity — travel time to nine categories of service       | Milan, Zurich |
 | **CityChrone++**               | Opportunity — hourly transit scores and isochrones         | Milan, Zurich |
 | **Car Dependency Index**       | Comparison — opportunity by car against by transit         | 22 datasets |
 | **Urban Accessibility P.O.V.** | Synthesis — Proximity × Opportunity, four zones of access  | 18 cities |

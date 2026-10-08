@@ -531,8 +531,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
 // ── The combined viewer's defaults and detail ────────────────────────
 // Opens on proximity, offers the cartogram on every layer (two platforms
-// publish one, two are the Atlas's own), answers a click with all ten
-// categories at once, and keeps the long explanation behind "full
+// publish one, two are the Atlas’s own), answers a click with all nine
+// categories and their average at once, and keeps the long explanation behind "full
 // explanation" rather than in the panel.
 {
   const page = await context.newPage();

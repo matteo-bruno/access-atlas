@@ -97,7 +97,7 @@ export default {
       },
       desc: {
         fifteen:
-          'Walking and cycling time to ten categories of everyday service, read against the 15-minute reference.',
+          'Walking and cycling time to nine categories of everyday service, read against the 15-minute reference.',
         citychrone:
           'Travel-time geography — the city redrawn so that distance is measured in minutes of public transport.',
         cardep:
@@ -185,7 +185,7 @@ export default {
     fifteen: {
       label: 'Proximity access',
       intro:
-        'Travel time on foot and by bicycle to ten categories of everyday service — healthcare, learning, supplies, eating, culture, outdoor space, exercise, services, mobility — computed for every cell of the city and read against the 15-minute reference.',
+        'Travel time on foot and by bicycle to nine categories of everyday service — healthcare, learning, supplies, eating, culture, outdoor space, exercise, services, mobility — computed for every cell of the city and read against the 15-minute reference.',
       // The welcome card on the world map: shorter than `intro`, which the
       // "about this layer" dialog and the city view's panel still use.
       welcomeIntro:
@@ -216,11 +216,11 @@ export default {
     },
   },
 
-  // 15minCity's city view: ten categories × two modes, chosen at runtime.
+  // 15minCity's city view: nine categories × two modes, chosen at runtime.
   fifteen: {
     mapTitle: 'Travel time to services',
     minutes: 'min',
-    // The selected cell's ten categories at once, as bars.
+    // The selected cell's nine categories at once, as bars.
     barsTitle: 'Every category, from this cell',
     barsAxis: 'Bars run to {max} {unit}; anything longer fills the bar.',
     legendValue: 'Proximity time',
@@ -410,7 +410,7 @@ export default {
       map: {
         pov: 'Each cell takes the colour of the zone it falls in: green above the median on both axes, red below on both, and the two mixed cases between. The thresholds are that city’s own population-weighted medians, so a zone compares places within one city and never one city against another — the underlying scores are what compare across cities.',
         cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
-        fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all ten categories and both modes, so a colour means the same thing whatever is selected.',
+        fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all nine categories and both modes, so a colour means the same thing whatever is selected.',
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the middle cell’s score — weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
@@ -432,7 +432,7 @@ export default {
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
         cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
-        fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the ten categories the selector lists; population from WorldPop.',
+        fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
         citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are published as whole minutes capped at 180.',
       },
       paperNote: 'The method is set out in full in the paper.',

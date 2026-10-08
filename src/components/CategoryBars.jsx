@@ -6,7 +6,7 @@ import './CategoryBars.css';
 /**
  * How far every category of service is from one cell, as bars.
  *
- * The map answers one category at a time; a selected cell can answer all ten
+ * The map answers one category at a time; a selected cell can answer all nine
  * at once, which is where a place's shape shows — a cell four minutes from
  * shops and twenty from a school is not the same as one evenly nine minutes
  * from everything, and the map cannot say so.

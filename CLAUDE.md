@@ -361,7 +361,7 @@ readable:
   makes two maps uncomparable. Each domain is a round number covering the
   published range, and the comment above it states the measurements it was
   checked against — update both together. 15minCity shares one scale across
-  all ten categories and both modes for the same reason.
+  all nine categories and both modes for the same reason.
 
 **A pale swatch needs an edge, and the edge is ink.** Every scale here runs
 pale at one end, and on this paper the palest step has no outline of its own:
