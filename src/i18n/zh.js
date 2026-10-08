@@ -222,6 +222,25 @@ export default {
 
   atlas: {
     label: '组合视图',
+    extent: {
+      label: '范围',
+      core: '城市（核心区）',
+      fua: '都市区（FUA）',
+      about: '两种范围均来自全球人类住区图层（GHS）：城市的核心区，即其 Urban Centre；以及其都市区，即 Functional Urban Area，后者加上周边的通勤区。两者各自发布、各自测量；切换会在另一个范围上打开同样的视图。',
+    },
+    scenario: {
+      label: '情景',
+      current: '现状',
+      view: { scenario: '情景', diff: '差值' },
+      about: '在同一组单元格上，对该图层改变某些条件（例如新增一条地铁线）后的另一次计算。可单独显示，也可显示与当前测量的差值。',
+      legendDiff: '变化：{scenario} 减去现状',
+      change: '变化',
+      diffAbout: {
+        cardep: '低于零表示该情景让单元格对汽车的依赖降低：公共交通相对于汽车能到达的更多。白色单元格没有变化。',
+        fifteen: '低于零表示该情景让服务更近：节省的分钟数。高于零则更远。白色单元格没有变化。',
+      },
+    },
+    loading: { large: '大城市可能需要一些时间加载…', layer: '正在加载 {name}…' },
     mapTitle: '由 {name} 测量',
     controls: {
       layer: '可视化',
@@ -696,6 +715,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: '范围',
+      core: '城市（核心区）',
+      fua: '都市区（FUA）',
+      about: '城市一次只在一种范围上比较，两者均来自 GHS：核心区（Urban Centre）或都市区（Functional Urban Area）。都市区包含其核心区，因此两者从不混在一起，也不合并到同一个国家。',
+    },
     unit: {
       label: '比较',
       city: '城市',
@@ -888,7 +913,6 @@ export default {
     yAxis: '纵轴',
     unreachableValue: '不可到达',
     flag: {
-      variant: '已列出城市的第二个范围，划定方式不同。其居民不计入国家。',
       coverage: '该图层覆盖 Atlas 为该城市所掌握居民的 {share}%：数值描述的是这一部分。',
       single: '仅有一座已发布城市：国家的数值即该城市的数值。',
     },

@@ -7,12 +7,15 @@
 //   source     the export as the platform hands it over (see input_data/README.md)
 //
 //   npm run import -- <platform> --remove <city>    take a city's layer off the site
+//   npm run import -- <platform> --remove <city> --scenario <id>
+//                                                   … or one scenario of it
 //   npm run import -- --index                       rebuild the catalogue only
 //
-//   platform   15mincity | citychrone | pov | cdi
-//   source     the export as the platform hands it over (see input_data/README.md)
-//
 //   --city <id>          city id, when the file name does not give the right one
+//   --scenario <id>      import as a scenario of the city rather than the city
+//                        itself (`rome__metro-d_cdi.zip` says so on its own)
+//   --scenario-name / --scenario-name-it   the scenario's name, English / Italian
+//                        (default: from its id, `metro-d` → "Metro D")
 //   --dry-run            check and report, write nothing
 //   --name / --name-it   the city's name, English / Italian
 //   --country <ISO>      and --region / --region-it: where it is, when the
@@ -29,8 +32,8 @@
 // input_data/.
 
 import path from 'node:path';
-import { buildIndex, publishLayer, unpublishLayer } from './lib/bundle.mjs';
-import { slugify } from './lib/slug.mjs';
+import { buildIndex, publishLayer, publishScenario, unpublishLayer, unpublishScenario } from './lib/bundle.mjs';
+import { parseSourceName, slugify } from './lib/slug.mjs';
 import { describeHidden } from './lib/quality.mjs';
 import * as pov from './importers/pov.mjs';
 import * as cdi from './importers/cdi.mjs';
@@ -92,6 +95,23 @@ if (!importer || (!source && !removing)) {
   process.exit(2);
 }
 
+if (removing && arg('scenario')) {
+  const scenarioId = slugify(arg('scenario'));
+  try {
+    const report = unpublishScenario({ cityId: removing, scenarioId, layer: importer.layer, dryRun });
+    console.log(
+      `${removing} · scenario ${scenarioId} · ${importer.layer}: removed${dryRun ? ' (dry run)' : ''} — ` +
+        (report.left.length ? `layers left ${report.left.join(', ')}` : 'no layers left, scenario removed'),
+    );
+    for (const f of report.files.filter((f) => f?.changed)) console.log(`    ${f.rel}${f.removed ? '  (removed)' : ''}`);
+    reindex();
+  } catch (error) {
+    console.error(`${removing} · scenario ${scenarioId} · ${importer.layer}: ${error.message}`);
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 if (removing) {
   try {
     const report = unpublishLayer({ cityId: removing, layer: importer.layer, dryRun });
@@ -108,7 +128,38 @@ if (removing) {
   process.exit(0);
 }
 
-const cityId = arg('city') ?? slugify(importer.cityName(path.basename(source)));
+const named = parseSourceName(importer.cityName(path.basename(source)));
+const cityId = arg('city') ?? named.city;
+const scenarioId = arg('scenario') ? slugify(arg('scenario')) : named.scenario;
+
+if (scenarioId) {
+  try {
+    const started = Date.now();
+    const parsed = importer.parse(source);
+    const report = publishScenario({
+      cityId,
+      scenarioId,
+      record: parsed.record,
+      names: { name: arg('scenario-name'), nameIt: arg('scenario-name-it') },
+      dryRun,
+    });
+    console.log(
+      `${cityId} · scenario ${scenarioId} ("${report.name}") · ${importer.layer}: ${report.cells} cells` +
+        `${report.replaced ? ' (replaced)' : ''} — city grid ${report.gridCells} cells${dryRun ? ' (dry run)' : ''}`,
+    );
+    for (const note of parsed.notes ?? []) console.log(`  ${note}`);
+    const changed = report.files.filter((f) => f?.changed);
+    console.log(
+      `  ${changed.length} file(s) ${dryRun ? 'would change' : 'written'} · ${((Date.now() - started) / 1000).toFixed(1)} s`,
+    );
+    for (const f of changed) console.log(`    ${f.rel}${f.stored ? `  ${kb(f.stored)}` : ''}`);
+    if (!flag('no-index')) reindex();
+  } catch (error) {
+    console.error(`${cityId} · scenario ${scenarioId} · ${importer.layer}: ${error.message}`);
+    process.exit(1);
+  }
+  process.exit(0);
+}
 
 try {
   const started = Date.now();

@@ -32,6 +32,34 @@ export function normaliseStats(raw) {
   };
 }
 
+// ── boundaries ───────────────────────────────────────────────────────
+
+/** Whether a city or a country pool is a metro area's (GHS FUA) or a core's. */
+const extentOf = (entry) => (entry?.extent === 'fua' ? 'fua' : 'core');
+
+/** The boundaries the file has cities on, core first. */
+export function extentsOf(stats) {
+  const present = new Set(stats.cities.map(extentOf));
+  return ['core', 'fua'].filter((e) => present.has(e));
+}
+
+/**
+ * The statistics of one boundary only: its cities, their columns, and the
+ * countries pooled from them. A metro area includes its core, so the page
+ * shows one boundary at a time and everything downstream reads this as if
+ * it were the whole file.
+ */
+export function scopeStats(stats, extent) {
+  const keep = stats.cities.map((c, i) => (extentOf(c) === extent ? i : -1)).filter((i) => i >= 0);
+  if (keep.length === stats.cities.length) return stats;
+  return {
+    ...stats,
+    cities: keep.map((i) => stats.cities[i]),
+    values: Object.fromEntries(Object.entries(stats.values).map(([id, column]) => [id, keep.map((i) => column[i])])),
+    countries: stats.countries.filter((c) => extentOf(c) === extent),
+  };
+}
+
 // ── the layers and measures, as the pickers list them ────────────────
 
 // In the site's platform order, then the cross-layer figures.
@@ -360,7 +388,6 @@ export const HEADLINES = [
 export function cityFlags(row, layer) {
   if (row.kind === 'country') return row.cities?.length === 1 ? [{ key: 'single' }] : [];
   const flags = [];
-  if (row.city?.variant) flags.push({ key: 'variant' });
   const coverage = row.city?.layers?.[layer]?.coverage;
   // A layer that covers less than nine in ten of the residents the Atlas has
   // for its city describes a part of it; the figure says which share.

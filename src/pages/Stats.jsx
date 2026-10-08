@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
 import { Explain } from '../components/Explain.jsx';
@@ -8,6 +8,8 @@ import { PLATFORMS_BY_ID } from '../data/platforms.js';
 import { CATEGORIES as FIFTEEN_CATEGORIES, MODES as FIFTEEN_MODES } from '../data/fifteen.js';
 import { useStats } from '../data/useAtlasData.js';
 import {
+  extentsOf,
+  scopeStats,
   HIGHLIGHT,
   MAX_HIGHLIGHT,
   ZONE_KEYS,
@@ -89,6 +91,7 @@ const DEFAULTS = {
   s: 'share',
   t: '2',
   unit: 'city',
+  ext: 'core',
   c: '',
   sel: '',
   pop: '1000000',
@@ -145,9 +148,15 @@ const layerName = (layer, t) => (layer === 'cross' ? t('stats.layers.cross') : P
 
 // ── the dashboard ────────────────────────────────────────────────────
 
-function Dashboard({ stats }) {
+function Dashboard({ stats: all }) {
   const { t, n, lang, locale } = useI18n();
   const query = useQuery();
+  // One boundary at a time (GHS core or metro area): a metro area includes
+  // its core, so the two never share a chart. Everything below reads the
+  // chosen boundary's cities as if they were the whole file.
+  const extents = extentsOf(all);
+  const extent = extents.includes(query.get('ext')) ? query.get('ext') : extents[0];
+  const stats = useMemo(() => scopeStats(all, extent), [all, extent]);
   const tipApi = useTip();
   const [about, setAbout] = useState(false);
   const [full, setFull] = useState(false);
@@ -276,6 +285,24 @@ function Dashboard({ stats }) {
           )}
 
           <SideSection title={t('stats.sidebar.filters')}>
+            {extents.length > 1 && (
+              <Field label={t('stats.extent.label')} about={t('stats.extent.about')}>
+                <div className="aa-stats__segment aa-stats__segment--full" role="group" aria-label={t('stats.extent.label')}>
+                  {extents.map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={`aa-stats__segbtn${extent === key ? ' aa-stats__segbtn--on' : ''}`}
+                      aria-pressed={extent === key}
+                      // Highlighted cities are the other boundary's ids.
+                      onClick={() => query.set({ ext: key, sel: '' })}
+                    >
+                      {t(`stats.extent.${key}`)}
+                    </button>
+                  ))}
+                </div>
+              </Field>
+            )}
             <Field label={t('stats.unit.label')} about={t('stats.unit.about')}>
               <div className="aa-stats__segment aa-stats__segment--full" role="group" aria-label={t('stats.unit.label')}>
                 {['city', 'country'].map((key) => (

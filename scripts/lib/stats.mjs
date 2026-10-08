@@ -38,10 +38,15 @@
 //     cities' residents give together: exact for a mean and for a share of
 //     residents, which is why only those are pooled. A median, a quantile, a
 //     Gini of several cities cannot be had from the cities' own, so a country
-//     carries none. Variants (a metro area beside its city) are left out of
-//     the pool: their residents are the city's, counted again, and so are
-//     cities hidden for thin data. For now only 15minCity is pooled
-//     (COUNTRY_LAYERS): it is the layer that will cover whole countries.
+//     carries none. A country is pooled once per boundary (`extent`): its
+//     cores together, and its metro areas (GHS FUAs, `<city>-fua`) together,
+//     never one with the other, since a metro area's residents include its
+//     core's. Cities hidden for thin data are left out. For now only
+//     15minCity is pooled (COUNTRY_LAYERS): it is the layer that will cover
+//     whole countries.
+//   • **Scenarios are not statistics.** A scenario (Rome's Metro D) is an
+//     alternative run of a layer, stored beside the city; nothing here reads
+//     it, and the city's inputs are its own layers only.
 //   • **Cities with data too thin to compare are flagged, not dropped**
 //     (`hidden`, rule in scripts/lib/quality.mjs). The page leaves them out
 //     unless asked, as the world maps do.
@@ -87,7 +92,9 @@ const POV_OPPORTUNITY = [5000, 10000, 20000, 40000, 60000];
 // residents on both scores. They depend on every city, so they are computed
 // when the published file is gathered (assembleStats), from the cells each
 // city's computation keeps (`cells.pov`), and move a little whenever a city
-// is added. Hidden cities and variants are left out of the medians.
+// is added. Hidden cities and metro areas are left out of the medians (a
+// metro area's residents are its core's again), and metro areas are split
+// on the same lines as the cores.
 
 // Car Dependency. CDI pooled p10 −0.02 · p50 0.19 · p90 0.41. Opportunities
 // reachable by car p10 1,411 · p90 8,761; by public transport p10 857 ·
@@ -584,11 +591,11 @@ function pool(stats) {
 /**
  * P.O.V.'s zones on the Atlas's own medians: the population-weighted median
  * proximity and opportunity of every P.O.V. resident of every city shown by
- * default (not hidden, not a variant), and each city's residents per zone on
+ * default (not hidden, not a metro area), and each city's residents per zone on
  * those two lines. Null when no city publishes P.O.V.
  */
 function commonZones(cities) {
-  const pooled = cities.filter((c) => c.entry.cells?.pov && !c.hidden && !c.record.atlas.variant);
+  const pooled = cities.filter((c) => c.entry.cells?.pov && !c.hidden && c.record.atlas.extent !== 'fua');
   if (!pooled.length) return null;
   const median = (key) => {
     const pairs = [];
@@ -639,16 +646,28 @@ export function assembleStats(records) {
   const measures = MEASURES.filter((m) => cities.some((c) => figure(c, m.id)));
   const values = Object.fromEntries(measures.map((m) => [m.id, cities.map((c) => figure(c, m.id))]));
 
+  // One pool per country and boundary: cores with cores, metro areas with
+  // metro areas.
   const countries = new Map();
   for (const { record, hidden } of cities) {
     const meta = record.meta ?? {};
-    if (!meta.country || record.atlas.variant || hidden) continue;
-    if (!countries.has(meta.country)) {
-      countries.set(meta.country, { iso: meta.country, name: meta.region ?? meta.country, nameIt: meta.regionIt ?? meta.region ?? meta.country, cities: [] });
+    if (!meta.country || hidden) continue;
+    const extent = record.atlas.extent === 'fua' ? 'fua' : 'core';
+    const key = `${extent}:${meta.country}`;
+    if (!countries.has(key)) {
+      countries.set(key, {
+        iso: meta.country,
+        ...(extent === 'fua' ? { extent } : {}),
+        name: meta.region ?? meta.country,
+        nameIt: meta.regionIt ?? meta.region ?? meta.country,
+        cities: [],
+      });
     }
-    countries.get(meta.country).cities.push(record.id);
+    countries.get(key).cities.push(record.id);
   }
-  const countryList = [...countries.values()].sort((a, b) => a.iso.localeCompare(b.iso));
+  const countryList = [...countries.values()].sort(
+    (a, b) => (a.extent ?? '').localeCompare(b.extent ?? '') || a.iso.localeCompare(b.iso),
+  );
   for (const country of countryList) {
     const members = new Set(country.cities);
     country.values = {};
@@ -678,7 +697,7 @@ export function assembleStats(records) {
       country: record.meta?.country ?? null,
       region: record.meta?.region ?? null,
       regionIt: record.meta?.regionIt ?? null,
-      ...(record.atlas.variant ? { variant: true } : {}),
+      ...(record.atlas.extent === 'fua' ? { extent: 'fua', core: record.atlas.core } : {}),
       ...(hidden ? { hidden } : {}),
       center: record.atlas.center,
       population: entry.population,

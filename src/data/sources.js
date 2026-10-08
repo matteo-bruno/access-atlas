@@ -162,6 +162,15 @@ export function createStaticProvider() {
       return loadDataset({ url: fileUrl(catalogue, path), format: 'json' }, { signal });
     },
 
+    // One layer of a scenario of a city, on the city's own grid: the same
+    // shape as `cityLayer`, merged beside the baseline (grid.js).
+    async cityScenario(cityId, scenarioId, platformId, catalogue, { signal } = {}) {
+      const scenario = atlasCity(catalogue, cityId)?.scenarios?.find((s) => s.id === scenarioId);
+      const path = scenario?.layerData?.[platformId];
+      if (!path) return null;
+      return loadDataset({ url: fileUrl(catalogue, path), format: 'json' }, { signal });
+    },
+
     // Scenarios a static host can offer: whatever the catalogue lists. A
     // backend provider would return ones computed on demand instead.
     async scenarios(platformId, cityId, catalogue) {
@@ -228,6 +237,8 @@ export function createStaticProvider() {
  *   cityGrid(cityId, catalogue, opts)          → { cells, population } | null
  *   cityLayer(cityId, platformId, catalogue, opts)
  *                                              → layer file (bundle.mjs) | null
+ *   cityScenario(cityId, scenarioId, platformId, catalogue, opts)
+ *                                              → layer file of a scenario | null
  *   hourly(platformId, cityId, hour, catalogue, opts)
  *                                              → { collection, profile, hour } | null
  *   travelTimes(platformId, cityId, hour, catalogue, opts)

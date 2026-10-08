@@ -132,6 +132,45 @@ export const RAMPS = {
   },
 };
 
+/**
+ * Differences between a scenario and the current measurement, per layer.
+ * Diverging about zero, which is white: a cell the scenario leaves alone is
+ * drawn as nothing. The side that is better takes the colour the layer's own
+ * ramp gives the better end (transit-blue for CDI, near-blue for minutes).
+ */
+export const DELTA_RAMPS = {
+  // CDI. Rome's Metro D against today, the one scenario published: Δ runs
+  // −0.336 to +0.001, p01 −0.109, p05 −0.044, median −0.006, and 4,541 of
+  // its 11,409 cells do not move. ±0.2 covers all but the handful of cells
+  // beside the new stations, which saturate rather than squash the rest.
+  cardep: {
+    stops: [
+      [-0.2, '#2b5f86'],
+      [-0.1, '#8fb0cc'],
+      [0, '#ffffff'],
+      [0.1, '#c26a52'],
+      [0.2, '#8a2c1c'],
+    ],
+    ticks: [-0.2, -0.1, 0, 0.1, 0.2],
+    signed: true,
+  },
+  // 15minCity minutes. No 15minCity scenario is published yet: ±10 minutes
+  // is two thirds of the platform's own reference, a round number to check
+  // against the first one published, and to change with this comment.
+  fifteen: {
+    stops: [
+      [-10, '#2b5f86'],
+      [-5, '#93b8cf'],
+      [0, '#ffffff'],
+      [5, '#c96a4e'],
+      [10, '#8a2c1c'],
+    ],
+    unit: 'min',
+    ticks: [-10, -5, 0, 5, 10],
+    signed: true,
+  },
+};
+
 /** The value expression a ramp reads, wrapped for log ramps. */
 function rampInput(ramp, value) {
   // log10(1 + x) keeps zero-population cells on the scale instead of sending

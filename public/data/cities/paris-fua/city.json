@@ -5,8 +5,8 @@
   "createdAt": "2026-08-28T13:51:44.000Z",
   "updatedAt": "2026-08-28T13:51:44.000Z",
   "meta": {
-    "name": "Paris (metro area)",
-    "nameIt": "Parigi (area metropolitana)",
+    "name": "Paris",
+    "nameIt": "Parigi",
     "region": "France",
     "regionIt": "Francia",
     "country": "FR"
@@ -14,12 +14,13 @@
   "sources": {},
   "atlas": {
     "id": "paris-fua",
-    "name": "Paris (metro area)",
-    "nameIt": "Parigi (area metropolitana)",
+    "name": "Paris",
+    "nameIt": "Parigi",
     "region": "France",
     "regionIt": "Francia",
     "country": "FR",
-    "variant": true,
+    "extent": "fua",
+    "core": "paris",
     "center": [
       2.3375,
       48.85446
@@ -45,11 +46,13 @@
     "cardep": {
       "row": {
         "id": "paris-fua",
-        "name": "Paris (metro area)",
-        "nameIt": "Parigi (area metropolitana)",
+        "name": "Paris",
+        "nameIt": "Parigi",
         "region": "France",
         "regionIt": "Francia",
         "country": "FR",
+        "extent": "fua",
+        "core": "paris",
         "center": [
           2.3375,
           48.85446
@@ -63,7 +66,24 @@
           "cellRadiusM": 191
         }
       },
-      "marker": null,
+      "marker": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            2.3375,
+            48.85446
+          ]
+        },
+        "properties": {
+          "id": "paris-fua",
+          "name": "Paris",
+          "country": "FR",
+          "isStudy": true,
+          "cdi": 0.228,
+          "population": 9865626
+        }
+      },
       "summary": {
         "id": "paris-fua",
         "cells": 20257,

@@ -142,18 +142,37 @@ function normaliseCity(raw) {
           )
         : {},
     layer: typeof raw.layer === 'string' ? raw.layer : null,
-    // Counted by the importer: the layer's cells for a platform row. A
-    // variant is a scenario of another city (a metro area, Rome Metro D).
+    // Counted by the importer: the layer's cells for a platform row.
     cells: Number.isFinite(raw.cells) ? raw.cells : null,
-    variant: raw.variant === true,
+    // Which boundary this is (scripts/lib/bundle.mjs): the city's core (GHS
+    // Urban Centre, the default) or its metro area (GHS Functional Urban
+    // Area), published as a city of its own, `<core>-fua`, naming its core.
+    extent: raw.extent === 'fua' ? 'fua' : 'core',
+    core: raw.extent === 'fua' && typeof raw.core === 'string' ? raw.core : null,
     country: typeof raw.country === 'string' ? raw.country : undefined,
-    // Alternative runs of the same city — the legacy site's "ideal city" and
-    // Metro D are these. A static host serves the ones published ahead of
-    // time; a backend provider can offer ones computed on demand.
+    // Alternative runs of the same city: Rome's Metro D is one. An atlas
+    // entry lists each with one file per layer it re-runs, on the city's own
+    // grid (`layerData`); a legacy platform row named one `dataset`. A static
+    // host serves the ones published ahead of time; a backend provider can
+    // offer ones computed on demand.
     scenarios: Array.isArray(raw.scenarios)
       ? raw.scenarios
-          .filter((s) => s && typeof s.id === 'string' && typeof s.dataset === 'string')
-          .map((s) => ({ id: s.id, name: typeof s.name === 'string' ? s.name : s.id, dataset: s.dataset }))
+          .filter((s) => s && typeof s.id === 'string' && (typeof s.dataset === 'string' || (s.layerData && typeof s.layerData === 'object')))
+          .map((s) => {
+            const layerData =
+              s.layerData && typeof s.layerData === 'object'
+                ? Object.fromEntries(Object.entries(s.layerData).filter(([, path]) => typeof path === 'string'))
+                : {};
+            return {
+              id: s.id,
+              name: typeof s.name === 'string' ? s.name : s.id,
+              nameIt: typeof s.nameIt === 'string' ? s.nameIt : undefined,
+              dataset: typeof s.dataset === 'string' ? s.dataset : null,
+              layers: Array.isArray(s.layers) ? s.layers.filter((l) => typeof l === 'string' && layerData[l]) : Object.keys(layerData),
+              layerData,
+              cells: s.cells && typeof s.cells === 'object' ? s.cells : {},
+            };
+          })
       : [],
     hourly,
     // A city can be published on two geometries: the values sit on one, and a
@@ -263,6 +282,38 @@ export function publishedCity(catalogue, platformId, cityId) {
 /** The combined-viewer (union mesh) entry for a city, or null. */
 export function atlasCity(catalogue, cityId) {
   return catalogue?.atlas?.citiesById?.[cityId] ?? null;
+}
+
+/**
+ * The boundaries a city is published on: the id of its core and of its metro
+ * area, each null where that boundary is not published. Either id works as
+ * the argument.
+ */
+export function cityExtents(catalogue, cityId) {
+  const city = atlasCity(catalogue, cityId);
+  if (!city) return { core: null, fua: null };
+  const coreId = city.extent === 'fua' ? city.core : city.id;
+  const fua =
+    city.extent === 'fua'
+      ? city.id
+      : (catalogue.atlas.cities.find((c) => c.extent === 'fua' && c.core === city.id)?.id ?? null);
+  return { core: coreId && atlasCity(catalogue, coreId) ? coreId : null, fua };
+}
+
+/** The scenarios published for one layer of a city. */
+export function layerScenarios(city, layer) {
+  return (city?.scenarios ?? []).filter((s) => s.layerData?.[layer]);
+}
+
+/**
+ * A city's name as a list shows it: a metro area says so, since its name is
+ * its core's. `t` is the i18n lookup; the boundary label is translated, the
+ * name itself is the catalogue's (English and Italian only).
+ */
+export function cityLabel(city, lang, t) {
+  if (!city) return '';
+  const name = lang === 'it' ? (city.nameIt ?? city.name) : city.name;
+  return city.extent === 'fua' && t ? `${name} · ${t('atlas.extent.fua')}` : name;
 }
 
 /** Whether a catalogue row has something the city view can draw. */

@@ -247,6 +247,25 @@ export default {
   // visualisations.
   atlas: {
     label: 'Combined view',
+    extent: {
+      label: 'Boundary',
+      core: 'City (core)',
+      fua: 'Metro (FUA)',
+      about: 'Two boundaries from the Global Human Settlement Layer (GHS): the city\'s core, its Urban Centre, and its metro area, the Functional Urban Area, which adds the commuting zone around it. Each is published and measured on its own; switching opens the same view on the other.',
+    },
+    scenario: {
+      label: 'Scenario',
+      current: 'Current',
+      view: { scenario: 'Scenario', diff: 'Difference' },
+      about: 'An alternative run of this layer with something changed (a new metro line, say), on the same cells. Show it on its own, or its difference from the current measurement.',
+      legendDiff: 'Change: {scenario} minus current',
+      change: 'Change',
+      diffAbout: {
+        cardep: 'Below zero the scenario makes a cell less car dependent: public transport reaches relatively more of what a car does. White cells do not change.',
+        fifteen: 'Below zero the scenario brings the services closer: minutes saved. Above zero they are further away. White cells do not change.',
+      },
+    },
+    loading: { large: 'Large cities can take a while to load…', layer: 'Loading {name}…' },
     mapTitle: 'Measured by {name}',
     controls: {
       layer: 'Visualisation',
@@ -756,6 +775,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: 'Boundary',
+      core: 'Cities (core)',
+      fua: 'Metro areas (FUA)',
+      about: 'Cities are compared on one boundary at a time, both from the GHS: their cores (Urban Centres) or their metro areas (Functional Urban Areas). A metro area includes its core, so the two are never mixed, nor pooled into one country.',
+    },
     unit: {
       label: 'Compare',
       city: 'Cities',
@@ -948,7 +973,6 @@ export default {
     yAxis: 'Vertical axis',
     unreachableValue: 'not reachable',
     flag: {
-      variant: 'A second perimeter of a city also listed, drawn differently. Its residents are not pooled into the country.',
       coverage: 'This layer covers {share}% of the residents the Atlas has for this city: the figure describes that part.',
       single: 'One published city: the country’s figure is that city’s.',
     },

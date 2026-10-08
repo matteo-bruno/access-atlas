@@ -8,7 +8,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { citychroneHour, meshFromAtlas } from './adapters.js';
-import { atlasCity, hasCityData, publishedCity } from './catalogue.js';
+import { atlasCity, cityExtents, hasCityData, publishedCity } from './catalogue.js';
 import { checkGrid, gridFeatures, mergeLayer } from './grid.js';
 import { getDataProvider } from './sources.js';
 import { PLATFORMS } from './platforms.js';
@@ -24,6 +24,7 @@ import { PLATFORMS } from './platforms.js';
  *   profile: object|null,             // atlas entry, or a platform entry
  *   platformProfiles: object,         // platformId → published city entry
  *   available: Set<string>,           // platform ids with data for this city
+ *   extents: { core, fua },           // the city's ids on each boundary, or null
  * }}
  */
 export function useAtlasView(cityId) {
@@ -84,6 +85,7 @@ export function useAtlasView(cityId) {
           profile: entry ?? Object.values(platformProfiles)[0],
           platformProfiles,
           available,
+          extents: cityExtents(catalogue, cityId),
         });
       } catch (error) {
         if (error?.name === 'AbortError' || cancelled) return;
@@ -119,7 +121,7 @@ export function useAtlasView(cityId) {
  *
  * @returns {{ status, data, error, layerStatus: Record<string, string> }}
  */
-export function useAtlasMesh(cityId, layer, enabled = true) {
+export function useAtlasMesh(cityId, layer, enabled = true, scenario = null) {
   const [state, setState] = useState({ status: 'idle', data: null, error: null, layerStatus: {} });
   // Everything loaded for this city so far: the grid, its features with every
   // loaded layer merged in, and the raw layer files (CityChrone's hours are
@@ -130,6 +132,7 @@ export function useAtlasMesh(cityId, layer, enabled = true) {
     const collection = { type: 'FeatureCollection', features: current.features };
     const data = meshFromAtlas(collection, current.profile);
     data.files = { ...current.files };
+    data.cityId = current.cityId;
     setState((previous) => ({
       status: 'ready',
       data,
@@ -146,7 +149,10 @@ export function useAtlasMesh(cityId, layer, enabled = true) {
     }
     let cancelled = false;
     const controller = new AbortController();
-    setState({ status: 'pending', data: null, error: null, layerStatus: {} });
+    // The previous city's mesh stays (status 'pending', its layers no longer
+    // ready) until this one's grid is in: switching a city's boundary keeps
+    // the map on screen and repaints it, rather than emptying the frame.
+    setState((previous) => ({ status: 'pending', data: previous.data, error: null, layerStatus: {} }));
 
     (async () => {
       try {
@@ -186,7 +192,10 @@ export function useAtlasMesh(cityId, layer, enabled = true) {
   // The open layer, on first open. Nothing is cancelled when the layer
   // changes again before it arrives: the file is small, and merging it
   // anyway means switching back is instant.
-  const gridReady = state.status === 'ready';
+  // Which city's grid is in, not merely whether one is: going back to a
+  // city whose files are cached, "pending" and "ready" land in one render,
+  // and a flag would not change at all.
+  const gridReady = state.status === 'ready' ? (state.data?.cityId ?? null) : null;
   useEffect(() => {
     const current = store.current;
     if (!gridReady || !current || current.cityId !== cityId || !layer) return;
@@ -214,6 +223,40 @@ export function useAtlasMesh(cityId, layer, enabled = true) {
       }
     })();
   }, [cityId, layer, gridReady]);
+
+  // A scenario of the open layer, once the baseline is in: its values are
+  // merged beside the baseline's under `<scenario>:<name>` (grid.js), so
+  // showing it, or the difference, is a paint change on the same features.
+  const baselineReady = state.layerStatus[layer] === 'ready';
+  useEffect(() => {
+    const current = store.current;
+    if (!gridReady || !baselineReady || !current || current.cityId !== cityId || !layer || !scenario) return;
+    const key = `${scenario}:${layer}`;
+    const listed = current.profile.scenarios?.find((s) => s.id === scenario);
+    if (!listed?.layerData?.[layer] || current.layerStatus[key]) return;
+
+    current.layerStatus[key] = 'pending';
+    setState((previous) => ({ ...previous, layerStatus: { ...previous.layerStatus, [key]: 'pending' } }));
+
+    (async () => {
+      try {
+        const provider = getDataProvider();
+        const catalogue = await provider.catalogue();
+        const file = await provider.cityScenario(cityId, scenario, layer, catalogue);
+        if (store.current !== current) return;
+        checkGrid(current.grid, file, key);
+        current.features = mergeLayer(current.features, layer, file, { scenario });
+        current.files[key] = file;
+        current.layerStatus[key] = 'ready';
+        publish(current);
+      } catch (error) {
+        if (store.current !== current) return;
+        if (import.meta.env?.DEV) console.warn(`[data] ${cityId}/${key} unusable`, error.message);
+        current.layerStatus[key] = 'error';
+        setState((previous) => ({ ...previous, layerStatus: { ...previous.layerStatus, [key]: 'error' } }));
+      }
+    })();
+  }, [cityId, layer, scenario, gridReady, baselineReady]);
 
   return state;
 }

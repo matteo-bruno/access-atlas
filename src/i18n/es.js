@@ -225,6 +225,25 @@ export default {
 
   atlas: {
     label: 'Vista combinada',
+    extent: {
+      label: 'Límite',
+      core: 'Ciudad (núcleo)',
+      fua: 'Área metropolitana (FUA)',
+      about: 'Dos límites del Global Human Settlement Layer (GHS): el núcleo de la ciudad, su Urban Centre, y su área metropolitana, la Functional Urban Area, que añade la zona de desplazamientos diarios a su alrededor. Cada uno se publica y se mide por separado; el cambio abre la misma vista sobre el otro.',
+    },
+    scenario: {
+      label: 'Escenario',
+      current: 'Actual',
+      view: { scenario: 'Escenario', diff: 'Diferencia' },
+      about: 'Otra ejecución de esta capa con algo cambiado (una nueva línea de metro, por ejemplo), sobre las mismas celdas. Muéstrala sola o como diferencia con la medición actual.',
+      legendDiff: 'Cambio: {scenario} menos actual',
+      change: 'Cambio',
+      diffAbout: {
+        cardep: 'Por debajo de cero el escenario hace la celda menos dependiente del coche: el transporte público alcanza relativamente más de lo que alcanza el coche. Las celdas blancas no cambian.',
+        fifteen: 'Por debajo de cero el escenario acerca los servicios: minutos ahorrados. Por encima de cero los aleja. Las celdas blancas no cambian.',
+      },
+    },
+    loading: { large: 'Las ciudades grandes pueden tardar un poco en cargar…', layer: 'Cargando {name}…' },
     mapTitle: 'Medido por {name}',
     controls: {
       layer: 'Visualización',
@@ -706,6 +725,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: 'Límite',
+      core: 'Ciudades (núcleo)',
+      fua: 'Áreas metropolitanas (FUA)',
+      about: 'Las ciudades se comparan en un límite a la vez, ambos del GHS: sus núcleos (Urban Centres) o sus áreas metropolitanas (Functional Urban Areas). Un área metropolitana incluye su núcleo, así que nunca se mezclan ni se agregan en un mismo país.',
+    },
     unit: {
       label: 'Comparar',
       city: 'Ciudades',
@@ -898,7 +923,6 @@ export default {
     yAxis: 'Eje vertical',
     unreachableValue: 'no alcanzable',
     flag: {
-      variant: 'Un segundo perímetro de una ciudad ya incluida, trazado de otra forma. Sus residentes no se agregan al país.',
       coverage: 'Esta capa cubre el {share}% de los residentes que el Atlas tiene para esta ciudad: el valor describe esa parte.',
       single: 'Una sola ciudad publicada: el valor del país es el de esa ciudad.',
     },

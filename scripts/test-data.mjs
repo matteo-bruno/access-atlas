@@ -26,7 +26,7 @@ import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution, cellToLatLng } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
-import { VARIANTS, buildIndex, cataloguePaths, gridId, readCityRecord } from './lib/bundle.mjs';
+import { buildIndex, cataloguePaths, extentOf, gridId, readCityRecord } from './lib/bundle.mjs';
 import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs';
 import { recordHiddenReason } from './lib/quality.mjs';
 import { atlasMetrics } from '../src/data/home.js';
@@ -170,6 +170,30 @@ for (const city of catalogue.atlas?.cities ?? []) {
       positions.forEach((p) => covered.add(p));
       features = mergeLayer(features, layer, file);
     }
+    // A scenario is an alternative run of a layer the city publishes, on the
+    // city's own grid: its rows are the same positions, so the viewer paints
+    // it, or the difference with the baseline, on the mesh it already has.
+    for (const scenario of city.scenarios ?? []) {
+      for (const layer of scenario.layers) {
+        const where = `scenario ${scenario.id}/${layer}`;
+        if (!city.layers.includes(layer)) bad.push(`${where}: the city publishes no ${layer} baseline`);
+        const file = read(scenario.layerData[layer]);
+        if (file.grid !== grid.id) bad.push(`${where}: written against grid ${file.grid ?? '(none)'}, the city's is ${grid.id}`);
+        if (file.layer !== layer) bad.push(`${where}: the file is a ${file.layer} layer`);
+        if (scenario.cells?.[layer] !== file.cells) bad.push(`${where}: catalogue says ${scenario.cells?.[layer]} cells, file has ${file.cells}`);
+        const positions = layerPositions(file);
+        if (positions.some((p, i) => p < 0 || p >= n || (i && p <= positions[i - 1]))) {
+          bad.push(`${where}: rows do not point at grid cells in order`);
+        }
+        for (const [name, column] of Object.entries(file.fields)) {
+          if (column.length !== file.cells) bad.push(`${where}: field ${name} has ${column.length} values`);
+        }
+        if (layer === 'cardep' && file.fields.cdi.some((v) => !(v >= -1 && v <= 1))) bad.push(`${where}: CDI outside [−1, +1]`);
+        positions.forEach((p) => covered.add(p));
+        features = mergeLayer(features, layer, file, { scenario: scenario.id });
+      }
+    }
+
     // A grid cell no layer covers is a cell nothing draws.
     if (covered.size !== n) bad.push(`${n - covered.size} grid cells belong to no layer`);
 
@@ -278,7 +302,8 @@ for (const city of catalogue.atlas?.cities ?? []) {
   } catch (error) {
     bad.push(error.message);
   }
-  check(`${city.id}: grid and ${city.layers.join(', ')} load, merge and reconcile`, bad.length === 0, bad.slice(0, 3).join(' | '));
+  const scenarios = (city.scenarios ?? []).map((s) => ` + scenario ${s.id}`).join('');
+  check(`${city.id}: grid and ${city.layers.join(', ')}${scenarios} load, merge and reconcile`, bad.length === 0, bad.slice(0, 3).join(' | '));
 }
 console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${meshes.size} cities`);
 
@@ -403,8 +428,8 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
 
 // The site counts cities and cells from the catalogue rather than from
 // numbers written in the code, so the catalogue's own counts have to be
-// right: every platform row's `cells` is its layer file's, and a variant is
-// flagged as one exactly when it is one.
+// right: every platform row's `cells` is its layer file's, and a metro area
+// (`<city>-fua`) is flagged as one, with its core, exactly when it is one.
 {
   const bad = [];
   for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
@@ -414,7 +439,10 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
     }
   }
   for (const city of atlasById.values()) {
-    if (Boolean(city.variant) !== VARIANTS.has(city.id)) bad.push(`${city.id}: variant flag is wrong`);
+    const { extent, core } = extentOf(city.id);
+    if ((city.extent ?? 'core') !== extent) bad.push(`${city.id}: extent ${city.extent ?? 'core'}, its id says ${extent}`);
+    if (extent === 'fua' && city.core !== core) bad.push(`${city.id}: core ${city.core}, its id says ${core}`);
+    if (city.variant != null) bad.push(`${city.id}: still carries the retired variant flag`);
   }
   const metrics = Object.fromEntries(atlasMetrics(normaliseCatalogue(catalogue)).map((m) => [m.key, m.value]));
   check('The catalogue\'s own counts match the files', bad.length === 0, bad.slice(0, 3).join(' | ') || JSON.stringify(metrics));
@@ -498,9 +526,12 @@ if (catalogue.stats) {
       if (stat.gini != null && !(stat.gini >= 0 && stat.gini <= 1)) bad.push(`${where}: Gini ${stat.gini}`);
     });
   }
+  // A metro area's residents include its core's: a pool takes one boundary.
   for (const country of stats.countries) {
     for (const id of country.cities) {
-      if (atlasById.get(id)?.variant) bad.push(`${country.iso} pools ${id}, a variant: its residents are counted twice`);
+      if ((atlasById.get(id)?.extent ?? 'core') !== (country.extent ?? 'core')) {
+        bad.push(`${country.extent ?? 'core'} pool of ${country.iso} takes ${id}: its residents are counted twice`);
+      }
     }
   }
   check(

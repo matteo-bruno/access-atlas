@@ -13,12 +13,15 @@ import { BRAND } from './brand.js';
  * Nothing renders these at the moment: the landing and the home page both
  * dropped their list of them — counting the Atlas on the way in said nothing
  * a reader could act on. Putting the list back is one block of JSX over this.
- * Cities leave out scenario variants (Paris metro area, Rome Metro D);
- * cells count every published layer of every city, variants included.
- * Researchers is editorial.
+ * Cities count places: a metro area whose core is published is the same
+ * place on a wider boundary, and scenarios are not cities at all. Cells count
+ * every published layer of every city, metro areas included. Researchers is
+ * editorial.
  */
 export function atlasMetrics(catalogue) {
-  const cities = (catalogue?.atlas?.cities ?? []).filter((city) => !city.variant);
+  const all = catalogue?.atlas?.cities ?? [];
+  const ids = new Set(all.map((city) => city.id));
+  const cities = all.filter((city) => city.extent !== 'fua' || !ids.has(city.core));
   const rows = Object.values(catalogue?.platforms ?? {}).flatMap((p) => p.cities ?? []);
   return [
     { key: 'cities', value: cities.length },

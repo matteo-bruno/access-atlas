@@ -86,6 +86,9 @@ export function AtlasMap({
   basemap = false,
   bounds = null,
   fitPadding = 40,
+  // How long a refit to new bounds takes once the map has been framed: 0
+  // jumps. The first framing always jumps, before the first frame.
+  fitDuration = 0,
   fitWorldWidth = false,
   // Zoom levels past the world-width fit. The site's two coverage maps — the
   // backdrop and the platform screen — share one value (WORLD_ZOOM_BOOST in
@@ -328,9 +331,16 @@ export function AtlasMap({
     const container = containerRef.current;
     if (!map || !ready || !bounds) return undefined;
     const fit = () => map.fitBounds(bounds, { padding: fitPadding, duration: 0 });
-    fit();
+    if (fitDuration > 0) map.fitBounds(bounds, { padding: fitPadding, duration: fitDuration });
+    else fit();
     if (typeof ResizeObserver === 'undefined') return undefined;
-    const observer = new ResizeObserver(fit);
+    // An observer reports once as soon as it observes: that is not a resize,
+    // and jumping there would cut short the animated refit above.
+    let first = true;
+    const observer = new ResizeObserver(() => {
+      if (first) first = false;
+      else fit();
+    });
     observer.observe(container);
     return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -370,10 +380,17 @@ export function AtlasMap({
  *                   via setFeatureState so paint can read values the GeoJSON
  *                   does not carry (e.g. hourly scores joined at runtime).
  *                   Pass a new Map to swap the whole set; null clears it.
+ * @param {number}   [props.tolerance] MapLibre's simplification tolerance,
+ *                   in tile pixels. Its default (0.375) also *drops* any
+ *                   polygon smaller than that, so a mesh of 200 m cells
+ *                   zoomed out to a metro area (Tokyo's FUA) vanished whole
+ *                   at its own opening zoom on a laptop screen. 0 keeps every
+ *                   cell at every zoom.
  */
 export function GeoJSONLayer({
   id,
   data,
+  tolerance,
   type = 'circle',
   paint,
   layout,
@@ -402,7 +419,12 @@ export function GeoJSONLayer({
   useEffect(() => {
     if (!map) return undefined;
 
-    map.addSource(sourceId, { type: 'geojson', data, promoteId });
+    map.addSource(sourceId, {
+      type: 'geojson',
+      data,
+      promoteId,
+      ...(tolerance != null ? { tolerance } : {}),
+    });
     map.addLayer(
       {
         id: layerId,
@@ -432,10 +454,14 @@ export function GeoJSONLayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, layerId, sourceId, type, anchor]);
 
-  // Data updates.
+  // Data updates. The first one is the source's own creation above: setting
+  // it again copied the whole collection to MapLibre's worker a second time,
+  // which on a metro area of 120,000 cells is seconds.
+  const sent = useRef(data);
   useEffect(() => {
     const source = map?.getSource(sourceId);
-    if (source) source.setData(data);
+    if (source && sent.current !== data) source.setData(data);
+    sent.current = data;
   }, [map, sourceId, data]);
 
   // Paint updates.

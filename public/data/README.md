@@ -13,6 +13,7 @@ of it.
 | `cities/<city>/city.json` | The city's **record**: its names, catalogue entries, markers and compare rows, the hash of each export it was imported from, and when it was first published. Not read by the site. |
 | `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
 | `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
+| `cities/<city>/scenarios/<id>/<layer>.json.gz` | A scenario of that layer (Rome's `metro-d`), on the same grid, in the same format. |
 | `cities/<city>/citychrone/timesHH.npy.gz` | CityChrone's travel-time matrix for each hour. |
 | `<platform>/coverage.geojson.gz` | One point per city, for the platform's world map and the search. |
 | `pov/summary.json.gz`, `cardep/summary.json.gz` | One row per city, for the compare view. |
@@ -81,6 +82,25 @@ layer is opened. Nothing is stored twice.
   path stands for the zero-padded hour.
 - A platform with no entry, or a city missing from a list, falls back to the
   seed data, so the site works on a fresh checkout.
+
+## Boundaries and scenarios
+
+- **A metro area is a city.** `<city>-fua` is the city's GHS Functional
+  Urban Area beside its core (Urban Centre): its own grid, layers and
+  record. Its atlas entry and platform rows carry `"extent": "fua"` and
+  `"core": "<city>"`, and its names are its core's.
+- **A scenario is not.** An atlas entry lists its scenarios:
+
+  ```json
+  "scenarios": [{ "id": "metro-d", "name": "Metro D", "nameIt": "Metro D",
+                  "layers": ["cardep"],
+                  "layerData": { "cardep": "cities/rome/scenarios/metro-d/cardep.json.gz" },
+                  "cells": { "cardep": 11409 } }]
+  ```
+
+  Each file is a layer file written against the city's grid (its `grid` is
+  the city's), so its rows line up with the baseline's. The city's grid
+  includes any cell only a scenario covers.
 
 ## The grid
 
@@ -163,8 +183,8 @@ interchangeable. Each platform colours by one property, declared as
 | `cardep` | `cdi`: the index for the average resident (population-weighted mean) |
 | `pov` | `zone`: the zone most residents live in, and `inclusionShare` |
 
-Scenario variants (`paris-fua`, `munich-fua`, `rome-metro-d`) are published
-with a city view but no marker of their own.
+A metro area (`<city>-fua`) has no marker of its own where its core publishes
+the same layer: it is reached from the core's city view. Scenarios have none.
 
 ## Summary files
 
@@ -221,8 +241,10 @@ page (`/stats`) reads, whole. The method is at the top of
 - **`values[m][i]` is `cities[i]`'s figure**, `null` where the city does not
   publish that layer.
 - **A country pools its cities' residents**, for means and shares only,
-  which pool exactly, and for now for 15minCity only; variants and hidden
-  cities are left out of the pool.
+  which pool exactly, and for now for 15minCity only, once per boundary
+  (`extent: "fua"` on a metro areas' pool); hidden cities are left out.
+- **`extent: "fua"`** on a city marks a metro area, with its `core`. The page
+  shows one boundary at a time.
 - **`pov.zonesCommon`** splits every city at the Atlas median: the
   population-weighted medians of all P.O.V. residents of the cities shown by
   default, together, stated as the measure's `zoneThresholds`

@@ -52,6 +52,10 @@
 // A source is whatever the platform hands over: a zip, the same folder
 // unpacked, or (15minCity) one GeoJSON. Its file name gives the city:
 // `zurich_pov.zip`, `zurich_cdi.zip`, `Zurich.zip`, `Zurich.geojson` → `zurich`.
+// `Tokyo_FUA.geojson` is the city `tokyo-fua`, Tokyo's metro area, and two
+// underscores name a scenario of a city: `rome__metro-d_cdi.zip` is scenario
+// `metro-d` of Rome's Car Dependency, recorded in Rome's record (`scenarios`).
+// A city's files are imported before its scenarios, which need the baseline.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -59,7 +63,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import readline from 'node:readline/promises';
 import { fileURLToPath } from 'node:url';
-import { slugify } from './lib/slug.mjs';
+import { parseSourceName } from './lib/slug.mjs';
 import { describeHidden } from './lib/quality.mjs';
 import { staleCities } from './lib/stats.mjs';
 import { buildIndex, listCities, readCityRecord, recordSource } from './lib/bundle.mjs';
@@ -96,7 +100,8 @@ const PLATFORMS = ['15mincity', 'citychrone', 'pov', 'cdi'].map((id) => {
     layer: importer.layer,
     dir: importer.dir,
     accepts: importer.accepts,
-    slug: (f) => slugify(importer.cityName(f)),
+    // Which city, and which scenario of it if any, a file is.
+    target: (f) => parseSourceName(importer.cityName(f)),
     fingerprint: [module, ...SHARED],
   };
 });
@@ -206,23 +211,30 @@ for (const platform of selected) {
   // Two files mapping to one slug would each overwrite the other's city,
   // and which one ends up published would depend on the order of a loop.
   const bySlug = new Map();
+  const label = ({ city, scenario }) => (scenario ? `${city}__${scenario}` : city);
   for (const f of files) {
-    const s = platform.slug(f);
-    if (bySlug.has(s)) fail(`${platform.dir}/${bySlug.get(s)} and ${platform.dir}/${f} are both city "${s}"; rename one`);
+    const s = label(platform.target(f));
+    if (bySlug.has(s)) fail(`${platform.dir}/${bySlug.get(s)} and ${platform.dir}/${f} are both "${s}"; rename one`);
     bySlug.set(s, f);
   }
 
-  for (const f of files) {
+  // A city before its scenarios: a scenario needs its baseline published.
+  const ordered = [...files].sort((a, b) => Number(Boolean(platform.target(a).scenario)) - Number(Boolean(platform.target(b).scenario)));
+  for (const f of ordered) {
     const key = `${platform.dir}/${f}`;
     const file = path.join(dir, f);
-    const slug = platform.slug(f);
+    const { city: slug, scenario } = platform.target(f);
     const record = records.get(slug);
-    const prev = record?.sources?.[platform.layer];
-    const published = Boolean(record?.platforms?.[platform.layer]);
-    seen.add(`${slug}/${platform.layer}`);
+    const prev = scenario
+      ? record?.scenarios?.[scenario]?.sources?.[platform.layer]
+      : record?.sources?.[platform.layer];
+    const published = Boolean(
+      scenario ? record?.scenarios?.[scenario]?.layers?.[platform.layer] : record?.platforms?.[platform.layer],
+    );
+    seen.add(`${label({ city: slug, scenario })}/${platform.layer}`);
     const size = sizeOf(file);
     const sha = sha256(file);
-    const item = { platform, key, file, slug, sha, size };
+    const item = { platform, key, file, slug, scenario, sha, size };
 
     let reason = null;
     if (opts.has('force')) reason = prev || published ? 'forced' : 'new';
@@ -238,6 +250,10 @@ for (const platform of selected) {
   for (const [id, record] of records) {
     const source = record.sources?.[platform.layer];
     if (source && !seen.has(`${id}/${platform.layer}`)) removed.push(source.file);
+    for (const [scenario, entry] of Object.entries(record.scenarios ?? {})) {
+      const from = entry.sources?.[platform.layer];
+      if (from && !seen.has(`${label({ city: id, scenario })}/${platform.layer}`)) removed.push(from.file);
+    }
   }
 }
 
@@ -250,11 +266,12 @@ console.log(
     (stale.length ? `, ${stale.length} from an older importer` : '') +
     (DRY_RUN ? ' (dry run)' : ''),
 );
+const target = (item) => (item.scenario ? `${item.slug}, scenario ${item.scenario}` : item.slug);
 for (const item of plan) {
-  console.log(`  ${item.reason.padEnd(8)} ${item.key}  → ${item.slug}  (${mb(item.size)})`);
+  console.log(`  ${item.reason.padEnd(8)} ${item.key}  → ${target(item)}  (${mb(item.size)})`);
 }
 for (const item of adopt) {
-  console.log(`  adopted  ${item.key}  → ${item.slug}  already published; hash recorded, not re-imported (--force to)`);
+  console.log(`  adopted  ${item.key}  → ${target(item)}  already published; hash recorded, not re-imported (--force to)`);
 }
 for (const key of removed) {
   console.log(`  missing  ${key}  no longer in input_data/, its city stays published`);
@@ -269,15 +286,20 @@ if (stale.length) {
 // ── record ───────────────────────────────────────────────────────────
 function record(items, now) {
   for (const item of items) {
-    recordSource(item.slug, item.platform.layer, {
-      file: item.key,
-      sha256: item.sha,
-      size: item.size,
-      importer: item.platform.currentFingerprint,
-      // An adopted layer was published from this export before hashes were
-      // recorded; when it was imported is not known, only when it was adopted.
-      ...(item.reason === 'adopted' ? { adoptedAt: now } : { importedAt: now }),
-    });
+    recordSource(
+      item.slug,
+      item.platform.layer,
+      {
+        file: item.key,
+        sha256: item.sha,
+        size: item.size,
+        importer: item.platform.currentFingerprint,
+        // An adopted layer was published from this export before hashes were
+        // recorded; when it was imported is not known, only when it was adopted.
+        ...(item.reason === 'adopted' ? { adoptedAt: now } : { importedAt: now }),
+      },
+      { scenario: item.scenario },
+    );
   }
 }
 
@@ -348,7 +370,7 @@ if (!plan.length) {
 const done = [];
 const failed = [];
 for (const item of plan) {
-  console.log(`\n── ${item.platform.id}: ${item.slug} (${item.reason})`);
+  console.log(`\n── ${item.platform.id}: ${target(item)} (${item.reason})`);
   if (run('scripts/import-data.mjs', [item.platform.id, item.file, '--no-index'])) done.push(item);
   else failed.push(item);
 }

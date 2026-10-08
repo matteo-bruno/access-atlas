@@ -526,6 +526,16 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/platforms/car-dependency-index/compare`, { waitUntil: 'load' });
   await page.waitForTimeout(1800);
+  // How many cities the summary file has, counted rather than written here:
+  // publishing a city is a data change, never a code change.
+  const published = await page.evaluate(async (base) => {
+    const res = await fetch(`${base}/data/cardep/summary.json.gz`);
+    let body = new Uint8Array(await res.arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    return JSON.parse(new TextDecoder().decode(body)).cities.length;
+  }, BASE);
   const rows = await page.locator('.aa-compare__table tbody tr').count();
   const bars = await page.locator('.aa-bars__row').count();
   const curves = await page.locator('.aa-cdf polyline').count();
@@ -534,9 +544,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     .first()
     .innerText();
   check(
-    'Car Dependency compares all 22 cities on its published figures',
-    rows === 22 && bars === 22 && curves === 22 && /1,741/.test(milan) && /\+0\.06/.test(milan),
-    `${rows} rows · ${curves} curves · ${milan.replace(/\s+/g, ' ')}`,
+    'Car Dependency compares every published city on its published figures',
+    published > 0 && rows === published && bars === published && curves === published && /1,741/.test(milan) && /\+0\.06/.test(milan),
+    `${rows} rows · ${curves} curves of ${published} · ${milan.replace(/\s+/g, ' ')}`,
   );
   check('No console errors on the comparison', errors.length === 0, errors.slice(0, 2).join(' | '));
   await page.close();
@@ -1300,8 +1310,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
     }
     const stats = JSON.parse(new TextDecoder().decode(body));
-    // Hidden cities (thin data) are off the page by default.
-    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden).length;
+    // Hidden cities (thin data) are off the page by default, and so are
+    // metro areas: the page opens on the cores.
+    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua').length;
   }, BASE);
   check(
     'Stats page reads the published statistics',
@@ -1313,6 +1324,100 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.click('.aa-stats__rrow:not(.aa-stats__rrow--axis) .aa-stats__pick');
   await page.waitForTimeout(300);
   check('Stats highlight is kept in the URL', /[?&]sel=/.test(page.url()), page.url().replace(BASE, ''));
+  await page.close();
+}
+
+// ── Scenarios: a layer re-run, on the same cells ────────────────────
+// Provenance first: the scenario's own file is what was fetched, and the
+// map then draws the difference with its own legend. Rome's Metro D is the
+// one published (cities/rome/scenarios/metro-d/cardep.json.gz).
+{
+  const page = await context.newPage();
+  const requested = [];
+  page.on('request', (r) => requested.push(r.url()));
+  await page.goto(`${BASE}/atlas/rome?layer=cardep`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-toggle--wrap', { timeout: 15000 }).catch(() => {});
+  const options = await page.$$eval('.aa-toggle--wrap button', (els) => els.map((e) => e.textContent.trim()));
+  const before = requested.filter((u) => u.includes('/scenarios/')).length;
+  await page.locator('.aa-toggle--wrap button', { hasText: 'Metro D' }).click().catch(() => {});
+  await page.waitForTimeout(1500);
+  const fetched = requested.filter((u) => /\/cities\/rome\/scenarios\/metro-d\/cardep\.json/.test(u)).length;
+  const summary = await page.$eval('.aa-summary', (el) => el.textContent).catch(() => '');
+  check(
+    'A scenario is offered with its layer and loaded from its own file, only when chosen',
+    options.join('|') === 'Current|Metro D' && before === 0 && fetched === 1 && /Metro D/.test(summary),
+    `options ${options.join('|')} · fetched before ${before}, after ${fetched} · ${page.url().replace(BASE, '')}`,
+  );
+  await page.locator('.aa-toggle button', { hasText: 'Difference' }).click().catch(() => {});
+  await page.waitForTimeout(1200);
+  const legend = await page.$eval('.aa-city__panel', (el) => el.textContent).catch(() => '');
+  check(
+    'The difference is drawn on its own scale, linkable',
+    /minus current/i.test(legend) && /[?&]cmp=diff/.test(page.url()) && /[?&]sc=metro-d/.test(page.url()),
+    page.url().replace(BASE, ''),
+  );
+  // A layer without the scenario drops it from the URL.
+  await page.locator('.aa-layers__row', { hasText: '15-minute city' }).click();
+  await page.waitForTimeout(500);
+  check('A scenario does not follow to a layer without it', !/[?&]sc=/.test(page.url()), page.url().replace(BASE, ''));
+  await page.close();
+}
+
+// ── Two boundaries of one city ──────────────────────────────────────
+// Tokyo is published on its core and its metro area (tokyo-fua): the city
+// view switches between the two, keeping the view.
+{
+  const page = await context.newPage();
+  await page.goto(`${BASE}/atlas/tokyo?mode=bicycle`, { waitUntil: 'load' });
+  const control = page.locator('.aa-toggle button', { hasText: 'Metro (FUA)' });
+  await control.waitFor({ timeout: 15000 }).catch(() => {});
+  await control.click().catch(() => {});
+  await page.waitForURL(/\/atlas\/tokyo-fua/, { timeout: 8000 }).catch(() => {});
+  // Routes cross-fade, and the outgoing page stays on screen until it ends.
+  await page.waitForFunction(() => /Metro/.test(document.querySelector('.aa-city__region')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
+  const region = await page.$eval('.aa-city__region', (el) => el.textContent).catch(() => '');
+  check(
+    'The city view switches to the metro area, keeping the view',
+    /\/atlas\/tokyo-fua\?mode=bicycle/.test(page.url()) && /Metro \(FUA\)/.test(region),
+    `${page.url().replace(BASE, '')} · ${region}`,
+  );
+  await page.goto(`${BASE}/stats?ext=fua&pop=0`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-stats__rrow:not(.aa-stats__rrow--axis)', { timeout: 8000 }).catch(() => {});
+  const on = await page.$$eval('.aa-stats__segbtn--on', (els) => els.map((e) => e.textContent.trim()));
+  check('The Stats page compares metro areas on their own', on.includes('Metro areas (FUA)'), on.join(' · '));
+  await page.close();
+}
+
+// ── A metro area is drawn at its own opening zoom ───────────────────
+// Tokyo's FUA opens zoomed out to 11,900 km², where one 200 m cell is under
+// a pixel. MapLibre's default simplification drops polygons that small, so
+// on a laptop-sized window the whole mesh vanished. Read off the compositor:
+// the ramp's colours, which neither the paper nor the placeholder paint.
+{
+  const page = await browser.newPage({ viewport: { width: 1100, height: 700 } });
+  await page.goto(`${BASE}/atlas/tokyo-fua`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-ramp, .aa-city__summary, .aa-summary', { timeout: 30000 }).catch(() => {});
+  let coloured = 0;
+  for (let i = 0; i < 30 && coloured < 0.05; i++) {
+    await page.waitForTimeout(1000);
+    const shot = await page.locator('.aa-city__canvas canvas').first().screenshot().catch(() => null);
+    if (!shot) continue;
+    coloured = await page.evaluate(async (bytes) => {
+      const bmp = await createImageBitmap(new Blob([new Uint8Array(bytes)], { type: 'image/png' }));
+      const canvas = new OffscreenCanvas(bmp.width, bmp.height);
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(bmp, 0, 0);
+      const d = ctx.getImageData(0, 0, bmp.width, bmp.height).data;
+      let n = 0;
+      let total = 0;
+      for (let k = 0; k < d.length; k += 4 * 53) {
+        total++;
+        if (Math.abs(d[k] - d[k + 2]) > 40 || Math.abs(d[k] - d[k + 1]) > 40) n++;
+      }
+      return n / total;
+    }, Array.from(shot));
+  }
+  check('A metro area\'s cells are drawn at its opening zoom', coloured >= 0.05, `${(coloured * 100).toFixed(1)}% of the map coloured`);
   await page.close();
 }
 

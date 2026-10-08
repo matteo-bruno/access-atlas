@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Navigate, useParams, useSearchParams } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Subhead } from '../components/Subhead.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
-import { RAMPS, rampColor } from '../map/ramps.js';
+import { DELTA_RAMPS, RAMPS, rampColor } from '../map/ramps.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
@@ -13,8 +13,9 @@ import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
 import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
-import { summariseMeasure, withGeometry } from '../data/adapters.js';
-import { citychroneHourFromLayer } from '../data/grid.js';
+import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
+import { citychroneHourFromLayer, scenarioKey } from '../data/grid.js';
+import { layerScenarios } from '../data/catalogue.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
@@ -43,11 +44,26 @@ import './AtlasCityPage.css';
 const LAYER_ORDER = PLATFORMS.map((platform) => platform.id);
 const POPULATION_LAYER = 'population';
 const POPULATED = ['!=', ['coalesce', ['get', 'population'], -1], 0];
+const isPopulationLayer = (id) => id === 'population';
+const NO_CELLS = { type: 'FeatureCollection', features: [] };
+// 15minCity's "not reachable": no difference can be taken from it.
+const UNREACHABLE = 99999;
+const measured = (v) => Number.isFinite(v) && v < UNREACHABLE;
 
 // Every layer the URL may name, and where its values come from.
 const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
 
 const DEFAULT_OPACITY = 0.8;
+
+// A city is "large" for the loading note from this many cells in any of its
+// layers: Rome's widest layer has 11,409 and opens in a moment, Tokyo's metro
+// area has 123,555 and takes seconds to draw.
+const LARGE_CITY_CELLS = 40000;
+
+// Query parameters that name a row of one city's own grid, so they mean
+// nothing on the other boundary's (a CityChrone isochrone origin). `cell` is
+// an H3 index and holds on both.
+const GRID_BOUND_PARAMS = ['from'];
 
 /**
  * The combined viewer: one city, one map, a switch between the four
@@ -59,16 +75,22 @@ const DEFAULT_OPACITY = 0.8;
 export default function AtlasCityPage() {
   const { cityId } = useParams();
   const view = useAtlasView(cityId);
+  // The screen is not keyed by the city: stepping between a city's core and
+  // its metro area keeps it, and its map, and repaints. While the next city
+  // resolves, the last one stays on screen.
+  const last = useRef(null);
+  if (view.status === 'ready' && view.profile) last.current = { cityId, view };
 
-  if (view.status === 'pending') return <div className="aa-page" />;
-  if (view.status === 'missing' || !view.profile) return <Navigate to="/" replace />;
-  return <AtlasScreen key={cityId} cityId={cityId} view={view} />;
+  if (view.status === 'missing' || (view.status === 'ready' && !view.profile)) return <Navigate to="/" replace />;
+  if (!last.current) return <div className="aa-page" />;
+  return <AtlasScreen cityId={last.current.cityId} view={last.current.view} />;
 }
 
 function AtlasScreen({ cityId, view }) {
   const { t, n, lang } = useI18n();
-  const { unified, profile, platformProfiles, available } = view;
+  const { unified, profile, platformProfiles, available, extents } = view;
   const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
   const [activeZone, setActiveZone] = useState(null);
   const [hoverCell, setHoverCell] = useState(null);
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
@@ -99,6 +121,18 @@ function AtlasScreen({ cityId, view }) {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [fullscreen]);
+  // Another city on the same screen (a boundary switch): a cell or an
+  // isochrone origin is a position on the last city's grid. `?cell=` is an H3
+  // index and is selected again on the new grid below.
+  const firstCity = useRef(cityId);
+  useEffect(() => {
+    if (firstCity.current === cityId) return;
+    firstCity.current = cityId;
+    setSelectedCell(null);
+    setHoverCell(null);
+    setActiveZone(null);
+  }, [cityId]);
+
   // Car Dependency's index filter, on the same bounds as its own viewer.
   // Whether it is actually filtering depends on the active layer, which is
   // resolved from the URL further down.
@@ -148,17 +182,69 @@ function AtlasScreen({ cityId, view }) {
     // Every layer measures something else, so a selection made under one is
     // not a selection under the next.
     setSelectedCell(null);
-    setParam('layer', id, { push: true });
+    const next = new URLSearchParams(params);
+    next.set('layer', id);
+    // A scenario is a scenario of one layer: kept only where the next layer
+    // has one of that name.
+    if (!layerScenarios(profile, id).some((s) => s.id === params.get('sc'))) {
+      next.delete('sc');
+      next.delete('cmp');
+    }
+    setParams(next, { replace: false });
+  };
+
+  // ── Boundary ───────────────────────────────────────────────────────
+  // The core and the metro area are two cities in the catalogue, each with
+  // its own grid; switching opens the other with the same view, less what
+  // only makes sense on this city's grid.
+  const extent = profile.extent === 'fua' ? 'fua' : 'core';
+  const bothExtents = Boolean(extents?.core && extents?.fua);
+  const pickExtent = (key) => {
+    const target = extents?.[key];
+    if (!target || target === cityId) return;
+    const next = new URLSearchParams(params);
+    for (const name of GRID_BOUND_PARAMS) next.delete(name);
+    const query = next.toString();
+    navigate(`/atlas/${target}${query ? `?${query}` : ''}`);
+  };
+
+  // ── Scenario ───────────────────────────────────────────────────────
+  // Alternative runs of the open layer, on the same cells (`sc=<id>`), shown
+  // on their own or as the difference from the current measurement
+  // (`cmp=diff`). The difference needs a quantity: P.O.V.'s zones are
+  // categories, so it is offered where a delta ramp is defined.
+  const scenarios = unified && layer !== POPULATION_LAYER ? layerScenarios(profile, layer) : [];
+  const scenario = scenarios.find((s) => s.id === params.get('sc')) ?? null;
+  const diffAvailable = Boolean(scenario && DELTA_RAMPS[layer]);
+  const diffOn = diffAvailable && params.get('cmp') === 'diff';
+  const pickScenario = (id) => {
+    const next = new URLSearchParams(params);
+    if (id) next.set('sc', id);
+    else {
+      next.delete('sc');
+      next.delete('cmp');
+    }
+    setParams(next, { replace: true });
   };
 
   // ── Data ───────────────────────────────────────────────────────────
   // The grid loads once; the open layer's file loads the first time it is
   // opened (population is the grid's own and needs none).
-  const atlas = useAtlasMesh(cityId, layer === POPULATION_LAYER ? null : layer, unified);
+  const atlas = useAtlasMesh(cityId, layer === POPULATION_LAYER ? null : layer, unified, scenario?.id ?? null);
   const layerLoaded =
     !unified || layer === POPULATION_LAYER || !profile.layerData?.[layer]
       ? true
       : atlas.layerStatus[layer] === 'ready';
+  // Until its file is in, the scenario is not on screen: the baseline stays,
+  // and the note says what is loading.
+  const scenarioStatus = scenario ? atlas.layerStatus[`${scenario.id}:${layer}`] : null;
+  const shown = scenario && scenarioStatus === 'ready' ? scenario : null;
+  const diffShown = diffOn && Boolean(shown);
+  const scenarioName = shown ? (lang === 'it' ? shown.nameIt ?? shown.name : shown.name) : null;
+  // The key a measure is read from on screen: the scenario's where one is
+  // shown, the plain one otherwise.
+  const keyOf = (name) => (shown ? scenarioKey(shown.id, name) : name);
+  const largeCity = Math.max(0, ...Object.values(platformProfiles).map((p) => p.cells ?? 0)) >= LARGE_CITY_CELLS;
   // Legacy path: the active platform's own mesh, swapped on layer change.
   const swapProfile =
     !unified && layer !== 'citychrone' && layer !== POPULATION_LAYER
@@ -208,8 +294,10 @@ function AtlasScreen({ cityId, view }) {
       return baseGeojson;
     }
   }, [baseGeojson, cartogramOn, cartogram.status, cartogram.collection]);
+  // The union mesh is drawable once a grid is in: this city's, or the last
+  // city's while this one's loads (a boundary switch keeps the map).
   const meshReady = unified
-    ? atlas.status === 'ready'
+    ? atlas.data != null
     : layer === 'citychrone'
       ? Boolean(ccHour.collection)
       : swapMesh.status === 'ready';
@@ -274,10 +362,27 @@ function AtlasScreen({ cityId, view }) {
   // branching on the layer id in four separate places.
   const fifteenKey = measureKey(category, mode);
 
+  const shownId = shown?.id ?? null;
   const measure = useMemo(() => {
+    const key = (name) => (shownId ? scenarioKey(shownId, name) : name);
+    // The difference: the scenario's value less the current one, on a cell
+    // that carries both, neither of them 15minCity's "not reachable".
+    const delta = (name, ramp, format) => ({
+      ramp,
+      value: ['-', ['get', key(name)], ['get', name]],
+      covered: [
+        'all',
+        ['has', key(name)],
+        ['has', name],
+        ['<', ['get', key(name)], UNREACHABLE],
+        ['<', ['get', name], UNREACHABLE],
+      ],
+      format,
+    });
     if (layer === 'pov') return null; // categorical — handled separately
     if (layer === 'cardep') {
-      return { ramp: RAMPS.cdi, value: ['get', 'cdi'], format: (v) => signed(v, n) };
+      if (diffShown) return delta('cdi', DELTA_RAMPS.cardep, (v) => signed(v, n, 3));
+      return { ramp: RAMPS.cdi, value: ['get', key('cdi')], format: (v) => signed(v, n) };
     }
     if (layer === POPULATION_LAYER) {
       return {
@@ -287,10 +392,13 @@ function AtlasScreen({ cityId, view }) {
       };
     }
     if (layer === 'fifteen') {
+      if (diffShown) {
+        return delta(fifteenKey, DELTA_RAMPS.fifteen, (v) => `${v < 0 ? '−' : '+'}${formatTime(Math.abs(v)) ?? '—'}`);
+      }
       // A travel time reads as a clock, not as a decimal: 3:59, not 3.99 min.
       return {
         ramp: RAMPS.fifteen,
-        value: ['get', fifteenKey],
+        value: ['get', key(fifteenKey)],
         format: (v) => formatTime(v) ?? '—',
       };
     }
@@ -314,7 +422,7 @@ function AtlasScreen({ cityId, view }) {
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -326,14 +434,35 @@ function AtlasScreen({ cityId, view }) {
     [layer, baseGeojson, fifteenKey],
   );
 
-  // ── Paint ──────────────────────────────────────────────────────────
-  const rangeOn = layer === 'cardep' && (range[0] > -1 || range[1] < 1);
+  // The figures a shown scenario changes, computed the way the baseline's
+  // are (adapters.js), so the summary can set one beside the other.
+  const scenarioFigures = useMemo(() => {
+    if (!shownId || !baseGeojson) return null;
+    const key = (name) => scenarioKey(shownId, name);
+    if (layer === 'cardep') return { weightedCdi: weightedMean(baseGeojson, key('cdi')) };
+    if (layer === 'fifteen') return { median: summariseMeasure(baseGeojson, key(fifteenKey), RAMPS.fifteen.ticks).median };
+    if (layer === 'pov') return { zoneShares: zoneSharesOf(baseGeojson, key('zone')) };
+    return null;
+  }, [shownId, baseGeojson, layer, fifteenKey]);
 
+  // ── Paint ──────────────────────────────────────────────────────────
+  // The index filter reads the index, not a difference of two.
+  const rangeOn = layer === 'cardep' && !diffShown && (range[0] > -1 || range[1] < 1);
+
+  // The last city's mesh, kept on screen while this one's grid loads.
+  const gridLoading = unified && atlas.status === 'pending';
+  const waiting = unified && !isPopulationLayer(layer) && (!layerLoaded || gridLoading);
   const fillPaint = useMemo(() => {
+    // While the layer's own file is on its way, the grid is already here:
+    // the city's cells are drawn faintly, so the map shows where the colours
+    // will land instead of an empty frame.
+    if (waiting) {
+      return { 'fill-color': '#cfd9da', 'fill-opacity': opacity * 0.4 };
+    }
     // P.O.V. is the one genuinely categorical layer: four named classes, not a
     // quantity, so it keeps discrete colours and band isolation.
     if (layer === 'pov') {
-      const zone = ['coalesce', ['get', 'zone'], -1];
+      const zone = ['coalesce', ['get', shownId ? scenarioKey(shownId, 'zone') : 'zone'], -1];
       const covered = ['>=', zone, 0];
       return {
         'fill-color': [
@@ -369,7 +498,8 @@ function AtlasScreen({ cityId, view }) {
     // Cells a layer does not cover get no colour at all, rather than the
     // ramp's first colour — absence of data is not a low value.
     const covered =
-      value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false);
+      measure.covered ??
+      (value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false));
     // Filtered-out cells are dimmed rather than dropped, so the slice is read
     // against the city it was taken from.
     const opacityFor = rangeOn
@@ -384,7 +514,7 @@ function AtlasScreen({ cityId, view }) {
       'fill-color': rampColor(ramp, ['coalesce', value, 0]),
       'fill-opacity': ['case', covered, opacityFor, 0],
     };
-  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range]);
+  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range, waiting, shownId]);
 
   // A cell where nobody lives has no one for a measure to describe, so every
   // layer but Population leaves it out. Dropped by the layer filter rather
@@ -392,6 +522,24 @@ function AtlasScreen({ cityId, view }) {
   // grid's populations are whole numbers; a feature carrying none at all (a
   // legacy mesh) is kept.
   const meshFilter = layer === POPULATION_LAYER ? undefined : POPULATED;
+
+  // One cell of whatever is drawn (the hexagon, or its cartogram polygon).
+  // The union mesh's feature ids are their positions; a legacy hexcover
+  // promotes `new_id`, so there the cell is looked up by it.
+  const oneCell = (id) => {
+    if (id == null || !geojson?.features) return NO_CELLS;
+    const at = geojson.features[id];
+    const feature =
+      at && (at.id ?? id) === id
+        ? at
+        : geojson.features.find((f) => (f.id ?? f.properties?.new_id) === id);
+    return feature ? { type: 'FeatureCollection', features: [feature] } : NO_CELLS;
+  };
+  const hoverOutline = useMemo(() => oneCell(hoverCell), [geojson, hoverCell]); // eslint-disable-line react-hooks/exhaustive-deps
+  const selectedOutline = useMemo(() => oneCell(selectedCell), [geojson, selectedCell]); // eslint-disable-line react-hooks/exhaustive-deps
+  const originId =
+    citychroneOn && ccView === 'isochrone' && originCc != null && featureIdForCc ? featureIdForCc(originCc) : null;
+  const originOutline = useMemo(() => oneCell(originId), [geojson, originId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const highlightPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.85)', 'line-width': 1.6 }),
@@ -452,14 +600,21 @@ function AtlasScreen({ cityId, view }) {
 
   const tooltip = (feature) => {
     const p = feature.properties ?? {};
+    // The value on screen: the scenario's where one is shown.
+    const at = (name) => p[keyOf(name)];
     if (layer === 'pov') {
-      if (!Number.isFinite(p.zone)) return t('atlas.noValue');
-      return `${t(`city.zones.${ZONES[p.zone].key}.name`)} · ${[p.proximity, p.opportunity]
+      const zone = at('zone');
+      if (!Number.isFinite(zone)) return t('atlas.noValue');
+      return `${t(`city.zones.${ZONES[zone].key}.name`)} · ${[at('proximity'), at('opportunity')]
         .map((v) => n(v, { maximumFractionDigits: 1 }))
         .join(' · ')}`;
     }
     if (layer === 'cardep') {
-      return Number.isFinite(p.cdi) ? `CDI ${signed(p.cdi, n)}` : t('atlas.noValue');
+      if (diffShown) {
+        if (!Number.isFinite(p.cdi) || !Number.isFinite(at('cdi'))) return t('atlas.noValue');
+        return `${t('atlas.scenario.change')} ${measure.format(at('cdi') - p.cdi)} · CDI ${signed(p.cdi, n)} → ${signed(at('cdi'), n)}`;
+      }
+      return Number.isFinite(at('cdi')) ? `CDI ${signed(at('cdi'), n)}` : t('atlas.noValue');
     }
     if (isPopulation) {
       return Number.isFinite(p.population)
@@ -467,7 +622,13 @@ function AtlasScreen({ cityId, view }) {
         : t('atlas.noValue');
     }
     if (layer === 'fifteen') {
-      const value = p[fifteenKey];
+      if (diffShown) {
+        const before = p[fifteenKey];
+        const after = at(fifteenKey);
+        if (!measured(before) || !measured(after)) return t('atlas.noValue');
+        return `${t('atlas.scenario.change')} ${measure.format(after - before)} · ${formatTime(before)} → ${formatTime(after)}`;
+      }
+      const value = at(fifteenKey);
       return value == null ? t('atlas.noValue') : measure.format(value);
     }
     const cc = ccForFeature(feature);
@@ -497,29 +658,51 @@ function AtlasScreen({ cityId, view }) {
   const selectedRows = useMemo(() => {
     const feature = selectedCell == null ? null : baseGeojson?.features?.[selectedCell];
     if (!feature) return null;
-    const p = feature.properties ?? {};
+    const base = feature.properties ?? {};
+    // What is on screen: the shown scenario's values under the plain names.
+    const p = shownProperties(base, shownId);
     const score = (v) => (Number.isFinite(v) ? n(v, { maximumFractionDigits: 1 }) : '—');
     const rows = [];
+    // The row the map draws says it is the scenario's, where one is shown.
+    const named = (label) => (shownId ? `${label} · ${scenarioName}` : label);
+    // With a scenario shown, the current value and the change sit under the
+    // one the map draws.
+    const versus = (name, format, difference) => {
+      if (!shownId) return;
+      const before = base[name];
+      const after = p[name];
+      rows.push({ label: t('atlas.scenario.current'), value: Number.isFinite(before) ? format(before) : '—' });
+      rows.push({
+        label: t('atlas.scenario.change'),
+        value: measured(before) && measured(after) ? difference(after - before) : '—',
+      });
+    };
 
     if (layer === 'pov') {
+      const zoneName = (z) => (Number.isFinite(z) ? t(`city.zones.${ZONES[z].key}.name`) : '—');
       rows.push({
-        label: t('city.cell.zone'),
-        value: Number.isFinite(p.zone) ? t(`city.zones.${ZONES[p.zone].key}.name`) : '—',
+        label: named(t('city.cell.zone')),
+        value: zoneName(p.zone),
         accent: Number.isFinite(p.zone) ? ZONES[p.zone].color : undefined,
       });
+      if (shownId) rows.push({ label: t('atlas.scenario.current'), value: zoneName(base.zone) });
       rows.push({ label: t('city.cell.proximity'), value: score(p.proximity) });
       rows.push({ label: t('city.cell.opportunity'), value: score(p.opportunity) });
     } else if (layer === 'cardep') {
-      rows.push({ label: t('city.cell.cdi'), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' });
+      rows.push({ label: named(t('city.cell.cdi')), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' });
+      versus('cdi', (v) => signed(v, n), (v) => signed(v, n, 3));
       rows.push({ label: t('city.cell.byCar'), value: score(p.o_score_car) });
       rows.push({ label: t('city.cell.byTransit'), value: score(p.o_score_pt) });
     } else if (layer === 'fifteen') {
       rows.push({
-        label: `${t(`fifteen.categories.${CATEGORIES.find((c) => c.key === category).i18n}`)} · ${t(
-          `fifteen.modes.${MODES.find((m) => m.key === mode).i18n}`,
-        )}`,
-        value: p[fifteenKey] == null ? '—' : measure.format(p[fifteenKey]),
+        label: named(
+          `${t(`fifteen.categories.${CATEGORIES.find((c) => c.key === category).i18n}`)} · ${t(
+            `fifteen.modes.${MODES.find((m) => m.key === mode).i18n}`,
+          )}`,
+        ),
+        value: p[fifteenKey] == null ? '—' : formatTime(p[fifteenKey]) ?? '—',
       });
+      versus(fifteenKey, (v) => formatTime(v) ?? '—', (v) => `${v < 0 ? '−' : '+'}${formatTime(Math.abs(v)) ?? '—'}`);
     } else if (layer === 'citychrone') {
       const scores = Number.isFinite(p.cc) ? ccHourData?.byCc.get(p.cc) : null;
       rows.push({
@@ -546,9 +729,11 @@ function AtlasScreen({ cityId, view }) {
     // the shared grid, which is what makes the layers comparable at all.
     if (p.h3) rows.push({ label: t('city.cell.grid'), value: p.h3 });
     return rows;
-  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, measure, ccHourData, matrixRow, t, n]);
+  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, ccHourData, matrixRow, t, n, shownId, scenarioName]);
 
-  const legendTitle = isPopulation
+  const legendTitle = diffShown
+    ? t('atlas.scenario.legendDiff', { scenario: scenarioName })
+    : isPopulation
     ? t('atlas.population.legend')
     : layer === 'pov'
       ? t('city.zoneType')
@@ -559,7 +744,9 @@ function AtlasScreen({ cityId, view }) {
           : t(`atlas.legend.${ccView}`);
 
   // How to label the legend's tick values, per layer.
-  const tickFormat = isPopulation
+  const tickFormat = diffShown
+    ? (v) => (v === 0 ? '0' : `${v < 0 ? '−' : '+'}${n(Math.abs(v), { maximumFractionDigits: 1 })}`)
+    : isPopulation
     ? (v) => (v >= 1000 ? `${n(v / 1000, { maximumFractionDigits: 1 })}k` : n(v))
     : layer === 'cardep'
       ? (v) => (v === 0 ? '0' : signed(v, n))
@@ -570,7 +757,9 @@ function AtlasScreen({ cityId, view }) {
   // How to read the colours of the layer on screen. The three cell-valued
   // platforms explain their own scale; CityChrone's changes with the measure
   // picked, so its per-view hint stands in.
-  const legendExplain = isPopulation
+  const legendExplain = diffShown
+    ? t(`atlas.scenario.diffAbout.${layer}`)
+    : isPopulation
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
@@ -600,7 +789,12 @@ function AtlasScreen({ cityId, view }) {
             title={cityName}
             meta={
               <span className="aa-city__region">
-                {t('city.region', { region, count: layerCells != null ? n(layerCells) : '—' })}
+                {t('city.region', {
+                  // Which boundary this is, wherever the city has two (or
+                  // only its metro area is published).
+                  region: bothExtents || extent === 'fua' ? `${region} · ${t(`atlas.extent.${extent}`)}` : region,
+                  count: layerCells != null ? n(layerCells) : '—',
+                })}
               </span>
             }
           >
@@ -628,6 +822,26 @@ function AtlasScreen({ cityId, view }) {
       <main className="aa-main aa-city aa-city--nochart" id="main">
         {sidebarOpen && (
           <aside className="aa-city__panel">
+            {/* ── The boundary: the city's core or its metro area ── */}
+            {bothExtents && (
+              <>
+                <Explain label={t('atlas.extent.label')} body={t('atlas.extent.about')} />
+                <div className="aa-toggle" role="group" aria-label={t('atlas.extent.label')}>
+                  {['core', 'fua'].map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={`aa-toggle__btn${extent === key ? ' aa-toggle__btn--active' : ''}`}
+                      aria-pressed={extent === key}
+                      onClick={() => pickExtent(key)}
+                    >
+                      {t(`atlas.extent.${key}`)}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
             {/* ── The switcher ─────────────────────────────────── */}
             <Eyebrow>{t('atlas.controls.layer')}</Eyebrow>
             <div className="aa-layers" role="group" aria-label={t('atlas.controls.layer')}>
@@ -666,6 +880,48 @@ function AtlasScreen({ cityId, view }) {
                 </button>
               )}
             </div>
+
+            {/* ── Scenarios of the open layer ──────────────────── */}
+            {scenarios.length > 0 && (
+              <>
+                <Explain label={t('atlas.scenario.label')} body={t('atlas.scenario.about')} />
+                <div className="aa-toggle aa-toggle--wrap" role="group" aria-label={t('atlas.scenario.label')}>
+                  {[null, ...scenarios].map((option) => {
+                    const active = (scenario?.id ?? null) === (option?.id ?? null);
+                    return (
+                      <button
+                        key={option?.id ?? 'current'}
+                        type="button"
+                        className={`aa-toggle__btn${active ? ' aa-toggle__btn--active' : ''}`}
+                        aria-pressed={active}
+                        onClick={() => pickScenario(option?.id ?? null)}
+                      >
+                        {option
+                          ? lang === 'it'
+                            ? option.nameIt ?? option.name
+                            : option.name
+                          : t('atlas.scenario.current')}
+                      </button>
+                    );
+                  })}
+                </div>
+                {diffAvailable && (
+                  <div className="aa-toggle" role="group" aria-label={t('atlas.scenario.label')}>
+                    {['scenario', 'diff'].map((key) => (
+                      <button
+                        key={key}
+                        type="button"
+                        className={`aa-toggle__btn${(diffOn ? 'diff' : 'scenario') === key ? ' aa-toggle__btn--active' : ''}`}
+                        aria-pressed={(diffOn ? 'diff' : 'scenario') === key}
+                        onClick={() => setParam('cmp', key === 'diff' ? 'diff' : null)}
+                      >
+                        {t(`atlas.scenario.view.${key}`)}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
 
             {/* ── Per-layer controls ───────────────────────────── */}
             {layer === 'fifteen' && (
@@ -754,9 +1010,11 @@ function AtlasScreen({ cityId, view }) {
               // share of covered cells that falls in it.
               <div className="aa-bands">
                 {ZONES.map((zone, index) => {
-                  const shares = unified
-                    ? atlas.data?.layers.pov.zoneShares
-                    : swapMesh.data?.stats?.zoneShares;
+                  const shares = shown
+                    ? scenarioFigures?.zoneShares
+                    : unified
+                      ? atlas.data?.layers.pov.zoneShares
+                      : swapMesh.data?.stats?.zoneShares;
                   const share = shares?.[index];
                   return (
                     <button
@@ -779,7 +1037,7 @@ function AtlasScreen({ cityId, view }) {
                   );
                 })}
               </div>
-            ) : (
+            ) : waiting ? null : (
               <RampLegend
                 ramp={measure.ramp}
                 format={tickFormat}
@@ -789,7 +1047,7 @@ function AtlasScreen({ cityId, view }) {
               />
             )}
 
-            {layer === 'cardep' && (
+            {layer === 'cardep' && !diffShown && (
               <>
                 <Explain label={t('city.filter.title')} body={t('city.filter.about')} />
                 <RangeFilter
@@ -836,6 +1094,8 @@ function AtlasScreen({ cityId, view }) {
                 zoom={cityZoom(profile)}
                 bounds={bounds}
                 fitPadding={24}
+                // A boundary switch moves the camera to the other extent.
+                fitDuration={600}
                 graticule={false}
                 basemap
                 // Full-bleed: it takes over from the site's backdrop, which
@@ -846,6 +1106,9 @@ function AtlasScreen({ cityId, view }) {
                 <GeoJSONLayer
                   id="atlas-mesh"
                   data={geojson}
+                  // Every cell at every zoom: the default tolerance drops
+                  // cells smaller than a pixel, which is all of a metro area.
+                  tolerance={0}
                   type="fill"
                   paint={fillPaint}
                   filter={meshFilter}
@@ -855,40 +1118,56 @@ function AtlasScreen({ cityId, view }) {
                   onClick={onCellClick}
                   tooltip={tooltip}
                 />
-                {hoverCell != null && (
-                  <GeoJSONLayer
-                    id="atlas-mesh-highlight"
-                    data={geojson}
-                    type="line"
-                    paint={highlightPaint}
-                    filter={['==', ['id'], hoverCell]}
-                    interactive={false}
-                  />
-                )}
-                {selectedCell != null && (
-                  <GeoJSONLayer
-                    id="atlas-mesh-selected"
-                    data={geojson}
-                    type="line"
-                    paint={selectedPaint}
-                    filter={['==', ['id'], selectedCell]}
-                    interactive={false}
-                  />
-                )}
-                {citychroneOn && ccView === 'isochrone' && originCc != null && (
-                  <GeoJSONLayer
-                    id="atlas-iso-origin"
-                    data={geojson}
-                    type="line"
-                    paint={originPaint}
-                    filter={['==', ['coalesce', ['get', unified ? 'cc' : 'new_id'], -1], originCc]}
-                    interactive={false}
-                  />
-                )}
+                {/* Outlines are a source of one cell each, always mounted. As
+                    filters over the whole mesh they made MapLibre re-tile
+                    every cell on each move of the pointer, and as copies of
+                    the mesh they sent all of it to the worker again: on a
+                    metro area of 120,000 cells, seconds of a frozen page. */}
+                <GeoJSONLayer
+                  id="atlas-mesh-highlight"
+                  data={hoverOutline}
+                  type="line"
+                  paint={highlightPaint}
+                  interactive={false}
+                />
+                <GeoJSONLayer
+                  id="atlas-mesh-selected"
+                  data={selectedOutline}
+                  type="line"
+                  paint={selectedPaint}
+                  interactive={false}
+                />
+                <GeoJSONLayer
+                  id="atlas-iso-origin"
+                  data={originOutline}
+                  type="line"
+                  paint={originPaint}
+                  interactive={false}
+                />
               </AtlasMap>
             ) : (
               <div className="aa-city__loading">
-                {unified && atlas.status === 'error' ? t('atlas.error') : t('city.computing')}
+                {unified && atlas.status === 'error' ? (
+                  t('atlas.error')
+                ) : (
+                  <span className="aa-atlas__loadingtext">
+                    {t('city.computing')}
+                    {largeCity && <span className="aa-atlas__loadinghint">{t('atlas.loading.large')}</span>}
+                  </span>
+                )}
+              </div>
+            )}
+
+            {/* The grid is drawn; a layer, or a scenario of it, is still on
+                its way. Said over the map rather than left as a pale city. */}
+            {meshReady && geojson && (gridLoading || waiting || scenarioStatus === 'pending') && (
+              <div className="aa-atlas__prompt aa-atlas__prompt--loading" role="status">
+                {gridLoading
+                  ? t('city.computing')
+                  : t('atlas.loading.layer', {
+                      name: scenario && !waiting ? (lang === 'it' ? scenario.nameIt ?? scenario.name : scenario.name) : platform.name,
+                    })}
+                {largeCity && <span className="aa-atlas__loadinghint">{t('atlas.loading.large')}</span>}
               </div>
             )}
 
@@ -929,19 +1208,53 @@ function AtlasScreen({ cityId, view }) {
                     />
                   )}
                   {layer === 'cardep' && (
-                    <SummaryRow
-                      label={t('city.summary.weightedCdi')}
-                      value={signedOrDash(
-                        unified ? atlas.data?.layers.cardep.weightedCdi : stats?.weightedCdi,
-                        n,
+                    <>
+                      <SummaryRow
+                        label={shown ? `${t('city.summary.weightedCdi')} · ${scenarioName}` : t('city.summary.weightedCdi')}
+                        value={signedOrDash(
+                          shown
+                            ? scenarioFigures?.weightedCdi
+                            : unified
+                              ? atlas.data?.layers.cardep.weightedCdi
+                              : stats?.weightedCdi,
+                          n,
+                        )}
+                      />
+                      {shown && (
+                        <>
+                          <SummaryRow
+                            label={t('atlas.scenario.current')}
+                            value={signedOrDash(atlas.data?.layers.cardep.weightedCdi, n)}
+                          />
+                          <SummaryRow
+                            label={t('atlas.scenario.change')}
+                            value={
+                              scenarioFigures?.weightedCdi == null || atlas.data?.layers.cardep.weightedCdi == null
+                                ? '—'
+                                : signed(scenarioFigures.weightedCdi - atlas.data.layers.cardep.weightedCdi, n, 3)
+                            }
+                          />
+                        </>
                       )}
-                    />
+                    </>
                   )}
                   {layer === 'fifteen' && (
-                    <SummaryRow
-                      label={t('fifteen.summary.median')}
-                      value={fifteenMedian == null ? '—' : formatTime(fifteenMedian)}
-                    />
+                    <>
+                      <SummaryRow
+                        label={shown ? `${t('fifteen.summary.median')} · ${scenarioName}` : t('fifteen.summary.median')}
+                        value={
+                          (shown ? scenarioFigures?.median : fifteenMedian) == null
+                            ? '—'
+                            : formatTime(shown ? scenarioFigures.median : fifteenMedian)
+                        }
+                      />
+                      {shown && (
+                        <SummaryRow
+                          label={t('atlas.scenario.current')}
+                          value={fifteenMedian == null ? '—' : formatTime(fifteenMedian)}
+                        />
+                      )}
+                    </>
                   )}
                   {layer === 'citychrone' && ccView !== 'isochrone' && (
                     <SummaryRow
@@ -995,7 +1308,7 @@ function AtlasScreen({ cityId, view }) {
                       <>
                         <p className="aa-catbars__title">{t('fifteen.barsTitle')}</p>
                         <CategoryBars
-                          properties={baseGeojson.features[selectedCell].properties}
+                          properties={shownProperties(baseGeojson.features[selectedCell].properties, shownId)}
                           mode={mode}
                         />
                       </>
@@ -1124,6 +1437,21 @@ function SummaryRow({ label, value }) {
 }
 
 /**
+ * A cell's properties as a scenario has them: its `<scenario>:<name>` values
+ * under the plain names, everything else as it is. The baseline when no
+ * scenario is shown.
+ */
+function shownProperties(properties, scenarioId) {
+  if (!scenarioId) return properties;
+  const prefix = `${scenarioId}:`;
+  const out = { ...properties };
+  for (const [key, value] of Object.entries(properties)) {
+    if (key.startsWith(prefix)) out[key.slice(prefix.length)] = value;
+  }
+  return out;
+}
+
+/**
  * Expression that is true where a cell actually carries the measure — used to
  * hide, rather than mis-colour, the cells a layer does not cover. A missing
  * value is not a low one.
@@ -1137,9 +1465,13 @@ function present(key, fromState) {
     : ['has', key];
 }
 
-function signed(value, n) {
-  const text = n(Math.abs(value), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  return value < 0 ? `−${text}` : `+${text}`;
+function signed(value, n, digits = 2) {
+  // A difference of two published values carries their floating-point noise:
+  // rounded first, so −0.0000001 reads as 0 and not as "−0.000".
+  const rounded = Math.round(value * 10 ** digits) / 10 ** digits;
+  const text = n(Math.abs(rounded), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  if (rounded === 0) return text;
+  return rounded < 0 ? `−${text}` : `+${text}`;
 }
 
 function signedOrDash(value, n) {

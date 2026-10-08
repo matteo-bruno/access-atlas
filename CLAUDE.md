@@ -26,7 +26,7 @@ Two consequences worth internalising before editing copy:
 a platform publishes (the platform cards, the Research page) comes from
 `usePublishedCityCounts()`, and the Atlas's totals from `atlasMetrics()` in
 `src/data/home.js`, both counted from the catalogue — whose rows carry each
-layer's `cells` and a `variant` flag, written by the importer. They used to
+layer's `cells` and a metro area's `extent`, written by the importer. They used to
 be numbers in `platforms.js` and `home.js` that `test:data` checked, which
 made every new city fail the import until someone edited the code: adding a
 city is a data change, and must stay one.
@@ -131,6 +131,42 @@ commit that carried one and not the other, left the catalogue and the world
 maps describing different sites. `test:data` fails if a rebuild would change
 anything; `npm run import -- --index` is the repair.
 
+**Two boundaries, and scenarios: neither is a variant any more.** A city
+can be published on its GHS core (Urban Centre, the default) and its metro
+area (Functional Urban Area). The metro area is a city of its own, id
+`<city>-fua`, imported from `<City>_FUA.<ext>`: own grid, layers, record and
+statistics, **named as its core** ("Tokyo", not "Tokyo Fua"; `cityMeta` takes
+the core's names when it has none). Its catalogue entry says
+`extent: 'fua', core: '<city>'`, derived from the id (`extentOf` in
+`bundle.mjs`); the city view offers "City (core) / Metro (FUA)" wherever both
+exist and keeps the query string across, less `from` (a CityChrone row of
+one grid). **The switch is a repaint, not a new page**, and three things keep
+it one: `FadingRoutes` counts `/atlas/x` and `/atlas/x-fua` as one screen
+(`screenOf`), so there is no cross-fade; `AtlasScreen` is not keyed by the
+city, so the map and its WebGL context stay; and `useAtlasMesh` keeps the
+last city's mesh (painted grey) until the next grid is in, then the camera
+eases to the new extent (`fitDuration`). Its layer effects wait on *which*
+city's grid is in, not on a ready flag: back to a cached city, "pending" and
+"ready" land in one render and a flag never changes. One dot per place on the world maps: a metro area's marker is
+dropped where its core publishes the same layer. Lists that set the two side
+by side (compare view, CityChat) label it with `cityLabel`.
+
+A **scenario** is an alternative run of one layer of a city (Rome's Metro D:
+Car Dependency with a line that does not exist yet). It is **not a city**: it
+is stored with its city, `cities/<city>/scenarios/<id>/<layer>.json.gz`,
+**written against the city's own grid** (whose cells now include any a
+scenario covers), listed in the record's `scenarios` and the atlas entry's
+`scenarios`, and rewritten with the city whenever the grid moves. Imported
+from `<city>__<scenario>` (two underscores) in any platform folder; the city
+must publish that layer, because the viewer subtracts one from the other.
+The viewer merges its values beside the baseline's under `<id>:<name>`
+(`scenarioKey` in `grid.js`), so "Scenario" and "Difference" (`sc=`, `cmp=diff`)
+are paint changes on the same features. Difference ramps are
+`DELTA_RAMPS` in `ramps.js`, fixed like every other domain. Scenarios are
+not statistics, have no marker and no compare row. The retired `VARIANTS`
+list made `paris-fua` and `rome-metro-d` cities without markers; the first
+is now a metro area, the second a scenario of Rome.
+
 `update:data` skips an export whose hash is on record, so adding cities
 touches only those cities. A published layer with no hash on record is
 *adopted* (hash recorded, nothing re-imported); `--force` recomputes
@@ -228,9 +264,10 @@ What is easy to get wrong:
   (`zoneThresholds`, with the number of cities they came from).
 - **A country pools, never averages.** Only means and shares of residents
   pool exactly (a population-weighted mean of population-weighted figures),
-  so a country offers no median, percentile, Gini or correlation. Variants
-  are left out of the pool, because their residents are their city's,
-  counted again. **For now only 15minCity is pooled** (`COUNTRY_LAYERS` in
+  so a country offers no median, percentile, Gini or correlation. A country
+  is pooled **once per boundary**: its cores together, its metro areas
+  together, never one with the other, because a metro area's residents
+  include its core's. **For now only 15minCity is pooled** (`COUNTRY_LAYERS` in
   `stats.mjs`), the layer meant to cover whole countries; the page reads
   which layers have countries from the file and disables the others.
 - **15minCity's `99999`** ("not reachable") stays in quantiles and shares as
@@ -239,8 +276,8 @@ What is easy to get wrong:
 - **The caveats are part of the page, not decoration.** One standing note
   and the "Method and limits" dialog, notes under the view that apply only to
   what is on screen (`contextNotes` in `Stats.jsx`), and a `!` beside a row
-  for a variant or for a layer covering under nine in ten of its city's
-  residents (`cityFlags`). New copy that would apply everywhere belongs in the
+  for a layer covering under nine in ten of its city's residents
+  (`cityFlags`). New copy that would apply everywhere belongs in the
   dialog, not as another standing note.
 - **Highlight colours follow the city, not its position.** `sel` in the URL
   holds four slots, possibly empty, so removing one highlighted city never
@@ -493,6 +530,26 @@ between one tab and the next. `html { scrollbar-gutter: stable }` reserves the
 track on every page; `smoke.mjs` asserts the width is the same with and without
 one. Anything that changes how the document scrolls has to keep that true.
 
+**A metro area is 120,000 cells, and everything that copies the mesh
+shows.** Tokyo's FUA took ~20 s to colour in a headless browser, and froze
+the page for seconds on every hover. Three things did it, and each is easy
+to bring back: hover and selection outlines were `GeoJSONLayer`s over the
+whole mesh (each one the whole collection copied to MapLibre's worker and
+re-indexed; as filters on the mesh's own source, every pointer move
+re-tiled every cell), so they are one-cell sources now; `setData` ran once
+more right after `addSource` with the same collection; and `mergeLayer`
+added properties one by one, which past a couple of dozen drops V8 objects
+into dictionary mode (930 ms against 50 ms with a literal per shape,
+`builderFor` in `grid.js`). The page also says so while it loads ("Large
+cities can take a while…", above `LARGE_CITY_CELLS`) and draws the grid
+faintly before the layer's colours arrive. And the mesh's source has
+`tolerance: 0`: MapLibre's default simplification *drops* polygons smaller
+than a fraction of a pixel, so at a metro area's own opening zoom on a
+laptop screen every 200 m cell went, and the map was empty. What is left is
+`cellToBoundary` on every cell (~0.6 s) and MapLibre's own copy and tiling;
+vector tiles made at import would remove both, at the cost of the
+FeatureCollection every panel reads.
+
 **GitHub Pages deep links return HTTP 404 with a rendered page.** Inherent to
 the `404.html` fallback. Users see the right page; crawlers and uptime checks
 see a 404.
@@ -514,7 +571,7 @@ layer's rows land on grid cells, shares sum to 100, no CDI is outside
 [−1, +1], every 15minCity category × mode is present, the derived
 cartogram rule stays within 25 m of the published ones, every CityChrone
 matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
-and `variant` fields match the files, the statistics are what recomputing them gives
+and `extent` fields match the files, every scenario sits on its city's grid, the statistics are what recomputing them gives
 and agree with the summaries and markers, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
 seconds what the browser suites take minutes to reach.

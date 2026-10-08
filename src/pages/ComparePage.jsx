@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { Subhead } from '../components/Subhead.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { useI18n } from '../i18n/index.jsx';
+import { cityLabel } from '../data/catalogue.js';
 import { platformBySlug, ZONES } from '../data/platforms.js';
 import { usePlatformSummary } from '../data/useAtlasData.js';
 import { RAMPS, colorAt } from '../map/ramps.js';
@@ -35,8 +36,8 @@ function CompareScreen({ platform, summary }) {
   // and neither is the "right" one to show alone.
   const [basis, setBasis] = useState('cells');
 
-  const name = (row) =>
-    lang === 'it' ? row.profile.nameIt ?? row.profile.name : row.profile.name;
+  // A metro area is named as its core, so it says which it is.
+  const name = (row) => cityLabel(row.profile, lang, t);
 
   const shares = (row) =>
     (basis === 'residents' ? row.zonePopulationShares : row.zoneShares) ?? row.zoneShares;

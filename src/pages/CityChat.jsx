@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { useI18n } from '../i18n/index.jsx';
+import { cityLabel } from '../data/catalogue.js';
 import { useAtlasCities } from '../data/useAtlasData.js';
 import { PLATFORMS_BY_ID } from '../data/platforms.js';
 import { askCityChat, CITYCHAT_ENABLED, CityChatError, probeCityChat } from '../data/citychat.js';
@@ -40,7 +41,7 @@ export default function CityChat() {
 
   const cityName = (id) => {
     const city = cities.find((c) => c.id === id);
-    return city ? (lang === 'it' ? city.nameIt || city.name : city.name) : id;
+    return city ? cityLabel(city, lang, t) : id;
   };
 
   // Whether the service is there, and which model it runs.

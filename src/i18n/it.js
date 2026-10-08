@@ -245,6 +245,25 @@ export default {
   // delle quattro piattaforme.
   atlas: {
     label: 'Vista combinata',
+    extent: {
+      label: 'Confine',
+      core: 'Città (core)',
+      fua: 'Area metropolitana (FUA)',
+      about: 'Due confini dal Global Human Settlement Layer (GHS): il nucleo della città, il suo Urban Centre, e la sua area metropolitana, la Functional Urban Area, che aggiunge la zona dei pendolari intorno. Ciascuno è pubblicato e misurato per conto suo; il pulsante apre la stessa vista sull\'altro.',
+    },
+    scenario: {
+      label: 'Scenario',
+      current: 'Attuale',
+      view: { scenario: 'Scenario', diff: 'Differenza' },
+      about: 'Un\'altra esecuzione di questo layer con qualcosa di cambiato (per esempio una nuova linea della metro), sulle stesse celle. Mostralo da solo, o come differenza dalla misura attuale.',
+      legendDiff: 'Variazione: {scenario} meno attuale',
+      change: 'Variazione',
+      diffAbout: {
+        cardep: 'Sotto zero lo scenario rende la cella meno dipendente dall\'auto: il trasporto pubblico raggiunge relativamente di più di quanto raggiunge l\'auto. Le celle bianche non cambiano.',
+        fifteen: 'Sotto zero lo scenario avvicina i servizi: minuti risparmiati. Sopra zero li allontana. Le celle bianche non cambiano.',
+      },
+    },
+    loading: { large: 'Le città grandi possono richiedere un po’ di tempo…', layer: 'Caricamento di {name}…' },
     mapTitle: 'Misurato da {name}',
     controls: {
       layer: 'Visualizzazione',
@@ -755,6 +774,12 @@ export default {
         },
       },
     },
+    extent: {
+      label: 'Confine',
+      core: 'Città (core)',
+      fua: 'Aree metropolitane (FUA)',
+      about: 'Le città si confrontano su un confine alla volta, entrambi dal GHS: i loro nuclei (Urban Centre) o le loro aree metropolitane (Functional Urban Area). Un’area metropolitana contiene il suo nucleo, quindi le due non si mescolano mai, né si sommano in un paese.',
+    },
     unit: {
       label: 'Confronta',
       city: 'Città',
@@ -947,7 +972,6 @@ export default {
     yAxis: 'Asse verticale',
     unreachableValue: 'non raggiungibile',
     flag: {
-      variant: 'Un secondo perimetro di una città già elencata, tracciato diversamente. I suoi residenti non entrano nel paese.',
       coverage: 'Questo livello copre il {share}% dei residenti che l’Atlas ha per questa città: il valore descrive quella parte.',
       single: 'Una sola città pubblicata: il valore del paese è quello della città.',
     },
