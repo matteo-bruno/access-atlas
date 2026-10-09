@@ -1052,10 +1052,12 @@ export default {
     // the same string here. They stay as pairs rather than collapsing to one
     // key so both dictionaries keep an identical shape.
     roles: {
-      director: 'PI and Director',
+      director: 'Co-PI and Director',
       assistant: 'Assistant researcher',
       staffResearcherM: 'Researcher',
       staffResearcherF: 'Researcher',
+      coPiResearcherM: 'Co-PI and Researcher',
+      coPiResearcherF: 'Co-PI and Researcher',
       consultantM: 'Consultant, researcher',
       consultantF: 'Consultant, researcher',
       sapienzaResearcherM: 'Researcher, Sapienza',

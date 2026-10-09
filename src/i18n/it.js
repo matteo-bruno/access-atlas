@@ -1049,10 +1049,12 @@ export default {
     // "Assistente" and "manager" are invariable, and the two function-named
     // roles below do not inflect, so those take a single key.
     roles: {
-      director: 'PI e direttore',
+      director: 'Co-PI e direttore',
       assistant: 'Assistente di ricerca',
       staffResearcherM: 'Ricercatore',
       staffResearcherF: 'Ricercatrice',
+      coPiResearcherM: 'Co-PI e ricercatore',
+      coPiResearcherF: 'Co-PI e ricercatrice',
       consultantM: 'Consulente e ricercatore',
       consultantF: 'Consulente e ricercatrice',
       sapienzaResearcherM: 'Ricercatore, Sapienza',

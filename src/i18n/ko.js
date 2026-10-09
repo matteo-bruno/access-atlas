@@ -985,10 +985,12 @@ export default {
       'Sony Computer Science Laboratories, Rome\nJoint Initiative CREF-SONY\nCentro Studi e Ricerche “Enrico Fermi” – CREF\nVia Panisperna, 89/a\n00184 Roma\nEntrance: Piazza del Viminale, 1, Roma',
     teamTitle: '팀',
     roles: {
-      director: '책임연구자 겸 소장',
+      director: '공동 책임연구자 겸 소장',
       assistant: '연구 보조원',
       staffResearcherM: '연구원',
       staffResearcherF: '연구원',
+      coPiResearcherM: '공동 책임연구자 겸 연구원',
+      coPiResearcherF: '공동 책임연구자 겸 연구원',
       consultantM: '컨설턴트 겸 연구원',
       consultantF: '컨설턴트 겸 연구원',
       sapienzaResearcherM: '연구원, 사피엔차 대학교',

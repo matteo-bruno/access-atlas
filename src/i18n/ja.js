@@ -1007,10 +1007,12 @@ export default {
     teamTitle: 'チーム',
     // Japanese has no gender agreement either; the M/F pairs keep the shape.
     roles: {
-      director: '研究代表者・ディレクター',
+      director: '共同研究代表者・ディレクター',
       assistant: 'アシスタント研究員',
       staffResearcherM: '研究員',
       staffResearcherF: '研究員',
+      coPiResearcherM: '共同研究代表者・研究員',
+      coPiResearcherF: '共同研究代表者・研究員',
       consultantM: 'コンサルタント・研究員',
       consultantF: 'コンサルタント・研究員',
       sapienzaResearcherM: '研究員（サピエンツァ大学）',
