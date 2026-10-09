@@ -265,20 +265,17 @@ function AtlasScreen({ cityId, view }) {
 
   // ── Geometry ───────────────────────────────────────────────────────
   // Reversed from the platform pages: the union mesh is already the cells
-  // where they are, and the cartogram is the companion. Every layer has one —
-  // P.O.V.'s and Car Dependency's as those platforms publish them, the other
-  // two derived by the Atlas — and each is its own, never shared: even the two
-  // published ones disagree by up to 9.6 m on cells they both cover.
+  // where they are, and the cartogram is the companion. Every layer has one,
+  // drawn by the Atlas's own rule on the grid's population, so a cell is the
+  // same size whichever layer is on screen.
   const cartogramLayer = unified && layer !== POPULATION_LAYER ? layer : null;
-  // Every layer on the per-city layout has one: its own, or the rule's.
   const cartogramPublished = Boolean(
     profile.cartograms?.[cartogramLayer] || profile.layerData?.[cartogramLayer],
   );
   const cartogramDerived = profile.cartogramSources?.[cartogramLayer] === 'derived';
   const cartogramOn = geometry === 'cartogram' && cartogramPublished;
   // The choice is remembered across layers but only honoured where that
-  // layer publishes a cartogram, so switching to 15minCity shows the map and
-  // switching back to P.O.V. returns to the cartogram.
+  // layer has a cartogram.
   const geometryValue = cartogramOn ? 'cartogram' : 'geographic';
   const cartogram = useAtlasCartogram(cityId, cartogramLayer, cartogramOn);
 
@@ -1180,7 +1177,6 @@ function AtlasScreen({ cityId, view }) {
                   onChange={setGeometry}
                   available={{ geographic: true, cartogram: cartogramPublished }}
                   derived={cartogramDerived}
-                  missingName={platform.name}
                   loading={cartogramOn && cartogram.status === 'pending'}
                 />
               </div>

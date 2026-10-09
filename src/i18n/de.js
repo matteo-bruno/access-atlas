@@ -411,8 +411,7 @@ export default {
       about: {
         map: 'Jede Zelle ist das Sechseck, das sie im Gelände einnimmt, überall gleich groß, was immer darin liegt. Die Fläche sagt nichts darüber, wie viele Menschen ein Maß betrifft: Ein dünn besiedelter Stadtrand nimmt im Bild so viel Platz ein wie das dichte Zentrum.',
         cartogram: 'Jede Zelle bleibt an ihrem wirklichen Ort, aber ihre Fläche steht für ihre Wohnbevölkerung und nicht für das Gelände, das sie abdeckt: Eine Zelle mit wenigen Einwohnern schrumpft auf einen Bruchteil eines Sechsecks, eine dicht besiedelte füllt es. Sie beantwortet eine andere Frage: nicht, wo ein Maß niedrig ist, sondern für wie viele Menschen.',
-        derived: 'Dieses Kartogramm stammt vom Atlas selbst: {name} veröffentlicht keines. Die Fläche ist hier proportional zur Wohnbevölkerung der Zelle und erreicht das volle Sechseck bei der medianen Bevölkerung der bewohnten Zellen der Stadt. Die Regel ist an den Kartogrammen kalibriert, die die anderen Plattformen für dieselbe Stadt veröffentlichen, und gibt sie auf einer 200-m-Zelle auf etwa 12 m genau wieder. So wirkt eine Zelle mit gegebener Bevölkerung auf jeder Ebene gleich groß.',
-        missing: 'Ein Kartogramm ist eine von seinen Autoren berechnete Anordnung, keine Umformung der Karte. Der Atlas zeichnet daher das Kartogramm, das jede Plattform veröffentlicht hat, statt selbst eines abzuleiten. {name} veröffentlicht keines.',
+        derived: 'Dieses Kartogramm stammt vom Atlas selbst und folgt für jede Ebene derselben Regel: Die Fläche ist proportional zur Wohnbevölkerung der Zelle und erreicht das volle Sechseck bei der medianen Bevölkerung der bewohnten Zellen der Stadt. Die Bevölkerung ist die, die alle Ebenen der Stadt teilen. So wirkt eine Zelle mit gegebener Bevölkerung auf jeder Ebene gleich groß.',
       },
     },
     cartogram: {

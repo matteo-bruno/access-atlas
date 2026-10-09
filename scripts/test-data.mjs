@@ -24,7 +24,7 @@ import {
 } from '../src/data/grid.js';
 import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
-import { getResolution, cellToLatLng } from 'h3-js';
+import { getResolution } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
 import { buildIndex, cataloguePaths, extentOf, gridId, readCityRecord } from './lib/bundle.mjs';
 import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs';
@@ -257,46 +257,13 @@ for (const city of catalogue.atlas?.cities ?? []) {
       }
     }
 
-    // Each cartogram polygon's mean radius, measured from its cell's H3 centre.
-    // There is no check here that a polygon sits on its cell: both kinds are
-    // stored relative to the cell's centre, so the file cannot place one
-    // anywhere else, and the importers already refuse an export whose
-    // polygons are off the grid. Nor is the centre the mean of the vertices:
-    // cells crossing an icosahedron edge of H3 carry extra vertices on one
-    // side, which pulls that mean up to 28 m off the centre (Xiapu).
-    const radii = {};
+    // Every layer's cartogram is the Atlas's own rule, and the viewer must be
+    // able to draw it: one polygon per row of the layer.
     for (const layer of city.layers) {
+      if (files[layer].cartogram?.source !== 'derived') bad.push(`${layer} cartogram is not the derived rule`);
       const cartogram = await layerCartogram(grid, files[layer]);
-      radii[layer] = new Map();
-      for (const feature of cartogram.features) {
-        const ring = feature.geometry.coordinates[0].slice(0, -1);
-        const [lat, lon] = cellToLatLng(grid.cells[feature.properties.i]);
-        const k = Math.cos((lat * Math.PI) / 180);
-        radii[layer].set(
-          feature.properties.i,
-          sum(ring.map(([x, y]) => Math.hypot((x - lon) * 111320 * k, (y - lat) * 111320))) / ring.length,
-        );
-      }
-    }
-
-    // The derived rule (area ∝ population, full at the median inhabited cell) stands in for
-    // a cartogram where a platform publishes none. Where one is published for
-    // the same cells, the rule must stay close to it, or two layers of one
-    // city would disagree about how big a cell of a given population is.
-    // It lands at ~10–14 m on a ~200 m cell.
-    for (const derived of city.layers.filter((l) => files[l].cartogram.source === 'derived')) {
-      for (const published of city.layers.filter((l) => files[l].cartogram.source === 'published')) {
-        let total = 0;
-        let count = 0;
-        for (const [i, r] of radii[derived]) {
-          const theirs = radii[published].get(i);
-          if (theirs == null) continue;
-          total += Math.abs(r - theirs);
-          count++;
-        }
-        if (count && total / count > 25) {
-          bad.push(`${derived} cartogram rule is ${(total / count).toFixed(1)} m from ${published}'s on average`);
-        }
+      if (cartogram.features.length !== files[layer].cells) {
+        bad.push(`${layer} cartogram has ${cartogram.features.length} polygons for ${files[layer].cells} cells`);
       }
     }
   } catch (error) {

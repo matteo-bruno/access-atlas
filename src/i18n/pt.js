@@ -409,8 +409,7 @@ export default {
       about: {
         map: 'Cada célula é o hexágono que ela ocupa no terreno, do mesmo tamanho em todo lugar, contenha o que contiver. A área não diz nada sobre quantas pessoas uma medida afeta, então uma borda pouco povoada da cidade ocupa na imagem tanto espaço quanto o centro denso.',
         cartogram: 'Cada célula fica onde realmente está, mas sua área é sua população residente, não o terreno que cobre: uma célula com poucos moradores encolhe para uma fração de hexágono, e uma muito povoada o preenche. Ela responde a outra pergunta: não onde uma medida é baixa, mas para quantas pessoas ela é.',
-        derived: 'Este cartograma é do próprio Atlas: o {name} não publica nenhum. Aqui a área é proporcional à população residente da célula e chega ao hexágono inteiro na população mediana das células habitadas da cidade. A regra é calibrada com os cartogramas que as outras plataformas publicam para a mesma cidade e os reproduz com cerca de 12 m de diferença em uma célula de 200 m, de modo que uma célula com determinada população tem o mesmo tamanho em qualquer camada.',
-        missing: 'Um cartograma é uma disposição calculada por seus autores, não uma transformação do mapa, então o Atlas desenha o que cada plataforma publicou em vez de derivar um. O {name} não publica nenhum.',
+        derived: 'Este cartograma é do próprio Atlas e segue uma única regra para todas as camadas: a área é proporcional à população residente da célula e chega ao hexágono inteiro na população mediana das células habitadas da cidade. A população é a que todas as camadas da cidade compartilham, de modo que uma célula com determinada população tem o mesmo tamanho em qualquer camada.',
       },
     },
     cartogram: {
