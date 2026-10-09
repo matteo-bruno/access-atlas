@@ -1007,7 +1007,9 @@ export function buildIndex({ dryRun = false } = {}) {
   if (missing.length && !dryRun) {
     throw new Error(`the catalogue points at ${missing.length} file(s) that do not exist: ${missing.slice(0, 3).join(', ')}`);
   }
-  files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue, null, 2)}\n`, dryRun));
+  // Unindented: every page waits on this file, and with an entry per city the
+  // indentation alone was 40% of it (6 of 14.6 MB at 11,327 cities).
+  files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue)}\n`, dryRun));
 
   return {
     cities: records.length,

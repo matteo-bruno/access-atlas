@@ -1,6 +1,8 @@
-// React bindings over the data provider. Each hook renders the seed data
-// immediately and upgrades to published data if the catalogue offers it, so a
-// slow or absent dataset never blocks a page — it just stays seeded.
+// React bindings over the data provider. A slow or absent dataset never blocks
+// a page: it falls back to the seed data. The coverage hooks, which draw
+// markers on a world map, wait for the answer rather than show the seed list
+// first, because seed cities swapping to published ones read as fake cities
+// slowly turning into real ones. Until then they hold an empty list.
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
@@ -16,6 +18,7 @@ import { normaliseStats } from './stats.js';
  * @returns {{ cities: object[], source: 'published'|'seed' }}
  */
 export function useCityCoverage(platform) {
+  // null while the answer is pending, [] once it said "nothing published".
   const [published, setPublished] = useState(null);
   const seed = useMemo(() => citiesForPlatform(platform), [platform]);
 
@@ -25,21 +28,22 @@ export function useCityCoverage(platform) {
     setPublished(null);
 
     (async () => {
+      let cities = [];
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
         const collection = await provider.coverage(platform.id, catalogue, {
           signal: controller.signal,
         });
-        if (cancelled || !collection) return;
-        const cities = citiesFromPublished(collection);
-        if (cities.length) setPublished(cities);
+        if (collection) cities = citiesFromPublished(collection);
       } catch (error) {
-        // Staying on seed data is the designed outcome, not a failure.
-        if (error?.name !== 'AbortError' && import.meta.env.DEV) {
+        if (error?.name === 'AbortError') return;
+        // Falling back to seed data is the designed outcome, not a failure.
+        if (import.meta.env.DEV) {
           console.info(`[data] coverage for ${platform.id} unavailable`, error.message);
         }
       }
+      if (!cancelled) setPublished(cities);
     })();
 
     return () => {
@@ -48,10 +52,9 @@ export function useCityCoverage(platform) {
     };
   }, [platform]);
 
-  return {
-    cities: published ?? seed,
-    source: published ? 'published' : 'seed',
-  };
+  if (published === null) return { cities: EMPTY_CITIES, source: 'pending' };
+  if (published.length === 0) return { cities: seed, source: 'seed' };
+  return { cities: published, source: 'published' };
 }
 
 // Resolved once, and remembered against the provider it came from.
@@ -79,11 +82,13 @@ function cachedCoverage() {
  *
  * Falls back to the seed list only if no platform publishes coverage at all —
  * a partially published Atlas shows what is real rather than mixing the two.
+ * Until that is known the list is empty.
  *
- * @returns {{ cities: object[], source: 'published'|'seed' }}
+ * @returns {{ cities: object[], source: 'pending'|'published'|'seed' }}
  */
 export function useAllCoverage() {
   const [published, setPublished] = useState(cachedCoverage);
+  const [unpublished, setUnpublished] = useState(false);
   const seed = useMemo(
     () => CITIES.map((city) => ({ ...city, platforms: [], platformCount: 1 })),
     [],
@@ -98,19 +103,21 @@ export function useAllCoverage() {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        // Fetched together, merged in platform order: the first platform to
+        // publish a city keeps its figures, whichever file arrived first.
+        const collections = await Promise.all(
+          PLATFORMS.map((platform) =>
+            provider.coverage(platform.id, catalogue, { signal: controller.signal }).catch((error) => {
+              if (error?.name === 'AbortError') throw error;
+              return null;
+            }),
+          ),
+        );
         const byId = new Map();
 
-        for (const platform of PLATFORMS) {
-          let collection = null;
-          try {
-            collection = await provider.coverage(platform.id, catalogue, {
-              signal: controller.signal,
-            });
-          } catch (error) {
-            if (error?.name === 'AbortError') return;
-          }
-          if (!collection) continue;
-          for (const city of citiesFromPublished(collection)) {
+        PLATFORMS.forEach((platform, i) => {
+          if (!collections[i]) return;
+          for (const city of citiesFromPublished(collections[i])) {
             const existing = byId.get(city.id);
             if (existing) {
               // Keep the first platform's figures; only the platform list and
@@ -122,16 +129,19 @@ export function useAllCoverage() {
               byId.set(city.id, { ...city, platforms: [platform.id], platformCount: 1 });
             }
           }
-        }
+        });
 
-        if (byId.size === 0) return;
+        if (byId.size === 0) {
+          if (!cancelled) setUnpublished(true);
+          return;
+        }
         merged = { provider, cities: [...byId.values()] };
         if (cancelled) return;
         setPublished(merged.cities);
       } catch (error) {
-        if (error?.name !== 'AbortError' && import.meta.env.DEV) {
-          console.info('[data] merged coverage unavailable', error.message);
-        }
+        if (error?.name === 'AbortError') return;
+        if (import.meta.env.DEV) console.info('[data] merged coverage unavailable', error.message);
+        if (!cancelled) setUnpublished(true);
       }
     })();
 
@@ -141,7 +151,9 @@ export function useAllCoverage() {
     };
   }, []);
 
-  return { cities: published ?? seed, source: published ? 'published' : 'seed' };
+  if (published) return { cities: published, source: 'published' };
+  if (unpublished) return { cities: seed, source: 'seed' };
+  return { cities: EMPTY_CITIES, source: 'pending' };
 }
 
 /**
