@@ -1153,7 +1153,9 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
       : r3(rows.reduce((s, r) => s + r.cdi, 0) / (rows.length || 1));
     const sortedCdi = rows.map((r) => r.cdi).sort((a, b) => a - b);
     return {
-      marker: marker({ cdi, population }),
+      // The world map's figure is the median resident's, like every other
+      // layer's marker; the mean stays in the summary as `weightedCdi`.
+      marker: marker({ cdi: markerCdi(rows.map((r) => r.cdi), rows.map((r) => r.population)), population }),
       summary: {
         id,
         cells: rows.length,
@@ -1196,6 +1198,38 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
 }
 
 export const COVERAGE_HOUR = 8;
+
+/** A city's Car Dependency marker: the population-weighted median CDI. */
+function markerCdi(cdi, population) {
+  return r3(weightedMedian(cdi, population));
+}
+
+/**
+ * Recompute the world-map markers of every published city from its
+ * published layer files, where the way a marker is computed has changed
+ * since the city was imported. Today that is Car Dependency, whose marker
+ * went from the population-weighted mean to the median. Only the marker
+ * moves; the layer files and the summaries are untouched, and so is a
+ * record whose marker is already right.
+ *
+ * @returns {string[]} the cities whose marker changed
+ */
+export function refreshMarkers({ dryRun = false } = {}) {
+  const changed = [];
+  for (const cityId of listCities()) {
+    const record = readCityRecord(cityId);
+    const marker = record?.platforms?.cardep?.marker;
+    if (!marker) continue;
+    const grid = readGrid(cityId);
+    const file = readLayerFile(layerPath(cityId, 'cardep'), grid, cityId);
+    const cdi = markerCdi(file.fields.cdi, file.fields.population);
+    if (marker.properties.cdi === cdi) continue;
+    record.platforms.cardep.marker = { ...marker, properties: { ...marker.properties, cdi } };
+    writeCityRecord(record, { dryRun, touched: true });
+    changed.push(cityId);
+  }
+  return changed;
+}
 
 /** Remove a published file (and its plain twin), for clearing out old layouts. */
 export function removeDataFile(rel) {

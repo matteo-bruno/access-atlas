@@ -183,21 +183,24 @@ export default {
         'Tempo di viaggio a piedi e in bicicletta verso nove categorie di servizi quotidiani — sanità, istruzione, spesa, ristorazione, cultura, spazi aperti, attività fisica, servizi, mobilità — calcolato per ogni cella della città e letto rispetto al riferimento dei 15 minuti.',
       welcomeIntro:
         'Guarda i tempi di viaggio verso i servizi quotidiani da qualsiasi punto di qualsiasi città e confrontali con il riferimento dei 15 minuti.',
-      legendUnit: 'Tempo medio verso i servizi',
+      legendUnit: 'Tempo mediano a piedi verso i servizi',
+      tooltip: '{name} · {time} a piedi verso i servizi (residente mediano)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Accesso alle opportunità',
       intro:
         'CityChrone sostituisce la distanza metrica con il tempo di viaggio: la mappa si deforma così che due luoghi risultino vicini quando il trasporto pubblico li collega rapidamente, per quanto distanti siano sul terreno.',
-      legendUnit: 'Punteggio di velocità',
+      legendUnit: 'Velocità del trasporto pubblico (km/h)',
+      tooltip: '{name} · {value} km/h con il trasporto pubblico (residente mediano)',
       legend: ['Lento', 'Medio', 'Veloce'],
     },
     cardep: {
       label: 'Auto e trasporto pubblico',
       intro:
         'Il Car Dependency Index confronta le opportunità raggiungibili in automobile con quelle raggiungibili in trasporto pubblico nello stesso tempo: CDI = (O_auto − O_TP) / (O_auto + O_TP). Va da −1, dove il trasporto pubblico raggiunge di più, passando per 0 dove i due si equivalgono, fino a +1 dove l’auto raggiunge tutto e il trasporto pubblico quasi nulla.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (residente mediano)',
+      tooltip: '{name} · CDI {value} (residente mediano)',
       legend: [
         'A favore dei mezzi pubblici',
         'In equilibrio',

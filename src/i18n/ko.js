@@ -170,21 +170,24 @@ export default {
         '의료, 교육, 장보기, 음식, 문화, 야외 공간, 운동, 생활 서비스, 이동 등 아홉 가지 일상 서비스까지 걷거나 자전거로 가는 시간을 도시의 모든 셀에 대해 계산하고, 15분 기준에 비추어 읽습니다.',
       welcomeIntro:
         '어느 도시의 어느 곳에서든 일상 서비스까지의 이동 시간을 확인하고 15분 기준과 비교해 보세요.',
-      legendUnit: '서비스까지 평균 시간',
+      legendUnit: '서비스까지 도보 시간 중앙값',
+      tooltip: '{name} · 서비스까지 도보 {time} (중위 거주자)',
       legend: ['0–3분', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: '기회 접근성',
       intro:
         'CityChrone은 거리 대신 이동 시간을 씁니다. 대중교통이 두 장소를 빠르게 이어 주면, 땅 위에서 아무리 멀어도 지도에서는 가까워지도록 지도가 변형됩니다.',
-      legendUnit: '속도 점수',
+      legendUnit: '대중교통 속도 (km/h)',
+      tooltip: '{name} · 대중교통 {value} km/h (중위 거주자)',
       legend: ['느림', '보통', '빠름'],
     },
     cardep: {
       label: '자동차와 대중교통',
       intro:
         'Car Dependency Index(자동차 의존 지수)는 같은 시간 안에 자동차로 닿는 기회와 대중교통으로 닿는 기회를 비교합니다: CDI = (O_car − O_PT) / (O_car + O_PT). 값은 대중교통이 더 많이 닿는 −1에서, 둘이 비슷한 0을 거쳐, 자동차는 모든 곳에 닿고 대중교통은 거의 닿지 못하는 +1까지입니다.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (중위 거주자)',
+      tooltip: '{name} · CDI {value} (중위 거주자)',
       legend: ['대중교통 우위', '균형', '자동차 의존', '강한 자동차 의존'],
     },
     pov: {

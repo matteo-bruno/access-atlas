@@ -193,21 +193,25 @@ export default {
       // "about this layer" dialog and the city view's panel still use.
       welcomeIntro:
         'See the travel times to everyday services from any place in any city and see how it compares to the 15-minute benchmark.',
-      legendUnit: 'Average time to services',
+      legendUnit: 'Median walk to services',
+      // The world map's tooltip: the median resident's figure.
+      tooltip: '{name} · {time} on foot to services (median resident)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Opportunity access',
       intro:
         'CityChrone replaces metric distance with travel time: the map deforms so that two places sit close together when public transport connects them quickly, however far apart they are on the ground.',
-      legendUnit: 'Velocity score',
+      legendUnit: 'Public transport speed (km/h)',
+      tooltip: '{name} · {value} km/h by public transport (median resident)',
       legend: ['Slow', 'Medium', 'Fast'],
     },
     cardep: {
       label: 'Car vs. public transport',
       intro:
         'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = (O_car − O_PT) / (O_car + O_PT). It runs from −1, where transit reaches more, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (median resident)',
+      tooltip: '{name} · CDI {value} (median resident)',
       legend: ['Transit-favoured', 'Balanced', 'Car-dependent', 'Strongly car-dependent'],
     },
     pov: {

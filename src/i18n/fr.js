@@ -173,21 +173,24 @@ export default {
         'Temps de trajet à pied et à vélo vers neuf catégories de services du quotidien (santé, éducation, courses, restauration, culture, espaces extérieurs, activité physique, services, mobilité), calculé pour chaque cellule de la ville et lu au regard de la référence des 15 minutes.',
       welcomeIntro:
         'Découvrez les temps de trajet vers les services du quotidien depuis n’importe quel lieu de n’importe quelle ville, et comparez-les à la référence des 15 minutes.',
-      legendUnit: 'Temps moyen jusqu’aux services',
+      legendUnit: 'Temps médian à pied jusqu’aux services',
+      tooltip: '{name} · {time} à pied jusqu’aux services (habitant médian)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Accès aux opportunités',
       intro:
         'CityChrone remplace la distance métrique par le temps de trajet : la carte se déforme pour que deux lieux se rapprochent quand les transports en commun les relient rapidement, aussi éloignés soient-ils sur le terrain.',
-      legendUnit: 'Score de vitesse',
+      legendUnit: 'Vitesse des transports publics (km/h)',
+      tooltip: '{name} · {value} km/h en transports publics (habitant médian)',
       legend: ['Lent', 'Moyen', 'Rapide'],
     },
     cardep: {
       label: 'Voiture ou transports en commun',
       intro:
         'Le Car Dependency Index compare les opportunités accessibles en voiture à celles accessibles en transports en commun dans le même temps : CDI = (O_voiture − O_TC) / (O_voiture + O_TC). Il va de −1, où les transports en commun atteignent davantage, à +1, où la voiture atteint tout et les transports en commun presque rien, en passant par 0, où les deux s’équilibrent.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (habitant médian)',
+      tooltip: '{name} · CDI {value} (habitant médian)',
       legend: ['Favorable aux transports en commun', 'Équilibré', 'Dépendant de la voiture', 'Très dépendant de la voiture'],
     },
     pov: {

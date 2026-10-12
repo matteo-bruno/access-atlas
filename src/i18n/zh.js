@@ -170,21 +170,24 @@ export default {
         '计算城市中每个单元步行和骑行前往九类日常服务（医疗、教育、购物、餐饮、文化、户外空间、体育锻炼、生活服务、交通出行）所需的时间，并以 15 分钟为参照来解读。',
       welcomeIntro:
         '查看任意城市中任意地点前往日常服务的出行时间，并与15分钟基准进行比较。',
-      legendUnit: '前往服务的平均时间',
+      legendUnit: '步行前往服务的中位时间',
+      tooltip: '{name} · 步行前往服务 {time}（中位居民）',
       legend: ['0–3 分钟', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: '机会可达性',
       intro:
         'CityChrone 用出行时间取代几何距离：地图会发生形变，只要公共交通能迅速连通两个地点，它们就会靠得很近，无论在地面上相距多远。',
-      legendUnit: '速度得分',
+      legendUnit: '公共交通速度（km/h）',
+      tooltip: '{name} · 公共交通 {value} km/h（中位居民）',
       legend: ['慢', '中', '快'],
     },
     cardep: {
       label: '汽车与公共交通',
       intro:
         'Car Dependency Index（汽车依赖指数）比较在相同时间内开车可到达的机会与乘坐公共交通可到达的机会：CDI = (O_car − O_PT) / (O_car + O_PT)。取值从 −1（公共交通到达更多）经过 0（两者相当）到 +1（汽车无所不及，而公共交通几乎无法到达）。',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index（中位居民）',
+      tooltip: '{name} · CDI {value}（中位居民）',
       legend: ['公共交通占优', '大致均衡', '依赖汽车', '高度依赖汽车'],
     },
     pov: {

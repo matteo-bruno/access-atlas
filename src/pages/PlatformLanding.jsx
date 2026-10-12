@@ -17,6 +17,7 @@ import {
   useCityPageIds,
 } from '../data/useAtlasData.js';
 import { paperForPlatform } from '../data/research.js';
+import { formatTime } from '../data/fifteen.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
@@ -225,7 +226,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
   };
 
   const tooltip = (city) =>
-    platform ? formatTooltip(platform, city, n) : coverageTooltip(city, t, n);
+    platform ? formatTooltip(platform, city, t, n) : coverageTooltip(city, t, n);
 
   const title = platform ? platform.name : t('platform.all.name');
   const label = platform
@@ -440,15 +441,25 @@ function coverageTooltip(properties, t, n) {
   return `${properties.name} · ${t('platform.all.covered', { count: n(count) })}`;
 }
 
-function formatTooltip(platform, properties, n) {
+// A city's figure on a layer's map is its median resident's, said as such:
+// 15minCity's time as a clock (m:ss, see formatTime), CityChrone's speed in
+// km/h by public transport, Car Dependency's index. P.O.V. colours by zone
+// and states no figure.
+function formatTooltip(platform, properties, t, n) {
   const name = properties.name;
+  const value = {
+    fifteen: properties.proximityMinutes,
+    citychrone: properties.velocityScore,
+    cardep: properties.cdi,
+  }[platform.id];
+  if (!Number.isFinite(value)) return name;
   switch (platform.id) {
     case 'fifteen':
-      return `${name} · ${n(properties.proximityMinutes, { minimumFractionDigits: 1 })} min`;
+      return t('platform.fifteen.tooltip', { name, time: formatTime(value) });
     case 'citychrone':
-      return `${name} · ${n(properties.velocityScore, { minimumFractionDigits: 2 })}`;
+      return t('platform.citychrone.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
     case 'cardep':
-      return `${name} · CDI ${n(properties.cdi, { minimumFractionDigits: 2 })}`;
+      return t('platform.cardep.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
     default:
       return name;
   }

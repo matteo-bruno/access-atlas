@@ -172,21 +172,24 @@ export default {
         'Tempo de viagem a pé e de bicicleta até nove categorias de serviços do dia a dia (saúde, educação, compras, alimentação, cultura, espaços ao ar livre, atividade física, serviços, mobilidade), calculado para cada célula da cidade e lido em relação à referência dos 15 minutos.',
       welcomeIntro:
         'Veja os tempos de deslocamento até os serviços do dia a dia a partir de qualquer lugar de qualquer cidade e compare-os com a referência dos 15 minutos.',
-      legendUnit: 'Tempo médio até os serviços',
+      legendUnit: 'Tempo mediano a pé até os serviços',
+      tooltip: '{name} · {time} a pé até os serviços (residente mediano)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Acesso a oportunidades',
       intro:
         'O CityChrone substitui a distância métrica pelo tempo de viagem: o mapa se deforma para que dois lugares fiquem próximos quando o transporte público os liga rapidamente, por mais distantes que estejam no terreno.',
-      legendUnit: 'Pontuação de velocidade',
+      legendUnit: 'Velocidade do transporte público (km/h)',
+      tooltip: '{name} · {value} km/h de transporte público (residente mediano)',
       legend: ['Lenta', 'Média', 'Rápida'],
     },
     cardep: {
       label: 'Carro ou transporte público',
       intro:
         'O Car Dependency Index compara as oportunidades alcançáveis de carro com as alcançáveis por transporte público no mesmo tempo: CDI = (O_carro − O_TP) / (O_carro + O_TP). Vai de −1, onde o transporte público alcança mais, passando por 0, onde os dois se equilibram, até +1, onde o carro alcança tudo e o transporte público quase nada.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (residente mediano)',
+      tooltip: '{name} · CDI {value} (residente mediano)',
       legend: ['Favorável ao transporte público', 'Equilibrado', 'Dependente do carro', 'Muito dependente do carro'],
     },
     pov: {

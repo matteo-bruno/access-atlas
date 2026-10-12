@@ -738,7 +738,9 @@ function AtlasScreen({ cityId, view }) {
     : layer === 'pov'
       ? t('city.zoneType')
       : layer === 'cardep'
-        ? t('platform.cardep.legendUnit')
+        ? // The index itself, per cell: the world map's legend title says
+          // "median resident", which is a city's figure, not a cell's.
+          platform.name
         : layer === 'fifteen'
           ? t('fifteen.legendValue')
           : t(`atlas.legend.${ccView}`);

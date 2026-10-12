@@ -636,6 +636,10 @@ if (catalogue.stats) {
   for (const [id, marker] of markers('fifteen')) {
     if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
   }
+  // Every marker is the median resident's figure: Car Dependency's too.
+  for (const [id, marker] of markers('cardep')) {
+    if (cdi.get(id) && !near(cdi.get(id).q[2], marker.cdi, 0.0011)) disagree.push(`${id} CDI marker ${marker.cdi} vs median ${cdi.get(id).q[2]} (npm run import -- --refresh-markers)`);
+  }
   const velocity = column('citychrone.velocity.08');
   for (const [id, marker] of markers('citychrone')) {
     if (velocity.get(id) && !near(velocity.get(id).q[2], marker.velocityScore, 0.011)) disagree.push(`${id} velocity ${velocity.get(id).q[2]} vs marker ${marker.velocityScore}`);

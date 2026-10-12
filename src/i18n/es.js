@@ -172,21 +172,24 @@ export default {
         'Tiempo a pie y en bicicleta hasta nueve categorías de servicios cotidianos (salud, educación, compras, restauración, cultura, espacios al aire libre, actividad física, servicios, movilidad), calculado para cada celda de la ciudad y leído frente a la referencia de los 15 minutos.',
       welcomeIntro:
         'Consulta los tiempos de viaje a los servicios cotidianos desde cualquier lugar de cualquier ciudad y compáralos con la referencia de los 15 minutos.',
-      legendUnit: 'Tiempo medio hasta los servicios',
+      legendUnit: 'Tiempo mediano a pie hasta los servicios',
+      tooltip: '{name} · {time} a pie hasta los servicios (residente mediano)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Acceso a oportunidades',
       intro:
         'CityChrone sustituye la distancia métrica por el tiempo de viaje: el mapa se deforma para que dos lugares queden cerca cuando el transporte público los conecta rápido, por lejos que estén sobre el terreno.',
-      legendUnit: 'Puntuación de velocidad',
+      legendUnit: 'Velocidad del transporte público (km/h)',
+      tooltip: '{name} · {value} km/h en transporte público (residente mediano)',
       legend: ['Lenta', 'Media', 'Rápida'],
     },
     cardep: {
       label: 'Coche frente a transporte público',
       intro:
         'El Car Dependency Index compara las oportunidades alcanzables en coche con las alcanzables en transporte público en el mismo tiempo: CDI = (O_coche − O_TP) / (O_coche + O_TP). Va de −1, donde el transporte público llega a más, pasando por 0, donde ambos se equilibran, hasta +1, donde el coche llega a todo y el transporte público casi a nada.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (residente mediano)',
+      tooltip: '{name} · CDI {value} (residente mediano)',
       legend: ['Favorable al transporte público', 'Equilibrado', 'Dependiente del coche', 'Muy dependiente del coche'],
     },
     pov: {

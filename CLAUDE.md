@@ -100,6 +100,17 @@ than each platform's own layout, and the rule lands ~10-14 m from theirs on a
 ~200 m cell. Nothing checks it against them any more, on purpose.
 `cartogramSources` still says `derived` per layer, and the UI says so.
 
+**A world-map marker is the city's median resident.** 15minCity's walk to
+services, CityChrone's velocity at 8:00 and Car Dependency's index are each
+the population-weighted median over the layer's cells (`describeLayer` in
+`bundle.mjs`), and the tooltip says so: the time as `m:ss`, the velocity as
+km/h by public transport, the CDI as the median resident's. Car Dependency's
+used to be the weighted mean, which stays in its compare row as
+`weightedCdi`. When a marker's method changes, `npm run import --
+--refresh-markers` recomputes it for every city from the published layer
+files, without re-importing; `test:data` checks each marker against the
+median the statistics compute.
+
 Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at
 `/platforms/:slug/compare`, and the **coverage files** one marker per city for
