@@ -19,6 +19,7 @@ import { createChain } from '../server/citychat/llm/chain.mjs';
 import { ProviderError } from '../server/citychat/llm/http.mjs';
 import { rankFlashModels } from '../server/citychat/llm/gemini.mjs';
 import { readDataJSON } from './lib/datafile.mjs';
+import { readCatalogue } from './lib/bundle.mjs';
 
 let failures = 0;
 const check = (name, ok, detail = '') => {
@@ -30,7 +31,7 @@ const DATA = path.join(process.cwd(), 'public', 'data');
 const runTool = createTools(createDataStore(DATA));
 
 // ── Tools agree with the published summaries ─────────────────────────
-const catalogue = readDataJSON(path.join(DATA, 'index.json'));
+const catalogue = readCatalogue();
 const cities = await runTool('list_cities');
 check('list_cities lists every atlas city', cities.cities?.length === catalogue.atlas.cities.length, `${cities.cities?.length}`);
 

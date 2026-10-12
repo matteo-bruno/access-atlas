@@ -31,6 +31,25 @@
 // Published cities use the per-city layout (version 2): the atlas entry is
 // how the city view draws them, and each platform row names that city's
 // `layer` file for the world maps, search and compare view.
+//
+// Version 3 moves everything per city out of this file, which every page
+// waits on: at 11,327 cities it was 8.6 MB. What is left is an index —
+//
+//   {
+//     "version": 3,
+//     "platforms": { "pov": { "coverage": …, "summary": …, "count": 18 } },
+//     "cities": "cities.json.gz",              the city list (below)
+//     "entry": "cities/{id}/entry.json.gz",    one city's full entry
+//     "totals": { "cities": …, "countries": …, "cells": … },
+//     "stats": …, "files": { …the index's own files… }
+//   }
+//
+// The city list names every city and where it is, for the search and the
+// pages that link cities; a city's entry is its atlas entry, its row per
+// layer and its files' hashes, fetched by its city view alone (the provider's
+// `city()`), and merged into the catalogue object when it arrives, so the
+// lookups below keep working for that city. A version 2 catalogue still
+// reads as before.
 // ─────────────────────────────────────────────────────────────────────────
 
 // Relative to public/data/ — `dataUrl` supplies the directory.
@@ -40,6 +59,9 @@ export const EMPTY_CATALOGUE = {
   version: 1,
   platforms: {},
   atlas: { cities: [], citiesById: {} },
+  cityList: null,
+  entry: null,
+  totals: null,
   stats: null,
   files: {},
 };
@@ -207,6 +229,16 @@ function normaliseCity(raw) {
     // Atlas (combined-viewer) entries list which platform layers their union
     // mesh carries values for.
     layers: Array.isArray(raw.layers) ? raw.layers.filter((l) => typeof l === 'string') : null,
+    // Which boundaries the city is published on, stated by its entry
+    // (version 3), so the city view need not read every other city to find
+    // its metro area: `{ core, fua }`, each an id or null.
+    extents:
+      raw.extents && typeof raw.extents === 'object'
+        ? {
+            core: typeof raw.extents.core === 'string' ? raw.extents.core : null,
+            fua: typeof raw.extents.fua === 'string' ? raw.extents.fua : null,
+          }
+        : null,
     // Cell geometry is metadata the exporter knows and the file cannot state:
     // a population-scaled cartogram's polygons are not the true cell size.
     // Named `cell` rather than `mesh` so it never collides with the seed
@@ -239,6 +271,9 @@ export function normaliseCatalogue(raw) {
       // One row per city for the compare view, computed offline: the same
       // figures the city pages show, without fetching every city's cells.
       summary: typeof entry.summary === 'string' ? entry.summary : null,
+      // How many cities publish the layer: stated by a version 3 index,
+      // counted from the rows of an older one.
+      count: Number.isFinite(entry.count) ? entry.count : cities.filter(hasCityData).length,
       cities,
       citiesById: Object.fromEntries(cities.map((city) => [city.id, city])),
     };
@@ -259,6 +294,18 @@ export function normaliseCatalogue(raw) {
       cities: atlasCities,
       citiesById: Object.fromEntries(atlasCities.map((city) => [city.id, city])),
     },
+    // Version 3: where the city list and each city's entry are, and the
+    // Atlas's totals, which a page could otherwise only count from them.
+    cityList: typeof raw.cities === 'string' ? raw.cities : null,
+    entry: typeof raw.entry === 'string' && raw.entry.includes('{id}') ? raw.entry : null,
+    totals:
+      raw.totals && typeof raw.totals === 'object'
+        ? {
+            cities: Number.isFinite(raw.totals.cities) ? raw.totals.cities : 0,
+            countries: Number.isFinite(raw.totals.countries) ? raw.totals.countries : 0,
+            cells: Number.isFinite(raw.totals.cells) ? raw.totals.cells : 0,
+          }
+        : null,
     // Every city on every measure, for the Stats page (scripts/lib/stats.mjs).
     // Absent until statistics have been computed for at least one city.
     stats: typeof raw.stats === 'string' ? raw.stats : null,
@@ -292,6 +339,7 @@ export function atlasCity(catalogue, cityId) {
 export function cityExtents(catalogue, cityId) {
   const city = atlasCity(catalogue, cityId);
   if (!city) return { core: null, fua: null };
+  if (city.extents) return city.extents;
   const coreId = city.extent === 'fua' ? city.core : city.id;
   const fua =
     city.extent === 'fua'
@@ -324,4 +372,72 @@ export function hasCityData(city) {
 /** Path inside public/data/ for one hour of an hourly dataset. */
 export function hourlyPath(template, hour) {
   return template.replace('{hh}', String(hour).padStart(2, '0'));
+}
+
+/** Where one city's entry is, on a version 3 catalogue; null on an older one. */
+export function cityEntryPath(catalogue, cityId) {
+  return catalogue?.entry ? catalogue.entry.replace('{id}', cityId) : null;
+}
+
+/**
+ * Every city the catalogue publishes, from the city list (version 3): the
+ * rows normalised like any other city, `layers` saying which platforms
+ * publish each. Null when the file is not a city list.
+ */
+export function normaliseCityList(raw) {
+  if (!raw || raw.format !== 'atlas-cities' || !Array.isArray(raw.cities)) return null;
+  return raw.cities
+    .map((row) => normaliseCity({ ...row, extent: row.extent, core: row.core }))
+    .filter(Boolean);
+}
+
+/**
+ * Merge one city's entry (version 3) into a normalised catalogue, so the
+ * lookups above answer for that city as they did when the catalogue carried
+ * every city. Entries never change within a session, so the catalogue object
+ * the provider memoises is the right place to keep them.
+ */
+export function addCityEntry(catalogue, raw) {
+  if (!catalogue || !raw || raw.format !== 'atlas-city-entry') return null;
+  const atlas = normaliseCity(raw.atlas);
+  if (!atlas) return null;
+  catalogue.atlas.citiesById[atlas.id] = atlas;
+  if (!catalogue.atlas.cities.some((city) => city.id === atlas.id)) catalogue.atlas.cities.push(atlas);
+  for (const [platformId, row] of Object.entries(raw.platforms ?? {})) {
+    const city = normaliseCity(row);
+    const entry = catalogue.platforms[platformId];
+    if (!city || !entry) continue;
+    entry.citiesById[city.id] = city;
+    if (!entry.cities.some((c) => c.id === city.id)) entry.cities.push(city);
+  }
+  for (const [rel, version] of Object.entries(raw.files ?? {})) {
+    if (typeof version === 'string') catalogue.files[rel] = version;
+  }
+  return atlas;
+}
+
+/**
+ * The whole catalogue as one raw object, in the shape a version 2 catalogue
+ * had: every platform's rows, every atlas entry and every file's hash. For
+ * the Node side (test:data, CityChat's tools, the scripts), which reads
+ * every city anyway. `read(path)` returns a published file's parsed JSON.
+ * A catalogue older than version 3 is returned as it is.
+ */
+export function expandCatalogue(index, read) {
+  if (!index || !(index.version >= 3) || typeof index.cities !== 'string' || typeof index.entry !== 'string') {
+    return index;
+  }
+  const list = read(index.cities)?.cities ?? [];
+  const platforms = Object.fromEntries(
+    Object.entries(index.platforms ?? {}).map(([id, entry]) => [id, { ...entry, cities: [] }]),
+  );
+  const atlas = [];
+  const files = { ...(index.files ?? {}) };
+  for (const { id } of list) {
+    const entry = read(index.entry.replace('{id}', id));
+    atlas.push(entry.atlas);
+    for (const [platformId, row] of Object.entries(entry.platforms ?? {})) platforms[platformId]?.cities.push(row);
+    Object.assign(files, entry.files ?? {});
+  }
+  return { ...index, platforms, atlas: { cities: atlas }, files };
 }

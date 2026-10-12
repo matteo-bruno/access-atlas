@@ -9,7 +9,9 @@ of it.
 
 | Path | What it is |
 | ---- | ---------- |
-| `index.json` | The **catalogue**: the one file that decides whether the Atlas draws measurements or seed data. Derived from the city records. |
+| `index.json` | The **catalogue**: the one file that decides whether the Atlas draws measurements or seed data. An index: nothing per city. Derived from the city records. |
+| `cities.json.gz` | The **city list**: every published city, its names, where it is and which layers it publishes. |
+| `cities/<city>/entry.json.gz` | The city's **entry**: what its city view needs to draw it. Derived from its record. |
 | `cities/<city>/city.json` | The city's **record**: its names, catalogue entries, markers and compare rows, the hash of each export it was imported from, and when it was first published. Not read by the site. |
 | `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
 | `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
@@ -27,61 +29,90 @@ layer is opened. Nothing is stored twice.
 
 ## The catalogue
 
+Three files, read by different pages. The catalogue is an **index**: every
+page waits on it, so it carries nothing per city. At 11,327 cities, a
+catalogue with an entry per city was 8.6 MB.
+
 ```json
 {
-  "version": 2,
+  "version": 3,
   "platforms": {
-    "pov": {
-      "coverage": "pov/coverage.geojson.gz",
-      "summary": "pov/summary.json.gz",
-      "cities": [
-        { "id": "zurich", "name": "Zurich", "nameIt": "Zurigo",
-          "region": "Switzerland", "regionIt": "Svizzera", "country": "CH",
-          "center": [8.52928, 47.38479], "zoom": 10.5, "population": 404153,
-          "layer": "cities/zurich/pov.json.gz",
-          "cell": { "h3Resolution": 9, "cellRadiusM": 200 },
-          "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } }
-      ]
-    }
+    "pov": { "coverage": "pov/coverage.geojson.gz",
+             "summary": "pov/summary.json.gz", "count": 18 }
   },
-  "atlas": {
-    "cities": [
-      { "id": "zurich", "name": "Zurich", "…": "…",
-        "grid": "cities/zurich/grid.json.gz",
-        "layers": ["fifteen", "citychrone", "cardep", "pov"],
-        "layerData": { "pov": "cities/zurich/pov.json.gz", "…": "…" },
-        "cartogramSources": { "pov": "derived", "fifteen": "derived", "…": "…" },
-        "hourly": { "hours": 24, "cells": 909,
-                    "times": "cities/zurich/citychrone/times{hh}.npy.gz" } }
-    ]
-  },
-  "files": { "cities/zurich/grid.json.gz": "1b8fdf4a4267", "…": "…" }
+  "cities": "cities.json.gz",
+  "entry": "cities/{id}/entry.json.gz",
+  "totals": { "cities": 21, "countries": 10, "cells": 337765 },
+  "stats": "stats/stats.json.gz",
+  "files": { "cities.json.gz": "560fd6674fe3", "pov/coverage.geojson.gz": "…" }
 }
 ```
 
-- **The catalogue is derived, never edited.** `buildIndex` in
-  `scripts/lib/bundle.mjs` writes it, the coverage files and the summaries
+The **city list** (`cities.json.gz`) names every published city: who and
+where, and which layers it publishes. The search, the links to city pages,
+the compare view's names and CityChat read it.
+
+```json
+{ "format": "atlas-cities", "version": 1, "cities": [
+  { "id": "zurich", "name": "Zurich", "nameIt": "Zurigo",
+    "region": "Switzerland", "regionIt": "Svizzera", "country": "CH",
+    "center": [8.52928, 47.38479], "population": 404153,
+    "layers": ["fifteen", "citychrone", "cardep", "pov"] },
+  { "id": "tokyo-fua", "name": "Tokyo", "…": "…", "extent": "fua", "core": "tokyo" }
+] }
+```
+
+A city's **entry** (`cities/<city>/entry.json.gz`) is everything its city
+view needs and nothing it does not: its atlas entry, one row per layer, the
+content hash of every file they name, and which of its boundaries are
+published. Only that city's page fetches it.
+
+```json
+{ "format": "atlas-city-entry", "version": 1,
+  "atlas": { "id": "zurich", "name": "Zurich", "…": "…",
+             "grid": "cities/zurich/grid.json.gz",
+             "layers": ["fifteen", "citychrone", "cardep", "pov"],
+             "layerData": { "pov": "cities/zurich/pov.json.gz", "…": "…" },
+             "cartogramSources": { "pov": "derived", "…": "…" },
+             "hourly": { "hours": 24, "cells": 909,
+                         "times": "cities/zurich/citychrone/times{hh}.npy.gz" },
+             "extents": { "core": "zurich", "fua": null } },
+  "platforms": {
+    "pov": { "id": "zurich", "…": "…", "layer": "cities/zurich/pov.json.gz",
+             "cells": 733, "cell": { "h3Resolution": 9, "cellRadiusM": 200 },
+             "thresholds": { "proximity": 7358.9, "opportunity": 17314.2 } }
+  },
+  "files": { "cities/zurich/grid.json.gz": "1b8fdf4a4267", "…": "…" } }
+```
+
+- **All three are derived, never edited.** `buildIndex` in
+  `scripts/lib/bundle.mjs` writes them, the coverage files and the summaries
   from every city's `city.json`, in one pass at the end of an import run
   (`npm run import -- --index` on its own). `test:data` fails when
   rebuilding would change any of them.
-- **`files`** is the content hash of every file the catalogue points at: the
-  version of each that this catalogue describes. The site fetches the
-  current version by its plain path (the server's `Cache-Control: no-cache`
-  keeps it fresh); `?v=<hash>` is reserved for asking for a specific,
-  possibly earlier, version. The catalogue itself carries the build id.
-
-- **`atlas.cities`** is how the city view (`/atlas/:cityId`) draws a city:
-  its grid, and which layer file to fetch for each layer.
-- **`platforms.<id>.cities`** is one row per city that platform publishes,
-  for the world maps, the search and the compare view. Its `center`, `zoom`
-  and `population` are that layer's own; `layer` names the same file as the
-  atlas entry.
+- **`files`** is the content hash of each file: the index lists its own
+  (coverage, summaries, statistics, the city list), and a city's entry lists
+  the city's. The site fetches the current version by its plain path (the
+  server's `Cache-Control: no-cache` keeps it fresh); `?v=<hash>` is reserved
+  for asking for a specific, possibly earlier, version. The catalogue itself
+  carries the build id.
+- **`count`** is how many cities publish the layer, and **`totals`** what
+  `atlasMetrics` would count from every city, so the pages that show them
+  read no city at all.
+- **`atlas`** in an entry is how the city view (`/atlas/:cityId`) draws a
+  city: its grid, and which layer file to fetch for each layer. A **row**
+  in `platforms` is that layer's own `center`, `zoom`, `population` and
+  `cells`; its `layer` names the same file as the atlas entry.
+- **On the Node side** (`test:data`, CityChat, the scripts), `readCatalogue()`
+  in `bundle.mjs` gathers the three back into one object shaped like the
+  version 2 catalogue, with every row and every atlas entry, and the site
+  still reads a version 2 catalogue as before.
 - Platform keys are the `id` values in `src/data/platforms.js`: `fifteen`,
   `citychrone`, `cardep`, `pov`.
 - **`center` is `[lon, lat]`**, matching GeoJSON and MapLibre. `{hh}` in a
   path stands for the zero-padded hour.
-- A platform with no entry, or a city missing from a list, falls back to the
-  seed data, so the site works on a fresh checkout.
+- A platform with no entry, or a city with no entry, falls back to the seed
+  data, so the site works on a fresh checkout.
 
 ## Boundaries and scenarios
 

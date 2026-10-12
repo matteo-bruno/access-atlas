@@ -19,6 +19,18 @@ import { BRAND } from './brand.js';
  * editorial.
  */
 export function atlasMetrics(catalogue) {
+  // A version 3 catalogue states its totals (counted by buildIndex the same
+  // way as below), because it no longer carries the cities to count.
+  if (catalogue?.totals) {
+    const { cities, countries, cells } = catalogue.totals;
+    return [
+      { key: 'cities', value: cities },
+      { key: 'platforms', value: 4 },
+      { key: 'countries', value: countries },
+      { key: 'cells', value: cells },
+      { key: 'researchers', value: 7 },
+    ];
+  }
   const all = catalogue?.atlas?.cities ?? [];
   const ids = new Set(all.map((city) => city.id));
   const cities = all.filter((city) => city.extent !== 'fua' || !ids.has(city.core));

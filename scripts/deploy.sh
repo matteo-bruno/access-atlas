@@ -228,7 +228,9 @@ fi
 
 # What the server now holds must be what was built: the catalogue and every
 # file whose name does not change from one deploy to the next (coverage,
-# summaries, statistics). A random query keeps any cache between here and the files out
+# summaries, statistics, the city list). A city's own entry is not compared:
+# there is one per city, and the list and the catalogue are what say which
+# cities are published. A random query keeps any cache between here and the files out
 # of the comparison. Skipped with --verify-only when there is no build here.
 if [ -f dist/data/index.json ]; then
   sha() { if command -v sha256sum >/dev/null; then sha256sum | cut -d' ' -f1; else shasum -a 256 | cut -d' ' -f1; fi; }
@@ -239,6 +241,7 @@ if [ -f dist/data/index.json ]; then
     const c = JSON.parse(require("fs").readFileSync("dist/data/index.json", "utf8"));
     for (const p of Object.values(c.platforms ?? {})) for (const f of [p.coverage, p.summary]) if (f) console.log(f);
     if (c.stats) console.log(c.stats);
+    if (typeof c.cities === "string") console.log(c.cities);
   '); do
     checked=$((checked + 1))
     here="$(sha < "dist/data/$rel")"

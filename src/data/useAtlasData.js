@@ -6,7 +6,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
-import { hasCityData, platformEntry, publishedCity } from './catalogue.js';
+import { platformEntry, publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
 import { CITIES, citiesForPlatform } from './cities.js';
@@ -179,18 +179,15 @@ export function useCityPageIds(platformId) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        const cities = await provider.cities(catalogue, { signal: controller.signal });
         if (cancelled) return;
         // No platform named means "any of them": the merged map's markers
         // come from every platform's coverage, and a city published by one
         // of them has a city view whether or not it is on the open tab.
         // Asking only the open tab left those markers inert — a city with
         // Car Dependency but no 15minCity simply did not respond to a click.
-        const entries = platformId
-          ? [catalogue?.platforms?.[platformId]]
-          : Object.values(catalogue?.platforms ?? {});
-        const ids = entries
-          .flatMap((entry) => entry?.cities ?? [])
-          .filter(hasCityData)
+        const ids = cities
+          .filter((city) => (platformId ? city.layers?.includes(platformId) : city.layers?.length))
           .map((city) => city.id);
         setPublishedIds([...new Set(ids)]);
       } catch (error) {
@@ -211,9 +208,9 @@ export function useCityPageIds(platformId) {
 }
 
 /**
- * Cities with a combined-viewer (union mesh) entry in the catalogue — the ones
- * exported on the shared H3 grid, which /atlas/:cityId can draw every platform
- * from at once.
+ * Every published city, from the city list: who and where, and which layers
+ * each publishes. Every published city opens in the combined viewer
+ * (/atlas/:cityId); its full entry is fetched by that page alone.
  */
 export function useAtlasCities() {
   const [cities, setCities] = useState(null);
@@ -226,8 +223,9 @@ export function useAtlasCities() {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        const cities = await provider.cities(catalogue, { signal: controller.signal });
         if (cancelled) return;
-        setCities(catalogue?.atlas?.cities ?? []);
+        setCities(cities);
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }
@@ -273,6 +271,7 @@ export function useCityProfile(platformId, cityId) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        await provider.city(cityId, catalogue, { signal: controller.signal });
         entry = publishedCity(catalogue, platformId, cityId);
       } catch (error) {
         if (error?.name === 'AbortError') return;
@@ -413,9 +412,13 @@ export function usePlatformSummary(platformId) {
           setState({ status: 'empty', cities: [] });
           return;
         }
-        // The summary carries figures, not names: the catalogue is where a
+        // The summary carries figures, not names: the city list is where a
         // city's editorial metadata lives, so the two are joined here.
-        const byId = platformEntry(catalogue, platformId)?.citiesById ?? {};
+        const list = await provider.cities(catalogue, { signal: controller.signal });
+        if (cancelled) return;
+        const byId = Object.fromEntries(
+          list.filter((city) => city.layers?.includes(platformId) ?? true).map((city) => [city.id, city]),
+        );
         setState({
           status: 'ready',
           cities: rows
@@ -525,11 +528,7 @@ export function usePublishedCityCounts() {
       try {
         const catalogue = await getDataProvider().catalogue({ signal: controller.signal });
         if (cancelled) return;
-        setCounts(
-          Object.fromEntries(
-            PLATFORMS.map((p) => [p.id, (catalogue?.platforms?.[p.id]?.cities ?? []).filter(hasCityData).length]),
-          ),
-        );
+        setCounts(Object.fromEntries(PLATFORMS.map((p) => [p.id, catalogue?.platforms?.[p.id]?.count ?? 0])));
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }

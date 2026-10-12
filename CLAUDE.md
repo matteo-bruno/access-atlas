@@ -37,9 +37,11 @@ One idea to understand: **the catalogue decides whether the Atlas draws
 measurements or seed data**, per city, per platform.
 
 ```
-public/data/index.json        catalogue — what is actually published, derived from the records
+public/data/index.json        catalogue — an index of what is published, derived from the records
+public/data/cities.json.gz    the city list — every city's names, place and layers
 public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
   city.json                   the city's record: entries, figures, source hashes, createdAt
+  entry.json.gz               what its city view needs, derived from the record
 src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
 src/data/grid.js              grid + layer files → the union mesh the viewer draws
@@ -103,6 +105,24 @@ Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `/platforms/:slug/compare`, and the **coverage files** one marker per city for
 the world maps. The importer writes both from the values it is publishing, so
 the table and the city pages cannot disagree.
+
+**The catalogue is an index, and nothing in it is per city** (version 3).
+Every page waits on it, and with an entry per city it reached 8.6 MB at
+11,327 cities. It names the coverage files, the summaries, the statistics,
+each layer's `count` and the Atlas's `totals`, and two more files: the
+**city list** (`cities.json.gz`: names, place, layers), read by the search,
+the links to city pages, the compare view's names and CityChat; and each
+city's **entry** (`cities/<id>/entry.json.gz`: atlas entry, one row per
+layer, its files' hashes, and `extents`, which of its boundaries are
+published), read by its city view alone. The provider's `city()` fetches an
+entry once and merges it into the memoised catalogue, so `atlasCity` and
+`publishedCity` answer for that city as they always did; every provider
+method that takes a city calls it first. `cities()` is the list. On the
+Node side `readCatalogue()` in `bundle.mjs` gathers all three back into the
+version 2 shape, which is what `test:data`, CityChat and the scripts read.
+A version 2 catalogue still reads (`smoke:published` stages one). Never put
+a per-city field back in the index: `test:data` fails if a row or an atlas
+entry is in it.
 
 Anything the catalogue does not list falls back to generated seed data
 (`src/data/cities.js`, `src/data/mesh.js`), so the site works on a fresh

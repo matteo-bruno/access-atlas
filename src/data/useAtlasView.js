@@ -51,6 +51,9 @@ export function useAtlasView(cityId) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        // The city's own entry (catalogue version 3), merged into the
+        // catalogue so the lookups below answer for it.
+        await provider.city(cityId, catalogue, { signal: controller.signal });
         if (cancelled) return;
 
         const entry = atlasCity(catalogue, cityId);
@@ -158,7 +161,7 @@ export function useAtlasMesh(cityId, layer, enabled = true, scenario = null) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
-        const profile = atlasCity(catalogue, cityId);
+        const profile = await provider.city(cityId, catalogue, { signal: controller.signal });
         if (profile?.grid) {
           const grid = await provider.cityGrid(cityId, catalogue, { signal: controller.signal });
           const features = await gridFeatures(grid);

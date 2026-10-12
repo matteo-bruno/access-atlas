@@ -35,15 +35,27 @@ export function createDataStore(dataDir) {
   const cities = new Map(); // id → loaded city, most recent last
   const MAX_CITIES = 4;
 
+  let cityList = null;
+  const entries = new Map(); // id → atlas entry, read on first ask
+
   const getCatalogue = () => {
     catalogue ??= read('index.json');
     return catalogue;
   };
 
+  // Every published city, as the city list names it (catalogue version 3;
+  // the atlas entries of an older catalogue). Who and where, not how to draw.
+  const getCities = () => {
+    if (!cityList) {
+      const cat = getCatalogue();
+      cityList = typeof cat.cities === 'string' ? (read(cat.cities).cities ?? []) : (cat.atlas?.cities ?? []);
+    }
+    return cityList;
+  };
+
   const atlasEntry = (cityId) => {
     const key = String(cityId ?? '').trim().toLowerCase();
-    const list = getCatalogue().atlas?.cities ?? [];
-    const found = list.find(
+    const found = getCities().find(
       (c) => c.id === key || c.name?.toLowerCase() === key || c.nameIt?.toLowerCase() === key,
     );
     if (!found) {
@@ -51,7 +63,11 @@ export function createDataStore(dataDir) {
         `Unknown city "${cityId}". Call list_cities for the published ids.`,
       );
     }
-    return found;
+    // A version 3 catalogue keeps each city's full entry in its own file.
+    const template = getCatalogue().entry;
+    if (typeof template !== 'string') return found;
+    if (!entries.has(found.id)) entries.set(found.id, read(template.replace('{id}', found.id)).atlas);
+    return entries.get(found.id);
   };
 
   /** Grid, every layer file and the merged mesh for one city, cached. */
@@ -84,7 +100,7 @@ export function createDataStore(dataDir) {
     return rel ? read(rel).cities ?? [] : null;
   };
 
-  return { getCatalogue, atlasEntry, loadCity, summaryRows };
+  return { getCatalogue, getCities, atlasEntry, loadCity, summaryRows };
 }
 
 // ── Helpers over one layer file ─────────────────────────────────────────
@@ -397,9 +413,8 @@ const boundaryOf = (city) =>
 
 export function createTools(store) {
   const list_cities = () => {
-    const cat = store.getCatalogue();
     return {
-      cities: (cat.atlas?.cities ?? []).map((c) => ({
+      cities: store.getCities().map((c) => ({
         id: c.id,
         name: c.name,
         nameIt: c.nameIt,
@@ -578,7 +593,7 @@ export function createTools(store) {
   const compare_cities = ({ platform }) => {
     const rows = store.summaryRows(platform);
     if (!rows) throw new ToolInputError(`${platform} publishes no comparison summary.`);
-    const names = new Map((store.getCatalogue().atlas?.cities ?? []).map((c) => [c.id, c.name]));
+    const names = new Map(store.getCities().map((c) => [c.id, c.name]));
     return {
       platform,
       cities: rows.map(({ cdf, ...row }) => {

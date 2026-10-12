@@ -453,9 +453,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(3000);
   const cityRequests = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u));
   const layerFiles = cityRequests.map((u) => u.split('?')[0].split('/').pop());
+  // Its own entry too (catalogue version 3): the catalogue no longer carries
+  // any city, so a city view starts by reading the one it shows.
   check(
-    'A city loads its grid and the open layer, and nothing else',
-    layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
+    'A city loads its entry, its grid and the open layer, and nothing else',
+    layerFiles.sort().join(' ') === 'entry.json.gz grid.json.gz pov.json.gz',
     layerFiles.join(' '),
   );
   // The current version of a file is its plain path; `?v=<hash>` is only for

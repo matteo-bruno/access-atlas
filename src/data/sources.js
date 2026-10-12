@@ -17,11 +17,14 @@ import { loadDataset, loadJSON, whenAborted } from '../map/loaders.js';
 import { layerCartogram } from './grid.js';
 import {
   EMPTY_CATALOGUE,
+  addCityEntry,
   atlasCity,
   catalogueUrl,
+  cityEntryPath,
   fileUrl,
   hourlyPath,
   normaliseCatalogue,
+  normaliseCityList,
   platformEntry,
   publishedCity,
 } from './catalogue.js';
@@ -29,6 +32,12 @@ import {
 /** Static provider: plain files under public/data/, no backend required. */
 export function createStaticProvider() {
   let cataloguePromise = null;
+  // One city's entry, and the city list, each fetched once and shared, for
+  // the same reasons as the catalogue below: no caller's signal, and a
+  // failure forgotten so the next caller tries again.
+  const entryPromises = new Map();
+  let listPromise = null;
+  const race = (promise, signal) => (signal ? Promise.race([promise, whenAborted(signal)]) : promise);
 
   return {
     id: 'published',
@@ -65,6 +74,49 @@ export function createStaticProvider() {
       return signal ? Promise.race([cataloguePromise, whenAborted(signal)]) : cataloguePromise;
     },
 
+    // One city's entry (catalogue version 3): fetched the first time the city
+    // is asked for and merged into the catalogue, so `atlasCity` and
+    // `publishedCity` answer for it from then on. Every method below that
+    // takes a city starts here. On an older catalogue every city is already
+    // in it. Resolves to the city's atlas entry, or null if it is not
+    // published.
+    async city(cityId, catalogue, { signal } = {}) {
+      const known = atlasCity(catalogue, cityId);
+      const path = cityEntryPath(catalogue, cityId);
+      if (known || !path || !cityId) return known;
+      if (!entryPromises.has(cityId)) {
+        entryPromises.set(
+          cityId,
+          loadJSON(fileUrl(catalogue, path))
+            .then((raw) => addCityEntry(catalogue, raw))
+            .catch(() => {
+              // Not published (the SPA fallback answers a missing file with
+              // index.html, which does not parse), or a failed request: both
+              // read as "not published", and the next caller asks again.
+              entryPromises.delete(cityId);
+              return null;
+            }),
+        );
+      }
+      return race(entryPromises.get(cityId), signal);
+    },
+
+    // Every published city: who and where, not how to draw it (version 3's
+    // city list), for the search and whatever links cities by name. On an
+    // older catalogue, its atlas entries.
+    async cities(catalogue, { signal } = {}) {
+      if (!catalogue?.cityList) return catalogue?.atlas?.cities ?? [];
+      if (!listPromise) {
+        listPromise = loadJSON(fileUrl(catalogue, catalogue.cityList))
+          .then((raw) => normaliseCityList(raw) ?? [])
+          .catch(() => {
+            listPromise = null;
+            return [];
+          });
+      }
+      return race(listPromise, signal);
+    },
+
     // Per-city aggregates for the compare view. Null where a platform has
     // published none, which is how the page knows to say so.
     async summary(platformId, catalogue, { signal } = {}) {
@@ -89,6 +141,7 @@ export function createStaticProvider() {
     },
 
     async cityMesh(platformId, cityId, catalogue, { signal, scenario } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile) return null;
 
@@ -110,6 +163,7 @@ export function createStaticProvider() {
     // published cartogram. Null where only one geometry is published, which
     // is how the viewer knows not to offer the switch.
     async cityGeometry(platformId, cityId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile?.geoDataset) return null;
       const collection = await loadDataset({ url: fileUrl(catalogue, profile.geoDataset) }, { signal });
@@ -120,6 +174,7 @@ export function createStaticProvider() {
     // cityGeometry, for platforms whose dataset is the map rather than the
     // cartogram.
     async cityCartogram(platformId, cityId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile?.cartogramDataset) return null;
       const collection = await loadDataset({ url: fileUrl(catalogue, profile.cartogramDataset) }, { signal });
@@ -131,6 +186,7 @@ export function createStaticProvider() {
     // the cells that platform measures. On the per-city layout they are built
     // from the layer file, which carries them (or the rule for them).
     async atlasGeometry(cityId, platformId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = atlasCity(catalogue, cityId);
       if (profile?.grid) {
         if (!profile.layerData?.[platformId]) return null;
@@ -151,12 +207,14 @@ export function createStaticProvider() {
     // population per cell), and one layer's values keyed to it. Both are
     // plain JSON; the viewer draws the hexagons itself (see grid.js).
     async cityGrid(cityId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = atlasCity(catalogue, cityId);
       if (!profile?.grid) return null;
       return loadDataset({ url: fileUrl(catalogue, profile.grid), format: 'json' }, { signal });
     },
 
     async cityLayer(cityId, platformId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const path = atlasCity(catalogue, cityId)?.layerData?.[platformId];
       if (!path) return null;
       return loadDataset({ url: fileUrl(catalogue, path), format: 'json' }, { signal });
@@ -165,6 +223,7 @@ export function createStaticProvider() {
     // One layer of a scenario of a city, on the city's own grid: the same
     // shape as `cityLayer`, merged beside the baseline (grid.js).
     async cityScenario(cityId, scenarioId, platformId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const scenario = atlasCity(catalogue, cityId)?.scenarios?.find((s) => s.id === scenarioId);
       const path = scenario?.layerData?.[platformId];
       if (!path) return null;
@@ -174,6 +233,7 @@ export function createStaticProvider() {
     // Scenarios a static host can offer: whatever the catalogue lists. A
     // backend provider would return ones computed on demand instead.
     async scenarios(platformId, cityId, catalogue) {
+      await this.city(cityId, catalogue);
       return publishedCity(catalogue, platformId, cityId)?.scenarios ?? [];
     },
 
@@ -181,6 +241,7 @@ export function createStaticProvider() {
     // grid, built offline. Null when the city has no harmonised export yet;
     // the viewer then swaps per-platform meshes instead of repainting one.
     async atlasMesh(cityId, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = atlasCity(catalogue, cityId);
       if (!profile?.dataset) return null;
       const collection = await loadDataset({ url: fileUrl(catalogue, profile.dataset) }, { signal });
@@ -190,6 +251,7 @@ export function createStaticProvider() {
     // One hour of an hourly dataset (CityChrone's hexcovers). `hour` is
     // clamped to what the catalogue declares rather than trusted.
     async hourly(platformId, cityId, hour, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const profile = publishedCity(catalogue, platformId, cityId);
       if (!profile?.hourly) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
@@ -204,6 +266,7 @@ export function createStaticProvider() {
     // uint8 minutes. ~3 MB per hour, so it is only fetched when the isochrone
     // view asks for it (and then cached by URL like everything else).
     async travelTimes(platformId, cityId, hour, catalogue, { signal } = {}) {
+      await this.city(cityId, catalogue, { signal });
       const atlas = atlasCity(catalogue, cityId);
       const profile = atlas?.hourly?.times ? atlas : publishedCity(catalogue, platformId, cityId);
       if (!profile?.hourly?.times) return null;
@@ -221,6 +284,9 @@ export function createStaticProvider() {
  * The provider contract, for anyone writing a second one:
  *
  *   catalogue({ signal })                      → normalised catalogue
+ *   city(cityId, catalogue, opts)              → the city's atlas entry | null,
+ *                                                merged into the catalogue
+ *   cities(catalogue, opts)                    → every published city (the list)
  *   coverage(platformId, catalogue, opts)      → FeatureCollection | null
  *   summary(platformId, catalogue, opts)       → { platform, cities } | null
  *   stats(catalogue, opts)                     → statistics (scripts/lib/stats.mjs) | null
