@@ -4,7 +4,8 @@
 //   npm run import -- <platform> <source> [options]
 //
 //   platform   15mincity | citychrone | pov | cdi
-//   source     the export as the platform hands it over (see input_data/README.md)
+//   source     the city's file: <City>.geojson, or <City>.zip for CityChrone
+//              (see input_data/README.md)
 //
 //   npm run import -- <platform> --remove <city>    take a city's layer off the site
 //   npm run import -- <platform> --remove <city> --scenario <id>
@@ -13,11 +14,14 @@
 //
 //   --city <id>          city id, when the file name does not give the right one
 //   --scenario <id>      import as a scenario of the city rather than the city
-//                        itself (`rome__metro-d_cdi.zip` says so on its own)
+//                        itself (`Rome_scenario_metro-d.geojson` says so on its own)
 //   --scenario-name / --scenario-name-it   the scenario's name, English / Italian
 //                        (default: from its id, `metro-d` → "Metro D")
 //   --dry-run            check and report, write nothing
 //   --name / --name-it   the city's name, English / Italian
+//   --default-name       the name a new city takes when no --name is given
+//                        (default: the file's own, `Al 'Azīzīyah.geojson`
+//                        → "Al 'Azīzīyah"); a published city keeps its own
 //   --country <ISO>      and --region / --region-it: where it is, when the
 //                        lookup from its centre is wrong
 //   --no-index           leave the catalogue, coverage and summaries alone
@@ -172,6 +176,7 @@ try {
     overrides: {
       name: arg('name'),
       nameIt: arg('name-it'),
+      defaultName: arg('default-name') ?? named.name,
       country: arg('country'),
       region: arg('region'),
       regionIt: arg('region-it'),

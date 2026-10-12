@@ -45,7 +45,7 @@ Drop each platform's export, as the platform hands it over, under
 ```bash
 npm run update:data              # import whatever changed, then validate
 npm run update:data -- --dry-run # just list it
-npm run import -- pov input_data/pov/zurich_pov.zip   # one source by hand
+npm run import -- pov input_data/pov/Zurich.geojson   # one source by hand
 ```
 
 [`input_data/README.md`](input_data/README.md) has the formats and the
@@ -222,9 +222,8 @@ Two mechanisms, and they stack.
 per layer (`public/data/cities/<city>/`). Cell outlines are not stored at
 all: every cell is a standard H3 hexagon, so the browser draws it from its
 index. Values are columns keyed to grid positions, and a layer's file is
-fetched only when that layer is opened. Published cartograms are kept as
-small integer offsets from each cell's centre; derived ones need nothing
-but their reference population. CityChrone's travel-time matrices are
+fetched only when that layer is opened. Cartograms are derived by one rule
+and need nothing stored but a reference population. CityChrone's travel-time matrices are
 stored with rows and columns in grid order, which puts neighbouring cells
 next to each other and makes them 2 to 3.5 times smaller under gzip,
 losslessly.

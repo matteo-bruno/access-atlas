@@ -271,18 +271,16 @@ export function citychroneHourFromLayer(file, hour) {
  * A layer's cartogram, as the companion `withGeometry` swaps in: one polygon
  * per cell the layer covers, `{ i: grid position }`.
  *
- * Published cartograms are stored as vertex offsets from each cell's centre;
- * derived ones are the cell's own hexagon scaled so its area is proportional
- * to the cell's population (the grid's, shared by every layer, so a cell is
- * the same size whichever layer draws it), full size at `reference`.
+ * The Atlas derives every layer's: the cell's own hexagon scaled so its area
+ * is proportional to the cell's population (the grid's, shared by every
+ * layer, so a cell is the same size whichever layer draws it), full size at
+ * `reference`.
  */
 export async function layerCartogram(grid, file) {
   checkGrid(grid, file);
   const { cellToBoundary, cellToLatLng } = await loadH3();
   const positions = layerPositions(file);
-  const cartogram = file.cartogram ?? {};
-  const unit = cartogram.unit ?? 1e-5;
-  const reference = cartogram.reference;
+  const reference = file.cartogram?.reference;
   const pop = grid.population;
 
   const features = [];
@@ -290,22 +288,8 @@ export async function layerCartogram(grid, file) {
     const i = positions[row];
     const h3 = grid.cells[i];
     const [lat, lon] = cellToLatLng(h3);
-    let ring;
-    if (cartogram.source === 'published') {
-      const offsets = cartogram.rings[row];
-      ring = [];
-      for (let k = 0; k < offsets.length; k += 2) {
-        ring.push([lon + offsets[k] * unit, lat + offsets[k + 1] * unit]);
-      }
-      ring.push(ring[0]);
-    } else {
-      const scale =
-        reference > 0 ? Math.sqrt(Math.min(Math.max(pop[i] || 0, 0) / reference, 1)) : 1;
-      ring = closedRing(cellToBoundary(h3)).map(([x, y]) => [
-        lon + (x - lon) * scale,
-        lat + (y - lat) * scale,
-      ]);
-    }
+    const scale = reference > 0 ? Math.sqrt(Math.min(Math.max(pop[i] || 0, 0) / reference, 1)) : 1;
+    const ring = closedRing(cellToBoundary(h3)).map(([x, y]) => [lon + (x - lon) * scale, lat + (y - lat) * scale]);
     features.push({
       type: 'Feature',
       properties: { i },

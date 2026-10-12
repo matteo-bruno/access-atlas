@@ -11,13 +11,13 @@
 // makes them 2–3.5 times smaller (see permuteMatrix in lib/bundle.mjs).
 
 import zlib from 'node:zlib';
-import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt } from '../lib/bundle.mjs';
+import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt, weightedCentre } from '../lib/bundle.mjs';
 import { baseName, fromZip, openSource } from '../lib/zip.mjs';
 
 export const layer = 'citychrone';
 export const dir = 'citychrone';
 export const accepts = (name) => /\.zip$/i.test(name) || !/\.[a-z0-9]+$/i.test(name);
-export const cityName = (name) => name.replace(/\.zip$/i, '').replace(/[_-]citychrone$/i, '');
+export const cityName = (name) => name.replace(/\.zip$/i, '');
 
 /** Every hourly member, unzipped where it came zipped: `{ hexcover: [], times: [] }`. */
 function hourlyFiles(source) {
@@ -60,6 +60,16 @@ function checkNpy(buffer, n, label) {
     throw new Error(`${label}: shape ${shape ? `${shape[1]}×${shape[2]}` : 'unknown'}, expected ${n}×${n}`);
   }
   if (buffer.length - start - headerLength < n * n) throw new Error(`${label} is truncated`);
+}
+
+/** Where the city is: its population-weighted centre in hour 00, as [lon, lat]. */
+export function locate(source) {
+  const [first] = hourlyFiles(source).hexcover;
+  if (!first) throw new Error('no hexcoverHH files in the source');
+  const features = JSON.parse(first.read().toString('utf8').replace(/^\uFEFF/, '')).features;
+  // hexcover `coord` is [lat, lon].
+  const cells = features.map((f) => cellAt([f.properties.coord[1], f.properties.coord[0]], first.path));
+  return weightedCentre(cells, features.map((f) => Number(f.properties.pop) || 0));
 }
 
 export function parse(source) {
@@ -145,7 +155,6 @@ export function parse(source) {
       meta: {},
       hourly: { hours, v, s },
       times: matrices,
-      cartogram: { source: 'derived' },
     },
     notes: [`${n} cells × ${hours} hours, order stable across hours`],
   };

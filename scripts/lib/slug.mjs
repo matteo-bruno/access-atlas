@@ -13,22 +13,35 @@ export function slugify(name) {
     .replace(/^-+|-+$/g, '');
 }
 
-// Two underscores separate a city from a scenario of it: `rome__metro-d_cdi.zip`
-// is scenario `metro-d` of `rome`. One underscore stays part of the city, so
-// `Tokyo_FUA.geojson` is the city `tokyo-fua` (its metro area).
-export const SCENARIO_SEPARATOR = '__';
+// A source is named after its city and nothing else: `Rome.geojson` is the
+// city `rome` (its GHS core), `Rome_FUA.geojson` its metro area `rome-fua`,
+// and `Rome_scenario_metro-d.geojson` the scenario `metro-d` of Rome
+// (`Paris_FUA_scenario_new-line.geojson`: of Paris's metro area).
+export const SCENARIO_SEPARATOR = /_scenario_/i;
 
 /**
  * What a source names, from the importer's reading of its file name
- * (`importer.cityName`, extension and platform suffix already dropped).
+ * (`importer.cityName`, extension already dropped).
  *
- * @returns {{ city: string, scenario: string | null }}
+ * `name` is the city's name as the file writes it, accents and all, for a
+ * city the catalogue does not know yet: `Al 'Azīzīyah.geojson` is shown as
+ * "Al 'Azīzīyah", not as its id. A name written all in lower case
+ * (`zurich.geojson`) is title-cased, since that is a file name, not a choice.
+ *
+ * @returns {{ city: string, scenario: string | null, name: string }}
  */
 export function parseSourceName(name) {
-  const at = name.indexOf(SCENARIO_SEPARATOR);
-  if (at < 0) return { city: slugify(name), scenario: null };
+  const match = name.match(SCENARIO_SEPARATOR);
+  const cityPart = match ? name.slice(0, match.index) : name;
   return {
-    city: slugify(name.slice(0, at)),
-    scenario: slugify(name.slice(at + SCENARIO_SEPARATOR.length)) || null,
+    city: slugify(cityPart),
+    scenario: match ? slugify(name.slice(match.index + match[0].length)) || null : null,
+    name: displayName(cityPart),
   };
+}
+
+function displayName(cityPart) {
+  const name = cityPart.replace(/[_ -]fua$/i, '').trim().replace(/\s+/g, ' ');
+  if (name !== name.toLowerCase()) return name;
+  return name.replace(/(^|[\s-])(\p{L})/gu, (_, sep, letter) => sep + letter.toUpperCase());
 }

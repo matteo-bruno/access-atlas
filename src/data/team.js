@@ -13,7 +13,7 @@ export const TEAM = [
   { name: 'Vittorio Loreto', roleKey: 'director' },
   // `email` turns the name into a mailto link. Only for people who have asked
   // for one — a name is not an invitation to be written to.
-  { name: 'Matteo Bruno', roleKey: 'staffResearcherM', email: 'matteo.bruno@sony.com' },
+  { name: 'Matteo Bruno', roleKey: 'coPiResearcherM', email: 'matteo.bruno@sony.com' },
   { name: 'Lavinia Rossi Mori', roleKey: 'assistant' },
   { name: 'Bruno Campanelli', roleKey: 'consultantM' },
   { name: 'Michele Avalle', roleKey: 'sapienzaResearcherM' },

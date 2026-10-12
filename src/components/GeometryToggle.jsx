@@ -7,9 +7,9 @@ import './GeometryToggle.css';
  *
  * The two geometries are two different claims about a cell — the ground it
  * covers, or the people who live on it — so this is not a display preference
- * and the explanation travels with it. Where a platform published no
- * cartogram the option stays visible and disabled, saying so, rather than
- * disappearing: an absent view and an unbuilt one look identical otherwise.
+ * and the explanation travels with it. Where no cartogram is available the
+ * option stays visible and disabled, saying so, rather than disappearing: an
+ * absent view and an unbuilt one look identical otherwise.
  *
  * @param {'geographic'|'cartogram'} props.value
  * @param {(next: string) => void}   props.onChange
@@ -17,10 +17,8 @@ import './GeometryToggle.css';
  *        which geometries are published for what is on screen — never
  *        inferred, because an unpublished view and an unbuilt one are the
  *        same picture from the outside
- * @param {boolean} [props.derived]     the cartogram is the Atlas's own rather
- *        than one the platform published — a different provenance, so it is
- *        said rather than glossed
- * @param {string}  [props.missingName]  who publishes no cartogram, for the copy
+ * @param {boolean} [props.derived]     the cartogram is the Atlas's own rule,
+ *        a provenance that is said rather than glossed
  * @param {boolean} [props.loading]      the other geometry is in flight
  * @param {boolean} [props.compact]      floating on the map rather than in a
  *        panel: the two buttons on one line, the explanation on the "?"
@@ -30,7 +28,6 @@ export function GeometryToggle({
   onChange,
   available,
   derived = false,
-  missingName,
   loading = false,
   compact = false,
 }) {
@@ -45,12 +42,7 @@ export function GeometryToggle({
     <div className={`aa-geometry${compact ? ' aa-geometry--compact' : ''}`}>
       <Explain label={compact ? undefined : t('city.geometry.label')}>
         <p>{t(`city.geometry.about.${value === 'cartogram' ? 'cartogram' : 'map'}`)}</p>
-        {available.cartogram && derived && missingName && (
-          <p>{t('city.geometry.about.derived', { name: missingName })}</p>
-        )}
-        {!available.cartogram && missingName && (
-          <p>{t('city.geometry.about.missing', { name: missingName })}</p>
-        )}
+        {available.cartogram && derived && <p>{t('city.geometry.about.derived')}</p>}
       </Explain>
       <div className="aa-toggle aa-geometry__toggle" role="group" aria-label={t('city.geometry.label')}>
         {options.map((option) => (
