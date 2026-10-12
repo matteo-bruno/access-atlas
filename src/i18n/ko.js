@@ -160,6 +160,8 @@ export default {
       legendUnit: '공개된 플랫폼 수',
       legend: ['1개', '2개', '3개', '4개 모두'],
       covered: '플랫폼 4개 중 {count}개',
+      filter: '표시할 도시의 레이어 수',
+      filterOptions: ['하나 이상', '둘 이상', '셋 이상', '네 개 모두'],
     },
 
     fifteen: {

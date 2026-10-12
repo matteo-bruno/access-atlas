@@ -15,17 +15,19 @@ import { normaliseStats } from './stats.js';
 
 /**
  * City coverage for a platform's world map and search.
- * @returns {{ cities: object[], source: 'published'|'seed' }}
+ * @returns {{ cities: object[], source: 'pending'|'published'|'seed' }}
  */
 export function useCityCoverage(platform) {
-  // null while the answer is pending, [] once it said "nothing published".
-  const [published, setPublished] = useState(null);
+  // The answer and the platform it is for: a layer switch reads as pending
+  // from its first render, rather than drawing the last layer's cities in the
+  // new layer's colours for a frame. [] means "nothing published".
+  const [answer, setAnswer] = useState(null);
+  const published = answer?.platform === platform.id ? answer.cities : null;
   const seed = useMemo(() => citiesForPlatform(platform), [platform]);
 
   useEffect(() => {
     let cancelled = false;
     const controller = new AbortController();
-    setPublished(null);
 
     (async () => {
       let cities = [];
@@ -43,7 +45,7 @@ export function useCityCoverage(platform) {
           console.info(`[data] coverage for ${platform.id} unavailable`, error.message);
         }
       }
-      if (!cancelled) setPublished(cities);
+      if (!cancelled) setAnswer({ platform: platform.id, cities });
     })();
 
     return () => {

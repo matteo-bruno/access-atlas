@@ -160,6 +160,8 @@ export default {
       legendUnit: '已发布平台数',
       legend: ['一个', '两个', '三个', '全部四个'],
       covered: '4 个平台中的 {count} 个',
+      filter: '显示包含以下图层数的城市',
+      filterOptions: ['任意图层', '两个或以上', '三个或以上', '全部四个图层'],
     },
 
     fifteen: {

@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
@@ -69,11 +69,13 @@ export default function PlatformLanding() {
   // too rather than on a 404: the route is still a request for the world map.
   const platform = slug === undefined ? PLATFORMS[0] : platformBySlug(slug);
 
-  // Remount cleanly when switching platforms so the map rebuilds its layers.
+  // Not keyed by the layer: switching layer keeps the same world map, which
+  // empties and fills with the new layer's cities (FadingRoutes counts every
+  // layer as one screen, see screenOf in App.jsx).
   return (
     <div className="aa-page aa-page--fixed">
       <main className="aa-main aa-stagewrap" id="main">
-        <PlatformExplorer key={platform?.id ?? 'all'} platform={platform} />
+        <PlatformExplorer platform={platform} />
       </main>
     </div>
   );
@@ -114,7 +116,26 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
     : hasSummary
       ? `/platforms/${platform.slug}/compare`
       : STATS_FOCUS[platform.id] ?? null;
-  const cities = platform ? single.cities : all.cities;
+  // The merged map shows the cities with at least `min` of the four layers,
+  // all four unless the reader asks for fewer. In the URL, like the layer.
+  const [params, setParams] = useSearchParams();
+  const minLayers = platform ? 1 : minLayersFrom(params);
+  // How many cities each choice would show: with at least that many layers.
+  const layerCounts = useMemo(
+    () => PLATFORMS.map((_, i) => all.cities.filter((city) => (city.platformCount ?? 1) > i).length),
+    [all.cities],
+  );
+  const shownAll = useMemo(
+    () => (minLayers > 1 ? all.cities.filter((city) => (city.platformCount ?? 1) >= minLayers) : all.cities),
+    [all.cities, minLayers],
+  );
+  const setMinLayers = (count) => {
+    const next = new URLSearchParams(params);
+    if (count === PLATFORMS.length) next.delete('min');
+    else next.set('min', String(count));
+    setParams(next, { replace: true });
+  };
+  const cities = platform ? single.cities : shownAll;
   // Always the merged coverage, never the open tab's — see the WorldMap props.
   const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
   const markerStyle = useMemo(
@@ -305,6 +326,39 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </a>
         )}
 
+        {/* The merged map's legend is also its filter: each row is a number
+            of layers, and picking one shows the cities with at least that
+            many. Its swatches are the coverage scale, as before. */}
+        {!platform ? (
+          <fieldset className="aa-card aa-legend aa-legend--filter aa-fadein aa-fadein--slow">
+            <legend className="aa-legend__title">
+              <Eyebrow>{t('platform.all.filter')}</Eyebrow>
+            </legend>
+            <div className="aa-legend__items">
+              {PLATFORMS.map((_, i) => PLATFORMS.length - i).map((count) => (
+                <label
+                  key={count}
+                  className={`aa-legend__item aa-legend__option${
+                    count >= minLayers ? ' aa-legend__option--on' : ''
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="aa-min-layers"
+                    value={count}
+                    checked={minLayers === count}
+                    onChange={() => setMinLayers(count)}
+                  />
+                  <span className="aa-swatch" style={{ background: COVERAGE_SCALE[count - 1] }} />
+                  <span>{t('platform.all.filterOptions')[count - 1]}</span>
+                  <span className="aa-legend__count aa-mono">
+                    {all.source === 'published' ? n(layerCounts[count - 1]) : ''}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ) : (
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>
           <Eyebrow>{t(`${copyKey}.legendUnit`)}</Eyebrow>
           <div className="aa-legend__items">
@@ -319,6 +373,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             ))}
           </div>
         </section>
+        )}
 
         <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>
@@ -340,6 +395,12 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
       {children}
     </div>
   );
+}
+
+/** `?min=` on the merged map: 1 to 4 layers, all four when absent or invalid. */
+function minLayersFrom(params) {
+  const value = Number(params.get('min'));
+  return Number.isInteger(value) && value >= 1 && value <= PLATFORMS.length ? value : PLATFORMS.length;
 }
 
 // On the all-platforms map the readable fact is which lenses a city has, not

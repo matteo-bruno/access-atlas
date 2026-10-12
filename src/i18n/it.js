@@ -173,6 +173,8 @@ export default {
       legendUnit: 'Piattaforme pubblicate',
       legend: ['Una', 'Due', 'Tre', 'Tutte e quattro'],
       covered: '{count} piattaforme su 4',
+      filter: 'Mostra le città con',
+      filterOptions: ['Almeno un layer', 'Due o più', 'Tre o più', 'Tutti e quattro i layer'],
     },
 
     fifteen: {

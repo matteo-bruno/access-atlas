@@ -150,7 +150,10 @@
   background: var(--paper);
 }
 
-.aa-picker__item--active {
+/* Under the pointer too: `:hover` is the more specific of the two, and the
+   active entry read pale on pale right after it was clicked. */
+.aa-picker__item--active,
+.aa-picker__item--active:hover {
   background: var(--ink);
   color: var(--card);
 }
@@ -192,6 +195,53 @@
 .aa-legend__item .aa-swatch {
   width: 10px;
   height: 10px;
+}
+
+/* The merged map's legend doubles as its filter: a row per number of layers,
+   and the rows at or above the chosen one are the cities on the map. */
+.aa-legend--filter {
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.aa-legend__title {
+  padding: 0;
+}
+.aa-legend__option {
+  position: relative;
+  margin: 0 -6px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+.aa-legend__option--on {
+  opacity: 1;
+}
+.aa-legend__option:hover {
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+.aa-legend__option:has(input:checked) {
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+  color: var(--ink);
+}
+.aa-legend__option:has(input:focus-visible) {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+.aa-legend__option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+.aa-legend__count {
+  margin-inline-start: auto;
+  padding-inline-start: 12px;
+  font-size: 11px;
+  color: var(--ink-3);
 }
 
 /* Zoom controls */

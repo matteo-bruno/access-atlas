@@ -163,6 +163,8 @@ export default {
       legendUnit: 'Plateformes publiées',
       legend: ['Une', 'Deux', 'Trois', 'Les quatre'],
       covered: '{count} plateformes sur 4',
+      filter: 'Afficher les villes avec',
+      filterOptions: ['Au moins une couche', 'Deux ou plus', 'Trois ou plus', 'Les quatre couches'],
     },
 
     fifteen: {

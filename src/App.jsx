@@ -70,8 +70,15 @@ const FADE_MS = 170;
 // Which screen a path is, for the cross-fade. A city's core and its metro
 // area (`/atlas/tokyo`, `/atlas/tokyo-fua`) are one screen on two
 // boundaries: the city view swaps its mesh under the same map rather than
-// fading out and building another.
-const screenOf = (pathname) => pathname.replace(/^(\/atlas\/[^/]+?)-fua\/?$/, '$1');
+// fading out and building another. The world map's layers
+// (`/platforms`, `/platforms/<slug>`, `/platforms/all`) are one screen too:
+// switching layer empties the same world and fills it with the new layer's
+// cities. A fade there let the backdrop, which draws every layer's cities,
+// show through for its length.
+const screenOf = (pathname) =>
+  pathname
+    .replace(/^(\/atlas\/[^/]+?)-fua\/?$/, '$1')
+    .replace(/^\/platforms(\/[^/]+)?\/?$/, '/platforms');
 
 function FadingRoutes({ children }) {
   const location = useLocation();

@@ -816,6 +816,22 @@ quarters, the coverage scale for the merged map. Solid accents could not do
 that job: two of the four layers are navy and two are terracotta, so half the
 row was two pairs of identical dots.
 
+**Switching layer is a repaint, not a new page.** `/platforms`,
+`/platforms/<slug>` and `/platforms/all` are one screen to `FadingRoutes`
+(`screenOf`), and `PlatformExplorer` is not keyed by the layer, so the same
+`WorldMap` stays and only its cities change: it empties while the new
+layer's coverage is pending (`useCityCoverage` ties its answer to the
+platform it is for) and fills when it lands. A cross-fade there let the
+backdrop, which draws every layer's cities, show through for its length.
+The coverage hooks never show the seed list while pending, only once the
+answer is "nothing published".
+
+**"All layers" opens on the cities with all four layers.** Its legend is
+also its filter: one row per number of layers, each with how many cities it
+would show, and picking one shows the cities with at least that many
+(`?min=1..3`, absent for four). The frame still comes from every city, so
+the filter never moves the world.
+
 **Every marker opens its city, whatever the open layer covers.** The city
 view opens on the first layer that city actually carries, so a Car
 Dependency city needs no 15minCity to be worth a click. `useCityPageIds()`

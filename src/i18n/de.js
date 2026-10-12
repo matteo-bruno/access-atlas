@@ -164,6 +164,8 @@ export default {
       legendUnit: 'Veröffentlichte Plattformen',
       legend: ['Eine', 'Zwei', 'Drei', 'Alle vier'],
       covered: '{count} von 4 Plattformen',
+      filter: 'Städte anzeigen mit',
+      filterOptions: ['Mindestens einer Ebene', 'Zwei oder mehr', 'Drei oder mehr', 'Allen vier Ebenen'],
     },
 
     fifteen: {

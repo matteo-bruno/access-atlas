@@ -170,6 +170,8 @@ export default {
       legendUnit: '公開済みプラットフォーム',
       legend: ['1つ', '2つ', '3つ', '4つすべて'],
       covered: '全4プラットフォーム中{count}',
+      filter: '表示する都市のレイヤー数',
+      filterOptions: ['いずれか1つ以上', '2つ以上', '3つ以上', '4つすべて'],
     },
 
     fifteen: {

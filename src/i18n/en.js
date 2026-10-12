@@ -180,6 +180,9 @@ export default {
       legendUnit: 'Platforms published',
       legend: ['One', 'Two', 'Three', 'All four'],
       covered: '{count} of 4 platforms',
+      // The merged map's filter: cities with at least this many layers.
+      filter: 'Show cities with',
+      filterOptions: ['Any layer', 'Two or more', 'Three or more', 'All four layers'],
     },
 
     fifteen: {
