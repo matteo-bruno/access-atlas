@@ -11,8 +11,8 @@
 //   npm run import -- <platform> --remove <city> --scenario <id>
 //                                                   … or one scenario of it
 //   npm run import -- --index                       rebuild the catalogue only
-//   npm run import -- --refresh-markers             recompute the world-map markers of
-//                                                   every city from its published layers,
+//   npm run import -- --refresh-figures             recompute every city's markers and
+//                                                   compare rows from its published layers,
 //                                                   where their method changed, then
 //                                                   rebuild the catalogue
 //
@@ -40,7 +40,7 @@
 // input_data/.
 
 import path from 'node:path';
-import { buildIndex, publishLayer, publishScenario, refreshMarkers, unpublishLayer, unpublishScenario } from './lib/bundle.mjs';
+import { buildIndex, publishLayer, publishScenario, refreshFigures, unpublishLayer, unpublishScenario } from './lib/bundle.mjs';
 import { parseSourceName, slugify } from './lib/slug.mjs';
 import { describeHidden } from './lib/quality.mjs';
 import * as pov from './importers/pov.mjs';
@@ -61,7 +61,7 @@ const positional = [];
 for (let i = 2; i < process.argv.length; i++) {
   const a = process.argv[i];
   if (a.startsWith('--')) {
-    if (!['dry-run', 'no-index', 'index', 'refresh-markers'].includes(a.slice(2))) i++;
+    if (!['dry-run', 'no-index', 'index', 'refresh-figures', 'refresh-markers'].includes(a.slice(2))) i++;
     continue;
   }
   positional.push(a);
@@ -85,9 +85,10 @@ function reindex() {
   if (left.length) console.log(`statistics: ${left.join(', ')} not on the Stats page until \`npm run stats\``);
 }
 
-if (flag('refresh-markers')) {
-  const changed = refreshMarkers({ dryRun });
-  console.log(`markers: ${changed.length ? `${changed.length} ${dryRun ? 'would change' : 'recomputed'} (${changed.join(', ')})` : 'all up to date'}`);
+// `--refresh-markers` is the name it had when it recomputed markers only.
+if (flag('refresh-figures') || flag('refresh-markers')) {
+  const changed = refreshFigures({ dryRun });
+  console.log(`figures: ${changed.length ? `${changed.length} ${dryRun ? 'would change' : 'recomputed'} (${changed.join(', ')})` : 'all up to date'}`);
   reindex();
   process.exit(0);
 }

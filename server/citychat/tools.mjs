@@ -105,13 +105,12 @@ export function createDataStore(dataDir) {
 
 // ── Helpers over one layer file ─────────────────────────────────────────
 
-/** Median of plain values (the upper middle, as the viewer's summaries take it). */
-function median(values) {
-  const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
-  return sorted.length ? sorted[sorted.length >> 1] : null;
-}
-
-/** The value at which half the weight lies on each side. */
+/**
+ * The value at which half the weight lies on each side. Every median a tool
+ * returns is the median resident's, weighted by the layer's own residents,
+ * as the map, the compare view and the statistics quote it: a median over
+ * cells would let thinly settled outer cells outvote where people live.
+ */
 function weightedMedian(values, weights) {
   const pairs = [];
   for (let i = 0; i < values.length; i++) {
@@ -276,8 +275,8 @@ function layerFigures(city, layer) {
     });
     return {
       ...base,
-      medianProximity: r1(median(file.fields.proximity)),
-      medianOpportunity: r1(median(file.fields.opportunity)),
+      medianProximity: r1(weightedMedian(file.fields.proximity, pop)),
+      medianOpportunity: r1(weightedMedian(file.fields.opportunity, pop)),
       zoneThresholds: file.meta?.thresholds ?? null,
       zoneSharesOfCells: zoneShares,
       zoneSharesOfResidents: zonePopulationShares,
@@ -299,7 +298,6 @@ function layerFigures(city, layer) {
     for (const mode of FIFTEEN_MODE_KEYS) {
       const values = fifteenColumn(file, 'proximity_time', mode);
       out[`average_${mode}`] = {
-        medianMinutesPerCell: r1(median(values)),
         medianMinutesPerResident: r1(weightedMedian(values, pop)),
         within15Minutes: shares(values, pop, (v) => v <= 15),
       };
@@ -311,7 +309,6 @@ function layerFigures(city, layer) {
     return {
       ...base,
       hour: `${pad(h)}:00`,
-      medianVelocityPerCell: r2(median(file.hourly.v[h])),
       medianVelocityPerResident: r2(weightedMedian(file.hourly.v[h], pop)),
       medianSocialityPerResident: Math.round(weightedMedian(file.hourly.s[h], pop) ?? 0) || null,
     };
@@ -609,8 +606,8 @@ export function createTools(store) {
         return out;
       }),
       note: platform === 'pov'
-        ? 'zoneShares are shares of cells, zonePopulationShares shares of residents. Zones compare places within a city only.'
-        : 'ptShare / carShare are shares of cells with CDI below -0.05 / above +0.05. weightedCdi is the CDI for the average resident.',
+        ? 'zoneShares are shares of cells, zonePopulationShares shares of residents. medianProximity / medianOpportunity are the median resident\'s. Zones compare places within a city only.'
+        : 'ptShare / carShare are shares of cells with CDI below -0.05 / above +0.05. medianCdi is the CDI of the median resident, weightedCdi the CDI for the average resident.',
     };
   };
 

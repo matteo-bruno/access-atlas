@@ -14,7 +14,7 @@ import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
-import { citychroneHourFromLayer, scenarioKey } from '../data/grid.js';
+import { citychroneHourFromLayer, layerPopulationKey, scenarioKey } from '../data/grid.js';
 import { layerScenarios } from '../data/catalogue.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
@@ -429,7 +429,7 @@ function AtlasScreen({ cityId, view }) {
   const fifteenMedian = useMemo(
     () =>
       layer === 'fifteen' && baseGeojson
-        ? summariseMeasure(baseGeojson, fifteenKey, RAMPS.fifteen.ticks).median
+        ? summariseMeasure(baseGeojson, fifteenKey, RAMPS.fifteen.ticks, layerPopulationKey('fifteen')).median
         : null,
     [layer, baseGeojson, fifteenKey],
   );
@@ -439,8 +439,12 @@ function AtlasScreen({ cityId, view }) {
   const scenarioFigures = useMemo(() => {
     if (!shownId || !baseGeojson) return null;
     const key = (name) => scenarioKey(shownId, name);
-    if (layer === 'cardep') return { weightedCdi: weightedMean(baseGeojson, key('cdi')) };
-    if (layer === 'fifteen') return { median: summariseMeasure(baseGeojson, key(fifteenKey), RAMPS.fifteen.ticks).median };
+    // Weighted by the scenario's own residents, as the baseline is by the
+    // layer's (layerPopulationKey in grid.js).
+    if (layer === 'cardep') return { weightedCdi: weightedMean(baseGeojson, key('cdi'), 3, layerPopulationKey('cardep', shownId)) };
+    if (layer === 'fifteen') {
+      return { median: summariseMeasure(baseGeojson, key(fifteenKey), RAMPS.fifteen.ticks, layerPopulationKey('fifteen', shownId)).median };
+    }
     if (layer === 'pov') return { zoneShares: zoneSharesOf(baseGeojson, key('zone')) };
     return null;
   }, [shownId, baseGeojson, layer, fifteenKey]);

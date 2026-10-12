@@ -17,6 +17,19 @@ Two consequences worth internalising before editing copy:
   opportunity are weighted counts of reachable points of interest. They are not
   metres and not jobs. The site said "643 m" and "2.7 k jobs" for Rome for a
   while; the numbers were real, the units invented.
+- **Every median and every mean about a city is its residents'.** Weighted
+  by the layer's own residents, never by cells: a city's many thinly
+  settled outer cells would otherwise outvote where people live (Rome's
+  median walk to services is 10:30 for its residents and 15:42 for its
+  cells). The world map's markers, the city view's summary, the compare
+  rows, the statistics, the home table and CityChat's tools all quote the
+  same figure, by one rule (`weightedMedian` in `bundle.mjs` and
+  `adapters.js`, `weightedQuantiles` in `stats.mjs`). The viewer weights by
+  `<layer>_population` (`layerPopulationKey` in `grid.js`), not by a cell's
+  `population`, which is the grid's context figure. Shares of cells are
+  still published beside shares of residents, and say which they are.
+  `test:data` checks the city view and the compare rows against the
+  markers and the statistics.
 - **A platform with no published data says so.** `published: false` in
   `src/data/platforms.js` makes the UI label the map as illustrative rather
   than show a coverage count it cannot support. A generated city mesh labels
@@ -106,10 +119,12 @@ the population-weighted median over the layer's cells (`describeLayer` in
 `bundle.mjs`), and the tooltip says so: the time as `m:ss`, the velocity as
 km/h by public transport, the CDI as the median resident's. Car Dependency's
 used to be the weighted mean, which stays in its compare row as
-`weightedCdi`. When a marker's method changes, `npm run import --
---refresh-markers` recomputes it for every city from the published layer
-files, without re-importing; `test:data` checks each marker against the
-median the statistics compute.
+`weightedCdi`. When the method of a marker or a compare-row median changes, `npm run
+import -- --refresh-figures` recomputes those fields for every city from
+the published layer files, without re-importing, and touches nothing else
+(the import computed the rest from values before rounding, which the files
+no longer hold); `test:data` checks each against the median the statistics
+compute.
 
 Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at

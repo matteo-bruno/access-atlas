@@ -18,17 +18,31 @@ const ZONE_BY_CELL_TYPE = {
 
 const SCATTER_SAMPLE = 520;
 
-function quantile(sorted, q) {
-  if (!sorted.length) return 0;
-  const pos = (sorted.length - 1) * q;
-  const lo = Math.floor(pos);
-  const hi = Math.ceil(pos);
-  if (lo === hi) return sorted[lo];
-  return sorted[lo] + (sorted[hi] - sorted[lo]) * (pos - lo);
-}
-
-function median(values) {
-  return quantile([...values].sort((a, b) => a - b), 0.5);
+/**
+ * The population-weighted median: the first value, in order, at which the
+ * residents counted reach half of all of them. The same rule as
+ * `weightedMedian` in scripts/lib/bundle.mjs and the statistics' quantiles,
+ * so the city view, the world map and the Stats page quote the same figure.
+ * Every median and mean the site states about a city is its residents', not
+ * its cells': a city's many thinly settled outer cells would otherwise
+ * outvote the places most people live. With nobody counted, the middle cell.
+ */
+export function weightedMedian(values, weights) {
+  const pairs = [];
+  for (let i = 0; i < values.length; i++) {
+    const v = Number(values[i]);
+    if (Number.isFinite(v)) pairs.push([v, Math.max(0, Number(weights[i]) || 0)]);
+  }
+  if (!pairs.length) return null;
+  pairs.sort((a, b) => a[0] - b[0]);
+  const total = pairs.reduce((sum, [, w]) => sum + w, 0);
+  if (!total) return pairs[pairs.length >> 1][0];
+  let acc = 0;
+  for (const [v, w] of pairs) {
+    acc += w;
+    if (acc >= total / 2) return v;
+  }
+  return pairs[pairs.length - 1][0];
 }
 
 function zoneIndex(properties) {
@@ -121,12 +135,13 @@ export function meshFromPublished(collection, profile = {}) {
 
   const total = rows.length;
   const firstProps = input[0].properties ?? {};
+  const weights = rows.map((row) => row.population);
   const proximityMedian = Number.isFinite(firstProps.proximity_median_city)
     ? firstProps.proximity_median_city
-    : median(proximities);
+    : weightedMedian(proximities, weights);
   const opportunityMedian = Number.isFinite(firstProps.opportunity_median_city)
     ? firstProps.opportunity_median_city
-    : median(opportunities);
+    : weightedMedian(opportunities, weights);
 
   const stats = {
     cellCount: total,
@@ -274,8 +289,8 @@ export function meshFromPublishedCdi(collection, profile = {}, stops = [-0.1, 0.
       h3Resolution: profile.cell?.h3Resolution ?? null,
       zoneShares: counts.map((n) => Math.round((n / total) * 1000) / 10),
       zoneCounts: counts,
-      medianCdi: Math.round(median(rows.map((r) => r.cdi)) * 1000) / 1000,
-      // The index for the average resident, not the average cell.
+      // The index for the median and for the average resident, not cell.
+      medianCdi: Math.round(weightedMedian(rows.map((r) => r.cdi), rows.map((r) => r.population)) * 1000) / 1000,
       weightedCdi: population
         ? Math.round((rows.reduce((s, r) => s + r.cdi * r.population, 0) / population) * 1000) / 1000
         : null,
@@ -328,14 +343,16 @@ export function meshFromPublishedFifteen(collection, profile = {}) {
  * whenever the category, mode or view changes — 12k cells is well inside a
  * frame, so there is no reason to precompute all forty combinations.
  */
-export function summariseMeasure(collection, key, bands) {
+export function summariseMeasure(collection, key, bands, weightKey = 'population') {
   const values = [];
+  const weights = [];
   const counts = new Array(bands.length).fill(0);
 
   for (const feature of collection.features ?? []) {
     const value = Number(feature.properties?.[key]);
     if (!Number.isFinite(value)) continue;
     values.push(value);
+    weights.push(Number(feature.properties[weightKey] ?? feature.properties.population) || 0);
     let band = bands.findIndex((edge) => value <= edge);
     if (band < 0) band = bands.length - 1;
     counts[band]++;
@@ -343,10 +360,11 @@ export function summariseMeasure(collection, key, bands) {
 
   if (!values.length) return { median: null, shares: counts.map(() => 0), total: 0 };
 
-  values.sort((a, b) => a - b);
   const total = values.length;
   return {
-    median: Math.round(values[Math.floor(total / 2)] * 10) / 10,
+    // The median resident's, weighted by `weightKey` (the layer's own
+    // residents, see layerPopulationKey in grid.js).
+    median: Math.round(weightedMedian(values, weights) * 10) / 10,
     shares: counts.map((n) => Math.round((n / total) * 1000) / 10),
     total,
   };
@@ -354,16 +372,17 @@ export function summariseMeasure(collection, key, bands) {
 
 /**
  * Population-weighted mean of one property over the cells that carry it,
- * weighted by the grid's population as `meshFromAtlas` weights the CDI, so a
- * scenario's figure and the baseline's are the same computation.
+ * weighted by `weightKey` (the layer's own residents) as `meshFromAtlas`
+ * weights the CDI, so a scenario's figure and the baseline's are the same
+ * computation.
  */
-export function weightedMean(collection, key, decimals = 3) {
+export function weightedMean(collection, key, decimals = 3, weightKey = 'population') {
   let sum = 0;
   let weight = 0;
   for (const feature of collection?.features ?? []) {
     const value = feature.properties?.[key];
     if (!Number.isFinite(value)) continue;
-    const pop = Number(feature.properties.population) || 0;
+    const pop = Number(feature.properties[weightKey] ?? feature.properties.population) || 0;
     sum += value * pop;
     weight += pop;
   }
@@ -445,6 +464,7 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
   const zoneCounts = [0, 0, 0, 0];
   const cdiCounts = [0, 0, 0, 0];
   const cdiValues = [];
+  const cdiWeights = [];
   let cdiPopulation = 0;
   let cdiWeightedSum = 0;
   let povCells = 0;
@@ -476,9 +496,13 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
     if (Number.isFinite(p.cdi)) {
       if (p.cdi < -1 || p.cdi > 1) throw new AdapterError(`Cell ${i} has CDI ${p.cdi}`);
       cdiCounts[cdiBand(p.cdi)]++;
+      // Weighted by Car Dependency's own residents, as its marker and its
+      // compare row are; the grid's population is the context figure.
+      const residents = Number(p.cardep_population ?? p.population) || 0;
       cdiValues.push(p.cdi);
-      cdiPopulation += pop;
-      cdiWeightedSum += p.cdi * pop;
+      cdiWeights.push(residents);
+      cdiPopulation += residents;
+      cdiWeightedSum += p.cdi * residents;
       cardepCells++;
       area.cardep += cellArea;
     }
@@ -521,7 +545,7 @@ export function meshFromAtlas(collection, profile = {}, cdiStops = [-0.1, 0.1, 0
         areaKm2: Math.round(area.cardep),
         zoneShares: share(cdiCounts, cardepCells),
         zoneCounts: cdiCounts,
-        medianCdi: cdiValues.length ? Math.round(median(cdiValues) * 1000) / 1000 : null,
+        medianCdi: cdiValues.length ? Math.round(weightedMedian(cdiValues, cdiWeights) * 1000) / 1000 : null,
         weightedCdi: cdiPopulation
           ? Math.round((cdiWeightedSum / cdiPopulation) * 1000) / 1000
           : null,
@@ -572,7 +596,6 @@ export function citychroneHour(collection) {
   return {
     byCc,
     cells: features.length,
-    medianV: Math.round(median(vValues) * 100) / 100,
     weightedMedianV: Math.round(weightedMedianV * 100) / 100,
   };
 }

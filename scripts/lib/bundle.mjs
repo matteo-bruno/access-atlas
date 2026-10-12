@@ -1118,8 +1118,7 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
       counts[row.zone]++;
       popByZone[row.zone] += row.population;
     }
-    const sortedProx = rows.map((r) => r.proximity).sort((a, b) => a - b);
-    const sortedOpp = rows.map((r) => r.opportunity).sort((a, b) => a - b);
+    const residents = rows.map((r) => r.population);
     return {
       // City-level zone: the zone most residents live in — by cell count,
       // isolated cells (large, thinly populated) would win almost everywhere.
@@ -1132,8 +1131,9 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
         id,
         cells: rows.length,
         population,
-        medianProximity: r1(sortedProx[sortedProx.length >> 1]),
-        medianOpportunity: r1(sortedOpp[sortedOpp.length >> 1]),
+        // The median resident's, like every median the site states.
+        medianProximity: r1(weightedMedian(rows.map((r) => r.proximity), residents)),
+        medianOpportunity: r1(weightedMedian(rows.map((r) => r.opportunity), residents)),
         weightedProximity: population
           ? r1(rows.reduce((s, r) => s + r.proximity * r.population, 0) / population)
           : null,
@@ -1151,16 +1151,16 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
     const cdi = population
       ? r3(rows.reduce((s, r) => s + r.cdi * r.population, 0) / population)
       : r3(rows.reduce((s, r) => s + r.cdi, 0) / (rows.length || 1));
-    const sortedCdi = rows.map((r) => r.cdi).sort((a, b) => a - b);
+    const medianCdi = markerCdi(rows.map((r) => r.cdi), rows.map((r) => r.population));
     return {
       // The world map's figure is the median resident's, like every other
       // layer's marker; the mean stays in the summary as `weightedCdi`.
-      marker: marker({ cdi: markerCdi(rows.map((r) => r.cdi), rows.map((r) => r.population)), population }),
+      marker: marker({ cdi: medianCdi, population }),
       summary: {
         id,
         cells: rows.length,
         population,
-        medianCdi: r3(sortedCdi[sortedCdi.length >> 1]),
+        medianCdi,
         weightedCdi: cdi,
         // ±0.05 around zero is what the upstream viewer calls balanced.
         ptShare: r1((rows.filter((r) => r.cdi < -0.05).length / rows.length) * 100),
@@ -1205,26 +1205,58 @@ function markerCdi(cdi, population) {
 }
 
 /**
- * Recompute the world-map markers of every published city from its
- * published layer files, where the way a marker is computed has changed
- * since the city was imported. Today that is Car Dependency, whose marker
- * went from the population-weighted mean to the median. Only the marker
- * moves; the layer files and the summaries are untouched, and so is a
- * record whose marker is already right.
+ * Recompute the figures every published city's record holds for P.O.V. and
+ * Car Dependency (its world-map marker and its compare row) from the
+ * published layer files, where the way they are computed has changed since
+ * the city was imported: Car Dependency's marker went from the mean to the
+ * median resident, and every median in the compare rows from the median
+ * cell to the median resident. The layer files are untouched, and so is a
+ * record whose figures are already right. 15minCity's and CityChrone's
+ * markers were always the median resident's.
  *
- * @returns {string[]} the cities whose marker changed
+ * @returns {string[]} the cities whose figures changed
  */
-export function refreshMarkers({ dryRun = false } = {}) {
+export function refreshFigures({ dryRun = false } = {}) {
   const changed = [];
   for (const cityId of listCities()) {
     const record = readCityRecord(cityId);
-    const marker = record?.platforms?.cardep?.marker;
-    if (!marker) continue;
-    const grid = readGrid(cityId);
-    const file = readLayerFile(layerPath(cityId, 'cardep'), grid, cityId);
-    const cdi = markerCdi(file.fields.cdi, file.fields.population);
-    if (marker.properties.cdi === cdi) continue;
-    record.platforms.cardep.marker = { ...marker, properties: { ...marker.properties, cdi } };
+    let touched = false;
+    let grid = null;
+    for (const layer of ['pov', 'cardep']) {
+      const entry = record?.platforms?.[layer];
+      if (!entry?.marker) continue;
+      grid ??= readGrid(cityId);
+      const file = readLayerFile(layerPath(cityId, layer), grid, cityId);
+      const f = file.fields;
+      const rows = f.population.map((population, i) =>
+        layer === 'pov'
+          ? { population, zone: f.zone[i], proximity: f.proximity[i], opportunity: f.opportunity[i] }
+          : { population, cdi: f.cdi[i], car: f.o_score_car[i], pt: f.o_score_pt[i] },
+      );
+      const { properties, geometry } = entry.marker;
+      const described = describeLayer(layer, rows, {
+        id: properties.id,
+        name: properties.name,
+        country: properties.country,
+        centre: geometry.coordinates,
+        thresholds: entry.summary?.thresholds ?? file.meta?.thresholds,
+      });
+      // Only the figures whose method changed. Everything else stays as the
+      // import computed it: from the values before they were rounded for
+      // publishing, which the layer files no longer hold, so recomputing a
+      // population or a mean here would move it by a resident or a tenth.
+      const pick = (from, keys) => Object.fromEntries(keys.map((k) => [k, from[k]]));
+      const marker =
+        layer === 'cardep'
+          ? { ...entry.marker, properties: { ...properties, ...pick(described.marker.properties, ['cdi']) } }
+          : entry.marker;
+      const medians = layer === 'pov' ? ['medianProximity', 'medianOpportunity'] : ['medianCdi'];
+      const summary = entry.summary ? { ...entry.summary, ...pick(described.summary, medians) } : entry.summary;
+      if (JSON.stringify(marker) === JSON.stringify(entry.marker) && JSON.stringify(summary) === JSON.stringify(entry.summary)) continue;
+      record.platforms[layer] = { ...entry, marker, summary };
+      touched = true;
+    }
+    if (!touched) continue;
     writeCityRecord(record, { dryRun, touched: true });
     changed.push(cityId);
   }

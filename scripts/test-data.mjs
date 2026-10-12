@@ -20,6 +20,7 @@ import {
   gridFeatures,
   layerCartogram,
   layerPositions,
+  layerPopulationKey,
   mergeLayer,
 } from '../src/data/grid.js';
 import { createStaticProvider } from '../src/data/sources.js';
@@ -172,6 +173,15 @@ for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   summaries[platformId] = new Map(entry.summary ? read(entry.summary).cities.map((c) => [c.id, c]) : []);
 }
 
+// What the world maps say about each city: the city view must say the same.
+const markerOf = (platformId) =>
+  new Map(
+    catalogue.platforms[platformId]?.coverage
+      ? read(catalogue.platforms[platformId].coverage).features.map((f) => [f.properties.id, f.properties])
+      : [],
+  );
+const fifteenMarkers = markerOf('fifteen');
+
 let totalCells = 0;
 const meshes = new Map(); // city id → the viewer's per-layer figures
 for (const city of catalogue.atlas?.cities ?? []) {
@@ -266,6 +276,10 @@ for (const city of catalogue.atlas?.cities ?? []) {
       else if (row && !near(layers.cardep.weightedCdi, row.weightedCdi, 0.002)) {
         bad.push(`weighted CDI ${layers.cardep.weightedCdi} vs compare row ${row.weightedCdi}`);
       }
+      // The median resident's, in the city view and in the compare row.
+      if (row && !near(layers.cardep.medianCdi, row.medianCdi, 0.0011)) {
+        bad.push(`median CDI ${layers.cardep.medianCdi} in the city view vs ${row.medianCdi} in the compare row`);
+      }
     }
     if (files.fifteen) {
       // Every category × mode must be present, or a selector option would
@@ -284,6 +298,11 @@ for (const city of catalogue.atlas?.cities ?? []) {
       if (missing.length) bad.push(`fifteen missing ${missing.join(', ')}`);
       const summary = summariseMeasure(collection, measureKey(CATEGORIES[0].key, MODES[0].key), BANDS[MODES[0].key]);
       if (summary.median == null) bad.push('fifteen has no median');
+      // The city view's median travel time is the median resident's, the
+      // figure the world map's marker quotes for the same city.
+      const walk = summariseMeasure(collection, 'proximity_time_foot', BANDS.foot, layerPopulationKey('fifteen')).median;
+      const marker = fifteenMarkers.get(city.id)?.proximityMinutes;
+      if (marker != null && !near(walk, marker, 0.15)) bad.push(`median walk ${walk} in the city view vs ${marker} on the world map`);
     }
     if (files.citychrone) {
       const { hours, cells } = city.hourly;
@@ -636,9 +655,19 @@ if (catalogue.stats) {
   for (const [id, marker] of markers('fifteen')) {
     if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
   }
+  // Every median in a compare row is the median resident's too.
+  const proximity = column('pov.proximity');
+  const opportunity = column('pov.opportunity');
+  for (const [id, row] of summaries.pov ?? []) {
+    if (proximity.get(id) && !near(proximity.get(id).q[2], row.medianProximity, 0.11)) disagree.push(`${id} median proximity ${row.medianProximity} vs ${proximity.get(id).q[2]} (npm run import -- --refresh-figures)`);
+    if (opportunity.get(id) && !near(opportunity.get(id).q[2], row.medianOpportunity, 0.11)) disagree.push(`${id} median opportunity ${row.medianOpportunity} vs ${opportunity.get(id).q[2]}`);
+  }
+  for (const [id, row] of summaries.cardep ?? []) {
+    if (cdi.get(id) && !near(cdi.get(id).q[2], row.medianCdi, 0.0011)) disagree.push(`${id} median CDI ${row.medianCdi} vs ${cdi.get(id).q[2]} (npm run import -- --refresh-figures)`);
+  }
   // Every marker is the median resident's figure: Car Dependency's too.
   for (const [id, marker] of markers('cardep')) {
-    if (cdi.get(id) && !near(cdi.get(id).q[2], marker.cdi, 0.0011)) disagree.push(`${id} CDI marker ${marker.cdi} vs median ${cdi.get(id).q[2]} (npm run import -- --refresh-markers)`);
+    if (cdi.get(id) && !near(cdi.get(id).q[2], marker.cdi, 0.0011)) disagree.push(`${id} CDI marker ${marker.cdi} vs median ${cdi.get(id).q[2]} (npm run import -- --refresh-figures)`);
   }
   const velocity = column('citychrone.velocity.08');
   for (const [id, marker] of markers('citychrone')) {

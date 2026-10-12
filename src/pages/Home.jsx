@@ -9,8 +9,9 @@ import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
 import { citiesForPlatform } from '../data/cities.js';
 import { postForLayer } from '../data/blog.js';
-import { CITY_TABLE, NEWS, TABLE_SCALE, WORK_IN_PROGRESS } from '../data/home.js';
-import { usePublishedCityCounts } from '../data/useAtlasData.js';
+import { NEWS, WORK_IN_PROGRESS, cityTableRows } from '../data/home.js';
+import { usePlatformSummary, usePublishedCityCounts } from '../data/useAtlasData.js';
+import { cityLabel } from '../data/catalogue.js';
 import { BRAND } from '../data/brand.js';
 import './Home.css';
 
@@ -41,6 +42,9 @@ export function HomeSections({ hero = true }) {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
   const cityCounts = usePublishedCityCounts();
+  // The comparison table's figures, read from P.O.V.'s compare rows.
+  const povSummary = usePlatformSummary('pov');
+  const table = useMemo(() => cityTableRows(povSummary.cities), [povSummary.cities]);
 
   const platformCities = useMemo(
     () => Object.fromEntries(PLATFORMS.map((p) => [p.id, citiesForPlatform(p)])),
@@ -157,26 +161,26 @@ export function HomeSections({ hero = true }) {
               <div>{t('home.table.headers.opportunity')}</div>
               <div>{t('home.table.headers.inclusion')}</div>
             </div>
-            {CITY_TABLE.map((row) => (
+            {table.rows.map((row) => (
               <div key={row.id} className="aa-table__row">
-                <div className="aa-table__city">{lang === 'it' ? row.nameIt : row.name}</div>
+                <div className="aa-table__city">{cityLabel(row.profile, lang, t)}</div>
 
                 <MeterCell
-                  width={TABLE_SCALE.proximity(row.proximity)}
+                  width={(row.proximity / table.scale.proximity) * 100}
                   color={BRAND.magenta}
                   value={n(row.proximity, { minimumFractionDigits: 1 })}
                   max={140}
                 />
                 <MeterCell
-                  width={TABLE_SCALE.opportunity(row.opportunity)}
+                  width={(row.opportunity / table.scale.opportunity) * 100}
                   color={BRAND.navy}
                   value={n(row.opportunity, { minimumFractionDigits: 1 })}
                   max={140}
                 />
                 <MeterCell
-                  width={TABLE_SCALE.inclusion(row.inclusion)}
+                  width={((row.inclusion ?? 0) / table.scale.inclusion) * 100}
                   color={BRAND.cyan}
-                  value={`${n(row.inclusion)}%`}
+                  value={row.inclusion == null ? '—' : `${n(row.inclusion)}%`}
                   max={200}
                   wide
                 />
