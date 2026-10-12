@@ -47,6 +47,13 @@
     visibility 0s linear 620ms;
 }
 
+/* Under a city: gone at once, not handed over. A city's map is not the
+   world, and the world with every Atlas city on it behind a city that is
+   still loading read as the wrong map. */
+.aa-backdrop--gone {
+  visibility: hidden;
+}
+
 /* One veil, the same on every page and at every scroll position: densest
    where a page's copy sits, nearly clear on the far side. The map is meant to
    be seen — it is the site's subject, not a watermark — so nothing above it

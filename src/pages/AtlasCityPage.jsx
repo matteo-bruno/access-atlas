@@ -96,6 +96,9 @@ function AtlasScreen({ cityId, view }) {
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
   const [geometry, setGeometry] = useState('geographic');
+  // Whether the city map has drawn its mesh yet: until it has, the loading
+  // note stays over the paper rather than leaving an empty box.
+  const [mapPainted, setMapPainted] = useState(false);
   const [selectedCell, setSelectedCell] = useState(null);
   const [aboutOpen, setAboutOpen] = useState(false);
   // The map is the page; everything else can step out of its way.
@@ -1098,6 +1101,7 @@ function AtlasScreen({ cityId, view }) {
                 // Full-bleed: it takes over from the site's backdrop, which
                 // holds the frame until this map has painted (map/backdrop.js).
                 coversBackdrop
+                onPainted={setMapPainted}
                 label={`${cityName} — ${platform.name}`}
               >
                 <GeoJSONLayer
@@ -1157,9 +1161,9 @@ function AtlasScreen({ cityId, view }) {
 
             {/* The grid is drawn; a layer, or a scenario of it, is still on
                 its way. Said over the map rather than left as a pale city. */}
-            {meshReady && geojson && (gridLoading || waiting || scenarioStatus === 'pending') && (
+            {meshReady && geojson && (!mapPainted || gridLoading || waiting || scenarioStatus === 'pending') && (
               <div className="aa-atlas__prompt aa-atlas__prompt--loading" role="status">
-                {gridLoading
+                {gridLoading || !mapPainted
                   ? t('city.computing')
                   : t('atlas.loading.layer', {
                       name: scenario && !waiting ? (lang === 'it' ? scenario.nameIt ?? scenario.name : scenario.name) : platform.name,

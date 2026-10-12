@@ -375,3 +375,25 @@
   flex: 1;
   min-height: 0;
 }
+
+/* What belongs to the layer on screen (its welcome, legend and the two ways
+   onward), grouped so a layer switch fades it off and on as one. The group
+   has no box of its own: its children are placed against the stage as
+   before, and only they take the pointer. Opacity is on the group because
+   each child's own `.aa-fadein` holds its opacity at 1 once it has run. */
+.aa-mapstage__layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+.aa-mapstage__layer > * {
+  pointer-events: auto;
+}
+.aa-mapstage__layer--leaving {
+  opacity: 0;
+}
+.aa-mapstage__layer--leaving > * {
+  pointer-events: none;
+}

@@ -703,6 +703,14 @@ what scrolls over it is transparent between its own cards and the map is as
 visible on a page of text as on the front door. If a block turns out to be
 unreadable over it, give that block a background; do not reach for the veil.
 
+**A city view is the exception: the backdrop goes at once.** The world
+with every Atlas city on it, behind a city still loading, said nothing
+about the place being opened, so on `/atlas/*` the backdrop is
+`.aa-backdrop--gone` from the first frame and the city view's own loading
+note stands on bare paper until `AtlasMap` reports it has painted
+(`onPainted`). `smoke.mjs` asserts it is hidden 120 ms after the click.
+Everything below is about `/platforms`.
+
 **The backdrop is dismissed by the map that replaces it, never by the route.**
 The two screens that *are* a full-bleed map — `/platforms` and
 `/atlas/:cityId` — end up with a second map drawing nothing behind an opaque
@@ -824,7 +832,15 @@ layer's coverage is pending (`useCityCoverage` ties its answer to the
 platform it is for) and fills when it lands. A cross-fade there let the
 backdrop, which draws every layer's cities, show through for its length.
 The coverage hooks never show the seed list while pending, only once the
-answer is "nothing published".
+answer is "nothing published". The switch is a cross-fade inside the
+screen: `PlatformExplorer` keeps the layer on screen (`platform`) one fade
+behind the one in the URL (`requested`), fades the markers off
+(`markersHidden`, drawn by `WorldMap` at a fading alpha) and the layer's own
+boxes off (`.aa-mapstage__layer`, one group, because each box's
+`.aa-fadein` holds its opacity at 1), swaps, and fades both on once the new
+layer's cities are in. The picker and the search are the screen's, and
+stay. Not on the screen's first paint: the backdrop hands over to it with
+the same dots in the same place.
 
 **"All layers" opens on the cities with all four layers.** Its legend is
 also its filter: one row per number of layers, each with how many cities it

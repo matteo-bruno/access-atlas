@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
@@ -20,6 +20,10 @@ import { paperForPlatform } from '../data/research.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
+
+// How long a layer's markers and boxes take to fade off before the next
+// layer's fade on; the markers' own fade in WorldMap is the same length.
+const LAYER_FADE_MS = 200;
 
 // Every city of a layer side by side, on the Stats page. All populations
 // (`pop=0`): the page's default floor of a million residents is a choice for
@@ -96,12 +100,26 @@ export default function PlatformLanding() {
  * @param {boolean} [props.interactive]  let the map take the pointer
  * @param {React.ReactNode} [props.children]  drawn over the map
  */
-export function PlatformExplorer({ platform, chrome = true, interactive = true, children }) {
+export function PlatformExplorer({ platform: requested, chrome = true, interactive = true, children }) {
   const { t, n } = useI18n();
   const navigate = useNavigate();
   const mapRef = useRef(null);
   const searchRef = useRef(null);
   const [welcomeOpen, setWelcomeOpen] = useState(true);
+
+  // A layer switch is a cross-fade inside the screen: the open layer's
+  // markers and boxes fade off, the screen swaps to the requested layer, and
+  // its markers and boxes fade on. `platform` is the layer on screen, which
+  // trails the one in the URL for the length of the fade out.
+  const [platform, setPlatform] = useState(requested);
+  const leaving = requested !== platform;
+  const switched = useRef(false);
+  if (leaving) switched.current = true;
+  useEffect(() => {
+    if (!leaving) return undefined;
+    const timer = window.setTimeout(() => setPlatform(requested), LAYER_FADE_MS);
+    return () => window.clearTimeout(timer);
+  }, [leaving, requested]);
 
   // Both hooks run unconditionally — hooks cannot be called behind a branch —
   // and the unused one is cheap: its fetch is cached by URL either way.
@@ -136,6 +154,10 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
     setParams(next, { replace: true });
   };
   const cities = platform ? single.cities : shownAll;
+  // Off while fading out, and after a switch until the new layer's cities are
+  // in, so they fade on rather than pop. Not on the screen's first paint: the
+  // backdrop hands over to this map with the same dots in the same place.
+  const markersHidden = leaving || (switched.current && !!platform && single.source === 'pending');
   // Always the merged coverage, never the open tab's — see the WorldMap props.
   const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
   const markerStyle = useMemo(
@@ -233,6 +255,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         tooltip={interactive ? tooltip : undefined}
         onSelect={interactive ? openCity : undefined}
         highlight={searched ? (searched.core ?? searched.id) : null}
+        markersHidden={markersHidden}
         label={title}
       />
 
@@ -260,7 +283,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             <Link
               key={option.id}
               className={`aa-picker__item${
-                platform?.id === option.id ? ' aa-picker__item--active' : ''
+                requested?.id === option.id ? ' aa-picker__item--active' : ''
               }`}
               to={`/platforms/${option.slug}`}
             >
@@ -274,7 +297,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           {/* Last, because it is the whole rather than another layer. Its
               dot is the coverage scale, which is what that map colours by. */}
           <Link
-            className={`aa-picker__item${platform ? '' : ' aa-picker__item--active'}`}
+            className={`aa-picker__item${requested ? '' : ' aa-picker__item--active'}`}
             to="/platforms/all"
           >
             <span className="aa-picker__dot" style={{ backgroundImage: scaleDot(COVERAGE_SCALE) }} />
@@ -282,6 +305,10 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </Link>
         </nav>
 
+        {/* What belongs to the layer on screen, as one group so a switch can
+            fade it off and on together. The picker and the search above are
+            the screen's own, and stay. */}
+        <div className={`aa-mapstage__layer${leaving ? ' aa-mapstage__layer--leaving' : ''}`}>
         {welcomeOpen && (
           <section className="aa-card aa-welcome aa-fadein aa-fadein--slow">
             <div className="aa-welcome__head">
@@ -374,6 +401,8 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </div>
         </section>
         )}
+
+        </div>
 
         <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>

@@ -67,6 +67,11 @@ export function Backdrop() {
   // `ownMap` is the route's: only the two full-bleed map screens ever cover
   // the backdrop, so a stale count cannot hide the world on a page of copy.
   const covered = useBackdropCovered() && ownMap;
+  // A city is not the world. While its map loads, the world with every
+  // Atlas city on it said nothing about the place being opened, so on the
+  // city view the backdrop goes at once, without waiting on a covering map,
+  // and the page's own loading note is what the reader sees.
+  const gone = pathname.startsWith('/atlas/');
 
   // Built the first time a page actually wants it, and kept from then on.
   // Opening the site straight onto a full-bleed map screen therefore still
@@ -81,7 +86,7 @@ export function Backdrop() {
   return (
     <div
       className={`aa-backdrop${ownMap ? ' aa-backdrop--bare' : ''}${
-        covered ? ' aa-backdrop--covered' : ''
+        gone ? ' aa-backdrop--gone' : covered ? ' aa-backdrop--covered' : ''
       }`}
       aria-hidden="true"
     >
