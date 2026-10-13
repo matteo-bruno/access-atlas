@@ -35,7 +35,8 @@ const FIFTEEN_MODES = ['foot', 'bicycle'];
 const UNREACHABLE = 99999;
 
 // Which of a layer file's fields become feature properties, and under what
-// name. Population is not among them: a cell's population is the grid's.
+// name. Population is merged apart, as `<layer>_population` (layerPopulationKey):
+// a cell's `population` is the grid's.
 const PROPERTIES = {
   pov: ['zone', 'proximity', 'opportunity'],
   cardep: ['cdi', 'o_score_pt', 'o_score_car'],
@@ -102,6 +103,15 @@ export async function gridFeatures(grid) {
 export const scenarioKey = (scenario, name) => (scenario ? `${scenario}:${name}` : name);
 
 /**
+ * The property a layer's own residents are merged under: `cardep_population`
+ * (`metro-d:cardep_population` for a scenario). A cell's `population` is the
+ * grid's, the context figure every layer is drawn against; a layer's figures
+ * (its medians and means) are weighted by the layer's own residents, as its
+ * world-map marker, its compare row and the statistics are.
+ */
+export const layerPopulationKey = (layer, scenario = null) => scenarioKey(scenario, `${layer}_population`);
+
+/**
  * A function that builds a feature's properties in one object literal: the
  * keys it already has, then the layer's. One builder per set of keys, made
  * once.
@@ -164,6 +174,8 @@ export function mergeLayer(features, layer, file, { scenario = null } = {}) {
     ? FIFTEEN_MODES.map((mode) => FIFTEEN_CATEGORIES.map((c) => names.indexOf(`${c}_${mode}`)))
     : [];
   const withCc = layer === 'citychrone' && !scenario;
+  const populationColumn = file.fields?.population ?? null;
+  const populationKey = layerPopulationKey(layer, scenario);
 
   const out = features.slice();
   // The keys a cell gets, and the builder for them, change only when the
@@ -213,6 +225,11 @@ export function mergeLayer(features, layer, file, { scenario = null } = {}) {
       present.push('cc');
       values.push(row);
     }
+    if (populationColumn && populationColumn[row] != null) {
+      present.push(populationKey);
+      values.push(populationColumn[row]);
+      mask |= 1 << 28;
+    }
 
     const baseKeys = Object.keys(base);
     const baseSig = baseKeys.length === (lastBase?.length ?? -1) && baseKeys.every((k, i) => k === lastBase[i]) ? lastBaseSig : baseKeys.join('\u0000');
@@ -242,8 +259,6 @@ export function citychroneHourFromLayer(file, hour) {
   const byCc = new Map();
   for (let row = 0; row < v.length; row++) byCc.set(row, { v: v[row], s: s[row] });
 
-  const finite = v.filter(Number.isFinite);
-  const sorted = [...finite].sort((a, b) => a - b);
   const pairs = v
     .map((value, i) => [value, Math.max(0, pop[i] || 0)])
     .filter(([value]) => Number.isFinite(value))
@@ -262,7 +277,6 @@ export function citychroneHourFromLayer(file, hour) {
   return {
     byCc,
     cells: v.length,
-    medianV: sorted.length ? Math.round(sorted[sorted.length >> 1] * 100) / 100 : null,
     weightedMedianV: weighted == null ? null : Math.round(weighted * 100) / 100,
   };
 }

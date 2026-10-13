@@ -173,6 +173,8 @@ export default {
       legendUnit: 'Piattaforme pubblicate',
       legend: ['Una', 'Due', 'Tre', 'Tutte e quattro'],
       covered: '{count} piattaforme su 4',
+      filter: 'Mostra le città con',
+      filterOptions: ['Almeno un layer', 'Due o più', 'Tre o più', 'Tutti e quattro i layer'],
     },
 
     fifteen: {
@@ -181,21 +183,24 @@ export default {
         'Tempo di viaggio a piedi e in bicicletta verso nove categorie di servizi quotidiani — sanità, istruzione, spesa, ristorazione, cultura, spazi aperti, attività fisica, servizi, mobilità — calcolato per ogni cella della città e letto rispetto al riferimento dei 15 minuti.',
       welcomeIntro:
         'Guarda i tempi di viaggio verso i servizi quotidiani da qualsiasi punto di qualsiasi città e confrontali con il riferimento dei 15 minuti.',
-      legendUnit: 'Tempo medio verso i servizi',
+      legendUnit: 'Tempo mediano a piedi verso i servizi',
+      tooltip: '{name} · {time} a piedi verso i servizi (residente mediano)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Accesso alle opportunità',
       intro:
         'CityChrone sostituisce la distanza metrica con il tempo di viaggio: la mappa si deforma così che due luoghi risultino vicini quando il trasporto pubblico li collega rapidamente, per quanto distanti siano sul terreno.',
-      legendUnit: 'Punteggio di velocità',
+      legendUnit: 'Velocità del trasporto pubblico (km/h)',
+      tooltip: '{name} · {value} km/h con il trasporto pubblico (residente mediano)',
       legend: ['Lento', 'Medio', 'Veloce'],
     },
     cardep: {
       label: 'Auto e trasporto pubblico',
       intro:
         'Il Car Dependency Index confronta le opportunità raggiungibili in automobile con quelle raggiungibili in trasporto pubblico nello stesso tempo: CDI = (O_auto − O_TP) / (O_auto + O_TP). Va da −1, dove il trasporto pubblico raggiunge di più, passando per 0 dove i due si equivalgono, fino a +1 dove l’auto raggiunge tutto e il trasporto pubblico quasi nulla.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (residente mediano)',
+      tooltip: '{name} · CDI {value} (residente mediano)',
       legend: [
         'A favore dei mezzi pubblici',
         'In equilibrio',
@@ -228,7 +233,7 @@ export default {
     },
     modes: { foot: 'A piedi', bike: 'In bicicletta' },
     hint: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
-    summary: { median: 'Tempo di viaggio mediano' },
+    summary: { median: 'Tempo di viaggio, residente mediano' },
     categories: {
       average: 'Media su tutti i servizi',
       outdoor: 'Attività all’aperto',
@@ -410,9 +415,9 @@ export default {
         fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala vale per tutte e nove le categorie ed entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
       },
       summary: {
-        pov: '«Celle» conta quelle coperte dal dataset pubblicato. Ogni mediana è il punteggio della cella mediana: conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuna delle due porta un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale della città.',
-        cardep: 'Il CDI mediano è l’indice della cella mediana. Il CDI per il residente medio pesa ogni cella per le persone che ci vivono, ed è il valore con cui la piattaforma ordina le città: metà delle celle di una città può essere dipendente dall’auto mentre la maggior parte dei residenti vive nell’altra metà.',
-        fifteen: 'La mediana è il tempo della cella mediana per la categoria e la modalità a schermo. Descrive celle, non residenti: ogni cella conta una volta, per quante persone ci vivano. La popolazione è la somma del dataset.',
+        pov: 'Celle conta ciò che il dataset pubblicato copre. Ogni mediana è il punteggio del residente mediano: metà dei residenti della città vive in celle con un punteggio più basso, metà più alto. I punteggi sono conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuno dei due ha un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale per la città.',
+        cardep: 'Il CDI mediano è l’indice del residente mediano: metà dei residenti della città vive in celle con un indice più basso. Il CDI del residente medio pesa ogni cella per le persone che ci vivono, ed è il dato su cui la piattaforma ordina le città. Entrambi contano i residenti, non le celle: metà delle celle di una città può dipendere dall’auto mentre la maggior parte dei residenti vive nell’altra metà.',
+        fifteen: 'La mediana è il tempo del residente mediano per la categoria e il modo mostrati: metà dei residenti vive in celle raggiunte più in fretta, metà più lentamente. Ogni cella conta tante volte quante sono le persone che ci vivono, così le celle periferiche poco abitate non pesano più dei luoghi dove vive la maggior parte delle persone. La popolazione è la somma del dataset.',
         atlas: 'I valori sono ricalcolati per il livello a schermo. «Celle» è la maglia unione, cioè ogni cella misurata da almeno una piattaforma: un livello che ne copre meno lo indica in una riga a parte.',
       },
       more: 'Spiegazione completa',
@@ -491,7 +496,7 @@ export default {
       name: 'Nome',
       population: 'Popolazione',
       weightedCdi: 'Indice per il residente medio',
-      medianCdi: 'Indice mediano',
+      medianCdi: 'Indice del residente mediano',
       ptShare: 'Celle a favore dei mezzi pubblici',
       inclusion: 'Inclusione',
       proximity: 'Prossimità mediana',
@@ -519,7 +524,7 @@ export default {
       city: 'Città',
       cells: 'Celle',
       population: 'Popolazione',
-      medianCdi: 'Mediano',
+      medianCdi: 'Residente mediano',
       weightedCdi: 'Residente medio',
       ptCells: 'Celle mezzi',
       carCells: 'Celle auto',

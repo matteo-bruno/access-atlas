@@ -453,9 +453,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(3000);
   const cityRequests = requested.filter((u) => /\/cities\/milan\/[a-z]+\.json/.test(u));
   const layerFiles = cityRequests.map((u) => u.split('?')[0].split('/').pop());
+  // Its own entry too (catalogue version 3): the catalogue no longer carries
+  // any city, so a city view starts by reading the one it shows.
   check(
-    'A city loads its grid and the open layer, and nothing else',
-    layerFiles.sort().join(' ') === 'grid.json.gz pov.json.gz',
+    'A city loads its entry, its grid and the open layer, and nothing else',
+    layerFiles.sort().join(' ') === 'entry.json.gz grid.json.gz pov.json.gz',
     layerFiles.join(' '),
   );
   // The current version of a file is its plain path; `?v=<hash>` is only for
@@ -961,9 +963,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // background, up the moment the route committed and covering the world for
   // the ~350ms MapLibre took to build. No computed style can see that; only
   // the composited frame can. So this samples frames straight off the
-  // compositor and asserts none of them is blank, across the two handovers
-  // that hurt most: a page onto the platform world, and that world onto a
-  // city.
+  // compositor and asserts none of them is blank across the handover that
+  // hurt most: a page onto the platform world. A city is different on
+  // purpose: the world with every Atlas city on it said nothing about the
+  // place being opened, so the backdrop goes at once and the city view's
+  // own loading note stands on bare paper (checked below).
   //
   // "Blank" is measured as contrast — the standard deviation of luminance
   // over the lower half of the frame, which is clear of the cards on every
@@ -997,7 +1001,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     // past it the city map legitimately takes the world off the screen.
     const worldFrames = frames.length;
     await page.click('.aa-search__result');
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(120);
+    const underCity = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
+    await page.waitForTimeout(2400);
     await client.send('Page.stopScreencast');
 
     // Decoded somewhere else, so nothing is drawn into the page being watched.
@@ -1031,6 +1037,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
           ),
         );
       }
+      if (index >= worldFrames) continue;
       // eslint-disable-next-line no-await-in-loop
       const contrast = await meter.evaluate(async (jpeg) => {
         const img = new Image();
@@ -1059,9 +1066,14 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     await meter.close();
 
     check(
-      'No frame of either handover is a blank sheet where the world was',
-      frames.length > 20 && worst > 5,
-      `${frames.length} frames · quietest ${Number.isFinite(worst) ? worst.toFixed(1) : 'n/a'}`,
+      'No frame of the handover onto the platform world is a blank sheet',
+      worldFrames > 10 && worst > 5,
+      `${worldFrames} frames · quietest ${Number.isFinite(worst) ? worst.toFixed(1) : 'n/a'}`,
+    );
+    check(
+      'Opening a city takes the world of every Atlas city off the screen at once',
+      underCity === 'hidden',
+      `backdrop ${underCity} 120 ms after the click`,
     );
 
     // And the markers on it are not blinking either. The incoming map used to

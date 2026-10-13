@@ -103,6 +103,9 @@ export function AtlasMap({
   className = '',
   children,
   onReady,
+  // Told when the map has painted (and when it no longer has), so a page
+  // can keep its own loading note up until there is something to see.
+  onPainted,
   ref,
   label,
 }) {
@@ -120,6 +123,10 @@ export function AtlasMap({
   const [visible, setVisible] = useState(interactive);
 
   useCoversBackdrop(coversBackdrop && painted);
+  useEffect(() => {
+    onPainted?.(painted);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [painted]);
 
   useImperativeHandle(ref, () => ({
     get map() {

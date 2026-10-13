@@ -163,6 +163,8 @@ export default {
       legendUnit: 'Plateformes publiées',
       legend: ['Une', 'Deux', 'Trois', 'Les quatre'],
       covered: '{count} plateformes sur 4',
+      filter: 'Afficher les villes avec',
+      filterOptions: ['Au moins une couche', 'Deux ou plus', 'Trois ou plus', 'Les quatre couches'],
     },
 
     fifteen: {
@@ -171,21 +173,24 @@ export default {
         'Temps de trajet à pied et à vélo vers neuf catégories de services du quotidien (santé, éducation, courses, restauration, culture, espaces extérieurs, activité physique, services, mobilité), calculé pour chaque cellule de la ville et lu au regard de la référence des 15 minutes.',
       welcomeIntro:
         'Découvrez les temps de trajet vers les services du quotidien depuis n’importe quel lieu de n’importe quelle ville, et comparez-les à la référence des 15 minutes.',
-      legendUnit: 'Temps moyen jusqu’aux services',
+      legendUnit: 'Temps médian à pied jusqu’aux services',
+      tooltip: '{name} · {time} à pied jusqu’aux services (habitant médian)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Accès aux opportunités',
       intro:
         'CityChrone remplace la distance métrique par le temps de trajet : la carte se déforme pour que deux lieux se rapprochent quand les transports en commun les relient rapidement, aussi éloignés soient-ils sur le terrain.',
-      legendUnit: 'Score de vitesse',
+      legendUnit: 'Vitesse des transports publics (km/h)',
+      tooltip: '{name} · {value} km/h en transports publics (habitant médian)',
       legend: ['Lent', 'Moyen', 'Rapide'],
     },
     cardep: {
       label: 'Voiture ou transports en commun',
       intro:
         'Le Car Dependency Index compare les opportunités accessibles en voiture à celles accessibles en transports en commun dans le même temps : CDI = (O_voiture − O_TC) / (O_voiture + O_TC). Il va de −1, où les transports en commun atteignent davantage, à +1, où la voiture atteint tout et les transports en commun presque rien, en passant par 0, où les deux s’équilibrent.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (habitant médian)',
+      tooltip: '{name} · CDI {value} (habitant médian)',
       legend: ['Favorable aux transports en commun', 'Équilibré', 'Dépendant de la voiture', 'Très dépendant de la voiture'],
     },
     pov: {
@@ -211,7 +216,7 @@ export default {
     },
     modes: { foot: 'À pied', bike: 'À vélo' },
     hint: 'Temps de trajet moyen depuis chaque cellule jusqu’aux services les plus proches de cette catégorie.',
-    summary: { median: 'Temps de trajet médian' },
+    summary: { median: 'Temps de trajet, habitant médian' },
     categories: {
       average: 'Moyenne de tous les services',
       outdoor: 'Activités de plein air',
@@ -374,9 +379,9 @@ export default {
         fifteen: 'Les cellules sont colorées selon le temps nécessaire pour atteindre la catégorie choisie avec le mode choisi. Le blanc correspond à 15 minutes, la référence qui donne son nom à la plateforme, et l’échelle continue de foncer au-delà de 30 jusqu’au noir à 120. La légende nomme cette queue au lieu de s’étirer jusqu’à elle, ce qui écraserait l’intervalle où se trouve presque chaque cellule. Une seule échelle vaut pour les neuf catégories et les deux modes : une couleur signifie la même chose quelle que soit la sélection.',
       },
       summary: {
-        pov: '« Cellules » compte celles que couvre le jeu de données publié. Chaque médiane est le score de la cellule médiane : des décomptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité. Ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, et non un chiffre officiel de la ville.',
-        cardep: 'Le CDI médian est l’indice de la cellule médiane. Le CDI de l’habitant moyen pondère chaque cellule par le nombre de personnes qui y vivent ; c’est le chiffre sur lequel la plateforme classe les villes. La moitié des cellules d’une ville peut dépendre de la voiture alors que la plupart de ses habitants vivent dans l’autre moitié.',
-        fifteen: 'La médiane est le temps de la cellule médiane pour la catégorie et le mode affichés. Elle décrit des cellules, pas des habitants : chaque cellule compte une fois, quel que soit le nombre de personnes qui y vivent. La population est la somme du jeu de données.',
+        pov: 'Cellules compte ce que couvre le jeu de données publié. Chaque médiane est le score de l’habitant médian : la moitié des habitants de la ville vit dans des cellules au score plus bas, l’autre moitié plus haut. Les scores sont des comptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité : ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, pas un chiffre officiel pour la ville.',
+        cardep: 'Le CDI médian est l’indice de l’habitant médian : la moitié des habitants de la ville vit dans des cellules à l’indice plus bas. Le CDI de l’habitant moyen pondère chaque cellule par le nombre de personnes qui y vivent, et c’est le chiffre sur lequel la plateforme classe les villes. Les deux comptent des habitants, pas des cellules : la moitié des cellules d’une ville peut dépendre de la voiture alors que la plupart des habitants vivent dans l’autre moitié.',
+        fifteen: 'La médiane est le temps de l’habitant médian pour la catégorie et le mode affichés : la moitié des habitants vit dans des cellules atteintes plus vite, l’autre moitié plus lentement. Chaque cellule compte autant de fois qu’elle a d’habitants, si bien que les cellules périphériques peu peuplées ne l’emportent pas sur les lieux où vit la plupart des gens. La population est la somme du jeu de données.',
         atlas: 'Les chiffres sont recalculés pour la couche affichée. « Cellules » désigne le maillage union, c’est-à-dire toutes les cellules mesurées par au moins une plateforme : une couche qui en couvre moins l’indique sur sa propre ligne.',
       },
       more: 'Explication complète',
@@ -447,7 +452,7 @@ export default {
       name: 'Nom',
       population: 'Population',
       weightedCdi: 'Indice de l’habitant moyen',
-      medianCdi: 'Indice médian',
+      medianCdi: 'Indice de l’habitant médian',
       ptShare: 'Cellules favorables aux transports en commun',
       inclusion: 'Inclusion',
       proximity: 'Proximité médiane',
@@ -475,7 +480,7 @@ export default {
       city: 'Ville',
       cells: 'Cellules',
       population: 'Population',
-      medianCdi: 'Médiane',
+      medianCdi: 'Habitant médian',
       weightedCdi: 'Habitant moyen',
       ptCells: 'Cellules TC',
       carCells: 'Cellules voiture',

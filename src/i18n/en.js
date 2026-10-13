@@ -116,7 +116,7 @@ export default {
         opportunity: 'Median opportunity score',
         inclusion: 'Inclusion zone',
       },
-      note: 'Proximity and opportunity are weighted counts of reachable points of interest, comparable between cities because every city is measured the same way. Inclusion is the share of cells above both population-weighted medians.',
+      note: 'Proximity and opportunity are weighted counts of reachable points of interest, comparable between cities because every city is measured the same way. The scores are the median resident’s; inclusion is the share of residents in cells above both population-weighted medians.',
     },
     side: {
       title: 'Work in progress',
@@ -180,6 +180,9 @@ export default {
       legendUnit: 'Platforms published',
       legend: ['One', 'Two', 'Three', 'All four'],
       covered: '{count} of 4 platforms',
+      // The merged map's filter: cities with at least this many layers.
+      filter: 'Show cities with',
+      filterOptions: ['Any layer', 'Two or more', 'Three or more', 'All four layers'],
     },
 
     fifteen: {
@@ -190,21 +193,25 @@ export default {
       // "about this layer" dialog and the city view's panel still use.
       welcomeIntro:
         'See the travel times to everyday services from any place in any city and see how it compares to the 15-minute benchmark.',
-      legendUnit: 'Average time to services',
+      legendUnit: 'Median walk to services',
+      // The world map's tooltip: the median resident's figure.
+      tooltip: '{name} · {time} on foot to services (median resident)',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Opportunity access',
       intro:
         'CityChrone replaces metric distance with travel time: the map deforms so that two places sit close together when public transport connects them quickly, however far apart they are on the ground.',
-      legendUnit: 'Velocity score',
+      legendUnit: 'Public transport speed (km/h)',
+      tooltip: '{name} · {value} km/h by public transport (median resident)',
       legend: ['Slow', 'Medium', 'Fast'],
     },
     cardep: {
       label: 'Car vs. public transport',
       intro:
         'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = (O_car − O_PT) / (O_car + O_PT). It runs from −1, where transit reaches more, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (median resident)',
+      tooltip: '{name} · CDI {value} (median resident)',
       legend: ['Transit-favoured', 'Balanced', 'Car-dependent', 'Strongly car-dependent'],
     },
     pov: {
@@ -232,7 +239,7 @@ export default {
     },
     modes: { foot: 'On foot', bike: 'By bicycle' },
     hint: 'Average travel time from each cell to the nearest services in this category.',
-    summary: { median: 'Median travel time' },
+    summary: { median: 'Travel time, median resident' },
     categories: {
       average: 'Average across all services',
       outdoor: 'Outdoor activities',
@@ -413,9 +420,9 @@ export default {
         fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all nine categories and both modes, so a colour means the same thing whatever is selected.',
       },
       summary: {
-        pov: 'Cells counts what the published dataset covers. Each median is the middle cell’s score — weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
-        cardep: 'Median CDI is the middle cell’s index. CDI for the average resident weights every cell by the people living in it, and is the figure the platform ranks cities on — half a city’s cells can be car-dependent while most of its residents live in the other half.',
-        fifteen: 'The median is the middle cell’s time for the category and mode on screen. It describes cells rather than residents: every cell counts once, however many people live in it. Population is the dataset’s own sum.',
+        pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
+        cardep: 'Median CDI is the index of the median resident: half the city’s residents live in cells with a lower one. CDI for the average resident weights every cell by the people living in it, and is the figure the platform ranks cities on. Both count residents, not cells: half a city’s cells can be car-dependent while most of its residents live in the other half.',
+        fifteen: 'The median is the median resident’s time for the category and mode on screen: half the residents live in cells reached faster, half slower. Every cell counts as many times as people live in it, so thinly settled outer cells do not outvote the places most people live. Population is the dataset’s own sum.',
         atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
       },
       more: 'Full explanation',
@@ -494,7 +501,7 @@ export default {
       name: 'Name',
       population: 'Population',
       weightedCdi: 'Index for the average resident',
-      medianCdi: 'Median index',
+      medianCdi: 'Index for the median resident',
       ptShare: 'Transit-favoured cells',
       inclusion: 'Inclusion',
       proximity: 'Median proximity',
@@ -522,7 +529,7 @@ export default {
       city: 'City',
       cells: 'Cells',
       population: 'Population',
-      medianCdi: 'Median',
+      medianCdi: 'Median resident',
       weightedCdi: 'Avg. resident',
       ptCells: 'Transit cells',
       carCells: 'Car cells',

@@ -17,6 +17,19 @@ Two consequences worth internalising before editing copy:
   opportunity are weighted counts of reachable points of interest. They are not
   metres and not jobs. The site said "643 m" and "2.7 k jobs" for Rome for a
   while; the numbers were real, the units invented.
+- **Every median and every mean about a city is its residents'.** Weighted
+  by the layer's own residents, never by cells: a city's many thinly
+  settled outer cells would otherwise outvote where people live (Rome's
+  median walk to services is 10:30 for its residents and 15:42 for its
+  cells). The world map's markers, the city view's summary, the compare
+  rows, the statistics, the home table and CityChat's tools all quote the
+  same figure, by one rule (`weightedMedian` in `bundle.mjs` and
+  `adapters.js`, `weightedQuantiles` in `stats.mjs`). The viewer weights by
+  `<layer>_population` (`layerPopulationKey` in `grid.js`), not by a cell's
+  `population`, which is the grid's context figure. Shares of cells are
+  still published beside shares of residents, and say which they are.
+  `test:data` checks the city view and the compare rows against the
+  markers and the statistics.
 - **A platform with no published data says so.** `published: false` in
   `src/data/platforms.js` makes the UI label the map as illustrative rather
   than show a coverage count it cannot support. A generated city mesh labels
@@ -37,9 +50,11 @@ One idea to understand: **the catalogue decides whether the Atlas draws
 measurements or seed data**, per city, per platform.
 
 ```
-public/data/index.json        catalogue — what is actually published, derived from the records
+public/data/index.json        catalogue — an index of what is published, derived from the records
+public/data/cities.json.gz    the city list — every city's names, place and layers
 public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
   city.json                   the city's record: entries, figures, source hashes, createdAt
+  entry.json.gz               what its city view needs, derived from the record
 src/data/catalogue.js         parsing + normalising it
 src/data/sources.js           the provider: where data comes from
 src/data/grid.js              grid + layer files → the union mesh the viewer draws
@@ -98,11 +113,42 @@ than each platform's own layout, and the rule lands ~10-14 m from theirs on a
 ~200 m cell. Nothing checks it against them any more, on purpose.
 `cartogramSources` still says `derived` per layer, and the UI says so.
 
+**A world-map marker is the city's median resident.** 15minCity's walk to
+services, CityChrone's velocity at 8:00 and Car Dependency's index are each
+the population-weighted median over the layer's cells (`describeLayer` in
+`bundle.mjs`), and the tooltip says so: the time as `m:ss`, the velocity as
+km/h by public transport, the CDI as the median resident's. Car Dependency's
+used to be the weighted mean, which stays in its compare row as
+`weightedCdi`. When the method of a marker or a compare-row median changes, `npm run
+import -- --refresh-figures` recomputes those fields for every city from
+the published layer files, without re-importing, and touches nothing else
+(the import computed the rest from values before rounding, which the files
+no longer hold); `test:data` checks each against the median the statistics
+compute.
+
 Per-platform **summary files** (`<platform>/summary.json.gz`, declared as
 `summary` beside `coverage`) carry one row per city for the compare view at
 `/platforms/:slug/compare`, and the **coverage files** one marker per city for
 the world maps. The importer writes both from the values it is publishing, so
 the table and the city pages cannot disagree.
+
+**The catalogue is an index, and nothing in it is per city** (version 3).
+Every page waits on it, and with an entry per city it reached 8.6 MB at
+11,327 cities. It names the coverage files, the summaries, the statistics,
+each layer's `count` and the Atlas's `totals`, and two more files: the
+**city list** (`cities.json.gz`: names, place, layers), read by the search,
+the links to city pages, the compare view's names and CityChat; and each
+city's **entry** (`cities/<id>/entry.json.gz`: atlas entry, one row per
+layer, its files' hashes, and `extents`, which of its boundaries are
+published), read by its city view alone. The provider's `city()` fetches an
+entry once and merges it into the memoised catalogue, so `atlasCity` and
+`publishedCity` answer for that city as they always did; every provider
+method that takes a city calls it first. `cities()` is the list. On the
+Node side `readCatalogue()` in `bundle.mjs` gathers all three back into the
+version 2 shape, which is what `test:data`, CityChat and the scripts read.
+A version 2 catalogue still reads (`smoke:published` stages one). Never put
+a per-city field back in the index: `test:data` fails if a row or an atlas
+entry is in it.
 
 Anything the catalogue does not list falls back to generated seed data
 (`src/data/cities.js`, `src/data/mesh.js`), so the site works on a fresh
@@ -703,6 +749,14 @@ what scrolls over it is transparent between its own cards and the map is as
 visible on a page of text as on the front door. If a block turns out to be
 unreadable over it, give that block a background; do not reach for the veil.
 
+**A city view is the exception: the backdrop goes at once.** The world
+with every Atlas city on it, behind a city still loading, said nothing
+about the place being opened, so on `/atlas/*` the backdrop is
+`.aa-backdrop--gone` from the first frame and the city view's own loading
+note stands on bare paper until `AtlasMap` reports it has painted
+(`onPainted`). `smoke.mjs` asserts it is hidden 120 ms after the click.
+Everything below is about `/platforms`.
+
 **The backdrop is dismissed by the map that replaces it, never by the route.**
 The two screens that *are* a full-bleed map — `/platforms` and
 `/atlas/:cityId` — end up with a second map drawing nothing behind an opaque
@@ -815,6 +869,30 @@ that map draws with** — the layer's own ramp, P.O.V.'s four zones as hard
 quarters, the coverage scale for the merged map. Solid accents could not do
 that job: two of the four layers are navy and two are terracotta, so half the
 row was two pairs of identical dots.
+
+**Switching layer is a repaint, not a new page.** `/platforms`,
+`/platforms/<slug>` and `/platforms/all` are one screen to `FadingRoutes`
+(`screenOf`), and `PlatformExplorer` is not keyed by the layer, so the same
+`WorldMap` stays and only its cities change: it empties while the new
+layer's coverage is pending (`useCityCoverage` ties its answer to the
+platform it is for) and fills when it lands. A cross-fade there let the
+backdrop, which draws every layer's cities, show through for its length.
+The coverage hooks never show the seed list while pending, only once the
+answer is "nothing published". The switch is a cross-fade inside the
+screen: `PlatformExplorer` keeps the layer on screen (`platform`) one fade
+behind the one in the URL (`requested`), fades the markers off
+(`markersHidden`, drawn by `WorldMap` at a fading alpha) and the layer's own
+boxes off (`.aa-mapstage__layer`, one group, because each box's
+`.aa-fadein` holds its opacity at 1), swaps, and fades both on once the new
+layer's cities are in. The picker and the search are the screen's, and
+stay. Not on the screen's first paint: the backdrop hands over to it with
+the same dots in the same place.
+
+**"All layers" opens on the cities with all four layers.** Its legend is
+also its filter: one row per number of layers, each with how many cities it
+would show, and picking one shows the cities with at least that many
+(`?min=1..3`, absent for four). The frame still comes from every city, so
+the filter never moves the world.
 
 **Every marker opens its city, whatever the open layer covers.** The city
 view opens on the first layer that city actually carries, so a Car

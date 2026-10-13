@@ -1,10 +1,12 @@
-// React bindings over the data provider. Each hook renders the seed data
-// immediately and upgrades to published data if the catalogue offers it, so a
-// slow or absent dataset never blocks a page — it just stays seeded.
+// React bindings over the data provider. A slow or absent dataset never blocks
+// a page: it falls back to the seed data. The coverage hooks, which draw
+// markers on a world map, wait for the answer rather than show the seed list
+// first, because seed cities swapping to published ones read as fake cities
+// slowly turning into real ones. Until then they hold an empty list.
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { citiesFromPublished } from './adapters.js';
-import { hasCityData, platformEntry, publishedCity } from './catalogue.js';
+import { platformEntry, publishedCity } from './catalogue.js';
 import { getDataProvider } from './sources.js';
 import { CITY_PROFILES } from './mesh.js';
 import { CITIES, citiesForPlatform } from './cities.js';
@@ -13,33 +15,37 @@ import { normaliseStats } from './stats.js';
 
 /**
  * City coverage for a platform's world map and search.
- * @returns {{ cities: object[], source: 'published'|'seed' }}
+ * @returns {{ cities: object[], source: 'pending'|'published'|'seed' }}
  */
 export function useCityCoverage(platform) {
-  const [published, setPublished] = useState(null);
+  // The answer and the platform it is for: a layer switch reads as pending
+  // from its first render, rather than drawing the last layer's cities in the
+  // new layer's colours for a frame. [] means "nothing published".
+  const [answer, setAnswer] = useState(null);
+  const published = answer?.platform === platform.id ? answer.cities : null;
   const seed = useMemo(() => citiesForPlatform(platform), [platform]);
 
   useEffect(() => {
     let cancelled = false;
     const controller = new AbortController();
-    setPublished(null);
 
     (async () => {
+      let cities = [];
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
         const collection = await provider.coverage(platform.id, catalogue, {
           signal: controller.signal,
         });
-        if (cancelled || !collection) return;
-        const cities = citiesFromPublished(collection);
-        if (cities.length) setPublished(cities);
+        if (collection) cities = citiesFromPublished(collection);
       } catch (error) {
-        // Staying on seed data is the designed outcome, not a failure.
-        if (error?.name !== 'AbortError' && import.meta.env.DEV) {
+        if (error?.name === 'AbortError') return;
+        // Falling back to seed data is the designed outcome, not a failure.
+        if (import.meta.env.DEV) {
           console.info(`[data] coverage for ${platform.id} unavailable`, error.message);
         }
       }
+      if (!cancelled) setAnswer({ platform: platform.id, cities });
     })();
 
     return () => {
@@ -48,10 +54,9 @@ export function useCityCoverage(platform) {
     };
   }, [platform]);
 
-  return {
-    cities: published ?? seed,
-    source: published ? 'published' : 'seed',
-  };
+  if (published === null) return { cities: EMPTY_CITIES, source: 'pending' };
+  if (published.length === 0) return { cities: seed, source: 'seed' };
+  return { cities: published, source: 'published' };
 }
 
 // Resolved once, and remembered against the provider it came from.
@@ -79,11 +84,13 @@ function cachedCoverage() {
  *
  * Falls back to the seed list only if no platform publishes coverage at all —
  * a partially published Atlas shows what is real rather than mixing the two.
+ * Until that is known the list is empty.
  *
- * @returns {{ cities: object[], source: 'published'|'seed' }}
+ * @returns {{ cities: object[], source: 'pending'|'published'|'seed' }}
  */
 export function useAllCoverage() {
   const [published, setPublished] = useState(cachedCoverage);
+  const [unpublished, setUnpublished] = useState(false);
   const seed = useMemo(
     () => CITIES.map((city) => ({ ...city, platforms: [], platformCount: 1 })),
     [],
@@ -98,19 +105,21 @@ export function useAllCoverage() {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        // Fetched together, merged in platform order: the first platform to
+        // publish a city keeps its figures, whichever file arrived first.
+        const collections = await Promise.all(
+          PLATFORMS.map((platform) =>
+            provider.coverage(platform.id, catalogue, { signal: controller.signal }).catch((error) => {
+              if (error?.name === 'AbortError') throw error;
+              return null;
+            }),
+          ),
+        );
         const byId = new Map();
 
-        for (const platform of PLATFORMS) {
-          let collection = null;
-          try {
-            collection = await provider.coverage(platform.id, catalogue, {
-              signal: controller.signal,
-            });
-          } catch (error) {
-            if (error?.name === 'AbortError') return;
-          }
-          if (!collection) continue;
-          for (const city of citiesFromPublished(collection)) {
+        PLATFORMS.forEach((platform, i) => {
+          if (!collections[i]) return;
+          for (const city of citiesFromPublished(collections[i])) {
             const existing = byId.get(city.id);
             if (existing) {
               // Keep the first platform's figures; only the platform list and
@@ -122,16 +131,19 @@ export function useAllCoverage() {
               byId.set(city.id, { ...city, platforms: [platform.id], platformCount: 1 });
             }
           }
-        }
+        });
 
-        if (byId.size === 0) return;
+        if (byId.size === 0) {
+          if (!cancelled) setUnpublished(true);
+          return;
+        }
         merged = { provider, cities: [...byId.values()] };
         if (cancelled) return;
         setPublished(merged.cities);
       } catch (error) {
-        if (error?.name !== 'AbortError' && import.meta.env.DEV) {
-          console.info('[data] merged coverage unavailable', error.message);
-        }
+        if (error?.name === 'AbortError') return;
+        if (import.meta.env.DEV) console.info('[data] merged coverage unavailable', error.message);
+        if (!cancelled) setUnpublished(true);
       }
     })();
 
@@ -141,7 +153,9 @@ export function useAllCoverage() {
     };
   }, []);
 
-  return { cities: published ?? seed, source: published ? 'published' : 'seed' };
+  if (published) return { cities: published, source: 'published' };
+  if (unpublished) return { cities: seed, source: 'seed' };
+  return { cities: EMPTY_CITIES, source: 'pending' };
 }
 
 /**
@@ -165,18 +179,15 @@ export function useCityPageIds(platformId) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        const cities = await provider.cities(catalogue, { signal: controller.signal });
         if (cancelled) return;
         // No platform named means "any of them": the merged map's markers
         // come from every platform's coverage, and a city published by one
         // of them has a city view whether or not it is on the open tab.
         // Asking only the open tab left those markers inert — a city with
         // Car Dependency but no 15minCity simply did not respond to a click.
-        const entries = platformId
-          ? [catalogue?.platforms?.[platformId]]
-          : Object.values(catalogue?.platforms ?? {});
-        const ids = entries
-          .flatMap((entry) => entry?.cities ?? [])
-          .filter(hasCityData)
+        const ids = cities
+          .filter((city) => (platformId ? city.layers?.includes(platformId) : city.layers?.length))
           .map((city) => city.id);
         setPublishedIds([...new Set(ids)]);
       } catch (error) {
@@ -197,9 +208,9 @@ export function useCityPageIds(platformId) {
 }
 
 /**
- * Cities with a combined-viewer (union mesh) entry in the catalogue — the ones
- * exported on the shared H3 grid, which /atlas/:cityId can draw every platform
- * from at once.
+ * Every published city, from the city list: who and where, and which layers
+ * each publishes. Every published city opens in the combined viewer
+ * (/atlas/:cityId); its full entry is fetched by that page alone.
  */
 export function useAtlasCities() {
   const [cities, setCities] = useState(null);
@@ -212,8 +223,9 @@ export function useAtlasCities() {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        const cities = await provider.cities(catalogue, { signal: controller.signal });
         if (cancelled) return;
-        setCities(catalogue?.atlas?.cities ?? []);
+        setCities(cities);
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }
@@ -259,6 +271,7 @@ export function useCityProfile(platformId, cityId) {
       try {
         const provider = getDataProvider();
         const catalogue = await provider.catalogue({ signal: controller.signal });
+        await provider.city(cityId, catalogue, { signal: controller.signal });
         entry = publishedCity(catalogue, platformId, cityId);
       } catch (error) {
         if (error?.name === 'AbortError') return;
@@ -399,9 +412,13 @@ export function usePlatformSummary(platformId) {
           setState({ status: 'empty', cities: [] });
           return;
         }
-        // The summary carries figures, not names: the catalogue is where a
+        // The summary carries figures, not names: the city list is where a
         // city's editorial metadata lives, so the two are joined here.
-        const byId = platformEntry(catalogue, platformId)?.citiesById ?? {};
+        const list = await provider.cities(catalogue, { signal: controller.signal });
+        if (cancelled) return;
+        const byId = Object.fromEntries(
+          list.filter((city) => city.layers?.includes(platformId) ?? true).map((city) => [city.id, city]),
+        );
         setState({
           status: 'ready',
           cities: rows
@@ -511,11 +528,7 @@ export function usePublishedCityCounts() {
       try {
         const catalogue = await getDataProvider().catalogue({ signal: controller.signal });
         if (cancelled) return;
-        setCounts(
-          Object.fromEntries(
-            PLATFORMS.map((p) => [p.id, (catalogue?.platforms?.[p.id]?.cities ?? []).filter(hasCityData).length]),
-          ),
-        );
+        setCounts(Object.fromEntries(PLATFORMS.map((p) => [p.id, catalogue?.platforms?.[p.id]?.count ?? 0])));
       } catch (error) {
         if (error?.name === 'AbortError') return;
       }

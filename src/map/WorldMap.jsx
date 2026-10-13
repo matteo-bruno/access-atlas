@@ -19,6 +19,8 @@ const MAX_ZOOM = 6;
 // A marker answers the pointer this many pixels past its edge: twenty dots
 // on a world map are small targets.
 const HIT_SLOP = 4;
+// How long the markers take to fade off or on, e.g. when the layer changes.
+const MARKER_FADE_MS = 200;
 
 // The land is one file every world map draws, so it is fetched once.
 let landPromise = null;
@@ -65,6 +67,8 @@ const SPHERE = { type: 'Sphere' };
  * @param {boolean}  [props.coversBackdrop] see map/backdrop.js
  * @param {string}   [props.highlight]     a city id to draw as if hovered:
  *                                         the search's highlighted result
+ * @param {boolean}  [props.markersHidden] fade the markers out (and back in
+ *                                         when it turns false); the land stays
  * @param {string}   [props.label]
  */
 export function WorldMap({
@@ -76,6 +80,7 @@ export function WorldMap({
   onSelect,
   coversBackdrop = false,
   highlight = null,
+  markersHidden = false,
   label,
   className = '',
   ref,
@@ -92,6 +97,10 @@ export function WorldMap({
   const hoveredRef = useRef(null);
   const frameRequest = useRef(0);
   const animation = useRef(0);
+  // How much of the markers is drawn, 0 to 1: animated by `markersHidden`, so
+  // one set of cities can fade off before the next fades on.
+  const markerAlpha = useRef(markersHidden ? 0 : 1);
+  const markerFade = useRef(0);
   const drawRef = useRef(() => {});
   // Latest handlers, so re-renders do not rebind the pointer.
   const handlers = useRef({ tooltip, onSelect });
@@ -210,7 +219,8 @@ export function WorldMap({
     const hovered = hoveredRef.current;
     const screen = [];
     let largest = 0;
-    for (const { city, x, y } of placed) {
+    const alpha = markerAlpha.current;
+    for (const { city, x, y } of alpha > 0 ? placed : []) {
       const style = markerStyle(city, zoom);
       const emphasised = city.id === hovered || city.id === highlight;
       const radius = style.radius * (emphasised ? 1.45 : 1);
@@ -220,15 +230,16 @@ export function WorldMap({
       if (radius > largest) largest = radius;
       ctx.beginPath();
       ctx.arc(sx, sy, radius, 0, Math.PI * 2);
-      ctx.globalAlpha = style.fillOpacity;
+      ctx.globalAlpha = style.fillOpacity * alpha;
       ctx.fillStyle = style.fill;
       ctx.fill();
-      ctx.globalAlpha = 1;
+      ctx.globalAlpha = alpha;
       if (style.strokeWidth > 0) {
         ctx.lineWidth = style.strokeWidth;
         ctx.strokeStyle = style.stroke;
         ctx.stroke();
       }
+      ctx.globalAlpha = 1;
     }
     hitsRef.current = {
       tree: quadtree(screen, (d) => d.x, (d) => d.y),
@@ -262,10 +273,33 @@ export function WorldMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, paths, placed, markerStyle, highlight]);
 
+  // The markers fade rather than cut. Nothing is hit-tested while hidden,
+  // since nothing is drawn (see the draw loop).
+  useEffect(() => {
+    const target = markersHidden ? 0 : 1;
+    window.cancelAnimationFrame(markerFade.current);
+    const from = markerAlpha.current;
+    if (from === target) return;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      markerAlpha.current = target;
+      drawRef.current();
+      return;
+    }
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min(1, (now - start) / MARKER_FADE_MS);
+      markerAlpha.current = from + (target - from) * progress;
+      drawRef.current();
+      if (progress < 1) markerFade.current = window.requestAnimationFrame(step);
+    };
+    markerFade.current = window.requestAnimationFrame(step);
+  }, [markersHidden]);
+
   useEffect(
     () => () => {
       window.cancelAnimationFrame(frameRequest.current);
       window.cancelAnimationFrame(animation.current);
+      window.cancelAnimationFrame(markerFade.current);
     },
     [],
   );

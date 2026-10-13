@@ -1,5 +1,5 @@
-import { useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
@@ -17,9 +17,14 @@ import {
   useCityPageIds,
 } from '../data/useAtlasData.js';
 import { paperForPlatform } from '../data/research.js';
+import { formatTime } from '../data/fifteen.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
+
+// How long a layer's markers and boxes take to fade off before the next
+// layer's fade on; the markers' own fade in WorldMap is the same length.
+const LAYER_FADE_MS = 200;
 
 // Every city of a layer side by side, on the Stats page. All populations
 // (`pop=0`): the page's default floor of a million residents is a choice for
@@ -69,11 +74,13 @@ export default function PlatformLanding() {
   // too rather than on a 404: the route is still a request for the world map.
   const platform = slug === undefined ? PLATFORMS[0] : platformBySlug(slug);
 
-  // Remount cleanly when switching platforms so the map rebuilds its layers.
+  // Not keyed by the layer: switching layer keeps the same world map, which
+  // empties and fills with the new layer's cities (FadingRoutes counts every
+  // layer as one screen, see screenOf in App.jsx).
   return (
     <div className="aa-page aa-page--fixed">
       <main className="aa-main aa-stagewrap" id="main">
-        <PlatformExplorer key={platform?.id ?? 'all'} platform={platform} />
+        <PlatformExplorer platform={platform} />
       </main>
     </div>
   );
@@ -94,12 +101,26 @@ export default function PlatformLanding() {
  * @param {boolean} [props.interactive]  let the map take the pointer
  * @param {React.ReactNode} [props.children]  drawn over the map
  */
-export function PlatformExplorer({ platform, chrome = true, interactive = true, children }) {
+export function PlatformExplorer({ platform: requested, chrome = true, interactive = true, children }) {
   const { t, n } = useI18n();
   const navigate = useNavigate();
   const mapRef = useRef(null);
   const searchRef = useRef(null);
   const [welcomeOpen, setWelcomeOpen] = useState(true);
+
+  // A layer switch is a cross-fade inside the screen: the open layer's
+  // markers and boxes fade off, the screen swaps to the requested layer, and
+  // its markers and boxes fade on. `platform` is the layer on screen, which
+  // trails the one in the URL for the length of the fade out.
+  const [platform, setPlatform] = useState(requested);
+  const leaving = requested !== platform;
+  const switched = useRef(false);
+  if (leaving) switched.current = true;
+  useEffect(() => {
+    if (!leaving) return undefined;
+    const timer = window.setTimeout(() => setPlatform(requested), LAYER_FADE_MS);
+    return () => window.clearTimeout(timer);
+  }, [leaving, requested]);
 
   // Both hooks run unconditionally — hooks cannot be called behind a branch —
   // and the unused one is cheap: its fetch is cached by URL either way.
@@ -114,7 +135,30 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
     : hasSummary
       ? `/platforms/${platform.slug}/compare`
       : STATS_FOCUS[platform.id] ?? null;
-  const cities = platform ? single.cities : all.cities;
+  // The merged map shows the cities with at least `min` of the four layers,
+  // all four unless the reader asks for fewer. In the URL, like the layer.
+  const [params, setParams] = useSearchParams();
+  const minLayers = platform ? 1 : minLayersFrom(params);
+  // How many cities each choice would show: with at least that many layers.
+  const layerCounts = useMemo(
+    () => PLATFORMS.map((_, i) => all.cities.filter((city) => (city.platformCount ?? 1) > i).length),
+    [all.cities],
+  );
+  const shownAll = useMemo(
+    () => (minLayers > 1 ? all.cities.filter((city) => (city.platformCount ?? 1) >= minLayers) : all.cities),
+    [all.cities, minLayers],
+  );
+  const setMinLayers = (count) => {
+    const next = new URLSearchParams(params);
+    if (count === PLATFORMS.length) next.delete('min');
+    else next.set('min', String(count));
+    setParams(next, { replace: true });
+  };
+  const cities = platform ? single.cities : shownAll;
+  // Off while fading out, and after a switch until the new layer's cities are
+  // in, so they fade on rather than pop. Not on the screen's first paint: the
+  // backdrop hands over to this map with the same dots in the same place.
+  const markersHidden = leaving || (switched.current && !!platform && single.source === 'pending');
   // Always the merged coverage, never the open tab's — see the WorldMap props.
   const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
   const markerStyle = useMemo(
@@ -182,7 +226,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
   };
 
   const tooltip = (city) =>
-    platform ? formatTooltip(platform, city, n) : coverageTooltip(city, t, n);
+    platform ? formatTooltip(platform, city, t, n) : coverageTooltip(city, t, n);
 
   const title = platform ? platform.name : t('platform.all.name');
   const label = platform
@@ -212,6 +256,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
         tooltip={interactive ? tooltip : undefined}
         onSelect={interactive ? openCity : undefined}
         highlight={searched ? (searched.core ?? searched.id) : null}
+        markersHidden={markersHidden}
         label={title}
       />
 
@@ -239,7 +284,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             <Link
               key={option.id}
               className={`aa-picker__item${
-                platform?.id === option.id ? ' aa-picker__item--active' : ''
+                requested?.id === option.id ? ' aa-picker__item--active' : ''
               }`}
               to={`/platforms/${option.slug}`}
             >
@@ -253,7 +298,7 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           {/* Last, because it is the whole rather than another layer. Its
               dot is the coverage scale, which is what that map colours by. */}
           <Link
-            className={`aa-picker__item${platform ? '' : ' aa-picker__item--active'}`}
+            className={`aa-picker__item${requested ? '' : ' aa-picker__item--active'}`}
             to="/platforms/all"
           >
             <span className="aa-picker__dot" style={{ backgroundImage: scaleDot(COVERAGE_SCALE) }} />
@@ -261,6 +306,10 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </Link>
         </nav>
 
+        {/* What belongs to the layer on screen, as one group so a switch can
+            fade it off and on together. The picker and the search above are
+            the screen's own, and stay. */}
+        <div className={`aa-mapstage__layer${leaving ? ' aa-mapstage__layer--leaving' : ''}`}>
         {welcomeOpen && (
           <section className="aa-card aa-welcome aa-fadein aa-fadein--slow">
             <div className="aa-welcome__head">
@@ -305,6 +354,39 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
           </a>
         )}
 
+        {/* The merged map's legend is also its filter: each row is a number
+            of layers, and picking one shows the cities with at least that
+            many. Its swatches are the coverage scale, as before. */}
+        {!platform ? (
+          <fieldset className="aa-card aa-legend aa-legend--filter aa-fadein aa-fadein--slow">
+            <legend className="aa-legend__title">
+              <Eyebrow>{t('platform.all.filter')}</Eyebrow>
+            </legend>
+            <div className="aa-legend__items">
+              {PLATFORMS.map((_, i) => PLATFORMS.length - i).map((count) => (
+                <label
+                  key={count}
+                  className={`aa-legend__item aa-legend__option${
+                    count >= minLayers ? ' aa-legend__option--on' : ''
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="aa-min-layers"
+                    value={count}
+                    checked={minLayers === count}
+                    onChange={() => setMinLayers(count)}
+                  />
+                  <span className="aa-swatch" style={{ background: COVERAGE_SCALE[count - 1] }} />
+                  <span>{t('platform.all.filterOptions')[count - 1]}</span>
+                  <span className="aa-legend__count aa-mono">
+                    {all.source === 'published' ? n(layerCounts[count - 1]) : ''}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ) : (
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>
           <Eyebrow>{t(`${copyKey}.legendUnit`)}</Eyebrow>
           <div className="aa-legend__items">
@@ -319,6 +401,9 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
             ))}
           </div>
         </section>
+        )}
+
+        </div>
 
         <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>
@@ -342,6 +427,12 @@ export function PlatformExplorer({ platform, chrome = true, interactive = true, 
   );
 }
 
+/** `?min=` on the merged map: 1 to 4 layers, all four when absent or invalid. */
+function minLayersFrom(params) {
+  const value = Number(params.get('min'));
+  return Number.isInteger(value) && value >= 1 && value <= PLATFORMS.length ? value : PLATFORMS.length;
+}
+
 // On the all-platforms map the readable fact is which lenses a city has, not
 // any one platform's measure — those are on different scales and mean
 // different things.
@@ -350,15 +441,25 @@ function coverageTooltip(properties, t, n) {
   return `${properties.name} · ${t('platform.all.covered', { count: n(count) })}`;
 }
 
-function formatTooltip(platform, properties, n) {
+// A city's figure on a layer's map is its median resident's, said as such:
+// 15minCity's time as a clock (m:ss, see formatTime), CityChrone's speed in
+// km/h by public transport, Car Dependency's index. P.O.V. colours by zone
+// and states no figure.
+function formatTooltip(platform, properties, t, n) {
   const name = properties.name;
+  const value = {
+    fifteen: properties.proximityMinutes,
+    citychrone: properties.velocityScore,
+    cardep: properties.cdi,
+  }[platform.id];
+  if (!Number.isFinite(value)) return name;
   switch (platform.id) {
     case 'fifteen':
-      return `${name} · ${n(properties.proximityMinutes, { minimumFractionDigits: 1 })} min`;
+      return t('platform.fifteen.tooltip', { name, time: formatTime(value) });
     case 'citychrone':
-      return `${name} · ${n(properties.velocityScore, { minimumFractionDigits: 2 })}`;
+      return t('platform.citychrone.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
     case 'cardep':
-      return `${name} · CDI ${n(properties.cdi, { minimumFractionDigits: 2 })}`;
+      return t('platform.cardep.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
     default:
       return name;
   }

@@ -20,13 +20,14 @@ import {
   gridFeatures,
   layerCartogram,
   layerPositions,
+  layerPopulationKey,
   mergeLayer,
 } from '../src/data/grid.js';
 import { createStaticProvider } from '../src/data/sources.js';
 import { clearDatasetCache, loadDataset } from '../src/map/loaders.js';
 import { getResolution } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile } from './lib/datafile.mjs';
-import { buildIndex, cataloguePaths, extentOf, gridId, readCityRecord } from './lib/bundle.mjs';
+import { buildIndex, cataloguePaths, cityEntryPath, extentOf, gridId, listCities, readCatalogue, readCityRecord } from './lib/bundle.mjs';
 import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs';
 import { recordHiddenReason } from './lib/quality.mjs';
 import { atlasMetrics } from '../src/data/home.js';
@@ -89,8 +90,48 @@ function matrixProblem(file, n) {
 }
 const sum = (values) => values.reduce((a, b) => a + b, 0);
 
-const catalogue = read('index.json');
+// The index (version 3) with every city's entry gathered back into it, so
+// the checks below read every row and every atlas entry as before.
+const index = read('index.json');
+const catalogue = readCatalogue();
 check('Catalogue parses', !!catalogue.platforms, `version ${catalogue.version}`);
+
+// ── The index and the city list ──────────────────────────────────────
+// Every page waits on the index, so it carries nothing per city: a row or
+// an atlas entry back in it is the 8.6 MB catalogue coming back. The city
+// list names every published city once, and every city's entry is there,
+// says which of its boundaries are published, and agrees with its record.
+{
+  const bad = [];
+  if (index.atlas) bad.push('the index carries atlas entries');
+  for (const [platformId, entry] of Object.entries(index.platforms ?? {})) {
+    if (entry.cities) bad.push(`${platformId} carries rows`);
+    const rows = catalogue.platforms[platformId].cities.length;
+    if (entry.count !== rows) bad.push(`${platformId} count ${entry.count}, ${rows} cities publish it`);
+  }
+  const list = read(index.cities).cities;
+  const ids = list.map((c) => c.id);
+  const records = listCities();
+  if (ids.join() !== records.join()) bad.push(`city list (${ids.length}) is not the records (${records.length})`);
+  const published = new Set(ids);
+  for (const row of list) {
+    const entry = read(cityEntryPath(row.id));
+    const atlas = entry.atlas;
+    if (atlas.id !== row.id) bad.push(`${row.id}: entry is ${atlas.id}`);
+    if ((atlas.layers ?? []).join() !== (row.layers ?? []).join()) bad.push(`${row.id}: list and entry name different layers`);
+    if (Object.keys(entry.platforms).join() !== (atlas.layers ?? []).join()) bad.push(`${row.id}: entry rows are not its layers`);
+    const { extent, core } = extentOf(row.id);
+    const coreId = extent === 'fua' ? core : row.id;
+    const want = { core: published.has(coreId) ? coreId : null, fua: published.has(`${coreId}-fua`) ? `${coreId}-fua` : null };
+    if (JSON.stringify(atlas.extents) !== JSON.stringify(want)) bad.push(`${row.id}: extents ${JSON.stringify(atlas.extents)}, want ${JSON.stringify(want)}`);
+    if ((row.extent ?? 'core') !== extent) bad.push(`${row.id}: listed as ${row.extent ?? 'core'}`);
+  }
+  check(
+    `The index is small and the city list names every city's entry`,
+    bad.length === 0,
+    bad.slice(0, 3).join(' | ') || `${JSON.stringify(index).length} bytes, ${list.length} cities`,
+  );
+}
 const atlasById = new Map((catalogue.atlas?.cities ?? []).map((c) => [c.id, c]));
 
 // ── Platform lists ───────────────────────────────────────────────────
@@ -131,6 +172,15 @@ const summaries = {};
 for (const [platformId, entry] of Object.entries(catalogue.platforms)) {
   summaries[platformId] = new Map(entry.summary ? read(entry.summary).cities.map((c) => [c.id, c]) : []);
 }
+
+// What the world maps say about each city: the city view must say the same.
+const markerOf = (platformId) =>
+  new Map(
+    catalogue.platforms[platformId]?.coverage
+      ? read(catalogue.platforms[platformId].coverage).features.map((f) => [f.properties.id, f.properties])
+      : [],
+  );
+const fifteenMarkers = markerOf('fifteen');
 
 let totalCells = 0;
 const meshes = new Map(); // city id → the viewer's per-layer figures
@@ -226,6 +276,10 @@ for (const city of catalogue.atlas?.cities ?? []) {
       else if (row && !near(layers.cardep.weightedCdi, row.weightedCdi, 0.002)) {
         bad.push(`weighted CDI ${layers.cardep.weightedCdi} vs compare row ${row.weightedCdi}`);
       }
+      // The median resident's, in the city view and in the compare row.
+      if (row && !near(layers.cardep.medianCdi, row.medianCdi, 0.0011)) {
+        bad.push(`median CDI ${layers.cardep.medianCdi} in the city view vs ${row.medianCdi} in the compare row`);
+      }
     }
     if (files.fifteen) {
       // Every category × mode must be present, or a selector option would
@@ -244,6 +298,11 @@ for (const city of catalogue.atlas?.cities ?? []) {
       if (missing.length) bad.push(`fifteen missing ${missing.join(', ')}`);
       const summary = summariseMeasure(collection, measureKey(CATEGORIES[0].key, MODES[0].key), BANDS[MODES[0].key]);
       if (summary.median == null) bad.push('fifteen has no median');
+      // The city view's median travel time is the median resident's, the
+      // figure the world map's marker quotes for the same city.
+      const walk = summariseMeasure(collection, 'proximity_time_foot', BANDS.foot, layerPopulationKey('fifteen')).median;
+      const marker = fifteenMarkers.get(city.id)?.proximityMinutes;
+      if (marker != null && !near(walk, marker, 0.15)) bad.push(`median walk ${walk} in the city view vs ${marker} on the world map`);
     }
     if (files.citychrone) {
       const { hours, cells } = city.hourly;
@@ -273,6 +332,44 @@ for (const city of catalogue.atlas?.cities ?? []) {
   check(`${city.id}: grid and ${city.layers.join(', ')}${scenarios} load, merge and reconcile`, bad.length === 0, bad.slice(0, 3).join(' | '));
 }
 console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${meshes.size} cities`);
+
+// ── The provider ─────────────────────────────────────────────────────
+// A city's entry and the city list are files of their own (catalogue version
+// 3), fetched by the pages that need them. Served as they are stored,
+// gzipped and with no Content-Encoding, the way GitHub Pages serves them, a
+// city's entry must reach the catalogue and its files load from there, and
+// a city that is not published must read as "not published".
+{
+  const fetched = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    const rel = String(url).replace(/^.*?\/data\//, '').replace(/\?.*$/, '');
+    fetched.push(rel);
+    const found = resolveDataFile(path.join(DATA, rel));
+    return found ? new Response(fs.readFileSync(found.path)) : new Response('<!doctype html>', { status: 200 });
+  };
+  try {
+    const provider = createStaticProvider();
+    const cat = await provider.catalogue();
+    const list = await provider.cities(cat);
+    const someone = list.find((c) => c.layers?.length);
+    const atlas = someone ? await provider.city(someone.id, cat) : null;
+    const grid = someone ? await provider.cityGrid(someone.id, cat) : null;
+    const missing = await provider.city('no-such-city', cat);
+    check(
+      'The site reads the city list and one city\'s entry, and nothing else per city',
+      list.length === listCities().length &&
+        atlas?.grid &&
+        grid?.cells?.length > 0 &&
+        missing === null &&
+        fetched.filter((rel) => rel.endsWith('entry.json.gz')).length === 2,
+      `${list.length} listed · ${someone?.id ?? '-'}: ${grid?.cells?.length ?? 0} cells · fetched ${fetched.join(', ')}`,
+    );
+  } finally {
+    globalThis.fetch = realFetch;
+    clearDatasetCache();
+  }
+}
 
 // ── The provider ─────────────────────────────────────────────────────
 // The catalogue is fetched once and shared by every consumer on the page, and
@@ -411,7 +508,13 @@ console.log(`      ${totalCells.toLocaleString('en-GB')} grid cells across ${mes
     if (extent === 'fua' && city.core !== core) bad.push(`${city.id}: core ${city.core}, its id says ${core}`);
     if (city.variant != null) bad.push(`${city.id}: still carries the retired variant flag`);
   }
+  // The index states the Atlas's totals; counted again from every city, they
+  // must be the same.
   const metrics = Object.fromEntries(atlasMetrics(normaliseCatalogue(catalogue)).map((m) => [m.key, m.value]));
+  const counted = Object.fromEntries(
+    atlasMetrics({ ...normaliseCatalogue(catalogue), totals: null }).map((m) => [m.key, m.value]),
+  );
+  if (JSON.stringify(metrics) !== JSON.stringify(counted)) bad.push(`totals ${JSON.stringify(metrics)}, counted ${JSON.stringify(counted)}`);
   check('The catalogue\'s own counts match the files', bad.length === 0, bad.slice(0, 3).join(' | ') || JSON.stringify(metrics));
 }
 
@@ -551,6 +654,20 @@ if (catalogue.stats) {
   const walk = column('fifteen.proximity_time.foot');
   for (const [id, marker] of markers('fifteen')) {
     if (walk.get(id) && !near(walk.get(id).q[2], marker.proximityMinutes, 0.1)) disagree.push(`${id} walk ${walk.get(id).q[2]} vs marker ${marker.proximityMinutes}`);
+  }
+  // Every median in a compare row is the median resident's too.
+  const proximity = column('pov.proximity');
+  const opportunity = column('pov.opportunity');
+  for (const [id, row] of summaries.pov ?? []) {
+    if (proximity.get(id) && !near(proximity.get(id).q[2], row.medianProximity, 0.11)) disagree.push(`${id} median proximity ${row.medianProximity} vs ${proximity.get(id).q[2]} (npm run import -- --refresh-figures)`);
+    if (opportunity.get(id) && !near(opportunity.get(id).q[2], row.medianOpportunity, 0.11)) disagree.push(`${id} median opportunity ${row.medianOpportunity} vs ${opportunity.get(id).q[2]}`);
+  }
+  for (const [id, row] of summaries.cardep ?? []) {
+    if (cdi.get(id) && !near(cdi.get(id).q[2], row.medianCdi, 0.0011)) disagree.push(`${id} median CDI ${row.medianCdi} vs ${cdi.get(id).q[2]} (npm run import -- --refresh-figures)`);
+  }
+  // Every marker is the median resident's figure: Car Dependency's too.
+  for (const [id, marker] of markers('cardep')) {
+    if (cdi.get(id) && !near(cdi.get(id).q[2], marker.cdi, 0.0011)) disagree.push(`${id} CDI marker ${marker.cdi} vs median ${cdi.get(id).q[2]} (npm run import -- --refresh-figures)`);
   }
   const velocity = column('citychrone.velocity.08');
   for (const [id, marker] of markers('citychrone')) {

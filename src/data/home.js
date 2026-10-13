@@ -19,6 +19,18 @@ import { BRAND } from './brand.js';
  * editorial.
  */
 export function atlasMetrics(catalogue) {
+  // A version 3 catalogue states its totals (counted by buildIndex the same
+  // way as below), because it no longer carries the cities to count.
+  if (catalogue?.totals) {
+    const { cities, countries, cells } = catalogue.totals;
+    return [
+      { key: 'cities', value: cities },
+      { key: 'platforms', value: 4 },
+      { key: 'countries', value: countries },
+      { key: 'cells', value: cells },
+      { key: 'researchers', value: 7 },
+    ];
+  }
   const all = catalogue?.atlas?.cities ?? [];
   const ids = new Set(all.map((city) => city.id));
   const cities = all.filter((city) => city.extent !== 'fua' || !ids.has(city.core));
@@ -38,62 +50,33 @@ export const NEWS = [
   { key: 'cdi', kind: 'release', color: BRAND.magenta, count: 22 },
 ];
 
-// "By the numbers" — six cities from the published P.O.V. datasets.
-//
-// proximity/opportunity: median score per cell — weighted counts of reachable
-// points of interest, not minutes or jobs. inclusion: share of cells above
-// both population-weighted medians, in %.
-export const CITY_TABLE = [
-  {
-    id: 'paris',
-    name: 'Paris',
-    nameIt: 'Parigi',
-    proximity: 16899.8,
-    opportunity: 48266.8,
-    inclusion: 36.9,
-  },
-  {
-    id: 'barcelona',
-    name: 'Barcelona',
-    nameIt: 'Barcellona',
-    proximity: 7649.9,
-    opportunity: 16876.5,
-    inclusion: 31.5,
-  },
-  {
-    id: 'berlin',
-    name: 'Berlin',
-    nameIt: 'Berlino',
-    proximity: 4627.9,
-    opportunity: 25813.4,
-    inclusion: 30.1,
-  },
-  {
-    id: 'vienna',
-    name: 'Vienna',
-    nameIt: 'Vienna',
-    proximity: 4941.2,
-    opportunity: 21104.6,
-    inclusion: 25.8,
-  },
-  {
-    id: 'new-york',
-    name: 'New York',
-    nameIt: 'New York',
-    proximity: 5714.8,
-    opportunity: 24840.2,
-    inclusion: 22.9,
-  },
-  { id: 'rome', name: 'Rome', nameIt: 'Roma', proximity: 643.6, opportunity: 2656.6, inclusion: 12.9 },
-];
+// "Compare cities" on the home page: six cities, picked editorially, on
+// three P.O.V. figures read from its published compare rows (never written
+// here): the median resident's proximity and opportunity scores (weighted
+// counts of reachable points of interest, not minutes or jobs), and the
+// share of residents in the inclusion zone. A city with no P.O.V. row is
+// left out rather than shown with a number nobody computed.
+export const CITY_TABLE = ['paris', 'barcelona', 'berlin', 'vienna', 'new-york', 'rome'];
 
-// Bar scaling for the table meters. Denominators are just above the maximum in
-// the table so the widest bar nearly fills its track.
-export const TABLE_SCALE = {
-  proximity: (v) => Math.min((v / 17500) * 100, 100),
-  opportunity: (v) => Math.min((v / 50000) * 100, 100),
-  inclusion: (v) => Math.min(v * 2.4, 100),
-};
+/**
+ * The table's rows from P.O.V.'s compare rows (`usePlatformSummary('pov')`),
+ * in CITY_TABLE's order, and each meter's full width: just above the
+ * largest value shown, so the widest bar nearly fills its track.
+ */
+export function cityTableRows(summaryRows) {
+  const byId = new Map((summaryRows ?? []).map((row) => [row.id, row]));
+  const rows = CITY_TABLE.map((id) => byId.get(id))
+    .filter(Boolean)
+    .map((row) => ({
+      id: row.id,
+      profile: row.profile,
+      proximity: row.medianProximity,
+      opportunity: row.medianOpportunity,
+      inclusion: row.zonePopulationShares?.[0] ?? null,
+    }));
+  const top = (key) => Math.max(1e-9, ...rows.map((row) => row[key] ?? 0)) * 1.03;
+  return { rows, scale: { proximity: top('proximity'), opportunity: top('opportunity'), inclusion: top('inclusion') } };
+}
 
 // Work in progress — the lines of research running alongside the four
 // published layers. A `url` marks one that has something to open: a live map,

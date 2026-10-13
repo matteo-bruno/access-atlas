@@ -14,7 +14,7 @@ import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
-import { citychroneHourFromLayer, scenarioKey } from '../data/grid.js';
+import { citychroneHourFromLayer, layerPopulationKey, scenarioKey } from '../data/grid.js';
 import { layerScenarios } from '../data/catalogue.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
@@ -96,6 +96,9 @@ function AtlasScreen({ cityId, view }) {
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
   const [geometry, setGeometry] = useState('geographic');
+  // Whether the city map has drawn its mesh yet: until it has, the loading
+  // note stays over the paper rather than leaving an empty box.
+  const [mapPainted, setMapPainted] = useState(false);
   const [selectedCell, setSelectedCell] = useState(null);
   const [aboutOpen, setAboutOpen] = useState(false);
   // The map is the page; everything else can step out of its way.
@@ -426,7 +429,7 @@ function AtlasScreen({ cityId, view }) {
   const fifteenMedian = useMemo(
     () =>
       layer === 'fifteen' && baseGeojson
-        ? summariseMeasure(baseGeojson, fifteenKey, RAMPS.fifteen.ticks).median
+        ? summariseMeasure(baseGeojson, fifteenKey, RAMPS.fifteen.ticks, layerPopulationKey('fifteen')).median
         : null,
     [layer, baseGeojson, fifteenKey],
   );
@@ -436,8 +439,12 @@ function AtlasScreen({ cityId, view }) {
   const scenarioFigures = useMemo(() => {
     if (!shownId || !baseGeojson) return null;
     const key = (name) => scenarioKey(shownId, name);
-    if (layer === 'cardep') return { weightedCdi: weightedMean(baseGeojson, key('cdi')) };
-    if (layer === 'fifteen') return { median: summariseMeasure(baseGeojson, key(fifteenKey), RAMPS.fifteen.ticks).median };
+    // Weighted by the scenario's own residents, as the baseline is by the
+    // layer's (layerPopulationKey in grid.js).
+    if (layer === 'cardep') return { weightedCdi: weightedMean(baseGeojson, key('cdi'), 3, layerPopulationKey('cardep', shownId)) };
+    if (layer === 'fifteen') {
+      return { median: summariseMeasure(baseGeojson, key(fifteenKey), RAMPS.fifteen.ticks, layerPopulationKey('fifteen', shownId)).median };
+    }
     if (layer === 'pov') return { zoneShares: zoneSharesOf(baseGeojson, key('zone')) };
     return null;
   }, [shownId, baseGeojson, layer, fifteenKey]);
@@ -735,7 +742,9 @@ function AtlasScreen({ cityId, view }) {
     : layer === 'pov'
       ? t('city.zoneType')
       : layer === 'cardep'
-        ? t('platform.cardep.legendUnit')
+        ? // The index itself, per cell: the world map's legend title says
+          // "median resident", which is a city's figure, not a cell's.
+          platform.name
         : layer === 'fifteen'
           ? t('fifteen.legendValue')
           : t(`atlas.legend.${ccView}`);
@@ -1098,6 +1107,7 @@ function AtlasScreen({ cityId, view }) {
                 // Full-bleed: it takes over from the site's backdrop, which
                 // holds the frame until this map has painted (map/backdrop.js).
                 coversBackdrop
+                onPainted={setMapPainted}
                 label={`${cityName} — ${platform.name}`}
               >
                 <GeoJSONLayer
@@ -1157,9 +1167,9 @@ function AtlasScreen({ cityId, view }) {
 
             {/* The grid is drawn; a layer, or a scenario of it, is still on
                 its way. Said over the map rather than left as a pale city. */}
-            {meshReady && geojson && (gridLoading || waiting || scenarioStatus === 'pending') && (
+            {meshReady && geojson && (!mapPainted || gridLoading || waiting || scenarioStatus === 'pending') && (
               <div className="aa-atlas__prompt aa-atlas__prompt--loading" role="status">
-                {gridLoading
+                {gridLoading || !mapPainted
                   ? t('city.computing')
                   : t('atlas.loading.layer', {
                       name: scenario && !waiting ? (lang === 'it' ? scenario.nameIt ?? scenario.name : scenario.name) : platform.name,

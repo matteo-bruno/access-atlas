@@ -35,15 +35,27 @@ export function createDataStore(dataDir) {
   const cities = new Map(); // id → loaded city, most recent last
   const MAX_CITIES = 4;
 
+  let cityList = null;
+  const entries = new Map(); // id → atlas entry, read on first ask
+
   const getCatalogue = () => {
     catalogue ??= read('index.json');
     return catalogue;
   };
 
+  // Every published city, as the city list names it (catalogue version 3;
+  // the atlas entries of an older catalogue). Who and where, not how to draw.
+  const getCities = () => {
+    if (!cityList) {
+      const cat = getCatalogue();
+      cityList = typeof cat.cities === 'string' ? (read(cat.cities).cities ?? []) : (cat.atlas?.cities ?? []);
+    }
+    return cityList;
+  };
+
   const atlasEntry = (cityId) => {
     const key = String(cityId ?? '').trim().toLowerCase();
-    const list = getCatalogue().atlas?.cities ?? [];
-    const found = list.find(
+    const found = getCities().find(
       (c) => c.id === key || c.name?.toLowerCase() === key || c.nameIt?.toLowerCase() === key,
     );
     if (!found) {
@@ -51,7 +63,11 @@ export function createDataStore(dataDir) {
         `Unknown city "${cityId}". Call list_cities for the published ids.`,
       );
     }
-    return found;
+    // A version 3 catalogue keeps each city's full entry in its own file.
+    const template = getCatalogue().entry;
+    if (typeof template !== 'string') return found;
+    if (!entries.has(found.id)) entries.set(found.id, read(template.replace('{id}', found.id)).atlas);
+    return entries.get(found.id);
   };
 
   /** Grid, every layer file and the merged mesh for one city, cached. */
@@ -84,18 +100,17 @@ export function createDataStore(dataDir) {
     return rel ? read(rel).cities ?? [] : null;
   };
 
-  return { getCatalogue, atlasEntry, loadCity, summaryRows };
+  return { getCatalogue, getCities, atlasEntry, loadCity, summaryRows };
 }
 
 // ── Helpers over one layer file ─────────────────────────────────────────
 
-/** Median of plain values (the upper middle, as the viewer's summaries take it). */
-function median(values) {
-  const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
-  return sorted.length ? sorted[sorted.length >> 1] : null;
-}
-
-/** The value at which half the weight lies on each side. */
+/**
+ * The value at which half the weight lies on each side. Every median a tool
+ * returns is the median resident's, weighted by the layer's own residents,
+ * as the map, the compare view and the statistics quote it: a median over
+ * cells would let thinly settled outer cells outvote where people live.
+ */
 function weightedMedian(values, weights) {
   const pairs = [];
   for (let i = 0; i < values.length; i++) {
@@ -260,8 +275,8 @@ function layerFigures(city, layer) {
     });
     return {
       ...base,
-      medianProximity: r1(median(file.fields.proximity)),
-      medianOpportunity: r1(median(file.fields.opportunity)),
+      medianProximity: r1(weightedMedian(file.fields.proximity, pop)),
+      medianOpportunity: r1(weightedMedian(file.fields.opportunity, pop)),
       zoneThresholds: file.meta?.thresholds ?? null,
       zoneSharesOfCells: zoneShares,
       zoneSharesOfResidents: zonePopulationShares,
@@ -283,7 +298,6 @@ function layerFigures(city, layer) {
     for (const mode of FIFTEEN_MODE_KEYS) {
       const values = fifteenColumn(file, 'proximity_time', mode);
       out[`average_${mode}`] = {
-        medianMinutesPerCell: r1(median(values)),
         medianMinutesPerResident: r1(weightedMedian(values, pop)),
         within15Minutes: shares(values, pop, (v) => v <= 15),
       };
@@ -295,7 +309,6 @@ function layerFigures(city, layer) {
     return {
       ...base,
       hour: `${pad(h)}:00`,
-      medianVelocityPerCell: r2(median(file.hourly.v[h])),
       medianVelocityPerResident: r2(weightedMedian(file.hourly.v[h], pop)),
       medianSocialityPerResident: Math.round(weightedMedian(file.hourly.s[h], pop) ?? 0) || null,
     };
@@ -397,9 +410,8 @@ const boundaryOf = (city) =>
 
 export function createTools(store) {
   const list_cities = () => {
-    const cat = store.getCatalogue();
     return {
-      cities: (cat.atlas?.cities ?? []).map((c) => ({
+      cities: store.getCities().map((c) => ({
         id: c.id,
         name: c.name,
         nameIt: c.nameIt,
@@ -578,7 +590,7 @@ export function createTools(store) {
   const compare_cities = ({ platform }) => {
     const rows = store.summaryRows(platform);
     if (!rows) throw new ToolInputError(`${platform} publishes no comparison summary.`);
-    const names = new Map((store.getCatalogue().atlas?.cities ?? []).map((c) => [c.id, c.name]));
+    const names = new Map(store.getCities().map((c) => [c.id, c.name]));
     return {
       platform,
       cities: rows.map(({ cdf, ...row }) => {
@@ -594,8 +606,8 @@ export function createTools(store) {
         return out;
       }),
       note: platform === 'pov'
-        ? 'zoneShares are shares of cells, zonePopulationShares shares of residents. Zones compare places within a city only.'
-        : 'ptShare / carShare are shares of cells with CDI below -0.05 / above +0.05. weightedCdi is the CDI for the average resident.',
+        ? 'zoneShares are shares of cells, zonePopulationShares shares of residents. medianProximity / medianOpportunity are the median resident\'s. Zones compare places within a city only.'
+        : 'ptShare / carShare are shares of cells with CDI below -0.05 / above +0.05. medianCdi is the CDI of the median resident, weightedCdi the CDI for the average resident.',
     };
   };
 

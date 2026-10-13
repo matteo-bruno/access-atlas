@@ -58,6 +58,7 @@ import { fileURLToPath } from 'node:url';
 import { cellToBoundary, cellToLatLng, getResolution, latLngToCell } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile, storedVersion, writeDataFile } from './datafile.mjs';
 import { countryAt } from './country.mjs';
+import { expandCatalogue } from '../../src/data/catalogue.js';
 import { STATS_PATH, assembleStats } from './stats.mjs';
 import { recordHiddenReason } from './quality.mjs';
 
@@ -846,6 +847,14 @@ export function cityEntries(cityId, { grid, encoded, meta, scenarios = new Map()
 // ── the catalogue, coverage and compare rows: derived, never patched ──
 
 const CATALOGUE = 'index.json';
+// The catalogue is an index (version 3): what every page needs, and nothing
+// per city. The list of cities is a file of its own, read by the search and
+// whatever has to know every city by name; each city's full entry sits in
+// its own directory, read by its city view alone. With an entry per city in
+// the catalogue, 11,327 cities made it 8.6 MB that every page waited on.
+export const CITY_LIST_PATH = 'cities.json.gz';
+export const CITY_ENTRY_TEMPLATE = 'cities/{id}/entry.json.gz';
+export const cityEntryPath = (id) => CITY_ENTRY_TEMPLATE.replace('{id}', id);
 const SUMMARY_LAYERS = new Set(['pov', 'cardep']);
 export const coveragePath = (layer) => `${layer}/coverage.geojson.gz`;
 export const summaryPath = (layer) => (SUMMARY_LAYERS.has(layer) ? `${layer}/summary.json.gz` : null);
@@ -872,7 +881,51 @@ export function cataloguePaths(catalogue) {
     }
   }
   if (catalogue.stats) paths.add(catalogue.stats);
+  if (typeof catalogue.cities === 'string') paths.add(catalogue.cities);
   return [...paths].sort();
+}
+
+/**
+ * The whole catalogue, as one object: the index, with every platform's rows
+ * and every city's atlas entry gathered back from the city list and the
+ * cities' entry files. For the Node side (test:data, CityChat, the scripts),
+ * which reads every city anyway; the site never assembles it.
+ */
+export function readCatalogue() {
+  return expandCatalogue(readDataJSON(abs(CATALOGUE)), (rel) => readDataJSON(abs(rel)));
+}
+
+/** A city as the city list carries it: who and where, not how to draw it. */
+function cityListRow(atlas) {
+  const { extent, core } = extentOf(atlas.id);
+  const row = { id: atlas.id, name: atlas.name };
+  for (const key of ['nameIt', 'region', 'regionIt', 'country']) if (atlas[key] != null) row[key] = atlas[key];
+  row.center = atlas.center;
+  if (atlas.population != null) row.population = atlas.population;
+  row.layers = atlas.layers ?? [];
+  if (extent === 'fua') Object.assign(row, { extent, core });
+  return row;
+}
+
+/**
+ * The Atlas's totals, for the figures counted from the catalogue
+ * (`atlasMetrics`): places, where a metro area whose core is published is the
+ * same place on a wider boundary; their countries; and every published
+ * layer's cells, metro areas included.
+ */
+function catalogueTotals(records) {
+  const ids = new Set(records.map((r) => r.id));
+  const places = records.filter((r) => {
+    const { extent, core } = extentOf(r.id);
+    return extent !== 'fua' || !ids.has(core);
+  });
+  let cells = 0;
+  for (const r of records) for (const l of LAYER_ORDER) cells += r.platforms?.[l]?.row?.cells ?? 0;
+  return {
+    cities: places.length,
+    countries: new Set(places.map((r) => r.atlas?.country).filter(Boolean)).size,
+    cells,
+  };
 }
 
 /**
@@ -920,7 +973,7 @@ export function buildIndex({ dryRun = false } = {}) {
     platforms[layer] = {
       coverage,
       ...(summary ? { summary } : {}),
-      cities: carrying.map((r) => r.platforms[layer].row),
+      count: carrying.length,
     };
 
     // One dot per place: a metro area whose core publishes the same layer is
@@ -954,25 +1007,65 @@ export function buildIndex({ dryRun = false } = {}) {
     files.push({ rel: STATS_PATH, changed: true, removed: true });
   }
 
-  const catalogue = {
-    version: 2,
-    platforms,
-    atlas: { cities: records.map((r) => r.atlas) },
-    ...(stats ? { stats: STATS_PATH } : {}),
-  };
   const missing = [];
-  catalogue.files = {};
-  for (const rel of cataloguePaths(catalogue)) {
-    const version = fileVersion(rel);
-    if (version) catalogue.files[rel] = version;
-    else missing.push(rel);
-  }
   // In a dry run a file that would be written is not on disk yet; only a
   // real run can say a file is missing.
+  const versionsOf = (paths) => {
+    const versions = {};
+    for (const rel of paths) {
+      const version = fileVersion(rel);
+      if (version) versions[rel] = version;
+      else missing.push(rel);
+    }
+    return versions;
+  };
+
+  // Each city's entry: its atlas entry, one row per layer and the content
+  // hash of every file they name, plus which of its two boundaries are
+  // published, so the city view needs no other city's entry to offer the
+  // switch. Written only when it changed, like everything here.
+  const published = new Set(records.map((r) => r.id));
+  for (const r of records) {
+    const { extent, core } = extentOf(r.id);
+    const coreId = extent === 'fua' ? core : r.id;
+    const extents = {
+      core: published.has(coreId) ? coreId : null,
+      fua: published.has(`${coreId}-fua`) ? `${coreId}-fua` : null,
+    };
+    const rows = Object.fromEntries(LAYER_ORDER.filter((l) => r.platforms?.[l]).map((l) => [l, r.platforms[l].row]));
+    const entry = {
+      format: 'atlas-city-entry',
+      version: 1,
+      atlas: { ...r.atlas, extents },
+      platforms: rows,
+    };
+    entry.files = versionsOf(
+      cataloguePaths({
+        platforms: Object.fromEntries(Object.entries(rows).map(([l, row]) => [l, { cities: [row] }])),
+        atlas: { cities: [r.atlas] },
+      }),
+    );
+    files.push(putFile(cityEntryPath(r.id), JSON.stringify(entry), dryRun));
+  }
+
+  // The list of cities: what the search, the city pages' links and CityChat
+  // need to know every city by, and nothing they would only need to draw it.
+  const list = records.map((r) => cityListRow(r.atlas));
+  files.push(putFile(CITY_LIST_PATH, JSON.stringify({ format: 'atlas-cities', version: 1, cities: list }), dryRun));
+
+  const catalogue = {
+    version: 3,
+    platforms,
+    cities: CITY_LIST_PATH,
+    entry: CITY_ENTRY_TEMPLATE,
+    totals: catalogueTotals(records),
+    ...(stats ? { stats: STATS_PATH } : {}),
+  };
+  catalogue.files = versionsOf(cataloguePaths(catalogue));
   if (missing.length && !dryRun) {
     throw new Error(`the catalogue points at ${missing.length} file(s) that do not exist: ${missing.slice(0, 3).join(', ')}`);
   }
-  files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue, null, 2)}\n`, dryRun));
+  files.push(putFile(CATALOGUE, `${JSON.stringify(catalogue)}\n`, dryRun));
 
   return {
     cities: records.length,
@@ -1025,8 +1118,7 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
       counts[row.zone]++;
       popByZone[row.zone] += row.population;
     }
-    const sortedProx = rows.map((r) => r.proximity).sort((a, b) => a - b);
-    const sortedOpp = rows.map((r) => r.opportunity).sort((a, b) => a - b);
+    const residents = rows.map((r) => r.population);
     return {
       // City-level zone: the zone most residents live in — by cell count,
       // isolated cells (large, thinly populated) would win almost everywhere.
@@ -1039,8 +1131,9 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
         id,
         cells: rows.length,
         population,
-        medianProximity: r1(sortedProx[sortedProx.length >> 1]),
-        medianOpportunity: r1(sortedOpp[sortedOpp.length >> 1]),
+        // The median resident's, like every median the site states.
+        medianProximity: r1(weightedMedian(rows.map((r) => r.proximity), residents)),
+        medianOpportunity: r1(weightedMedian(rows.map((r) => r.opportunity), residents)),
         weightedProximity: population
           ? r1(rows.reduce((s, r) => s + r.proximity * r.population, 0) / population)
           : null,
@@ -1058,14 +1151,16 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
     const cdi = population
       ? r3(rows.reduce((s, r) => s + r.cdi * r.population, 0) / population)
       : r3(rows.reduce((s, r) => s + r.cdi, 0) / (rows.length || 1));
-    const sortedCdi = rows.map((r) => r.cdi).sort((a, b) => a - b);
+    const medianCdi = markerCdi(rows.map((r) => r.cdi), rows.map((r) => r.population));
     return {
-      marker: marker({ cdi, population }),
+      // The world map's figure is the median resident's, like every other
+      // layer's marker; the mean stays in the summary as `weightedCdi`.
+      marker: marker({ cdi: medianCdi, population }),
       summary: {
         id,
         cells: rows.length,
         population,
-        medianCdi: r3(sortedCdi[sortedCdi.length >> 1]),
+        medianCdi,
         weightedCdi: cdi,
         // ±0.05 around zero is what the upstream viewer calls balanced.
         ptShare: r1((rows.filter((r) => r.cdi < -0.05).length / rows.length) * 100),
@@ -1103,6 +1198,70 @@ export function describeLayer(layer, rows, { id, name, country, centre, threshol
 }
 
 export const COVERAGE_HOUR = 8;
+
+/** A city's Car Dependency marker: the population-weighted median CDI. */
+function markerCdi(cdi, population) {
+  return r3(weightedMedian(cdi, population));
+}
+
+/**
+ * Recompute the figures every published city's record holds for P.O.V. and
+ * Car Dependency (its world-map marker and its compare row) from the
+ * published layer files, where the way they are computed has changed since
+ * the city was imported: Car Dependency's marker went from the mean to the
+ * median resident, and every median in the compare rows from the median
+ * cell to the median resident. The layer files are untouched, and so is a
+ * record whose figures are already right. 15minCity's and CityChrone's
+ * markers were always the median resident's.
+ *
+ * @returns {string[]} the cities whose figures changed
+ */
+export function refreshFigures({ dryRun = false } = {}) {
+  const changed = [];
+  for (const cityId of listCities()) {
+    const record = readCityRecord(cityId);
+    let touched = false;
+    let grid = null;
+    for (const layer of ['pov', 'cardep']) {
+      const entry = record?.platforms?.[layer];
+      if (!entry?.marker) continue;
+      grid ??= readGrid(cityId);
+      const file = readLayerFile(layerPath(cityId, layer), grid, cityId);
+      const f = file.fields;
+      const rows = f.population.map((population, i) =>
+        layer === 'pov'
+          ? { population, zone: f.zone[i], proximity: f.proximity[i], opportunity: f.opportunity[i] }
+          : { population, cdi: f.cdi[i], car: f.o_score_car[i], pt: f.o_score_pt[i] },
+      );
+      const { properties, geometry } = entry.marker;
+      const described = describeLayer(layer, rows, {
+        id: properties.id,
+        name: properties.name,
+        country: properties.country,
+        centre: geometry.coordinates,
+        thresholds: entry.summary?.thresholds ?? file.meta?.thresholds,
+      });
+      // Only the figures whose method changed. Everything else stays as the
+      // import computed it: from the values before they were rounded for
+      // publishing, which the layer files no longer hold, so recomputing a
+      // population or a mean here would move it by a resident or a tenth.
+      const pick = (from, keys) => Object.fromEntries(keys.map((k) => [k, from[k]]));
+      const marker =
+        layer === 'cardep'
+          ? { ...entry.marker, properties: { ...properties, ...pick(described.marker.properties, ['cdi']) } }
+          : entry.marker;
+      const medians = layer === 'pov' ? ['medianProximity', 'medianOpportunity'] : ['medianCdi'];
+      const summary = entry.summary ? { ...entry.summary, ...pick(described.summary, medians) } : entry.summary;
+      if (JSON.stringify(marker) === JSON.stringify(entry.marker) && JSON.stringify(summary) === JSON.stringify(entry.summary)) continue;
+      record.platforms[layer] = { ...entry, marker, summary };
+      touched = true;
+    }
+    if (!touched) continue;
+    writeCityRecord(record, { dryRun, touched: true });
+    changed.push(cityId);
+  }
+  return changed;
+}
 
 /** Remove a published file (and its plain twin), for clearing out old layouts. */
 export function removeDataFile(rel) {

@@ -164,6 +164,8 @@ export default {
       legendUnit: 'Veröffentlichte Plattformen',
       legend: ['Eine', 'Zwei', 'Drei', 'Alle vier'],
       covered: '{count} von 4 Plattformen',
+      filter: 'Städte anzeigen mit',
+      filterOptions: ['Mindestens einer Ebene', 'Zwei oder mehr', 'Drei oder mehr', 'Allen vier Ebenen'],
     },
 
     fifteen: {
@@ -172,21 +174,24 @@ export default {
         'Reisezeit zu Fuß und mit dem Rad zu neun Kategorien alltäglicher Dienste (Gesundheit, Bildung, Einkauf, Essen, Kultur, Freiflächen, Bewegung, Dienstleistungen, Mobilität), berechnet für jede Zelle der Stadt und gelesen am Maßstab der 15 Minuten.',
       welcomeIntro:
         'Sehen Sie die Wegezeiten zu Einrichtungen des täglichen Bedarfs von jedem Ort jeder Stadt aus und vergleichen Sie sie mit dem 15-Minuten-Maßstab.',
-      legendUnit: 'Mittlere Zeit zu den Diensten',
+      legendUnit: 'Mediane Gehzeit zu den Diensten',
+      tooltip: '{name} · {time} zu Fuß zu den Diensten (Median der Bewohner)',
       legend: ['0–3 Min.', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Erreichbarkeit von Chancen',
       intro:
         'CityChrone ersetzt die metrische Entfernung durch die Reisezeit: Die Karte verformt sich so, dass zwei Orte nah beieinander liegen, wenn der öffentliche Verkehr sie schnell verbindet, wie weit sie im Gelände auch auseinander liegen.',
-      legendUnit: 'Geschwindigkeitswert',
+      legendUnit: 'Geschwindigkeit des ÖPNV (km/h)',
+      tooltip: '{name} · {value} km/h mit dem ÖPNV (Median der Bewohner)',
       legend: ['Langsam', 'Mittel', 'Schnell'],
     },
     cardep: {
       label: 'Auto oder öffentlicher Verkehr',
       intro:
         'Der Car Dependency Index vergleicht die Chancen, die mit dem Auto erreichbar sind, mit denen, die im gleichen Zeitbudget mit dem öffentlichen Verkehr erreichbar sind: CDI = (O_Auto − O_ÖV) / (O_Auto + O_ÖV). Er reicht von −1, wo der öffentliche Verkehr mehr erreicht, über 0, wo beide ausgeglichen sind, bis +1, wo das Auto alles und der öffentliche Verkehr fast nichts erreicht.',
-      legendUnit: 'Car Dependency Index',
+      legendUnit: 'Car Dependency Index (Median der Bewohner)',
+      tooltip: '{name} · CDI {value} (Median der Bewohner)',
       legend: ['ÖV-begünstigt', 'Ausgeglichen', 'Autoabhängig', 'Stark autoabhängig'],
     },
     pov: {
@@ -212,7 +217,7 @@ export default {
     },
     modes: { foot: 'Zu Fuß', bike: 'Mit dem Rad' },
     hint: 'Mittlere Reisezeit von jeder Zelle zu den nächstgelegenen Diensten dieser Kategorie.',
-    summary: { median: 'Mediane Reisezeit' },
+    summary: { median: 'Reisezeit, Median der Bewohner' },
     categories: {
       average: 'Mittel über alle Dienste',
       outdoor: 'Aktivitäten im Freien',
@@ -375,9 +380,9 @@ export default {
         fifteen: 'Die Zellen sind danach gefärbt, wie lange es dauert, die gewählte Kategorie mit dem gewählten Verkehrsmittel zu erreichen. Weiß liegt bei 15 Minuten, dem Maßstab, der der Plattform ihren Namen gibt, und die Skala wird über 30 hinaus weiter dunkler bis Schwarz bei 120. Die Legende benennt diesen Ausläufer, statt sich bis dorthin zu strecken, was den Bereich stauchen würde, in dem fast jede Zelle liegt. Eine einzige Skala gilt für alle neun Kategorien und beide Verkehrsmittel: Eine Farbe bedeutet dasselbe, was auch gewählt ist.',
       },
       summary: {
-        pov: '„Zellen“ zählt die vom veröffentlichten Datensatz abgedeckten. Jeder Median ist der Wert der mittleren Zelle: gewichtete Zählungen erreichbarer Orte von Interesse, weshalb keiner eine Einheit trägt. Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl der Stadt.',
-        cardep: 'Der mediane CDI ist der Index der mittleren Zelle. Der CDI der durchschnittlichen Einwohnerschaft gewichtet jede Zelle nach den Menschen, die dort leben, und ist die Zahl, nach der die Plattform die Städte ordnet: Die Hälfte der Zellen einer Stadt kann autoabhängig sein, während die meisten Einwohner in der anderen Hälfte leben.',
-        fifteen: 'Der Median ist die Zeit der mittleren Zelle für die angezeigte Kategorie und das angezeigte Verkehrsmittel. Er beschreibt Zellen, nicht Menschen: Jede Zelle zählt einmal, gleich wie viele dort wohnen. Die Bevölkerung ist die Summe des Datensatzes.',
+        pov: 'Zellen zählt, was der veröffentlichte Datensatz abdeckt. Jeder Median ist der Wert des Median-Bewohners: Die Hälfte der Einwohner lebt in Zellen mit niedrigerem Wert, die andere Hälfte mit höherem. Die Werte sind gewichtete Zählungen erreichbarer Points of Interest, daher hat keiner eine Einheit: Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl für die Stadt.',
+        cardep: 'Der Median-CDI ist der Index des Median-Bewohners: Die Hälfte der Einwohner lebt in Zellen mit niedrigerem Index. Der CDI für den durchschnittlichen Bewohner gewichtet jede Zelle mit den Menschen, die dort leben, und ist die Zahl, nach der die Plattform Städte reiht. Beide zählen Bewohner, nicht Zellen: Die Hälfte der Zellen einer Stadt kann autoabhängig sein, während die meisten Bewohner in der anderen Hälfte leben.',
+        fifteen: 'Der Median ist die Zeit des Median-Bewohners für die angezeigte Kategorie und Fortbewegungsart: Die Hälfte der Bewohner lebt in Zellen, die schneller erreicht werden, die andere Hälfte langsamer. Jede Zelle zählt so oft, wie Menschen in ihr leben, sodass dünn besiedelte Randzellen nicht die Orte überstimmen, an denen die meisten Menschen leben. Die Bevölkerung ist die Summe des Datensatzes.',
         atlas: 'Die Werte werden für die angezeigte Ebene neu berechnet. „Zellen“ ist das Vereinigungsnetz, also jede Zelle, die mindestens eine Plattform misst: Eine Ebene, die weniger abdeckt, weist das in ihrer eigenen Zeile aus.',
       },
       more: 'Ausführliche Erklärung',
@@ -448,7 +453,7 @@ export default {
       name: 'Name',
       population: 'Bevölkerung',
       weightedCdi: 'Index der durchschnittlichen Einwohnerschaft',
-      medianCdi: 'Medianer Index',
+      medianCdi: 'Index des Median-Bewohners',
       ptShare: 'ÖV-begünstigte Zellen',
       inclusion: 'Inklusion',
       proximity: 'Mediane Nähe',
@@ -476,7 +481,7 @@ export default {
       city: 'Stadt',
       cells: 'Zellen',
       population: 'Bevölkerung',
-      medianCdi: 'Median',
+      medianCdi: 'Median-Bewohner',
       weightedCdi: 'Ø Einwohner',
       ptCells: 'ÖV-Zellen',
       carCells: 'Auto-Zellen',
