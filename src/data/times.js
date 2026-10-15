@@ -20,7 +20,8 @@
 //
 // What is left out is what nobody sees. Rows and columns are the layer's
 // rows where someone lives (the viewer never draws an empty cell, so it is
-// neither clicked nor coloured), and every time over `max` minutes is stored
+// neither clicked nor coloured; a layer that states no resident in any cell
+// keeps them all, since there is nothing to cut on), and every time over `max` minutes is stored
 // as `over`: one class on the map, "over 120", and a long run of one byte
 // value that compresses to nothing. Rome's 24 hours went from 252 MB as
 // whole gzipped matrices to 104 MB, and a click reads at most 56 kB.

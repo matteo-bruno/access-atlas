@@ -39,6 +39,7 @@
 // city's record. `npm run update:data` runs this for whatever changed in
 // input_data/.
 
+import fs from 'node:fs';
 import path from 'node:path';
 import { buildIndex, publishLayer, publishScenario, refreshFigures, unpublishLayer, unpublishScenario } from './lib/bundle.mjs';
 import { parseSourceName, slugify } from './lib/slug.mjs';
@@ -68,6 +69,20 @@ for (let i = 2; i < process.argv.length; i++) {
 }
 
 const dryRun = flag('dry-run');
+
+/**
+ * Print what an import went ahead despite, where it cannot be missed: on
+ * stderr, marked, and, under update-data, also appended to the file it
+ * names in ATLAS_IMPORT_WARNINGS, which it repeats once every import is done.
+ */
+function warn(label, warnings = []) {
+  for (const text of warnings) {
+    console.warn(`  ! WARNING ${text}`);
+    if (process.env.ATLAS_IMPORT_WARNINGS) {
+      fs.appendFileSync(process.env.ATLAS_IMPORT_WARNINGS, `${label}: ${text}\n`);
+    }
+  }
+}
 const kb = (n) => `${(n / 1024).toFixed(0)} kB`;
 
 function reindex() {
@@ -152,6 +167,7 @@ if (scenarioId) {
   try {
     const started = Date.now();
     const parsed = await importer.parse(source);
+    warn(`${cityId} · scenario ${scenarioId} · ${importer.layer}`, parsed.warnings);
     const report = publishScenario({
       cityId,
       scenarioId,
@@ -181,6 +197,7 @@ try {
   const started = Date.now();
   const parsed = await importer.parse(source);
   for (const note of parsed.notes ?? []) console.log(`  ${note}`);
+  warn(`${cityId} · ${importer.layer}`, parsed.warnings);
   const report = await publishLayer({
     cityId,
     record: parsed.record,

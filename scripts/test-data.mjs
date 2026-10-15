@@ -116,11 +116,14 @@ function timesProblem(file, layerFile) {
     if (prelude.cells !== layerFile.cells) return `${prelude.cells} cells, the layer has ${layerFile.cells}`;
     if (prelude.size !== size) return `blocks end at ${prelude.size} bytes, the file is ${size}: truncated`;
     const population = layerFile.fields.population;
-    for (let i = 0; i < prelude.cells; i++) {
+    // A layer with no resident anywhere keeps every row (lib/times.mjs).
+    const nobody = !population.some((p) => Number(p) > 0);
+    for (let i = 0; i < prelude.cells && !nobody; i++) {
       if ((prelude.rank[i] >= 0) !== Number(population[i]) > 0) {
         return `row ${i} is ${prelude.rank[i] >= 0 ? 'kept with no residents' : 'left out with residents'}`;
       }
     }
+    if (nobody && prelude.rows !== prelude.cells) return `the layer has no residents, and only ${prelude.rows} of ${prelude.cells} rows are kept`;
     for (const r of prelude.rows ? [0, prelude.rows - 1] : []) {
       const at = blockOf(prelude, prelude.kept[r]);
       const packed = Buffer.alloc(at.end - at.start);

@@ -120,7 +120,8 @@ export async function parse(source) {
     }
     return h3;
   });
-  const population = byId.map((f) => Math.round(Number(f.properties.pop) || 0));
+  const rawPopulation = byId.map((f) => Number(f.properties.pop));
+  const population = rawPopulation.map((p) => Math.round(p || 0));
 
   const v = [];
   const s = [];
@@ -151,6 +152,31 @@ export async function parse(source) {
   const notes = [`${n} cells × ${hours} hours, order stable across hours`];
   if (!withTimes) notes.push('no timesHH files: published without isochrones');
 
+  // Residents decide which travel times are kept and weight every figure
+  // about the city (its marker, its statistics). An export whose `pop` says
+  // nobody lives anywhere imports without error and shows nothing, so it is
+  // said loudly, with what it looks like.
+  const warnings = [];
+  const inhabited = population.filter((p) => p > 0).length;
+  const missing = rawPopulation.filter((p) => !Number.isFinite(p)).length;
+  const roundedAway = rawPopulation.filter((p, i) => p > 0 && population[i] === 0).length;
+  if (!inhabited) {
+    const max = Math.max(0, ...rawPopulation.filter(Number.isFinite));
+    warnings.push(
+      `hexcover \`pop\` gives no cell a resident (${missing ? `${missing} of ${n} cells have none` : `largest value ${max}`}). ` +
+        (withTimes ? 'Travel times are kept for every cell, ' : '') +
+        'and every figure weighted by residents (the world-map marker, the statistics) has nothing to weigh: ' +
+        'check the export\'s population field.',
+    );
+  } else if (roundedAway > n / 10) {
+    warnings.push(
+      `${roundedAway} of ${n} cells have a \`pop\` under 0.5, published as 0 residents` +
+        (withTimes ? ', and their travel times are left out' : '') +
+        ': check the export\'s population field is a headcount.',
+    );
+  }
+  if (withTimes) notes.push(`travel times kept for ${inhabited || n} of ${n} cells (${inhabited ? 'the inhabited ones' : 'all of them'})`);
+
   return {
     rows: population.map((p) => ({ population: p })),
     record: {
@@ -165,5 +191,6 @@ export async function parse(source) {
       times: withTimes ? times.map((file) => ({ label: file.path, open: file.open })) : [],
     },
     notes,
+    warnings,
   };
 }

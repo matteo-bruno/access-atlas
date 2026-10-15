@@ -213,6 +213,11 @@ Every hour must be there, with the same cells in the same order (`new_id`,
 All 24 hours of scores go into one layer file of a few hundred kB, so the
 hour selector is instant.
 
+`pop` is a headcount per cell. It decides which travel times are kept and
+weights the city's figures, so an export where it gives no cell a resident
+(missing, or under 0.5 everywhere) is imported with a warning, and its
+travel times are kept for every cell rather than for none.
+
 The matrices are optional. With no `timesHH` file at all the city is
 published with its scores and its isochrones read "not available"; with some
 hours and not others the import stops, because that is an export that went
@@ -232,8 +237,10 @@ outer one compressed it.
 
 The true hexagons, with `population`, `proximity`, `opportunity` and
 `cell_type`. The zone thresholds are recomputed as population-weighted
-medians, and the import stops if classifying any cell against them does not
-reproduce its `cell_type`.
+medians and every cell is classified against them. Where that does not
+reproduce the export's `cell_type`, the recomputed zone is published and the
+import warns (how many cells, what share of residents, a few examples);
+`update:data` repeats every warning at the end of the run.
 
 ### Car Dependency Index: `cdi/<City>.geojson`
 

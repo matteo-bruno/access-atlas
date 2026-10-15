@@ -436,7 +436,10 @@ nowhere on the legend. The isochrone ramp does the same past 120.
 - **P.O.V. zone thresholds are population-weighted medians**, not plain
   medians. Verified: classifying against them reproduces the upstream
   `cell_type` for all 47,902 published cells. The P.O.V. importer re-derives
-  every cell and throws if it disagrees.
+  every cell; where an export's label disagrees it publishes the recomputed
+  zone and says so with a warning (cells, share of residents, examples),
+  which `update:data` repeats once every import is done. It used to stop the
+  import, which left a city unpublishable for a labelling slip upstream.
 - **Zones compare places within a city, not between cities** — thresholds are
   city-specific. The underlying scores are what compare across cities.
 - **The cartograms are population-scaled.** Cells sit in true positions; their
@@ -1302,7 +1305,12 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 - **Travel times are optional.** An export with hexcovers and no
   `timesHH` file publishes the scores, the catalogue's `hourly` carries no
   `times`, and the Isochrones button is shown disabled with the reason.
-  Some hours and not others is refused. A re-import replaces or removes
+  Some hours and not others is refused. An export whose `pop` gives no
+  cell a resident (missing, or under 0.5 everywhere and rounded away) would
+  keep no origin at all, which is what a 3 kB `timesHH.bin` is: the importer
+  then keeps every cell and warns, loudly: the map draws a cell only where
+  some layer gives it residents, so with no other layer the city stays
+  blank until its population is fixed. A re-import replaces or removes
   what is published, in either format, and the matrices are written to
   `.partial` files before anything else of the city, so an export truncated
   in hour 13 changes nothing.

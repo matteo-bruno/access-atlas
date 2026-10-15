@@ -162,7 +162,8 @@ function sameFile(a, b) {
  * @param {() => Promise<import('node:stream').Readable>} input.open  the .npy, decoded
  * @param {string} input.label        for messages
  * @param {number[]} input.order      layer row → export row (the layer's H3 order)
- * @param {number[]} input.population per export row; a cell where nobody lives is left out
+ * @param {number[]} input.population per export row; a cell where nobody lives is left out,
+ *                                    unless nobody lives anywhere, and then none is
  * @param {string} input.target       absolute path of the published file
  * @param {string} [input.layout]     force a layout rather than measure (tests)
  * @param {number} [input.inMemory]   bytes held in memory before a scratch file (tests)
@@ -170,10 +171,14 @@ function sameFile(a, b) {
  */
 export async function writeTimesFile({ open, label, order, population, target, layout: forced, inMemory = IN_MEMORY }) {
   const n = order.length;
+  // A layer that states no resident anywhere (an export whose `pop` is
+  // missing, or under 0.5 everywhere and rounded away) leaves nothing to cut
+  // on, and cutting on it would keep no origin at all: every cell is kept.
+  const keepAll = !population.some((p) => Number(p) > 0);
   const keepMask = new Uint8Array(Math.ceil(n / 8));
   const keptExport = [];
   for (let r = 0; r < n; r++) {
-    if (Number(population[order[r]]) > 0) {
+    if (keepAll || Number(population[order[r]]) > 0) {
       keepMask[r >> 3] |= 1 << (r & 7);
       keptExport.push(order[r]);
     }
