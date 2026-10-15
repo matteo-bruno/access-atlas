@@ -280,7 +280,7 @@ export default {
     },
     beyond: {
       fifteen: 'さらに濃くなり、120分以上で黒',
-      isochrone: 'さらに濃くなり、公開データの上限である180分で黒',
+      isochrone: '120分を超えると一つの濃い色',
     },
     views: {
       velocity: '速度',
@@ -308,6 +308,8 @@ export default {
     osmUpdate: 'OpenStreetMap の最終更新：{date}',
     layerCells: '{name} が測定したセル',
     isochroneEmpty: 'セルをクリックすると、そこからの所要時間を表示します',
+    isochroneUnavailable: 'この都市の所要時間は公開されていないため、等時線は利用できません。',
+    isochroneNoOrigin: 'このセルには誰も住んでいないため、ここからの所要時間はありません。別のセルをクリックしてください。',
     unavailable: '未公開',
     noValue: 'このセルでは未測定',
     openPlatform: '{name} のページ',
@@ -407,7 +409,7 @@ export default {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
         cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
-        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are published as whole minutes capped at 180.',
+        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are whole minutes; anything over 120 is one class, and cells where nobody lives are left out.',
       },
       paperNote: '手法の詳細は論文に記載されています。',
     },

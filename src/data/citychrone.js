@@ -4,8 +4,8 @@
 // doi:10.1098/rsos.190979): the *velocity score*, how fast public transport
 // moves you outward from a cell (a km/h-like figure), and the *sociality
 // score*, a weighted count of the people reachable — a score, not a
-// headcount. The travel-time matrices behind the isochrone view are uint8
-// minutes, capped at 180 upstream.
+// headcount. The travel times behind the isochrone view are whole minutes;
+// the viewer shows everything over two hours as one class (src/data/times.js).
 //
 // Views the city layer offers. `state` names the feature-state key the paint
 // expression reads — hourly values are joined at runtime, never baked into

@@ -151,7 +151,7 @@ const scenarioId = arg('scenario') ? slugify(arg('scenario')) : named.scenario;
 if (scenarioId) {
   try {
     const started = Date.now();
-    const parsed = importer.parse(source);
+    const parsed = await importer.parse(source);
     const report = publishScenario({
       cityId,
       scenarioId,
@@ -179,12 +179,14 @@ if (scenarioId) {
 
 try {
   const started = Date.now();
-  const parsed = importer.parse(source);
-  const report = publishLayer({
+  const parsed = await importer.parse(source);
+  for (const note of parsed.notes ?? []) console.log(`  ${note}`);
+  const report = await publishLayer({
     cityId,
     record: parsed.record,
     rows: parsed.rows,
     dryRun,
+    log: (line) => console.log(line),
     overrides: {
       name: arg('name'),
       nameIt: arg('name-it'),
@@ -207,7 +209,6 @@ try {
         : '  ! no country near the city centre: pass --country / --region',
     );
   }
-  for (const note of parsed.notes ?? []) console.log(`  ${note}`);
   const changed = report.files.filter((f) => f?.changed);
   const stored = changed.reduce((s, f) => s + (f.stored ?? 0), 0);
   console.log(
@@ -215,7 +216,7 @@ try {
       (stored ? `, ${kb(stored)} on disk` : '') +
       ` · ${((Date.now() - started) / 1000).toFixed(1)} s`,
   );
-  for (const f of changed) console.log(`    ${f.rel}${f.stored ? `  ${kb(f.stored)}` : ''}`);
+  for (const f of changed) console.log(`    ${f.rel}${f.removed ? '  (removed)' : f.stored ? `  ${kb(f.stored)}` : ''}`);
   if (!flag('no-index')) reindex();
 } catch (error) {
   console.error(`${cityId} · ${importer.layer}: ${error.message}`);

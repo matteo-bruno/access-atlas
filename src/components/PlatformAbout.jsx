@@ -57,7 +57,7 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
           <RampLegend
             ramp={ramp}
             format={tickFormat}
-            tailLabel={ramp.beyond ? `${ramp.beyond.value}+` : undefined}
+            tailLabel={ramp.beyond ? `${ramp.beyond.label ?? ramp.beyond.value}+` : undefined}
           />
         )
       )}

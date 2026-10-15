@@ -16,7 +16,7 @@ of it.
 | `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
 | `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
 | `cities/<city>/scenarios/<id>/<layer>.json.gz` | A scenario of that layer (Rome's `metro-d`), on the same grid, in the same format. |
-| `cities/<city>/citychrone/timesHH.npy.gz` | CityChrone's travel-time matrix for each hour. |
+| `cities/<city>/citychrone/timesHH.bin` | CityChrone's travel times for each hour, read one block of origins at a time. Cities imported before this format have `timesHH.npy.gz`, the whole matrix. A city published without them has neither. |
 | `<platform>/coverage.geojson.gz` | One point per city, for the platform's world map and the search. |
 | `pov/summary.json.gz`, `cardep/summary.json.gz` | One row per city, for the compare view. |
 | `stats/stats.json.gz` | Every city on every measure, for the Stats page. Written by `npm run stats`, gathered by `buildIndex`. |
@@ -75,7 +75,7 @@ published. Only that city's page fetches it.
              "layerData": { "pov": "cities/zurich/pov.json.gz", "…": "…" },
              "cartogramSources": { "pov": "derived", "…": "…" },
              "hourly": { "hours": 24, "cells": 909,
-                         "times": "cities/zurich/citychrone/times{hh}.npy.gz" },
+                         "times": "cities/zurich/citychrone/times{hh}.bin" },
              "extents": { "core": "zurich", "fua": null } },
   "platforms": {
     "pov": { "id": "zurich", "…": "…", "layer": "cities/zurich/pov.json.gz",
@@ -186,11 +186,35 @@ CityChrone. `id` is a hash of the cells, in order.
   same size whichever layer draws it. P.O.V. and Car Dependency publish
   cartograms of their own; they are not imported.
 
-CityChrone's travel-time matrices are NumPy `uint8` minutes, `cells × cells`,
-capped at 180 upstream. Row and column *i* are the layer's row *i*, so they
-are stored in grid order, not the export's: neighbouring cells become
-neighbouring rows, and gzip finds them, 2 to 3.5 times smaller than in the
-export's order.
+CityChrone's travel times are one file per hour, `timesHH.bin`, in the
+Atlas's own format (described field by field at the top of
+`src/data/times.js`). The isochrone view draws one origin's row, so the file
+is built to be read that way:
+
+- a prelude: `AATIMES` and a version byte, a JSON header (`cells`, `rows`,
+  `block`, `blocks`, `layout`, `codec: "deflate-raw"`, `max: 120`,
+  `over: 255`), a bitmask of the layer rows it keeps, and the compressed
+  length of every block;
+- then the blocks: `block` (32) consecutive kept rows each, deflated on
+  their own, laid out row after row (`rows`) or interleaved (`columns`),
+  whichever the importer measured smaller for that city.
+
+The browser reads the first 64 kB (the prelude of any city short of
+~200,000 cells), then asks for the one block it needs with an HTTP Range
+request: at most 56 kB for Rome, against a whole hour's ~10 MB as a `.npy`.
+A host that ignores Range answers with the whole file, which still works.
+
+What is kept is what is drawn. Rows and columns are the layer's rows where
+somebody lives (its own `population` above 0; the viewer never draws an empty
+cell), in the layer's order, so a layer row number indexes the file as it
+indexes the scores. A time over 120 minutes is stored as `255`, one class,
+"over 120". Rome's 24 hours went from 252 MB to 104 MB.
+
+Cities imported before this format publish `timesHH.npy.gz`: NumPy `uint8`
+minutes, `cells × cells`, up to 180, rows and columns in the layer's order.
+The viewer still reads them, whole, and shows every time over 120 as the same
+"over 120" class, so a colour means the same in every city. Re-importing the
+export converts them.
 
 `v_score` is a km/h-like velocity score and `s_score` a sociality score (a
 weighted count of reachable people: a score, not a headcount), both defined

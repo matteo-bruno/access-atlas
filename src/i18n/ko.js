@@ -269,7 +269,7 @@ export default {
     },
     beyond: {
       fifteen: '120분 이상에서 검은색까지 짙어짐',
-      isochrone: '공개된 최댓값인 180분에서 검은색까지 짙어짐',
+      isochrone: '120분을 넘으면 하나의 더 짙은 색',
     },
     views: {
       velocity: '속도',
@@ -295,6 +295,8 @@ export default {
     osmUpdate: 'OpenStreetMap 마지막 업데이트: {date}',
     layerCells: '{name}이(가) 측정한 셀',
     isochroneEmpty: '셀을 클릭하면 그곳에서 출발하는 이동 시간을 보여 줍니다',
+    isochroneUnavailable: '이 도시는 이동 시간이 공개되지 않아 등시선을 사용할 수 없습니다.',
+    isochroneNoOrigin: '이 셀에는 아무도 살지 않아 이곳에서 출발하는 이동 시간이 없습니다. 다른 셀을 클릭하세요.',
     unavailable: '공개되지 않음',
     noValue: '이 셀은 측정되지 않음',
     openPlatform: '{name} 페이지',
@@ -390,7 +392,7 @@ export default {
         pov: '해상도 9의 H3 셀, 폭 약 200m. 도보 시간은 OpenStreetMap 위에서 OSRM으로 계산, 대중교통은 GTFS 시간표를 Connection Scan Algorithm으로 계산, 관심 지점은 OpenStreetMap, 인구는 유엔 추계에 맞춘 WorldPop 100m 격자.',
         cardep: '해상도 9의 H3 셀, 폭 약 200m. 자동차와 도보 시간은 OpenStreetMap 위에서 OSRM으로 계산하고, 자동차 쪽에는 주차 여유 시간과 도시별 교통 지연을 반영. 대중교통은 GTFS 시간표를 Connection Scan Algorithm으로 계산, 관심 지점은 OpenStreetMap, 인구는 WorldPop.',
         fifteen: '해상도 9의 H3 셀. 도보와 자전거 시간은 OpenStreetMap 위에서 OSRM으로 계산, 서비스는 OpenStreetMap에서 가져와 선택 메뉴의 아홉 가지 범주로 분류, 인구는 WorldPop.',
-        citychrone: '해상도 9의 H3 셀, 하루 중 매시간 한 번씩 내보냄. 대중교통은 GTFS 시간표 기반이며, 두 점수와 등시선은 플랫폼 논문에 정의되어 있음. 이동 시간은 정수 분 단위로 공개되며 최대 180분.',
+        citychrone: '해상도 9의 H3 셀, 하루 중 매시간 한 번씩 내보냄. 대중교통은 GTFS 시간표 기반이며, 두 점수와 등시선은 플랫폼 논문에 정의되어 있음. 이동 시간은 정수 분 단위이며, 120분을 넘는 시간은 하나의 등급으로 묶고 아무도 살지 않는 셀은 제외함.',
       },
       paperNote: '방법은 논문에 자세히 설명되어 있습니다.',
     },

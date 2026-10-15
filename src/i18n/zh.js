@@ -269,7 +269,7 @@ export default {
     },
     beyond: {
       fifteen: '120 分钟及以上逐渐加深至黑色',
-      isochrone: '在 180 分钟（公开数据的上限）处加深至黑色',
+      isochrone: '超过 120 分钟统一为一种更深的颜色',
     },
     views: {
       velocity: '速度',
@@ -295,6 +295,8 @@ export default {
     osmUpdate: 'OpenStreetMap 最近更新：{date}',
     layerCells: '{name} 测量的单元',
     isochroneEmpty: '点击一个单元，显示从该单元出发的出行时间',
+    isochroneUnavailable: '该城市未发布出行时间，因此等时线不可用。',
+    isochroneNoOrigin: '该单元无人居住，因此没有从这里出发的出行时间。请点击其他单元。',
     unavailable: '未发布',
     noValue: '该单元未测量',
     openPlatform: '{name} 页面',
@@ -390,7 +392,7 @@ export default {
         pov: '分辨率为 9 的 H3 单元，宽约 200 米。步行时间基于 OpenStreetMap，用 OSRM 计算；公共交通基于 GTFS 时刻表，用 Connection Scan Algorithm 计算；兴趣点来自 OpenStreetMap；人口来自 WorldPop 100 米网格，并按联合国估计值校正。',
         cardep: '分辨率为 9 的 H3 单元，宽约 200 米。驾车和步行时间基于 OpenStreetMap，用 OSRM 计算，汽车一侧计入停车时间和各城市特有的交通延误；公共交通基于 GTFS 时刻表，用 Connection Scan Algorithm 计算；兴趣点来自 OpenStreetMap；人口来自 WorldPop。',
         fifteen: '分辨率为 9 的 H3 单元。步行和骑行时间基于 OpenStreetMap，用 OSRM 计算；服务来自 OpenStreetMap，归入选择器中列出的九个类别；人口来自 WorldPop。',
-        citychrone: '分辨率为 9 的 H3 单元，一天中每小时导出一次。公共交通基于 GTFS 时刻表；两种得分和等时线均在该平台的论文中定义。出行时间以整分钟发布，上限为 180 分钟。',
+        citychrone: '分辨率为 9 的 H3 单元，一天中每小时导出一次。公共交通基于 GTFS 时刻表；两种得分和等时线均在该平台的论文中定义。出行时间以整分钟计；超过 120 分钟的归为一类，无人居住的单元不包括在内。',
       },
       paperNote: '方法的完整说明见论文。',
     },

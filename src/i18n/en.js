@@ -298,7 +298,7 @@ export default {
     },
     beyond: {
       fifteen: 'darkening to black at 120 min and beyond',
-      isochrone: 'darkening to black at 180 min, the published maximum',
+      isochrone: 'every time over 120 min in one darker colour',
     },
     views: {
       velocity: 'Velocity',
@@ -329,6 +329,8 @@ export default {
     osmUpdate: 'Last OpenStreetMap update: {date}',
     layerCells: 'Cells measured by {name}',
     isochroneEmpty: 'Click a cell to draw travel times from it',
+    isochroneUnavailable: 'Travel times are not published for this city, so its isochrones are not available.',
+    isochroneNoOrigin: 'Nobody lives in this cell, so no travel times start from it. Click another cell.',
     unavailable: 'Not published',
     noValue: 'Not measured for this cell',
     openPlatform: '{name} page',
@@ -440,7 +442,7 @@ export default {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
         cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
-        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are published as whole minutes capped at 180.',
+        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are whole minutes; anything over 120 is one class, and cells where nobody lives are left out.',
       },
       paperNote: 'The method is set out in full in the paper.',
     },

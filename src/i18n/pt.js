@@ -272,7 +272,7 @@ export default {
     },
     beyond: {
       fifteen: 'escurecendo até o preto a partir de 120 min',
-      isochrone: 'escurecendo até o preto em 180 min, o máximo publicado',
+      isochrone: 'acima de 120 min, uma única cor mais escura',
     },
     views: {
       velocity: 'Velocidade',
@@ -300,6 +300,8 @@ export default {
     osmUpdate: 'Última atualização do OpenStreetMap: {date}',
     layerCells: 'Células medidas pelo {name}',
     isochroneEmpty: 'Clique em uma célula para ver os tempos de viagem a partir dela',
+    isochroneUnavailable: 'Os tempos de viagem desta cidade não estão publicados, por isso suas isócronas não estão disponíveis.',
+    isochroneNoOrigin: 'Ninguém mora nesta célula, então não há tempos de viagem a partir dela. Clique em outra célula.',
     unavailable: 'Não publicado',
     noValue: 'Não medido nesta célula',
     openPlatform: 'Página do {name}',
@@ -398,7 +400,7 @@ export default {
         pov: 'Células H3 de resolução 9, com cerca de 200 m de largura. Tempos a pé com OSRM sobre o OpenStreetMap; transporte público a partir de horários GTFS com o Connection Scan Algorithm; pontos de interesse do OpenStreetMap; população das grades de 100 m do WorldPop, ajustadas às estimativas da ONU.',
         cardep: 'Células H3 de resolução 9, com cerca de 200 m de largura. Tempos de carro e a pé com OSRM sobre o OpenStreetMap, com uma margem para estacionar e atrasos de trânsito específicos de cada cidade no lado do carro; transporte público a partir de horários GTFS com o Connection Scan Algorithm; pontos de interesse do OpenStreetMap; população do WorldPop.',
         fifteen: 'Células H3 de resolução 9. Tempos a pé e de bicicleta com OSRM sobre o OpenStreetMap; serviços do OpenStreetMap, agrupados nas nove categorias do seletor; população do WorldPop.',
-        citychrone: 'Células H3 de resolução 9, uma exportação por hora do dia. Transporte público a partir de horários GTFS; as duas pontuações e as isócronas são definidas no artigo da plataforma. Os tempos de viagem são publicados em minutos inteiros, com limite de 180.',
+        citychrone: 'Células H3 de resolução 9, uma exportação por hora do dia. Transporte público a partir de horários GTFS; as duas pontuações e as isócronas são definidas no artigo da plataforma. Os tempos de viagem são em minutos inteiros; acima de 120 formam uma única classe, e as células onde ninguém mora ficam de fora.',
       },
       paperNote: 'O método é apresentado por completo no artigo.',
     },

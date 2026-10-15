@@ -52,7 +52,8 @@ measurements or seed data**, per city, per platform.
 ```
 public/data/index.json        catalogue — an index of what is published, derived from the records
 public/data/cities.json.gz    the city list — every city's names, place and layers
-public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs)
+public/data/cities/<city>/    one grid + one file per layer (scripts/lib/bundle.mjs),
+                              and CityChrone's travel times per hour (src/data/times.js)
   city.json                   the city's record: entries, figures, source hashes, createdAt
   entry.json.gz               what its city view needs, derived from the record
 src/data/catalogue.js         parsing + normalising it
@@ -82,10 +83,10 @@ The grid is every cell any layer covers, **sorted by H3 index**. That makes
 it deterministic (the same layers always give the same bytes, so a re-import
 of the same export writes nothing) and makes a layer's row order a property
 of its cells alone, so adding a layer to a city never reorders another
-layer's rows. CityChrone depends on that: its travel-time matrices are stored
-with rows and columns in the same order, and a layer row number indexes both.
-In H3 order neighbouring cells are neighbouring rows, which is also why the
-matrices compress 2 to 3.5 times better than in the export's order.
+layer's rows. CityChrone depends on that: its travel times are stored with
+rows and columns in the same order, and a layer row number indexes both.
+In H3 order neighbouring cells are neighbouring rows, which is also why they
+compress 2 to 3.5 times better than in the export's order.
 
 A cell's **context population** — the Population layer, the city summary,
 the derived cartograms — is the grid's: P.O.V. and Car Dependency share one
@@ -611,7 +612,9 @@ CityChrone hours included — and checks the grid is sorted and unique, every
 layer's rows land on grid cells, shares sum to 100, no CDI is outside
 [−1, +1], every 15minCity category × mode is present, every layer's
 cartogram is the derived rule and draws one polygon per row, every CityChrone
-matrix has the right header and decoded length, the compare rows agree with the layers, the catalogue's own `cells`
+matrix has the right header and decoded length (a `.bin`: its blocks end at
+the file's end, it keeps exactly the layer's inhabited rows, and its first
+and last blocks decode to minutes up to 120 or the "over" class), the compare rows agree with the layers, the catalogue's own `cells`
 and `extent` fields match the files, every scenario sits on its city's grid, the statistics are what recomputing them gives
 and agree with the summaries and markers, and that Rome still reports the figures the copy
 quotes. Run it after any data change — `update:data` does — it catches in
@@ -1090,9 +1093,11 @@ city: `<City>`, `<City>_FUA` for its metro area, `<City>_scenario_<id>` for
 a scenario. `scripts/lib/zip.mjs` is a small reader for exactly that (stored and
 deflated members, zip64), because Node has none. It reads the archive from
 disk member by member, never whole: Node will not read a file past 2 GiB
-into one buffer, and Rome's CityChrone export is 3.2 GB. For the same
-reason the importer hands the 24 travel-time matrices to the writer as
-readers, one hour in memory at a time.
+into one buffer, and Rome's CityChrone export is 3.2 GB. A travel-time
+matrix is never read whole at all: a metro area's is 14 GB an hour, so each
+member can also be streamed (`stream()`, and `unzipOneStream` for a zip inside
+the zip, read from its local header so it needs neither memory nor a copy on
+disk), and `scripts/lib/times.mjs` cuts each origin's row down as it passes.
 
 `npm run build` also runs `scripts/postbuild-compress.mjs`, which writes
 `<file>.gz` companions for every text-ish file in `dist/` above 4 KB.
@@ -1274,13 +1279,33 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
   (2019), `doi:10.1098/rsos.190979` — defines both scores and the isochrone
   method; it is tagged to this platform on the Research page.
 - **The export is hourly**: 24 hexcover FeatureCollections (per-cell
-  `v_score`/`s_score`) plus 24 `times*.npy` matrices (uint8 minutes, row =
-  origin cell). Published, all 24 hours of scores are one layer file, so the
-  hour selector recomputes rather than fetches; the matrices stay one file
-  per hour (`hourly.times`, a `{hh}` template), fetched only for isochrones
-  and stored in grid order. Hourly values are joined onto the mesh as
-  MapLibre feature-state at runtime, never baked into the features. The
-  isochrone origin in the URL (`from=`) is a layer row, i.e. grid order.
+  `v_score`/`s_score`) plus, optionally, 24 `times*.npy` matrices (uint8
+  minutes, row = origin cell). Published, all 24 hours of scores are one
+  layer file, so the hour selector recomputes rather than fetches. Hourly
+  values are joined onto the mesh as MapLibre feature-state at runtime, never
+  baked into the features. The isochrone origin in the URL (`from=`) is a
+  layer row, i.e. grid order.
+- **The travel times are read one origin at a time.** The view draws one row
+  of an hour's matrix, and a metro area's matrix is gigabytes, so the
+  importer rewrites each hour as `timesHH.bin` (`src/data/times.js` has the
+  layout): blocks of 32 origins compressed on their own behind a small index,
+  fetched with an HTTP Range request (`loadTimesRow` in `map/loaders.js`), at
+  most 56 kB a click for Rome. Two things are left out because nobody sees
+  them: the cells where nobody lives (the layer's own population, as
+  rows and as columns) and every minute past 120, stored as one class,
+  "over 120". The viewer reads every city that way, including those still
+  published as whole `timesHH.npy.gz` matrices (up to 180), so the "over
+  120" colour means the same everywhere: the ramp ends at 120 and its tail
+  is one solid swatch, `120+`. A host that ignores Range sends the whole
+  file, which works and is slow; test any server change with
+  `curl -H 'Range: bytes=0-99'` for a `206`.
+- **Travel times are optional.** An export with hexcovers and no
+  `timesHH` file publishes the scores, the catalogue's `hourly` carries no
+  `times`, and the Isochrones button is shown disabled with the reason.
+  Some hours and not others is refused. A re-import replaces or removes
+  what is published, in either format, and the matrices are written to
+  `.partial` files before anything else of the city, so an export truncated
+  in hour 13 changes nothing.
 - Its card still is shot from the combined viewer's CityChrone layer
   (`scripts/shoot-previews.mjs`).
 
