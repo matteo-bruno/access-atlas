@@ -1305,7 +1305,9 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 - **Travel times are optional.** An export with hexcovers and no
   `timesHH` file publishes the scores, the catalogue's `hourly` carries no
   `times`, and the Isochrones button is shown disabled with the reason.
-  Some hours and not others is refused. An export whose `pop` gives no
+  Some hours and not others is refused. Residents are `pop` or
+  `population`, whichever the export names (Munich's metro area says
+  `population`, and reading only `pop` once kept none). An export whose field gives no
   cell a resident (missing, or under 0.5 everywhere and rounded away) would
   keep no origin at all, which is what a 3 kB `timesHH.bin` is: the importer
   then keeps every cell and warns, loudly: the map draws a cell only where

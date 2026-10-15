@@ -204,7 +204,7 @@ layer's cells).
 The platform's hourly files, each one plain or zipped on its own:
 
 ```
-Zurich/hexcover00.zip … hexcover23.zip   (or hexcoverHH.json)
+Zurich/hexcover00.zip … hexcover23.zip   (or hexcoverHH.json / .geojson)
 Zurich/times00.zip    … times23.zip      (or timesHH.npy)
 ```
 
@@ -213,7 +213,7 @@ Every hour must be there, with the same cells in the same order (`new_id`,
 All 24 hours of scores go into one layer file of a few hundred kB, so the
 hour selector is instant.
 
-`pop` is a headcount per cell. It decides which travel times are kept and
+`pop` (or `population`) is a headcount per cell. It decides which travel times are kept and
 weights the city's figures, so an export where it gives no cell a resident
 (missing, or under 0.5 everywhere) is imported with a warning, and its
 travel times are kept for every cell rather than for none.

@@ -1,7 +1,7 @@
 // CityChrone: a zip (or folder) of the city's hourly files as the platform
 // exports them, each hour's file either plain, gzipped or zipped on its own —
 //
-//   <City>/hexcoverHH.json(.zip)   per-cell v_score, s_score, pop, coord
+//   <City>/hexcoverHH.json(.zip)   per-cell v_score, s_score, pop (or population), coord
 //   <City>/timesHH.npy(.zip)       uint8 minutes, cells × cells, row = new_id
 //
 // The scores of all hours go into one layer file (a few hundred kB), so the
@@ -34,7 +34,7 @@ function hourlyFiles(source) {
   const found = { hexcover: [], times: [] };
   for (const file of openSource(source)) {
     const name = baseName(file.path);
-    const match = name.match(/^(hexcover|times)(\d{2})(?:\.(json|npy))?(?:\.(zip|gz))?$/i);
+    const match = name.match(/^(hexcover|times)(\d{2})(?:\.(json|geojson|npy))?(?:\.(zip|gz))?$/i);
     if (!match || (!match[3] && !match[4])) continue;
     const kind = match[1].toLowerCase();
     const hour = Number(match[2]);
@@ -65,6 +65,13 @@ function hourlyFiles(source) {
   return found;
 }
 
+/**
+ * A cell's residents. Exports name the field `pop` or `population`; reading
+ * only the first made a metro area's every cell empty, and its travel times
+ * kept no origin.
+ */
+const residents = (p) => Number(p.pop ?? p.population);
+
 /** Where the city is: its population-weighted centre in hour 00, as [lon, lat]. */
 export function locate(source) {
   const [first] = hourlyFiles(source).hexcover;
@@ -72,7 +79,7 @@ export function locate(source) {
   const features = JSON.parse(first.read().toString('utf8').replace(/^\uFEFF/, '')).features;
   // hexcover `coord` is [lat, lon].
   const cells = features.map((f) => cellAt([f.properties.coord[1], f.properties.coord[0]], first.path));
-  return weightedCentre(cells, features.map((f) => Number(f.properties.pop) || 0));
+  return weightedCentre(cells, features.map((f) => residents(f.properties) || 0));
 }
 
 export async function parse(source) {
@@ -120,7 +127,7 @@ export async function parse(source) {
     }
     return h3;
   });
-  const rawPopulation = byId.map((f) => Number(f.properties.pop));
+  const rawPopulation = byId.map((f) => residents(f.properties));
   const population = rawPopulation.map((p) => Math.round(p || 0));
 
   const v = [];
@@ -163,14 +170,14 @@ export async function parse(source) {
   if (!inhabited) {
     const max = Math.max(0, ...rawPopulation.filter(Number.isFinite));
     warnings.push(
-      `hexcover \`pop\` gives no cell a resident (${missing ? `${missing} of ${n} cells have none` : `largest value ${max}`}). ` +
+      `hexcover \`pop\` / \`population\` gives no cell a resident (${missing ? `${missing} of ${n} cells have none` : `largest value ${max}`}). ` +
         (withTimes ? 'Travel times are kept for every cell, ' : '') +
         'and every figure weighted by residents (the world-map marker, the statistics) has nothing to weigh: ' +
         'check the export\'s population field.',
     );
   } else if (roundedAway > n / 10) {
     warnings.push(
-      `${roundedAway} of ${n} cells have a \`pop\` under 0.5, published as 0 residents` +
+      `${roundedAway} of ${n} cells have a \`pop\` / \`population\` under 0.5, published as 0 residents` +
         (withTimes ? ', and their travel times are left out' : '') +
         ': check the export\'s population field is a headcount.',
     );
