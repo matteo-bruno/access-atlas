@@ -375,8 +375,11 @@ offline, and one job each.
   `-0.035em` the sans took: a serif closes up at that size on its own.
 - **`--font-sans` (Roboto) is everything else** — body, UI, ledes, card
   titles, the nav.
-- **`--font-mono` (Roboto Mono)** is only ever used for figures, coordinates
-  and counts, where digits have to line up column to column.
+- **`--font-mono`** is only ever used for figures, coordinates
+  and counts, where digits have to line up column to column. It is the
+  body face now (`var(--font-sans)`) with tabular digits from `.aa-mono`:
+  Roboto Mono read as machine output, and the token stays so every rule
+  that sets figures still says so.
 
 **Every title carries a coloured half** — `.aa-accent` in `global.css`, the
 brand magenta — split in the dictionaries as `headline` / `headlineAccent`
@@ -983,6 +986,25 @@ The city view is a full-bleed map with a controls column and floating boxes
 (`MapBox`) in its corners: the geometry switch top left, the city summary and
 the selected cell top right, opacity bottom left, full screen bottom right.
 Full screen hides the chrome and keeps the column, and Escape leaves it.
+
+**There is no bar above the map.** The column opens with "Back to the
+Atlas" (to the open layer's world map), the title, which is the city and
+its country and nothing else ("Rome – Italy", the country in the accent),
+and "About this layer" and the paper. The boundary on screen is the
+pressed half of the boundary switch, not part of the title. The top-right
+stack stops above the full-screen button and scrolls inside that room.
+
+**It opens on the cartogram**, on every layer that has one: where nobody
+lives shrinks away, so the first picture is of the residents a measure is
+about. The geometry's "?" explains the cartogram only.
+
+The selected cell's H3 index closes its box (`rows.footer` in
+`CellInspector`), under anything a layer adds below the rows, such as
+15minCity's bars. "About this layer" is the measure, the colours (the same
+`city.explain.map.*` the legend's "?" shows), for 15minCity the nine
+categories and how a time is measured, the method with one line on
+resident weighting, and the sources. The two geometries and "the figures
+in the panel" are no longer sections of it.
 
 **The column is closed from its own edge**, not from a button on the map: a
 small chevron (`.aa-city__panelbtn`) sits astride the seam between the column

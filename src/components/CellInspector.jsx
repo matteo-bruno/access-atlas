@@ -46,6 +46,17 @@ export function CellInspector({ title, empty, rows, clearLabel, onClear, childre
             ))}
           </dl>
           {children}
+          {/* Rows that close the box, under whatever the layer adds. */}
+          {rows.footer?.length > 0 && (
+            <dl className="aa-summary aa-inspector__rows aa-inspector__foot">
+              {rows.footer.map((row) => (
+                <div className="aa-summary__row" key={row.label}>
+                  <dt>{row.label}</dt>
+                  <dd className="aa-mono">{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </>
       ) : (
         <p className="aa-inspector__empty">{empty}</p>

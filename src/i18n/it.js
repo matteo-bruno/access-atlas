@@ -216,9 +216,6 @@ export default {
   fifteen: {
     mapTitle: 'Tempo di viaggio verso i servizi',
     minutes: 'min',
-    // Le nove categorie della cella selezionata, tutte insieme.
-    barsTitle: 'Tutte le categorie, da questa cella',
-    barsAxis: 'Le barre arrivano a {max} {unit}; oltre, la riempiono.',
     legendValue: 'Tempo di prossimità',
     statusHint:
       'Scegli mezzo e categoria · passa il mouse su una fascia della legenda per isolarla · scorri e trascina per navigare',
@@ -230,7 +227,7 @@ export default {
     hint: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
     summary: { median: 'Tempo di viaggio, residente mediano' },
     categories: {
-      average: 'Media su tutti i servizi',
+      average: 'Tempo di prossimità (media)',
       outdoor: 'Attività all’aperto',
       learning: 'Istruzione',
       supplies: 'Spesa',
@@ -247,6 +244,7 @@ export default {
   // delle quattro piattaforme.
   atlas: {
     label: 'Vista combinata',
+    back: 'Torna all’Atlante',
     extent: {
       label: 'Confine',
       core: 'Città (core)',
@@ -409,7 +407,8 @@ export default {
       map: {
         pov: 'Ogni cella prende il colore della zona in cui ricade: verde sopra la mediana su entrambi gli assi, rosso sotto su entrambi, e nel mezzo i due casi misti. Le soglie sono le mediane pesate per popolazione di quella città, quindi una zona confronta luoghi dentro una città e mai una città con un’altra — a confrontarsi fra città sono i punteggi sottostanti.',
         cardep: 'Blu dove il trasporto pubblico raggiunge più opportunità dell’auto, bianco dove le due si equivalgono, rosso dove l’auto ne raggiunge di più. La scala è fissa per tutte le città invece di essere adattata a ciascuna, così lo stesso colore è lo stesso indice ovunque: una città non viene mai ricolorata per riempire la tavolozza.',
-        fifteen: 'Le celle sono colorate per il tempo che serve a raggiungere la categoria scelta con la modalità scelta. Il bianco sta a 15 minuti, il riferimento da cui la piattaforma prende il nome, e la scala continua a scurirsi oltre i 30 fino al nero a 120 — la legenda nomina quella coda invece di allungarsi fino a lì, cosa che schiaccerebbe l’intervallo in cui sta quasi ogni cella. Una sola scala vale per tutte e nove le categorie ed entrambe le modalità, così un colore significa la stessa cosa qualunque sia la selezione.',
+        fifteen:
+          'Il colore delle celle rappresenta il tempo necessario per raggiungere i servizi della categoria selezionata, a piedi o in bicicletta. Le aree blu sono luoghi da 15 minuti, dove la città dei 15 minuti è realizzata; nelle aree rosse i servizi sono in media più lontani di 15 minuti; le celle bianche sono vicine alla soglia dei 15 minuti.',
       },
       summary: {
         pov: 'Celle conta ciò che il dataset pubblicato copre. Ogni mediana è il punteggio del residente mediano: metà dei residenti della città vive in celle con un punteggio più basso, metà più alto. I punteggi sono conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuno dei due ha un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale per la città.',
@@ -427,6 +426,22 @@ export default {
         summary: 'I valori nel pannello',
         source: 'Da dove viene',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'Le nove categorie',
+      categoriesIntro: 'I servizi sono raggruppati in nove categorie. Il tempo di una cella per una categoria è il tempo medio di viaggio, a piedi o in bicicletta, verso i 20 servizi più vicini di quel tipo.',
+      categories: {
+        outdoor: 'parchi, giardini, lungofiumi, spiagge e simili',
+        learning: 'scuole, università e simili',
+        supplies: 'supermercati, alimentari e simili',
+        eating: 'bar, ristoranti, pub e simili',
+        moving: 'le fermate del trasporto pubblico più vicine',
+        cultural: 'teatri, cinema e simili',
+        exercise: 'palestre, campi e impianti sportivi',
+        services: 'uffici postali, banche, uffici pubblici, il comune e simili',
+        healthcare: 'ospedali, farmacie e simili',
+        average: 'la media semplice delle nove categorie',
+      },
+      weighted: 'Ogni mediana e ogni media nel pannello è quella dei residenti: ogni cella conta tante volte quante sono le persone che ci vivono, mai una volta per cella della mappa.',
       methodsTitle: 'Dati e metodi',
       methods: {
         pov: 'Celle H3 di risoluzione 9, larghe circa 200 m. Tempi a piedi da OSRM su OpenStreetMap; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione dalle griglie WorldPop a 100 m, riscalate sulle stime ONU.',
@@ -450,7 +465,8 @@ export default {
       unavailable: 'Nessun cartogramma pubblicato',
       about: {
         map: 'Ogni cella è l’esagono che occupa sul terreno, della stessa dimensione ovunque, qualunque cosa contenga. L’area non dice nulla su quante persone una misura riguardi, quindi una periferia poco abitata occupa nell’immagine lo stesso spazio del centro denso.',
-        cartogram: 'Ogni cella sta dove si trova davvero, ma la sua area è la popolazione residente e non il territorio che copre: una cella con pochi abitanti si riduce a una frazione di esagono, una affollata lo riempie. Risponde a un’altra domanda — non dove una misura è bassa, ma per quante persone lo è.',
+        cartogram:
+          'Un cartogramma deforma le celle in base alla popolazione residente, così che le celle vuote si restringono fino a scomparire. L’accessibilità misura la loro offerta di servizi, mentre la popolazione rappresenta la domanda: in un cartogramma le disuguaglianze sono più evidenti.',
         derived: 'Questo cartogramma è dell’Atlante, disegnato con una sola regola per ogni livello: l’area è proporzionale alla popolazione residente della cella e raggiunge l’esagono pieno alla popolazione mediana delle celle abitate della città. La popolazione è quella che tutti i livelli della città condividono, così una cella con una data popolazione appare della stessa dimensione su qualunque livello.',
       },
     },

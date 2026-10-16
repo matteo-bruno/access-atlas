@@ -468,6 +468,13 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 
+  // The city view opens on the cartogram: start from the hexagons.
+  const opensOnCartogram = await page
+    .getByRole('button', { name: 'Cartogram', exact: true })
+    .getAttribute('aria-pressed');
+  check('The city view opens on the cartogram', opensOnCartogram === 'true');
+  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.waitForTimeout(1500);
   const map = await canvasShot(page);
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2500);
@@ -640,6 +647,10 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const page = await context.newPage();
   await page.goto(`${BASE}/atlas/milan?layer=cardep`, { waitUntil: 'load' });
   await page.waitForTimeout(3200);
+  // The city view opens on the cartogram, where the cell under the centre
+  // may have shrunk away; the true hexagons tile the ground.
+  await page.locator('.aa-geometry .aa-toggle__btn', { hasText: 'Map' }).click();
+  await page.waitForTimeout(600);
 
   const cell = await page.locator('canvas').boundingBox();
   await page.mouse.click(cell.x + cell.width / 2, cell.y + cell.height / 2);
@@ -1427,8 +1438,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await control.click().catch(() => {});
   await page.waitForURL(/\/atlas\/tokyo-fua/, { timeout: 8000 }).catch(() => {});
   // Routes cross-fade, and the outgoing page stays on screen until it ends.
-  await page.waitForFunction(() => /Metro/.test(document.querySelector('.aa-city__region')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
-  const region = await page.$eval('.aa-city__region', (el) => el.textContent).catch(() => '');
+  // The title is the city and its country; the boundary on screen is the
+  // pressed half of the boundary switch.
+  const pressed = '.aa-city__panel .aa-toggle__btn[aria-pressed="true"]';
+  await page.waitForFunction((sel) => [...document.querySelectorAll(sel)].some((b) => /Metro/.test(b.textContent)), pressed, { timeout: 15000 }).catch(() => {});
+  const region = await page.$$eval(pressed, (els) => els.map((el) => el.textContent).join(' · ')).catch(() => '');
   check(
     'The city view switches to the metro area, keeping the view',
     /\/atlas\/tokyo-fua\?mode=bicycle/.test(page.url()) && /Metro \(FUA\)/.test(region),

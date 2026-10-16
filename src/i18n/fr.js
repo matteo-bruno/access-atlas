@@ -200,8 +200,6 @@ export default {
   fifteen: {
     mapTitle: 'Temps de trajet jusqu’aux services',
     minutes: 'min',
-    barsTitle: 'Toutes les catégories, depuis cette cellule',
-    barsAxis: 'Les barres vont jusqu’à {max} {unit} ; au-delà, elles sont pleines.',
     legendValue: 'Temps de proximité',
     statusHint:
       'Choisissez un mode et une catégorie · survolez une tranche de la légende pour l’isoler · faites défiler et glissez pour naviguer',
@@ -213,7 +211,7 @@ export default {
     hint: 'Temps de trajet moyen depuis chaque cellule jusqu’aux services les plus proches de cette catégorie.',
     summary: { median: 'Temps de trajet, habitant médian' },
     categories: {
-      average: 'Moyenne de tous les services',
+      average: 'Temps de proximité (moyenne)',
       outdoor: 'Activités de plein air',
       learning: 'Éducation',
       supplies: 'Courses',
@@ -228,6 +226,7 @@ export default {
 
   atlas: {
     label: 'Vue combinée',
+    back: 'Retour à l’Atlas',
     extent: {
       label: 'Périmètre',
       core: 'Ville (centre)',
@@ -373,7 +372,8 @@ export default {
       map: {
         pov: 'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane sur les deux axes, rouge en dessous sur les deux, et entre les deux les deux cas mixtes. Les seuils sont les médianes de cette ville pondérées par la population : une zone compare donc des lieux au sein d’une même ville, jamais une ville à une autre. Ce sont les scores sous-jacents qui se comparent d’une ville à l’autre.',
         cardep: 'Bleu là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint davantage. L’échelle est la même pour toutes les villes au lieu d’être ajustée à chacune : une même couleur correspond partout au même indice, et aucune ville n’est recolorée pour remplir la palette.',
-        fifteen: 'Les cellules sont colorées selon le temps nécessaire pour atteindre la catégorie choisie avec le mode choisi. Le blanc correspond à 15 minutes, la référence qui donne son nom à la plateforme, et l’échelle continue de foncer au-delà de 30 jusqu’au noir à 120. La légende nomme cette queue au lieu de s’étirer jusqu’à elle, ce qui écraserait l’intervalle où se trouve presque chaque cellule. Une seule échelle vaut pour les neuf catégories et les deux modes : une couleur signifie la même chose quelle que soit la sélection.',
+        fifteen:
+          'La couleur des cellules représente le temps nécessaire pour atteindre les services de la catégorie choisie, à pied ou à vélo. Les zones bleues sont des lieux à 15 minutes, où la ville du quart d’heure est réalisée ; dans les zones rouges, les services sont en moyenne à plus de 15 minutes ; les cellules blanches sont proches du seuil des 15 minutes.',
       },
       summary: {
         pov: 'Cellules compte ce que couvre le jeu de données publié. Chaque médiane est le score de l’habitant médian : la moitié des habitants de la ville vit dans des cellules au score plus bas, l’autre moitié plus haut. Les scores sont des comptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité : ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, pas un chiffre officiel pour la ville.',
@@ -391,6 +391,22 @@ export default {
         summary: 'Les chiffres du panneau',
         source: 'D’où cela vient',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'Les neuf catégories',
+      categoriesIntro: 'Les services sont regroupés en neuf catégories. Le temps d’une cellule pour une catégorie est le temps de trajet moyen, à pied ou à vélo, vers les 20 services les plus proches de ce type.',
+      categories: {
+        outdoor: 'parcs, jardins, berges, plages, etc.',
+        learning: 'écoles, universités, etc.',
+        supplies: 'supermarchés, épiceries, etc.',
+        eating: 'bars, restaurants, pubs, etc.',
+        moving: 'les arrêts de transport public les plus proches',
+        cultural: 'théâtres, cinémas, etc.',
+        exercise: 'salles de sport, terrains et équipements sportifs',
+        services: 'bureaux de poste, banques, services publics, la mairie, etc.',
+        healthcare: 'hôpitaux, pharmacies, etc.',
+        average: 'la moyenne simple des neuf catégories',
+      },
+      weighted: 'Chaque médiane et chaque moyenne du panneau est celle des résidents : chaque cellule compte autant de fois que de personnes y vivent, jamais une fois par cellule de la carte.',
       methodsTitle: 'Données et méthodes',
       methods: {
         pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
@@ -411,7 +427,8 @@ export default {
       unavailable: 'Aucun cartogramme publié',
       about: {
         map: 'Chaque cellule est l’hexagone qu’elle occupe sur le terrain, de la même taille partout, quoi qu’elle contienne. L’aire ne dit rien du nombre de personnes concernées par une mesure : une frange peu peuplée de la ville occupe donc autant de place dans l’image que le centre dense.',
-        cartogram: 'Chaque cellule reste à sa vraie place, mais son aire représente sa population résidente et non le terrain qu’elle couvre : une cellule peu habitée se réduit à une fraction d’hexagone, une cellule très peuplée le remplit. Elle répond à une autre question : non pas où une mesure est faible, mais pour combien de personnes elle l’est.',
+        cartogram:
+          'Un cartogramme déforme les cellules selon la population résidente, si bien que les cellules vides rétrécissent jusqu’à disparaître. L’accessibilité mesure leur offre de services, tandis que la population représente la demande : dans un cartogramme, les inégalités sont plus visibles.',
         derived: 'Ce cartogramme est propre à l’Atlas et suit une seule règle pour toutes les couches : l’aire est proportionnelle à la population résidente de la cellule, et atteint l’hexagone entier à la population médiane des cellules habitées de la ville. La population est celle que partagent toutes les couches de la ville : une cellule d’une population donnée a ainsi la même taille quelle que soit la couche affichée.',
       },
     },

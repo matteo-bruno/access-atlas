@@ -41,8 +41,9 @@ export function GeometryToggle({
   return (
     <div className={`aa-geometry${compact ? ' aa-geometry--compact' : ''}`}>
       <Explain label={compact ? undefined : t('city.geometry.label')}>
-        <p>{t(`city.geometry.about.${value === 'cartogram' ? 'cartogram' : 'map'}`)}</p>
-        {available.cartogram && derived && <p>{t('city.geometry.about.derived')}</p>}
+        {/* One explanation, of what the cartogram is for, whichever is on
+            screen: the map needs none. */}
+        <p>{t('city.geometry.about.cartogram')}</p>
       </Explain>
       <div className="aa-toggle aa-geometry__toggle" role="group" aria-label={t('city.geometry.label')}>
         {options.map((option) => (

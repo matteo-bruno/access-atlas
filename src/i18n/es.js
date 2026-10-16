@@ -199,8 +199,6 @@ export default {
   fifteen: {
     mapTitle: 'Tiempo de viaje hasta los servicios',
     minutes: 'min',
-    barsTitle: 'Todas las categorías, desde esta celda',
-    barsAxis: 'Las barras llegan hasta {max} {unit}; por encima, se llenan.',
     legendValue: 'Tiempo de proximidad',
     statusHint:
       'Elige un medio y una categoría · pasa el ratón por una franja de la leyenda para aislarla · desplázate y arrastra para navegar',
@@ -212,7 +210,7 @@ export default {
     hint: 'Tiempo medio de viaje desde cada celda hasta los servicios más cercanos de esta categoría.',
     summary: { median: 'Tiempo de viaje, residente mediano' },
     categories: {
-      average: 'Media de todos los servicios',
+      average: 'Tiempo de proximidad (media)',
       outdoor: 'Actividades al aire libre',
       learning: 'Educación',
       supplies: 'Compras',
@@ -227,6 +225,7 @@ export default {
 
   atlas: {
     label: 'Vista combinada',
+    back: 'Volver al Atlas',
     extent: {
       label: 'Límite',
       core: 'Ciudad (núcleo)',
@@ -372,7 +371,8 @@ export default {
       map: {
         pov: 'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana en ambos ejes, rojo por debajo en ambos y, entre medias, los dos casos mixtos. Los umbrales son las medianas ponderadas por población de esa ciudad, así que una zona compara lugares dentro de una ciudad y nunca una ciudad con otra: lo que se compara entre ciudades son las puntuaciones subyacentes.',
         cardep: 'Azul donde el transporte público llega a más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche llega a más. La escala es fija para todas las ciudades en lugar de ajustarse a cada una, así que el mismo color es el mismo índice en todas partes: ninguna ciudad se recolorea para llenar la paleta.',
-        fifteen: 'Las celdas se colorean según el tiempo que se tarda en llegar a la categoría elegida con el medio elegido. El blanco está en 15 minutos, la referencia que da nombre a la plataforma, y la escala sigue oscureciéndose más allá de 30 hasta el negro a 120. La leyenda nombra ese tramo final en lugar de estirarse hasta él, lo que aplastaría el intervalo en el que está casi cada celda. Una sola escala sirve para las nueve categorías y los dos medios, así que un color significa lo mismo sea cual sea la selección.',
+        fifteen:
+          'El color de las celdas representa el tiempo necesario para llegar a los servicios de la categoría seleccionada, a pie o en bicicleta. Las zonas azules son lugares de 15 minutos, donde la ciudad de 15 minutos se cumple; en las zonas rojas los servicios están de media a más de 15 minutos; las celdas blancas están cerca de la marca de los 15 minutos.',
       },
       summary: {
         pov: 'Celdas cuenta lo que cubre el conjunto de datos publicado. Cada mediana es la puntuación del residente mediano: la mitad de los residentes de la ciudad vive en celdas con una puntuación más baja y la otra mitad, más alta. Las puntuaciones son recuentos ponderados de puntos de interés alcanzables, por eso ninguna lleva unidad: no son metros ni empleos. La población es la suma del propio conjunto de datos sobre sus celdas, no una cifra oficial de la ciudad.',
@@ -390,6 +390,22 @@ export default {
         summary: 'Las cifras del panel',
         source: 'De dónde viene',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'Las nueve categorías',
+      categoriesIntro: 'Los servicios se agrupan en nueve categorías. El tiempo de una celda para una categoría es el tiempo medio de viaje, a pie o en bicicleta, hasta los 20 servicios más cercanos de ese tipo.',
+      categories: {
+        outdoor: 'parques, jardines, riberas, playas y similares',
+        learning: 'escuelas, universidades y similares',
+        supplies: 'supermercados, tiendas de alimentación y similares',
+        eating: 'bares, restaurantes, pubs y similares',
+        moving: 'las paradas de transporte público más cercanas',
+        cultural: 'teatros, cines y similares',
+        exercise: 'gimnasios, pistas e instalaciones deportivas',
+        services: 'oficinas de correos, bancos, oficinas públicas, el ayuntamiento y similares',
+        healthcare: 'hospitales, farmacias y similares',
+        average: 'la media simple de las nueve categorías',
+      },
+      weighted: 'Cada mediana y cada media del panel es la de los residentes: cada celda cuenta tantas veces como personas viven en ella, nunca una vez por celda del mapa.',
       methodsTitle: 'Datos y métodos',
       methods: {
         pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
@@ -410,7 +426,8 @@ export default {
       unavailable: 'No hay cartograma publicado',
       about: {
         map: 'Cada celda es el hexágono que ocupa sobre el terreno, del mismo tamaño en todas partes, contenga lo que contenga. El área no dice nada de a cuántas personas afecta una medida, así que un borde de la ciudad poco poblado ocupa en la imagen tanto como el centro denso.',
-        cartogram: 'Cada celda está donde está de verdad, pero su área es su población residente y no el terreno que cubre: una celda con pocos habitantes se reduce a una fracción de hexágono y una muy poblada lo llena. Responde a otra pregunta: no dónde es baja una medida, sino para cuántas personas lo es.',
+        cartogram:
+          'Un cartograma deforma las celdas según la población residente, de modo que las celdas vacías se encogen hasta desaparecer. La accesibilidad mide su oferta de servicios, mientras que la población representa la demanda: en un cartograma las desigualdades son más evidentes.',
         derived: 'Este cartograma es del propio Atlas y se dibuja con una sola regla para todas las capas: el área es proporcional a la población residente de la celda y alcanza el hexágono completo en la población mediana de las celdas habitadas de la ciudad. La población es la que comparten todas las capas de la ciudad, de modo que una celda de una población dada se ve del mismo tamaño en cualquier capa.',
       },
     },

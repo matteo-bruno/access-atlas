@@ -201,8 +201,6 @@ export default {
   fifteen: {
     mapTitle: 'Reisezeit zu den Diensten',
     minutes: 'Min.',
-    barsTitle: 'Alle Kategorien, von dieser Zelle aus',
-    barsAxis: 'Die Balken reichen bis {max} {unit}; alles darüber füllt den Balken.',
     legendValue: 'Zeit im Nahbereich',
     statusHint:
       'Verkehrsmittel und Kategorie wählen · über ein Legendenband fahren, um es hervorzuheben · scrollen und ziehen zum Navigieren',
@@ -214,7 +212,7 @@ export default {
     hint: 'Mittlere Reisezeit von jeder Zelle zu den nächstgelegenen Diensten dieser Kategorie.',
     summary: { median: 'Reisezeit, Median der Bewohner' },
     categories: {
-      average: 'Mittel über alle Dienste',
+      average: 'Zeit im Nahbereich (Mittel)',
       outdoor: 'Aktivitäten im Freien',
       learning: 'Bildung',
       supplies: 'Einkauf',
@@ -229,6 +227,7 @@ export default {
 
   atlas: {
     label: 'Kombinierte Ansicht',
+    back: 'Zurück zum Atlas',
     extent: {
       label: 'Abgrenzung',
       core: 'Stadt (Kern)',
@@ -374,7 +373,8 @@ export default {
       map: {
         pov: 'Jede Zelle nimmt die Farbe ihrer Zone an: grün über dem Median auf beiden Achsen, rot darunter auf beiden, dazwischen die beiden gemischten Fälle. Die Schwellen sind die bevölkerungsgewichteten Mediane der jeweiligen Stadt. Eine Zone vergleicht also Orte innerhalb einer Stadt und nie eine Stadt mit einer anderen: Zwischen Städten vergleichbar sind die zugrunde liegenden Werte.',
         cardep: 'Blau, wo der öffentliche Verkehr mehr Chancen erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Die Skala ist für alle Städte gleich, statt an jede angepasst zu werden: Dieselbe Farbe bedeutet überall denselben Index, und keine Stadt wird umgefärbt, um die Palette zu füllen.',
-        fifteen: 'Die Zellen sind danach gefärbt, wie lange es dauert, die gewählte Kategorie mit dem gewählten Verkehrsmittel zu erreichen. Weiß liegt bei 15 Minuten, dem Maßstab, der der Plattform ihren Namen gibt, und die Skala wird über 30 hinaus weiter dunkler bis Schwarz bei 120. Die Legende benennt diesen Ausläufer, statt sich bis dorthin zu strecken, was den Bereich stauchen würde, in dem fast jede Zelle liegt. Eine einzige Skala gilt für alle neun Kategorien und beide Verkehrsmittel: Eine Farbe bedeutet dasselbe, was auch gewählt ist.',
+        fifteen:
+          'Die Farbe der Zellen zeigt die Zeit, die man zu Fuß oder mit dem Fahrrad bis zu den Dienstleistungen der gewählten Kategorie braucht. Blaue Gebiete sind 15-Minuten-Orte, an denen die 15-Minuten-Stadt verwirklicht ist; in roten Gebieten liegen die Dienstleistungen im Mittel weiter als 15 Minuten entfernt; weiße Zellen liegen nahe an der 15-Minuten-Marke.',
       },
       summary: {
         pov: 'Zellen zählt, was der veröffentlichte Datensatz abdeckt. Jeder Median ist der Wert des Median-Bewohners: Die Hälfte der Einwohner lebt in Zellen mit niedrigerem Wert, die andere Hälfte mit höherem. Die Werte sind gewichtete Zählungen erreichbarer Points of Interest, daher hat keiner eine Einheit: Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl für die Stadt.',
@@ -392,6 +392,22 @@ export default {
         summary: 'Die Werte im Bereich',
         source: 'Woher es stammt',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'Die neun Kategorien',
+      categoriesIntro: 'Die Dienstleistungen sind in neun Kategorien gruppiert. Die Zeit einer Zelle für eine Kategorie ist die mittlere Reisezeit, zu Fuß oder mit dem Fahrrad, zu den 20 nächstgelegenen Einrichtungen dieser Art.',
+      categories: {
+        outdoor: 'Parks, Gärten, Flussufer, Strände und Ähnliches',
+        learning: 'Schulen, Universitäten und Ähnliches',
+        supplies: 'Supermärkte, Lebensmittelläden und Ähnliches',
+        eating: 'Bars, Restaurants, Kneipen und Ähnliches',
+        moving: 'die nächstgelegenen Haltestellen des öffentlichen Verkehrs',
+        cultural: 'Theater, Kinos und Ähnliches',
+        exercise: 'Fitnessstudios, Sportplätze und Sportanlagen',
+        services: 'Postämter, Banken, Behörden, die Gemeinde und Ähnliches',
+        healthcare: 'Krankenhäuser, Apotheken und Ähnliches',
+        average: 'das einfache Mittel der neun Kategorien',
+      },
+      weighted: 'Jeder Median und jeder Mittelwert im Panel ist der der Einwohner: Jede Zelle zählt so oft, wie Menschen in ihr leben, nie einmal pro Zelle der Karte.',
       methodsTitle: 'Daten und Methoden',
       methods: {
         pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
@@ -412,7 +428,8 @@ export default {
       unavailable: 'Kein Kartogramm veröffentlicht',
       about: {
         map: 'Jede Zelle ist das Sechseck, das sie im Gelände einnimmt, überall gleich groß, was immer darin liegt. Die Fläche sagt nichts darüber, wie viele Menschen ein Maß betrifft: Ein dünn besiedelter Stadtrand nimmt im Bild so viel Platz ein wie das dichte Zentrum.',
-        cartogram: 'Jede Zelle bleibt an ihrem wirklichen Ort, aber ihre Fläche steht für ihre Wohnbevölkerung und nicht für das Gelände, das sie abdeckt: Eine Zelle mit wenigen Einwohnern schrumpft auf einen Bruchteil eines Sechsecks, eine dicht besiedelte füllt es. Sie beantwortet eine andere Frage: nicht, wo ein Maß niedrig ist, sondern für wie viele Menschen.',
+        cartogram:
+          'Ein Kartogramm verformt die Zellen nach ihrer Wohnbevölkerung, sodass leere Zellen schrumpfen, bis sie verschwinden. Die Erreichbarkeit misst ihr Angebot an Dienstleistungen, die Bevölkerung steht für die Nachfrage: Im Kartogramm treten Ungleichheiten deutlicher hervor.',
         derived: 'Dieses Kartogramm stammt vom Atlas selbst und folgt für jede Ebene derselben Regel: Die Fläche ist proportional zur Wohnbevölkerung der Zelle und erreicht das volle Sechseck bei der medianen Bevölkerung der bewohnten Zellen der Stadt. Die Bevölkerung ist die, die alle Ebenen der Stadt teilen. So wirkt eine Zelle mit gegebener Bevölkerung auf jeder Ebene gleich groß.',
       },
     },

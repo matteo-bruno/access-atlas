@@ -35,10 +35,12 @@
      sets `font-weight: 400` (see the title rules in global.css and the page
      stylesheets — 600 on a 400-only face is a synthesised bold).
      `--font-sans` is everything that is read rather than announced.
-     `--font-mono` is only ever used for figures, coordinates and counts,
-     where digits have to line up column to column. */
+     `--font-mono` is only ever used for figures, coordinates and counts.
+     It used to be Roboto Mono, which read as machine output; it is now the
+     body face, and `.aa-mono` asks for its tabular digits, which is all
+     that lining figures up column to column needs. */
   --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Roboto Mono', 'SFMono-Regular', ui-monospace, monospace;
+  --font-mono: var(--font-sans);
   --font-serif: 'Instrument Serif', Georgia, serif;
 
   /* Geometry */

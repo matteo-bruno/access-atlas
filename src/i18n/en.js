@@ -222,9 +222,6 @@ export default {
   fifteen: {
     mapTitle: 'Travel time to services',
     minutes: 'min',
-    // The selected cell's nine categories at once, as bars.
-    barsTitle: 'Every category, from this cell',
-    barsAxis: 'Bars run to {max} {unit}; anything longer fills the bar.',
     legendValue: 'Proximity time',
     statusHint:
       'Pick a mode and a category · hover a legend band to isolate it · scroll & drag to navigate',
@@ -236,7 +233,7 @@ export default {
     hint: 'Average travel time from each cell to the nearest services in this category.',
     summary: { median: 'Travel time, median resident' },
     categories: {
-      average: 'Average across all services',
+      average: 'Proximity time (average)',
       outdoor: 'Outdoor activities',
       learning: 'Learning',
       supplies: 'Supplies',
@@ -253,6 +250,7 @@ export default {
   // visualisations.
   atlas: {
     label: 'Combined view',
+    back: 'Back to the Atlas',
     extent: {
       label: 'Boundary',
       core: 'City (core)',
@@ -414,7 +412,8 @@ export default {
       map: {
         pov: 'Each cell takes the colour of the zone it falls in: green above the median on both axes, red below on both, and the two mixed cases between. The thresholds are that city’s own population-weighted medians, so a zone compares places within one city and never one city against another — the underlying scores are what compare across cities.',
         cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
-        fifteen: 'Cells are coloured by how long the selected category takes to reach by the selected mode. White sits at 15 minutes, the reference the platform is named for, and the scale keeps darkening past 30 to black at 120 — the legend names that tail rather than stretching to it, which would squash the range nearly every cell sits in. One scale serves all nine categories and both modes, so a colour means the same thing whatever is selected.',
+        fifteen:
+          'The colour of the cells represents the time needed to reach services belonging to the selected category, on foot or by bike. Blue areas are 15-minute places, where the 15-minute city is realized; in red areas services are on average further than 15 minutes away; white cells are near the 15-minute mark.',
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
@@ -432,6 +431,22 @@ export default {
         summary: 'The figures in the panel',
         source: 'Where this comes from',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'The nine categories',
+      categoriesIntro: 'Services are grouped into nine categories. A cell’s time for a category is the average travel time, on foot or by bicycle, to the 20 nearest services of that kind.',
+      categories: {
+        outdoor: 'parks, gardens, river banks, beaches and the like',
+        learning: 'schools, universities and the like',
+        supplies: 'supermarkets, grocery stores and the like',
+        eating: 'bars, restaurants, pubs and the like',
+        moving: 'the nearest public transport stops',
+        cultural: 'theatres, cinemas and the like',
+        exercise: 'gyms, sports courts and facilities',
+        services: 'post offices, banks, public offices, the municipality and the like',
+        healthcare: 'hospitals, pharmacies and the like',
+        average: 'a simple average of the nine categories',
+      },
+      weighted: 'Every median and every mean in the panel is the residents’: each cell counts as many times as people live in it, never once per cell of the map.',
       methodsTitle: 'Data & methods',
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
@@ -455,7 +470,8 @@ export default {
       unavailable: 'No cartogram published',
       about: {
         map: 'Every cell is the hexagon it is on the ground, the same size everywhere whatever lives in it. Area says nothing about how many people a measure affects, so a thinly populated edge of the city takes up as much of the picture as the dense centre does.',
-        cartogram: 'Every cell sits where it really is, but its area is its resident population rather than the ground it covers: a cell with few residents shrinks to a fraction of a hexagon, a crowded one fills it. It answers a different question — not where a measure is low, but how many people it is low for.',
+        cartogram:
+          'A cartogram deforms the cells according to the resident population, so that empty cells shrink until they disappear. Accessibility measures their offer of services, while population represents the demand: in a cartogram inequalities are more evident.',
         derived: 'This cartogram is the Atlas’s own, drawn by one rule for every layer: the area is proportional to the cell’s resident population, reaching the full hexagon at the median population of the city’s inhabited cells. The population is the one every layer of the city shares, so a cell of a given population looks the same size whichever layer you are on.',
       },
     },

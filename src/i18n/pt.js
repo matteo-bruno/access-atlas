@@ -199,8 +199,6 @@ export default {
   fifteen: {
     mapTitle: 'Tempo de viagem até os serviços',
     minutes: 'min',
-    barsTitle: 'Todas as categorias, a partir desta célula',
-    barsAxis: 'As barras vão até {max} {unit}; acima disso, ficam cheias.',
     legendValue: 'Tempo de proximidade',
     statusHint:
       'Escolha um modo e uma categoria · passe o mouse sobre uma faixa da legenda para isolá-la · role e arraste para navegar',
@@ -212,7 +210,7 @@ export default {
     hint: 'Tempo médio de viagem de cada célula até os serviços mais próximos desta categoria.',
     summary: { median: 'Tempo de viagem, residente mediano' },
     categories: {
-      average: 'Média de todos os serviços',
+      average: 'Tempo de proximidade (média)',
       outdoor: 'Atividades ao ar livre',
       learning: 'Educação',
       supplies: 'Compras',
@@ -227,6 +225,7 @@ export default {
 
   atlas: {
     label: 'Visão combinada',
+    back: 'Voltar ao Atlas',
     extent: {
       label: 'Limite',
       core: 'Cidade (núcleo)',
@@ -372,7 +371,8 @@ export default {
       map: {
         pov: 'Cada célula recebe a cor da zona em que cai: verde acima da mediana nos dois eixos, vermelho abaixo nos dois e, entre eles, os dois casos mistos. Os limiares são as medianas daquela cidade ponderadas pela população, então uma zona compara lugares dentro de uma cidade e nunca uma cidade com outra: o que se compara entre cidades são as pontuações subjacentes.',
         cardep: 'Azul onde o transporte público alcança mais oportunidades que o carro, branco onde os dois se equilibram, vermelho onde o carro alcança mais. A escala é fixa para todas as cidades em vez de ajustada a cada uma, então a mesma cor é o mesmo índice em qualquer lugar: nenhuma cidade é recolorida para preencher a paleta.',
-        fifteen: 'As células são coloridas pelo tempo necessário para chegar à categoria escolhida com o modo escolhido. O branco fica em 15 minutos, a referência que dá nome à plataforma, e a escala continua escurecendo além de 30 até o preto em 120. A legenda nomeia essa cauda em vez de se esticar até ela, o que espremeria o intervalo em que está quase toda célula. Uma única escala vale para as nove categorias e os dois modos, então uma cor significa a mesma coisa, seja qual for a seleção.',
+        fifteen:
+          'A cor das células representa o tempo necessário para chegar aos serviços da categoria selecionada, a pé ou de bicicleta. As áreas azuis são lugares de 15 minutos, onde a cidade de 15 minutos se realiza; nas áreas vermelhas os serviços estão, em média, a mais de 15 minutos; as células brancas estão perto da marca dos 15 minutos.',
       },
       summary: {
         pov: 'Células conta o que o conjunto de dados publicado cobre. Cada mediana é a pontuação do residente mediano: metade dos residentes da cidade vive em células com pontuação mais baixa e metade, mais alta. As pontuações são contagens ponderadas de pontos de interesse alcançáveis, por isso nenhuma tem unidade: não são metros nem empregos. A população é a soma do próprio conjunto de dados sobre suas células, não um número oficial da cidade.',
@@ -390,6 +390,22 @@ export default {
         summary: 'Os números do painel',
         source: 'De onde vem',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'As nove categorias',
+      categoriesIntro: 'Os serviços são agrupados em nove categorias. O tempo de uma célula para uma categoria é o tempo médio de viagem, a pé ou de bicicleta, até os 20 serviços mais próximos desse tipo.',
+      categories: {
+        outdoor: 'parques, jardins, margens de rios, praias e afins',
+        learning: 'escolas, universidades e afins',
+        supplies: 'supermercados, mercearias e afins',
+        eating: 'bares, restaurantes, pubs e afins',
+        moving: 'as paradas de transporte público mais próximas',
+        cultural: 'teatros, cinemas e afins',
+        exercise: 'academias, quadras e instalações esportivas',
+        services: 'agências dos correios, bancos, repartições públicas, a prefeitura e afins',
+        healthcare: 'hospitais, farmácias e afins',
+        average: 'a média simples das nove categorias',
+      },
+      weighted: 'Cada mediana e cada média do painel é a dos residentes: cada célula conta tantas vezes quantas pessoas vivem nela, nunca uma vez por célula do mapa.',
       methodsTitle: 'Dados e métodos',
       methods: {
         pov: 'Células H3 de resolução 9, com cerca de 200 m de largura. Tempos a pé com OSRM sobre o OpenStreetMap; transporte público a partir de horários GTFS com o Connection Scan Algorithm; pontos de interesse do OpenStreetMap; população das grades de 100 m do WorldPop, ajustadas às estimativas da ONU.',
@@ -410,7 +426,8 @@ export default {
       unavailable: 'Nenhum cartograma publicado',
       about: {
         map: 'Cada célula é o hexágono que ela ocupa no terreno, do mesmo tamanho em todo lugar, contenha o que contiver. A área não diz nada sobre quantas pessoas uma medida afeta, então uma borda pouco povoada da cidade ocupa na imagem tanto espaço quanto o centro denso.',
-        cartogram: 'Cada célula fica onde realmente está, mas sua área é sua população residente, não o terreno que cobre: uma célula com poucos moradores encolhe para uma fração de hexágono, e uma muito povoada o preenche. Ela responde a outra pergunta: não onde uma medida é baixa, mas para quantas pessoas ela é.',
+        cartogram:
+          'Um cartograma deforma as células segundo a população residente, de modo que as células vazias encolhem até desaparecer. A acessibilidade mede a sua oferta de serviços, enquanto a população representa a demanda: num cartograma as desigualdades ficam mais evidentes.',
         derived: 'Este cartograma é do próprio Atlas e segue uma única regra para todas as camadas: a área é proporcional à população residente da célula e chega ao hexágono inteiro na população mediana das células habitadas da cidade. A população é a que todas as camadas da cidade compartilham, de modo que uma célula com determinada população tem o mesmo tamanho em qualquer camada.',
       },
     },

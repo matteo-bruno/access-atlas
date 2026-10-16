@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
-import { Subhead } from '../components/Subhead.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
@@ -107,7 +106,9 @@ function AtlasScreen({ cityId, view }) {
   const [hoverCell, setHoverCell] = useState(null);
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
-  const [geometry, setGeometry] = useState('geographic');
+  // The cartogram is the first view: where nobody lives shrinks away, so the
+  // map opens on the residents a measure is about.
+  const [geometry, setGeometry] = useState('cartogram');
   // Whether the city map has drawn its mesh yet: until it has, the loading
   // note stays over the paper rather than leaving an empty box.
   const [mapPainted, setMapPainted] = useState(false);
@@ -756,7 +757,8 @@ function AtlasScreen({ cityId, view }) {
     });
     // The one row that is the same under every layer: the cell's own name on
     // the shared grid, which is what makes the layers comparable at all.
-    if (p.h3) rows.push({ label: t('city.cell.grid'), value: p.h3 });
+    // It closes the box, under anything a layer adds below the rows.
+    if (p.h3) rows.footer = [{ label: t('city.cell.grid'), value: p.h3 }];
     return rows;
   }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, ccHourData, matrixRow, t, n, shownId, scenarioName]);
 
@@ -810,49 +812,44 @@ function AtlasScreen({ cityId, view }) {
         sidebarOpen ? '' : ' aa-atlas--nopanel'
       }`}
     >
-      {/* Full screen is the map and its controls: everything that is chrome
-          steps out rather than shrinking. */}
-      {!fullscreen && (
-        <>
-          <Subhead
-            accent={platform.accent}
-            label={t('atlas.label')}
-            title={cityName}
-            meta={
-              <span className="aa-city__region">
-                {t('city.region', {
-                  // Which boundary this is, wherever the city has two (or
-                  // only its metro area is published).
-                  region: bothExtents || extent === 'fua' ? `${region} · ${t(`atlas.extent.${extent}`)}` : region,
-                  count: layerCells != null ? n(layerCells) : '—',
-                })}
-              </span>
-            }
-          >
-            {/* Straight to the full account — there is no half-open state
-                between a tooltip and this. */}
-            {!isPopulation && (
-              <button
-                type="button"
-                className="aa-chip aa-chip--icon"
-                onClick={() => setAboutOpen(true)}
-              >
-                <Icon name="info" size={13} color="currentColor" />
-                {t('atlas.info')}
-              </button>
-            )}
-            {paper && (
-              <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
-                {t('platform.paper')}
-              </a>
-            )}
-          </Subhead>
-        </>
-      )}
 
       <main className="aa-main aa-city aa-city--nochart" id="main">
         {sidebarOpen && (
           <aside className="aa-city__panel">
+            {/* ── The city, and the ways out of it ───────────────
+                What used to be a bar of its own above the map: the city
+                and its country as the title, the layer's long account and
+                its paper, and the way back to the world map. */}
+            <div className="aa-city__header">
+              <Link className="aa-city__back" to={`/platforms/${isPopulation ? 'all' : platform.slug}`}>
+                <Icon name="chevronLeft" size={13} />
+                {t('atlas.back')}
+              </Link>
+              <h1 className="aa-city__title">
+                {cityName}
+                {region && <span className="aa-accent"> – {region}</span>}
+              </h1>
+              {(!isPopulation || paper) && (
+                <div className="aa-city__links">
+                  {!isPopulation && (
+                    <button
+                      type="button"
+                      className="aa-chip aa-chip--icon"
+                      onClick={() => setAboutOpen(true)}
+                    >
+                      <Icon name="info" size={13} color="currentColor" />
+                      {t('atlas.info')}
+                    </button>
+                  )}
+                  {paper && (
+                    <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
+                      {t('platform.paper')}
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+
             {/* ── The boundary: the city's core or its metro area ── */}
             {bothExtents && (
               <>
@@ -1338,13 +1335,10 @@ function AtlasScreen({ cityId, view }) {
                   {layer === 'fifteen' &&
                     selectedCell != null &&
                     baseGeojson?.features?.[selectedCell] && (
-                      <>
-                        <p className="aa-catbars__title">{t('fifteen.barsTitle')}</p>
-                        <CategoryBars
-                          properties={shownProperties(baseGeojson.features[selectedCell].properties, shownId)}
-                          mode={mode}
-                        />
-                      </>
+                      <CategoryBars
+                        properties={shownProperties(baseGeojson.features[selectedCell].properties, shownId)}
+                        mode={mode}
+                      />
                     )}
                 </CellInspector>
               </MapBox>
