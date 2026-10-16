@@ -75,6 +75,7 @@ export default {
     platforms: {
       title: '접근성 레이어',
       more: '자세히 보기',
+      explore: '레이어 살펴보기',
       cityCount: '{count}개 도시',
       themes: {
         fifteen: '근접성',
@@ -91,16 +92,10 @@ export default {
     },
     table: {
       title: '도시 비교',
-      statsNote:
-        'P.O.V. 데이터에서 가져온 여섯 개 도시, 세 가지 지표입니다. 공개된 모든 도시를 모든 지표로 비교하는 화면은 통계 탭입니다.',
       statsCta: '통계 열기',
-      headers: {
-        city: '도시',
-        proximity: '근접성 점수 중앙값',
-        opportunity: '기회 점수 중앙값',
-        inclusion: '포용 구역',
-      },
-      note: '근접성과 기회는 도달 가능한 관심 지점(POI)의 가중 개수입니다. 모든 도시를 같은 방법으로 측정하므로 도시 간에 비교할 수 있습니다. 포용은 인구 가중 중앙값 두 개를 모두 넘는 셀의 비율입니다.',
+      within: '{minutes}분 이내',
+      onFoot: '도보',
+      note: '도보로 그 시간 안에 서비스(전체 서비스 평균)에 닿는 주민의 비율. 주민 {population}명 이상인 도시.',
     },
     side: {
       title: '진행 중인 연구',
@@ -532,8 +527,8 @@ export default {
 
   about: {
     eyebrow: '지속 가능한 도시',
-    headline: '도시에 관한 연구입니다.',
-    headlineAccent: '제품이 아닙니다.',
+    headline: '데이터 기반 시나리오로',
+    headlineAccent: '더 지속 가능한 도시를 향해',
     lede: '저희는 비영리 연구팀으로, Sony Computer Science Laboratories 로마의 연구 분야 중 하나입니다. 로마 라 사피엔차 대학교, 엔리코 페르미 연구센터(CREF) 등 여러 기관의 공동 연구자들과 함께 일합니다. 아틀라스는 이 연구에서 나온 결과물 중 하나입니다.',
     labLink: 'Sony CSL ↗',
     teamLink: '팀 소개 →',

@@ -74,6 +74,7 @@ export default {
     platforms: {
       title: 'Camadas de acessibilidade',
       more: 'Saiba mais',
+      explore: 'Explorar a camada',
       cityCount: '{count} cidades',
       themes: {
         fifteen: 'Proximidade',
@@ -93,16 +94,10 @@ export default {
     },
     table: {
       title: 'Compare cidades',
-      statsNote:
-        'Seis cidades em três medidas, a partir dos dados do P.O.V. A tela que compara todas as cidades publicadas, em todas as medidas, é a aba Estatísticas.',
       statsCta: 'Abrir Estatísticas',
-      headers: {
-        city: 'Cidade',
-        proximity: 'Pontuação mediana de proximidade',
-        opportunity: 'Pontuação mediana de oportunidade',
-        inclusion: 'Zona de inclusão',
-      },
-      note: 'Proximidade e oportunidade são contagens ponderadas de pontos de interesse alcançáveis, comparáveis entre cidades porque todas são medidas da mesma forma. A inclusão é a parcela de células acima das duas medianas ponderadas pela população.',
+      within: 'Em até {minutes} min',
+      onFoot: 'a pé',
+      note: 'Parcela dos residentes a esse tempo ou menos a pé dos serviços, na média entre todos. Cidades com pelo menos {population} residentes.',
     },
     side: {
       title: 'Em andamento',
@@ -542,8 +537,8 @@ export default {
 
   about: {
     eyebrow: 'Cidades sustentáveis',
-    headline: 'Uma linha de pesquisa sobre cidades,',
-    headlineAccent: 'não um produto.',
+    headline: 'Cenários baseados em dados',
+    headlineAccent: 'rumo a cidades mais sustentáveis',
     lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories – Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
     labLink: 'Sony CSL ↗',
     teamLink: 'A equipe →',

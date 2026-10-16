@@ -75,6 +75,7 @@ export default {
     platforms: {
       title: 'Couches d’accessibilité',
       more: 'En savoir plus',
+      explore: 'Explorer la couche',
       cityCount: '{count} villes',
       themes: {
         fifteen: 'Proximité',
@@ -94,16 +95,10 @@ export default {
     },
     table: {
       title: 'Comparer les villes',
-      statsNote:
-        'Six villes sur trois mesures, issues des données P.O.V. L’écran qui compare toutes les villes publiées, sur toutes les mesures, est l’onglet Statistiques.',
       statsCta: 'Ouvrir Statistiques',
-      headers: {
-        city: 'Ville',
-        proximity: 'Score médian de proximité',
-        opportunity: 'Score médian d’opportunité',
-        inclusion: 'Zone d’inclusion',
-      },
-      note: 'La proximité et l’opportunité sont des décomptes pondérés de points d’intérêt accessibles, comparables d’une ville à l’autre parce que chaque ville est mesurée de la même façon. L’inclusion est la part des cellules situées au-dessus des deux médianes pondérées par la population.',
+      within: 'À {minutes} min ou moins',
+      onFoot: 'à pied',
+      note: 'Part des résidents à ce temps ou moins à pied des services, en moyenne sur l’ensemble. Villes d’au moins {population} résidents.',
     },
     side: {
       title: 'Travaux en cours',
@@ -543,8 +538,8 @@ export default {
 
   about: {
     eyebrow: 'Villes durables',
-    headline: 'Un axe de recherche sur les villes,',
-    headlineAccent: 'pas un produit.',
+    headline: 'Des scénarios fondés sur les données',
+    headlineAccent: 'pour des villes plus durables',
     lede: 'Nous sommes une équipe de recherche à but non lucratif, l’un des axes de recherche de Sony Computer Science Laboratories – Rome, et nous travaillons avec des collaborateurs de l’Université Sapienza de Rome, du Centre de recherche Enrico Fermi (CREF) et d’autres instituts. L’Atlas est l’un des fruits de ce travail.',
     labLink: 'Sony CSL ↗',
     teamLink: 'L’équipe →',

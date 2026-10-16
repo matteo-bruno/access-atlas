@@ -8,11 +8,15 @@ import { PlatformPreview } from '../components/PlatformPreview.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
 import { citiesForPlatform } from '../data/cities.js';
-import { postForLayer } from '../data/blog.js';
-import { NEWS, WORK_IN_PROGRESS, cityTableRows } from '../data/home.js';
-import { usePlatformSummary, usePublishedCityCounts } from '../data/useAtlasData.js';
-import { cityLabel } from '../data/catalogue.js';
-import { BRAND } from '../data/brand.js';
+import { BLOG_LISTED, postForLayer } from '../data/blog.js';
+import {
+  NEWS,
+  RANKING_MEASURE,
+  RANKING_MIN_POPULATION,
+  WORK_IN_PROGRESS,
+  cityRankings,
+} from '../data/home.js';
+import { usePublishedCityCounts, useStats } from '../data/useAtlasData.js';
 import './Home.css';
 
 export default function Home() {
@@ -41,10 +45,11 @@ export default function Home() {
 export function HomeSections({ hero = true }) {
   const { t, n, lang } = useI18n();
   const firstPlatform = PLATFORMS[0];
+  const fifteen = PLATFORMS.find((p) => p.id === 'fifteen');
   const cityCounts = usePublishedCityCounts();
-  // The comparison table's figures, read from P.O.V.'s compare rows.
-  const povSummary = usePlatformSummary('pov');
-  const table = useMemo(() => cityTableRows(povSummary.cities), [povSummary.cities]);
+  // The rankings, read from the published statistics (see cityRankings).
+  const { stats } = useStats();
+  const rankings = useMemo(() => cityRankings(stats), [stats]);
 
   const platformCities = useMemo(
     () => Object.fromEntries(PLATFORMS.map((p) => [p.id, citiesForPlatform(p)])),
@@ -116,7 +121,8 @@ export function HomeSections({ hero = true }) {
                 platform itself and the paper behind it. Sending a first-time
                 visitor straight into an upstream viewer skipped all of that. */}
             {PLATFORMS.map((platform) => {
-              const post = postForLayer(platform.id);
+              // While the blog is unlisted, a card opens the layer's map.
+              const post = BLOG_LISTED ? postForLayer(platform.id) : null;
               return (
                 <Link
                   key={platform.id}
@@ -136,7 +142,7 @@ export function HomeSections({ hero = true }) {
                           t('home.platforms.cityCount', { count: n(cityCounts[platform.id]) })}
                       </span>
                       <span className="aa-platform__open" style={{ color: platform.accent }}>
-                        {t('home.platforms.more')}
+                        {post ? t('home.platforms.more') : t('home.platforms.explore')}
                         <Icon name="arrow" size={13} color={platform.accent} />
                       </span>
                     </div>
@@ -154,43 +160,46 @@ export function HomeSections({ hero = true }) {
         {/* ── Compare cities ───────────────────────────────────── */}
         <section className="aa-shell aa-block">
           <SectionHeading title={t('home.table.title')} />
-          <div className="aa-card aa-table">
-            <div className="aa-table__head">
-              <div>{t('home.table.headers.city')}</div>
-              <div>{t('home.table.headers.proximity')}</div>
-              <div>{t('home.table.headers.opportunity')}</div>
-              <div>{t('home.table.headers.inclusion')}</div>
+          <div className="aa-card aa-rank">
+            <div className="aa-rank__grid">
+              {rankings.map((ranking) => (
+                <div key={ranking.minutes} className="aa-rank__col">
+                  <Link
+                    className="aa-rank__head"
+                    to={`/stats?m=${RANKING_MEASURE}&s=share&t=${ranking.index}`}
+                  >
+                    <span className="aa-rank__minutes">
+                      {t('home.table.within', { minutes: n(ranking.minutes) })}
+                    </span>
+                    <span className="aa-rank__mode">{t('home.table.onFoot')}</span>
+                  </Link>
+                  <ol className="aa-rank__list">
+                    {ranking.rows.map((row, i) => (
+                      <li key={row.id} className="aa-rank__row">
+                        <span className="aa-mono aa-rank__pos">{n(i + 1)}</span>
+                        <Link className="aa-rank__city" to={`/atlas/${row.id}?layer=fifteen`}>
+                          {lang === 'it' ? row.nameIt ?? row.name : row.name}
+                        </Link>
+                        <span className="aa-rank__meter" aria-hidden="true">
+                          <span
+                            className="aa-rank__fill"
+                            style={{ width: `${Math.min(100, row.share)}%`, background: fifteen?.accent }}
+                          />
+                        </span>
+                        <span className="aa-mono aa-rank__value">
+                          {n(row.share, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
             </div>
-            {table.rows.map((row) => (
-              <div key={row.id} className="aa-table__row">
-                <div className="aa-table__city">{cityLabel(row.profile, lang, t)}</div>
 
-                <MeterCell
-                  width={(row.proximity / table.scale.proximity) * 100}
-                  color={BRAND.magenta}
-                  value={n(row.proximity, { minimumFractionDigits: 1 })}
-                  max={140}
-                />
-                <MeterCell
-                  width={(row.opportunity / table.scale.opportunity) * 100}
-                  color={BRAND.navy}
-                  value={n(row.opportunity, { minimumFractionDigits: 1 })}
-                  max={140}
-                />
-                <MeterCell
-                  width={((row.inclusion ?? 0) / table.scale.inclusion) * 100}
-                  color={BRAND.cyan}
-                  value={row.inclusion == null ? '—' : `${n(row.inclusion)}%`}
-                  max={200}
-                  wide
-                />
-              </div>
-            ))}
-
-            {/* Six cities on three measures is a sample, not a comparison.
-                The screen that will hold the whole set is its own tab. */}
             <div className="aa-table__foot">
-              <span className="aa-table__note">{t('home.table.statsNote')}</span>
+              <span className="aa-table__note">
+                {t('home.table.note', { population: n(RANKING_MIN_POPULATION) })}
+              </span>
               <Link className="aa-table__cta" to="/stats">
                 {t('home.table.statsCta')}
                 <Icon name="arrow" size={13} color="currentColor" />
@@ -237,19 +246,5 @@ export function HomeSections({ hero = true }) {
           </div>
         </section>
     </>
-  );
-}
-
-function MeterCell({ width, color, value, max, wide = false }) {
-  return (
-    <div className="aa-table__cell">
-      <div className={`aa-meter${wide ? ' aa-meter--wide' : ''}`} style={{ maxWidth: max }}>
-        <div
-          className="aa-meter__fill"
-          style={{ width: `${Math.min(width, 100)}%`, background: color }}
-        />
-      </div>
-      <span className="aa-mono aa-table__value">{value}</span>
-    </div>
   );
 }

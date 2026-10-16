@@ -75,6 +75,7 @@ export default {
     platforms: {
       title: '可达性图层',
       more: '了解更多',
+      explore: '探索图层',
       cityCount: '{count} 座城市',
       themes: {
         fifteen: '邻近性',
@@ -91,16 +92,10 @@ export default {
     },
     table: {
       title: '比较城市',
-      statsNote:
-        '基于 P.O.V. 数据，比较六座城市的三项指标。比较所有已发布城市、所有指标的页面是“统计”标签页。',
       statsCta: '打开统计',
-      headers: {
-        city: '城市',
-        proximity: '邻近性得分中位数',
-        opportunity: '机会得分中位数',
-        inclusion: '包容区',
-      },
-      note: '邻近性和机会是可到达兴趣点的加权计数。由于每座城市都以相同方法测量，这些数值可以在城市之间比较。包容是指同时高于两个人口加权中位数的单元所占的比例。',
+      within: '{minutes} 分钟以内',
+      onFoot: '步行',
+      note: '步行在该时间内到达各类服务（取所有服务的平均值）的居民比例。仅含居民不少于 {population} 人的城市。',
     },
     side: {
       title: '进行中的研究',
@@ -532,8 +527,8 @@ export default {
 
   about: {
     eyebrow: '可持续城市',
-    headline: '一条关于城市的研究方向，',
-    headlineAccent: '而不是一件产品。',
+    headline: '以数据为基础的情景，',
+    headlineAccent: '迈向更可持续的城市',
     lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories 罗马分部的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
     labLink: 'Sony CSL ↗',
     teamLink: '团队成员 →',

@@ -81,6 +81,7 @@ export default {
       // Ogni scheda apre l'introduzione dell'Atlante a quel livello, non il
       // viewer originale: la piattaforma è un link più avanti, da lì.
       more: 'Maggiori informazioni',
+      explore: 'Esplora il livello',
       cityCount: '{count} città',
       themes: {
         fifteen: 'Prossimità',
@@ -100,16 +101,10 @@ export default {
     },
     table: {
       title: 'Confronta le città',
-      statsNote:
-        'Sei città su tre misure, dai dataset P.O.V. La schermata che confronta ogni città pubblicata, su ogni misura, è la scheda Statistiche.',
       statsCta: 'Apri Statistiche',
-      headers: {
-        city: 'Città',
-        proximity: 'Punteggio mediano di prossimità',
-        opportunity: 'Punteggio mediano di opportunità',
-        inclusion: 'Zona di inclusione',
-      },
-      note: 'Prossimità e opportunità sono conteggi pesati di punti di interesse raggiungibili, confrontabili fra città perché ogni città è misurata allo stesso modo. L’inclusione è la quota di celle sopra entrambe le mediane pesate sulla popolazione.',
+      within: 'Entro {minutes} min',
+      onFoot: 'a piedi',
+      note: 'Quota di residenti il cui tempo a piedi verso i servizi, in media tra tutti, rientra in quella soglia. Città con almeno {population} residenti.',
     },
     side: {
       title: 'Lavori in corso',
@@ -588,8 +583,8 @@ export default {
   // Chi siamo — la linea di ricerca di cui l'Atlante è uno dei risultati.
   about: {
     eyebrow: 'Città sostenibili',
-    headline: 'Una linea di ricerca sulle città,',
-    headlineAccent: 'non un prodotto.',
+    headline: 'Scenari basati sui dati',
+    headlineAccent: 'verso città più sostenibili',
     lede: 'Siamo un gruppo di ricerca senza scopo di lucro, una delle linee di ricerca di Sony Computer Science Laboratories – Roma, e lavoriamo con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
     labLink: 'Sony CSL ↗',
     teamLink: 'Le persone →',

@@ -1131,13 +1131,13 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const veil = async (route) => {
     await page.goto(BASE + route, { waitUntil: 'load' });
     await page.waitForTimeout(1800);
-    return page.$eval('.aa-backdrop__veil', (e) => getComputedStyle(e).backgroundImage);
+    return page.$eval('.aa-backdrop__veil', (e) => getComputedStyle(e).backgroundColor);
   };
   const home = await veil('/');
   const elsewhere = await veil('/research');
   check(
     'The map is veiled the same everywhere',
-    home === elsewhere && home !== 'none',
+    home === elsewhere && !/^(transparent|rgba\(0, 0, 0, 0\))$/.test(home),
     home.slice(0, 60),
   );
   await page.close();
@@ -1298,9 +1298,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // The h1 is the Atlas's name and is the same in both locales — the line
   // under it is what a locale swap has to change.
   const en = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  // Read every figure in the compare table, not just the first: only values
-  // above 999 pick up a thousands separator.
-  const enMetric = await page.$$eval('.aa-table__value', (els) =>
+  // Read every figure in the rankings: their shares carry a decimal
+  // separator, which is what a locale swap has to change.
+  const enMetric = await page.$$eval('.aa-rank__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
@@ -1312,7 +1312,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.click('.aa-nav__langbtn[data-lang="it"]');
   await page.waitForTimeout(700);
   const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  const itMetric = await page.$$eval('.aa-table__value', (els) =>
+  const itMetric = await page.$$eval('.aa-rank__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
   const lang = await page.evaluate(() => document.documentElement.lang);

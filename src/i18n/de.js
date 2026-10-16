@@ -76,6 +76,7 @@ export default {
     platforms: {
       title: 'Ebenen der Erreichbarkeit',
       more: 'Mehr erfahren',
+      explore: 'Ebene erkunden',
       cityCount: '{count} Städte',
       themes: {
         fifteen: 'Nähe',
@@ -95,16 +96,10 @@ export default {
     },
     table: {
       title: 'Städte vergleichen',
-      statsNote:
-        'Sechs Städte, drei Maße, aus den P.O.V.-Daten. Der Bildschirm, der alle veröffentlichten Städte in allen Maßen vergleicht, ist der Reiter Statistik.',
       statsCta: 'Statistik öffnen',
-      headers: {
-        city: 'Stadt',
-        proximity: 'Medianer Nähe-Wert',
-        opportunity: 'Medianer Chancen-Wert',
-        inclusion: 'Inklusionszone',
-      },
-      note: 'Nähe und Chancen sind gewichtete Zählungen erreichbarer Orte von Interesse. Sie sind zwischen Städten vergleichbar, weil jede Stadt auf dieselbe Weise gemessen wird. Inklusion ist der Anteil der Zellen, die über beiden bevölkerungsgewichteten Medianen liegen.',
+      within: 'Innerhalb von {minutes} Min.',
+      onFoot: 'zu Fuß',
+      note: 'Anteil der Einwohner, die die Dienstleistungen im Durchschnitt aller in dieser Zeit zu Fuß erreichen. Städte mit mindestens {population} Einwohnern.',
     },
     side: {
       title: 'In Arbeit',
@@ -544,8 +539,8 @@ export default {
 
   about: {
     eyebrow: 'Nachhaltige Städte',
-    headline: 'Eine Forschungslinie zu Städten,',
-    headlineAccent: 'kein Produkt.',
+    headline: 'Datenbasierte Szenarien',
+    headlineAccent: 'für nachhaltigere Städte',
     lede: 'Wir sind ein gemeinnütziges Forschungsteam, eine der Forschungslinien von Sony Computer Science Laboratories – Rom, und arbeiten mit Partnern an der Universität Sapienza in Rom, am Forschungszentrum Enrico Fermi (CREF) und an weiteren Instituten. Der Atlas ist eines der Ergebnisse dieser Arbeit.',
     labLink: 'Sony CSL ↗',
     teamLink: 'Das Team →',

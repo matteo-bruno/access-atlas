@@ -748,9 +748,15 @@ that has not loaded. Opacity only, never transform — `.aa-picker` centres
 itself with `translateX`, and animating transform would throw it across the
 screen.
 
-One veil, the same on every page and at every scroll position: a gradient,
-densest where a page's copy sits and nearly clear on the far side. Nothing
-above it may paint it out — the map is the site's subject, not a watermark, so
+**Behind a page of copy the backdrop is the bare world, with no cities.**
+Thousands of dots read as specks in the text, so `Backdrop` draws its
+markers only on the screens that are a map (`markersHidden` off there), and
+they fade in as the platform screen is asked for, which keeps the handover
+one world with the same dots. The frame is still derived from the coverage.
+
+One veil, the same on every page and at every scroll position, and even from
+edge to edge (it was a left-to-right gradient when the copy sat on the
+left). Nothing above it may paint it out — the map is the site's subject, not a watermark, so
 what scrolls over it is transparent between its own cards and the map is as
 visible on a page of text as on the front door. If a block turns out to be
 unreadable over it, give that block a background; do not reach for the veil.
@@ -944,8 +950,10 @@ the path by `activeTab`. Three consequences to keep in mind:
 ## The home page
 
 Three sections under the landing, and none of them numbered: **Accessibility
-layers** (the four platform cards), **Compare cities** (the six-city table,
-which hands off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
+layers** (the four platform cards), **Compare cities** (three rankings from
+the statistics file, residents within 5, 10 and 15 minutes on foot,
+`cityRankings` in `src/data/home.js`, filtered as the Stats page opens, and
+a hand-off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
 `src/data/home.js`). The coverage-map section that used to open the page went
 when the backdrop became the site's map — it was the same map twice — and the
 pull quote went when the premise moved onto the front door. The metrics strip
@@ -953,8 +961,12 @@ went with the landing's copy of it, and `SectionHeading` no longer takes a
 `hint`: the italic note at the far right of a heading restated the section
 under it in three words.
 
+**The blog is unlisted for now** (`BLOG_LISTED` in `src/data/blog.js`): no
+nav tab, no footer link, and the platform cards open the layer's map. Its
+routes and posts are kept; turning the flag on restores all three.
+
 **A platform card opens the Atlas's own introduction to that layer, not the
-upstream viewer.** Each of the four has a post in `src/data/blog.js` carrying
+upstream viewer**, while the blog is listed. Each of the four has a post in `src/data/blog.js` carrying
 `layer: '<platform id>'`, which `postForLayer` resolves; a post's `links`
 block is where the platform and its paper are handed over. A card labelled
 "More info" that dropped a first-time reader straight into someone else's

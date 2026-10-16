@@ -82,6 +82,7 @@ export default {
     platforms: {
       title: 'アクセシビリティのレイヤー',
       more: '詳しく見る',
+      explore: 'レイヤーを見る',
       cityCount: '{count}都市',
       themes: {
         fifteen: '近接性',
@@ -101,16 +102,10 @@ export default {
     },
     table: {
       title: '都市を比較する',
-      statsNote:
-        'P.O.V. のデータセットから、6つの都市を3つの指標で比較しています。公開済みのすべての都市をすべての指標で比べる画面は「統計」タブです。',
       statsCta: '統計を開く',
-      headers: {
-        city: '都市',
-        proximity: '近接性スコアの中央値',
-        opportunity: '機会スコアの中央値',
-        inclusion: '包摂ゾーン',
-      },
-      note: '近接性と機会は、到達可能な地点（POI）の重み付き件数です。どの都市も同じ方法で測っているため、都市間で比較できます。包摂は、人口で重み付けした2つの中央値をともに上回るセルの割合です。',
+      within: '{minutes} 分以内',
+      onFoot: '徒歩',
+      note: '徒歩でその時間内にサービス（全サービスの平均）へ到達できる住民の割合。住民 {population} 人以上の都市。',
     },
     side: {
       title: '進行中の研究',
@@ -551,8 +546,8 @@ export default {
 
   about: {
     eyebrow: '持続可能な都市',
-    headline: '都市についての研究です。',
-    headlineAccent: '製品ではありません。',
+    headline: 'データに基づくシナリオで、',
+    headlineAccent: 'より持続可能な都市へ',
     lede: '私たちは非営利の研究チームであり、Sony Computer Science Laboratories（ローマ）の研究ラインの1つです。ローマ・ラ・サピエンツァ大学、エンリコ・フェルミ研究センター（CREF）などの研究機関の共同研究者とともに活動しています。アトラスは、その研究から生まれたものの1つです。',
     labLink: 'Sony CSL ↗',
     teamLink: 'メンバー →',

@@ -88,6 +88,7 @@ export default {
       // Each card opens the Atlas's own introduction to that layer, not the
       // upstream viewer — the platform is one link further on, from there.
       more: 'More info',
+      explore: 'Explore the layer',
       cityCount: '{count} cities',
       themes: {
         fifteen: 'Proximity',
@@ -107,16 +108,10 @@ export default {
     },
     table: {
       title: 'Compare cities',
-      statsNote:
-        'Six cities on three measures, from the P.O.V. datasets. The screen that compares every published city, on every measure, is the Stats tab.',
       statsCta: 'Open Stats',
-      headers: {
-        city: 'City',
-        proximity: 'Median proximity score',
-        opportunity: 'Median opportunity score',
-        inclusion: 'Inclusion zone',
-      },
-      note: 'Proximity and opportunity are weighted counts of reachable points of interest, comparable between cities because every city is measured the same way. The scores are the median resident’s; inclusion is the share of residents in cells above both population-weighted medians.',
+      within: 'Within {minutes} min',
+      onFoot: 'on foot',
+      note: 'Share of residents whose walk to the services, on average across them, is within that time. Cities of at least {population} residents.',
     },
     side: {
       title: 'Work in progress',
@@ -593,8 +588,8 @@ export default {
   // Who we are — the research line the Atlas is one output of.
   about: {
     eyebrow: 'Sustainable cities',
-    headline: 'A research line on cities,',
-    headlineAccent: 'not a product.',
+    headline: 'Data-based scenarios',
+    headlineAccent: 'towards more sustainable cities',
     lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories — Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
     labLink: 'Sony CSL ↗',
     teamLink: 'The people →',
