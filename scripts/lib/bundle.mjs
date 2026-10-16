@@ -2,7 +2,7 @@
 //
 //   public/data/cities/<city>/grid.json.gz          the H3 cells, once
 //   public/data/cities/<city>/<layer>.json.gz       one layer's values
-//   public/data/cities/<city>/citychrone/timesHH.npy.gz
+//   public/data/cities/<city>/citychrone/timesHH.bin  one hour's travel times
 //
 // Every platform publishes on the same standard H3 grid (checked cell by cell
 // on import), so a cell's polygon is not data: it follows from its index. The
@@ -22,8 +22,10 @@
 //
 // Rows follow the grid (`order: "grid"`) and `idx` is delta-encoded — each
 // entry is the step from the previous position — which is what lets it
-// compress to almost nothing. CityChrone's travel-time matrices are stored in
-// the same row order, so a layer row number indexes both.
+// compress to almost nothing. CityChrone's travel times are stored in the
+// same row order, so a layer row number indexes both (src/data/times.js;
+// cities imported before that format have `timesHH.npy.gz`, the whole
+// matrix in the same order, which the viewer still reads).
 //
 // Cartograms: the Atlas derives every layer's by one stated rule (area ∝ the
 // grid's population, full hexagon at the median over the layer's inhabited
@@ -61,6 +63,7 @@ import { countryAt } from './country.mjs';
 import { expandCatalogue } from '../../src/data/catalogue.js';
 import { STATS_PATH, assembleStats } from './stats.mjs';
 import { recordHiddenReason } from './quality.mjs';
+import { writeTimesFile } from './times.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '..', '..');
@@ -254,7 +257,10 @@ export const gridPath = (cityId) => `${cityDir(cityId)}/grid.json.gz`;
 export const layerPath = (cityId, layer) => `${cityDir(cityId)}/${layer}.json.gz`;
 export const scenarioDir = (cityId, scenarioId) => `${cityDir(cityId)}/scenarios/${scenarioId}`;
 export const scenarioLayerPath = (cityId, scenarioId, layer) => `${scenarioDir(cityId, scenarioId)}/${layer}.json.gz`;
-export const timesTemplate = (cityId) => `${cityDir(cityId)}/citychrone/times{hh}.npy.gz`;
+export const timesTemplate = (cityId) => `${cityDir(cityId)}/citychrone/times{hh}.bin`;
+// The whole matrix per hour, as cities imported before the per-origin
+// format still publish it.
+export const legacyTimesTemplate = (cityId) => `${cityDir(cityId)}/citychrone/times{hh}.npy.gz`;
 export const hourPath = (template, hour) => template.replace('{hh}', String(hour).padStart(2, '0'));
 
 const abs = (rel) => path.join(DATA, rel);
@@ -430,29 +436,6 @@ function encodeLayer(record, position, gridPopulation, grid) {
 }
 
 /**
- * A travel-time matrix with rows and columns put in the layer's stored order.
- *
- * The export numbers cells in its own order; stored, row i and column j are
- * the layer's rows i and j, so the browser indexes the matrix with the same
- * row number it reads the scores with. It is also most of the saving: in H3
- * order neighbouring origins are neighbouring rows, and their travel times
- * nearly repeat, which gzip finds — 2 to 3.5 times smaller, losslessly.
- */
-function permuteMatrix(npy, order) {
-  const major = npy[6];
-  const start = (major >= 2 ? 12 : 10) + (major >= 2 ? npy.readUInt32LE(8) : npy.readUInt16LE(8));
-  const n = order.length;
-  const out = Buffer.alloc(start + n * n);
-  npy.copy(out, 0, 0, start);
-  for (let r = 0; r < n; r++) {
-    const from = start + order[r] * n;
-    const to = start + r * n;
-    for (let c = 0; c < n; c++) out[to + c] = npy[from + order[c]];
-  }
-  return out;
-}
-
-/**
  * The context population of each grid cell, by the precedence above. A cell
  * only a scenario covers takes the scenario's, below every layer's.
  */
@@ -531,9 +514,8 @@ export function writeCity(cityId, records, { dryRun = false, scenarios = new Map
   for (const layer of LAYER_ORDER) {
     const record = records.get(layer);
     if (!record) continue;
-    const { out, order } = encodeLayer(record, position, population, id);
+    const { out } = encodeLayer(record, position, population, id);
     encoded.set(layer, out);
-    if (layer === 'citychrone') record.rowOrder = order;
     files.push(putFile(layerPath(cityId, layer), stableJSON(out), dryRun));
   }
 
@@ -549,39 +531,109 @@ export function writeCity(cityId, records, { dryRun = false, scenarios = new Map
     encodedScenarios.set(scenarioId, out);
   }
 
-  // Travel-time matrices come with a fresh CityChrone import only; otherwise
-  // the ones on disk stay. They are in the layer's row order, which is H3
-  // order and so does not move when another layer changes the grid.
-  const times = records.get('citychrone')?.times;
-  if (times) {
-    const template = timesTemplate(cityId);
-    const order = records.get('citychrone').rowOrder;
-    times.forEach((source, hour) => {
-      // A matrix may come as a reader, so only one hour is in memory at a time.
-      const buffer = permuteMatrix(typeof source === 'function' ? source() : source, order);
-      const rel = hourPath(template, hour);
-      const file = abs(rel);
-      const same =
-        resolveDataFile(file) && Buffer.compare(readDataBuffer(file), buffer) === 0;
-      if (same) files.push({ rel, changed: false, raw: buffer.length });
-      else if (dryRun) files.push({ rel, changed: true, raw: buffer.length });
-      else {
-        fs.mkdirSync(path.dirname(file), { recursive: true });
-        const size = writeDataFile(file, buffer);
-        files.push({ rel, changed: true, raw: size.raw, stored: size.stored });
-      }
-    });
-    // A re-import with fewer hours than the last one leaves no stale hour
-    // behind for a later catalogue to point at.
-    for (let hour = times.length; hour < 100; hour++) {
+  return { grid, encoded, encodedScenarios, files };
+}
+
+// ── travel times ─────────────────────────────────────────────────────
+
+/** The template of a city's published travel times, by what is on disk, or null. */
+export function publishedTimes(cityId) {
+  for (const template of [timesTemplate(cityId), legacyTimesTemplate(cityId)]) {
+    if (resolveDataFile(abs(hourPath(template, 0)))) return template;
+  }
+  return null;
+}
+
+/** Every published hour of a city's travel times, in either format. */
+function timesOnDisk(cityId) {
+  const found = [];
+  for (const template of [timesTemplate(cityId), legacyTimesTemplate(cityId)]) {
+    for (let hour = 0; hour < 100; hour++) {
       const rel = hourPath(template, hour);
       if (!resolveDataFile(abs(rel))) break;
-      if (!dryRun) removeDataFile(rel);
-      files.push({ rel, changed: true, raw: 0 });
+      found.push(rel);
     }
   }
+  return found;
+}
 
-  return { grid, encoded, encodedScenarios, files };
+/**
+ * Write a fresh CityChrone import's travel times, each hour to a `.partial`
+ * file beside its target; `commitTimes` puts them in place.
+ *
+ * Done before anything else of the city is written, because it is the step
+ * that reads gigabytes and the one most likely to find a truncated export:
+ * failing here leaves what is published untouched. A record read back from
+ * disk carries no `times`, and its matrices stay as they are.
+ *
+ * Rows are the layer's, in H3 order, the order `encodeLayer` gives them:
+ * the grid is sorted by H3 index, so sorting the layer's own cells gives the
+ * same order without the grid.
+ */
+export async function writeTimes(cityId, record, { dryRun = false, log = () => {} } = {}) {
+  if (record.layer !== 'citychrone' || !record.times) return { pending: [], remove: [] };
+  const keep = new Set();
+  const pending = [];
+  if (record.times.length && !dryRun) {
+    const order = record.cells.map((_, i) => i).sort((a, b) => (record.cells[a] < record.cells[b] ? -1 : 1));
+    try {
+      for (const [hour, source] of record.times.entries()) {
+        const started = Date.now();
+        const rel = hourPath(timesTemplate(cityId), hour);
+        const written = await writeTimesFile({
+          open: source.open,
+          label: source.label,
+          order,
+          population: record.fields.population,
+          target: abs(rel),
+        });
+        keep.add(rel);
+        pending.push({ rel, ...written });
+        log(
+          `  times ${String(hour).padStart(2, '0')}: ${written.rows} origins, ${written.layout}, ` +
+            `${(written.stored / 1e6).toFixed(1)} MB${written.changed ? '' : ' (unchanged)'} · ` +
+            `${((Date.now() - started) / 1000).toFixed(1)} s`,
+        );
+      }
+    } catch (error) {
+      // The hours already written would otherwise sit beside the published
+      // ones as `.partial` files until the next import.
+      discardTimes({ pending });
+      // Nor folders made for them, in a city that had none.
+      for (const dir of [path.dirname(abs(timesTemplate(cityId))), abs(cityDir(cityId))]) {
+        if (fs.existsSync(dir) && !fs.readdirSync(dir).length) fs.rmdirSync(dir);
+      }
+      throw error;
+    }
+  } else if (record.times.length) {
+    for (let hour = 0; hour < record.times.length; hour++) keep.add(hourPath(timesTemplate(cityId), hour));
+  }
+  // Whatever else is published for the city goes: the other format, hours
+  // past this export's, or every hour when the export has no matrices.
+  const remove = timesOnDisk(cityId).filter((rel) => !keep.has(rel));
+  return { pending, remove };
+}
+
+/** Put written travel times in place and clear the ones they replace. */
+export function commitTimes({ pending, remove }, { dryRun = false } = {}) {
+  const files = [];
+  for (const item of pending) {
+    if (item.partial && !dryRun) fs.renameSync(item.partial, abs(item.rel));
+    files.push({ rel: item.rel, changed: item.changed, raw: item.raw, stored: item.stored });
+  }
+  for (const rel of remove) {
+    if (!dryRun) removeDataFile(rel);
+    files.push({ rel, changed: true, removed: true });
+  }
+  // A city left with no matrices keeps no empty folder for them.
+  const folders = new Set(remove.map((rel) => path.dirname(abs(rel))));
+  for (const dir of folders) if (!dryRun && fs.existsSync(dir) && !fs.readdirSync(dir).length) fs.rmdirSync(dir);
+  return files;
+}
+
+/** Drop written travel times that will not be published (a failed import). */
+export function discardTimes({ pending }) {
+  for (const item of pending) if (item.partial) fs.rmSync(item.partial, { force: true });
 }
 
 // ── figures a catalogue row carries ──────────────────────────────────
@@ -799,10 +851,13 @@ export function cityEntries(cityId, { grid, encoded, meta, scenarios = new Map()
     cartogramSources: Object.fromEntries(layers.map((l) => [l, encoded.get(l).cartogram.source])),
   };
   if (encoded.has('citychrone')) {
+    // No `times` is a city published without its matrices: its isochrones
+    // read "not available".
+    const times = publishedTimes(cityId);
     atlas.hourly = {
       hours: encoded.get('citychrone').hourly.hours,
       cells: encoded.get('citychrone').cells,
-      times: timesTemplate(cityId),
+      ...(times ? { times } : {}),
     };
   }
   if (scenarios.size) {
@@ -1285,14 +1340,23 @@ export function removeDataFile(rel) {
  *                                 instead of computing them (migration only)
  * @param {object} [input.overrides] name / place flags
  */
-export function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false }) {
+export async function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false, log }) {
   const previous = readCityRecord(cityId);
   const records = readCity(cityId);
   const scenarios = readScenarios(cityId);
   const replaced = records.has(record.layer);
   records.set(record.layer, record);
 
-  const { grid, encoded, encodedScenarios, files } = writeCity(cityId, records, { dryRun, scenarios });
+  const times = await writeTimes(cityId, record, { dryRun, log });
+  let written;
+  try {
+    written = writeCity(cityId, records, { dryRun, scenarios });
+  } catch (error) {
+    discardTimes(times);
+    throw error;
+  }
+  const { grid, encoded, encodedScenarios, files } = written;
+  files.push(...commitTimes(times, { dryRun }));
   const centre = weightedCentre(grid.cells, grid.population);
   const { meta, derived } = cityMeta(previous, cityId, centre, overrides);
   const { atlas, rows: entries } = cityEntries(cityId, {
@@ -1381,13 +1445,7 @@ export function unpublishLayer({ cityId, layer, dryRun = false }) {
   const { grid, encoded, encodedScenarios, files: written } = writeCity(cityId, records, { dryRun, scenarios });
   files.push(...written);
   remove(layerPath(cityId, layer));
-  if (layer === 'citychrone') {
-    for (let hour = 0; hour < 100; hour++) {
-      const rel = hourPath(timesTemplate(cityId), hour);
-      if (!resolveDataFile(abs(rel))) break;
-      remove(rel);
-    }
-  }
+  if (layer === 'citychrone') for (const rel of timesOnDisk(cityId)) remove(rel);
 
   const { atlas, rows: entries } = cityEntries(cityId, {
     grid,

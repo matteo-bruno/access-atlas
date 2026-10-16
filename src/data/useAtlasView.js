@@ -315,16 +315,20 @@ export function useCitychroneHour(cityId, hour, enabled = true) {
 }
 
 /**
- * The travel-time matrix behind one hour's isochrones. ~3 MB per hour, so it
- * only loads while the isochrone view is active; the URL cache makes
- * revisiting an hour free.
+ * One origin's travel times for one hour, as a value per CityChrone layer row
+ * (src/data/times.js: minutes, TIMES_OVER past the cap, TIMES_NONE where
+ * nothing is stored). Loads only while the isochrone view is on; before an
+ * origin is chosen it opens the hour's file, so the first click is quick.
+ *
+ * `status` is `unavailable` for a city published without travel times, and
+ * `row` is null for an origin with none (a cell where nobody lives).
  */
-export function useTravelTimes(cityId, hour, enabled = false) {
-  const [state, setState] = useState({ status: 'idle', matrix: null });
+export function useTravelTimes(cityId, hour, enabled = false, origin = null) {
+  const [state, setState] = useState({ status: 'idle', row: null });
 
   useEffect(() => {
     if (!enabled || !cityId) {
-      setState({ status: 'idle', matrix: null });
+      setState({ status: 'idle', row: null });
       return undefined;
     }
     let cancelled = false;
@@ -337,16 +341,18 @@ export function useTravelTimes(cityId, hour, enabled = false) {
         const catalogue = await provider.catalogue({ signal: controller.signal });
         const published = await provider.travelTimes('citychrone', cityId, hour, catalogue, {
           signal: controller.signal,
+          origin,
         });
         if (cancelled) return;
         setState(
           published
-            ? { status: 'ready', matrix: published.matrix }
-            : { status: 'idle', matrix: null },
+            ? { status: 'ready', row: published.row }
+            : { status: 'unavailable', row: null },
         );
       } catch (error) {
         if (error?.name === 'AbortError' || cancelled) return;
-        setState({ status: 'error', matrix: null });
+        if (import.meta.env?.DEV) console.warn('[data] travel times', error.message);
+        setState({ status: 'error', row: null });
       }
     })();
 
@@ -354,7 +360,7 @@ export function useTravelTimes(cityId, hour, enabled = false) {
       cancelled = true;
       controller.abort();
     };
-  }, [cityId, hour, enabled]);
+  }, [cityId, hour, enabled, origin]);
 
   return state;
 }

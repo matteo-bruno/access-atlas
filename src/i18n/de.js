@@ -274,7 +274,7 @@ export default {
     },
     beyond: {
       fifteen: 'ab 120 Min. bis ins Schwarze dunkler werdend',
-      isochrone: 'bis ins Schwarze bei 180 Min., dem veröffentlichten Höchstwert',
+      isochrone: 'über 120 Min. eine einzige dunklere Farbe',
     },
     views: {
       velocity: 'Geschwindigkeit',
@@ -302,6 +302,8 @@ export default {
     osmUpdate: 'Letzte OpenStreetMap-Aktualisierung: {date}',
     layerCells: 'Von {name} gemessene Zellen',
     isochroneEmpty: 'Klicken Sie auf eine Zelle, um die Reisezeiten von dort zu zeigen',
+    isochroneUnavailable: 'Für diese Stadt sind keine Reisezeiten veröffentlicht, daher sind ihre Isochronen nicht verfügbar.',
+    isochroneNoOrigin: 'In dieser Zelle wohnt niemand, daher gehen von ihr keine Reisezeiten aus. Klicken Sie auf eine andere Zelle.',
     unavailable: 'Nicht veröffentlicht',
     noValue: 'Für diese Zelle nicht gemessen',
     openPlatform: 'Seite von {name}',
@@ -400,7 +402,7 @@ export default {
         pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
         cardep: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Fahr- und Gehzeiten mit OSRM auf OpenStreetMap, auf der Autoseite mit einem Zuschlag für die Parkplatzsuche und stadtspezifischen Verkehrsverzögerungen; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus WorldPop.',
         fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die neun Kategorien der Auswahl; Bevölkerung aus WorldPop.',
-        citychrone: 'H3-Zellen der Auflösung 9, ein Export pro Tagesstunde. Öffentlicher Verkehr aus GTFS-Fahrplänen; beide Werte und die Isochronen sind im Artikel der Plattform definiert. Reisezeiten werden in ganzen Minuten veröffentlicht, gedeckelt bei 180.',
+        citychrone: 'H3-Zellen der Auflösung 9, ein Export pro Tagesstunde. Öffentlicher Verkehr aus GTFS-Fahrplänen; beide Werte und die Isochronen sind im Artikel der Plattform definiert. Reisezeiten sind ganze Minuten; alles über 120 ist eine Klasse, und Zellen, in denen niemand wohnt, sind ausgelassen.',
       },
       paperNote: 'Die Methode ist im Artikel vollständig beschrieben.',
     },

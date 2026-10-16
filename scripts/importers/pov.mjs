@@ -32,10 +32,15 @@ export function parse(source) {
   }
 
   // The zone thresholds are population-weighted medians; classifying against
-  // them must reproduce the platform's own cell_type, cell for cell.
+  // them should reproduce the platform's own cell_type, cell for cell. Where
+  // it does not, the export's labels are not what its own scores say, and
+  // the zones published are the recomputed ones: they are the ones the
+  // thresholds in the file describe, and the ones the Stats page recomputes.
+  // That is said loudly, because it means the export is not the platform's.
   const weights = rows.map((r) => r.population);
   const proxCut = weightedMedian(rows.map((r) => r.proximity), weights);
   const oppCut = weightedMedian(rows.map((r) => r.opportunity), weights);
+  const disagree = [];
   rows.forEach((row, i) => {
     const derived =
       row.proximity >= proxCut && row.opportunity >= oppCut
@@ -45,9 +50,8 @@ export function parse(source) {
           : row.opportunity >= oppCut
             ? 2
             : 3;
-    if (derived !== row.zone) {
-      throw new Error(`cell ${cells[i]} classifies as zone ${derived} but is labelled ${row.zone}`);
-    }
+    if (derived !== row.zone) disagree.push({ cell: cells[i], derived, labelled: row.zone, population: row.population });
+    row.zone = derived;
   });
 
   const column = (key) => rows.map((r) => r[key]);
@@ -64,6 +68,27 @@ export function parse(source) {
       },
       meta: { thresholds: { proximity: r1(proxCut), opportunity: r1(oppCut) } },
     },
-    notes: [`grid ✓ r9, outlines within ${worstBoundary.toFixed(1)} m`, `zones ✓ ${rows.length} cells reproduce cell_type`],
+    notes: [
+      `grid ✓ r9, outlines within ${worstBoundary.toFixed(1)} m`,
+      disagree.length
+        ? `zones: ${rows.length - disagree.length} of ${rows.length} cells reproduce cell_type`
+        : `zones ✓ ${rows.length} cells reproduce cell_type`,
+    ],
+    warnings: disagree.length ? [zoneWarning(disagree, rows)] : [],
   };
+}
+
+/** What a disagreement with the export's own zones looks like, in one line. */
+function zoneWarning(disagree, rows) {
+  const total = rows.reduce((a, r) => a + r.population, 0);
+  const residents = disagree.reduce((a, d) => a + d.population, 0);
+  const share = total ? ` (${((residents / total) * 100).toFixed(1)}% of residents)` : '';
+  const examples = disagree
+    .slice(0, 3)
+    .map((d) => `${d.cell} ${ZONE_TYPES[d.labelled]} → ${ZONE_TYPES[d.derived]}`)
+    .join(', ');
+  return (
+    `${disagree.length} of ${rows.length} cells${share} are labelled with another zone than their scores give ` +
+    `at the population-weighted medians; published with the recomputed zones (${examples}${disagree.length > 3 ? ', …' : ''})`
+  );
 }

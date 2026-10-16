@@ -273,7 +273,7 @@ export default {
     },
     beyond: {
       fifteen: 'jusqu’au noir à partir de 120 min',
-      isochrone: 'jusqu’au noir à 180 min, le maximum publié',
+      isochrone: 'au-delà de 120 min, une seule couleur plus sombre',
     },
     views: {
       velocity: 'Vitesse',
@@ -301,6 +301,8 @@ export default {
     osmUpdate: 'Dernière mise à jour OpenStreetMap : {date}',
     layerCells: 'Cellules mesurées par {name}',
     isochroneEmpty: 'Cliquez sur une cellule pour afficher les temps de trajet depuis celle-ci',
+    isochroneUnavailable: 'Les temps de trajet de cette ville ne sont pas publiés : ses isochrones ne sont pas disponibles.',
+    isochroneNoOrigin: 'Personne ne vit dans cette cellule : aucun temps de trajet n’en part. Cliquez sur une autre cellule.',
     unavailable: 'Non publié',
     noValue: 'Non mesuré pour cette cellule',
     openPlatform: 'Page {name}',
@@ -399,7 +401,7 @@ export default {
         pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
         cardep: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps en voiture et à pied calculés avec OSRM sur OpenStreetMap, avec une marge pour le stationnement et des retards de circulation propres à chaque ville côté voiture ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue de WorldPop.',
         fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les neuf catégories du sélecteur ; population issue de WorldPop.',
-        citychrone: 'Cellules H3 de résolution 9, un export par heure de la journée. Transports en commun à partir des horaires GTFS ; les deux scores et les isochrones sont définis dans l’article de la plateforme. Les temps de trajet sont publiés en minutes entières, plafonnés à 180.',
+        citychrone: 'Cellules H3 de résolution 9, un export par heure de la journée. Transports en commun à partir des horaires GTFS ; les deux scores et les isochrones sont définis dans l’article de la plateforme. Les temps de trajet sont en minutes entières ; au-delà de 120, ils forment une seule classe, et les cellules où personne ne vit sont exclues.',
       },
       paperNote: 'La méthode est exposée en détail dans l’article.',
     },

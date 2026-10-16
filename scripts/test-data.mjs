@@ -31,6 +31,7 @@ import { buildIndex, cataloguePaths, cityEntryPath, extentOf, gridId, listCities
 import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs';
 import { recordHiddenReason } from './lib/quality.mjs';
 import { atlasMetrics } from '../src/data/home.js';
+import { TIMES_MAX, TIMES_OVER, blockOf, parseTimesPrelude, rowFromBlock } from '../src/data/times.js';
 import { normaliseCatalogue } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
 import { localeFor } from '../src/i18n/locales.js';
@@ -88,6 +89,58 @@ function matrixProblem(file, n) {
     fs.closeSync(fd);
   }
 }
+
+/**
+ * What is wrong with one hour of travel times in the Atlas's own format
+ * (src/data/times.js), or null.
+ *
+ * Its prelude is read whole and every block's length checked against the
+ * file's; the kept cells must be exactly the layer's inhabited ones, the
+ * cells the viewer draws. Two blocks are decoded, the first and the last, and
+ * every value in them must be a minute up to the cap or the "over" class.
+ */
+function timesProblem(file, layerFile) {
+  if (!fs.existsSync(file)) return 'missing';
+  const { size } = fs.statSync(file);
+  const fd = fs.openSync(file, 'r');
+  try {
+    let head = Buffer.alloc(Math.min(size, 64 * 1024));
+    fs.readSync(fd, head, 0, head.length, 0);
+    let prelude = parseTimesPrelude(head);
+    if (prelude.need) {
+      if (prelude.need > size) return 'truncated prelude';
+      head = Buffer.alloc(prelude.need);
+      fs.readSync(fd, head, 0, head.length, 0);
+      prelude = parseTimesPrelude(head);
+    }
+    if (prelude.cells !== layerFile.cells) return `${prelude.cells} cells, the layer has ${layerFile.cells}`;
+    if (prelude.size !== size) return `blocks end at ${prelude.size} bytes, the file is ${size}: truncated`;
+    const population = layerFile.fields.population;
+    // A layer with no resident anywhere keeps every row (lib/times.mjs).
+    const nobody = !population.some((p) => Number(p) > 0);
+    for (let i = 0; i < prelude.cells && !nobody; i++) {
+      if ((prelude.rank[i] >= 0) !== Number(population[i]) > 0) {
+        return `row ${i} is ${prelude.rank[i] >= 0 ? 'kept with no residents' : 'left out with residents'}`;
+      }
+    }
+    if (nobody && prelude.rows !== prelude.cells) return `the layer has no residents, and only ${prelude.rows} of ${prelude.cells} rows are kept`;
+    for (const r of prelude.rows ? [0, prelude.rows - 1] : []) {
+      const at = blockOf(prelude, prelude.kept[r]);
+      const packed = Buffer.alloc(at.end - at.start);
+      fs.readSync(fd, packed, 0, packed.length, at.start);
+      const row = rowFromBlock(prelude, at.block, at.local, zlib.inflateRawSync(packed));
+      for (const c of prelude.kept) {
+        if (row[c] > TIMES_MAX && row[c] !== TIMES_OVER) return `origin ${prelude.kept[r]} holds ${row[c]} minutes`;
+      }
+    }
+    return null;
+  } catch (error) {
+    return error.message;
+  } finally {
+    fs.closeSync(fd);
+  }
+}
+
 const sum = (values) => values.reduce((a, b) => a + b, 0);
 
 // The index (version 3) with every city's entry gathered back into it, so
@@ -311,7 +364,11 @@ for (const city of catalogue.atlas?.cities ?? []) {
       for (let hour = 0; hour < hours; hour++) {
         const summary = citychroneHourFromLayer(file, hour);
         if (!Number.isFinite(summary?.weightedMedianV)) bad.push(`citychrone hour ${hour} has no usable v_score`);
-        const problem = matrixProblem(path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0'))), cells);
+        if (!city.hourly.times) continue;
+        const timesFile = path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0')));
+        const problem = city.hourly.times.endsWith('.bin')
+          ? timesProblem(timesFile, file)
+          : matrixProblem(timesFile, cells);
         if (problem) bad.push(`times ${hour}: ${problem}`);
       }
     }

@@ -7,7 +7,7 @@ import './RampLegend.css';
  * continuous one cannot, so the bar carries the reading instead.
  *
  * Where a ramp keeps going past its bar — 15-minute city darkens to black at
- * 120 minutes, the isochrones to 180 — the rest is drawn beside it as a
+ * 120 minutes; the isochrones' "over 120" is one class — the rest is drawn beside it as a
  * compressed tail rather than described in a sentence. Stretching the bar
  * that far would squash the range nearly every cell sits in; leaving the tail
  * off entirely means colours appear on the map that are nowhere on the

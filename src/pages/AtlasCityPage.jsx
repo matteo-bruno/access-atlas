@@ -11,6 +11,7 @@ import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
 import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
+import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
@@ -72,6 +73,17 @@ const GRID_BOUND_PARAMS = ['from'];
  * change; a legacy city swaps in the active platform's own mesh. Layer and
  * per-layer options live in the query string so any view is linkable.
  */
+
+/**
+ * An origin's travel time to one layer row, in minutes, or null where none is
+ * stored. Every time past TIMES_MAX reads as TIMES_MAX + 1, the "over" class.
+ */
+function travelTimeAt(row, cc) {
+  const v = row?.[cc];
+  if (v == null || v === TIMES_NONE) return null;
+  return v > TIMES_MAX ? TIMES_MAX + 1 : v;
+}
+
 export default function AtlasCityPage() {
   const { cityId } = useParams();
   const view = useAtlasView(cityId);
@@ -167,6 +179,9 @@ function AtlasScreen({ cityId, view }) {
     : CITYCHRONE_VIEWS[0].key;
   const hourParam = Number.parseInt(params.get('hour'), 10);
   const hours = platformProfiles.citychrone?.hourly?.hours ?? 24;
+  // A city can publish CityChrone's scores without its travel times; its
+  // isochrones then say so instead of waiting on a file that is not there.
+  const isochronesPublished = Boolean(platformProfiles.citychrone?.hourly?.times ?? profile.hourly?.times);
   const hour = Number.isInteger(hourParam) && hourParam >= 0 && hourParam < hours
     ? hourParam
     : DEFAULT_HOUR;
@@ -264,7 +279,7 @@ function AtlasScreen({ cityId, view }) {
     () => (ccLayerFile ? citychroneHourFromLayer(ccLayerFile, hour) : ccHour.data),
     [ccLayerFile, hour, ccHour.data],
   );
-  const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone');
+  const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone', originCc);
 
   // ── Geometry ───────────────────────────────────────────────────────
   // Reversed from the platform pages: the union mesh is already the cells
@@ -313,12 +328,13 @@ function AtlasScreen({ cityId, view }) {
   }, [citychroneOn, unified, ccToId]);
 
   // ── CityChrone runtime join: hourly scores / travel times as state ──
-  const matrixRow = useMemo(() => {
-    if (!citychroneOn || ccView !== 'isochrone' || originCc == null || !times.matrix) return null;
-    const [rows, cols] = times.matrix.shape;
-    if (originCc >= rows) return null;
-    return times.matrix.data.subarray(originCc * cols, (originCc + 1) * cols);
-  }, [citychroneOn, ccView, originCc, times.matrix]);
+  // The origin's times, one per layer row. Every time over TIMES_MAX is one
+  // class, "over", whichever format the city was published in: the
+  // per-origin files store it that way, and the older whole matrices, which
+  // run to 180, are read the same so that a colour means the same in every
+  // city.
+  const matrixRow =
+    citychroneOn && ccView === 'isochrone' && originCc != null ? times.row : null;
 
   const featureState = useMemo(() => {
     if (!citychroneOn || !ccHourData || !featureIdForCc) return null;
@@ -327,7 +343,8 @@ function AtlasScreen({ cityId, view }) {
       const id = featureIdForCc(cc);
       if (id == null) continue;
       const state = { v: scores.v, s: scores.s };
-      if (matrixRow) state.t = matrixRow[cc];
+      const minutes = travelTimeAt(matrixRow, cc);
+      if (minutes != null) state.t = minutes;
       states.set(id, state);
     }
     return states;
@@ -408,7 +425,10 @@ function AtlasScreen({ cityId, view }) {
       return {
         ramp: RAMPS.isochrone,
         value: ['feature-state', state],
-        format: (v) => `${n(Math.round(v))} ${t('fifteen.minutes')}`,
+        format: (v) =>
+          v > TIMES_MAX
+            ? `${n(TIMES_MAX)}+ ${t('fifteen.minutes')}`
+            : `${n(Math.round(v))} ${t('fifteen.minutes')}`,
       };
     }
     return ccView === 'velocity'
@@ -642,7 +662,8 @@ function AtlasScreen({ cityId, view }) {
       // No popup before an origin exists — the standing prompt instructs, and
       // a popup would freeze on the old text once the matrix arrives.
       if (!matrixRow) return null;
-      return measure.format(matrixRow[cc]);
+      const minutes = travelTimeAt(matrixRow, cc);
+      return minutes == null ? t('atlas.noValue') : measure.format(minutes);
     }
     return measure.format(ccView === 'velocity' ? scores.v : scores.s);
   };
@@ -717,10 +738,14 @@ function AtlasScreen({ cityId, view }) {
         label: t('city.cell.sociality'),
         value: scores ? n(Math.round(scores.s)) : '—',
       });
-      if (matrixRow && Number.isFinite(p.cc)) {
+      const minutes = Number.isFinite(p.cc) ? travelTimeAt(matrixRow, p.cc) : null;
+      if (minutes != null) {
         rows.push({
           label: t('city.cell.time'),
-          value: `${n(matrixRow[p.cc])} ${t('fifteen.minutes')}`,
+          value:
+            minutes > TIMES_MAX
+              ? `${n(TIMES_MAX)}+ ${t('fifteen.minutes')}`
+              : `${n(minutes)} ${t('fifteen.minutes')}`,
         });
       }
     }
@@ -978,6 +1003,8 @@ function AtlasScreen({ cityId, view }) {
                       type="button"
                       className={`aa-toggle__btn${ccView === option.key ? ' aa-toggle__btn--active' : ''}`}
                       aria-pressed={ccView === option.key}
+                      disabled={option.key === 'isochrone' && !isochronesPublished}
+                      title={option.key === 'isochrone' && !isochronesPublished ? t('atlas.isochroneUnavailable') : undefined}
                       onClick={() => {
                         setActiveZone(null);
                         setParam('view', option.key === CITYCHRONE_VIEWS[0].key ? null : option.key);
@@ -1049,7 +1076,7 @@ function AtlasScreen({ cityId, view }) {
                 format={tickFormat}
                 // Both time ramps keep going past their bar; the tail carries
                 // the rest of the scale rather than a sentence about it.
-                tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.value)}+` : undefined}
+                tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
               />
             )}
 
@@ -1353,9 +1380,17 @@ function AtlasScreen({ cityId, view }) {
               </button>
             </div>
 
-            {citychroneOn && ccView === 'isochrone' && originCc == null && (
+            {citychroneOn && ccView === 'isochrone' && !isochronesPublished && (
+              <div className="aa-atlas__prompt">{t('atlas.isochroneUnavailable')}</div>
+            )}
+            {citychroneOn && ccView === 'isochrone' && isochronesPublished && originCc == null && (
               <div className="aa-atlas__prompt">{t('atlas.isochroneEmpty')}</div>
             )}
+            {citychroneOn &&
+              ccView === 'isochrone' &&
+              originCc != null &&
+              times.status === 'ready' &&
+              !times.row && <div className="aa-atlas__prompt">{t('atlas.isochroneNoOrigin')}</div>}
           </div>
         </section>
       </main>

@@ -13,7 +13,7 @@
 // keeps "what is real" separate from "what do we draw when nothing is".
 // ─────────────────────────────────────────────────────────────────────────
 
-import { loadDataset, loadJSON, whenAborted } from '../map/loaders.js';
+import { loadDataset, loadJSON, loadTimesRow, whenAborted } from '../map/loaders.js';
 import { layerCartogram } from './grid.js';
 import {
   EMPTY_CATALOGUE,
@@ -262,20 +262,28 @@ export function createStaticProvider() {
       return { collection, profile, hour: clamped };
     },
 
-    // The travel-time matrix behind one hour's isochrones: cells × cells,
-    // uint8 minutes. ~3 MB per hour, so it is only fetched when the isochrone
-    // view asks for it (and then cached by URL like everything else).
-    async travelTimes(platformId, cityId, hour, catalogue, { signal } = {}) {
+    // One origin's travel times for one hour: a value per layer row. A city
+    // in the per-origin format (`timesHH.bin`, src/data/times.js) sends one
+    // block of origins; one imported before it sends the hour's whole
+    // matrix (`timesHH.npy.gz`, ~10 MB gzipped for Rome), cached by URL, so
+    // the next origin in that hour is free. With no origin the file is only
+    // opened, so it is warm by the time the reader clicks. `row` is null
+    // where nobody lives at the origin; null altogether is a city with no
+    // published travel times.
+    async travelTimes(platformId, cityId, hour, catalogue, { signal, origin = null } = {}) {
       await this.city(cityId, catalogue, { signal });
       const atlas = atlasCity(catalogue, cityId);
       const profile = atlas?.hourly?.times ? atlas : publishedCity(catalogue, platformId, cityId);
       if (!profile?.hourly?.times) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
-      const matrix = await loadDataset(
-        { url: fileUrl(catalogue, hourlyPath(profile.hourly.times, clamped)) },
-        { signal },
-      );
-      return { matrix, profile, hour: clamped };
+      const url = fileUrl(catalogue, hourlyPath(profile.hourly.times, clamped));
+      if (profile.hourly.times.endsWith('.bin')) {
+        return { row: await loadTimesRow(url, origin, { signal }), profile, hour: clamped };
+      }
+      const matrix = await loadDataset({ url }, { signal });
+      const [rows, cols] = matrix.shape;
+      const row = origin != null && origin < rows ? matrix.data.subarray(origin * cols, (origin + 1) * cols) : null;
+      return { row, profile, hour: clamped };
     },
   };
 }
@@ -308,7 +316,8 @@ export function createStaticProvider() {
  *   hourly(platformId, cityId, hour, catalogue, opts)
  *                                              → { collection, profile, hour } | null
  *   travelTimes(platformId, cityId, hour, catalogue, opts)
- *                                              → { matrix: { shape, data }, profile, hour } | null
+ *                                              → { row: Uint8Array | null, profile, hour } | null
+ *                                                (opts.origin: a layer row)
  *
  * `opts` carries `{ signal, scenario }`. Returning `null` means "not
  * published" and is never an error: the caller falls back to seed data.

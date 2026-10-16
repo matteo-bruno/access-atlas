@@ -39,6 +39,7 @@
 // city's record. `npm run update:data` runs this for whatever changed in
 // input_data/.
 
+import fs from 'node:fs';
 import path from 'node:path';
 import { buildIndex, publishLayer, publishScenario, refreshFigures, unpublishLayer, unpublishScenario } from './lib/bundle.mjs';
 import { parseSourceName, slugify } from './lib/slug.mjs';
@@ -68,6 +69,20 @@ for (let i = 2; i < process.argv.length; i++) {
 }
 
 const dryRun = flag('dry-run');
+
+/**
+ * Print what an import went ahead despite, where it cannot be missed: on
+ * stderr, marked, and, under update-data, also appended to the file it
+ * names in ATLAS_IMPORT_WARNINGS, which it repeats once every import is done.
+ */
+function warn(label, warnings = []) {
+  for (const text of warnings) {
+    console.warn(`  ! WARNING ${text}`);
+    if (process.env.ATLAS_IMPORT_WARNINGS) {
+      fs.appendFileSync(process.env.ATLAS_IMPORT_WARNINGS, `${label}: ${text}\n`);
+    }
+  }
+}
 const kb = (n) => `${(n / 1024).toFixed(0)} kB`;
 
 function reindex() {
@@ -151,7 +166,8 @@ const scenarioId = arg('scenario') ? slugify(arg('scenario')) : named.scenario;
 if (scenarioId) {
   try {
     const started = Date.now();
-    const parsed = importer.parse(source);
+    const parsed = await importer.parse(source);
+    warn(`${cityId} · scenario ${scenarioId} · ${importer.layer}`, parsed.warnings);
     const report = publishScenario({
       cityId,
       scenarioId,
@@ -179,12 +195,15 @@ if (scenarioId) {
 
 try {
   const started = Date.now();
-  const parsed = importer.parse(source);
-  const report = publishLayer({
+  const parsed = await importer.parse(source);
+  for (const note of parsed.notes ?? []) console.log(`  ${note}`);
+  warn(`${cityId} · ${importer.layer}`, parsed.warnings);
+  const report = await publishLayer({
     cityId,
     record: parsed.record,
     rows: parsed.rows,
     dryRun,
+    log: (line) => console.log(line),
     overrides: {
       name: arg('name'),
       nameIt: arg('name-it'),
@@ -207,7 +226,6 @@ try {
         : '  ! no country near the city centre: pass --country / --region',
     );
   }
-  for (const note of parsed.notes ?? []) console.log(`  ${note}`);
   const changed = report.files.filter((f) => f?.changed);
   const stored = changed.reduce((s, f) => s + (f.stored ?? 0), 0);
   console.log(
@@ -215,7 +233,7 @@ try {
       (stored ? `, ${kb(stored)} on disk` : '') +
       ` · ${((Date.now() - started) / 1000).toFixed(1)} s`,
   );
-  for (const f of changed) console.log(`    ${f.rel}${f.stored ? `  ${kb(f.stored)}` : ''}`);
+  for (const f of changed) console.log(`    ${f.rel}${f.removed ? '  (removed)' : f.stored ? `  ${kb(f.stored)}` : ''}`);
   if (!flag('no-index')) reindex();
 } catch (error) {
   console.error(`${cityId} · ${importer.layer}: ${error.message}`);

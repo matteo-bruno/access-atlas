@@ -27,8 +27,17 @@
   cursor: pointer;
 }
 
-.aa-toggle__btn:hover {
+.aa-toggle__btn:hover:not(:disabled) {
   border-color: var(--ink-4);
+}
+
+/* An option the city does not publish (CityChrone's isochrones without
+   their travel times): shown, so the set of views does not change from city
+   to city, and said to be off. */
+.aa-toggle__btn:disabled {
+  color: var(--ink-4);
+  border-style: dashed;
+  cursor: not-allowed;
 }
 
 .aa-toggle__btn--active {

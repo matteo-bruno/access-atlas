@@ -49,7 +49,8 @@ Atlas derives every layer's cartogram by one rule.
 
 CityChrone is the one exception, because its travel-time matrices are not
 GeoJSON: `<City>.zip` (or the same folder unpacked) holding the hourly
-`hexcoverHH.json` and `timesHH.npy`, each plain or zipped on its own.
+`hexcoverHH.json` and, optionally, `timesHH.npy`, each plain, gzipped or
+zipped on its own.
 
 ### Metro areas and scenarios
 
@@ -203,23 +204,43 @@ layer's cells).
 The platform's hourly files, each one plain or zipped on its own:
 
 ```
-Zurich/hexcover00.zip … hexcover23.zip   (or hexcoverHH.json)
+Zurich/hexcover00.zip … hexcover23.zip   (or hexcoverHH.json / .geojson)
 Zurich/times00.zip    … times23.zip      (or timesHH.npy)
 ```
 
 Every hour must be there, with the same cells in the same order (`new_id`,
 `coord` checked hour by hour), and every matrix must be `uint8`, `n × n`.
 All 24 hours of scores go into one layer file of a few hundred kB, so the
-hour selector is instant. The matrices stay one file per hour, fetched only
-for isochrones, with rows and columns re-ordered to grid order: lossless,
-and 2 to 3.5 times smaller.
+hour selector is instant.
+
+`pop` (or `population`) is a headcount per cell. It decides which travel times are kept and
+weights the city's figures, so an export where it gives no cell a resident
+(missing, or under 0.5 everywhere) is imported with a warning, and its
+travel times are kept for every cell rather than for none.
+
+The matrices are optional. With no `timesHH` file at all the city is
+published with its scores and its isochrones read "not available"; with some
+hours and not others the import stops, because that is an export that went
+wrong. Re-importing without them takes published ones off.
+
+The matrices are rewritten one file per hour in the Atlas's own format
+(`public/data/README.md`): the cells where nobody lives left out, every time
+over 120 minutes stored as one class, and blocks of 32 origins compressed
+separately, so the browser fetches one block per click. They are streamed,
+never read whole, so a metro area's (14 GB an hour at 120,000 cells) needs
+the disk for a scratch copy of the kept matrix, not the memory: under 1 GB it
+is held in memory, past it in the system's temporary folder, removed after
+each hour. A zip inside the zip is read as a stream too, whether or not the
+outer one compressed it.
 
 ### P.O.V.: `pov/<City>.geojson`
 
 The true hexagons, with `population`, `proximity`, `opportunity` and
 `cell_type`. The zone thresholds are recomputed as population-weighted
-medians, and the import stops if classifying any cell against them does not
-reproduce its `cell_type`.
+medians and every cell is classified against them. Where that does not
+reproduce the export's `cell_type`, the recomputed zone is published and the
+import warns (how many cells, what share of residents, a few examples);
+`update:data` repeats every warning at the end of the run.
 
 ### Car Dependency Index: `cdi/<City>.geojson`
 

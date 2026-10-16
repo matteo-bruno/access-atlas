@@ -17,7 +17,8 @@
 //   ticks   values to label on the legend bar (defaults to first/last)
 //   legendTo  clip the *legend* below the last stop, where the tail is real
 //             but rare and would otherwise squash the informative part
-//   beyond  { value, color, label } for a tail the bar does not show
+//   beyond  { value, color, label, solid } for a tail the bar does not show;
+//           `solid` when it is one class rather than a range (`label+`)
 
 import { BRAND } from '../data/brand.js';
 
@@ -82,7 +83,10 @@ export const RAMPS = {
   },
 
   // Travel time from one cell, by public transport. Green near, yellow around
-  // the hour, red beyond. The published matrices cap at 180 minutes.
+  // the hour, red at two hours. Past two hours is one class, darker, in every
+  // city: the per-origin files store nothing finer (src/data/times.js), and
+  // the older whole matrices, which run to 180, are read the same way, so
+  // the viewer hands every time over 120 to the ramp as 121.
   isochrone: {
     stops: [
       [0, '#1a7d3f'],
@@ -91,12 +95,12 @@ export const RAMPS = {
       [60, '#f2e05a'],
       [90, '#e08a3c'],
       [120, '#b32222'],
-      [180, '#5e1111'],
+      [121, '#5e1111'],
     ],
     unit: 'min',
     legendTo: 120,
     ticks: [0, 30, 60, 90, 120],
-    beyond: { value: 180, color: '#5e1111' },
+    beyond: { value: 121, color: '#5e1111', label: 120, solid: true },
   },
 
   // Residents per cell, from the 15minCity export. Population is heavy-tailed
@@ -227,7 +231,7 @@ export function rampGradient(ramp) {
 
 /**
  * CSS gradient for the tail a ramp keeps going into past its legend bar —
- * 30 to 120 minutes for 15-minute city, 120 to 180 for the isochrones.
+ * 30 to 120 minutes for 15-minute city; the isochrones' "over 120" class.
  *
  * The bar shows the range nearly every cell sits in; stretching it to the
  * maximum would squash that range to nothing. The tail is drawn beside it,
@@ -236,6 +240,7 @@ export function rampGradient(ramp) {
  */
 export function rampTailGradient(ramp) {
   if (!ramp.beyond) return null;
+  if (ramp.beyond.solid) return `linear-gradient(${ramp.beyond.color}, ${ramp.beyond.color})`;
   const [, from] = legendRange(ramp);
   const to = ramp.beyond.value;
   const inside = ramp.stops.filter(([v]) => v > from && v <= to);

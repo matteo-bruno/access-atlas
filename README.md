@@ -401,7 +401,7 @@ one, which does nothing but redirect to HTTPS:
     # shell names the build, the build names the catalogue, and the data
     # files sit at plain paths that a deploy rewrites in place. Built assets
     # carry a hash in their name and cache freely.
-    <FilesMatch "\.(html|json|geojson|gz)$">
+    <FilesMatch "\.(html|json|geojson|gz|bin)$">
         Header set Cache-Control "no-cache"
     </FilesMatch>
 </Directory>
@@ -442,6 +442,15 @@ The gzipped datasets need no configuration. Apache serves a `.gz` as
 Declaring the encoding server-side is a speed optimisation, and it breaks
 outright if `mime.conf` already has `AddEncoding x-gzip .gz` active: two
 `Content-Encoding` headers, double decode, nothing loads.
+
+CityChrone's travel times (`citychrone/timesHH.bin`) are read with HTTP Range
+requests, one block of origins per click, which Apache and nginx honour for
+a static file with no configuration (check any other host). Two things undo
+it: compressing them on the fly (a `SetOutputFilter DEFLATE` that matches
+every type, rather than `AddOutputFilterByType` on text types), and a cache
+or proxy in front that drops `Range`. Either way the viewer still works, by
+falling back to the whole file, and every click costs megabytes rather than
+kilobytes. `curl -sI -H 'Range: bytes=0-99' <url>` should answer `206`.
 
 
 ### GitHub Pages

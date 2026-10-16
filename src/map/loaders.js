@@ -1,9 +1,12 @@
 // Dataset loading for the Atlas maps.
 //
 // Everything downstream speaks GeoJSON, so this module is the single place that
-// knows about wire formats. Today that means GeoJSON, zipped shapefiles and
-// NumPy .npy matrices (CityChrone's travel times); adding FlatGeobuf or
+// knows about wire formats. Today that means GeoJSON, zipped shapefiles,
+// NumPy .npy matrices (CityChrone's travel times as first published) and the
+// Atlas's own per-origin travel times (`loadTimesRow`); adding FlatGeobuf or
 // PMTiles later means adding one branch here.
+
+import { TIMES_HEAD_BYTES, blockOf, parseTimesPrelude, rowFromBlock } from '../data/times.js';
 
 const cache = new Map();
 
@@ -254,4 +257,102 @@ export async function loadWithFallback(descriptor, fallback, { signal } = {}) {
 
 export function clearDatasetCache() {
   cache.clear();
+  timesCache.clear();
+  blockCache.clear();
+}
+
+// ── travel times, one origin at a time ───────────────────────────────
+
+/**
+ * Bytes [start, end) of a file. A host that honours Range answers 206 with
+ * just those; one that does not answers 200 with the whole file, which is
+ * returned as such (`whole`) so the caller can keep it rather than ask again.
+ */
+async function fetchRange(url, start, end) {
+  const response = await fetch(url, { headers: { Range: `bytes=${start}-${end - 1}` } });
+  if (!response.ok) throw new DatasetError(`${response.status} ${response.statusText}`, { url });
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  return { bytes, whole: response.status !== 206 };
+}
+
+async function inflateRaw(bytes, url) {
+  if (typeof DecompressionStream === 'undefined') {
+    throw new DatasetError(`${url} is compressed and this browser cannot decompress it`, { url });
+  }
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
+// url → promise of { prelude, whole }: the file's index, and the whole file
+// when the host sent it all.
+const timesCache = new Map();
+// url#block → promise of the decoded block. A handful are kept: the origins a
+// reader clicks next are mostly next door, in the same block.
+const blockCache = new Map();
+const BLOCKS_KEPT = 8;
+
+function timesIndex(url) {
+  let promise = timesCache.get(url);
+  if (!promise) {
+    promise = (async () => {
+      let { bytes, whole } = await fetchRange(url, 0, TIMES_HEAD_BYTES);
+      let prelude = parseTimesPrelude(bytes);
+      if (prelude.need && !whole) {
+        ({ bytes, whole } = await fetchRange(url, 0, prelude.need));
+        prelude = parseTimesPrelude(bytes);
+      }
+      if (prelude.need) throw new DatasetError(`${url} is truncated`, { url });
+      return { prelude, whole: whole ? bytes : null };
+    })().catch((error) => {
+      timesCache.delete(url);
+      if (error?.name === 'AbortError') throw error;
+      throw error instanceof DatasetError ? error : new DatasetError(`Could not load ${url}`, { url, cause: error });
+    });
+    timesCache.set(url, promise);
+  }
+  return promise;
+}
+
+function timesBlock(url, index, at) {
+  const key = `${url}#${at.block}`;
+  let promise = blockCache.get(key);
+  if (promise) {
+    blockCache.delete(key);
+    blockCache.set(key, promise);
+    return promise;
+  }
+  promise = (async () => {
+    const packed = index.whole
+      ? index.whole.subarray(at.start, at.end)
+      : (await fetchRange(url, at.start, at.end)).bytes;
+    if (packed.length !== at.end - at.start) throw new DatasetError(`${url} is truncated`, { url });
+    return inflateRaw(packed, url);
+  })().catch((error) => {
+    blockCache.delete(key);
+    throw error instanceof DatasetError ? error : new DatasetError(`Could not load ${url}`, { url, cause: error });
+  });
+  blockCache.set(key, promise);
+  while (blockCache.size > BLOCKS_KEPT) blockCache.delete(blockCache.keys().next().value);
+  return promise;
+}
+
+/**
+ * One origin's travel times from a per-origin file (src/data/times.js): one
+ * value per layer row, or null when the file holds no row for that origin
+ * (nobody lives there). With no origin it only reads the index, so the view
+ * can fetch it while the reader is still choosing.
+ *
+ * Shared work carries no caller's signal, as everywhere in this module; a
+ * caller's abort ends only its own wait.
+ */
+export async function loadTimesRow(url, origin, { signal } = {}) {
+  const work = (async () => {
+    const index = await timesIndex(url);
+    if (origin == null) return null;
+    const at = blockOf(index.prelude, origin);
+    if (!at) return null;
+    const decoded = await timesBlock(url, index, at);
+    return rowFromBlock(index.prelude, at.block, at.local, decoded);
+  })();
+  return signal ? Promise.race([work, whenAborted(signal)]) : work;
 }

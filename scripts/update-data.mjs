@@ -59,6 +59,7 @@
 // A city's files are imported before its scenarios, which need the baseline.
 
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
@@ -176,10 +177,17 @@ function fingerprintOf(platform) {
   return hash.digest('hex').slice(0, 16);
 }
 
+// What the imports went ahead despite (a P.O.V. export whose zones are not
+// its scores', a CityChrone export with no residents): each import prints
+// it as it happens, and appends it here to be said again at the end, where
+// a long run does not scroll it away.
+const WARNINGS = path.join(os.tmpdir(), `atlas-update-${process.pid}-warnings.txt`);
+
 function run(script, args) {
   const res = spawnSync(process.execPath, [path.join(ROOT, script), ...args], {
     cwd: ROOT,
     stdio: 'inherit',
+    env: { ...process.env, ATLAS_IMPORT_WARNINGS: WARNINGS },
   });
   return res.status === 0;
 }
@@ -451,6 +459,13 @@ for (const item of plan) {
   if (item.scenario) args.push('--scenario', item.scenario);
   if (run('scripts/import-data.mjs', args)) done.push(item);
   else failed.push(item);
+}
+
+const warnings = fs.existsSync(WARNINGS) ? fs.readFileSync(WARNINGS, 'utf8').trim().split('\n').filter(Boolean) : [];
+fs.rmSync(WARNINGS, { force: true });
+if (warnings.length) {
+  console.warn(`\n── ${warnings.length} warning(s): imported anyway, worth a look`);
+  for (const line of warnings) console.warn(`  ! ${line}`);
 }
 
 console.log('\n── catalogue');
