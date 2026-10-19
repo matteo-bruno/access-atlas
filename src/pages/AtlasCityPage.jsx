@@ -818,10 +818,11 @@ function AtlasScreen({ cityId, view }) {
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
-      : layer === 'cardep'
-        // Car Dependency's "?" says more than the dialog's "Reading the
-        // map": the same colours, then what a white and a blue area mean.
-        ? t('city.explain.legend.cardep')
+      : layer === 'cardep' || layer === 'pov'
+        // Car Dependency's and P.O.V.'s "?" say more than the dialog's
+        // "Reading the map": CDI what a white and a blue area mean, P.O.V.
+        // the framework its four zones come from.
+        ? t(`city.explain.legend.${layer}`)
         : t(`city.explain.map.${layer}`);
 
   // What the info panel explains about the layer on screen.

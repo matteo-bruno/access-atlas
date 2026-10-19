@@ -190,7 +190,7 @@ export default {
     pov: {
       label: 'Proximidad · Oportunidad · Valor',
       intro:
-        'Cada celda recibe una puntuación en dos ejes (la proximidad, los servicios cotidianos alcanzables a pie, y la oportunidad, los destinos de escala urbana alcanzables en transporte público) y se clasifica frente a la mediana de la ciudad ponderada por población en cada eje. Un tercer eje, el valor de lo alcanzable, está planteado en el marco teórico pero aún no se ha cuantificado.',
+        'Uniendo Proximidad y Oportunidad, este marco combina la medida de un barrio activo (alta proximidad) con la de un nodo rápido de transporte público (alta oportunidad). Las puntuaciones miden a cuántos servicios tiene acceso una persona, en transporte público en un tiempo largo (puntuación de oportunidad) o a pie en un tiempo corto (puntuación de proximidad). Los lugares de alta densidad pueden tener ambas y se etiquetan como lugares de Inclusión, mientras que el aislamiento espacial en el transporte público o el aislamiento social de un barrio vacío siguen siendo mejores que el aislamiento total de los lugares desconectados del resto de la ciudad y con pocas oportunidades locales. Un tercer eje sería el esquivo Valor de los lugares.',
       legendUnit: 'Zona',
       legend: ['Inclusión', 'Aislamiento espacial', 'Aislamiento social', 'Aislamiento total'],
     },
@@ -323,7 +323,7 @@ export default {
     zones: {
       inclusion: {
         name: 'Inclusión',
-        desc: 'Por encima de la mediana en ambos ejes: con servicios cercanos y bien conectada con toda la ciudad',
+        desc: 'Por encima de la mediana en ambos ejes, bien servida localmente y conectada con toda la ciudad',
       },
       spatial: {
         name: 'Aislamiento espacial',
@@ -335,7 +335,7 @@ export default {
       },
       total: {
         name: 'Aislamiento total',
-        desc: 'Por debajo de la mediana en ambos ejes: normalmente la periferia',
+        desc: 'Por debajo de la mediana en ambos ejes, excluida de la vida de la ciudad',
       },
     },
     summary: {
@@ -377,7 +377,8 @@ export default {
     },
     explain: {
       map: {
-        pov: 'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana en ambos ejes, rojo por debajo en ambos y, entre medias, los dos casos mixtos. Los umbrales son las medianas ponderadas por población de esa ciudad, así que una zona compara lugares dentro de una ciudad y nunca una ciudad con otra: lo que se compara entre ciudades son las puntuaciones subyacentes.',
+        pov:
+          'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana de la ciudad en Proximidad y Oportunidad, rojo por debajo en ambas, y los dos casos mixtos en medio.',
         cardep:
           'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más.',
         fifteen:
@@ -387,6 +388,8 @@ export default {
       },
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
+        pov:
+          'Uniendo Proximidad y Oportunidad, este marco combina la medida de un barrio activo (alta proximidad) con la de un nodo rápido de transporte público (alta oportunidad). Los lugares de alta densidad pueden tener ambas y se etiquetan como lugares de Inclusión, mientras que el aislamiento espacial en el transporte público o el aislamiento social de un barrio vacío siguen siendo mejores que el aislamiento total de los lugares desconectados del resto de la ciudad y con pocas oportunidades locales. Un tercer eje sería el esquivo Valor de los lugares.',
         cardep:
           'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más. Una zona blanca ofrece las mismas oportunidades y ya basta para vivir sin coche; una zona azul es menos común, y se da cuando el transporte público es óptimo y el tráfico, las zonas peatonales y el tiempo de aparcamiento hacen incómodo el coche.',
       },
@@ -424,7 +427,8 @@ export default {
       weighted: 'Medianas y medias están ponderadas por la población.',
       methodsTitle: 'Datos y métodos',
       methods: {
-        pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
+        pov:
+          'Celdas H3 de resolución 9. Tiempos a pie de OSRM sobre OpenStreetMap. Transporte público a partir de horarios GTFS. Puntuaciones de oportunidad calculadas con OSRM. Puntos de interés de OpenStreetMap. Población de WorldPop.',
         cardep:
           'Celdas H3 de resolución 9. Tiempos en coche y a pie de OSRM sobre OpenStreetMap, con un tiempo de aparcamiento y retrasos de tráfico propios de cada ciudad en el lado del coche, del TomTom Traffic Index. Transporte público a partir de horarios GTFS. Puntuaciones de oportunidad calculadas con OSRM. Puntos de interés de OpenStreetMap. Población de WorldPop.',
         fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las nueve categorías que muestra el selector; población de WorldPop.',

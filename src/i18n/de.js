@@ -192,7 +192,7 @@ export default {
     pov: {
       label: 'Nähe · Chancen · Wert',
       intro:
-        'Jede Zelle erhält einen Wert auf zwei Achsen (Nähe, die zu Fuß erreichbaren Dienste des Alltags, und Chancen, die mit dem öffentlichen Verkehr erreichbaren Ziele auf Stadtebene) und wird dann auf jeder Achse am bevölkerungsgewichteten Median der Stadt eingeordnet. Eine dritte Achse, der Wert des Erreichbaren, ist im Ansatz angelegt, aber noch nicht quantifiziert.',
+        'Indem es Nähe und Gelegenheit verbindet, kombiniert dieses Konzept die Messung eines lebendigen Viertels (hohe Nähe) mit der eines schnellen ÖV-Knotens (hohe Gelegenheit). Die Werte messen, zu wie vielen Diensten eine Person Zugang hat: mit dem öffentlichen Verkehr in längerer Zeit (Gelegenheitswert) oder zu Fuß in kurzer Zeit (Nähewert). Dicht besiedelte Orte können beides haben und gelten als Orte der Inklusion; räumliche Isolation im öffentlichen Verkehr oder soziale Isolation eines leeren Viertels sind immer noch besser als die totale Isolation von Orten, die vom Rest der Stadt abgeschnitten sind und wenige lokale Gelegenheiten haben. Eine dritte Achse wäre der schwer fassbare Wert von Orten.',
       legendUnit: 'Zone',
       legend: ['Inklusion', 'Räumliche Isolation', 'Soziale Isolation', 'Vollständige Isolation'],
     },
@@ -325,7 +325,7 @@ export default {
     zones: {
       inclusion: {
         name: 'Inklusion',
-        desc: 'Über dem Median auf beiden Achsen: gut versorgt vor Ort und stadtweit angebunden',
+        desc: 'Auf beiden Achsen über dem Median, vor Ort versorgt und mit der ganzen Stadt verbunden',
       },
       spatial: {
         name: 'Räumliche Isolation',
@@ -337,7 +337,7 @@ export default {
       },
       total: {
         name: 'Vollständige Isolation',
-        desc: 'Unter dem Median auf beiden Achsen: meist der Stadtrand',
+        desc: 'Auf beiden Achsen unter dem Median, vom Leben der Stadt ausgeschlossen',
       },
     },
     summary: {
@@ -379,7 +379,8 @@ export default {
     },
     explain: {
       map: {
-        pov: 'Jede Zelle nimmt die Farbe ihrer Zone an: grün über dem Median auf beiden Achsen, rot darunter auf beiden, dazwischen die beiden gemischten Fälle. Die Schwellen sind die bevölkerungsgewichteten Mediane der jeweiligen Stadt. Eine Zone vergleicht also Orte innerhalb einer Stadt und nie eine Stadt mit einer anderen: Zwischen Städten vergleichbar sind die zugrunde liegenden Werte.',
+        pov:
+          'Jede Zelle nimmt die Farbe ihrer Zone an: grün über dem Median der Stadt bei Nähe und Gelegenheit, rot darunter bei beiden, und die beiden Mischfälle dazwischen.',
         cardep:
           'Blau, wo der öffentliche Verkehr mehr Gelegenheiten erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht.',
         fifteen:
@@ -389,6 +390,8 @@ export default {
       },
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
+        pov:
+          'Indem es Nähe und Gelegenheit verbindet, kombiniert dieses Konzept die Messung eines lebendigen Viertels (hohe Nähe) mit der eines schnellen ÖV-Knotens (hohe Gelegenheit). Dicht besiedelte Orte können beides haben und gelten als Orte der Inklusion; räumliche Isolation im öffentlichen Verkehr oder soziale Isolation eines leeren Viertels sind immer noch besser als die totale Isolation von Orten, die vom Rest der Stadt abgeschnitten sind und wenige lokale Gelegenheiten haben. Eine dritte Achse wäre der schwer fassbare Wert von Orten.',
         cardep:
           'Blau, wo der öffentliche Verkehr mehr Gelegenheiten erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Ein weißes Gebiet bietet gleiche Gelegenheiten und reicht schon aus, um ohne Auto zu leben; ein blaues Gebiet ist seltener und entsteht, wenn der öffentliche Verkehr optimal ist und Verkehr, Fußgängerzonen und Parkzeiten das Auto unpraktisch machen.',
       },
@@ -426,7 +429,8 @@ export default {
       weighted: 'Mediane und Mittelwerte sind nach der Bevölkerung gewichtet.',
       methodsTitle: 'Daten und Methoden',
       methods: {
-        pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
+        pov:
+          'H3-Zellen der Auflösung 9. Gehzeiten aus OSRM auf OpenStreetMap. Öffentlicher Verkehr aus GTFS-Fahrplänen. Gelegenheitswerte mit OSRM berechnet. Points of Interest aus OpenStreetMap. Bevölkerung aus WorldPop.',
         cardep:
           'H3-Zellen der Auflösung 9. Fahr- und Gehzeiten aus OSRM auf OpenStreetMap, auf der Autoseite mit einer Parkzeit und stadtspezifischen Verkehrsverzögerungen aus dem TomTom Traffic Index. Öffentlicher Verkehr aus GTFS-Fahrplänen. Gelegenheitswerte mit OSRM berechnet. Points of Interest aus OpenStreetMap. Bevölkerung aus WorldPop.',
         fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die neun Kategorien der Auswahl; Bevölkerung aus WorldPop.',

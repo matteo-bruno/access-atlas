@@ -191,7 +191,7 @@ export default {
     pov: {
       label: 'Proximité · Opportunité · Valeur',
       intro:
-        'Chaque cellule reçoit un score sur deux axes (la proximité, les services du quotidien accessibles à pied, et l’opportunité, les destinations à l’échelle de la ville accessibles en transports en commun), puis elle est classée par rapport à la médiane de la ville pondérée par la population sur chaque axe. Un troisième axe, la valeur de ce qui est accessible, est posé dans le cadre théorique mais pas encore quantifié.',
+        'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport public rapide (forte opportunité). Les scores mesurent à combien de services une personne a accès, en transports publics en un temps long (score d’opportunité) ou à pied en un temps court (score de proximité). Les lieux denses peuvent avoir les deux et sont étiquetés lieux d’Inclusion, tandis que l’isolement spatial dans les transports publics ou l’isolement social d’un quartier vide valent encore mieux que l’isolement total des lieux coupés du reste de la ville et avec peu d’opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Isolement spatial', 'Isolement social', 'Isolement total'],
     },
@@ -324,7 +324,7 @@ export default {
     zones: {
       inclusion: {
         name: 'Inclusion',
-        desc: 'Au-dessus de la médiane sur les deux axes : bien desservie localement et reliée à toute la ville',
+        desc: 'Au-dessus de la médiane sur les deux axes, bien desservie localement et reliée à toute la ville',
       },
       spatial: {
         name: 'Isolement spatial',
@@ -336,7 +336,7 @@ export default {
       },
       total: {
         name: 'Isolement total',
-        desc: 'En dessous de la médiane sur les deux axes : le plus souvent la périphérie',
+        desc: 'En dessous de la médiane sur les deux axes, exclue de la vie de la ville',
       },
     },
     summary: {
@@ -378,7 +378,8 @@ export default {
     },
     explain: {
       map: {
-        pov: 'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane sur les deux axes, rouge en dessous sur les deux, et entre les deux les deux cas mixtes. Les seuils sont les médianes de cette ville pondérées par la population : une zone compare donc des lieux au sein d’une même ville, jamais une ville à une autre. Ce sont les scores sous-jacents qui se comparent d’une ville à l’autre.',
+        pov:
+          'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane de la ville en Proximité comme en Opportunité, rouge en dessous des deux, et les deux cas mixtes entre les deux.',
         cardep:
           'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus.',
         fifteen:
@@ -388,6 +389,8 @@ export default {
       },
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
+        pov:
+          'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport public rapide (forte opportunité). Les lieux denses peuvent avoir les deux et sont étiquetés lieux d’Inclusion, tandis que l’isolement spatial dans les transports publics ou l’isolement social d’un quartier vide valent encore mieux que l’isolement total des lieux coupés du reste de la ville et avec peu d’opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
         cardep:
           'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus. Une zone blanche offre les mêmes opportunités et suffit déjà pour vivre sans voiture ; une zone bleue est plus rare, et apparaît quand les transports publics sont optimaux et que le trafic, les zones piétonnes et le temps de stationnement rendent la voiture peu pratique.',
       },
@@ -425,7 +428,8 @@ export default {
       weighted: 'Les médianes et les moyennes sont pondérées par la population.',
       methodsTitle: 'Données et méthodes',
       methods: {
-        pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
+        pov:
+          'Cellules H3 de résolution 9. Temps à pied d’OSRM sur OpenStreetMap. Transports publics d’après les horaires GTFS. Scores d’opportunité calculés avec OSRM. Points d’intérêt d’OpenStreetMap. Population de WorldPop.',
         cardep:
           'Cellules H3 de résolution 9. Temps en voiture et à pied d’OSRM sur OpenStreetMap, avec un temps de stationnement et des retards de trafic propres à chaque ville côté voiture, d’après le TomTom Traffic Index. Transports publics d’après les horaires GTFS. Scores d’opportunité calculés avec OSRM. Points d’intérêt d’OpenStreetMap. Population de WorldPop.',
         fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les neuf catégories du sélecteur ; population issue de WorldPop.',

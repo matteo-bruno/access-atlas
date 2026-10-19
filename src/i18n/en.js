@@ -212,7 +212,7 @@ export default {
     pov: {
       label: 'Proximity · Opportunity · Value',
       intro:
-        'Each cell is scored on two axes — proximity, the everyday services reachable on foot, and opportunity, the city-scale destinations reachable by public transport — then classified against the city’s population-weighted median on each. A third axis, the value of what is reachable, is set out in the framework but not yet quantified.',
+        'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). Scores are computed by measuring how many services a person has access to, by public transport in a long time (opportunity score) or by walking in a short time (proximity score). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
     },
@@ -351,7 +351,7 @@ export default {
     zones: {
       inclusion: {
         name: 'Inclusion',
-        desc: 'Above the median on both axes — served locally and connected city-wide',
+        desc: 'Above the median on both axes, served locally and connected city-wide',
       },
       spatial: {
         name: 'Spatial isolation',
@@ -363,7 +363,7 @@ export default {
       },
       total: {
         name: 'Total isolation',
-        desc: 'Below the median on both axes — typically the periphery',
+        desc: 'Below the median on both axes, excluded from the city’s life',
       },
     },
     summary: {
@@ -418,7 +418,8 @@ export default {
     // (they are population-weighted — see CLAUDE.md).
     explain: {
       map: {
-        pov: 'Each cell takes the colour of the zone it falls in: green above the median on both axes, red below on both, and the two mixed cases between. The thresholds are that city’s own population-weighted medians, so a zone compares places within one city and never one city against another — the underlying scores are what compare across cities.',
+        pov:
+          'Each cell takes the colour of the zone it falls in: green above the city median on both Proximity and Opportunity, red below on both, and the two mixed cases between.',
         cardep:
           'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more.',
         fifteen:
@@ -428,6 +429,8 @@ export default {
       },
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
+        pov:
+          'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
         cardep:
           'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. A white area gives equal opportunities and it is already sufficient to live without a car; a blue area is less common, and happens when public transport is optimal and traffic, pedestrian zones and parking times make a car inconvenient.',
       },
@@ -465,7 +468,8 @@ export default {
       weighted: 'Medians and means are weighted by population.',
       methodsTitle: 'Data & methods',
       methods: {
-        pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
+        pov:
+          'H3 resolution-9 cells. Walking times from OSRM over OpenStreetMap. Public transport from GTFS schedules. Opportunity scores computed with OSRM. Points of interest from OpenStreetMap. Population from WorldPop.',
         cardep:
           'H3 resolution-9 cells. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer time and city-specific traffic delays on the car side from TomTom Traffic Index. Public transport from GTFS schedules. Opportunity scores computed with OSRM. Points of interest from OpenStreetMap. Population from WorldPop.',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',

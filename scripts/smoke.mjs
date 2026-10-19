@@ -728,9 +728,10 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 }
 
 // ── Explanations ─────────────────────────────────────────────────────
-// The "?" panels carry the method, so what is checked is the wording that has
-// been got wrong before: P.O.V.'s thresholds are population-weighted medians,
-// and the two upstream viewers both say "median" alone.
+// P.O.V.'s thresholds are population-weighted medians, and the two upstream
+// viewers both say "median" alone. The legend's "?" now explains the
+// framework the zones come from, so the weighting is checked where the
+// method is: in "About this layer".
 {
   const page = await context.newPage();
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
@@ -748,10 +749,19 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(300);
   check(
     'A legend explains itself on a click, stays while read, and closes on Escape',
-    /population-weighted median/.test(tip) &&
+    /Inclusion/.test(tip) &&
       stays &&
       (await page.locator('.aa-explain__tip').count()) === 0,
     tip.replace(/\s+/g, ' ').slice(0, 70),
+  );
+  await page.getByRole('button', { name: 'About this layer' }).click();
+  await page.waitForTimeout(400);
+  const about = await page.locator('.aa-modal__body').innerText().catch(() => '');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  check(
+    'P.O.V.\'s method says its medians are weighted by population',
+    /weighted by population/.test(about),
   );
 
   // A tooltip in the controls column is bounded by the window, not by the
@@ -806,7 +816,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   check(
     'About this layer opens the full account, and states the method',
     /reading the map/.test(modal) &&
-      /connection scan/.test(modal) &&
+      /data & methods/.test(modal) &&
+      /gtfs/.test(modal) &&
       (await page.locator('.aa-modal').count()) === 0,
   );
   await page.close();

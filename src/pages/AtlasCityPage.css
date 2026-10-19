@@ -329,25 +329,45 @@
   font-size: 12.5px;
 }
 
-/* The summary and the selected cell stop above the full-screen button
-   rather than running under it, and scroll inside that room. */
+/* The summary and the selected cell start under the layer bar and stop
+   above the full-screen button rather than running under it, scrolling
+   inside that room. */
 .aa-atlas .aa-mapui--tr {
-  max-height: calc(100% - 12px - 34px - 46px);
+  top: 62px;
+  max-height: calc(100% - 62px - 34px - 46px);
 }
 
 /* ── The layer picker: one row along the top of the map ───────────────
-   From the left, as long as the map leaves it beside the summary column;
-   it wraps rather than running under that column. */
+   From the left, across the map's whole width if it needs it: the summary
+   and the selected cell start below it on the right, so the bar never has
+   to wrap to make room for them. */
 .aa-city__layerbar {
   position: absolute;
   top: 12px;
   inset-inline-start: 12px;
   z-index: 4;
-  max-width: calc(100% - 24px - 296px - 24px);
+  display: flex;
+  max-width: calc(100% - 24px);
 }
 
+/* One row, always: it never wraps into a second line. Narrower than its
+   five layers, it scrolls sideways under the pointer instead. */
 .aa-picker--inline {
+  flex-wrap: nowrap;
   justify-content: flex-start;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.aa-picker--inline::-webkit-scrollbar {
+  display: none;
+}
+
+.aa-picker--inline .aa-picker__item {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
 /* ── The legend, in the column under the city's name ─────────────── */
@@ -416,3 +436,4 @@
   border-style: none;
   opacity: 0.55;
 }
+

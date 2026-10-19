@@ -198,7 +198,7 @@ export default {
     pov: {
       label: 'Proximity · Opportunity · Value',
       intro:
-        '各セルを2つの軸で評価します。徒歩で到達できる日常サービスである近接性と、公共交通で到達できる都市スケールの目的地である機会です。そのうえで、それぞれの軸について都市の人口重み付き中央値と比べて分類します。第3の軸である到達先の価値は、フレームワークでは定義されていますが、まだ数値化されていません。',
+        '近接性と機会をつなぐこの枠組みは、活気ある近隣（高い近接性）と速い公共交通の結節点（高い機会）の測定を組み合わせます。スコアは、人がどれだけのサービスにアクセスできるかを、公共交通で長めの時間（機会スコア）または徒歩で短い時間（近接性スコア）で測ります。高密度の場所は両方を備え「包摂」の場所とされます。公共交通での空間的孤立や、人のいない近隣の社会的孤立は、市の他の部分から切り離され地域の機会も乏しい場所の完全な孤立よりはまだましです。第三の軸は、捉えにくい場所の「価値」でしょう。',
       legendUnit: 'ゾーン',
       legend: ['包摂', '空間的孤立', '社会的孤立', '完全な孤立'],
     },
@@ -331,7 +331,7 @@ export default {
     zones: {
       inclusion: {
         name: '包摂',
-        desc: '両方の軸で中央値を上回る：身近にサービスがあり、都市全体ともつながっている',
+        desc: '両軸で中央値を上回り、地域で用が足り市全体ともつながっている',
       },
       spatial: {
         name: '空間的孤立',
@@ -343,7 +343,7 @@ export default {
       },
       total: {
         name: '完全な孤立',
-        desc: '両方の軸で中央値を下回る：多くは周縁部',
+        desc: '両軸で中央値を下回り、都市の生活から取り残されている',
       },
     },
     summary: {
@@ -385,7 +385,8 @@ export default {
     },
     explain: {
       map: {
-        pov: '各セルは、属するゾーンの色で塗られます。両方の軸で中央値を上回れば緑、両方で下回れば赤、その中間が2つの混合ケースです。閾値はその都市自身の人口重み付き中央値なので、ゾーンは1つの都市の中の場所どうしを比べるものであり、都市どうしを比べるものではありません。都市間で比べられるのは、もとになるスコアの方です。',
+        pov:
+          '各セルは属するゾーンの色になります。近接性と機会の両方で市の中央値を上回れば緑、両方で下回れば赤、その間に二つの混合ケースがあります。',
         cardep:
           '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。',
         fifteen:
@@ -395,6 +396,8 @@ export default {
       },
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
+        pov:
+          '近接性と機会をつなぐこの枠組みは、活気ある近隣（高い近接性）と速い公共交通の結節点（高い機会）の測定を組み合わせます。高密度の場所は両方を備え「包摂」の場所とされます。公共交通での空間的孤立や、人のいない近隣の社会的孤立は、市の他の部分から切り離され地域の機会も乏しい場所の完全な孤立よりはまだましです。第三の軸は、捉えにくい場所の「価値」でしょう。',
         cardep:
           '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。白い地域は同じだけの機会があり、車なしでも十分に暮らせます。青い地域はより珍しく、公共交通が優れていて、渋滞や歩行者ゾーン、駐車時間のせいで車が不便な場所に現れます。',
       },
@@ -433,7 +436,8 @@ export default {
       methodsTitle: 'データと手法',
       // Technical notes: kept in English, as the platforms publish them.
       methods: {
-        pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
+        pov:
+          'H3 解像度 9 のセル。徒歩時間は OpenStreetMap 上の OSRM から。公共交通は GTFS 時刻表から。機会スコアは OSRM で計算。POI は OpenStreetMap から。人口は WorldPop から。',
         cardep:
           'H3 解像度 9 のセル。車と徒歩の所要時間は OpenStreetMap 上の OSRM から。車側には駐車の余裕時間と、TomTom Traffic Index による都市ごとの渋滞遅延を加えています。公共交通は GTFS 時刻表から。機会スコアは OSRM で計算。POI は OpenStreetMap から。人口は WorldPop から。',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
