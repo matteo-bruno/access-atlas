@@ -534,44 +534,34 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Häufige Fragen',
     headline: 'Häufige',
     headlineAccent: 'Fragen.',
     lede: 'Kurze Antworten auf das, was wir am häufigsten gefragt werden. Haben Sie eine andere Frage? Schreiben Sie an {email}.',
-    meta: {
-      updated: 'Zuletzt aktualisiert',
-      updatedValue: 'Juli 2026',
-      entries: 'Einträge',
-      languages: 'Sprachen',
+    links: {
+      contact: 'schreiben Sie uns',
+      write: 'schicken Sie uns eine Nachricht',
+      research: 'Seite Forschung',
     },
     items: [
       {
         q: 'Was bedeutet „Erreichbarkeit“ im Atlas?',
-        a: 'Drei messbare Dinge, bewusst getrennt gehalten. Nähe ist, was man in wenigen Minuten zu Fuß erreicht: Geschäfte, Schulen, Arztpraxen, Grünflächen. Chancen sind, was der öffentliche Verkehr in einem bestimmten Zeitbudget erreichbar macht: Arbeitsplätze, Universitäten, Krankenhäuser, Kulturorte. Wert ist die Qualität und Attraktivität des Erreichbaren; er gehört zum Ansatz, ist aber noch nicht quantifiziert, und nichts auf dieser Website behauptet, ihn zu messen.',
+        a: 'Erreichbarkeit ist definiert als die Leichtigkeit, wertvolle Gelegenheiten zu erreichen: einfach gesagt, wie viele Orte und Menschen, die Ihnen wichtig sind, von Ihrem Wohnort aus erreichbar sind. Viele verschiedene Aktivitäten müssen erreichbar sein: ein Arbeitsplatz, ein Park, ein Verwandter, eine Dienstleistung. Diesen Begriff zu quantifizieren ist komplex und die Hauptaufgabe des Atlas.',
       },
       {
-        q: 'Wie wird eine Zelle einer Zone zugeordnet?',
-        a: 'Jede Zelle hat einen Nähe-Wert und einen Chancen-Wert. Eine Zelle gilt auf einer Achse als hoch, wenn sie über dem bevölkerungsgewichteten Median ihrer Stadt für diese Achse liegt; gewichtet, damit die Schwelle widerspiegelt, wo Menschen tatsächlich wohnen, und nicht die Geometrie des Netzes. Die zwei Ja/Nein-Antworten ergeben vier Zonen: Inklusion, räumliche Isolation, soziale Isolation, vollständige Isolation. Weil die Schwellen stadtspezifisch sind, vergleichen die Zonen Orte innerhalb einer Stadt, nicht zwischen Städten; zwischen Städten vergleichbar sind die zugrunde liegenden Werte.',
+        q: 'Woher kommen die Daten?',
+        a: 'Die meisten Darstellungen beruhen auf offenen Daten, sofern nicht anders angegeben. Straßennetze und Points of Interest stammen aus OpenStreetMap. Fahrzeiten werden auf diesen Netzen mit OSRM berechnet. Der öffentliche Verkehr nutzt die offenen GTFS-Fahrpläne der Betreiber, ausgewertet mit dem Connection Scan Algorithm. Die Bevölkerung stammt aus den 100-m-Rastern von WorldPop, an UN-Schätzungen angepasst. Die Zellen sind H3-Sechsecke der Auflösung 9, etwa 200 m breit.',
       },
       {
-        q: 'Woher stammen die Daten?',
-        a: 'Straßennetze und Orte von Interesse stammen aus OpenStreetMap. Gehzeiten werden auf diesen Netzen mit OSRM berechnet. Der öffentliche Verkehr nutzt die offenen GTFS-Fahrpläne der Verkehrsbetriebe, ausgewertet mit dem Connection Scan Algorithm statt mit einem mittleren Takt. Die Bevölkerung stammt aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen. Die Zellen sind H3-Sechsecke der Auflösung 9, etwa 200 m breit.',
-      },
-      {
-        q: 'Warum ist meine Stadt falsch dargestellt?',
-        a: 'Das kann gut sein. Die Messungen sind nur so gut wie ihre Eingangsdaten: ein in OpenStreetMap lückenhaft erfasstes Gebiet, ein veralteter GTFS-Feed, eine Linie, die nach dem Export eröffnet wurde, oder ein Angebot, das vorher eingestellt wurde. All das erzeugt eine Karte, die selbstsicher falsch ist, und die Karte allein kann das nicht erkennen. Wenn Sie eine Stadt kennen und etwas nicht stimmt, schreiben Sie uns, wo es bessere Daten gibt: einen aktuellen Feed, eine amtliche Quelle oder einfach, welcher Teil der Karte nicht der Wirklichkeit entspricht. So wird eine Stadt am schnellsten neu exportiert. Jeder veröffentlichte Datensatz ist herunterladbar, sodass sich ein Widerspruch prüfen statt nur behaupten lässt.',
+        q: 'Warum ist meine Stadt falsch?',
+        a: 'Das kann gut sein: Dies ist eine weltweite vergleichende Analyse auf Basis offener Daten. Die Messungen sind nur so gut wie ihre Eingangsdaten: ein dünn kartiertes Gebiet in OpenStreetMap, ein veralteter GTFS-Feed, eine Linie, die nach dem Export eröffnet wurde, oder ein Angebot, das davor eingestellt wurde, all das ergibt eine Karte, die mit Überzeugung falsch ist, auf eine Weise, die die Karte selbst nicht erkennen kann. Wenn Sie eine Stadt kennen und etwas nicht stimmt, schreiben Sie uns und sagen Sie, wo es bessere Daten gibt: einen aktuellen Feed, eine amtliche Quelle oder einfach, welcher Teil der Karte nicht mit der Wirklichkeit übereinstimmt. So wird eine Stadt am schnellsten neu exportiert. Jeder veröffentlichte Datensatz ist herunterladbar, sodass sich die Abweichung prüfen lässt, statt darüber zu streiten. Wenn Sie eine detailliertere Plattform für eine einzelne Stadt entwickeln möchten, {contact}.',
       },
       {
         q: 'Warum fehlt meine Stadt?',
-        a: 'Die Abdeckung ist durch Daten begrenzt, nicht durch Interesse: Eine Stadt braucht eine gute Erfassung in OpenStreetMap und einen brauchbaren öffentlichen GTFS-Feed. Die Vergleichsplattformen decken eine Reihe gut dokumentierter Untersuchungsstädte ab, statt eine weltweite Abdeckung anzustreben, denn ein schlecht spezifizierter Feed erzeugt Zahlen, die verlässlich aussehen und falsch sind. Wenn Ihre Stadt beides hat und fehlt, eröffnen Sie ein Issue auf GitHub.',
+        a: 'Wir werden mit der Zeit weitere Städte hinzufügen. Die Abdeckung ist jedoch durch Daten begrenzt, nicht durch Interesse: Eine Stadt braucht eine gut kartierte OpenStreetMap-Abdeckung und einen nutzbaren öffentlichen GTFS-Feed. Die Vergleichsplattformen decken eine Reihe gut dokumentierter Untersuchungsstädte ab, statt eine weltweite Abdeckung anzustreben, denn ein schlecht spezifizierter Feed liefert verlässlich wirkende Zahlen, die falsch sind. Wenn Ihre Stadt beides hat und fehlt, {write}.',
       },
       {
         q: 'Darf ich diese Arbeit zitieren?',
-        a: 'Ja. Der Ansatz ist Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. Der Car Dependency Index ist Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. Die Seite Forschung führt beide zusammen mit den Datensätzen auf.',
-      },
-      {
-        q: 'Ist der Atlas kostenlos?',
-        a: 'Ja. Der Visualisierungscode steht unter der MIT-Lizenz, die veröffentlichten Daten unter CC BY-NC 4.0: Sie dürfen sie mit Quellenangabe für nicht kommerzielle Zwecke frei nutzen, teilen und bearbeiten. Kommerzielle Nutzung erfordert eine schriftliche Genehmigung. Die Artikel selbst sind Open Access unter CC BY 4.0.',
+        a: 'Ja. Jede Ebene ist mit dem Artikel zu zitieren, aus dem sie stammt. Wenn Sie den Atlas als Ganzes zitieren, zitieren Sie den Atlas und seinen Urheber, Sony CSL - Rom. Alle Zitate stehen auf der {research}.',
       },
     ],
   },

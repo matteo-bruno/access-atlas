@@ -534,44 +534,34 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Foire aux questions',
     headline: 'Questions',
     headlineAccent: 'fréquentes.',
     lede: 'Des réponses courtes à ce que l’on nous demande le plus souvent. Une autre question ? Écrivez à {email}.',
-    meta: {
-      updated: 'Dernière mise à jour',
-      updatedValue: 'Juillet 2026',
-      entries: 'Entrées',
-      languages: 'Langues',
+    links: {
+      contact: 'contactez-nous',
+      write: 'envoyez-nous un message',
+      research: 'page Recherche',
     },
     items: [
       {
-        q: 'Que signifie « accès » dans l’Atlas ?',
-        a: 'Trois choses mesurables, volontairement séparées. La proximité, c’est ce que l’on atteint à pied en quelques minutes : commerces, écoles, cabinets médicaux, espaces verts. L’opportunité, c’est ce que les transports en commun mettent à portée en un temps donné : emplois, universités, hôpitaux, lieux culturels. La valeur, c’est la qualité et l’attrait de ce qui est accessible ; elle fait partie du cadre théorique mais n’est pas encore quantifiée, et rien sur ce site ne prétend la mesurer.',
+        q: 'Que signifie « accessibilité » dans l’Atlas ?',
+        a: 'L’accessibilité se définit comme la facilité à atteindre des opportunités qui comptent : en termes simples, combien de lieux et de personnes importants pour vous sont à portée depuis chez vous. Beaucoup d’activités différentes doivent être accessibles : un emploi, un parc, un proche, un service. Quantifier cette notion est complexe, et c’est la mission principale de l’Atlas.',
       },
       {
-        q: 'Comment une cellule est-elle classée dans une zone ?',
-        a: 'Chaque cellule a un score de proximité et un score d’opportunité. Une cellule est considérée comme haute sur un axe lorsqu’elle se situe au-dessus de la médiane de sa ville pondérée par la population sur cet axe ; pondérée, pour que le seuil reflète l’endroit où les gens vivent réellement et non la géométrie du maillage. Les deux réponses oui/non donnent quatre zones : inclusion, isolement spatial, isolement social, isolement total. Comme les seuils sont propres à chaque ville, les zones comparent des lieux au sein d’une ville, pas des villes entre elles ; ce sont les scores sous-jacents qui se comparent d’une ville à l’autre.',
+        q: 'D’où viennent les données ?',
+        a: 'La plupart des visualisations reposent sur des données ouvertes, sauf mention contraire. Les réseaux de rues et les points d’intérêt viennent d’OpenStreetMap. Les temps de trajet sont calculés sur ces réseaux avec OSRM. Les transports en commun utilisent les horaires GTFS ouverts des opérateurs, évalués avec le Connection Scan Algorithm. La population vient des grilles WorldPop à 100 m ajustées aux estimations de l’ONU. Les cellules sont des hexagones H3 de résolution 9, d’environ 200 m de large.',
       },
       {
-        q: 'D’où viennent les données ?',
-        a: 'Les réseaux de rues et les points d’intérêt proviennent d’OpenStreetMap. Les temps de marche sont calculés sur ces réseaux avec OSRM. Les transports en commun utilisent les horaires GTFS ouverts des opérateurs, évalués avec le Connection Scan Algorithm plutôt qu’avec une fréquence moyenne. La population provient des grilles WorldPop à 100 m ajustées aux estimations de l’ONU. Les cellules sont des hexagones H3 de résolution 9, d’environ 200 m de large.',
+        q: 'Pourquoi ma ville est-elle fausse ?',
+        a: 'C’est possible : il s’agit d’une analyse comparative mondiale fondée sur des données ouvertes. Les mesures ne valent que ce que valent leurs données : une zone d’OpenStreetMap peu cartographiée, un flux GTFS périmé, une ligne ouverte après l’export ou un service fermé avant, tout cela produit une carte fausse avec assurance, d’une façon que la carte elle-même ne peut pas détecter. Si vous connaissez une ville et que quelque chose cloche, écrivez-nous et dites-nous où se trouvent de meilleures données : un flux à jour, une source officielle, ou simplement quelle partie de la carte ne correspond pas au terrain. C’est le moyen le plus rapide pour qu’une ville soit réexportée. Chaque jeu de données publié est téléchargeable, si bien que le désaccord peut être vérifié plutôt que débattu. Si vous souhaitez développer une plateforme plus détaillée pour une seule ville, {contact}.',
       },
       {
-        q: 'Pourquoi ma ville est-elle fausse ?',
-        a: 'Elle l’est peut-être. Les mesures ne valent que ce que valent leurs données d’entrée : une zone peu cartographiée dans OpenStreetMap, un flux GTFS périmé, une ligne ouverte après l’export ou un service fermé avant. Tout cela produit une carte fausse mais sûre d’elle, et la carte seule ne peut pas s’en apercevoir. Si vous connaissez une ville et que quelque chose cloche, écrivez-nous en indiquant où se trouvent de meilleures données : un flux à jour, une source officielle, ou simplement quelle partie de la carte ne correspond pas au terrain. C’est le moyen le plus rapide pour qu’une ville soit réexportée. Toutes les données publiées sont téléchargeables : un désaccord peut donc se vérifier plutôt que se débattre.',
+        q: 'Pourquoi ma ville n’est-elle pas incluse ?',
+        a: 'Nous ajouterons d’autres villes au fil du temps. La couverture est toutefois limitée par les données, non par l’intérêt : une ville a besoin d’une bonne cartographie OpenStreetMap et d’un flux GTFS public exploitable. Les plateformes de comparaison couvrent un ensemble de villes d’étude bien documentées plutôt que de viser une couverture mondiale, car un flux mal spécifié produit des chiffres d’apparence fiable mais faux. Si votre ville a les deux et manque, {write}.',
       },
       {
-        q: 'Pourquoi ma ville n’y est-elle pas ?',
-        a: 'La couverture est limitée par les données, pas par l’intérêt : une ville a besoin d’une bonne cartographie OpenStreetMap et d’un flux GTFS public exploitable. Les plateformes de comparaison couvrent un ensemble de villes d’étude bien documentées plutôt que de viser une couverture mondiale, parce qu’un flux mal spécifié produit des chiffres d’apparence fiable qui sont faux. Si votre ville a les deux et n’y figure pas, ouvrez une issue sur GitHub.',
-      },
-      {
-        q: 'Puis-je citer ce travail ?',
-        a: 'Oui. Le cadre théorique est Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. Le Car Dependency Index est Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. La page Recherche les présente tous deux avec les jeux de données.',
-      },
-      {
-        q: 'L’Atlas est-il gratuit ?',
-        a: 'Oui. Le code de visualisation est sous licence MIT et les données publiées sont sous CC BY-NC 4.0 : vous pouvez les utiliser, les partager et les adapter librement en citant la source, à des fins non commerciales. Toute utilisation commerciale nécessite une autorisation écrite. Les articles eux-mêmes sont en accès libre sous licence CC BY 4.0.',
+        q: 'Puis-je citer ce travail ?',
+        a: 'Oui. Chaque couche doit être citée avec l’article dont elle provient. Si vous citez l’Atlas dans son ensemble, citez l’Atlas et son auteur, Sony CSL - Rome. Toutes les citations sont sur la {research}.',
       },
     ],
   },

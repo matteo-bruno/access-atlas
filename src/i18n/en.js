@@ -581,44 +581,34 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Frequently asked',
     headline: 'Common',
     headlineAccent: 'questions.',
     lede: 'Short answers to what we are asked most. Something else on your mind? Write to {email}.',
-    meta: {
-      updated: 'Last updated',
-      updatedValue: 'July 2026',
-      entries: 'Entries',
-      languages: 'Languages',
+    links: {
+      contact: 'contact us',
+      write: 'send us a message',
+      research: 'Research page',
     },
     items: [
       {
-        q: 'What does “access” mean in the Atlas?',
-        a: 'Three measurable things, kept deliberately separate. Proximity is what you can reach on foot in a few minutes — shops, schools, clinics, green space. Opportunity is what public transport puts within a time budget — jobs, universities, hospitals, cultural venues. Value is the quality and desirability of what is reachable; it is part of the framework but is not yet quantified, and nothing on this site claims to measure it.',
-      },
-      {
-        q: 'How is a cell classified into a zone?',
-        a: 'Each cell carries a proximity score and an opportunity score. A cell is counted as high on an axis when it sits above that city’s population-weighted median for the axis — weighted, so the threshold reflects where people actually live rather than the geometry of the mesh. The two yes/no answers give four zones: inclusion, spatial isolation, social isolation, total isolation. Because the thresholds are city-specific, zones compare places within a city, not between cities; the underlying scores are what compare across cities.',
+        q: 'What does “accessibility” mean in the Atlas?',
+        a: 'Accessibility is defined as the ease of reaching valuable opportunities: in simple terms, how many places and people that are meaningful for you are within reach from where you live. Many different activities need to be accessible: a job, a park, a relative, a service. Quantifying this concept is complex and is the main mission of the Atlas.',
       },
       {
         q: 'Where does the data come from?',
-        a: 'Street networks and points of interest come from OpenStreetMap. Walking times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm rather than an average frequency. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
+        a: 'Most of the visualizations are based on open data, unless otherwise specified. Street networks and points of interest come from OpenStreetMap. Routing times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
       },
       {
         q: 'Why is my city wrong?',
-        a: 'It might well be. The measurements are only as good as their inputs: an OpenStreetMap area that is thinly mapped, a GTFS feed that is out of date, a line that opened after the export was run, or a service that closed before it — all of these produce a map that is confidently wrong in a way the map itself cannot detect. If you know a city and something looks off, write to us and say where the better data is: an up-to-date feed, an official source, or simply which part of the map does not match what is on the ground. That is the fastest way for a city to be re-exported. Every published dataset is downloadable, so the disagreement can be checked rather than argued about.',
+        a: 'It might well be: this is a worldwide comparative analysis based on open data. The measurements are only as good as their inputs: an OpenStreetMap area that is thinly mapped, a GTFS feed that is out of date, a line that opened after the export was run, or a service that closed before it, all of these produce a map that is confidently wrong in a way the map itself cannot detect. If you know a city and something looks off, write to us and say where the better data is: an up-to-date feed, an official source, or simply which part of the map does not match what is on the ground. That is the fastest way for a city to be re-exported. Every published dataset is downloadable, so the disagreement can be checked rather than argued about. If you are interested in developing a more detailed platform for a single city, {contact}.',
       },
       {
         q: 'Why isn’t my city included?',
-        a: 'Coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, open a GitHub issue.',
+        a: 'We will be adding more cities over time. However, coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, {write}.',
       },
       {
         q: 'Can I cite this work?',
-        a: 'Yes. The framework is Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. The Car Dependency Index is Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. The Research page lists both alongside the datasets.',
-      },
-      {
-        q: 'Is the Atlas free to use?',
-        a: 'Yes. The visualisation code is MIT-licensed and the published datasets are CC BY-NC 4.0 — free to use, share and adapt with attribution, for non-commercial purposes. Commercial use needs written permission. The papers themselves are open access under CC BY 4.0.',
+        a: 'Yes. Every layer must be cited with the paper it comes from. If you cite the Atlas as a whole, cite the Atlas and its author, Sony CSL - Rome. Every citation is on the {research}.',
       },
     ],
   },

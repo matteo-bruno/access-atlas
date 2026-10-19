@@ -571,44 +571,34 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Domande frequenti',
     headline: 'Domande',
     headlineAccent: 'ricorrenti.',
     lede: 'Risposte brevi a ciò che ci viene chiesto più spesso. Avete un’altra domanda? Scrivete a {email}.',
-    meta: {
-      updated: 'Ultimo aggiornamento',
-      updatedValue: 'Luglio 2026',
-      entries: 'Voci',
-      languages: 'Lingue',
+    links: {
+      contact: 'contattateci',
+      write: 'scriveteci',
+      research: 'pagina Ricerca',
     },
     items: [
       {
-        q: 'Cosa significa “accesso” nell’Atlante?',
-        a: 'Tre cose misurabili, tenute deliberatamente separate. La prossimità è ciò che si raggiunge a piedi in pochi minuti — negozi, scuole, ambulatori, verde. L’opportunità è ciò che il trasporto pubblico rende raggiungibile entro un tempo dato — lavoro, università, ospedali, luoghi di cultura. Il valore è la qualità di ciò che è raggiungibile: fa parte del quadro teorico ma non è ancora quantificato, e nulla in questo sito pretende di misurarlo.',
-      },
-      {
-        q: 'Come viene classificata una cella in una zona?',
-        a: 'Ogni cella ha un punteggio di prossimità e uno di opportunità. Una cella è considerata alta su un asse quando sta sopra la mediana cittadina pesata sulla popolazione per quell’asse — pesata, così che la soglia rifletta dove le persone vivono davvero e non la geometria della maglia. Le due risposte sì/no danno quattro zone: inclusione, isolamento spaziale, isolamento sociale, isolamento totale. Poiché le soglie sono specifiche di ogni città, le zone confrontano luoghi dentro una città, non fra città; a confrontare fra città sono i punteggi.',
+        q: 'Che cosa significa “accessibilità” nell’Atlante?',
+        a: 'L’accessibilità è definita come la facilità di raggiungere opportunità di valore: in parole semplici, quanti luoghi e quante persone importanti per te sono a portata di mano da dove vivi. Molte attività diverse devono essere accessibili: un lavoro, un parco, un parente, un servizio. Quantificare questo concetto è complesso ed è la missione principale dell’Atlante.',
       },
       {
         q: 'Da dove vengono i dati?',
-        a: 'Rete stradale e punti di interesse vengono da OpenStreetMap. I tempi a piedi sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm invece che con una frequenza media. La popolazione viene dalle griglie WorldPop a 100 m riscalate sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, larghi circa 200 m.',
+        a: 'La maggior parte delle visualizzazioni si basa su dati aperti, salvo dove indicato diversamente. Reti stradali e punti di interesse vengono da OpenStreetMap. I tempi di percorrenza sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm. La popolazione viene dalle griglie WorldPop a 100 m corrette sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, larghi circa 200 m.',
       },
       {
         q: 'Perché la mia città è sbagliata?',
-        a: 'Può benissimo esserlo. Le misure valgono quanto valgono i dati che le producono: un’area mappata poco su OpenStreetMap, un feed GTFS non aggiornato, una linea aperta dopo l’export o un servizio chiuso prima — tutto questo produce una mappa sbagliata ma dall’aria sicura, e la mappa, da sola, non può accorgersene. Se conoscete una città e qualcosa non torna, scriveteci indicando dove stanno i dati migliori: un feed aggiornato, una fonte ufficiale, o semplicemente quale parte della mappa non corrisponde a ciò che c’è sul territorio. È il modo più rapido perché una città venga riesportata. Ogni dataset pubblicato è scaricabile, quindi il disaccordo si può verificare invece che discutere.',
+        a: 'Può darsi che lo sia: questa è un’analisi comparativa su scala mondiale basata su dati aperti. Le misure valgono quanto i dati di partenza: un’area di OpenStreetMap mappata poco, un feed GTFS non aggiornato, una linea aperta dopo l’esportazione o un servizio chiuso prima, tutto questo produce una mappa sbagliata con sicurezza, in un modo che la mappa stessa non può rilevare. Se conoscete una città e qualcosa non torna, scriveteci e diteci dove sono i dati migliori: un feed aggiornato, una fonte ufficiale, o semplicemente quale parte della mappa non corrisponde a ciò che c’è sul territorio. È il modo più rapido perché una città venga riesportata. Ogni dataset pubblicato è scaricabile, così il disaccordo si può verificare invece di discuterne. Se vi interessa sviluppare una piattaforma più dettagliata per una singola città, {contact}.',
       },
       {
         q: 'Perché la mia città non c’è?',
-        a: 'La copertura è limitata dai dati, non dall’interesse: servono una buona mappatura OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di puntare alla copertura globale, perché un feed mal specificato produce numeri sbagliati dall’aria affidabile. Se la vostra città ha entrambi e manca, aprite una issue su GitHub.',
+        a: 'Aggiungeremo altre città nel tempo. La copertura però è limitata dai dati, non dall’interesse: a una città servono una buona mappatura su OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di tentare una copertura globale, perché un feed mal specificato produce numeri dall’aria affidabile ma sbagliati. Se la vostra città ha entrambi e manca, {write}.',
       },
       {
         q: 'Posso citare questo lavoro?',
-        a: 'Sì. Il quadro teorico è Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. Il Car Dependency Index è Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. La pagina Ricerca li elenca insieme ai dataset.',
-      },
-      {
-        q: 'L’Atlante è gratuito?',
-        a: 'Sì. Il codice di visualizzazione è sotto licenza MIT e i dataset pubblicati sono CC BY-NC 4.0: si possono usare, condividere e adattare liberamente citando la fonte, per scopi non commerciali. L’uso commerciale richiede autorizzazione scritta. Gli articoli sono open access con licenza CC BY 4.0.',
+        a: 'Sì. Ogni layer va citato con il paper da cui proviene. Se citate l’Atlante nel suo insieme, citate l’Atlante e il suo autore, Sony CSL - Roma. Tutte le citazioni sono nella {research}.',
       },
     ],
   },

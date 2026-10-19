@@ -532,44 +532,34 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Preguntas frecuentes',
     headline: 'Preguntas',
     headlineAccent: 'frecuentes.',
     lede: 'Respuestas breves a lo que más nos preguntan. ¿Tienes otra pregunta? Escribe a {email}.',
-    meta: {
-      updated: 'Última actualización',
-      updatedValue: 'Julio de 2026',
-      entries: 'Entradas',
-      languages: 'Idiomas',
+    links: {
+      contact: 'contáctenos',
+      write: 'envíenos un mensaje',
+      research: 'página de Investigación',
     },
     items: [
       {
-        q: '¿Qué significa «acceso» en el Atlas?',
-        a: 'Tres cosas medibles, mantenidas separadas a propósito. La proximidad es lo que se alcanza a pie en pocos minutos: tiendas, colegios, centros de salud, zonas verdes. La oportunidad es lo que el transporte público pone a tu alcance en un tiempo dado: empleo, universidades, hospitales, espacios culturales. El valor es la calidad y el atractivo de lo alcanzable; forma parte del marco teórico pero aún no se ha cuantificado, y nada en este sitio afirma medirlo.',
-      },
-      {
-        q: '¿Cómo se clasifica una celda en una zona?',
-        a: 'Cada celda tiene una puntuación de proximidad y otra de oportunidad. Una celda cuenta como alta en un eje cuando está por encima de la mediana de esa ciudad ponderada por población para ese eje; ponderada, para que el umbral refleje dónde vive realmente la gente y no la geometría de la malla. Las dos respuestas sí/no dan cuatro zonas: inclusión, aislamiento espacial, aislamiento social y aislamiento total. Como los umbrales son propios de cada ciudad, las zonas comparan lugares dentro de una ciudad, no entre ciudades; lo que se compara entre ciudades son las puntuaciones subyacentes.',
+        q: '¿Qué significa “accesibilidad” en el Atlas?',
+        a: 'La accesibilidad se define como la facilidad para alcanzar oportunidades valiosas: en pocas palabras, cuántos lugares y personas importantes para usted están a su alcance desde donde vive. Muchas actividades distintas deben ser accesibles: un trabajo, un parque, un familiar, un servicio. Cuantificar este concepto es complejo y es la misión principal del Atlas.',
       },
       {
         q: '¿De dónde vienen los datos?',
-        a: 'Las redes de calles y los puntos de interés proceden de OpenStreetMap. Los tiempos a pie se calculan sobre esas redes con OSRM. El transporte público usa los horarios GTFS abiertos de los operadores, evaluados con el Connection Scan Algorithm en lugar de con una frecuencia media. La población procede de las cuadrículas de 100 m de WorldPop ajustadas a las estimaciones de la ONU. Las celdas son hexágonos H3 de resolución 9, de unos 200 m de ancho.',
+        a: 'La mayoría de las visualizaciones se basan en datos abiertos, salvo que se indique lo contrario. Las redes viarias y los puntos de interés proceden de OpenStreetMap. Los tiempos de desplazamiento se calculan sobre esas redes con OSRM. El transporte público usa los horarios GTFS abiertos de los operadores, evaluados con el Connection Scan Algorithm. La población procede de las cuadrículas de 100 m de WorldPop ajustadas a las estimaciones de la ONU. Las celdas son hexágonos H3 de resolución 9, de unos 200 m de ancho.',
       },
       {
         q: '¿Por qué mi ciudad está mal?',
-        a: 'Puede que lo esté. Las mediciones son tan buenas como sus datos de partida: una zona poco cartografiada en OpenStreetMap, un feed GTFS desactualizado, una línea inaugurada después de la exportación o un servicio cerrado antes producen un mapa equivocado con aire de seguridad, y el mapa por sí solo no puede detectarlo. Si conoces una ciudad y algo no cuadra, escríbenos y dinos dónde están los mejores datos: un feed actualizado, una fuente oficial o simplemente qué parte del mapa no coincide con la realidad. Es la forma más rápida de que una ciudad se vuelva a exportar. Todos los datos publicados se pueden descargar, así que el desacuerdo se puede comprobar en lugar de discutir.',
+        a: 'Puede que lo esté: se trata de un análisis comparativo mundial basado en datos abiertos. Las mediciones solo son tan buenas como sus datos de partida: una zona poco cartografiada en OpenStreetMap, un feed GTFS desactualizado, una línea abierta después de la exportación o un servicio cerrado antes, todo ello produce un mapa equivocado con total seguridad, de un modo que el propio mapa no puede detectar. Si conoce una ciudad y algo no cuadra, escríbanos y díganos dónde están los datos mejores: un feed actualizado, una fuente oficial o simplemente qué parte del mapa no coincide con lo que hay sobre el terreno. Es la forma más rápida de que una ciudad se vuelva a exportar. Todos los datos publicados se pueden descargar, así que el desacuerdo puede comprobarse en lugar de discutirse. Si le interesa desarrollar una plataforma más detallada para una sola ciudad, {contact}.',
       },
       {
         q: '¿Por qué no está mi ciudad?',
-        a: 'La cobertura la limitan los datos, no el interés: una ciudad necesita una buena cartografía en OpenStreetMap y un feed GTFS público utilizable. Las plataformas de comparación cubren un conjunto de ciudades de estudio bien documentadas en lugar de intentar una cobertura global, porque un feed mal especificado produce cifras con apariencia fiable que son erróneas. Si tu ciudad tiene ambas cosas y no está, abre una issue en GitHub.',
+        a: 'Iremos añadiendo más ciudades con el tiempo. Sin embargo, la cobertura está limitada por los datos, no por el interés: una ciudad necesita una buena cartografía en OpenStreetMap y un feed GTFS público utilizable. Las plataformas de comparación cubren un conjunto de ciudades de estudio bien documentadas en lugar de intentar una cobertura global, porque un feed mal especificado produce cifras de aspecto fiable que son erróneas. Si su ciudad tiene ambos y falta, {write}.',
       },
       {
         q: '¿Puedo citar este trabajo?',
-        a: 'Sí. El marco teórico es Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. El Car Dependency Index es Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. La página Investigación recoge ambos junto a los conjuntos de datos.',
-      },
-      {
-        q: '¿Es gratuito el Atlas?',
-        a: 'Sí. El código de visualización tiene licencia MIT y los datos publicados son CC BY-NC 4.0: puedes usarlos, compartirlos y adaptarlos libremente citando la fuente, con fines no comerciales. El uso comercial requiere permiso por escrito. Los propios artículos son de acceso abierto con licencia CC BY 4.0.',
+        a: 'Sí. Cada capa debe citarse con el artículo del que procede. Si cita el Atlas en su conjunto, cite el Atlas y a su autor, Sony CSL - Roma. Todas las citas están en la {research}.',
       },
     ],
   },

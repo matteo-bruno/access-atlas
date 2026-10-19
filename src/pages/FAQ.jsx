@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
-import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
-import { LANGS, useI18n } from '../i18n/index.jsx';
+import { useI18n } from '../i18n/index.jsx';
 import { CONTACT } from '../data/team.js';
 import './FAQ.css';
 
@@ -13,9 +13,28 @@ import './FAQ.css';
 const INITIALLY_OPEN = [];
 
 export default function FAQ() {
-  const { t, n } = useI18n();
+  const { t } = useI18n();
   const items = t('faq.items');
   const [open, setOpen] = useState(() => new Set(INITIALLY_OPEN));
+
+  // Links an answer may name: {contact}, {write} and {research}.
+  const answerLinks = {
+    contact: (
+      <Link className="aa-faq__email" to="/contact">
+        {t('faq.links.contact')}
+      </Link>
+    ),
+    write: (
+      <Link className="aa-faq__email" to="/contact">
+        {t('faq.links.write')}
+      </Link>
+    ),
+    research: (
+      <Link className="aa-faq__email" to="/research">
+        {t('faq.links.research')}
+      </Link>
+    ),
+  };
 
   const toggle = (index) =>
     setOpen((current) => {
@@ -30,7 +49,6 @@ export default function FAQ() {
 
       <main className="aa-main aa-faq" id="main">
         <div className="aa-faq__aside">
-          <Eyebrow>{t('faq.eyebrow')}</Eyebrow>
           <h1 className="aa-faq__headline">
             {t('faq.headline')}
             <br />
@@ -48,11 +66,6 @@ export default function FAQ() {
               }}
             />
           </p>
-          <dl className="aa-faq__meta">
-            <MetaRow label={t('faq.meta.updated')} value={t('faq.meta.updatedValue')} />
-            <MetaRow label={t('faq.meta.entries')} value={n(items.length)} />
-            <MetaRow label={t('faq.meta.languages')} value={n(LANGS.length)} />
-          </dl>
         </div>
 
         <div className="aa-faq__list">
@@ -74,7 +87,11 @@ export default function FAQ() {
                   </span>
                   <Icon name={isOpen ? 'minus' : 'plus'} size={15} color="var(--ink-3)" />
                 </button>
-                {isOpen && <p className="aa-faq__answer">{item.a}</p>}
+                {isOpen && (
+                  <p className="aa-faq__answer">
+                    <Interpolate template={item.a} values={answerLinks} />
+                  </p>
+                )}
               </div>
             );
           })}
@@ -82,15 +99,6 @@ export default function FAQ() {
       </main>
 
       <Footer />
-    </div>
-  );
-}
-
-function MetaRow({ label, value }) {
-  return (
-    <div className="aa-faq__metarow">
-      <dt>{label}</dt>
-      <dd>{value}</dd>
     </div>
   );
 }
