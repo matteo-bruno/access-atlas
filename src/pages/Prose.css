@@ -70,6 +70,131 @@
   color: var(--ink-2);
 }
 
+/* The intro with its links in the right-hand column, which was empty. */
+.aa-prose__intro--split {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) auto;
+  justify-content: start;
+  align-items: end;
+  gap: 36px;
+}
+
+.aa-prose__links--side {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin-top: 0;
+  padding-bottom: 4px;
+}
+
+/* The two links beside the lede: small cards, so they read as places to go
+   rather than as tags. */
+.aa-prose__sidelink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.aa-prose__sidelink:hover {
+  border-color: var(--magenta);
+  color: var(--magenta-deep);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-1px);
+}
+
+/* What we do: three corners of one triangle, research on top, the platforms
+   and the use cases under it. The edges are an SVG behind the cards. */
+.aa-prose__triangle {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    'research research'
+    'platform useCase';
+  gap: 56px 64px;
+}
+
+.aa-prose__triangle-edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.aa-prose__triangle-edges polygon {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+
+.aa-prose__corner {
+  position: relative;
+}
+
+.aa-prose__corner--research {
+  grid-area: research;
+  justify-self: center;
+  width: min(100%, calc(50% - 32px));
+}
+
+.aa-prose__corner--platform {
+  grid-area: platform;
+}
+
+.aa-prose__corner--useCase {
+  grid-area: useCase;
+}
+
+.aa-prose__corner .aa-prose__cardtitle {
+  margin-top: 0;
+}
+
+.aa-prose__link {
+  color: var(--magenta);
+  border-bottom: 1px solid var(--magenta);
+}
+
+.aa-prose__link:hover {
+  color: var(--magenta-deep);
+  border-bottom-color: var(--magenta-deep);
+}
+
+/* Topics: labels, not links, so they carry no hover. */
+.aa-prose__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aa-prose__topic {
+  padding: 10px 16px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.aa-prose__topicsnote {
+  margin-top: 20px;
+}
+
 /* Outward links — the lab, the projects. Chips, so a list of them reads as a
    set of destinations rather than a paragraph of underlines. */
 .aa-prose__links {
@@ -94,6 +219,88 @@
 
 .aa-prose__cta:hover {
   opacity: 0.85;
+}
+
+.aa-prose__cta--navy {
+  background: var(--navy);
+}
+
+/* The button and the address it writes to, side by side. */
+.aa-prose__links--contact {
+  align-items: center;
+  gap: 18px;
+}
+
+.aa-prose__email {
+  font-size: 15px;
+}
+
+/* Consulting: the page and, beside it, the list of what can be asked about,
+   one under the other, running the height of the page. */
+.aa-consulting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px;
+  align-items: start;
+  padding-bottom: 72px;
+}
+
+.aa-consulting__aside {
+  padding-top: 76px;
+}
+
+.aa-consulting__services {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aa-consulting__service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.aa-consulting__service::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.aa-consulting__service:nth-child(3n + 2)::before {
+  background: var(--magenta);
+}
+
+.aa-consulting__service:nth-child(3n)::before {
+  background: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .aa-consulting {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aa-consulting__aside {
+    padding-top: 24px;
+  }
+
+  .aa-consulting__services {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /* "Nothing here yet", said once and plainly. */
@@ -133,6 +340,31 @@
 @media (max-width: 720px) {
   .aa-prose__headline {
     font-size: 38px;
+  }
+
+  .aa-prose__intro--split {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aa-prose__links--side {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .aa-prose__triangle {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'research' 'platform' 'useCase';
+    gap: 16px;
+  }
+
+  .aa-prose__triangle-edges {
+    display: none;
+  }
+
+  .aa-prose__corner--research {
+    width: auto;
+    justify-self: stretch;
   }
 
   .aa-prose__list {

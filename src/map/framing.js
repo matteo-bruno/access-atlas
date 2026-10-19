@@ -82,6 +82,9 @@ const COVERAGE_PADDING = 1.25;
  */
 const MAX_COVERAGE_BOOST = 2.4;
 
+/** How many times the box's height a world in a portrait box is drawn. */
+const PORTRAIT_COVER = 2.2;
+
 /**
  * Where the site's two coverage maps should look, derived from the coverage
  * they are about to draw.
@@ -151,6 +154,7 @@ export function coverageFraming(cities) {
  *
  * - The scale spans the world across the width, times `2^zoomBoost`, and
  *   backs off if the coverage would not fit the height (a wide, short box).
+ *   In a portrait box it grows instead until the world covers the height.
  * - The centre is then clamped the way a map is: along an axis where the
  *   world is smaller than the box it is centred, and along one where it is
  *   larger no paper shows past its edge. At the plain fit that centres the
@@ -167,6 +171,12 @@ export function worldProjection({ width, height }, { center = [0, 0], zoomBoost 
     const tall = (extent[1][1] - extent[0][1]) * COVERAGE_PADDING;
     if (tall > 0 && tall * scale > height) scale = Math.max(fit, height / tall);
   }
+  // A portrait box (a phone held upright) would show the world as a band
+  // across its middle, the rest paper: there the world is drawn about twice
+  // as tall as the box, so it covers it and has room to centre on the
+  // coverage's latitude rather than being pinned to the pole. Pinching out still
+  // reaches the whole world (`WorldMap`'s zoom goes down to the width fit).
+  if (height > width) scale = Math.max(scale, (PORTRAIT_COVER * height) / (2 * HALF_HEIGHT));
 
   const projection = worldProjectionAt(scale).translate([0, 0]);
   const [cx, cy] = projection(center);

@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { Logo } from './Logo.jsx';
 import { Icon } from './Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
-import { PLATFORMS } from '../data/platforms.js';
-import { CONTACT } from '../data/team.js';
 import { BLOG_LISTED } from '../data/blog.js';
 import './Footer.css';
 
@@ -17,17 +15,15 @@ export function Footer() {
   const researchTo = ['/research', '/research', '/blog', '/faq'];
   // The blog is kept off the footer while it is off the nav (BLOG_LISTED).
   const hiddenTo = new Set(BLOG_LISTED ? [] : ['/blog']);
-  const aboutTo = ['/sustainable-cities', '/contact', '/contact', '/consulting', '/work-with-us'];
-  const touchHref = [CONTACT.codeUrl, null];
+  const platformTo = ['/platforms', '/citychat', '/stats'];
+  const aboutTo = ['/sustainable-cities', '/contact', '/consulting'];
+  const touchTo = ['/contact', '/work-with-us'];
 
   const columns = [
     {
       key: 'platforms',
       heading: t('footer.platforms'),
-      links: PLATFORMS.map((platform) => ({
-        label: platform.name,
-        to: `/platforms/${platform.slug}`,
-      })),
+      links: t('footer.platformLinks').map((label, i) => ({ label, to: platformTo[i] })),
     },
     {
       key: 'research',
@@ -44,7 +40,7 @@ export function Footer() {
     {
       key: 'touch',
       heading: t('footer.touch'),
-      links: t('footer.touchLinks').map((label, i) => ({ label, href: touchHref[i] })),
+      links: t('footer.touchLinks').map((label, i) => ({ label, to: touchTo[i] })),
     },
   ];
 
@@ -101,7 +97,6 @@ export function Footer() {
 
       <div className="aa-footer__bar">
         <span>{t('footer.copyright')}</span>
-        <span className="aa-mono aa-footer__version">{t('footer.version')}</span>
       </div>
     </footer>
   );

@@ -581,110 +581,87 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Frequently asked',
     headline: 'Common',
     headlineAccent: 'questions.',
     lede: 'Short answers to what we are asked most. Something else on your mind? Write to {email}.',
-    meta: {
-      updated: 'Last updated',
-      updatedValue: 'July 2026',
-      entries: 'Entries',
-      languages: 'Languages',
+    links: {
+      contact: 'contact us',
+      write: 'send us a message',
+      research: 'Research page',
     },
     items: [
       {
-        q: 'What does “access” mean in the Atlas?',
-        a: 'Three measurable things, kept deliberately separate. Proximity is what you can reach on foot in a few minutes — shops, schools, clinics, green space. Opportunity is what public transport puts within a time budget — jobs, universities, hospitals, cultural venues. Value is the quality and desirability of what is reachable; it is part of the framework but is not yet quantified, and nothing on this site claims to measure it.',
-      },
-      {
-        q: 'How is a cell classified into a zone?',
-        a: 'Each cell carries a proximity score and an opportunity score. A cell is counted as high on an axis when it sits above that city’s population-weighted median for the axis — weighted, so the threshold reflects where people actually live rather than the geometry of the mesh. The two yes/no answers give four zones: inclusion, spatial isolation, social isolation, total isolation. Because the thresholds are city-specific, zones compare places within a city, not between cities; the underlying scores are what compare across cities.',
+        q: 'What does “accessibility” mean in the Atlas?',
+        a: 'Accessibility is defined as the ease of reaching valuable opportunities: in simple terms, how many places and people that are meaningful for you are within reach from where you live. Many different activities need to be accessible: a job, a park, a relative, a service. Quantifying this concept is complex and is the main mission of the Atlas.',
       },
       {
         q: 'Where does the data come from?',
-        a: 'Street networks and points of interest come from OpenStreetMap. Walking times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm rather than an average frequency. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
+        a: 'Most of the visualizations are based on open data, unless otherwise specified. Street networks and points of interest come from OpenStreetMap. Routing times are computed on those networks with OSRM. Public transport uses operators’ open GTFS schedules, evaluated with the Connection Scan Algorithm. Population comes from WorldPop 100 m grids adjusted to UN estimates. Cells are H3 hexagons at resolution 9, roughly 200 m across.',
       },
       {
         q: 'Why is my city wrong?',
-        a: 'It might well be. The measurements are only as good as their inputs: an OpenStreetMap area that is thinly mapped, a GTFS feed that is out of date, a line that opened after the export was run, or a service that closed before it — all of these produce a map that is confidently wrong in a way the map itself cannot detect. If you know a city and something looks off, write to us and say where the better data is: an up-to-date feed, an official source, or simply which part of the map does not match what is on the ground. That is the fastest way for a city to be re-exported. Every published dataset is downloadable, so the disagreement can be checked rather than argued about.',
+        a: 'It might well be: this is a worldwide comparative analysis based on open data. The measurements are only as good as their inputs: an OpenStreetMap area that is thinly mapped, a GTFS feed that is out of date, a line that opened after the export was run, or a service that closed before it, all of these produce a map that is confidently wrong in a way the map itself cannot detect. If you know a city and something looks off, write to us and say where the better data is: an up-to-date feed, an official source, or simply which part of the map does not match what is on the ground. That is the fastest way for a city to be re-exported. Every published dataset is downloadable, so the disagreement can be checked rather than argued about. If you are interested in developing a more detailed platform for a single city, {contact}.',
       },
       {
         q: 'Why isn’t my city included?',
-        a: 'Coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, open a GitHub issue.',
+        a: 'We will be adding more cities over time. However, coverage is limited by data, not by interest: a city needs well-mapped OpenStreetMap coverage and a usable public GTFS feed. The comparison platforms cover a set of well-documented study cities rather than attempting global coverage, because a badly specified feed produces confident-looking numbers that are wrong. If your city has both and is missing, {write}.',
       },
       {
         q: 'Can I cite this work?',
-        a: 'Yes. The framework is Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. The Car Dependency Index is Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. The Research page lists both alongside the datasets.',
-      },
-      {
-        q: 'Is the Atlas free to use?',
-        a: 'Yes. The visualisation code is MIT-licensed and the published datasets are CC BY-NC 4.0 — free to use, share and adapt with attribution, for non-commercial purposes. Commercial use needs written permission. The papers themselves are open access under CC BY 4.0.',
+        a: 'Yes. Every layer must be cited with the paper it comes from. If you cite the Atlas as a whole, cite the Atlas and its author, Sony CSL - Rome. Every citation is on the {research}.',
       },
     ],
   },
 
   // Who we are — the research line the Atlas is one output of.
   about: {
-    eyebrow: 'Sustainable cities',
-    headline: 'Data-based scenarios',
-    headlineAccent: 'towards more sustainable cities',
-    lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories — Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
+    headline: 'Scenarios for',
+    headlineAccent: 'sustainable cities',
+    lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories - Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
     labLink: 'Sony CSL ↗',
     teamLink: 'The people →',
 
     doTitle: 'What we do',
     do: {
-      measure: {
-        tag: 'Measure',
-        title: 'We measure what a city gives access to',
-        desc: 'Proximity, opportunity and — where it can be done honestly — the value of what is reachable, computed cell by cell from open data on street networks, timetables, services and population.',
+      research: {
+        title: 'Research',
+        desc: 'We employ frontier models and algorithms to analyse, understand and compare cities. We push the frontier further.',
       },
-      compare: {
-        tag: 'Compare',
-        title: 'We make cities comparable',
-        desc: 'Every city is measured the same way, on the same grid, with the same scales — which is what makes a figure from one city mean anything beside a figure from another.',
+      platform: {
+        title: 'Platform',
+        desc: 'We replicate the research on several cities. We publish our research and make the results available on online platforms.',
       },
-      publish: {
-        tag: 'Publish',
-        title: 'We publish the method and the data',
-        desc: 'Peer-reviewed papers, downloadable datasets and open code. A measurement that informs a planning decision should be checkable by the people that decision lands on.',
+      useCase: {
+        title: 'Use case',
+        desc: 'We create refined versions of our platforms for cities, to be used for informed urban and transport planning.',
+        cta: 'Ask us about it.',
       },
     },
 
-    withTitle: 'Who we work with',
-    withBody:
-      'The group sits inside Sony CSL Rome, hosted in the joint initiative with CREF, and its research runs with collaborators at Sapienza and other universities and institutes in Italy and abroad. Doctoral and master’s students work on the Atlas as part of that arrangement rather than alongside it.',
-    withBody2:
-      'We also work with city administrations, research groups and NGOs — usually because someone needs to make an argument about access with evidence behind it. If that is you, the contact page is the place to start.',
-
-    projectsTitle: 'Other projects',
-    projectsHint: 'beyond the four layers',
-    projects: {
-      whatif: {
-        tag: 'Platform',
-        name: 'WhatIf',
-        desc: 'The lab’s modular urban simulation platform, and the home of the upstream 15-minute city and CityChrone viewers.',
-      },
-      maps3d: {
-        tag: 'Live map',
-        name: '3D maps',
-        desc: 'Urban inequality read in three dimensions — the weight of a city’s differences, drawn as a surface.',
-      },
-      bikeLanes: {
-        tag: 'Paper',
-        name: 'Bike lane planning',
-        desc: 'Road-width-aware network optimisation: where a cycle network should grow next, given the streets it has to fit into.',
-      },
+    topicsTitle: 'Topics',
+    topics: {
+      accessibility: 'Accessibility and mobility',
+      justice: 'Transport Justice',
+      sustainability: 'Sustainability and emissions',
+      green: 'Green spaces',
+      walkability: 'Walkability',
+      bikeability: 'Bikeability',
     },
-    labCta: 'Visit Sony CSL',
+    topicsNote: 'Interested in one of these topics? See more in the {research} section or {contact} us.',
+    topicsResearch: 'research',
+    topicsContact: 'contact',
   },
 
   citychat: {
-    eyebrow: 'CityChat · beta',
     headline: 'Ask the Atlas about',
     headlineAccent: 'your city.',
-    lede: 'Ask what a layer means, how a city compares or how a place fares, and CityChat answers from the published data. It is an AI model that can call the same code the maps run on, and every figure it quotes is checked against what that code returned.',
     beta: 'beta',
+    aboutTitle: 'About CityChat',
+    about: 'CityChat is an LLM-assistant that can be inquired about the results and the meaning of the maps in the Atlas. It is powered by Gemini API and can be fine tuned to be much more informed about a single city. {ask} if you are interested.',
+    aboutAsk: 'Ask us',
+    betaNote: 'CityChat is in beta: it can make mistakes, and at times it may not work properly.',
+    phoneOff: 'CityChat is turned off on phones. Open it from a computer to ask the Atlas about a city.',
+    phoneBack: 'Explore the maps',
     persona: {
       label: 'I am asking as',
       citizen: 'A resident',
@@ -1072,37 +1049,32 @@ export default {
 
   // Consulting — short, because there is nothing else that can honestly be said.
   consulting: {
-    eyebrow: 'Consulting',
     headline: 'Working on a city?',
     headlineAccent: 'Talk to us.',
-    lede: 'If you are a public administration, an agency or a company that needs to measure access — for a plan, a service, an investment case or an evaluation — we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer.',
+    lede: 'Interested in having a platform fine-tuned and enriched for your city, developing scenarios and forecasting interventions? Need a digital twin that is easy to interpret?',
     cta: 'Write to us',
     whoTitle: 'Who this is for',
-    who: {
-      policy: {
-        tag: 'Public sector',
-        title: 'Policy makers',
-        desc: 'Cities, regions, transport authorities and agencies deciding where a line, a service or a facility should go — and needing to know, beforehand, who it would actually reach.',
-      },
-      company: {
-        tag: 'Private sector',
-        title: 'Companies',
-        desc: 'Organisations whose decisions depend on how a city is reached: siting, service design, mobility, or an evidence base for a report that has to withstand scrutiny.',
-      },
+    whoBody: 'If you are a public administration, an agency or a company that needs to measure access, mobility, sustainability and inequality, we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer. We are interested in developing novel research while helping cities thrive.',
+    services: {
+      digitalTwins: 'Digital twins',
+      inequalities: 'Accessibility inequalities',
+      mobilityForecasting: 'Mobility forecasting',
+      demand: 'Demand estimation',
+      emissions: 'Emissions forecasting',
+      bikeLanes: 'Bike lane planning',
+      busLanes: 'Protected bus lanes',
+      pedestrianization: 'Pedestrianization',
+      originDestination: 'Origin Destination estimation',
     },
-    note:
-      'A note on the licence: the published datasets are CC BY-NC 4.0, so commercial use needs written permission. That is a conversation, not a refusal — it is the same address either way.',
   },
 
   contact: {
-    eyebrow: 'Contact & collaborations',
     headline: 'Rome, Italy.',
     headlineAccent: 'Open for collab.',
     lede: 'We work with city administrations, research groups, NGOs and anyone trying to make an argument about access with evidence behind it. If your city should be on the Atlas, if you want to reuse the maps in a paper, or if something here looks wrong — write to us.',
     fields: {
       address: 'Address',
       general: 'General',
-      code: 'Code',
       phone: 'Phone',
     },
     addressValue:
@@ -1145,20 +1117,17 @@ export default {
   },
 
   research: {
-    eyebrow: 'Research output',
-    headline: 'Papers, data',
-    headlineAccent: 'and code.',
-    lede: 'The methods behind the Atlas are published and the datasets are downloadable. Platforms whose paper is still in preparation are marked as such — the maps are shown, the citation is not invented.',
-    papersTag: '01',
+    headline: 'Open',
+    headlineAccent: 'Research',
     papersTitle: 'Papers',
-    papersHint: 'peer-reviewed & preprints',
-    datasetsTag: '02',
-    datasetsTitle: 'Datasets & code',
-    datasetsHint: 'CC BY-NC 4.0 · MIT',
-    citeTitle: 'How to cite the Atlas',
-    inPreparation: 'In preparation',
+    highlights: 'Highlights',
+    allPapers: 'All papers',
     preprint: 'Preprint',
-    columns: { dataset: 'Dataset', coverage: 'Coverage', format: 'Format', licence: 'Licence' },
+    datasetsTitle: 'Datasets',
+    comingSoon: 'Coming soon',
+    citeTitle: 'How to cite the Atlas',
+    citeLayers: 'Every layer must be cited according to its source.',
+    citeAtlas: 'If you cite the Atlas itself, please give its link and the attribution to Sony CSL - Rome.',
   },
 
   blog: {
@@ -1206,18 +1175,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Open research on urban access from the Sustainable Cities team at Sony CSL — Rome. Methods, maps and data, published and free to reuse.',
+    description: 'Open research on urban accessibility and mobility from the Sustainable Cities team at Sony CSL\u00a0-\u2060\u00a0Rome.',
     platforms: 'Platform',
+    platformLinks: ['Atlas', 'CityChat', 'Statistics'],
     research: 'Research',
     researchLinks: ['Papers', 'Datasets', 'Blog', 'FAQ'],
     about: 'About',
-    aboutLinks: ['Sustainable cities', 'Team', 'Contact', 'Consulting', 'Work with us'],
+    aboutLinks: ['Sustainable cities', 'Team', 'Consulting'],
     touch: 'Stay in touch',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Work with us →',
+    touchLinks: ['Contact', 'Work with us'],
+    workCta: 'Work with us',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: 'Code MIT · Data CC BY-NC 4.0',
   },
 
   notFound: {

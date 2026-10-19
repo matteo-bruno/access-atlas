@@ -44,7 +44,5 @@ export const FORMER_MEMBERS = [
 // page falls back to `general` on its own.
 export const CONTACT = {
   general: 'cslrome@sony.com',
-  code: 'github.com/sony-csl-rome',
-  codeUrl: 'https://github.com/sony-csl-rome',
   phone: '+39 0645502903',
 };

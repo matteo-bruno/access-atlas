@@ -532,109 +532,86 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Perguntas frequentes',
     headline: 'Perguntas',
     headlineAccent: 'frequentes.',
     lede: 'Respostas curtas para o que mais nos perguntam. Tem outra pergunta? Escreva para {email}.',
-    meta: {
-      updated: 'Última atualização',
-      updatedValue: 'Julho de 2026',
-      entries: 'Itens',
-      languages: 'Idiomas',
+    links: {
+      contact: 'fale conosco',
+      write: 'mande uma mensagem',
+      research: 'página Pesquisa',
     },
     items: [
       {
-        q: 'O que significa “acesso” no Atlas?',
-        a: 'Três coisas mensuráveis, mantidas separadas de propósito. A proximidade é o que se alcança a pé em poucos minutos: lojas, escolas, postos de saúde, áreas verdes. A oportunidade é o que o transporte público coloca ao alcance em um tempo dado: empregos, universidades, hospitais, espaços culturais. O valor é a qualidade e a atratividade do que é alcançável; ele faz parte do referencial teórico, mas ainda não foi quantificado, e nada neste site pretende medi-lo.',
-      },
-      {
-        q: 'Como uma célula é classificada em uma zona?',
-        a: 'Cada célula tem uma pontuação de proximidade e uma de oportunidade. Uma célula é considerada alta em um eixo quando está acima da mediana daquela cidade ponderada pela população para esse eixo; ponderada, para que o limiar reflita onde as pessoas realmente vivem, e não a geometria da malha. As duas respostas sim/não geram quatro zonas: inclusão, isolamento espacial, isolamento social e isolamento total. Como os limiares são próprios de cada cidade, as zonas comparam lugares dentro de uma cidade, não entre cidades; o que se compara entre cidades são as pontuações subjacentes.',
+        q: 'O que significa “acessibilidade” no Atlas?',
+        a: 'Acessibilidade é definida como a facilidade de alcançar oportunidades valiosas: em termos simples, quantos lugares e pessoas importantes para você estão ao seu alcance a partir de onde você mora. Muitas atividades diferentes precisam ser acessíveis: um emprego, um parque, um parente, um serviço. Quantificar esse conceito é complexo e é a principal missão do Atlas.',
       },
       {
         q: 'De onde vêm os dados?',
-        a: 'As redes de ruas e os pontos de interesse vêm do OpenStreetMap. Os tempos a pé são calculados sobre essas redes com o OSRM. O transporte público usa os horários GTFS abertos das operadoras, avaliados com o Connection Scan Algorithm em vez de uma frequência média. A população vem das grades de 100 m do WorldPop ajustadas às estimativas da ONU. As células são hexágonos H3 de resolução 9, com cerca de 200 m de largura.',
+        a: 'A maioria das visualizações se baseia em dados abertos, salvo indicação em contrário. Redes viárias e pontos de interesse vêm do OpenStreetMap. Os tempos de deslocamento são calculados nessas redes com o OSRM. O transporte público usa os horários GTFS abertos das operadoras, avaliados com o Connection Scan Algorithm. A população vem das grades de 100 m do WorldPop ajustadas às estimativas da ONU. As células são hexágonos H3 de resolução 9, com cerca de 200 m de largura.',
       },
       {
         q: 'Por que minha cidade está errada?',
-        a: 'Pode ser que esteja mesmo. As medições são tão boas quanto os dados de entrada: uma área pouco mapeada no OpenStreetMap, um feed GTFS desatualizado, uma linha inaugurada depois da exportação ou um serviço encerrado antes dela. Tudo isso produz um mapa errado com ar de certeza, e o mapa sozinho não consegue perceber. Se você conhece uma cidade e algo não bate, escreva para nós dizendo onde estão os dados melhores: um feed atualizado, uma fonte oficial ou simplesmente qual parte do mapa não corresponde ao que existe no local. É o jeito mais rápido de uma cidade ser exportada de novo. Todos os dados publicados podem ser baixados, então uma divergência pode ser verificada em vez de discutida.',
+        a: 'Pode ser que esteja: esta é uma análise comparativa mundial baseada em dados abertos. As medições só são tão boas quanto os dados de entrada: uma área pouco mapeada no OpenStreetMap, um feed GTFS desatualizado, uma linha aberta depois da exportação ou um serviço encerrado antes dela, tudo isso produz um mapa errado com convicção, de um jeito que o próprio mapa não consegue detectar. Se você conhece uma cidade e algo parece errado, escreva para nós e diga onde estão os dados melhores: um feed atualizado, uma fonte oficial ou simplesmente qual parte do mapa não bate com a realidade. É o caminho mais rápido para uma cidade ser reexportada. Todo conjunto de dados publicado pode ser baixado, então a divergência pode ser verificada em vez de discutida. Se você tem interesse em desenvolver uma plataforma mais detalhada para uma única cidade, {contact}.',
       },
       {
         q: 'Por que minha cidade não está incluída?',
-        a: 'A cobertura é limitada pelos dados, não pelo interesse: uma cidade precisa de um bom mapeamento no OpenStreetMap e de um feed GTFS público utilizável. As plataformas de comparação cobrem um conjunto de cidades de estudo bem documentadas em vez de buscar uma cobertura global, porque um feed mal especificado produz números com cara de confiáveis que estão errados. Se a sua cidade tem as duas coisas e não aparece, abra uma issue no GitHub.',
+        a: 'Vamos adicionar mais cidades com o tempo. Mas a cobertura é limitada pelos dados, não pelo interesse: uma cidade precisa de um bom mapeamento no OpenStreetMap e de um feed GTFS público utilizável. As plataformas de comparação cobrem um conjunto de cidades de estudo bem documentadas em vez de tentar uma cobertura global, porque um feed mal especificado produz números de aparência confiável que estão errados. Se a sua cidade tem os dois e está faltando, {write}.',
       },
       {
         q: 'Posso citar este trabalho?',
-        a: 'Sim. O referencial teórico é Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. O Car Dependency Index é Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. A página Pesquisa lista os dois junto com os conjuntos de dados.',
-      },
-      {
-        q: 'O Atlas é gratuito?',
-        a: 'Sim. O código de visualização tem licença MIT e os dados publicados são CC BY-NC 4.0: você pode usá-los, compartilhá-los e adaptá-los livremente, citando a fonte, para fins não comerciais. O uso comercial exige permissão por escrito. Os próprios artigos são de acesso aberto, com licença CC BY 4.0.',
+        a: 'Sim. Cada camada deve ser citada com o artigo de onde vem. Se você citar o Atlas como um todo, cite o Atlas e seu autor, Sony CSL - Roma. Todas as citações estão na {research}.',
       },
     ],
   },
 
   about: {
-    eyebrow: 'Cidades sustentáveis',
-    headline: 'Cenários baseados em dados',
-    headlineAccent: 'rumo a cidades mais sustentáveis',
-    lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories – Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
+    headline: 'Cenários para',
+    headlineAccent: 'cidades sustentáveis',
+    lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories - Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
     labLink: 'Sony CSL ↗',
     teamLink: 'A equipe →',
 
     doTitle: 'O que fazemos',
     do: {
-      measure: {
-        tag: 'Medir',
-        title: 'Medimos a que uma cidade dá acesso',
-        desc: 'Proximidade, oportunidade e, onde dá para fazer com honestidade, o valor do que é alcançável, calculados célula por célula a partir de dados abertos sobre redes de ruas, horários, serviços e população.',
+      research: {
+        title: 'Pesquisa',
+        desc: 'Empregamos modelos e algoritmos de ponta para analisar, compreender e comparar cidades. Levamos a fronteira mais longe.',
       },
-      compare: {
-        tag: 'Comparar',
-        title: 'Tornamos as cidades comparáveis',
-        desc: 'Todas as cidades são medidas da mesma forma, na mesma grade, com as mesmas escalas. É isso que faz o número de uma cidade significar algo ao lado do número de outra.',
+      platform: {
+        title: 'Plataforma',
+        desc: 'Replicamos a pesquisa em várias cidades. Publicamos nossa pesquisa e disponibilizamos os resultados em plataformas online.',
       },
-      publish: {
-        tag: 'Publicar',
-        title: 'Publicamos o método e os dados',
-        desc: 'Artigos revisados por pares, dados para download e código aberto. Uma medição que orienta uma decisão de planejamento deveria poder ser verificada pelas pessoas afetadas por essa decisão.',
+      useCase: {
+        title: 'Caso de uso',
+        desc: 'Criamos versões refinadas das nossas plataformas para cidades, para um planejamento urbano e de transportes bem informado.',
+        cta: 'Fale com a gente.',
       },
     },
 
-    withTitle: 'Com quem trabalhamos',
-    withBody:
-      'O grupo faz parte da Sony CSL Roma, dentro da iniciativa conjunta com o CREF, e pesquisa com colaboradores da Sapienza e de outras universidades e institutos, na Itália e no exterior. Doutorandas, doutorandos e estudantes de mestrado trabalham no Atlas dentro desse arranjo, e não à parte dele.',
-    withBody2:
-      'Também trabalhamos com prefeituras, grupos de pesquisa e ONGs, em geral porque alguém precisa defender um argumento sobre acesso com dados que o sustentem. Se esse é o seu caso, a página de contato é o ponto de partida.',
-
-    projectsTitle: 'Outros projetos',
-    projectsHint: 'além das quatro camadas',
-    projects: {
-      whatif: {
-        tag: 'Plataforma',
-        name: 'WhatIf',
-        desc: 'A plataforma modular de simulação urbana do laboratório, onde ficam os visualizadores originais do 15-minute city e do CityChrone.',
-      },
-      maps3d: {
-        tag: 'Mapa on-line',
-        name: 'Mapas 3D',
-        desc: 'A desigualdade urbana lida em três dimensões: o peso das diferenças de uma cidade, desenhado como uma superfície.',
-      },
-      bikeLanes: {
-        tag: 'Artigo',
-        name: 'Planejamento de ciclovias',
-        desc: 'Otimização da rede que leva em conta a largura das ruas: onde a rede cicloviária deveria crescer, considerando as ruas em que precisa caber.',
-      },
+    topicsTitle: 'Temas',
+    topics: {
+      accessibility: 'Acessibilidade e mobilidade',
+      justice: 'Justiça no transporte',
+      sustainability: 'Sustentabilidade e emissões',
+      green: 'Áreas verdes',
+      walkability: 'Caminhabilidade',
+      bikeability: 'Ciclabilidade',
     },
-    labCta: 'Visite a Sony CSL',
+    topicsNote: 'Tem interesse em algum desses temas? Veja mais na seção {research}, ou {contact}.',
+    topicsResearch: 'Pesquisa',
+    topicsContact: 'fale conosco',
   },
 
   citychat: {
-    eyebrow: 'CityChat · beta',
     headline: 'Pergunte ao Atlas sobre',
     headlineAccent: 'a sua cidade.',
-    lede: 'Pergunte o que significa uma camada, como uma cidade se compara ou como está um lugar, e o CityChat responde a partir dos dados publicados. É um modelo de IA que pode chamar o mesmo código que faz os mapas funcionarem, e cada número que ele cita é conferido com o que esse código devolveu.',
     beta: 'beta',
+    aboutTitle: 'Sobre o CityChat',
+    about: 'O CityChat é um assistente baseado em um LLM a quem se pode perguntar sobre os resultados e o significado dos mapas do Atlas. Ele funciona com a API do Gemini e pode ser ajustado para conhecer muito melhor uma única cidade. {ask} se tiver interesse.',
+    aboutAsk: 'Fale com a gente',
+    betaNote: 'O CityChat está em beta: pode cometer erros e, às vezes, não funcionar direito.',
+    phoneOff: 'O CityChat está desativado no celular. Abra-o em um computador para perguntar ao Atlas sobre uma cidade.',
+    phoneBack: 'Explorar os mapas',
     persona: {
       label: 'Pergunto como',
       citizen: 'Morador(a)',
@@ -1018,37 +995,32 @@ export default {
   },
 
   consulting: {
-    eyebrow: 'Consultoria',
     headline: 'Trabalhando em uma cidade?',
     headlineAccent: 'Vamos conversar.',
-    lede: 'Se você é de uma administração pública, de uma agência ou de uma empresa que precisa medir o acesso (para um plano, um serviço, um investimento ou uma avaliação), pode nos procurar. Conte qual é a pergunta, e diremos com franqueza se nossos métodos conseguem respondê-la.',
+    lede: 'Tem interesse em uma plataforma ajustada e enriquecida para a sua cidade, para desenvolver cenários e prever o efeito de intervenções? Precisa de um gêmeo digital fácil de interpretar?',
     cta: 'Escreva para nós',
     whoTitle: 'Para quem é',
-    who: {
-      policy: {
-        tag: 'Setor público',
-        title: 'Gestores públicos',
-        desc: 'Cidades, regiões, órgãos de transporte e agências que precisam decidir onde colocar uma linha, um serviço ou um equipamento, e saber de antemão quem ele realmente alcançaria.',
-      },
-      company: {
-        tag: 'Setor privado',
-        title: 'Empresas',
-        desc: 'Organizações cujas decisões dependem de como se chega a uma cidade: localização, desenho de serviços, mobilidade ou a base empírica de um relatório que precisa resistir a um exame rigoroso.',
-      },
+    whoBody: 'Se você é uma administração pública, uma agência ou uma empresa que precisa medir acessibilidade, mobilidade, sustentabilidade e desigualdade, pode nos consultar. Diga-nos a pergunta e diremos com clareza se nossos métodos podem respondê-la. Temos interesse em desenvolver pesquisa nova enquanto ajudamos as cidades a prosperar.',
+    services: {
+      digitalTwins: 'Gêmeos digitais',
+      inequalities: 'Desigualdades de acessibilidade',
+      mobilityForecasting: 'Previsão de mobilidade',
+      demand: 'Estimativa de demanda',
+      emissions: 'Previsão de emissões',
+      bikeLanes: 'Planejamento de ciclovias',
+      busLanes: 'Faixas de ônibus protegidas',
+      pedestrianization: 'Pedestrianização',
+      originDestination: 'Estimativa origem-destino',
     },
-    note:
-      'Uma observação sobre a licença: os dados publicados são CC BY-NC 4.0, então o uso comercial exige permissão por escrito. É uma conversa, não uma recusa, e o endereço é o mesmo nos dois casos.',
   },
 
   contact: {
-    eyebrow: 'Contato e colaborações',
     headline: 'Roma, Itália.',
     headlineAccent: 'Abertos a colaborar.',
     lede: 'Trabalhamos com prefeituras, grupos de pesquisa, ONGs e qualquer pessoa que queira defender um argumento sobre acesso com dados que o sustentem. Se a sua cidade deveria estar no Atlas, se você quer reutilizar os mapas em um artigo ou se algo aqui parece errado, escreva para nós.',
     fields: {
       address: 'Endereço',
       general: 'Geral',
-      code: 'Código',
       phone: 'Telefone',
     },
     addressValue:
@@ -1088,20 +1060,17 @@ export default {
   },
 
   research: {
-    eyebrow: 'Produção científica',
-    headline: 'Artigos, dados',
-    headlineAccent: 'e código.',
-    lede: 'Os métodos por trás do Atlas estão publicados e os dados podem ser baixados. As plataformas cujo artigo ainda está em preparação aparecem marcadas como tal: os mapas são mostrados, a citação não é inventada.',
-    papersTag: '01',
+    headline: 'Pesquisa',
+    headlineAccent: 'aberta',
     papersTitle: 'Artigos',
-    papersHint: 'revisados por pares e preprints',
-    datasetsTag: '02',
-    datasetsTitle: 'Dados e código',
-    datasetsHint: 'CC BY-NC 4.0 · MIT',
-    citeTitle: 'Como citar o Atlas',
-    inPreparation: 'Em preparação',
+    highlights: 'Destaques',
+    allPapers: 'Todos os artigos',
     preprint: 'Preprint',
-    columns: { dataset: 'Conjunto de dados', coverage: 'Cobertura', format: 'Formato', licence: 'Licença' },
+    datasetsTitle: 'Conjuntos de dados',
+    comingSoon: 'Em breve',
+    citeTitle: 'Como citar o Atlas',
+    citeLayers: 'Cada camada deve ser citada de acordo com sua fonte.',
+    citeAtlas: 'Se citar o próprio Atlas, inclua o link e a atribuição à Sony CSL - Roma.',
   },
 
   blog: {
@@ -1149,18 +1118,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Pesquisa aberta sobre o acesso urbano da equipe Cidades Sustentáveis da Sony CSL – Roma. Métodos, mapas e dados, publicados e livres para reutilizar.',
+    description: 'Pesquisa aberta sobre acessibilidade e mobilidade urbanas da equipe Cidades Sustentáveis da Sony CSL\u00a0-\u2060\u00a0Roma.',
     platforms: 'Plataforma',
+    platformLinks: ['Atlas', 'CityChat', 'Estatísticas'],
     research: 'Pesquisa',
     researchLinks: ['Artigos', 'Dados', 'Blog', 'FAQ'],
     about: 'Quem somos',
-    aboutLinks: ['Cidades sustentáveis', 'Equipe', 'Contato', 'Consultoria', 'Trabalhe conosco'],
+    aboutLinks: ['Cidades sustentáveis', 'Equipe', 'Consultoria'],
     touch: 'Fique em contato',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Trabalhe conosco →',
+    touchLinks: ['Contato', 'Trabalhe conosco'],
+    workCta: 'Trabalhe conosco',
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
-    version: 'Código MIT · Dados CC BY-NC 4.0',
   },
 
   notFound: {

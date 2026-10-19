@@ -523,109 +523,86 @@ export default {
   },
 
   faq: {
-    eyebrow: '常见问题',
     headline: '常见',
     headlineAccent: '问题。',
     lede: '对我们最常被问到的问题的简短回答。还有其他问题？请写信至 {email}。',
-    meta: {
-      updated: '最近更新',
-      updatedValue: '2026 年 7 月',
-      entries: '条目',
-      languages: '语言',
+    links: {
+      contact: '请联系我们',
+      write: '请给我们留言',
+      research: '研究页面',
     },
     items: [
       {
-        q: '地图集中的“可达性”指什么？',
-        a: '三件可以测量的事，我们有意把它们分开。邻近性是步行几分钟就能到达的东西：商店、学校、诊所、绿地。机会是公共交通在给定时间内能带你到达的东西：工作岗位、大学、医院、文化场所。价值是可达事物的质量和吸引力；它属于理论框架的一部分，但尚未量化，本网站也没有任何内容声称测量了它。',
-      },
-      {
-        q: '单元是如何划分到某个区域的？',
-        a: '每个单元都有一个邻近性得分和一个机会得分。如果某个单元在某一维度上高于该城市在这一维度上的人口加权中位数，就视为在该维度上“高”。之所以加权，是为了让阈值反映人们实际居住的地方，而不是网格的几何形状。两个“是／否”的答案组合成四个区域：包容、空间隔离、社会隔离、完全隔离。由于阈值是各城市各自的，区域只比较同一城市内部的地点，而不比较城市之间；可以跨城市比较的是底层得分。',
+        q: '地图集中的“可达性”是什么意思？',
+        a: '可达性被定义为获得有价值机会的便利程度：简单地说，就是从你居住的地方出发，有多少对你有意义的地点和人在可及范围之内。许多不同的活动都需要可达：一份工作、一座公园、一位亲人、一项服务。量化这一概念很复杂，这也是地图集的主要使命。',
       },
       {
         q: '数据来自哪里？',
-        a: '街道网络和兴趣点来自 OpenStreetMap。步行时间在这些网络上用 OSRM 计算。公共交通使用运营方公开的 GTFS 时刻表，并用 Connection Scan Algorithm 评估，而不是使用平均发车频率。人口来自按联合国估计值校正的 WorldPop 100 米网格。单元是分辨率为 9 的 H3 六边形，宽约 200 米。',
+        a: '除非另有说明，大多数可视化都基于开放数据。街道网络和兴趣点来自 OpenStreetMap。出行时间在这些网络上用 OSRM 计算。公共交通使用运营方公开的 GTFS 时刻表，并用 Connection Scan Algorithm 评估。人口来自按联合国估计校正的 WorldPop 100 米网格。网格单元是分辨率为 9 的 H3 六边形，宽约 200 米。',
       },
       {
-        q: '为什么我所在城市的数据不对？',
-        a: '确实有可能不对。测量结果取决于输入数据的质量：OpenStreetMap 上测绘稀疏的区域、过时的 GTFS 数据、导出之后才开通的线路、导出之前已停运的服务，都会产生一张看似可信却是错误的地图，而地图本身无法察觉。如果您熟悉某座城市并发现哪里不对，请写信告诉我们更好的数据在哪里：一份更新的数据源、一个官方来源，或者只是地图上哪一部分与实际情况不符。这是让一座城市重新导出最快的方式。所有已发布的数据集都可以下载，因此分歧可以核实，而不必争论。',
+        q: '为什么我的城市不对？',
+        a: '很有可能：这是一项基于开放数据的全球比较分析。测量结果的好坏取决于输入数据：OpenStreetMap 中绘制稀疏的区域、过时的 GTFS 数据、导出后才开通的线路，或导出前已经停运的服务，都会让地图以一种它自身无法察觉的方式“自信地出错”。如果你了解某座城市并发现有不对的地方，请写信告诉我们更好的数据在哪里：最新的数据源、官方来源，或者只是地图上哪一部分与实地情况不符。这是让一座城市重新导出的最快途径。每个已发布的数据集都可以下载，因此分歧可以被核查，而不必争论。如果你有兴趣为单个城市开发更详细的平台，{contact}。',
       },
       {
-        q: '为什么没有我所在的城市？',
-        a: '覆盖范围受限于数据，而不是兴趣：一座城市需要有完善的 OpenStreetMap 测绘和可用的公开 GTFS 数据。比较平台覆盖的是一组记录完善的研究城市，而不追求全球覆盖，因为规范不佳的数据会产生看似可靠、实则错误的数字。如果您的城市两者兼备却不在其中，请在 GitHub 上提交 issue。',
+        q: '为什么没有我的城市？',
+        a: '我们会陆续加入更多城市。不过，覆盖范围受限于数据而非兴趣：一座城市需要完善的 OpenStreetMap 绘制和可用的公开 GTFS 数据。比较平台覆盖的是一组资料完备的研究城市，而不是追求全球覆盖，因为规格不当的数据会产生看似可信却错误的数字。如果你的城市两者都具备却没有被收录，{write}。',
       },
       {
         q: '我可以引用这项工作吗？',
-        a: '可以。理论框架为 Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8。Car Dependency Index 为 Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019。“研究”页面列出了这两篇论文以及相关数据集。',
-      },
-      {
-        q: '地图集可以免费使用吗？',
-        a: '可以。可视化代码采用 MIT 许可证，已发布的数据集采用 CC BY-NC 4.0：在注明出处的前提下，可出于非商业目的自由使用、分享和改编。商业使用须获得书面许可。论文本身以 CC BY 4.0 许可开放获取。',
+        a: '可以。每个图层都须按其来源论文引用。如果引用整个地图集，请引用地图集及其作者 Sony CSL - Rome。所有引用信息都在{research}。',
       },
     ],
   },
 
   about: {
-    eyebrow: '可持续城市',
-    headline: '以数据为基础的情景，',
-    headlineAccent: '迈向更可持续的城市',
+    headline: '面向可持续城市的',
+    headlineAccent: '发展情景',
     lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories 罗马分部的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
     labLink: 'Sony CSL ↗',
     teamLink: '团队成员 →',
 
     doTitle: '我们做什么',
     do: {
-      measure: {
-        tag: '测量',
-        title: '我们测量一座城市能让人获得什么',
-        desc: '邻近性、机会，以及在能够诚实做到时，可达事物的价值。这些都基于街道网络、时刻表、服务和人口的开放数据，逐个单元计算。',
+      research: {
+        title: '研究',
+        desc: '我们运用前沿的模型与算法来分析、理解和比较城市，并不断推进前沿。',
       },
-      compare: {
-        tag: '比较',
-        title: '我们让城市可以相互比较',
-        desc: '每座城市都用同样的方法、同样的网格、同样的色阶测量。正因如此，一座城市的数字放在另一座城市的数字旁边才有意义。',
+      platform: {
+        title: '平台',
+        desc: '我们在众多城市上复现研究，发表研究成果，并通过在线平台公开结果。',
       },
-      publish: {
-        tag: '公开',
-        title: '我们公开方法和数据',
-        desc: '同行评审的论文、可下载的数据和开源代码。为规划决策提供依据的测量结果，应当能被受该决策影响的人核查。',
+      useCase: {
+        title: '应用案例',
+        desc: '我们为城市打造平台的精细化版本，用于有据可依的城市与交通规划。',
+        cta: '欢迎咨询。',
       },
     },
 
-    withTitle: '我们的合作伙伴',
-    withBody:
-      '本团队隶属于 Sony CSL 罗马分部，设在其与 CREF 的联合项目之下，与罗马大学以及意大利国内外其他大学和研究机构的合作者共同开展研究。博士生和硕士生正是在这一合作框架内参与地图集的工作，而不是游离于其外。',
-    withBody2:
-      '我们也与城市政府、研究团队和非政府组织合作，通常是因为有人需要用证据来论证可达性问题。如果您正是这样，请从联系页面开始。',
-
-    projectsTitle: '其他项目',
-    projectsHint: '四个图层之外',
-    projects: {
-      whatif: {
-        tag: '平台',
-        name: 'WhatIf',
-        desc: '实验室的模块化城市模拟平台，也是 15-minute city 和 CityChrone 原始查看器的所在地。',
-      },
-      maps3d: {
-        tag: '在线地图',
-        name: '三维地图',
-        desc: '以三维方式解读城市不平等：把一座城市内部差异的分量绘制成一个曲面。',
-      },
-      bikeLanes: {
-        tag: '论文',
-        name: '自行车道规划',
-        desc: '考虑道路宽度的网络优化：结合所需容纳的街道，判断自行车网络下一步应向哪里延伸。',
-      },
+    topicsTitle: '主题',
+    topics: {
+      accessibility: '可达性与出行',
+      justice: '交通公平',
+      sustainability: '可持续性与排放',
+      green: '绿地',
+      walkability: '步行友好性',
+      bikeability: '骑行友好性',
     },
-    labCta: '访问 Sony CSL',
+    topicsNote: '对其中某个主题感兴趣？请查看{research}部分，或{contact}。',
+    topicsResearch: '研究',
+    topicsContact: '联系我们',
   },
 
   citychat: {
-    eyebrow: 'CityChat · 测试版',
     headline: '向地图集询问',
     headlineAccent: '你的城市。',
-    lede: '你可以询问某个图层的含义、某座城市与其他城市相比如何，或某个地点的情况，CityChat 会根据已发布的数据回答。它是一个 AI 模型，能够调用与地图相同的代码，它引用的每个数字都会与该代码返回的结果进行核对。',
     beta: '测试版',
+    aboutTitle: '关于 CityChat',
+    about: 'CityChat 是一个基于大语言模型的助手，可以就地图集中地图的结果和含义向它提问。它由 Gemini API 驱动，并可针对单个城市进行微调，从而对该城市了解得更深入。如有兴趣，{ask}。',
+    aboutAsk: '欢迎咨询我们',
+    betaNote: 'CityChat 处于测试阶段：它可能出错，有时也可能无法正常工作。',
+    phoneOff: 'CityChat 在手机上已停用。请在电脑上打开，就某座城市向地图集提问。',
+    phoneBack: '浏览地图',
     persona: {
       label: '我的身份是',
       citizen: '居民',
@@ -1009,36 +986,32 @@ export default {
   },
 
   consulting: {
-    eyebrow: '咨询',
     headline: '在为一座城市工作？',
     headlineAccent: '欢迎与我们交流。',
-    lede: '如果您所在的公共管理部门、机构或企业需要测量可达性（用于规划、服务、投资或评估），欢迎与我们联系。告诉我们您的问题，我们会坦率地告诉您，我们的方法能否回答它。',
+    lede: '希望为您的城市定制并充实一个平台，用来构建情景、预测干预措施的效果？需要一个易于解读的数字孪生？',
     cta: '写信给我们',
     whoTitle: '面向哪些对象',
-    who: {
-      policy: {
-        tag: '公共部门',
-        title: '政策制定者',
-        desc: '需要决定一条线路、一项服务或一处设施设在哪里，并事先了解它实际能惠及哪些人的城市、地区、交通主管部门和相关机构。',
-      },
-      company: {
-        tag: '私营部门',
-        title: '企业',
-        desc: '其决策取决于城市可达性的组织：选址、服务设计、出行，或者一份需要经得起严格审视的报告所需的证据基础。',
-      },
+    whoBody: '如果您是需要衡量可达性、出行、可持续性和不平等的公共管理部门、机构或企业，欢迎与我们联系。告诉我们您的问题，我们会坦率地说明我们的方法能否回答。我们希望在帮助城市繁荣发展的同时开展新的研究。',
+    services: {
+      digitalTwins: '数字孪生',
+      inequalities: '可达性不平等',
+      mobilityForecasting: '出行预测',
+      demand: '需求估计',
+      emissions: '排放预测',
+      bikeLanes: '自行车道规划',
+      busLanes: '受保护的公交专用道',
+      pedestrianization: '步行化改造',
+      originDestination: '起讫点（OD）估计',
     },
-    note: '关于许可：已发布的数据集采用 CC BY-NC 4.0，因此商业使用须获得书面许可。这是一次沟通的开始，而不是拒绝；两种情况联系的都是同一个地址。',
   },
 
   contact: {
-    eyebrow: '联系与合作',
     headline: '意大利，罗马。',
     headlineAccent: '欢迎合作。',
     lede: '我们与城市政府、研究团队、非政府组织，以及所有希望用证据来论证可达性问题的人合作。如果您的城市应该出现在地图集上，如果您想在文章中使用这些地图，或者觉得这里有什么不对，请写信给我们。',
     fields: {
       address: '地址',
       general: '一般事务',
-      code: '代码',
       phone: '电话',
     },
     addressValue:
@@ -1078,20 +1051,17 @@ export default {
   },
 
   research: {
-    eyebrow: '研究成果',
-    headline: '论文、数据',
-    headlineAccent: '与代码。',
-    lede: '地图集背后的方法均已发表，数据集均可下载。论文尚在准备中的平台会如实标注：地图照常展示，但不会编造引用。',
-    papersTag: '01',
+    headline: '开放',
+    headlineAccent: '研究',
     papersTitle: '论文',
-    papersHint: '同行评审论文与预印本',
-    datasetsTag: '02',
-    datasetsTitle: '数据集与代码',
-    datasetsHint: 'CC BY-NC 4.0 · MIT',
-    citeTitle: '如何引用地图集',
-    inPreparation: '准备中',
+    highlights: '精选',
+    allPapers: '全部论文',
     preprint: '预印本',
-    columns: { dataset: '数据集', coverage: '覆盖范围', format: '格式', licence: '许可' },
+    datasetsTitle: '数据集',
+    comingSoon: '即将推出',
+    citeTitle: '如何引用地图集',
+    citeLayers: '每个图层都须按其来源引用。',
+    citeAtlas: '如引用地图集本身，请注明其链接，并署名 Sony CSL - Rome。',
   },
 
   blog: {
@@ -1137,17 +1107,17 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性的开放研究。方法、地图和数据全部公开，可自由复用。',
+    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性与出行的开放研究。',
     platforms: '平台',
+    platformLinks: ['地图集', 'CityChat', '统计'],
     research: '研究',
     researchLinks: ['论文', '数据集', '博客', '常见问题'],
     about: '关于',
-    aboutLinks: ['可持续城市', '团队', '联系我们', '咨询', '加入我们'],
+    aboutLinks: ['可持续城市', '团队', '咨询'],
     touch: '保持联系',
-    touchLinks: ['GitHub', '订阅通讯'],
-    workCta: '加入我们 →',
+    touchLinks: ['联系我们', '加入我们'],
+    workCta: '加入我们',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: '代码 MIT · 数据 CC BY-NC 4.0',
   },
 
   notFound: {

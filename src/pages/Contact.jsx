@@ -13,7 +13,6 @@ export default function Contact() {
 
       <main className="aa-main aa-contact" id="main">
         <section className="aa-contact__intro">
-          <Eyebrow>{t('contact.eyebrow')}</Eyebrow>
           <h1 className="aa-contact__headline">
             {t('contact.headline')}
             <br />
@@ -28,11 +27,6 @@ export default function Contact() {
               </DetailRow>
               <DetailRow label={t('contact.fields.general')} strong>
                 <a href={`mailto:${CONTACT.general}`}>{CONTACT.general}</a>
-              </DetailRow>
-              <DetailRow label={t('contact.fields.code')} strong>
-                <a href={CONTACT.codeUrl} target="_blank" rel="noreferrer noopener">
-                  {CONTACT.code}
-                </a>
               </DetailRow>
               <DetailRow label={t('contact.fields.phone')} strong>
                 <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a>

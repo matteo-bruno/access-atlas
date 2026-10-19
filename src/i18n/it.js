@@ -571,110 +571,87 @@ export default {
   },
 
   faq: {
-    eyebrow: 'Domande frequenti',
     headline: 'Domande',
     headlineAccent: 'ricorrenti.',
     lede: 'Risposte brevi a ciò che ci viene chiesto più spesso. Avete un’altra domanda? Scrivete a {email}.',
-    meta: {
-      updated: 'Ultimo aggiornamento',
-      updatedValue: 'Luglio 2026',
-      entries: 'Voci',
-      languages: 'Lingue',
+    links: {
+      contact: 'contattateci',
+      write: 'scriveteci',
+      research: 'pagina Ricerca',
     },
     items: [
       {
-        q: 'Cosa significa “accesso” nell’Atlante?',
-        a: 'Tre cose misurabili, tenute deliberatamente separate. La prossimità è ciò che si raggiunge a piedi in pochi minuti — negozi, scuole, ambulatori, verde. L’opportunità è ciò che il trasporto pubblico rende raggiungibile entro un tempo dato — lavoro, università, ospedali, luoghi di cultura. Il valore è la qualità di ciò che è raggiungibile: fa parte del quadro teorico ma non è ancora quantificato, e nulla in questo sito pretende di misurarlo.',
-      },
-      {
-        q: 'Come viene classificata una cella in una zona?',
-        a: 'Ogni cella ha un punteggio di prossimità e uno di opportunità. Una cella è considerata alta su un asse quando sta sopra la mediana cittadina pesata sulla popolazione per quell’asse — pesata, così che la soglia rifletta dove le persone vivono davvero e non la geometria della maglia. Le due risposte sì/no danno quattro zone: inclusione, isolamento spaziale, isolamento sociale, isolamento totale. Poiché le soglie sono specifiche di ogni città, le zone confrontano luoghi dentro una città, non fra città; a confrontare fra città sono i punteggi.',
+        q: 'Che cosa significa “accessibilità” nell’Atlante?',
+        a: 'L’accessibilità è definita come la facilità di raggiungere opportunità di valore: in parole semplici, quanti luoghi e quante persone importanti per te sono a portata di mano da dove vivi. Molte attività diverse devono essere accessibili: un lavoro, un parco, un parente, un servizio. Quantificare questo concetto è complesso ed è la missione principale dell’Atlante.',
       },
       {
         q: 'Da dove vengono i dati?',
-        a: 'Rete stradale e punti di interesse vengono da OpenStreetMap. I tempi a piedi sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm invece che con una frequenza media. La popolazione viene dalle griglie WorldPop a 100 m riscalate sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, larghi circa 200 m.',
+        a: 'La maggior parte delle visualizzazioni si basa su dati aperti, salvo dove indicato diversamente. Reti stradali e punti di interesse vengono da OpenStreetMap. I tempi di percorrenza sono calcolati su quelle reti con OSRM. Il trasporto pubblico usa gli orari GTFS aperti degli operatori, valutati con il Connection Scan Algorithm. La popolazione viene dalle griglie WorldPop a 100 m corrette sulle stime ONU. Le celle sono esagoni H3 a risoluzione 9, larghi circa 200 m.',
       },
       {
         q: 'Perché la mia città è sbagliata?',
-        a: 'Può benissimo esserlo. Le misure valgono quanto valgono i dati che le producono: un’area mappata poco su OpenStreetMap, un feed GTFS non aggiornato, una linea aperta dopo l’export o un servizio chiuso prima — tutto questo produce una mappa sbagliata ma dall’aria sicura, e la mappa, da sola, non può accorgersene. Se conoscete una città e qualcosa non torna, scriveteci indicando dove stanno i dati migliori: un feed aggiornato, una fonte ufficiale, o semplicemente quale parte della mappa non corrisponde a ciò che c’è sul territorio. È il modo più rapido perché una città venga riesportata. Ogni dataset pubblicato è scaricabile, quindi il disaccordo si può verificare invece che discutere.',
+        a: 'Può darsi che lo sia: questa è un’analisi comparativa su scala mondiale basata su dati aperti. Le misure valgono quanto i dati di partenza: un’area di OpenStreetMap mappata poco, un feed GTFS non aggiornato, una linea aperta dopo l’esportazione o un servizio chiuso prima, tutto questo produce una mappa sbagliata con sicurezza, in un modo che la mappa stessa non può rilevare. Se conoscete una città e qualcosa non torna, scriveteci e diteci dove sono i dati migliori: un feed aggiornato, una fonte ufficiale, o semplicemente quale parte della mappa non corrisponde a ciò che c’è sul territorio. È il modo più rapido perché una città venga riesportata. Ogni dataset pubblicato è scaricabile, così il disaccordo si può verificare invece di discuterne. Se vi interessa sviluppare una piattaforma più dettagliata per una singola città, {contact}.',
       },
       {
         q: 'Perché la mia città non c’è?',
-        a: 'La copertura è limitata dai dati, non dall’interesse: servono una buona mappatura OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di puntare alla copertura globale, perché un feed mal specificato produce numeri sbagliati dall’aria affidabile. Se la vostra città ha entrambi e manca, aprite una issue su GitHub.',
+        a: 'Aggiungeremo altre città nel tempo. La copertura però è limitata dai dati, non dall’interesse: a una città servono una buona mappatura su OpenStreetMap e un feed GTFS pubblico utilizzabile. Le piattaforme di confronto coprono un insieme di città di studio ben documentate invece di tentare una copertura globale, perché un feed mal specificato produce numeri dall’aria affidabile ma sbagliati. Se la vostra città ha entrambi e manca, {write}.',
       },
       {
         q: 'Posso citare questo lavoro?',
-        a: 'Sì. Il quadro teorico è Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026), “The dimensions of accessibility: proximity, opportunities, values”, EPJ Data Science 15:22, doi:10.1140/epjds/s13688-026-00623-8. Il Car Dependency Index è Campanelli B., Marzolla F., Bruno M., Melo H. P. M. & Loreto V. (2026), “Car Dependency in Urban Accessibility”, arXiv:2604.01019. La pagina Ricerca li elenca insieme ai dataset.',
-      },
-      {
-        q: 'L’Atlante è gratuito?',
-        a: 'Sì. Il codice di visualizzazione è sotto licenza MIT e i dataset pubblicati sono CC BY-NC 4.0: si possono usare, condividere e adattare liberamente citando la fonte, per scopi non commerciali. L’uso commerciale richiede autorizzazione scritta. Gli articoli sono open access con licenza CC BY 4.0.',
+        a: 'Sì. Ogni layer va citato con il paper da cui proviene. Se citate l’Atlante nel suo insieme, citate l’Atlante e il suo autore, Sony CSL - Roma. Tutte le citazioni sono nella {research}.',
       },
     ],
   },
 
   // Chi siamo — la linea di ricerca di cui l'Atlante è uno dei risultati.
   about: {
-    eyebrow: 'Città sostenibili',
-    headline: 'Scenari basati sui dati',
-    headlineAccent: 'verso città più sostenibili',
-    lede: 'Siamo un gruppo di ricerca senza scopo di lucro, una delle linee di ricerca di Sony Computer Science Laboratories – Roma, e lavoriamo con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
+    headline: 'Scenari per',
+    headlineAccent: 'città sostenibili',
+    lede: 'Siamo un gruppo di ricerca senza scopo di lucro, una delle linee di ricerca di Sony Computer Science Laboratories - Roma, e lavoriamo con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
     labLink: 'Sony CSL ↗',
     teamLink: 'Le persone →',
 
     doTitle: 'Cosa facciamo',
     do: {
-      measure: {
-        tag: 'Misuriamo',
-        title: 'Misuriamo a cosa dà accesso una città',
-        desc: 'Prossimità, opportunità e — dove si può fare onestamente — il valore di ciò che è raggiungibile, calcolati cella per cella a partire da dati aperti su rete stradale, orari, servizi e popolazione.',
+      research: {
+        title: 'Ricerca',
+        desc: 'Usiamo modelli e algoritmi all’avanguardia per analizzare, comprendere e confrontare le città. Spingiamo la frontiera più in là.',
       },
-      compare: {
-        tag: 'Confrontiamo',
-        title: 'Rendiamo le città confrontabili',
-        desc: 'Ogni città è misurata allo stesso modo, sulla stessa griglia, con le stesse scale — è questo che permette a un numero di una città di significare qualcosa accanto al numero di un’altra.',
+      platform: {
+        title: 'Piattaforme',
+        desc: 'Replichiamo la ricerca su molte città. Pubblichiamo la nostra ricerca e rendiamo disponibili i risultati su piattaforme online.',
       },
-      publish: {
-        tag: 'Pubblichiamo',
-        title: 'Pubblichiamo metodo e dati',
-        desc: 'Articoli sottoposti a revisione, dataset scaricabili e codice aperto. Una misura che informa una decisione di pianificazione dovrebbe essere verificabile da chi quella decisione la subisce.',
+      useCase: {
+        title: 'Casi d’uso',
+        desc: 'Creiamo versioni raffinate delle nostre piattaforme per le città, da usare per una pianificazione urbana e dei trasporti informata.',
+        cta: 'Chiedici di più.',
       },
     },
 
-    withTitle: 'Con chi lavoriamo',
-    withBody:
-      'Il gruppo sta dentro Sony CSL Roma, ospitato nell’iniziativa congiunta con il CREF, e la sua ricerca procede con collaboratori della Sapienza e di altre università e istituti, in Italia e all’estero. Dottorande, dottorandi, tesiste e tesisti lavorano sull’Atlante all’interno di questo assetto, non al suo fianco.',
-    withBody2:
-      'Lavoriamo anche con amministrazioni cittadine, gruppi di ricerca e associazioni — di solito perché qualcuno deve sostenere una tesi sull’accesso con i dati alla mano. Se è il vostro caso, la pagina dei contatti è il punto da cui partire.',
-
-    projectsTitle: 'Altri progetti',
-    projectsHint: 'oltre i quattro livelli',
-    projects: {
-      whatif: {
-        tag: 'Piattaforma',
-        name: 'WhatIf',
-        desc: 'La piattaforma modulare di simulazione urbana del laboratorio, che ospita i viewer originali di 15-minute city e CityChrone.',
-      },
-      maps3d: {
-        tag: 'Mappa online',
-        name: 'Mappe 3D',
-        desc: 'La disuguaglianza urbana letta in tre dimensioni — il peso delle differenze di una città, disegnato come superficie.',
-      },
-      bikeLanes: {
-        tag: 'Articolo',
-        name: 'Pianificazione delle piste ciclabili',
-        desc: 'Ottimizzazione di rete che tiene conto della larghezza stradale: dove far crescere la rete ciclabile, date le strade in cui deve stare.',
-      },
+    topicsTitle: 'Temi',
+    topics: {
+      accessibility: 'Accessibilità e mobilità',
+      justice: 'Giustizia dei trasporti',
+      sustainability: 'Sostenibilità ed emissioni',
+      green: 'Aree verdi',
+      walkability: 'Pedonalità',
+      bikeability: 'Ciclabilità',
     },
-    labCta: 'Visita Sony CSL',
+    topicsNote: 'Ti interessa uno di questi temi? Trovi di più nella sezione {research}, oppure {contact}.',
+    topicsResearch: 'Ricerca',
+    topicsContact: 'contattaci',
   },
 
   citychat: {
-    eyebrow: 'CityChat · beta',
     headline: 'Chiedi all’Atlante della',
     headlineAccent: 'tua città.',
-    lede: 'Chiedi che cosa significa un layer, come si confronta una città o come se la cava un luogo: CityChat risponde a partire dai dati pubblicati. È un modello di IA che può chiamare lo stesso codice con cui girano le mappe, e ogni cifra che cita viene controllata contro quello che quel codice ha restituito.',
     beta: 'beta',
+    aboutTitle: 'Che cos’è CityChat',
+    about: 'CityChat è un assistente basato su un LLM a cui si possono fare domande sui risultati e sul significato delle mappe dell’Atlante. Funziona con le API di Gemini e può essere specializzato per conoscere molto più a fondo una singola città. {ask} se vi interessa.',
+    aboutAsk: 'Chiedeteci',
+    betaNote: 'CityChat è in beta: può commettere errori e a volte non funzionare correttamente.',
+    phoneOff: 'CityChat è disattivato da telefono. Apritelo da un computer per fare domande all’Atlante su una città.',
+    phoneBack: 'Esplora le mappe',
     persona: {
       label: 'Chiedo come',
       citizen: 'Residente',
@@ -1062,37 +1039,32 @@ export default {
 
   // Consulenza — breve, perché non c'è altro che si possa dire onestamente.
   consulting: {
-    eyebrow: 'Consulenza',
     headline: 'Lavorate su una città?',
     headlineAccent: 'Parliamone.',
-    lede: 'Se siete un’amministrazione pubblica, un’agenzia o un’azienda che ha bisogno di misurare l’accesso — per un piano, un servizio, un investimento o una valutazione — potete chiedercelo. Diteci qual è la domanda e vi diremo con franchezza se i nostri metodi sono in grado di rispondere.',
+    lede: 'Vi interessa una piattaforma calibrata e arricchita per la vostra città, per sviluppare scenari e prevedere gli effetti degli interventi? Vi serve un gemello digitale facile da interpretare?',
     cta: 'Scriveteci',
     whoTitle: 'A chi è rivolta',
-    who: {
-      policy: {
-        tag: 'Settore pubblico',
-        title: 'Decisori pubblici',
-        desc: 'Città, regioni, enti per la mobilità e agenzie che devono decidere dove mettere una linea, un servizio o una struttura — e sapere prima chi raggiungerebbe davvero.',
-      },
-      company: {
-        tag: 'Settore privato',
-        title: 'Aziende',
-        desc: 'Organizzazioni le cui decisioni dipendono da come si raggiunge una città: localizzazione, progettazione di servizi, mobilità, o una base empirica per un rapporto che deve reggere a una verifica attenta.',
-      },
+    whoBody: 'Se siete una pubblica amministrazione, un’agenzia o un’azienda che ha bisogno di misurare accessibilità, mobilità, sostenibilità e disuguaglianze, potete chiedercelo. Diteci la domanda e vi diremo con chiarezza se i nostri metodi possono rispondere. Ci interessa sviluppare ricerca nuova aiutando al tempo stesso le città a prosperare.',
+    services: {
+      digitalTwins: 'Gemelli digitali',
+      inequalities: 'Disuguaglianze di accessibilità',
+      mobilityForecasting: 'Previsione della mobilità',
+      demand: 'Stima della domanda',
+      emissions: 'Previsione delle emissioni',
+      bikeLanes: 'Pianificazione delle piste ciclabili',
+      busLanes: 'Corsie preferenziali protette',
+      pedestrianization: 'Pedonalizzazione',
+      originDestination: 'Stima origine-destinazione',
     },
-    note:
-      'Una nota sulla licenza: i dataset pubblicati sono CC BY-NC 4.0, quindi l’uso commerciale richiede un permesso scritto. È una conversazione, non un rifiuto — l’indirizzo è comunque lo stesso.',
   },
 
   contact: {
-    eyebrow: 'Contatti e collaborazioni',
     headline: 'Roma, Italia.',
     headlineAccent: 'Aperti a collaborare.',
     lede: 'Lavoriamo con amministrazioni cittadine, gruppi di ricerca, associazioni e chiunque voglia sostenere una tesi sull’accesso con i dati alla mano. Se la vostra città dovrebbe essere nell’Atlante, se volete riusare le mappe in un articolo, o se qui qualcosa vi sembra sbagliato — scriveteci.',
     fields: {
       address: 'Indirizzo',
       general: 'Generale',
-      code: 'Codice',
       phone: 'Telefono',
     },
     addressValue:
@@ -1135,20 +1107,17 @@ export default {
   },
 
   research: {
-    eyebrow: 'Produzione scientifica',
-    headline: 'Articoli, dati',
-    headlineAccent: 'e codice.',
-    lede: 'I metodi dietro l’Atlante sono pubblicati e i dataset sono scaricabili. Le piattaforme il cui articolo è ancora in preparazione sono indicate come tali — le mappe si mostrano, la citazione non si inventa.',
-    papersTag: '01',
+    headline: 'Ricerca',
+    headlineAccent: 'aperta',
     papersTitle: 'Articoli',
-    papersHint: 'peer-reviewed e preprint',
-    datasetsTag: '02',
-    datasetsTitle: 'Dataset e codice',
-    datasetsHint: 'CC BY-NC 4.0 · MIT',
-    citeTitle: 'Come citare l’Atlante',
-    inPreparation: 'In preparazione',
+    highlights: 'In evidenza',
+    allPapers: 'Tutti gli articoli',
     preprint: 'Preprint',
-    columns: { dataset: 'Dataset', coverage: 'Copertura', format: 'Formato', licence: 'Licenza' },
+    datasetsTitle: 'Dataset',
+    comingSoon: 'In arrivo',
+    citeTitle: 'Come citare l’Atlante',
+    citeLayers: 'Ogni layer va citato secondo la sua fonte.',
+    citeAtlas: 'Se citate l’Atlante stesso, indicatene il link e l’attribuzione a Sony CSL - Roma.',
   },
 
   blog: {
@@ -1196,18 +1165,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Ricerca aperta sull’accesso urbano dal team Città Sostenibili di Sony CSL — Roma. Metodi, mappe e dati, pubblicati e liberamente riutilizzabili.',
+    description: 'Ricerca aperta su accessibilità e mobilità urbana dal team Città Sostenibili di Sony CSL\u00a0-\u2060\u00a0Roma.',
     platforms: 'Piattaforma',
+    platformLinks: ['Atlante', 'CityChat', 'Statistiche'],
     research: 'Ricerca',
     researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
     about: 'Chi siamo',
-    aboutLinks: ['Città sostenibili', 'Team', 'Contatti', 'Consulenza', 'Lavora con noi'],
+    aboutLinks: ['Città sostenibili', 'Team', 'Consulenza'],
     touch: 'Resta in contatto',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Lavora con noi →',
+    touchLinks: ['Contatti', 'Lavora con noi'],
+    workCta: 'Lavora con noi',
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
-    version: 'Codice MIT · Dati CC BY-NC 4.0',
   },
 
   notFound: {

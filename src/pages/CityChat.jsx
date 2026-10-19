@@ -1,13 +1,15 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer.jsx';
-import { Eyebrow } from '../components/SectionHeading.jsx';
+import { CitySearch } from '../components/CitySearch.jsx';
+import { Icon } from '../components/Icon.jsx';
+import { Interpolate } from '../components/Interpolate.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { cityLabel } from '../data/catalogue.js';
 import { useAtlasCities } from '../data/useAtlasData.js';
 import { PLATFORMS_BY_ID } from '../data/platforms.js';
 import { askCityChat, CITYCHAT_ENABLED, CityChatError, probeCityChat } from '../data/citychat.js';
-import './Prose.css';
+import { PHONE_QUERY, useMediaQuery } from '../hooks/useMediaQuery.js';
 import './CityChat.css';
 
 const PERSONAS = ['citizen', 'policy', 'research', 'press'];
@@ -26,6 +28,43 @@ const COORD = { minimumFractionDigits: 3, maximumFractionDigits: 3 };
  * nowhere else.
  */
 export default function CityChat() {
+  const phone = useMediaQuery(PHONE_QUERY);
+  return phone ? <CityChatOnPhone /> : <CityChatScreen />;
+}
+
+/**
+ * CityChat is off on a phone: the conversation, its controls and its
+ * sidebar do not fit a small screen well enough to be worth the model's
+ * calls. A link that lands here says so and points back to the maps; the
+ * service is not contacted.
+ */
+function CityChatOnPhone() {
+  const { t } = useI18n();
+  return (
+    <div className="aa-page">
+      <main className="aa-main" id="main">
+        <section className="aa-shell aa-chat__intro">
+          <h1 className="aa-chat__headline">
+            {t('citychat.headline')} <span className="aa-accent">{t('citychat.headlineAccent')}</span>
+            <span className="aa-chat__beta">{t('citychat.beta')}</span>
+          </h1>
+        </section>
+        <section className="aa-shell aa-chat__layout">
+          <div className="aa-card aa-chat__about aa-chat__phone">
+            <p className="aa-chat__abouttext">{t('citychat.phoneOff')}</p>
+            <Link className="aa-chat__send aa-chat__phonelink" to="/platforms">
+              {t('citychat.phoneBack')}
+              <Icon name="arrow" size={13} color="currentColor" />
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function CityChatScreen() {
   const { t, n, lang } = useI18n();
   const [params, setParams] = useSearchParams();
   const cities = useAtlasCities();
@@ -143,44 +182,54 @@ export default function CityChat() {
   return (
     <div className="aa-page">
       <main className="aa-main" id="main">
-        <section className="aa-shell aa-prose__intro aa-chat__intro">
-          <Eyebrow>{t('citychat.eyebrow')}</Eyebrow>
-          <h1 className="aa-prose__headline">
+        <section className="aa-shell aa-chat__intro">
+          <h1 className="aa-chat__headline">
             {t('citychat.headline')} <span className="aa-accent">{t('citychat.headlineAccent')}</span>
+            <span className="aa-chat__beta">{t('citychat.beta')}</span>
           </h1>
-          <p className="aa-prose__lede">{t('citychat.lede')}</p>
         </section>
 
-        <section className="aa-shell aa-block">
+        <section className="aa-shell aa-chat__layout">
           <div className="aa-card aa-chat">
             <div className="aa-chat__controls">
-              <div className="aa-chat__personas" role="group" aria-label={t('citychat.persona.label')}>
+              <div className="aa-chat__control">
                 <span className="aa-chat__label">{t('citychat.persona.label')}</span>
-                {PERSONAS.map((id) => (
-                  <button
-                    key={id}
-                    type="button"
-                    className={`aa-chip aa-chip--icon${persona === id ? ' aa-chip--active' : ''}`}
-                    aria-pressed={persona === id}
-                    onClick={() => setParam('persona', id === 'citizen' ? null : id)}
-                  >
-                    {t(`citychat.persona.${id}`)}
-                  </button>
-                ))}
+                <div className="aa-chat__personas" role="group" aria-label={t('citychat.persona.label')}>
+                  {PERSONAS.map((id) => (
+                    <button
+                      key={id}
+                      type="button"
+                      className="aa-chat__persona"
+                      aria-pressed={persona === id}
+                      onClick={() => setParam('persona', id === 'citizen' ? null : id)}
+                    >
+                      {t(`citychat.persona.${id}`)}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <label className="aa-chat__city">
+              <div className="aa-chat__control aa-chat__city">
                 <span className="aa-chat__label">{t('citychat.city.label')}</span>
-                <select value={cityId} onChange={(e) => setParam('city', e.target.value || null)}>
-                  <option value="">{t('citychat.city.any')}</option>
-                  {[...cities]
-                    .sort((a, b) => cityName(a.id).localeCompare(cityName(b.id), lang))
-                    .map((c) => (
-                      <option key={c.id} value={c.id}>
-                        {cityName(c.id)}
-                      </option>
-                    ))}
-                </select>
-              </label>
+                {cityId ? (
+                  // The city chosen, as a chip: a click on the cross goes back
+                  // to asking about any city.
+                  <span className="aa-chat__citychip">
+                    <Icon name="map" size={13} color="var(--navy)" />
+                    <span className="aa-chat__cityname">{cityName(cityId)}</span>
+                    <button
+                      type="button"
+                      className="aa-chat__cityclear"
+                      aria-label={t('citychat.city.any')}
+                      title={t('citychat.city.any')}
+                      onClick={() => setParam('city', null)}
+                    >
+                      <Icon name="close" size={11} color="currentColor" />
+                    </button>
+                  </span>
+                ) : (
+                  <CitySearch cities={cities} onOpen={(city) => setParam('city', city.id)} />
+                )}
+              </div>
             </div>
 
             <div className="aa-chat__log" ref={listRef} aria-live="polite" aria-busy={pending ? true : undefined}>
@@ -196,7 +245,8 @@ export default function CityChat() {
                         disabled={offline}
                         onClick={() => ask(s)}
                       >
-                        {s}
+                        <span>{s}</span>
+                        <Icon name="arrow" size={13} color="currentColor" />
                       </button>
                     ))}
                   </div>
@@ -300,16 +350,17 @@ export default function CityChat() {
               />
               <div className="aa-chat__actions">
                 {pending ? (
-                  <button type="button" className="aa-btn aa-btn--ghost" onClick={stop}>
+                  <button type="button" className="aa-chat__ghost" onClick={stop}>
                     {t('citychat.stop')}
                   </button>
                 ) : (
-                  <button type="submit" className="aa-btn aa-btn--solid" disabled={offline || !draft.trim()}>
+                  <button type="submit" className="aa-chat__send" disabled={offline || !draft.trim()}>
                     {t('citychat.send')}
+                    <Icon name="arrow" size={13} color="currentColor" />
                   </button>
                 )}
                 {messages.length > 0 && !pending && (
-                  <button type="button" className="aa-btn aa-btn--ghost" onClick={reset}>
+                  <button type="button" className="aa-chat__ghost" onClick={reset}>
                     {t('citychat.reset')}
                   </button>
                 )}
@@ -320,9 +371,31 @@ export default function CityChat() {
               <span className={`aa-chat__status aa-chat__status--${service.status}`}>
                 {t(`citychat.status.${service.status}`, { provider: describeChain(service.provider, t) })}
               </span>
-              <p className="aa-chat__disclaimer">{t('citychat.disclaimer')}</p>
             </div>
           </div>
+
+          <aside className="aa-chat__aside">
+            <div className="aa-card aa-chat__about">
+              <h2 className="aa-chat__abouttitle">{t('citychat.aboutTitle')}</h2>
+              <p className="aa-chat__abouttext">
+                <Interpolate
+                  template={t('citychat.about')}
+                  values={{
+                    ask: (
+                      <Link className="aa-chat__aboutlink" to="/consulting">
+                        {t('citychat.aboutAsk')}
+                      </Link>
+                    ),
+                  }}
+                />
+              </p>
+              <p className="aa-chat__betanote">
+                <span className="aa-chat__beta">{t('citychat.beta')}</span>
+                {t('citychat.betaNote')}
+              </p>
+              <p className="aa-chat__disclaimer">{t('citychat.disclaimer')}</p>
+            </div>
+          </aside>
         </section>
       </main>
 
