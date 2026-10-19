@@ -8,6 +8,9 @@
 //              (see input_data/README.md)
 //
 //   npm run import -- <platform> --remove <city>    take a city's layer off the site
+//   npm run import -- citychrone <City>.zip --reuse-times
+//                                                   keep the timesHH.bin already on disk (an
+//                                                   import that wrote them, then failed)
 //   npm run import -- <platform> --remove <city> --scenario <id>
 //                                                   … or one scenario of it
 //   npm run import -- --index                       rebuild the catalogue only
@@ -203,6 +206,7 @@ try {
     record: parsed.record,
     rows: parsed.rows,
     dryRun,
+    reuseTimes: flag('reuse-times'),
     log: (line) => console.log(line),
     overrides: {
       name: arg('name'),

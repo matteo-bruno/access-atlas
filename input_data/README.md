@@ -235,6 +235,21 @@ is held in memory, past it in the system's temporary folder, removed after
 each hour. A zip inside the zip is read as a stream too, whether or not the
 outer one compressed it.
 
+That is the long part of a large city's import (Tokyo's metro area: about
+an hour and a half for the 24 matrices), and the files are put in place
+before the city's record is written. An import that fails after them leaves
+the `timesHH.bin` on disk with no record listing them; `--reuse-times` then
+keeps every hour already there instead of reading the export again:
+
+```bash
+npm run import -- citychrone input_data/citychrone/Tokyo.zip --reuse-times
+```
+
+Each kept file is checked first (its cells, the rows it keeps, its length)
+and refused if it was written for another export. Whether its minutes are
+this export's is not checked, so use it only right after the run that wrote
+them.
+
 ### P.O.V.: `pov/<City>.geojson`
 
 The true hexagons, with `population`, `proximity`, `opportunity` and

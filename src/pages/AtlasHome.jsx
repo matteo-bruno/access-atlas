@@ -109,7 +109,7 @@ function ShowcaseQr() {
   return (
     <a className="aa-showcase-qr aa-fadein" href="https://whatif.sonycsl.it/atlas/">
       <img src={showcaseQr} alt="QR code: whatif.sonycsl.it/atlas" width="148" height="148" />
-      <span className="aa-showcase-qr__text">Scan here to open it</span>
+      <span className="aa-showcase-qr__text">Or scan here to open</span>
       <span className="aa-showcase-qr__url">whatif.sonycsl.it/atlas</span>
     </a>
   );

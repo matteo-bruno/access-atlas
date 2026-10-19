@@ -63,7 +63,7 @@ import { countryAt } from './country.mjs';
 import { expandCatalogue, timesHours } from '../../src/data/catalogue.js';
 import { STATS_PATH, assembleStats } from './stats.mjs';
 import { recordHiddenReason } from './quality.mjs';
-import { writeTimesFile } from './times.mjs';
+import { reuseTimesFile, writeTimesFile } from './times.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '..', '..');
@@ -574,7 +574,7 @@ function timesOnDisk(cityId) {
  * the grid is sorted by H3 index, so sorting the layer's own cells gives the
  * same order without the grid.
  */
-export async function writeTimes(cityId, record, { dryRun = false, log = () => {} } = {}) {
+export async function writeTimes(cityId, record, { dryRun = false, reuse = false, log = () => {} } = {}) {
   if (record.layer !== 'citychrone' || !record.times) return { pending: [], remove: [] };
   const keep = new Set();
   const pending = [];
@@ -585,18 +585,23 @@ export async function writeTimes(cityId, record, { dryRun = false, log = () => {
         const { hour } = source;
         const started = Date.now();
         const rel = hourPath(timesTemplate(cityId), hour);
-        const written = await writeTimesFile({
-          open: source.open,
-          label: source.label,
-          order,
-          population: record.fields.population,
-          target: abs(rel),
-        });
+        // --reuse-times: an hour already on disk is kept, once its index is
+        // checked against this layer's rows, rather than read from the export.
+        const written =
+          reuse && fs.existsSync(abs(rel))
+            ? reuseTimesFile({ label: source.label, order, population: record.fields.population, target: abs(rel) })
+            : await writeTimesFile({
+                open: source.open,
+                label: source.label,
+                order,
+                population: record.fields.population,
+                target: abs(rel),
+              });
         keep.add(rel);
         pending.push({ rel, ...written });
         log(
           `  times ${String(hour).padStart(2, '0')}: ${written.rows} origins, ${written.layout}, ` +
-            `${(written.stored / 1e6).toFixed(1)} MB${written.changed ? '' : ' (unchanged)'} · ` +
+            `${(written.stored / 1e6).toFixed(1)} MB${written.reused ? ' (reused)' : written.changed ? '' : ' (unchanged)'} · ` +
             `${((Date.now() - started) / 1000).toFixed(1)} s`,
         );
       }
@@ -664,11 +669,20 @@ export function weightedCentre(cells, populations) {
 
 /** Opening zoom for a set of cells: the city with a margin, 8.5–12. */
 export function zoomFor(cells) {
-  const centres = cells.map(cellCentre);
-  const lons = centres.map((c) => c[0]);
-  const lats = centres.map((c) => c[1]);
-  const spanLon = (Math.max(...lons) - Math.min(...lons)) * Math.cos((lats[0] * Math.PI) / 180);
-  const spanLat = Math.max(...lats) - Math.min(...lats);
+  // A loop, not Math.max(...lons): spreading one argument per cell overflows
+  // the stack on a large metro area (Dallas's FUA).
+  let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
+  let firstLat = NaN;
+  for (const cell of cells) {
+    const [lon, lat] = cellCentre(cell);
+    if (Number.isNaN(firstLat)) firstLat = lat;
+    if (lon < minLon) minLon = lon;
+    if (lon > maxLon) maxLon = lon;
+    if (lat < minLat) minLat = lat;
+    if (lat > maxLat) maxLat = lat;
+  }
+  const spanLon = (maxLon - minLon) * Math.cos((firstLat * Math.PI) / 180);
+  const spanLat = maxLat - minLat;
   const span = Math.max(spanLon, spanLat, 0.01);
   return Math.round(Math.min(12, Math.max(8.5, Math.log2(360 / span) - 1.2)) * 10) / 10;
 }
@@ -1349,14 +1363,14 @@ export function removeDataFile(rel) {
  *                                 instead of computing them (migration only)
  * @param {object} [input.overrides] name / place flags
  */
-export async function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false, log }) {
+export async function publishLayer({ cityId, record, rows, figures, overrides = {}, dryRun = false, reuseTimes = false, log }) {
   const previous = readCityRecord(cityId);
   const records = readCity(cityId);
   const scenarios = readScenarios(cityId);
   const replaced = records.has(record.layer);
   records.set(record.layer, record);
 
-  const times = await writeTimes(cityId, record, { dryRun, log });
+  const times = await writeTimes(cityId, record, { dryRun, reuse: reuseTimes, log });
   let written;
   try {
     written = writeCity(cityId, records, { dryRun, scenarios });

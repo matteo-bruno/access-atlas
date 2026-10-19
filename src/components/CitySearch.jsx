@@ -2,41 +2,13 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Icon } from './Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { cityLabel } from '../data/catalogue.js';
+import { searchCities, searchEntry } from '../data/citySearch.js';
 import './CitySearch.css';
 
 const MAX_RESULTS = 8;
 
-// Lower case, accents off: "zurich" finds Zürich, "sao" São Paulo.
-const fold = (text) =>
-  String(text ?? '')
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .toLowerCase();
-
 const IS_APPLE =
   typeof navigator !== 'undefined' && /mac|iphone|ipad|ipod/i.test(navigator.platform || navigator.userAgent);
-
-/**
- * How well one city answers a query, lower is better, or null for no match.
- *
- * A name that starts with the query beats one with a word that does, which
- * beats one that merely contains it; a country or region match comes last,
- * so "ber" puts Berlin before every city in Bermuda would. Every name the
- * catalogue has counts (English and Italian), whichever language is on.
- */
-function score(entry, query) {
-  let best = null;
-  for (const name of entry.names) {
-    let s = null;
-    if (name.startsWith(query)) s = 0;
-    else if (name.split(/[\s\-'’.]+/).some((word) => word.startsWith(query))) s = 1;
-    else if (name.includes(query)) s = 2;
-    if (s != null && (best == null || s < best)) best = s;
-  }
-  if (best != null) return best;
-  if (entry.places.some((place) => place.startsWith(query))) return 3;
-  return null;
-}
 
 /**
  * Find a city and open it. The one control the world map cannot do without:
@@ -67,33 +39,9 @@ export function CitySearch({ cities, onOpen, onActive, inputRef: externalRef }) 
   // the ref instead.
   const inputRef = externalRef ?? ownRef;
 
-  const index = useMemo(
-    () =>
-      cities.map((city) => ({
-        city,
-        names: [...new Set([city.name, city.nameIt].filter(Boolean).map(fold))],
-        places: [city.region, city.regionIt, city.country].filter(Boolean).map(fold),
-      })),
-    [cities],
-  );
-
-  const matches = useMemo(() => {
-    const q = fold(query.trim());
-    if (!q) return [];
-    return index
-      .map((entry) => ({ entry, s: score(entry, q) }))
-      .filter(({ s }) => s != null)
-      .sort(
-        (a, b) =>
-          a.s - b.s ||
-          // A core before its metro area, then the larger city first.
-          (a.entry.city.extent === 'fua') - (b.entry.city.extent === 'fua') ||
-          (b.entry.city.population ?? 0) - (a.entry.city.population ?? 0) ||
-          a.entry.city.name.localeCompare(b.entry.city.name),
-      )
-      .slice(0, MAX_RESULTS)
-      .map(({ entry }) => entry.city);
-  }, [index, query]);
+  // The ranking is shared with CityChat's find_cities (data/citySearch.js).
+  const index = useMemo(() => cities.map(searchEntry), [cities]);
+  const matches = useMemo(() => searchCities(index, query, MAX_RESULTS), [index, query]);
 
   const shown = open && query.trim() !== '';
   const current = shown ? (matches[active] ?? null) : null;

@@ -4,13 +4,13 @@ import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
-import { DELTA_RAMPS, RAMPS, rampColor } from '../map/ramps.js';
+import { DELTA_RAMPS, RAMPS, fitRamp, rampColor } from '../map/ramps.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
 import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
-import { CITYCHRONE_VIEWS, DEFAULT_HOUR } from '../data/citychrone.js';
+import { CITYCHRONE_VIEWS, DEFAULT_HOUR, socialityDomain } from '../data/citychrone.js';
 import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
@@ -62,6 +62,14 @@ const DEFAULT_OPACITY = 0.8;
 // layers: Rome's widest layer has 11,409 and opens in a moment, Tokyo's metro
 // area has 123,555 and takes seconds to draw.
 const LARGE_CITY_CELLS = 40000;
+
+// A count on a legend: 0, 950, 12k, 1.5M.
+function compactCount(v, n) {
+  if (v === 0) return '0';
+  if (v >= 1e6) return `${n(v / 1e6, { maximumFractionDigits: 1 })}M`;
+  if (v >= 1e3) return `${n(v / 1e3, { maximumFractionDigits: v < 1e4 ? 1 : 0 })}k`;
+  return n(Math.round(v));
+}
 
 // Query parameters that name a row of one city's own grid, so they mean
 // nothing on the other boundary's (a CityChrone isochrone origin). `cell` is
@@ -302,6 +310,20 @@ function AtlasScreen({ cityId, view }) {
   );
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone', originCc);
 
+  // The sociality score grows with the city, so by default its scale is the
+  // city's own (5th to 95th percentile over every hour, `socialityDomain`);
+  // `scale=abs` puts it on the one scale every city shares.
+  const socialityAbsolute = params.get('scale') === 'abs';
+  const socialityFitted = useMemo(() => {
+    const domain = ccLayerFile?.hourly?.s
+      ? socialityDomain(ccLayerFile.hourly.s, ccLayerFile.fields?.population)
+      : ccHourData
+        ? socialityDomain([[...ccHourData.byCc.values()].map((scores) => scores.s)])
+        : null;
+    return domain ? fitRamp(RAMPS.sociality, domain[0], domain[1]) : null;
+  }, [ccLayerFile, ccLayerFile ? null : ccHourData]);
+  const socialityRamp = socialityAbsolute ? RAMPS.socialityAbsolute : socialityFitted ?? RAMPS.sociality;
+
   // ── Geometry ───────────────────────────────────────────────────────
   // Reversed from the platform pages: the union mesh is already the cells
   // where they are, and the cartogram is the companion. Every layer has one,
@@ -459,11 +481,11 @@ function AtlasScreen({ cityId, view }) {
           format: (v) => `${n(v, { maximumFractionDigits: 1 })} km/h`,
         }
       : {
-          ramp: RAMPS.sociality,
+          ramp: socialityRamp,
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -821,7 +843,14 @@ function AtlasScreen({ cityId, view }) {
     : layer === 'cardep'
       ? (v) => (v === 0 ? '0' : signed(v, n))
       : ccView === 'sociality' && citychroneOn
-        ? (v) => (v === 0 ? '0' : `${n(Math.round(v / 1000))}k`)
+        ? (v) => {
+            const text = compactCount(v, n);
+            // A fitted scale stops at the city's 5th and 95th percentile, and
+            // the cells past either end take its colour: the ends say so.
+            if (!socialityRamp.fitted) return text;
+            const ticks = socialityRamp.ticks;
+            return v === ticks[0] && v > 0 ? `≤${text}` : v === ticks[ticks.length - 1] ? `≥${text}` : text;
+          }
         : layer === 'fifteen'
           // Minutes: whole ones as they are, half ones as a clock (7:30, not
           // 7.5), the way the site writes every 15minCity time.
@@ -947,6 +976,31 @@ function AtlasScreen({ cityId, view }) {
                   // the rest of the scale rather than a sentence about it.
                   tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
                 />
+              )}
+              {/* The sociality score's scale: the city's own by default, one
+                  switch away from the scale every city shares. Kept small,
+                  under the legend it changes. */}
+              {citychroneOn && ccView === 'sociality' && !waiting && (
+                <div className="aa-scaleswitch">
+                  <label className="aa-scaleswitch__label">
+                    <input
+                      type="checkbox"
+                      role="switch"
+                      className="aa-scaleswitch__input"
+                      checked={socialityAbsolute}
+                      onChange={(event) => setParam('scale', event.target.checked ? 'abs' : null)}
+                    />
+                    <span className="aa-scaleswitch__track" aria-hidden="true" />
+                    {t('atlas.socialityScale.toggle')}
+                  </label>
+                  <Explain
+                    body={t('atlas.socialityScale.about', {
+                      share: n(0.05, { style: 'percent' }),
+                      low: compactCount(RAMPS.socialityAbsolute.ticks[0], n),
+                      high: compactCount(RAMPS.socialityAbsolute.ticks.at(-1), n),
+                    })}
+                  />
+                </div>
               )}
             </div>
 

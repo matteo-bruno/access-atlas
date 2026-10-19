@@ -249,6 +249,11 @@ export default {
       fua: '都市圏（FUA）',
       about: 'どちらも Global Human Settlement Layer（GHS）による二つの範囲です。都市の中心部である Urban Centre と、周辺の通勤圏を加えた都市圏 Functional Urban Area。それぞれ別に公開・測定されており、切り替えると同じ表示をもう一方で開きます。',
     },
+    socialityScale: {
+      toggle: "絶対スケール",
+      about:
+        "ソーシャリティスコアは到達可能な人数を数えるため、都市の規模とともに大きくなります。既定では、色はこの都市の一日を通したスコアの範囲を示し、セルの最低と最高の {share} を除きます。都市を最も明瞭に示しますが、同じ色でも別の都市では異なるスコアを表します。絶対スケールはすべての都市を {low} から {high} までの対数スケールにそろえ、都市間で色を比較できるようにします。",
+    },
     scenario: {
       label: 'シナリオ',
       current: '現状',
@@ -672,7 +677,7 @@ export default {
     cell: 'セル',
     unverified: '次の数値はデータまでたどれず、誤っている可能性があります：{list}。',
     tools: {
-      list_cities: '公開都市',
+      find_cities: '都市検索',
       city_overview: '都市の概要',
       layer_detail: 'レイヤーの詳細',
       rank_cells: 'セルの順位',

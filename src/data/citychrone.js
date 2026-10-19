@@ -28,6 +28,27 @@ export const CITYCHRONE_BANDS = {
   isochrone: [10, 20, 30, 45, 60, 75, 90, 120, 180],
 };
 
+/**
+ * The city's own range of sociality scores, for the scale the city view fits
+ * to it: the 5th and 95th percentile of every cell where the layer has
+ * residents, over every published hour together, so moving the hour never
+ * recolours a value. `hours` is the layer file's `hourly.s` (one array per
+ * hour) or a single hour's values; `population` the layer's residents per row.
+ */
+export function socialityDomain(hours, population) {
+  const values = [];
+  for (const hour of hours) {
+    for (let row = 0; row < hour.length; row++) {
+      const value = hour[row];
+      if (Number.isFinite(value) && (!population || population[row] > 0)) values.push(value);
+    }
+  }
+  if (!values.length) return null;
+  const sorted = Float64Array.from(values).sort();
+  const at = (q) => sorted[Math.min(sorted.length - 1, Math.floor(q * (sorted.length - 1)))];
+  return [at(0.05), at(0.95)];
+}
+
 /** Share of cells per band for one hour's values. */
 export function summariseCitychrone(values, bands) {
   const counts = new Array(bands.length).fill(0);

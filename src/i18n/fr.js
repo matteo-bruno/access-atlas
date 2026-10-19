@@ -242,6 +242,11 @@ export default {
       fua: 'Aire métropolitaine (FUA)',
       about: 'Deux périmètres du Global Human Settlement Layer (GHS) : le cœur de la ville, son Urban Centre, et son aire métropolitaine, la Functional Urban Area, qui y ajoute la zone de navettes alentour. Chacun est publié et mesuré séparément ; le bouton ouvre la même vue sur l’autre.',
     },
+    socialityScale: {
+      toggle: "Échelle absolue",
+      about:
+        "Le score de sociabilité compte les personnes accessibles, il croît donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses cellules : l'image la plus lisible de la ville, mais une couleur désigne un autre score dans une autre ville. L'échelle absolue place toutes les villes sur une seule échelle, logarithmique de {low} à {high}, pour comparer les couleurs d'une ville à l'autre.",
+    },
     scenario: {
       label: 'Scénario',
       current: 'Actuel',
@@ -664,7 +669,7 @@ export default {
     cell: 'cellule',
     unverified: 'Ces chiffres ne peuvent pas être rattachés aux données et peuvent être faux : {list}.',
     tools: {
-      list_cities: 'villes publiées',
+      find_cities: 'recherche de villes',
       city_overview: 'vue d’ensemble de la ville',
       layer_detail: 'détail de la couche',
       rank_cells: 'classement des cellules',

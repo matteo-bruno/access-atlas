@@ -247,12 +247,18 @@ the first word. Prefer an instruct (non-thinking) variant there.
 
 | Tool | Returns |
 | --- | --- |
-| `list_cities` | published cities, their ids and layers |
+| `find_cities` | published cities matching a name or a country (the site's own search), their ids and layers; with no query, how many cities each layer publishes |
 | `city_overview` | every layer's headline figures for one city |
 | `layer_detail` | 15-minute medians per category and mode, CityChrone by hour, CDI opportunities, P.O.V. thresholds |
 | `rank_cells` | the highest or lowest populated cells on a measure, with coordinates |
 | `cell_at` | everything for the cell at a coordinate, and where it stands in its city |
-| `compare_cities` | the compare rows for `cardep` and `pov` |
+| `compare_cities` | the compare rows for `cardep` and `pov`: named cities, or the top of a ranking by one field |
+
+Every result is bounded, whatever the Atlas grows to: `find_cities` returns at
+most 20 cities and `compare_cities` 25 rows, each with how many there are in
+all. `list_cities` used to return every city, and at 11,000 cities that was
+about 1 MB in one tool result: past a free key's tokens per minute, so every
+model in the chain answered 429 to the first question naming a city.
 
 They are computed with `grid.js` and `adapters.js`, so the chat and the map
 cannot disagree; `test:citychat` checks them against the importers' summary

@@ -32,8 +32,25 @@ const runTool = createTools(createDataStore(DATA));
 
 // ── Tools agree with the published summaries ─────────────────────────
 const catalogue = readCatalogue();
-const cities = await runTool('list_cities');
-check('list_cities lists every atlas city', cities.cities?.length === catalogue.atlas.cities.length, `${cities.cities?.length}`);
+// find_cities answers a name, never the whole list: at 11,000 cities that
+// list was past a free key's tokens per minute in one call.
+const counts = await runTool('find_cities');
+check('find_cities with no query counts the cities and lists none', counts.publishedCities === catalogue.atlas.cities.length && !counts.cities, `${counts.publishedCities}`);
+const milano = await runTool('find_cities', { query: 'milano' });
+check('find_cities finds a city by its Italian name', milano.cities?.[0]?.id === 'milan', JSON.stringify(milano.cities?.map((c) => c.id)));
+const zur = await runTool('find_cities', { query: 'ZUR' });
+check('find_cities folds case and accents', zur.cities?.some((c) => c.id === 'zurich'));
+const capped = await runTool('find_cities', { query: 'a', limit: 2 });
+check('find_cities returns at most its limit, and says how many matched', capped.cities?.length <= 2 && capped.matches >= capped.cities.length);
+const metro = await runTool('find_cities', { query: 'paris', boundary: 'metro' });
+check('find_cities filters by boundary', metro.cities?.every((c) => /metro area/.test(c.boundary)));
+const big = createTools({
+  ...createDataStore(DATA),
+  getCities: () => Array.from({ length: 12000 }, (_, i) => ({ id: `c${i}`, name: `City ${i}`, region: 'Nowhere', layers: ['fifteen'] })),
+  getCityIndex() { return this.getCities().map((c) => ({ city: c, names: [c.name.toLowerCase()], places: ['nowhere'] })); },
+});
+const bigAnswer = JSON.stringify(await big('find_cities', { query: 'city' }));
+check('find_cities stays small with 12,000 cities', bigAnswer.length < 4000, `${bigAnswer.length} bytes`);
 
 const cardepRows = readDataJSON(path.join(DATA, 'cardep/summary.json.gz')).cities;
 const povRows = readDataJSON(path.join(DATA, 'pov/summary.json.gz')).cities;
@@ -57,7 +74,7 @@ for (const id of ['milan', 'rome', 'zurich']) {
 const byName = await runTool('city_overview', { city: 'Milano' });
 check('A city resolves by its Italian name', byName.city === 'milan');
 const unknown = await runTool('city_overview', { city: 'atlantis' });
-check('An unknown city is an error the model can read', /list_cities/.test(unknown.error ?? ''));
+check('An unknown city is an error the model can read', /find_cities/.test(unknown.error ?? ''));
 const badMetric = await runTool('rank_cells', { city: 'milan', layer: 'fifteen', metric: 'nope', order: 'lowest' });
 check('A bad metric names the valid ones', /healthcare/.test(badMetric.error ?? ''));
 
@@ -193,7 +210,7 @@ const base = `http://127.0.0.1:${mock.address().port}`;
   const [one, two] = requests;
   check('Gemini: key sent as x-goog-api-key, streamed from the model in the path', one?.headers['x-goog-api-key'] === 'k' && one.url === '/models/m:streamGenerateContent?alt=sse');
   check('Gemini: tools declared with upper-case schema types', one?.body.tools?.[0]?.functionDeclarations?.find((d) => d.name === 'city_overview')?.parameters?.type === 'OBJECT');
-  check('Gemini: a tool with no parameters has no schema', !('parameters' in (one?.body.tools?.[0]?.functionDeclarations?.find((d) => d.name === 'list_cities') ?? { parameters: 1 })));
+  check('Gemini: find_cities is declared with its query', one?.body.tools?.[0]?.functionDeclarations?.find((d) => d.name === 'find_cities')?.parameters?.properties?.query?.type === 'STRING');
   check('Gemini: the model turn is replayed with its thought signature', two?.body.contents?.[1]?.parts?.[0]?.thoughtSignature === 'SIG');
   check('Gemini: the tool result goes back as a functionResponse', two?.body.contents?.[2]?.parts?.[0]?.functionResponse?.name === 'city_overview');
   check('Gemini: the answer arrives', events.at(-1)?.type === 'answer' && events.at(-1).unverified.length === 0, events.at(-1)?.text);
@@ -295,7 +312,7 @@ mock.close();
   const a = {
     name: 'a',
     async complete() {
-      if (aCalls++ === 0) return { text: '', toolCalls: [{ id: 'x', name: 'list_cities', args: {} }], raw: { provider: 'gemini', model: 'a', parts: ['A'] } };
+      if (aCalls++ === 0) return { text: '', toolCalls: [{ id: 'x', name: 'find_cities', args: { query: 'milan' } }], raw: { provider: 'gemini', model: 'a', parts: ['A'] } };
       throw new ProviderError('down', { status: 503 });
     },
   };

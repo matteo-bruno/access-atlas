@@ -265,6 +265,11 @@ export default {
       fua: 'Metro (FUA)',
       about: 'Two boundaries from the Global Human Settlement Layer (GHS): the city\'s core, its Urban Centre, and its metro area, the Functional Urban Area, which adds the commuting zone around it. Each is published and measured on its own; switching opens the same view on the other.',
     },
+    socialityScale: {
+      toggle: "Absolute scale",
+      about:
+        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
     scenario: {
       label: 'Scenario',
       current: 'Current',
@@ -712,7 +717,7 @@ export default {
     cell: 'cell',
     unverified: 'These figures could not be traced to the data and may be wrong: {list}.',
     tools: {
-      list_cities: 'published cities',
+      find_cities: 'city search',
       city_overview: 'city overview',
       layer_detail: 'layer detail',
       rank_cells: 'cell ranking',
