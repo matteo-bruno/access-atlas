@@ -648,9 +648,11 @@ the pointer can cross the gap into it. The long form — what the platform measu
 read, the two geometries, the panel's figures, the method, the sources — is
 one dialog behind "about this layer" (`PlatformAbout`), never a growing block
 in the panel. Both draw on the same `city.explain.*` copy, so a tooltip and
-the dialog cannot say different things (one exception: Car Dependency's
-legend "?" is `city.explain.legend.cardep`, the dialog's colours sentence
-followed by what a white and a blue area mean), and the dialog's colour key is the
+the dialog cannot say different things (two exceptions: the legend "?" of Car Dependency and P.O.V. is
+`city.explain.legend.<layer>`, CDI's colours sentence followed by what a
+white and a blue area mean, P.O.V.'s the framework the zones come from;
+P.O.V.'s copy says "city median" and its method line says medians are
+weighted by population, which `smoke.mjs` checks in the dialog), and the dialog's colour key is the
 same `RampLegend` the map uses.
 
 The copy was ported from the two upstream viewers, **minus two claims of
@@ -989,9 +991,11 @@ under it. They share `Prose.css`.
 
 The city view is a full-bleed map with a controls column and floating boxes
 (`MapBox`) in its corners. Along the top, from the left, the layer picker as
-one horizontal bar (`.aa-city__layerbar`: the world map's `.aa-picker`, its
-styles in `global.css` and its dots from `scaleDot` in `map/layers.js`); top
-right the city summary (closed by default, full width) and the selected
+one horizontal bar that never wraps (`.aa-city__layerbar`: the world map's
+`.aa-picker`, its styles in `global.css` and its dots from `scaleDot` in
+`map/layers.js`). It may use the map's whole width, so the boxes on the
+right start below it (`top: 62px`): reserving their column beside it made
+"Population" wrap onto a second line at 1280 px. Top right the city summary (closed by default, full width) and the selected
 cell; bottom left "Settings", closed by default, holding Map/Cartogram and
 the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
 under the pointer; full screen bottom right. There is no status bar under
