@@ -594,11 +594,13 @@ export default {
   },
 
   citychat: {
-    eyebrow: 'CityChat · 베타',
     headline: '아틀라스에게 물어보세요,',
     headlineAccent: '당신의 도시에 대해.',
-    lede: '레이어의 의미, 도시 간 비교, 특정 장소의 상황을 물어보면 CityChat이 공개된 데이터를 바탕으로 답합니다. 지도와 같은 코드를 호출할 수 있는 AI 모델이며, 인용하는 모든 수치는 그 코드가 돌려준 결과와 대조됩니다.',
     beta: '베타',
+    aboutTitle: 'CityChat 소개',
+    about: 'CityChat은 아틀라스 지도의 결과와 의미에 대해 질문할 수 있는 LLM 기반 어시스턴트입니다. Gemini API로 작동하며, 한 도시에 대해 훨씬 더 깊이 알도록 조정할 수도 있습니다. 관심이 있다면 {ask}.',
+    aboutAsk: '문의해 주세요',
+    betaNote: 'CityChat은 베타 버전입니다. 오류가 있을 수 있고, 가끔 제대로 작동하지 않을 수 있습니다.',
     persona: {
       label: '질문하는 사람',
       citizen: '주민',

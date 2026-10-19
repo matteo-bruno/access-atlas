@@ -643,11 +643,13 @@ export default {
   },
 
   citychat: {
-    eyebrow: 'CityChat · beta',
     headline: 'Chiedi all’Atlante della',
     headlineAccent: 'tua città.',
-    lede: 'Chiedi che cosa significa un layer, come si confronta una città o come se la cava un luogo: CityChat risponde a partire dai dati pubblicati. È un modello di IA che può chiamare lo stesso codice con cui girano le mappe, e ogni cifra che cita viene controllata contro quello che quel codice ha restituito.',
     beta: 'beta',
+    aboutTitle: 'Che cos’è CityChat',
+    about: 'CityChat è un assistente basato su un LLM a cui si possono fare domande sui risultati e sul significato delle mappe dell’Atlante. Funziona con le API di Gemini e può essere specializzato per conoscere molto più a fondo una singola città. {ask} se vi interessa.',
+    aboutAsk: 'Chiedeteci',
+    betaNote: 'CityChat è in beta: può commettere errori e a volte non funzionare correttamente.',
     persona: {
       label: 'Chiedo come',
       citizen: 'Residente',
@@ -1161,7 +1163,7 @@ export default {
   },
 
   footer: {
-    description: 'Ricerca aperta su accessibilità e mobilità urbana dal team Città Sostenibili di Sony CSL\u00a0-\u00a0Roma.',
+    description: 'Ricerca aperta su accessibilità e mobilità urbana dal team Città Sostenibili di Sony CSL\u00a0-\u2060\u00a0Roma.',
     platforms: 'Piattaforma',
     platformLinks: ['Atlante', 'CityChat', 'Statistiche'],
     research: 'Ricerca',

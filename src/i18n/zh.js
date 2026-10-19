@@ -594,11 +594,13 @@ export default {
   },
 
   citychat: {
-    eyebrow: 'CityChat · 测试版',
     headline: '向地图集询问',
     headlineAccent: '你的城市。',
-    lede: '你可以询问某个图层的含义、某座城市与其他城市相比如何，或某个地点的情况，CityChat 会根据已发布的数据回答。它是一个 AI 模型，能够调用与地图相同的代码，它引用的每个数字都会与该代码返回的结果进行核对。',
     beta: '测试版',
+    aboutTitle: '关于 CityChat',
+    about: 'CityChat 是一个基于大语言模型的助手，可以就地图集中地图的结果和含义向它提问。它由 Gemini API 驱动，并可针对单个城市进行微调，从而对该城市了解得更深入。如有兴趣，{ask}。',
+    aboutAsk: '欢迎咨询我们',
+    betaNote: 'CityChat 处于测试阶段：它可能出错，有时也可能无法正常工作。',
     persona: {
       label: '我的身份是',
       citizen: '居民',

@@ -605,11 +605,13 @@ export default {
   },
 
   citychat: {
-    eyebrow: 'CityChat · bêta',
     headline: 'Interrogez l\'Atlas sur',
     headlineAccent: 'votre ville.',
-    lede: 'Demandez ce que signifie une couche, comment une ville se compare ou comment se porte un lieu : CityChat répond à partir des données publiées. C\'est un modèle d\'IA qui peut appeler le même code que celui des cartes, et chaque chiffre qu\'il cite est vérifié par rapport à ce que ce code a renvoyé.',
     beta: 'bêta',
+    aboutTitle: 'À propos de CityChat',
+    about: 'CityChat est un assistant fondé sur un LLM que l’on peut interroger sur les résultats et le sens des cartes de l’Atlas. Il fonctionne avec l’API Gemini et peut être affiné pour en savoir bien plus sur une seule ville. {ask} si cela vous intéresse.',
+    aboutAsk: 'Demandez-nous',
+    betaNote: 'CityChat est en bêta : il peut se tromper et, parfois, ne pas fonctionner correctement.',
     persona: {
       label: 'Je pose la question en tant que',
       citizen: 'Habitant·e',
@@ -1116,7 +1118,7 @@ export default {
   },
 
   footer: {
-    description: 'Recherche ouverte sur l’accessibilité et la mobilité urbaines par l’équipe Villes durables de Sony CSL\u00a0-\u00a0Rome.',
+    description: 'Recherche ouverte sur l’accessibilité et la mobilité urbaines par l’équipe Villes durables de Sony CSL\u00a0-\u2060\u00a0Rome.',
     platforms: 'Plateforme',
     platformLinks: ['Atlas', 'CityChat', 'Statistiques'],
     research: 'Recherche',

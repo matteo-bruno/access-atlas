@@ -613,11 +613,13 @@ export default {
   },
 
   citychat: {
-    eyebrow: 'CityChat · ベータ',
     headline: 'アトラスに聞く',
     headlineAccent: 'あなたの街のこと。',
-    lede: 'レイヤーの意味、都市どうしの比較、ある場所の状況などを質問すると、CityChat が公開データに基づいて答えます。地図と同じコードを呼び出せる AI モデルで、引用する数値はすべて、そのコードが返した結果と照合されます。',
     beta: 'ベータ',
+    aboutTitle: 'CityChat について',
+    about: 'CityChat は、アトラスの地図が示す結果やその意味について質問できる、LLM ベースのアシスタントです。Gemini API で動いており、単一の都市についてより深く答えられるよう調整することもできます。ご関心があれば{ask}。',
+    aboutAsk: 'お問い合わせください',
+    betaNote: 'CityChat はベータ版です。誤りを含むことがあり、正しく動作しない場合もあります。',
     persona: {
       label: '質問する立場',
       citizen: '住民',
