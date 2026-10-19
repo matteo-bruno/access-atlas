@@ -1159,6 +1159,10 @@ to its edges.**
   `100vh` runs under the address bar, and what sat at a screen's foot hid
   there.
 - On Stats the figure comes before its filters.
+- **CityChat is off on a phone.** The nav and the footer leave it out, and
+  `/citychat` reached by a link renders a note and a way to the maps instead
+  of the chat (`CityChatOnPhone`), which is never mounted: the service is not
+  probed.
 
 ## Copy and i18n
 

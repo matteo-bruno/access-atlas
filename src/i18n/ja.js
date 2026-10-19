@@ -620,6 +620,8 @@ export default {
     about: 'CityChat は、アトラスの地図が示す結果やその意味について質問できる、LLM ベースのアシスタントです。Gemini API で動いており、単一の都市についてより深く答えられるよう調整することもできます。ご関心があれば{ask}。',
     aboutAsk: 'お問い合わせください',
     betaNote: 'CityChat はベータ版です。誤りを含むことがあり、正しく動作しない場合もあります。',
+    phoneOff: 'CityChat はスマートフォンではご利用いただけません。都市について質問するには、パソコンから開いてください。',
+    phoneBack: '地図を見る',
     persona: {
       label: '質問する立場',
       citizen: '住民',

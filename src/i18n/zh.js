@@ -601,6 +601,8 @@ export default {
     about: 'CityChat 是一个基于大语言模型的助手，可以就地图集中地图的结果和含义向它提问。它由 Gemini API 驱动，并可针对单个城市进行微调，从而对该城市了解得更深入。如有兴趣，{ask}。',
     aboutAsk: '欢迎咨询我们',
     betaNote: 'CityChat 处于测试阶段：它可能出错，有时也可能无法正常工作。',
+    phoneOff: 'CityChat 暂不支持手机。请在电脑上打开，就某座城市向地图集提问。',
+    phoneBack: '浏览地图',
     persona: {
       label: '我的身份是',
       citizen: '居民',

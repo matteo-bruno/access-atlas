@@ -650,6 +650,8 @@ export default {
     about: 'CityChat è un assistente basato su un LLM a cui si possono fare domande sui risultati e sul significato delle mappe dell’Atlante. Funziona con le API di Gemini e può essere specializzato per conoscere molto più a fondo una singola città. {ask} se vi interessa.',
     aboutAsk: 'Chiedeteci',
     betaNote: 'CityChat è in beta: può commettere errori e a volte non funzionare correttamente.',
+    phoneOff: 'CityChat non è disponibile da telefono. Apritelo da un computer per fare domande all’Atlante su una città.',
+    phoneBack: 'Esplora le mappe',
     persona: {
       label: 'Chiedo come',
       citizen: 'Residente',

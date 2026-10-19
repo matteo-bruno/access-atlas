@@ -610,6 +610,8 @@ export default {
     about: 'CityChat es un asistente basado en un LLM al que se le puede preguntar por los resultados y el significado de los mapas del Atlas. Funciona con la API de Gemini y puede ajustarse para conocer mucho mejor una sola ciudad. {ask} si le interesa.',
     aboutAsk: 'Pregúntenos',
     betaNote: 'CityChat está en beta: puede cometer errores y a veces no funcionar correctamente.',
+    phoneOff: 'CityChat no está disponible en el móvil. Ábralo desde un ordenador para preguntar al Atlas sobre una ciudad.',
+    phoneBack: 'Explorar los mapas',
     persona: {
       label: 'Pregunto como',
       citizen: 'Residente',

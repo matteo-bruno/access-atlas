@@ -9,6 +9,7 @@ import { cityLabel } from '../data/catalogue.js';
 import { useAtlasCities } from '../data/useAtlasData.js';
 import { PLATFORMS_BY_ID } from '../data/platforms.js';
 import { askCityChat, CITYCHAT_ENABLED, CityChatError, probeCityChat } from '../data/citychat.js';
+import { PHONE_QUERY, useMediaQuery } from '../hooks/useMediaQuery.js';
 import './CityChat.css';
 
 const PERSONAS = ['citizen', 'policy', 'research', 'press'];
@@ -27,6 +28,43 @@ const COORD = { minimumFractionDigits: 3, maximumFractionDigits: 3 };
  * nowhere else.
  */
 export default function CityChat() {
+  const phone = useMediaQuery(PHONE_QUERY);
+  return phone ? <CityChatOnPhone /> : <CityChatScreen />;
+}
+
+/**
+ * CityChat is off on a phone: the conversation, its controls and its
+ * sidebar do not fit a small screen well enough to be worth the model's
+ * calls. A link that lands here says so and points back to the maps; the
+ * service is not contacted.
+ */
+function CityChatOnPhone() {
+  const { t } = useI18n();
+  return (
+    <div className="aa-page">
+      <main className="aa-main" id="main">
+        <section className="aa-shell aa-chat__intro">
+          <h1 className="aa-chat__headline">
+            {t('citychat.headline')} <span className="aa-accent">{t('citychat.headlineAccent')}</span>
+            <span className="aa-chat__beta">{t('citychat.beta')}</span>
+          </h1>
+        </section>
+        <section className="aa-shell aa-chat__layout">
+          <div className="aa-card aa-chat__about aa-chat__phone">
+            <p className="aa-chat__abouttext">{t('citychat.phoneOff')}</p>
+            <Link className="aa-chat__send aa-chat__phonelink" to="/platforms">
+              {t('citychat.phoneBack')}
+              <Icon name="arrow" size={13} color="currentColor" />
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function CityChatScreen() {
   const { t, n, lang } = useI18n();
   const [params, setParams] = useSearchParams();
   const cities = useAtlasCities();

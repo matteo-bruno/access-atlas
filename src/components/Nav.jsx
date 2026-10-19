@@ -4,17 +4,20 @@ import { Icon } from './Icon.jsx';
 import { Logo } from './Logo.jsx';
 import { BLOG_LISTED } from '../data/blog.js';
 import { LANGS, LANG_NAMES, isRtl, useI18n } from '../i18n/index.jsx';
+import { PHONE_QUERY, useMediaQuery } from '../hooks/useMediaQuery.js';
 import './Nav.css';
 
 export function Nav({ active = 'atlas', sticky = true }) {
   const { t, lang, setLang } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  // CityChat is off on a phone (see CityChat.jsx), so it is not offered there.
+  const phone = useMediaQuery(PHONE_QUERY);
 
   const items = [
     { key: 'atlas', to: '/', label: t('nav.atlas') },
     { key: 'platforms', to: '/platforms', label: t('nav.platforms') },
-    { key: 'citychat', to: '/citychat', label: t('nav.citychat'), badge: t('citychat.beta') },
+    ...(phone ? [] : [{ key: 'citychat', to: '/citychat', label: t('nav.citychat'), badge: t('citychat.beta') }]),
     { key: 'stats', to: '/stats', label: t('nav.stats') },
     { key: 'about', to: '/sustainable-cities', label: t('nav.about') },
     { key: 'consulting', to: '/consulting', label: t('nav.consulting') },

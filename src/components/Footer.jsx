@@ -3,12 +3,14 @@ import { Logo } from './Logo.jsx';
 import { Icon } from './Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { BLOG_LISTED } from '../data/blog.js';
+import { PHONE_QUERY, useMediaQuery } from '../hooks/useMediaQuery.js';
 import './Footer.css';
 
 // The design shows four short link columns. A label with no destination is
 // rendered as plain text — the columns only promise what exists.
 export function Footer() {
   const { t } = useI18n();
+  const phone = useMediaQuery(PHONE_QUERY);
 
   // Destinations by position, so the dictionaries stay pure labels and the
   // translations cannot drift away from the routes.
@@ -23,7 +25,10 @@ export function Footer() {
     {
       key: 'platforms',
       heading: t('footer.platforms'),
-      links: t('footer.platformLinks').map((label, i) => ({ label, to: platformTo[i] })),
+      links: t('footer.platformLinks')
+        .map((label, i) => ({ label, to: platformTo[i] }))
+        // CityChat is off on a phone, so the footer does not offer it there.
+        .filter((link) => !(phone && link.to === '/citychat')),
     },
     {
       key: 'research',
