@@ -1001,26 +1001,23 @@ export default {
   },
 
   consulting: {
-    eyebrow: 'Consultoría',
     headline: '¿Trabajas en una ciudad?',
     headlineAccent: 'Hablemos.',
-    lede: 'Si eres una administración pública, una agencia o una empresa que necesita medir el acceso (para un plan, un servicio, una inversión o una evaluación), puedes consultarnos. Cuéntanos la pregunta y te diremos con franqueza si nuestros métodos pueden responderla.',
+    lede: '¿Le interesa una plataforma ajustada y enriquecida para su ciudad, para desarrollar escenarios y prever el efecto de las intervenciones? ¿Necesita un gemelo digital fácil de interpretar?',
     cta: 'Escríbenos',
     whoTitle: 'Para quién es',
-    who: {
-      policy: {
-        tag: 'Sector público',
-        title: 'Responsables públicos',
-        desc: 'Ciudades, regiones, autoridades de transporte y agencias que tienen que decidir dónde situar una línea, un servicio o un equipamiento, y saber de antemano a quién llegaría realmente.',
-      },
-      company: {
-        tag: 'Sector privado',
-        title: 'Empresas',
-        desc: 'Organizaciones cuyas decisiones dependen de cómo se llega a una ciudad: ubicación, diseño de servicios, movilidad o la base empírica de un informe que tiene que resistir un examen riguroso.',
-      },
+    whoBody: 'Si es una administración pública, una agencia o una empresa que necesita medir accesibilidad, movilidad, sostenibilidad y desigualdad, puede consultarnos. Díganos la pregunta y le diremos con claridad si nuestros métodos pueden responderla. Nos interesa desarrollar investigación nueva mientras ayudamos a las ciudades a prosperar.',
+    services: {
+      digitalTwins: 'Gemelos digitales',
+      inequalities: 'Desigualdades de accesibilidad',
+      mobilityForecasting: 'Previsión de la movilidad',
+      demand: 'Estimación de la demanda',
+      emissions: 'Previsión de emisiones',
+      bikeLanes: 'Planificación de carriles bici',
+      busLanes: 'Carriles bus protegidos',
+      pedestrianization: 'Peatonalización',
+      originDestination: 'Estimación origen-destino',
     },
-    note:
-      'Una nota sobre la licencia: los datos publicados son CC BY-NC 4.0, así que el uso comercial requiere permiso por escrito. Es una conversación, no una negativa, y la dirección es la misma en ambos casos.',
   },
 
   contact: {

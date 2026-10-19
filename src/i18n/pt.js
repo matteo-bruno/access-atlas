@@ -1001,26 +1001,23 @@ export default {
   },
 
   consulting: {
-    eyebrow: 'Consultoria',
     headline: 'Trabalhando em uma cidade?',
     headlineAccent: 'Vamos conversar.',
-    lede: 'Se você é de uma administração pública, de uma agência ou de uma empresa que precisa medir o acesso (para um plano, um serviço, um investimento ou uma avaliação), pode nos procurar. Conte qual é a pergunta, e diremos com franqueza se nossos métodos conseguem respondê-la.',
+    lede: 'Tem interesse em uma plataforma ajustada e enriquecida para a sua cidade, para desenvolver cenários e prever o efeito de intervenções? Precisa de um gêmeo digital fácil de interpretar?',
     cta: 'Escreva para nós',
     whoTitle: 'Para quem é',
-    who: {
-      policy: {
-        tag: 'Setor público',
-        title: 'Gestores públicos',
-        desc: 'Cidades, regiões, órgãos de transporte e agências que precisam decidir onde colocar uma linha, um serviço ou um equipamento, e saber de antemão quem ele realmente alcançaria.',
-      },
-      company: {
-        tag: 'Setor privado',
-        title: 'Empresas',
-        desc: 'Organizações cujas decisões dependem de como se chega a uma cidade: localização, desenho de serviços, mobilidade ou a base empírica de um relatório que precisa resistir a um exame rigoroso.',
-      },
+    whoBody: 'Se você é uma administração pública, uma agência ou uma empresa que precisa medir acessibilidade, mobilidade, sustentabilidade e desigualdade, pode nos consultar. Diga-nos a pergunta e diremos com clareza se nossos métodos podem respondê-la. Temos interesse em desenvolver pesquisa nova enquanto ajudamos as cidades a prosperar.',
+    services: {
+      digitalTwins: 'Gêmeos digitais',
+      inequalities: 'Desigualdades de acessibilidade',
+      mobilityForecasting: 'Previsão de mobilidade',
+      demand: 'Estimativa de demanda',
+      emissions: 'Previsão de emissões',
+      bikeLanes: 'Planejamento de ciclovias',
+      busLanes: 'Faixas de ônibus protegidas',
+      pedestrianization: 'Pedestrianização',
+      originDestination: 'Estimativa origem-destino',
     },
-    note:
-      'Uma observação sobre a licença: os dados publicados são CC BY-NC 4.0, então o uso comercial exige permissão por escrito. É uma conversa, não uma recusa, e o endereço é o mesmo nos dois casos.',
   },
 
   contact: {

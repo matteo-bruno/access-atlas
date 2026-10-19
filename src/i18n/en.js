@@ -1055,26 +1055,23 @@ export default {
 
   // Consulting — short, because there is nothing else that can honestly be said.
   consulting: {
-    eyebrow: 'Consulting',
     headline: 'Working on a city?',
     headlineAccent: 'Talk to us.',
-    lede: 'If you are a public administration, an agency or a company that needs to measure access — for a plan, a service, an investment case or an evaluation — we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer.',
+    lede: 'Interested in having a platform fine-tuned and enriched for your city, developing scenarios and forecasting interventions? Need a digital twin that is easy to interpret?',
     cta: 'Write to us',
     whoTitle: 'Who this is for',
-    who: {
-      policy: {
-        tag: 'Public sector',
-        title: 'Policy makers',
-        desc: 'Cities, regions, transport authorities and agencies deciding where a line, a service or a facility should go — and needing to know, beforehand, who it would actually reach.',
-      },
-      company: {
-        tag: 'Private sector',
-        title: 'Companies',
-        desc: 'Organisations whose decisions depend on how a city is reached: siting, service design, mobility, or an evidence base for a report that has to withstand scrutiny.',
-      },
+    whoBody: 'If you are a public administration, an agency or a company that needs to measure access, mobility, sustainability and inequality, we can be asked. Tell us the question and we will say plainly whether it is one our methods can answer. We are interested in developing novel research while helping cities thrive.',
+    services: {
+      digitalTwins: 'Digital twins',
+      inequalities: 'Accessibility inequalities',
+      mobilityForecasting: 'Mobility forecasting',
+      demand: 'Demand estimation',
+      emissions: 'Emissions forecasting',
+      bikeLanes: 'Bike lane planning',
+      busLanes: 'Protected bus lanes',
+      pedestrianization: 'Pedestrianization',
+      originDestination: 'Origin Destination estimation',
     },
-    note:
-      'A note on the licence: the published datasets are CC BY-NC 4.0, so commercial use needs written permission. That is a conversation, not a refusal — it is the same address either way.',
   },
 
   contact: {

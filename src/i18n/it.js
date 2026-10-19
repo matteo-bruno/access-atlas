@@ -1045,26 +1045,23 @@ export default {
 
   // Consulenza — breve, perché non c'è altro che si possa dire onestamente.
   consulting: {
-    eyebrow: 'Consulenza',
     headline: 'Lavorate su una città?',
     headlineAccent: 'Parliamone.',
-    lede: 'Se siete un’amministrazione pubblica, un’agenzia o un’azienda che ha bisogno di misurare l’accesso — per un piano, un servizio, un investimento o una valutazione — potete chiedercelo. Diteci qual è la domanda e vi diremo con franchezza se i nostri metodi sono in grado di rispondere.',
+    lede: 'Vi interessa una piattaforma calibrata e arricchita per la vostra città, per sviluppare scenari e prevedere gli effetti degli interventi? Vi serve un gemello digitale facile da interpretare?',
     cta: 'Scriveteci',
     whoTitle: 'A chi è rivolta',
-    who: {
-      policy: {
-        tag: 'Settore pubblico',
-        title: 'Decisori pubblici',
-        desc: 'Città, regioni, enti per la mobilità e agenzie che devono decidere dove mettere una linea, un servizio o una struttura — e sapere prima chi raggiungerebbe davvero.',
-      },
-      company: {
-        tag: 'Settore privato',
-        title: 'Aziende',
-        desc: 'Organizzazioni le cui decisioni dipendono da come si raggiunge una città: localizzazione, progettazione di servizi, mobilità, o una base empirica per un rapporto che deve reggere a una verifica attenta.',
-      },
+    whoBody: 'Se siete una pubblica amministrazione, un’agenzia o un’azienda che ha bisogno di misurare accessibilità, mobilità, sostenibilità e disuguaglianze, potete chiedercelo. Diteci la domanda e vi diremo con chiarezza se i nostri metodi possono rispondere. Ci interessa sviluppare ricerca nuova aiutando al tempo stesso le città a prosperare.',
+    services: {
+      digitalTwins: 'Gemelli digitali',
+      inequalities: 'Disuguaglianze di accessibilità',
+      mobilityForecasting: 'Previsione della mobilità',
+      demand: 'Stima della domanda',
+      emissions: 'Previsione delle emissioni',
+      bikeLanes: 'Pianificazione delle piste ciclabili',
+      busLanes: 'Corsie preferenziali protette',
+      pedestrianization: 'Pedonalizzazione',
+      originDestination: 'Stima origine-destinazione',
     },
-    note:
-      'Una nota sulla licenza: i dataset pubblicati sono CC BY-NC 4.0, quindi l’uso commerciale richiede un permesso scritto. È una conversazione, non un rifiuto — l’indirizzo è comunque lo stesso.',
   },
 
   contact: {

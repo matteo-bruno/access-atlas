@@ -1003,26 +1003,23 @@ export default {
   },
 
   consulting: {
-    eyebrow: 'Beratung',
     headline: 'Sie arbeiten an einer Stadt?',
     headlineAccent: 'Sprechen wir darüber.',
-    lede: 'Wenn Sie eine öffentliche Verwaltung, eine Behörde oder ein Unternehmen sind und Erreichbarkeit messen müssen (für einen Plan, ein Angebot, eine Investition oder eine Evaluation), können Sie uns ansprechen. Nennen Sie uns Ihre Frage, und wir sagen Ihnen offen, ob unsere Methoden sie beantworten können.',
+    lede: 'Sie möchten eine Plattform, die für Ihre Stadt verfeinert und erweitert ist, um Szenarien zu entwickeln und die Wirkung von Maßnahmen vorherzusagen? Sie brauchen einen digitalen Zwilling, der leicht zu lesen ist?',
     cta: 'Schreiben Sie uns',
     whoTitle: 'Für wen',
-    who: {
-      policy: {
-        tag: 'Öffentlicher Sektor',
-        title: 'Politik und Verwaltung',
-        desc: 'Städte, Regionen, Verkehrsverbünde und Behörden, die entscheiden müssen, wohin eine Linie, ein Angebot oder eine Einrichtung kommt, und vorher wissen müssen, wen sie tatsächlich erreichen würde.',
-      },
-      company: {
-        tag: 'Privatwirtschaft',
-        title: 'Unternehmen',
-        desc: 'Organisationen, deren Entscheidungen davon abhängen, wie eine Stadt erreichbar ist: Standortwahl, Angebotsgestaltung, Mobilität oder die Datengrundlage für einen Bericht, der einer genauen Prüfung standhalten muss.',
-      },
+    whoBody: 'Wenn Sie eine öffentliche Verwaltung, eine Behörde oder ein Unternehmen sind und Erreichbarkeit, Mobilität, Nachhaltigkeit und Ungleichheit messen müssen, fragen Sie uns. Nennen Sie uns die Frage, und wir sagen Ihnen klar, ob unsere Methoden sie beantworten können. Uns liegt daran, neue Forschung zu entwickeln und dabei Städten zu helfen, sich gut zu entwickeln.',
+    services: {
+      digitalTwins: 'Digitale Zwillinge',
+      inequalities: 'Ungleichheiten der Erreichbarkeit',
+      mobilityForecasting: 'Mobilitätsprognosen',
+      demand: 'Nachfrageschätzung',
+      emissions: 'Emissionsprognosen',
+      bikeLanes: 'Radwegeplanung',
+      busLanes: 'Geschützte Busspuren',
+      pedestrianization: 'Fußgängerzonen',
+      originDestination: 'Quelle-Ziel-Schätzung',
     },
-    note:
-      'Ein Hinweis zur Lizenz: Die veröffentlichten Daten stehen unter CC BY-NC 4.0, kommerzielle Nutzung erfordert daher eine schriftliche Genehmigung. Das ist der Beginn eines Gesprächs, keine Absage, und die Adresse ist in beiden Fällen dieselbe.',
   },
 
   contact: {

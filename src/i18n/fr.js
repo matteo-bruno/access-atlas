@@ -1003,26 +1003,23 @@ export default {
   },
 
   consulting: {
-    eyebrow: 'Conseil',
     headline: 'Vous travaillez sur une ville ?',
     headlineAccent: 'Parlons-en.',
-    lede: 'Si vous êtes une administration publique, une agence ou une entreprise qui doit mesurer l’accès (pour un plan, un service, un investissement ou une évaluation), vous pouvez nous solliciter. Dites-nous quelle est votre question, et nous vous dirons franchement si nos méthodes permettent d’y répondre.',
+    lede: 'Vous souhaitez une plateforme affinée et enrichie pour votre ville, pour développer des scénarios et anticiper l’effet des interventions ? Il vous faut un jumeau numérique facile à interpréter ?',
     cta: 'Écrivez-nous',
     whoTitle: 'Pour qui',
-    who: {
-      policy: {
-        tag: 'Secteur public',
-        title: 'Décideurs publics',
-        desc: 'Villes, régions, autorités organisatrices des mobilités et agences qui doivent décider où implanter une ligne, un service ou un équipement, et savoir à l’avance qui il atteindrait vraiment.',
-      },
-      company: {
-        tag: 'Secteur privé',
-        title: 'Entreprises',
-        desc: 'Organisations dont les décisions dépendent de la façon dont on accède à une ville : implantation, conception de services, mobilité, ou la base empirique d’un rapport qui doit résister à un examen attentif.',
-      },
+    whoBody: 'Si vous êtes une administration publique, une agence ou une entreprise qui doit mesurer l’accessibilité, la mobilité, la durabilité et les inégalités, vous pouvez nous solliciter. Posez-nous la question et nous vous dirons clairement si nos méthodes peuvent y répondre. Nous tenons à développer une recherche nouvelle tout en aidant les villes à prospérer.',
+    services: {
+      digitalTwins: 'Jumeaux numériques',
+      inequalities: 'Inégalités d’accessibilité',
+      mobilityForecasting: 'Prévision de la mobilité',
+      demand: 'Estimation de la demande',
+      emissions: 'Prévision des émissions',
+      bikeLanes: 'Planification des pistes cyclables',
+      busLanes: 'Couloirs de bus protégés',
+      pedestrianization: 'Piétonnisation',
+      originDestination: 'Estimation origine-destination',
     },
-    note:
-      'Un mot sur la licence : les données publiées sont sous CC BY-NC 4.0, donc toute utilisation commerciale nécessite une autorisation écrite. C’est une conversation, pas un refus, et l’adresse est la même dans les deux cas.',
   },
 
   contact: {
