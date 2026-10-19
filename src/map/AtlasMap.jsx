@@ -89,6 +89,10 @@ export function AtlasMap({
   // How long a refit to new bounds takes once the map has been framed: 0
   // jumps. The first framing always jumps, before the first frame.
   fitDuration = 0,
+  // Whether a resize of the box re-frames the extent. Off on a phone, where
+  // the box changes when the controls sheet opens: re-framing then threw away
+  // wherever the reader had panned and zoomed to.
+  refitOnResize = true,
   fitWorldWidth = false,
   // Zoom levels past the world-width fit. The site's two coverage maps — the
   // backdrop and the platform screen — share one value (WORLD_ZOOM_BOOST in
@@ -109,6 +113,8 @@ export function AtlasMap({
   ref,
   label,
 }) {
+  const refitOnResizeRef = useRef(refitOnResize);
+  refitOnResizeRef.current = refitOnResize;
   const containerRef = useRef(null);
   const mapRef = useRef(null);
   // Teardown is registered from inside an async block, so it is held here
@@ -346,7 +352,7 @@ export function AtlasMap({
     let first = true;
     const observer = new ResizeObserver(() => {
       if (first) first = false;
-      else fit();
+      else if (refitOnResizeRef.current) fit();
     });
     observer.observe(container);
     return () => observer.disconnect();

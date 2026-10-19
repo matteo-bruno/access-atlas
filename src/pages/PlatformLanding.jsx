@@ -22,6 +22,7 @@ import { formatTime } from '../data/fifteen.js';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
+import { useActiveInView } from '../hooks/useActiveInView.js';
 
 // How long a layer's markers and boxes take to fade off before the next
 // layer's fade on; the markers' own fade in WorldMap is the same length.
@@ -85,13 +86,19 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
   const navigate = useNavigate();
   const mapRef = useRef(null);
   const searchRef = useRef(null);
-  const [welcomeOpen, setWelcomeOpen] = useState(true);
+  // Closed on a phone: there the card would cover a third of the map, and the
+  // map is what the screen is for. The layer's own words are a tap away in
+  // its city view ("About this layer").
+  const [welcomeOpen, setWelcomeOpen] = useState(
+    () => !(typeof window !== 'undefined' && window.matchMedia?.('(max-width: 860px)').matches),
+  );
 
   // A layer switch is a cross-fade inside the screen: the open layer's
   // markers and boxes fade off, the screen swaps to the requested layer, and
   // its markers and boxes fade on. `platform` is the layer on screen, which
   // trails the one in the URL for the length of the fade out.
   const [platform, setPlatform] = useState(requested);
+  const pickerRef = useActiveInView(requested?.id ?? 'all');
   const leaving = requested !== platform;
   const switched = useRef(false);
   if (leaving) switched.current = true;
@@ -258,7 +265,11 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
         {/* Which set of cities the map draws — the four platforms, or all of
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
-        <nav className="aa-card aa-picker aa-picker--float aa-fadein" aria-label={t('platform.all.pick')}>
+        <nav
+          ref={pickerRef}
+          className="aa-card aa-picker aa-picker--float aa-fadein"
+          aria-label={t('platform.all.pick')}
+        >
           {PLATFORMS.map((option) => (
             <Link
               key={option.id}

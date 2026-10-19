@@ -72,6 +72,9 @@ strong {
   display: flex;
   /* The nav is the shell's now, so a page is the viewport less that bar. */
   min-height: calc(100vh - var(--nav-h, 76px));
+  /* The visible height, where the browser knows it: on a phone 100vh runs
+     under the address bar, and what sits at the foot of a screen hid there. */
+  min-height: calc(100dvh - var(--nav-h, 76px));
   flex-direction: column;
 }
 
@@ -81,6 +84,7 @@ strong {
    the shell measures and publishes as --nav-h. */
 .aa-page--fixed {
   height: calc(100vh - var(--nav-h, 76px));
+  height: calc(100dvh - var(--nav-h, 76px));
   /* Inherited from .aa-page, where it is the taller of the two and would win. */
   min-height: 0;
   overflow: hidden;

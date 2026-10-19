@@ -476,3 +476,242 @@
     margin-top: 8px;
   }
 }
+
+/* ── The sheet handle: a phone's only ────────────────────────────── */
+.aa-city__sheethandle {
+  display: none;
+}
+
+/* ── On a phone the map is the screen ─────────────────────────────────
+   The controls column becomes a sheet at its foot: closed, it holds the
+   city's name, "About this layer" and the legend; its handle opens the rest,
+   and the map gives up height to it rather than being covered. The layer bar
+   stays over the map's top edge, the summary and the selected cell start
+   closed under it, and settings and full screen keep the bottom corners. */
+@media (max-width: 860px) {
+  .aa-page.aa-atlas {
+    height: calc(100vh - var(--nav-h, 76px));
+    height: calc(100dvh - var(--nav-h, 76px));
+    overflow: hidden;
+  }
+
+  .aa-atlas--full.aa-page.aa-atlas {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .aa-atlas .aa-city,
+  .aa-atlas--nopanel .aa-city {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .aa-atlas .aa-city__cartogram,
+  .aa-atlas--full .aa-city__cartogram {
+    order: 1;
+    flex: 1;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .aa-atlas .aa-city__canvas {
+    margin: 0;
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .aa-atlas .aa-city__panelbtn {
+    display: none;
+  }
+
+  .aa-atlas .aa-city__panel {
+    order: 2;
+    position: relative;
+    z-index: 7;
+    flex: none;
+    max-height: 62%;
+    margin-top: -14px;
+    padding: 0 16px 12px;
+    border: 0;
+    border-top: 1px solid var(--hair);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -6px 18px rgba(21, 23, 26, 0.1);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .aa-city__sheethandle {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: calc(100% + 32px);
+    margin: 0 -16px 4px;
+    padding: 7px 0 4px;
+    border: 0;
+    background: var(--card);
+    font: inherit;
+    font-size: 11px;
+    color: var(--ink-3);
+    cursor: pointer;
+  }
+
+  .aa-city__sheetgrip {
+    width: 38px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--hair);
+  }
+
+  .aa-city__sheetlabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .aa-city__sheethandle[aria-expanded='false'] svg {
+    transform: rotate(180deg);
+  }
+
+  /* The header on one line where it fits: the way back above, the city and
+     "About this layer" side by side. */
+  .aa-atlas .aa-city__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 10px;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+  }
+
+  /* The way back is a round button before the city's name: one row for
+     the three of them keeps the closed sheet short. */
+  .aa-atlas .aa-city__back {
+    flex: none;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    border: 1px solid var(--hair);
+    border-radius: 50%;
+    background: var(--card);
+  }
+
+  .aa-city__backlabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .aa-atlas .aa-city__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 23px;
+  }
+
+  .aa-atlas .aa-city__links {
+    margin-top: 0;
+  }
+
+  .aa-atlas .aa-city__legend {
+    margin-bottom: 4px;
+  }
+
+  /* P.O.V.'s four zones, two to a row, so the closed sheet stays short. */
+  .aa-atlas .aa-city__legend .aa-bands {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 10px;
+  }
+
+  /* Over the map again: the layer bar and the boxes under it. */
+  .aa-atlas .aa-city__top {
+    position: absolute;
+    top: 8px;
+    bottom: 74px;
+    inset-inline: 8px;
+    margin: 0;
+  }
+
+  .aa-atlas .aa-city__top .aa-mapui--tr {
+    width: min(300px, 100%);
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .aa-atlas .aa-mapui--tr .aa-mapbox {
+    width: auto;
+  }
+
+  .aa-atlas .aa-mapui--bl,
+  .aa-atlas .aa-mapui--br {
+    position: absolute;
+    bottom: 30px;
+    margin: 0;
+  }
+
+  .aa-atlas .aa-mapui--bl {
+    inset-inline-start: 8px;
+  }
+
+  .aa-atlas .aa-mapui--br {
+    inset-inline-end: 8px;
+  }
+
+  .aa-atlas .aa-mapbox {
+    min-width: 0;
+  }
+
+  .aa-atlas .aa-mapbox__head {
+    padding: 7px 10px;
+  }
+}
+
+/* Closed, the sheet is the city and its key, and nothing else. Only where
+   it is a sheet: a phone held sideways has the column instead (below). */
+@media (max-width: 860px) and (orientation: portrait), (max-width: 860px) and (min-height: 541px) {
+  .aa-atlas .aa-city__panel:not(.aa-city__panel--open)
+    > :not(.aa-city__sheethandle):not(.aa-city__header):not(.aa-city__legend) {
+    display: none;
+  }
+}
+
+/* A phone held sideways is short and wide: a sheet at the foot would leave
+   the map a strip, so the controls go back to a narrow column on the side,
+   whole and scrolling, as on a wide screen. */
+@media (max-width: 860px) and (orientation: landscape) and (max-height: 540px) {
+  .aa-atlas .aa-city,
+  .aa-atlas--nopanel .aa-city {
+    flex-direction: row;
+  }
+
+  .aa-atlas .aa-city__panel {
+    order: 0;
+    width: 250px;
+    max-height: none;
+    margin: 0;
+    padding: 12px 14px;
+    border-top: 0;
+    border-inline-end: 1px solid var(--hair);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .aa-city__sheethandle {
+    display: none;
+  }
+
+  .aa-atlas .aa-city__title {
+    font-size: 20px;
+  }
+}

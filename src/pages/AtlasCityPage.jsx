@@ -35,6 +35,8 @@ import {
   useTravelTimes,
 } from '../data/useAtlasView.js';
 import { useCityMesh } from '../workers/useCityMesh.js';
+import { PHONE_QUERY, isPhoneNow, useMediaQuery } from '../hooks/useMediaQuery.js';
+import { useActiveInView } from '../hooks/useActiveInView.js';
 import './CityPage.css';
 import './FifteenCityPage.css';
 import './AtlasCityPage.css';
@@ -121,7 +123,13 @@ function AtlasScreen({ cityId, view }) {
   // Closed by default: a small box to open, so the map and its key come first.
   const [summaryOpen, setSummaryOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [selectedOpen, setSelectedOpen] = useState(true);
+  // On a phone the selected cell's box starts closed, like the summary, and
+  // opens when a cell is tapped: the map comes first.
+  const [selectedOpen, setSelectedOpen] = useState(() => !isPhoneNow());
+  // On a phone the controls column is a sheet at the foot of the map: closed,
+  // it shows the city and the legend; open, every control.
+  const phone = useMediaQuery(PHONE_QUERY);
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
   // than declining to render it.
@@ -596,6 +604,7 @@ function AtlasScreen({ cityId, view }) {
   const region = lang === 'it' ? profile.regionIt : profile.region;
   // Population is not a platform; it borrows the Atlas's own accent and name.
   const isPopulation = layer === POPULATION_LAYER;
+  const layerBarRef = useActiveInView(layer);
   const platform = isPopulation
     ? { id: POPULATION_LAYER, name: t('atlas.population.name'), accent: BRAND.navy }
     : PLATFORMS_BY_ID[layer];
@@ -683,6 +692,7 @@ function AtlasScreen({ cityId, view }) {
 
   const onCellClick = (feature) => {
     setSelectedCell((current) => (current === feature.id ? null : feature.id));
+    if (phone) setSelectedOpen(true);
     // In the isochrone view a click also chooses the origin everything is
     // measured from, which is a different job from inspecting the cell.
     if (!citychroneOn || ccView !== 'isochrone') return;
@@ -850,8 +860,22 @@ function AtlasScreen({ cityId, view }) {
     >
 
       <main className="aa-main aa-city aa-city--nochart" id="main">
-        {sidebarOpen && (
-          <aside className="aa-city__panel">
+        {(sidebarOpen || phone) && (
+          <aside className={`aa-city__panel${sheetOpen ? ' aa-city__panel--open' : ''}`}>
+            {/* A phone's handle on the sheet: the whole width, so a thumb
+                finds it. Hidden on a wider screen, where the column is. */}
+            <button
+              type="button"
+              className="aa-city__sheethandle"
+              aria-expanded={sheetOpen}
+              onClick={() => setSheetOpen((open) => !open)}
+            >
+              <span className="aa-city__sheetgrip" aria-hidden="true" />
+              <span className="aa-city__sheetlabel">
+                {t(sheetOpen ? 'atlas.hidePanel' : 'atlas.showPanel')}
+                <Icon name="chevronDown" size={12} color="currentColor" />
+              </span>
+            </button>
             {/* ── The city, and the ways out of it ───────────────
                 What used to be a bar of its own above the map: the city
                 and its country as the title, the layer's long account and
@@ -859,7 +883,7 @@ function AtlasScreen({ cityId, view }) {
             <div className="aa-city__header">
               <Link className="aa-city__back" to={`/platforms/${isPopulation ? 'all' : platform.slug}`}>
                 <Icon name="chevronLeft" size={13} />
-                {t('atlas.back')}
+                <span className="aa-city__backlabel">{t('atlas.back')}</span>
               </Link>
               <h1 className="aa-city__title">
                 {cityName}
@@ -1120,6 +1144,7 @@ function AtlasScreen({ cityId, view }) {
                 zoom={cityZoom(profile)}
                 bounds={bounds}
                 fitPadding={24}
+                refitOnResize={!phone}
                 // A boundary switch moves the camera to the other extent.
                 fitDuration={600}
                 graticule={false}
@@ -1207,7 +1232,11 @@ function AtlasScreen({ cityId, view }) {
                 chosen the same way on both screens; its dot is a miniature
                 of the scale the map is about to draw. */}
             <div className="aa-city__layerbar aa-fadein">
-              <nav className="aa-card aa-picker aa-picker--inline" aria-label={t('atlas.controls.layer')}>
+              <nav
+                ref={layerBarRef}
+                className="aa-card aa-picker aa-picker--inline"
+                aria-label={t('atlas.controls.layer')}
+              >
                 {LAYER_ORDER.map((id) => {
                   const option = PLATFORMS_BY_ID[id];
                   const enabled = available.has(id);

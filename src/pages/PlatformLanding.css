@@ -267,35 +267,70 @@
 
 /* ── Responsive ───────────────────────────────────────────────── */
 
+/* On a phone the map is the screen: the search and the picker float over
+   its top edge in one row each, the picker scrolling sideways rather than
+   wrapping, and the legend and the two ways onward sit small at its foot. */
 @media (max-width: 860px) {
-  /* The picker leads on a phone: it is how you get to any other map. */
   .aa-picker--float {
-    position: static;
+    top: 62px;
+    left: var(--chrome-pad);
+    right: 0;
     transform: none;
-    margin: var(--chrome-pad) var(--chrome-pad) 0;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    gap: 2px;
+    padding: 4px;
     overflow-x: auto;
+    scrollbar-width: none;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .aa-picker--float::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aa-picker--float .aa-picker__item {
+    flex: none;
+    padding: 6px 10px;
+    font-size: 12.5px;
   }
 
   .aa-legend {
     top: auto;
-    bottom: 92px;
-    inset-inline-end: var(--chrome-pad);
+    bottom: 64px;
+    inset-inline-start: var(--chrome-pad);
+    inset-inline-end: auto;
     min-width: 0;
-    padding: 12px 14px;
+    max-width: calc(100% - 2 * var(--chrome-pad));
+    padding: 8px 10px;
   }
 
+  .aa-legend .aa-eyebrow {
+    font-size: 9.5px;
+  }
+
+  /* A list of nine bands would stand a third of the screen tall: here the
+     bands wrap, three to a row. */
   .aa-legend__items {
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 3px 12px;
+    margin-top: 6px;
   }
 
   .aa-legend__item {
-    font-size: 12px;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .aa-legend--filter .aa-legend__items {
+    grid-template-columns: 1fr;
   }
 
   .aa-welcome {
     top: auto;
-    bottom: 92px;
+    bottom: 64px;
     inset-inline-start: var(--chrome-pad);
     width: auto;
     inset-inline-end: var(--chrome-pad);
@@ -307,18 +342,25 @@
     display: none;
   }
 
-  /* A phone pinches to zoom, and the buttons would sit under the cards. */
+  /* A phone pinches to zoom. */
   .aa-zoom {
     display: none;
   }
 
-  /* Above the source line, which wraps to two lines here. */
   .aa-mapstage__action {
-    bottom: 44px;
+    bottom: 22px;
+    height: 34px;
+    padding: 0 12px;
+    font-size: 12.5px;
   }
 
   .aa-mapstage__action--end {
     inset-inline-end: var(--chrome-pad);
+  }
+
+  .aa-mapstage__attribution {
+    bottom: 4px;
+    font-size: 9.5px;
   }
 }
 
@@ -343,11 +385,10 @@
    search goes first in that flow rather than over it. */
 @media (max-width: 860px) {
   .aa-mapstage__tools {
-    position: relative;
-    top: auto;
-    inset-inline-end: auto;
+    top: 10px;
+    inset-inline-start: var(--chrome-pad);
+    inset-inline-end: var(--chrome-pad);
     width: auto;
-    margin: var(--chrome-pad) var(--chrome-pad) 0;
   }
 }
 

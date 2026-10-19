@@ -1127,6 +1127,39 @@ Decimal minutes read as a quantity; nobody says "three point nine nine
 minutes to the shops". The legend writes whole minutes as plain numbers and
 the half ones as a clock (`0 7:30 15 22:30 30`), never 7.5.
 
+## On a phone
+
+Under 860 px (`PHONE_QUERY` in `src/hooks/useMediaQuery.js`, the same
+breakpoint the CSS uses) the two map screens are laid out for a thumb, and
+the rule is the same on both: **the map is the screen, and the chrome keeps
+to its edges.**
+
+- **The nav swaps its tabs for the menu under 1240 px**, and the tabs must be
+  `display: none` there. A cleanup once dropped that line with the GitHub
+  link it shared a rule with, and every page on a phone laid out 839 px wide
+  and zoomed out to fit: the site looked shrunk rather than broken.
+- **A portrait world map covers the height** (`PORTRAIT_COVER` in
+  `worldProjection`, 2.2 times the box's height, so it can centre on the
+  coverage's latitude instead of being pinned to the pole). It frames Europe
+  on a phone; pinching out reaches the whole world, and the search finds any
+  city. Wide boxes are untouched, so the desktop pose and the cached
+  `WORLD_CENTER` / `WORLD_ZOOM_BOOST` are what they were.
+- **The world map's chrome floats**: the search and the picker over the top
+  edge, the picker one row that scrolls sideways (`useActiveInView` keeps the
+  open layer in sight), the legend compact at the foot, the welcome card
+  closed, the zoom buttons gone (a phone pinches).
+- **The city view's column is a sheet at the foot of the map.** Closed it is
+  the city, "About this layer" and the legend; its handle opens every
+  control, and the map gives up height to it rather than being covered. The
+  map does not re-frame when the sheet moves (`refitOnResize={false}` on
+  `AtlasMap`): re-framing threw away wherever the reader had zoomed to.
+  The summary and the selected cell start closed; tapping a cell opens its
+  box. Held sideways (short and wide) the column comes back on the side.
+- **Heights are `100dvh`, with `100vh` before it as the fallback**: on a phone
+  `100vh` runs under the address bar, and what sat at a screen's foot hid
+  there.
+- On Stats the figure comes before its filters.
+
 ## Copy and i18n
 
 Ten languages: English, Italian, Spanish, French, German, Portuguese

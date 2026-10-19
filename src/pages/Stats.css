@@ -1715,6 +1715,11 @@
   .aa-stats__side {
     position: static;
   }
+  /* One column: the figure first, its filters under it. Above it, the
+     sidebar was a screen of menus before the first chart. */
+  .aa-stats__panel {
+    order: -1;
+  }
   .aa-focus__boards {
     grid-template-columns: minmax(0, 1fr);
   }

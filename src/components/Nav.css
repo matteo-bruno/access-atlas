@@ -232,7 +232,10 @@
 /* 1240, not 1112: the CityChat tab widens the bar; measured by sweeping every
    language, as below. */
 @media (max-width: 1240px) {
-  .aa-nav__links,
+  .aa-nav__links {
+    display: none;
+  }
+
   .aa-nav__menu {
     display: block;
   }
