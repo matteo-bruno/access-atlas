@@ -29,13 +29,16 @@ export const PAPERS = [
     title: 'Compact 15-minute cities exhibit lower carbon intensity in urban transport',
     venue: 'Cities 176, 107202',
     year: 2026,
-    // Not found in a publisher record at the time of writing — see the note in
-    // the README. Cite the venue until it is confirmed.
+    highlight: true,
+    // The journal DOI was not found in a publisher record at the time of
+    // writing, so no DOI is cited. The link is the preprint of the same
+    // paper, arXiv:2409.01817 ("Compact 15-minute cities are greener").
     doi: null,
-    url: null,
+    url: 'https://arxiv.org/abs/2409.01817',
   },
   {
     id: 'cardep',
+    highlight: true,
     platform: 'cardep',
     authors: 'Campanelli B., Marzolla F., Bruno M., Melo H. P. M., Loreto V.',
     title: 'Car Dependency in Urban Accessibility',
@@ -57,6 +60,7 @@ export const PAPERS = [
   },
   {
     id: 'proximity-co2',
+    highlight: true,
     authors: 'Marzolla F., Melo H. P. M., Bruno M., Loreto V.',
     title: 'Proximity-based cities emit less mobility-driven CO₂',
     venue: 'npj Sustainable Mobility and Transport 3, 7',
@@ -66,6 +70,7 @@ export const PAPERS = [
   },
   {
     id: 'pov',
+    highlight: true,
     platform: 'pov',
     authors: 'Bruno M., Campanelli B., Melo H. P. M., Rossi Mori L., Loreto V.',
     title: 'The dimensions of accessibility: proximity, opportunities, values',
@@ -76,14 +81,14 @@ export const PAPERS = [
   },
   {
     id: 'metro-rome',
-    authors: 'Marzolla F., Campanelli B., Melo H. P. M., Bruno M., Loreto V.',
-    title:
-      'Increasing accessibility by public transport benefits local economy: the effect of a new metro line in Rome',
-    venue: 'arXiv:2510.01449',
-    year: 2025,
-    doi: '10.48550/arXiv.2510.01449',
-    url: 'https://arxiv.org/abs/2510.01449',
-    preprint: true,
+    authors: 'Marzolla F., Campanelli B., Monteiro Melo H. P., Bruno M., Loreto V.',
+    title: 'The impact of a new transit infrastructure on the economic fabric of Rome',
+    venue: 'Discover Cities 3 (1), 150',
+    year: 2026,
+    // Published version of arXiv:2510.01449 ("Increasing accessibility by
+    // public transport benefits local economy…").
+    doi: '10.1007/s44327-026-00330-z',
+    url: 'https://doi.org/10.1007/s44327-026-00330-z',
   },
   {
     id: 'bike-lanes',
@@ -132,6 +137,7 @@ export const PAPERS = [
   },
   {
     id: 'fifteen',
+    highlight: true,
     platform: 'fifteen',
     authors: 'Bruno M., Monteiro Melo H. P., Campanelli B., Loreto V.',
     title: 'A universal framework for inclusive 15-minute cities',
@@ -151,6 +157,7 @@ export const PAPERS = [
   },
   {
     id: 'general-scores',
+    highlight: true,
     platform: 'citychrone',
     authors: 'Biazzo I., Monechi B., Loreto V.',
     title: 'General scores for accessibility and inequality measures in urban areas',
@@ -174,19 +181,25 @@ export function paperForPlatform(platformId) {
   return paper?.url ? paper : null;
 }
 
-// How many cities each covers is counted from the published catalogue by the
-// page (`usePublishedCityCounts`), not written here.
+// The published datasets, in platform order. A platform whose data is not
+// public yet has no `url`, and the page says it is coming soon.
 export const DATASETS = [
-  { id: 'pov', platform: 'pov', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
-  { id: 'cardep', platform: 'cardep', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
-  { id: 'fifteen', platform: 'fifteen', format: 'JSON on H3', licence: 'CC BY-NC 4.0' },
-  { id: 'citychrone', platform: 'citychrone', format: 'JSON on H3 + NPY', licence: 'CC BY-NC 4.0' },
+  { id: 'fifteen', platform: 'fifteen', url: null },
+  { id: 'citychrone', platform: 'citychrone', url: null },
+  { id: 'cardep', platform: 'cardep', url: 'https://github.com/mat701/CDI' },
+  { id: 'pov', platform: 'pov', url: 'https://github.com/mat701/accessibility-pov' },
 ];
 
-export const CITATION = `Sustainable Cities team, Sony Computer Science Laboratories — Rome.
-Accessibility Atlas (2026). https://matteo-bruno.github.io/access-atlas/
+// How to cite: every layer by the paper that defines it (taken from PAPERS,
+// so a citation cannot drift from the bibliography), and the Atlas itself
+// by its link and the lab.
+export const CITED_LAYERS = ['fifteen', 'citychrone', 'cardep', 'pov'];
 
-The framework:
-Bruno M., Campanelli B., Monteiro Melo H. P., Rossi Mori L. & Loreto V. (2026).
-The dimensions of accessibility: proximity, opportunities, values.
-EPJ Data Science 15:22. doi:10.1140/epjds/s13688-026-00623-8`;
+// The citation without its DOI, which the page prints as a link after it.
+export function citationFor(paper) {
+  return `${paper.authors} (${paper.year}). ${paper.title}. ${paper.venue}.`;
+}
+
+export const ATLAS_URL = 'https://matteo-bruno.github.io/access-atlas/';
+
+export const ATLAS_CITATION = `Accessibility Atlas, Sustainable Cities team, Sony Computer Science Laboratories - Rome (2026). ${ATLAS_URL}`;

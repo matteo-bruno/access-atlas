@@ -1516,7 +1516,8 @@ language would have hidden the tabs on ordinary laptops.
 - **One DOI is missing** — "Compact 15-minute cities exhibit lower carbon
   intensity in urban transport" (Cities 176, 107202). Elsevier DOIs embed a
   year that cannot be derived from the citation, so it is left blank rather
-  than guessed.
+  than guessed. Its title links to the preprint of the same paper,
+  arXiv:2409.01817 ("Compact 15-minute cities are greener").
 - **Editorial figures that cannot be computed**: team headcount, contact
   addresses, and the dates on the home page news items all came from the design
   mock.
