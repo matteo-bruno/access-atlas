@@ -169,11 +169,12 @@ function sameFile(a, b) {
  * @param {number} [input.inMemory]   bytes held in memory before a scratch file (tests)
  * @returns {Promise<{ partial: string|null, changed: boolean, raw: number, stored: number, rows: number, layout: string }>}
  */
-export async function writeTimesFile({ open, label, order, population, target, layout: forced, inMemory = IN_MEMORY }) {
+// Which layer rows a file keeps: the ones where someone lives. A layer that
+// states no resident anywhere (an export whose `pop` is missing, or under 0.5
+// everywhere and rounded away) leaves nothing to cut on, and cutting on it
+// would keep no origin at all: every cell is kept.
+function keptRows(order, population) {
   const n = order.length;
-  // A layer that states no resident anywhere (an export whose `pop` is
-  // missing, or under 0.5 everywhere and rounded away) leaves nothing to cut
-  // on, and cutting on it would keep no origin at all: every cell is kept.
   const keepAll = !population.some((p) => Number(p) > 0);
   const keepMask = new Uint8Array(Math.ceil(n / 8));
   const keptExport = [];
@@ -183,6 +184,52 @@ export async function writeTimesFile({ open, label, order, population, target, l
       keptExport.push(order[r]);
     }
   }
+  return { keepMask, keptExport };
+}
+
+/**
+ * Keep an hour already written for this layer instead of reading the export
+ * again (`import --reuse-times`, for an import that wrote its travel times
+ * and then failed). Its prelude must describe exactly the rows this layer
+ * keeps, and its blocks must end at the file's end; otherwise it throws.
+ * What it cannot check is that the minutes came from this export, which is
+ * the caller's to know.
+ */
+export function reuseTimesFile({ label, order, population, target }) {
+  const n = order.length;
+  const { keepMask, keptExport } = keptRows(order, population);
+  const k = keptExport.length;
+  const size = fs.statSync(target).size;
+  const fd = fs.openSync(target, 'r');
+  let prelude;
+  try {
+    let length = Math.min(size, 64 * 1024);
+    for (;;) {
+      const head = Buffer.alloc(length);
+      fs.readSync(fd, head, 0, length, 0);
+      prelude = parseTimesPrelude(head);
+      if (!prelude.need) break;
+      if (prelude.need > size) throw new Error(`${label}: ${path.basename(target)} is truncated`);
+      length = prelude.need;
+    }
+  } finally {
+    fs.closeSync(fd);
+  }
+  const keepAt = prelude.dataAt - 4 * prelude.blocks - keepMask.length;
+  const sameRows = prelude.kept.every((row) => keepMask[row >> 3] & (1 << (row & 7)));
+  if (prelude.cells !== n || prelude.rows !== k || !sameRows) {
+    throw new Error(
+      `${label}: ${path.basename(target)} holds ${prelude.rows} of ${prelude.cells} cells, this layer keeps ` +
+        `${k} of ${n}: it was not written for this export, import without --reuse-times`,
+    );
+  }
+  if (prelude.size !== size) throw new Error(`${label}: ${path.basename(target)} ends at ${size} bytes, its index says ${prelude.size}`);
+  return { partial: null, changed: false, reused: true, raw: keepAt + keepMask.length + k * k, stored: size, rows: k, layout: prelude.layout };
+}
+
+export async function writeTimesFile({ open, label, order, population, target, layout: forced, inMemory = IN_MEMORY }) {
+  const n = order.length;
+  const { keepMask, keptExport } = keptRows(order, population);
   const k = keptExport.length;
   const exportRank = new Int32Array(n).fill(-1);
   keptExport.forEach((e, r) => (exportRank[e] = r));
