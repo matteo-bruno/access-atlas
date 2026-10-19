@@ -60,7 +60,7 @@ import { fileURLToPath } from 'node:url';
 import { cellToBoundary, cellToLatLng, getResolution, latLngToCell } from 'h3-js';
 import { readDataBuffer, readDataJSON, resolveDataFile, storedVersion, writeDataFile } from './datafile.mjs';
 import { countryAt } from './country.mjs';
-import { expandCatalogue } from '../../src/data/catalogue.js';
+import { expandCatalogue, timesHours } from '../../src/data/catalogue.js';
 import { STATS_PATH, assembleStats } from './stats.mjs';
 import { recordHiddenReason } from './quality.mjs';
 import { writeTimesFile } from './times.mjs';
@@ -539,22 +539,26 @@ export function writeCity(cityId, records, { dryRun = false, scenarios = new Map
 /** The template of a city's published travel times, by what is on disk, or null. */
 export function publishedTimes(cityId) {
   for (const template of [timesTemplate(cityId), legacyTimesTemplate(cityId)]) {
-    if (resolveDataFile(abs(hourPath(template, 0)))) return template;
+    if (timesHoursOnDisk(template).length) return template;
   }
   return null;
 }
 
+/**
+ * The hours a template has a file for. An export may carry matrices for some
+ * hours only (times08 alone), so every hour is looked for, not the first run.
+ */
+export function timesHoursOnDisk(template) {
+  const hours = [];
+  for (let hour = 0; hour < 100; hour++) if (resolveDataFile(abs(hourPath(template, hour)))) hours.push(hour);
+  return hours;
+}
+
 /** Every published hour of a city's travel times, in either format. */
 function timesOnDisk(cityId) {
-  const found = [];
-  for (const template of [timesTemplate(cityId), legacyTimesTemplate(cityId)]) {
-    for (let hour = 0; hour < 100; hour++) {
-      const rel = hourPath(template, hour);
-      if (!resolveDataFile(abs(rel))) break;
-      found.push(rel);
-    }
-  }
-  return found;
+  return [timesTemplate(cityId), legacyTimesTemplate(cityId)].flatMap((template) =>
+    timesHoursOnDisk(template).map((hour) => hourPath(template, hour)),
+  );
 }
 
 /**
@@ -577,7 +581,8 @@ export async function writeTimes(cityId, record, { dryRun = false, log = () => {
   if (record.times.length && !dryRun) {
     const order = record.cells.map((_, i) => i).sort((a, b) => (record.cells[a] < record.cells[b] ? -1 : 1));
     try {
-      for (const [hour, source] of record.times.entries()) {
+      for (const source of record.times) {
+        const { hour } = source;
         const started = Date.now();
         const rel = hourPath(timesTemplate(cityId), hour);
         const written = await writeTimesFile({
@@ -606,7 +611,7 @@ export async function writeTimes(cityId, record, { dryRun = false, log = () => {
       throw error;
     }
   } else if (record.times.length) {
-    for (let hour = 0; hour < record.times.length; hour++) keep.add(hourPath(timesTemplate(cityId), hour));
+    for (const { hour } of record.times) keep.add(hourPath(timesTemplate(cityId), hour));
   }
   // Whatever else is published for the city goes: the other format, hours
   // past this export's, or every hour when the export has no matrices.
@@ -852,12 +857,16 @@ export function cityEntries(cityId, { grid, encoded, meta, scenarios = new Map()
   };
   if (encoded.has('citychrone')) {
     // No `times` is a city published without its matrices: its isochrones
-    // read "not available".
+    // read "not available". `timesHours` lists the hours that have one,
+    // and is there only when some hours have none.
     const times = publishedTimes(cityId);
+    const hours = encoded.get('citychrone').hourly.hours;
+    const withTimes = times ? timesHoursOnDisk(times).filter((h) => h < hours) : [];
     atlas.hourly = {
-      hours: encoded.get('citychrone').hourly.hours,
+      hours,
       cells: encoded.get('citychrone').cells,
       ...(times ? { times } : {}),
+      ...(times && withTimes.length < hours ? { timesHours: withTimes } : {}),
     };
   }
   if (scenarios.size) {
@@ -932,7 +941,7 @@ export function cataloguePaths(catalogue) {
       for (const rel of Object.values(scenario.layerData ?? {})) paths.add(rel);
     }
     if (city.hourly?.times) {
-      for (let hour = 0; hour < city.hourly.hours; hour++) paths.add(hourPath(city.hourly.times, hour));
+      for (const hour of timesHours(city.hourly)) paths.add(hourPath(city.hourly.times, hour));
     }
   }
   if (catalogue.stats) paths.add(catalogue.stats);

@@ -32,7 +32,7 @@ import { COUNTRY_LAYERS, computeCityStats, readCityStats } from './lib/stats.mjs
 import { recordHiddenReason } from './lib/quality.mjs';
 import { atlasMetrics } from '../src/data/home.js';
 import { TIMES_MAX, TIMES_OVER, blockOf, parseTimesPrelude, rowFromBlock } from '../src/data/times.js';
-import { normaliseCatalogue } from '../src/data/catalogue.js';
+import { normaliseCatalogue, timesHours } from '../src/data/catalogue.js';
 import en from '../src/i18n/en.js';
 import { localeFor } from '../src/i18n/locales.js';
 
@@ -361,10 +361,17 @@ for (const city of catalogue.atlas?.cities ?? []) {
       const { hours, cells } = city.hourly;
       const file = files.citychrone;
       if (file.hourly.hours !== hours || file.cells !== cells) bad.push('citychrone hours/cells disagree with the catalogue');
+      // A city may publish travel times for some hours only (`timesHours`);
+      // the ones it lists must exist, and in order, within the day.
+      const timesAt = new Set(timesHours(city.hourly));
+      const listed = city.hourly.timesHours;
+      if (listed && (!listed.length || listed.some((h, i) => !Number.isInteger(h) || h < 0 || h >= hours || (i && h <= listed[i - 1])))) {
+        bad.push(`citychrone timesHours ${JSON.stringify(listed)} is not a sorted list of hours below ${hours}`);
+      }
       for (let hour = 0; hour < hours; hour++) {
         const summary = citychroneHourFromLayer(file, hour);
         if (!Number.isFinite(summary?.weightedMedianV)) bad.push(`citychrone hour ${hour} has no usable v_score`);
-        if (!city.hourly.times) continue;
+        if (!city.hourly.times || !timesAt.has(hour)) continue;
         const timesFile = path.join(DATA, city.hourly.times.replace('{hh}', String(hour).padStart(2, '0')));
         const problem = city.hourly.times.endsWith('.bin')
           ? timesProblem(timesFile, file)

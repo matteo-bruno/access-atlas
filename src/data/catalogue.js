@@ -141,6 +141,9 @@ function normaliseCity(raw) {
           hexcover: typeof raw.hourly.hexcover === 'string' ? raw.hourly.hexcover : null,
           times: typeof raw.hourly.times === 'string' ? raw.hourly.times : null,
           cells: raw.hourly.cells,
+          ...(Array.isArray(raw.hourly.timesHours)
+            ? { timesHours: raw.hourly.timesHours.filter((h) => Number.isInteger(h) && h >= 0 && h < raw.hourly.hours) }
+            : {}),
         }
       : null;
 
@@ -367,6 +370,17 @@ export function cityLabel(city, lang, t) {
 /** Whether a catalogue row has something the city view can draw. */
 export function hasCityData(city) {
   return Boolean(city?.dataset || city?.hourly || city?.layer || city?.grid);
+}
+
+/**
+ * The hours an `hourly` entry has travel times for: its `timesHours` where an
+ * export carried some hours only (times08 alone), otherwise every hour, and
+ * none for a city published without them.
+ */
+export function timesHours(hourly) {
+  if (!hourly?.times) return [];
+  if (Array.isArray(hourly.timesHours)) return hourly.timesHours;
+  return Array.from({ length: hourly.hours }, (_, h) => h);
 }
 
 /** Path inside public/data/ for one hour of an hourly dataset. */

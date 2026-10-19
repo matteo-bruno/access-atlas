@@ -16,7 +16,7 @@ of it.
 | `cities/<city>/grid.json.gz` | The city's cells: H3 indices and a population per cell, shared by all its layers. |
 | `cities/<city>/<layer>.json.gz` | One layer's values on those cells (`fifteen`, `citychrone`, `cardep`, `pov`). |
 | `cities/<city>/scenarios/<id>/<layer>.json.gz` | A scenario of that layer (Rome's `metro-d`), on the same grid, in the same format. |
-| `cities/<city>/citychrone/timesHH.bin` | CityChrone's travel times for each hour, read one block of origins at a time. Cities imported before this format have `timesHH.npy.gz`, the whole matrix. A city published without them has neither. |
+| `cities/<city>/citychrone/timesHH.bin` | CityChrone's travel times for each hour, read one block of origins at a time. Cities imported before this format have `timesHH.npy.gz`, the whole matrix. A city published without them has neither; one published with some hours only lists them in `hourly.timesHours`. |
 | `<platform>/coverage.geojson.gz` | One point per city, for the platform's world map and the search. |
 | `pov/summary.json.gz`, `cardep/summary.json.gz` | One row per city, for the compare view. |
 | `stats/stats.json.gz` | Every city on every measure, for the Stats page. Written by `npm run stats`, gathered by `buildIndex`. |
@@ -76,6 +76,7 @@ published. Only that city's page fetches it.
              "cartogramSources": { "pov": "derived", "…": "…" },
              "hourly": { "hours": 24, "cells": 909,
                          "times": "cities/zurich/citychrone/times{hh}.bin" },
+             "…": "a city with travel times for some hours only adds \"timesHours\": [8]",
              "extents": { "core": "zurich", "fua": null } },
   "platforms": {
     "pov": { "id": "zurich", "…": "…", "layer": "cities/zurich/pov.json.gz",

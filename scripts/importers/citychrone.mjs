@@ -12,8 +12,10 @@
 // every time over two hours as one class. They are streamed, never read
 // whole (lib/times.mjs), because a metro area's are gigabytes an hour.
 //
-// The matrices are optional. An export with hexcovers and no timesHH files
-// publishes the scores, and the city's isochrones read "not available".
+// The matrices are optional, hour by hour. An export with hexcovers and no
+// timesHH files publishes the scores, and the city's isochrones read "not
+// available"; one with some hours (times08 alone, say) publishes those, and
+// the isochrone view offers only them.
 
 import zlib from 'node:zlib';
 import { GRID_TOLERANCE_M, boundaryMismatchM, cellAt, weightedCentre } from '../lib/bundle.mjs';
@@ -89,14 +91,14 @@ export async function parse(source) {
   for (let h = 0; h < hours; h++) {
     if (!hexcover[h]) throw new Error(`hexcover for hour ${String(h).padStart(2, '0')} is missing`);
   }
-  // No matrices at all is a city without isochrones; some of them is an
-  // export that went wrong, and is refused rather than published with gaps.
+  // No matrices is a city without isochrones; some of them is a city with
+  // isochrones at those hours only. A matrix for an hour with no scores is
+  // refused: its rows would be read against cells no hexcover describes.
   const withTimes = times.some(Boolean);
-  if (withTimes) {
-    for (let h = 0; h < hours; h++) {
-      if (!times[h]) throw new Error(`times for hour ${String(h).padStart(2, '0')} is missing`);
-    }
-    if (times.length !== hours) throw new Error(`${times.length} times files for ${hours} hexcover files`);
+  const timesHours = times.flatMap((file, h) => (file ? [h] : []));
+  const stray = timesHours.filter((h) => h >= hours);
+  if (stray.length) {
+    throw new Error(`times for hour ${stray.map((h) => String(h).padStart(2, '0')).join(', ')} with no hexcover`);
   }
 
   const covers = hexcover.map((f) => {
@@ -157,7 +159,11 @@ export async function parse(source) {
   for (const file of times.filter(Boolean)) await checkNpy(file.open, n, file.path);
 
   const notes = [`${n} cells × ${hours} hours, order stable across hours`];
+  const hh = (h) => String(h).padStart(2, '0');
   if (!withTimes) notes.push('no timesHH files: published without isochrones');
+  else if (timesHours.length < hours) {
+    notes.push(`travel times for ${timesHours.length} of ${hours} hours (${timesHours.map(hh).join(', ')}): isochrones at those hours only`);
+  }
 
   // Residents decide which travel times are kept and weight every figure
   // about the city (its marker, its statistics). An export whose `pop` says
@@ -192,10 +198,10 @@ export async function parse(source) {
       fields: { population },
       meta: {},
       hourly: { hours, v, s },
-      // [] says "this import has no matrices", which takes any published
-      // ones off; a record read back from disk has no `times` at all, and
-      // keeps them.
-      times: withTimes ? times.map((file) => ({ label: file.path, open: file.open })) : [],
+      // One entry per hour with a matrix. [] says "this import has no
+      // matrices", which takes any published ones off; a record read back
+      // from disk has no `times` at all, and keeps them.
+      times: timesHours.map((hour) => ({ hour, label: times[hour].path, open: times[hour].open })),
     },
     notes,
     warnings,

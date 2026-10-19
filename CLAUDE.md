@@ -1420,7 +1420,10 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
 - **Travel times are optional.** An export with hexcovers and no
   `timesHH` file publishes the scores, the catalogue's `hourly` carries no
   `times`, and the Isochrones button is shown disabled with the reason.
-  Some hours and not others is refused. Residents are `pop` or
+  Some hours only (`times08` alone) publishes those: the catalogue's
+  `hourly.timesHours` lists them (absent means every hour, `timesHours()`
+  in `catalogue.js`), and the isochrone view offers only them, opening on
+  the nearest one to the hour asked for. The scores keep all 24 hours. Residents are `pop` or
   `population`, whichever the export names (Munich's metro area says
   `population`, and reading only `pop` once kept none). An export whose field gives no
   cell a resident (missing, or under 0.5 everywhere and rounded away) would

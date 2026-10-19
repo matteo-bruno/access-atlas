@@ -219,9 +219,11 @@ weights the city's figures, so an export where it gives no cell a resident
 travel times are kept for every cell rather than for none.
 
 The matrices are optional. With no `timesHH` file at all the city is
-published with its scores and its isochrones read "not available"; with some
-hours and not others the import stops, because that is an export that went
-wrong. Re-importing without them takes published ones off.
+published with its scores and its isochrones read "not available". With some
+hours only (`times08` alone, say) those hours are published, and the
+isochrone view offers only them; a matrix for an hour with no hexcover is
+refused. Re-importing replaces the published hours with the export's, and
+without any takes them off.
 
 The matrices are rewritten one file per hour in the Atlas's own format
 (`public/data/README.md`): the cells where nobody lives left out, every time

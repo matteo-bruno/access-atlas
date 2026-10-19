@@ -16,7 +16,7 @@ import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
 import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
 import { citychroneHourFromLayer, layerPopulationKey, scenarioKey } from '../data/grid.js';
-import { layerScenarios } from '../data/catalogue.js';
+import { layerScenarios, timesHours } from '../data/catalogue.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
@@ -185,10 +185,19 @@ function AtlasScreen({ cityId, view }) {
   const hours = platformProfiles.citychrone?.hourly?.hours ?? 24;
   // A city can publish CityChrone's scores without its travel times; its
   // isochrones then say so instead of waiting on a file that is not there.
-  const isochronesPublished = Boolean(platformProfiles.citychrone?.hourly?.times ?? profile.hourly?.times);
-  const hour = Number.isInteger(hourParam) && hourParam >= 0 && hourParam < hours
+  // An export may carry them for some hours only: the isochrone view then
+  // offers those hours, and opens on the nearest one to the hour asked for.
+  const isochroneHours = timesHours(
+    platformProfiles.citychrone?.hourly?.times ? platformProfiles.citychrone.hourly : profile.hourly,
+  );
+  const isochronesPublished = isochroneHours.length > 0;
+  const askedHour = Number.isInteger(hourParam) && hourParam >= 0 && hourParam < hours
     ? hourParam
     : DEFAULT_HOUR;
+  const hour =
+    ccView === 'isochrone' && isochronesPublished && !isochroneHours.includes(askedHour)
+      ? isochroneHours.reduce((best, h) => (Math.abs(h - askedHour) < Math.abs(best - askedHour) ? h : best))
+      : askedHour;
   const fromParam = Number.parseInt(params.get('from'), 10);
   const originCc = Number.isInteger(fromParam) && fromParam >= 0 ? fromParam : null;
 
@@ -1051,7 +1060,10 @@ function AtlasScreen({ cityId, view }) {
                       )
                     }
                   >
-                    {Array.from({ length: hours }, (_, h) => (
+                    {(ccView === 'isochrone' && isochronesPublished
+                      ? isochroneHours
+                      : Array.from({ length: hours }, (_, h) => h)
+                    ).map((h) => (
                       <option key={h} value={h}>
                         {String(h).padStart(2, '0')}:00
                       </option>

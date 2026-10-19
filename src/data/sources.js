@@ -23,6 +23,7 @@ import {
   cityEntryPath,
   fileUrl,
   hourlyPath,
+  timesHours,
   normaliseCatalogue,
   normaliseCityList,
   platformEntry,
@@ -276,6 +277,8 @@ export function createStaticProvider() {
       const profile = atlas?.hourly?.times ? atlas : publishedCity(catalogue, platformId, cityId);
       if (!profile?.hourly?.times) return null;
       const clamped = Math.min(Math.max(0, hour | 0), profile.hourly.hours - 1);
+      // An hour the export carried no matrix for has no file to ask for.
+      if (!timesHours(profile.hourly).includes(clamped)) return null;
       const url = fileUrl(catalogue, hourlyPath(profile.hourly.times, clamped));
       if (profile.hourly.times.endsWith('.bin')) {
         return { row: await loadTimesRow(url, origin, { signal }), profile, hour: clamped };
