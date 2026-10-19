@@ -187,7 +187,7 @@ export default {
         'Der Car Dependency Index vergleicht die Chancen, die mit dem Auto erreichbar sind, mit denen, die im gleichen Zeitbudget mit dem öffentlichen Verkehr erreichbar sind: CDI = (O_Auto − O_ÖV) / (O_Auto + O_ÖV). Er reicht von −1, wo der öffentliche Verkehr mehr erreicht, über 0, wo beide ausgeglichen sind, bis +1, wo das Auto alles und der öffentliche Verkehr fast nichts erreicht.',
       legendUnit: 'Car Dependency Index (Median der Bewohner)',
       tooltip: '{name} · CDI {value} (Median der Bewohner)',
-      legend: ['ÖV-begünstigt', 'Ausgeglichen', 'Autoabhängig', 'Stark autoabhängig'],
+      legend: ['ÖV-begünstigt', 'Ausgeglichen', 'Autoabhängig'],
     },
     pov: {
       label: 'Nähe · Chancen · Wert',
@@ -195,6 +195,8 @@ export default {
         'Indem es Nähe und Gelegenheit verbindet, kombiniert dieses Konzept die Messung eines lebendigen Viertels (hohe Nähe) mit der eines schnellen ÖV-Knotens (hohe Gelegenheit). Die Werte messen, zu wie vielen Diensten eine Person Zugang hat: mit dem öffentlichen Verkehr in längerer Zeit (Gelegenheitswert) oder zu Fuß in kurzer Zeit (Nähewert). Dicht besiedelte Orte können beides haben und gelten als Orte der Inklusion; räumliche Isolation im öffentlichen Verkehr oder soziale Isolation eines leeren Viertels sind immer noch besser als die totale Isolation von Orten, die vom Rest der Stadt abgeschnitten sind und wenige lokale Gelegenheiten haben. Eine dritte Achse wäre der schwer fassbare Wert von Orten.',
       legendUnit: 'Zone',
       legend: ['Inklusion', 'Räumliche Isolation', 'Soziale Isolation', 'Vollständige Isolation'],
+      // Under the world map's legend: what the zones are measured against.
+      legendNote: 'Der Median-Bewohner jeder Stadt im Vergleich zum Median aller Bewohner des Atlas, bei Nähe und bei Gelegenheit.',
     },
   },
 

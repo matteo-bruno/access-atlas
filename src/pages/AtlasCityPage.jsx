@@ -6,7 +6,7 @@ import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { DELTA_RAMPS, RAMPS, rampColor } from '../map/ramps.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
-import { scaleDot } from '../map/layers.js';
+import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
@@ -1186,8 +1186,12 @@ function AtlasScreen({ cityId, view }) {
               </div>
             )}
 
-            {/* ── Top: the layers, one row, from the left ───────────
-                The same picker the world map opens with, so a layer is
+            {/* ── Top: the layers, then what the city adds up to ────
+                One column over the map, so the boxes on the right always
+                start below the bar, however tall the bar turns out on a
+                given screen: a fixed offset left them under it. */}
+            <div className="aa-city__top">
+            {/* The same picker the world map opens with, so a layer is
                 chosen the same way on both screens; its dot is a miniature
                 of the scale the map is about to draw. */}
             <div className="aa-city__layerbar aa-fadein">
@@ -1207,7 +1211,7 @@ function AtlasScreen({ cityId, view }) {
                     >
                       <span
                         className="aa-picker__dot"
-                        style={{ backgroundImage: scaleDot(option.scale, { hard: !option.stops }) }}
+                        style={{ backgroundImage: pickerDot(option) }}
                       />
                       {option.name}
                     </button>
@@ -1366,6 +1370,7 @@ function AtlasScreen({ cityId, view }) {
                     )}
                 </CellInspector>
               </MapBox>
+            </div>
             </div>
 
             {/* ── Bottom left: settings, closed until asked for ──────

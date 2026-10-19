@@ -118,6 +118,48 @@
   z-index: 3;
 }
 
+/* A continuous scale on the legend: the city view's ramp, three words under
+   it at its two ends and its middle, and no numbers. */
+.aa-legend__ramp {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 240px;
+  margin-top: 8px;
+}
+
+.aa-legend__bar {
+  display: block;
+  height: 10px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgb(21 23 26 / 0.12);
+}
+
+.aa-legend__ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 11.5px;
+  color: var(--ink-2);
+}
+
+.aa-legend__ends span:nth-child(2) {
+  text-align: center;
+}
+
+.aa-legend__ends span:last-child {
+  text-align: end;
+}
+
+.aa-legend__note {
+  max-width: 240px;
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
 /* Which map you are looking at: all four platforms, or one of them. */
 .aa-picker {
   position: absolute;

@@ -183,7 +183,7 @@ export default {
         'Car Dependency Index（汽车依赖指数）比较在相同时间内开车可到达的机会与乘坐公共交通可到达的机会：CDI = (O_car − O_PT) / (O_car + O_PT)。取值从 −1（公共交通到达更多）经过 0（两者相当）到 +1（汽车无所不及，而公共交通几乎无法到达）。',
       legendUnit: 'Car Dependency Index（中位居民）',
       tooltip: '{name} · CDI {value}（中位居民）',
-      legend: ['公共交通占优', '大致均衡', '依赖汽车', '高度依赖汽车'],
+      legend: ['公共交通占优', '大致均衡', '依赖汽车'],
     },
     pov: {
       label: 'Proximity · Opportunity · Value',
@@ -191,6 +191,8 @@ export default {
         '该框架连接“邻近性”与“机会”，把对活跃街区（高邻近性）的测量与对快速公共交通节点（高机会）的测量结合起来。得分衡量一个人能获得多少服务：乘公共交通在较长时间内（机会得分），或步行在较短时间内（邻近性得分）。高密度地区可以兼得两者，被标为“包容”之地；而公共交通上的空间隔离或空旷街区的社会隔离，仍好过与城市其他部分脱节、本地机会稀少之地的完全隔离。第三个维度将是难以捉摸的地点“价值”。',
       legendUnit: '区域',
       legend: ['包容', '空间隔离', '社会隔离', '完全隔离'],
+      // Under the world map's legend: what the zones are measured against.
+      legendNote: '每座城市的中位居民，与地图集全部居民的中位数相比，分别就邻近性和机会而言。',
     },
   },
 

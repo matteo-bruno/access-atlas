@@ -916,6 +916,18 @@ would show, and picking one shows the cities with at least that many
 (`?min=1..3`, absent for four). The frame still comes from every city, so
 the filter never moves the world.
 
+**A layer's dots are its city view's colours where that is a ramp.** Car
+Dependency and CityChrone colour each city on the city view's own ramp
+(`MARKER_RAMPS` in `map/layers.js`) at the median resident's value, filled,
+and their legend is that ramp with three words under it (transit-favoured,
+balanced, car-dependent; slow, medium, fast). P.O.V. colours a city by its
+zone **on the Atlas median** (`useAtlasZones` in `PlatformLanding.jsx`):
+its median resident's proximity and opportunity against `zoneThresholds`
+from the statistics file. Its own zones are at its own medians, so the zone
+most of its residents live in was Inclusion nearly everywhere and the map
+was all green. Its markers wait for the statistics rather than paint in one
+colour and change.
+
 **Every marker opens its city, whatever the open layer covers.** The city
 view opens on the first layer that city actually carries, so a Car
 Dependency city needs no 15minCity to be worth a click. `useCityPageIds()`
@@ -993,9 +1005,10 @@ The city view is a full-bleed map with a controls column and floating boxes
 (`MapBox`) in its corners. Along the top, centred as on the world map, the
 layer picker as one horizontal bar that never wraps (`.aa-city__layerbar`: the world map's
 `.aa-picker`, its styles in `global.css` and its dots from `scaleDot` in
-`map/layers.js`). It may use the map's whole width, so the boxes on the
-right start below it (`top: 62px`): reserving their column beside it made
-"Population" wrap onto a second line at 1280 px. Top right the city summary (closed by default, full width) and the selected
+`map/layers.js`). It and the boxes on the right are one column over the
+map (`.aa-city__top`), so the boxes always start where the bar ends: a fixed
+offset let them overlap on a screen where the bar came out taller, and
+reserving their column beside the bar made "Population" wrap at 1280 px. Top right the city summary (closed by default, full width) and the selected
 cell; bottom left "Settings", closed by default, holding Map/Cartogram and
 the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
 under the pointer; full screen bottom right. There is no status bar under

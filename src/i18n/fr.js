@@ -186,7 +186,7 @@ export default {
         'Le Car Dependency Index compare les opportunités accessibles en voiture à celles accessibles en transports en commun dans le même temps : CDI = (O_voiture − O_TC) / (O_voiture + O_TC). Il va de −1, où les transports en commun atteignent davantage, à +1, où la voiture atteint tout et les transports en commun presque rien, en passant par 0, où les deux s’équilibrent.',
       legendUnit: 'Car Dependency Index (habitant médian)',
       tooltip: '{name} · CDI {value} (habitant médian)',
-      legend: ['Favorable aux transports en commun', 'Équilibré', 'Dépendant de la voiture', 'Très dépendant de la voiture'],
+      legend: ['Favorable aux transports en commun', 'Équilibré', 'Dépendant de la voiture'],
     },
     pov: {
       label: 'Proximité · Opportunité · Valeur',
@@ -194,6 +194,8 @@ export default {
         'En reliant Proximité et Opportunité, ce cadre combine la mesure d’un quartier actif (forte proximité) et celle d’un nœud de transport public rapide (forte opportunité). Les scores mesurent à combien de services une personne a accès, en transports publics en un temps long (score d’opportunité) ou à pied en un temps court (score de proximité). Les lieux denses peuvent avoir les deux et sont étiquetés lieux d’Inclusion, tandis que l’isolement spatial dans les transports publics ou l’isolement social d’un quartier vide valent encore mieux que l’isolement total des lieux coupés du reste de la ville et avec peu d’opportunités locales. Un troisième axe serait l’insaisissable Valeur des lieux.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Isolement spatial', 'Isolement social', 'Isolement total'],
+      // Under the world map's legend: what the zones are measured against.
+      legendNote: 'Le résident médian de chaque ville face à la médiane de tous les résidents de l’Atlas, en proximité et en opportunité.',
     },
   },
 

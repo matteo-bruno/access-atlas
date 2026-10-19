@@ -207,7 +207,7 @@ export default {
         'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = (O_car − O_PT) / (O_car + O_PT). It runs from −1, where transit reaches more, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing.',
       legendUnit: 'Car Dependency Index (median resident)',
       tooltip: '{name} · CDI {value} (median resident)',
-      legend: ['Transit-favoured', 'Balanced', 'Car-dependent', 'Strongly car-dependent'],
+      legend: ['Transit-favoured', 'Balanced', 'Car-dependent'],
     },
     pov: {
       label: 'Proximity · Opportunity · Value',
@@ -215,6 +215,8 @@ export default {
         'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). Scores are computed by measuring how many services a person has access to, by public transport in a long time (opportunity score) or by walking in a short time (proximity score). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
+      // Under the world map's legend: what the zones are measured against.
+      legendNote: 'Each city’s median resident against the median of every Atlas resident, on proximity and on opportunity.',
     },
   },
 

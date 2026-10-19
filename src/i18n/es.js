@@ -185,7 +185,7 @@ export default {
         'El Car Dependency Index compara las oportunidades alcanzables en coche con las alcanzables en transporte público en el mismo tiempo: CDI = (O_coche − O_TP) / (O_coche + O_TP). Va de −1, donde el transporte público llega a más, pasando por 0, donde ambos se equilibran, hasta +1, donde el coche llega a todo y el transporte público casi a nada.',
       legendUnit: 'Car Dependency Index (residente mediano)',
       tooltip: '{name} · CDI {value} (residente mediano)',
-      legend: ['Favorable al transporte público', 'Equilibrado', 'Dependiente del coche', 'Muy dependiente del coche'],
+      legend: ['Favorable al transporte público', 'Equilibrado', 'Dependiente del coche'],
     },
     pov: {
       label: 'Proximidad · Oportunidad · Valor',
@@ -193,6 +193,8 @@ export default {
         'Uniendo Proximidad y Oportunidad, este marco combina la medida de un barrio activo (alta proximidad) con la de un nodo rápido de transporte público (alta oportunidad). Las puntuaciones miden a cuántos servicios tiene acceso una persona, en transporte público en un tiempo largo (puntuación de oportunidad) o a pie en un tiempo corto (puntuación de proximidad). Los lugares de alta densidad pueden tener ambas y se etiquetan como lugares de Inclusión, mientras que el aislamiento espacial en el transporte público o el aislamiento social de un barrio vacío siguen siendo mejores que el aislamiento total de los lugares desconectados del resto de la ciudad y con pocas oportunidades locales. Un tercer eje sería el esquivo Valor de los lugares.',
       legendUnit: 'Zona',
       legend: ['Inclusión', 'Aislamiento espacial', 'Aislamiento social', 'Aislamiento total'],
+      // Under the world map's legend: what the zones are measured against.
+      legendNote: 'El residente mediano de cada ciudad frente a la mediana de todos los residentes del Atlas, en proximidad y en oportunidad.',
     },
   },
 
