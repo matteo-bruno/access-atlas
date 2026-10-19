@@ -84,6 +84,16 @@ const check = (name, ok, detail = '') => {
 
 // The city summary opens closed: a small box to click. Checks that read its
 // figures open it first.
+// Map/Cartogram and the opacity live in a "Settings" box, closed until
+// asked for. Checks that switch geometry open it first.
+async function openSettings(page) {
+  const toggle = page.locator('.aa-mapbox--opacity .aa-mapbox__toggle');
+  if ((await toggle.count()) && (await toggle.getAttribute('aria-expanded')) === 'false') {
+    await toggle.click();
+    await page.waitForTimeout(200);
+  }
+}
+
 async function openSummary(page) {
   const toggle = page.locator('.aa-mapbox--summary .aa-mapbox__toggle');
   if ((await toggle.count()) && (await toggle.getAttribute('aria-expanded')) === 'false') {
@@ -483,6 +493,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   );
 
   // The city view opens on the cartogram: start from the hexagons.
+  await openSettings(page);
   const opensOnCartogram = await page
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
@@ -518,6 +529,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   page.on('request', (r) => requested.push(r.url()));
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(2500);
+  await openSettings(page);
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2000);
@@ -562,6 +574,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(3200);
   const opening = await page.locator('.aa-picker--inline .aa-picker__item--active').innerText();
+  await openSettings(page);
   const cartogramOffered = !(await page.getByRole('button', { name: /^Cartogram/ }).isDisabled());
   check(
     'The combined viewer opens on 15-minute city, with a cartogram to switch to',
@@ -663,6 +676,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(3200);
   // The city view opens on the cartogram, where the cell under the centre
   // may have shrunk away; the true hexagons tile the ground.
+  await openSettings(page);
   await page.locator('.aa-geometry .aa-toggle__btn', { hasText: 'Map' }).click();
   await page.waitForTimeout(600);
 
@@ -722,17 +736,20 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
 
-  // A tooltip follows the pointer's intent: it arrives on hover and leaves
-  // with it, so reading one costs nothing and dismissing it is not a second
-  // decision.
-  await page.locator('.aa-mapbox--legend .aa-explain__btn').first().hover();
-  await page.waitForTimeout(400);
+  // An explanation is asked for with a click and stays until it is closed:
+  // another click, a click elsewhere, or Escape.
+  await page.locator('.aa-city__legend .aa-explain__btn').first().click();
+  await page.waitForTimeout(300);
   const tip = await page.locator('.aa-explain__tip').innerText();
   await page.mouse.move(10, 10);
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(300);
+  const stays = (await page.locator('.aa-explain__tip').count()) === 1;
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
   check(
-    'A legend explains itself on hover, and stops when the pointer leaves',
+    'A legend explains itself on a click, stays while read, and closes on Escape',
     /population-weighted median/.test(tip) &&
+      stays &&
       (await page.locator('.aa-explain__tip').count()) === 0,
     tip.replace(/\s+/g, ' ').slice(0, 70),
   );
@@ -741,12 +758,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // column: it used to be a child of a box that scrolls, which clips what its
   // children paint outside it, so the half with the method in it was cut off
   // at the map's edge.
-  // P.O.V.'s legend is on the map now; Car Dependency's filter keeps a "?"
-  // in the column.
-  await page.goto(`${BASE}/atlas/milan?layer=cardep`, { waitUntil: 'load' });
-  await page.waitForTimeout(3000);
   const panelBox = await page.locator('.aa-city__panel').boundingBox();
-  await page.locator('.aa-city__panel .aa-explain__btn').first().hover();
+  await page.locator('.aa-city__panel .aa-explain__btn').first().click();
   await page.waitForTimeout(400);
   const tipBox = await page.locator('.aa-explain__tip').boundingBox();
   const viewport = page.viewportSize();
@@ -760,7 +773,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       panelBox.x + panelBox.width,
     )}px`,
   );
-  await page.mouse.move(10, 10);
+  await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
 
   // The column's handle is on the column's own edge, and says which way it
@@ -1433,7 +1446,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   );
   await page.locator('.aa-toggle button', { hasText: 'Difference' }).click().catch(() => {});
   await page.waitForTimeout(1200);
-  const legend = await page.$eval('.aa-mapbox--legend', (el) => el.textContent).catch(() => '');
+  const legend = await page.$eval('.aa-city__legend', (el) => el.textContent).catch(() => '');
   check(
     'The difference is drawn on its own scale, linkable',
     /minus current/i.test(legend) && /[?&]cmp=diff/.test(page.url()) && /[?&]sc=metro-d/.test(page.url()),

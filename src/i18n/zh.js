@@ -224,6 +224,13 @@ export default {
     label: '组合视图',
     back: '返回地图集',
     people: '人',
+    settings: '设置',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: '城市边界',
+      body: '城市边界来自 {ghsl} 或该市政府。',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: '范围',
       core: '城市（核心区）',
@@ -359,6 +366,7 @@ export default {
       velocity: '公共交通速度',
       sociality: '社会连接得分',
       grid: 'H3 单元',
+      gridAbout: '一种标准的六边形分层空间索引（Standard Hexagonal Hierarchical Spatial Index）。',
     },
     explain: {
       map: {

@@ -227,6 +227,13 @@ export default {
     label: 'Vista combinada',
     back: 'Volver al Atlas',
     people: 'pers.',
+    settings: 'Ajustes',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: 'Límites de la ciudad',
+      body: 'Los límites de la ciudad proceden del {ghsl} o del propio ayuntamiento.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: 'Límite',
       core: 'Ciudad (núcleo)',
@@ -366,6 +373,7 @@ export default {
       velocity: 'Velocidad TP',
       sociality: 'Puntuación de socialidad',
       grid: 'Celda H3',
+      gridAbout: 'Un Standard Hexagonal Hierarchical Spatial Index (índice espacial jerárquico hexagonal).',
     },
     explain: {
       map: {

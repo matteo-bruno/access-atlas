@@ -226,6 +226,13 @@ export default {
     label: 'العرض المجمّع',
     back: 'العودة إلى الأطلس',
     people: 'شخص',
+    settings: 'الإعدادات',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: 'حدود المدينة',
+      body: 'حدود المدينة مأخوذة إمّا من {ghsl} أو من بلدية المدينة.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: 'الحدود',
       core: 'المدينة (النواة)',
@@ -361,6 +368,7 @@ export default {
       velocity: 'سرعة النقل العام',
       sociality: 'درجة الاجتماعية',
       grid: 'خلية H3',
+      gridAbout: 'فهرس مكاني هرمي سداسي قياسي (Standard Hexagonal Hierarchical Spatial Index).',
     },
     explain: {
       map: {

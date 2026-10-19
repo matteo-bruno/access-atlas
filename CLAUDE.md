@@ -635,9 +635,10 @@ Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
 ## Explaining the measures
 
 Two levels, and the split matters. Anything a reader could misread carries an
-`Explain` — a "?" that shows a **tooltip** on hover or focus and drops it when
-the pointer leaves, so reading one costs nothing and dismissing it is not a
-second decision. **The tooltip is drawn in a portal on the body, positioned
+`Explain` — a "?" that opens a small panel **on a click** and keeps it open
+until the reader closes it (the "?" again, a click elsewhere, or Escape). It
+used to open on hover; the lab preferred an explanation that is asked for
+and stays put while it is read. **The tooltip is drawn in a portal on the body, positioned
 against its button**: most of them live in the city view's controls column,
 which scrolls, and a scrolling box clips what its children paint outside it
 whatever their z-index — so the half with the method in it was cut off at the
@@ -985,17 +986,21 @@ under it. They share `Prose.css`.
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
-(`MapBox`) in its corners: the layer picker and the geometry switch under it
-top left (the world map's `.aa-picker`, its styles in `global.css` and its
-dots from `scaleDot` in `map/layers.js`), and top right the city summary
-(closed by default, a small box to click), the legend and its "?", and the
-selected cell; opacity bottom left, full screen bottom right.
+(`MapBox`) in its corners. Along the top, from the left, the layer picker as
+one horizontal bar (`.aa-city__layerbar`: the world map's `.aa-picker`, its
+styles in `global.css` and its dots from `scaleDot` in `map/layers.js`); top
+right the city summary (closed by default, full width) and the selected
+cell; bottom left "Settings", closed by default, holding Map/Cartogram and
+the opacity; full screen bottom right. The legend is in the column, right
+under the city's name and "About this layer". The foot of the column is
+the OSM date, "Notice a mistake?", the layer's paper and "City boundaries"
+(GHSL or the municipality), all in `MistakeNote`.
 Full screen hides the chrome and keeps the column, and Escape leaves it.
 
 **There is no bar above the map.** The column opens with "Back to the
 Atlas" (to the open layer's world map), the title, which is the city and
 its country and nothing else ("Rome – Italy", the country in the accent),
-and "About this layer" and the paper. The boundary on screen is the
+and "About this layer". The boundary on screen is the
 pressed half of the boundary switch, not part of the title. The top-right
 stack stops above the full-screen button and scrolls inside that room.
 
@@ -1004,7 +1009,7 @@ lives shrinks away, so the first picture is of the residents a measure is
 about. The geometry's "?" explains the cartogram only.
 
 The selected cell's H3 index closes its box (`rows.footer` in
-`CellInspector`), under anything a layer adds below the rows, such as
+`CellInspector`, with a "?" pointing to h3geo.org), under anything a layer adds below the rows, such as
 15minCity's bars. "About this layer" is the measure, the colours (the same
 `city.explain.map.*` the legend's "?" shows), for 15minCity the nine
 categories and how a time is measured, the method with one line on

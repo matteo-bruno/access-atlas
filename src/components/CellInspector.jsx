@@ -1,4 +1,5 @@
 import { Eyebrow } from './SectionHeading.jsx';
+import { Explain } from './Explain.jsx';
 import './CellInspector.css';
 
 /**
@@ -51,7 +52,10 @@ export function CellInspector({ title, empty, rows, clearLabel, onClear, childre
             <dl className="aa-summary aa-inspector__rows aa-inspector__foot">
               {rows.footer.map((row) => (
                 <div className="aa-summary__row" key={row.label}>
-                  <dt>{row.label}</dt>
+                  <dt className="aa-inspector__term">
+                    {row.label}
+                    {row.about && <Explain align="right">{row.about}</Explain>}
+                  </dt>
                   <dd className="aa-mono">{row.value}</dd>
                 </div>
               ))}

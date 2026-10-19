@@ -24,18 +24,18 @@ function place(button, align) {
 }
 
 /**
- * A "?" beside a heading that shows its explanation as a tooltip.
+ * A "?" beside a heading that shows its explanation in a small panel.
  *
- * The tooltip follows the pointer's intent rather than a click: it appears on
- * hover or focus and leaves when the pointer does, so reading one costs
- * nothing and dismissing it is not a second decision. It stays while the
- * pointer is over the tooltip itself, which is what makes a link inside one
- * reachable. Escape closes it for the keyboard.
+ * It opens on a click and stays open until the reader closes it: another
+ * click on the "?", a click anywhere else, or Escape. It used to follow the
+ * pointer, opening on hover; the lab preferred an explanation that is asked
+ * for and stays put while it is read, and that a link inside it can be
+ * reached without chasing it.
  *
  * The long form is not here — it is behind the page's "about" dialog, so a
  * tooltip never has to be big enough to hold an argument.
  *
- * **The tooltip is drawn in a portal, fixed to the page.** These sit in the
+ * **The panel is drawn in a portal, fixed to the page.** These sit in the
  * city view's controls column, which scrolls — and a scrolling box clips what
  * its children paint outside it, whatever their z-index, so a tooltip was cut
  * off at the map's edge exactly where it had the most to say. Out of the
@@ -53,23 +53,26 @@ export function Explain({ label, body, children, align = 'left', className = '' 
   const [at, setAt] = useState(null);
   const id = useId();
   const content = children ?? body;
-  // A pointer crossing the gap between button and tooltip should not close it,
-  // so the whole wrapper owns the hover rather than the button alone — and the
-  // tooltip, which is no longer inside it, keeps it open on its own.
   const btnRef = useRef(null);
-  const closing = useRef(null);
+  const tipRef = useRef(null);
 
-  const show = () => {
-    window.clearTimeout(closing.current);
-    setOpen(true);
-  };
-  // Long enough to cross the gap between the button and the tooltip, short
-  // enough that leaving both reads as dismissing it.
-  const hide = () => {
-    window.clearTimeout(closing.current);
-    closing.current = window.setTimeout(() => setOpen(false), 120);
-  };
-  useEffect(() => () => window.clearTimeout(closing.current), []);
+  // Closed by a click anywhere but the "?" and the panel, or by Escape.
+  useEffect(() => {
+    if (!open) return undefined;
+    const away = (event) => {
+      if (btnRef.current?.contains(event.target) || tipRef.current?.contains(event.target)) return;
+      setOpen(false);
+    };
+    const onKey = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('pointerdown', away);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', away);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
 
   // Measured before the browser paints, so the tooltip never appears at last
   // time's position first.
@@ -89,12 +92,11 @@ export function Explain({ label, body, children, align = 'left', className = '' 
   const tip =
     open && content && at ? (
       <span
+        ref={tipRef}
         className="aa-explain__tip"
         id={id}
         role="tooltip"
         style={{ left: at.left, top: at.top, bottom: at.bottom }}
-        onMouseEnter={show}
-        onMouseLeave={hide}
       >
         {typeof content === 'string' ? <span>{content}</span> : content}
       </span>
@@ -104,11 +106,7 @@ export function Explain({ label, body, children, align = 'left', className = '' 
     <div className={`aa-explain ${className}`.trim()}>
       <div className={`aa-explain__head${label ? ' aa-eyebrow' : ''}`}>
         {label && <span>{label}</span>}
-        <span
-          className="aa-explain__wrap"
-          onMouseEnter={show}
-          onMouseLeave={hide}
-        >
+        <span className="aa-explain__wrap">
           <button
             ref={btnRef}
             type="button"
@@ -118,12 +116,7 @@ export function Explain({ label, body, children, align = 'left', className = '' 
             // The glyph says nothing to a screen reader, and "?" alone would
             // not say what is being explained.
             aria-label={label ? `${label} — ?` : '?'}
-            onFocus={show}
-            onBlur={hide}
-            onClick={() => (open ? hide() : show())}
-            onKeyDown={(event) => {
-              if (event.key === 'Escape') setOpen(false);
-            }}
+            onClick={() => setOpen((value) => !value)}
           >
             ?
           </button>

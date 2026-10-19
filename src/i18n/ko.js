@@ -224,6 +224,13 @@ export default {
     label: '통합 보기',
     back: '아틀라스로 돌아가기',
     people: '명',
+    settings: '설정',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: '도시 경계',
+      body: '도시 경계는 {ghsl} 또는 해당 시청의 자료입니다.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: '경계',
       core: '도시(핵심)',
@@ -359,6 +366,7 @@ export default {
       velocity: '대중교통 속도',
       sociality: '사회성 점수',
       grid: 'H3 셀',
+      gridAbout: '표준 육각형 계층형 공간 인덱스(Standard Hexagonal Hierarchical Spatial Index).',
     },
     explain: {
       map: {

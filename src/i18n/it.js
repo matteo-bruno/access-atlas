@@ -246,6 +246,13 @@ export default {
     label: 'Vista combinata',
     back: 'Torna all’Atlante',
     people: 'persone',
+    settings: 'Impostazioni',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: 'Confini della città',
+      body: 'I confini della città provengono dal {ghsl} oppure dal comune.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: 'Confine',
       core: 'Città (core)',
@@ -396,6 +403,7 @@ export default {
       velocity: 'Velocità TP',
       sociality: 'Punteggio di socialità',
       grid: 'Cella H3',
+      gridAbout: 'Uno Standard Hexagonal Hierarchical Spatial Index (indice spaziale gerarchico esagonale).',
     },
     // ── Spiegazioni ────────────────────────────────────────────────
     // Riprese dai due viewer originali, che mettono un "?" accanto a tutto ciò

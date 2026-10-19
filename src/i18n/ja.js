@@ -235,6 +235,13 @@ export default {
     label: '統合ビュー',
     back: 'アトラスに戻る',
     people: '人',
+    settings: '設定',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: '都市の境界',
+      body: '都市の境界は {ghsl} または各自治体のものです。',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: '範囲',
       core: '都市（中心部）',
@@ -374,6 +381,7 @@ export default {
       velocity: '公共交通速度',
       sociality: '社会性スコア',
       grid: 'H3 セル',
+      gridAbout: '標準の六角形階層型空間インデックス（Standard Hexagonal Hierarchical Spatial Index）。',
     },
     explain: {
       map: {

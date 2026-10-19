@@ -184,7 +184,8 @@
 }
 
 .aa-mistake__toggle {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 6px;
   padding: 6px 8px;
@@ -200,7 +201,7 @@
 }
 
 .aa-mistake__toggle:hover,
-.aa-mistake--open .aa-mistake__toggle {
+.aa-mistake__toggle[aria-expanded='true'] {
   background: var(--paper-alt);
   color: var(--ink);
 }
@@ -344,10 +345,14 @@
   max-height: calc(100% - 12px - 34px - 46px);
 }
 
-/* ── The layer picker, top left over the map ──────────────────────────
-   As wide as the map leaves it beside the summary column; it wraps
-   rather than running under that column. */
-.aa-atlas .aa-mapui--tl {
+/* ── The layer picker: one row along the top of the map ───────────────
+   From the left, as long as the map leaves it beside the summary column;
+   it wraps rather than running under that column. */
+.aa-city__layerbar {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 4;
   max-width: calc(100% - 24px - 296px - 24px);
 }
 
@@ -355,18 +360,30 @@
   justify-content: flex-start;
 }
 
-/* ── The legend, in the right-hand column under the summary ───────── */
-.aa-mapbox--legend {
-  padding: 10px 12px 12px;
+/* ── The legend, in the column under the city's name ─────────────── */
+.aa-city__legend {
+  margin-bottom: 18px;
 }
 
-.aa-mapbox--legend .aa-explain {
-  margin-top: 0;
+/* ── Settings, bottom left: the geometry, then the opacity ───────── */
+.aa-mapbox--opacity .aa-geometry {
+  margin-bottom: 10px;
 }
 
-/* Closed, the summary is a small box: its title and the caret. */
-.aa-mapui--tr .aa-mapbox--summary.aa-mapbox--closed {
-  align-self: flex-end;
-  width: auto;
-  min-width: 0;
+.aa-settings__label {
+  margin: 0 0 4px;
+}
+
+/* The paper link sits with the toggles at the foot of the column. */
+.aa-mistake__paper {
+  text-decoration: none;
+}
+
+/* Inside the settings box the switch is a row of the box, not a card. */
+.aa-mapbox--opacity .aa-geometry--compact {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }

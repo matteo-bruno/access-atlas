@@ -252,6 +252,13 @@ export default {
     label: 'Combined view',
     back: 'Back to the Atlas',
     people: 'ppl',
+    settings: 'Settings',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: 'City boundaries',
+      body: 'City boundaries are either from the {ghsl} or from the city’s municipality.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: 'Boundary',
       core: 'City (core)',
@@ -401,6 +408,7 @@ export default {
       velocity: 'PT velocity score',
       sociality: 'Sociality score',
       grid: 'H3 cell',
+      gridAbout: 'A Standard Hexagonal Hierarchical Spatial Index.',
     },
     // ── Explanations ───────────────────────────────────────────────
     // Ported from the two upstream viewers, which put a "?" beside anything a
