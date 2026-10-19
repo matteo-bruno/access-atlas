@@ -174,7 +174,7 @@ export async function parse(source) {
   const missing = rawPopulation.filter((p) => !Number.isFinite(p)).length;
   const roundedAway = rawPopulation.filter((p, i) => p > 0 && population[i] === 0).length;
   if (!inhabited) {
-    const max = Math.max(0, ...rawPopulation.filter(Number.isFinite));
+    const max = rawPopulation.reduce((m, p) => (Number.isFinite(p) && p > m ? p : m), 0);
     warnings.push(
       `hexcover \`pop\` / \`population\` gives no cell a resident (${missing ? `${missing} of ${n} cells have none` : `largest value ${max}`}). ` +
         (withTimes ? 'Travel times are kept for every cell, ' : '') +

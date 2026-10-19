@@ -273,7 +273,11 @@
   gap: 4px;
 }
 
+/* Centred on the city's box, where the reader is looking while it loads,
+   rather than along its top edge with the other prompts. */
 .aa-atlas__prompt--loading {
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;

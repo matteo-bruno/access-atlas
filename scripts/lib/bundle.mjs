@@ -664,11 +664,20 @@ export function weightedCentre(cells, populations) {
 
 /** Opening zoom for a set of cells: the city with a margin, 8.5–12. */
 export function zoomFor(cells) {
-  const centres = cells.map(cellCentre);
-  const lons = centres.map((c) => c[0]);
-  const lats = centres.map((c) => c[1]);
-  const spanLon = (Math.max(...lons) - Math.min(...lons)) * Math.cos((lats[0] * Math.PI) / 180);
-  const spanLat = Math.max(...lats) - Math.min(...lats);
+  // A loop, not Math.max(...lons): spreading one argument per cell overflows
+  // the stack on a large metro area (Dallas's FUA).
+  let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
+  let firstLat = NaN;
+  for (const cell of cells) {
+    const [lon, lat] = cellCentre(cell);
+    if (Number.isNaN(firstLat)) firstLat = lat;
+    if (lon < minLon) minLon = lon;
+    if (lon > maxLon) maxLon = lon;
+    if (lat < minLat) minLat = lat;
+    if (lat > maxLat) maxLat = lat;
+  }
+  const spanLon = (maxLon - minLon) * Math.cos((firstLat * Math.PI) / 180);
+  const spanLat = maxLat - minLat;
   const span = Math.max(spanLon, spanLat, 0.01);
   return Math.round(Math.min(12, Math.max(8.5, Math.log2(360 / span) - 1.2)) * 10) / 10;
 }
