@@ -343,3 +343,30 @@
 .aa-atlas .aa-mapui--tr {
   max-height: calc(100% - 12px - 34px - 46px);
 }
+
+/* ── The layer picker, top left over the map ──────────────────────────
+   As wide as the map leaves it beside the summary column; it wraps
+   rather than running under that column. */
+.aa-atlas .aa-mapui--tl {
+  max-width: calc(100% - 24px - 296px - 24px);
+}
+
+.aa-picker--inline {
+  justify-content: flex-start;
+}
+
+/* ── The legend, in the right-hand column under the summary ───────── */
+.aa-mapbox--legend {
+  padding: 10px 12px 12px;
+}
+
+.aa-mapbox--legend .aa-explain {
+  margin-top: 0;
+}
+
+/* Closed, the summary is a small box: its title and the caret. */
+.aa-mapui--tr .aa-mapbox--summary.aa-mapbox--closed {
+  align-self: flex-end;
+  width: auto;
+  min-width: 0;
+}

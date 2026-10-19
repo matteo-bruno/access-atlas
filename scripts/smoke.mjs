@@ -82,6 +82,16 @@ const check = (name, ok, detail = '') => {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
 };
 
+// The city summary opens closed: a small box to click. Checks that read its
+// figures open it first.
+async function openSummary(page) {
+  const toggle = page.locator('.aa-mapbox--summary .aa-mapbox__toggle');
+  if ((await toggle.count()) && (await toggle.getAttribute('aria-expanded')) === 'false') {
+    await toggle.click();
+    await page.waitForTimeout(200);
+  }
+}
+
 /**
  * Every published city marker, as the world maps draw them: one per city,
  * hidden ones left out (see citiesFromPublished).
@@ -212,6 +222,7 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(4500);
 
   const zones = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -235,6 +246,7 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/atlas/rome?layer=cardep`, { waitUntil: 'load' });
   await page.waitForTimeout(4500);
 
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -269,6 +281,7 @@ for (const [route, name] of ROUTES) {
   // count beside a figure has to be the count that figure came from. 1,636
   // cells over 170 km² is P.O.V.'s mask, and neither is a figure the seed
   // data can produce — their presence is provenance, not luck.
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -278,7 +291,7 @@ for (const [route, name] of ROUTES) {
     summary.join(' | '),
   );
 
-  const layers = await page.$$eval('.aa-layers__row', (els) =>
+  const layers = await page.$$eval('.aa-picker--inline .aa-picker__item', (els) =>
     els.map((e) => ({ text: e.textContent.trim(), disabled: e.disabled })),
   );
   // The four platforms, plus population as context — all enabled for a city
@@ -298,11 +311,12 @@ for (const [route, name] of ROUTES) {
     `${shares.join(' / ')} = ${total.toFixed(1)}`,
   );
 
-  await page.click('.aa-layers__row:has-text("CityChrone")');
+  await page.click('.aa-picker--inline .aa-picker__item:has-text("CityChrone")');
   await page.waitForTimeout(4000);
   // Continuous layers state their scale as a ramp, not as bands: the hourly
   // join has happened once the velocity figure is on the panel.
   const ticks = await page.$$eval('.aa-ramp__tick', (els) => els.map((e) => e.textContent.trim()));
+  await openSummary(page);
   const ccSummary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -315,7 +329,7 @@ for (const [route, name] of ROUTES) {
   );
 
   // Population is drawn from the union mesh rather than a platform dataset.
-  await page.click('.aa-layers__row:has-text("Population")');
+  await page.click('.aa-picker--inline .aa-picker__item:has-text("Population")');
   await page.waitForTimeout(3000);
   const popTicks = await page.$$eval('.aa-ramp__tick', (els) =>
     els.map((e) => e.textContent.trim()),
@@ -547,7 +561,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(3200);
-  const opening = await page.locator('.aa-layers__row--active').innerText();
+  const opening = await page.locator('.aa-picker--inline .aa-picker__item--active').innerText();
   const cartogramOffered = !(await page.getByRole('button', { name: /^Cartogram/ }).isDisabled());
   check(
     'The combined viewer opens on 15-minute city, with a cartogram to switch to',
@@ -711,7 +725,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // A tooltip follows the pointer's intent: it arrives on hover and leaves
   // with it, so reading one costs nothing and dismissing it is not a second
   // decision.
-  await page.locator('.aa-explain__btn').first().hover();
+  await page.locator('.aa-mapbox--legend .aa-explain__btn').first().hover();
   await page.waitForTimeout(400);
   const tip = await page.locator('.aa-explain__tip').innerText();
   await page.mouse.move(10, 10);
@@ -727,6 +741,10 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // column: it used to be a child of a box that scrolls, which clips what its
   // children paint outside it, so the half with the method in it was cut off
   // at the map's edge.
+  // P.O.V.'s legend is on the map now; Car Dependency's filter keeps a "?"
+  // in the column.
+  await page.goto(`${BASE}/atlas/milan?layer=cardep`, { waitUntil: 'load' });
+  await page.waitForTimeout(3000);
   const panelBox = await page.locator('.aa-city__panel').boundingBox();
   await page.locator('.aa-city__panel .aa-explain__btn').first().hover();
   await page.waitForTimeout(400);
@@ -1406,6 +1424,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.locator('.aa-toggle--wrap button', { hasText: 'Metro D' }).click().catch(() => {});
   await page.waitForTimeout(1500);
   const fetched = requested.filter((u) => /\/cities\/rome\/scenarios\/metro-d\/cardep\.json/.test(u)).length;
+  await openSummary(page);
   const summary = await page.$eval('.aa-summary', (el) => el.textContent).catch(() => '');
   check(
     'A scenario is offered with its layer and loaded from its own file, only when chosen',
@@ -1414,14 +1433,14 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   );
   await page.locator('.aa-toggle button', { hasText: 'Difference' }).click().catch(() => {});
   await page.waitForTimeout(1200);
-  const legend = await page.$eval('.aa-city__panel', (el) => el.textContent).catch(() => '');
+  const legend = await page.$eval('.aa-mapbox--legend', (el) => el.textContent).catch(() => '');
   check(
     'The difference is drawn on its own scale, linkable',
     /minus current/i.test(legend) && /[?&]cmp=diff/.test(page.url()) && /[?&]sc=metro-d/.test(page.url()),
     page.url().replace(BASE, ''),
   );
   // A layer without the scenario drops it from the URL.
-  await page.locator('.aa-layers__row', { hasText: '15-minute city' }).click();
+  await page.locator('.aa-picker--inline .aa-picker__item', { hasText: '15-minute city' }).click();
   await page.waitForTimeout(500);
   check('A scenario does not follow to a layer without it', !/[?&]sc=/.test(page.url()), page.url().replace(BASE, ''));
   await page.close();

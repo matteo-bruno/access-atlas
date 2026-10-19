@@ -170,7 +170,7 @@ export default {
       welcomeIntro:
         'Sehen Sie die Wegezeiten zu Einrichtungen des täglichen Bedarfs von jedem Ort jeder Stadt aus und vergleichen Sie sie mit dem 15-Minuten-Maßstab.',
       legendUnit: 'Mediane Gehzeit zu den Diensten',
-      tooltip: '{name} · {time} zu Fuß zu den Diensten (Median der Bewohner)',
+      tooltip: '{name} – {time} Min.',
       legend: ['0–3 Min.', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -210,7 +210,7 @@ export default {
     },
     modes: { foot: 'Zu Fuß', bike: 'Mit dem Rad' },
     hint: 'Mittlere Reisezeit von jeder Zelle zu den nächstgelegenen Diensten dieser Kategorie.',
-    summary: { median: 'Reisezeit, Median der Bewohner' },
+    summary: { median: 'Median der Nahbereichszeit' },
     categories: {
       average: 'Zeit im Nahbereich (Mittel)',
       outdoor: 'Aktivitäten im Freien',
@@ -228,6 +228,7 @@ export default {
   atlas: {
     label: 'Kombinierte Ansicht',
     back: 'Zurück zum Atlas',
+    people: 'Pers.',
     extent: {
       label: 'Abgrenzung',
       core: 'Stadt (Kern)',
@@ -276,8 +277,7 @@ export default {
       isochrone: 'Isochronen',
     },
     viewHint: {
-      velocity:
-        'Wie schnell der öffentliche Verkehr Sie zu dieser Stunde von jeder Zelle wegbringt: ein Wert ähnlich km/h.',
+      velocity: 'Wie schnell der öffentliche Verkehr Sie zu dieser Uhrzeit von jeder Zelle nach außen bringt, in km/h.',
       sociality:
         'Wie viele Menschen der öffentliche Verkehr zu dieser Stunde für jede Zelle erreichbar macht: ein Wert, keine Personenzahl.',
       isochrone: 'Reisezeit mit dem öffentlichen Verkehr von einer gewählten Zelle zu allen anderen.',
@@ -287,7 +287,7 @@ export default {
       sociality: 'Sozialitätswert',
       isochrone: 'Minuten ab der gewählten Zelle',
     },
-    summary: { weightedV: 'Geschwindigkeit für die durchschnittliche Einwohnerschaft' },
+    summary: { weightedV: 'Median ÖV-Geschwindigkeit', weightedS: 'Median Sozialitätswert' },
     mistake: {
       title: 'Fehler entdeckt?',
       body: 'Fehler passieren! Daten können fehlen oder irreführen. {contact}, wenn Sie wissen, wie er sich beheben lässt.',
@@ -351,7 +351,7 @@ export default {
     },
     selected: {
       title: 'Gewählte Zelle',
-      empty: 'Klicken Sie auf eine Zelle, in der Karte oder im Streudiagramm, um alles zu sehen, was für sie gemessen wurde.',
+      empty: 'Klicken Sie auf eine Zelle, um sie zu untersuchen.',
       clear: 'Auswahl aufheben',
     },
     cell: {
@@ -365,7 +365,7 @@ export default {
       thresholdProximity: 'Zonenschwelle, Nähe',
       thresholdOpportunity: 'Zonenschwelle, Chancen',
       time: 'Reisezeit',
-      velocity: 'Geschwindigkeitswert',
+      velocity: 'ÖV-Geschwindigkeit',
       sociality: 'Sozialitätswert',
       grid: 'H3-Zelle',
     },

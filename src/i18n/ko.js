@@ -166,7 +166,7 @@ export default {
       welcomeIntro:
         '어느 도시의 어느 곳에서든 일상 서비스까지의 이동 시간을 확인하고 15분 기준과 비교해 보세요.',
       legendUnit: '서비스까지 도보 시간 중앙값',
-      tooltip: '{name} · 서비스까지 도보 {time} (중위 거주자)',
+      tooltip: '{name} – {time}분',
       legend: ['0–3분', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -205,7 +205,7 @@ export default {
     },
     modes: { foot: '도보', bike: '자전거' },
     hint: '각 셀에서 이 범주의 가장 가까운 서비스까지 평균 이동 시간.',
-    summary: { median: '이동 시간 (중위 거주자)' },
+    summary: { median: '근접 시간 중앙값' },
     categories: {
       average: '근접 시간 (평균)',
       outdoor: '야외 활동',
@@ -223,6 +223,7 @@ export default {
   atlas: {
     label: '통합 보기',
     back: '아틀라스로 돌아가기',
+    people: '명',
     extent: {
       label: '경계',
       core: '도시(핵심)',
@@ -271,7 +272,7 @@ export default {
       isochrone: '등시선',
     },
     viewHint: {
-      velocity: '이 시간대에 대중교통이 각 셀에서 얼마나 빠르게 바깥으로 데려가 주는지. km/h와 비슷한 점수입니다.',
+      velocity: '이 시간대에 대중교통이 각 셀에서 얼마나 빠르게 바깥으로 데려다주는지, km/h 단위.',
       sociality: '이 시간대에 대중교통이 각 셀에서 얼마나 많은 사람에게 닿게 해 주는지. 사람 수가 아니라 점수입니다.',
       isochrone: '선택한 셀 하나에서 다른 모든 곳까지 대중교통 이동 시간.',
     },
@@ -280,7 +281,7 @@ export default {
       sociality: '사회성 점수',
       isochrone: '선택한 셀에서 걸리는 시간(분)',
     },
-    summary: { weightedV: '평균 거주자의 속도' },
+    summary: { weightedV: '대중교통 속도 중앙값', weightedS: '사회성 점수 중앙값' },
     mistake: {
       title: '오류를 발견하셨나요?',
       body: '오류는 생길 수 있습니다! 데이터가 빠져 있거나 오해를 부를 수 있습니다. 바로잡을 방법을 알고 계시다면 {contact}.',
@@ -341,7 +342,7 @@ export default {
     },
     selected: {
       title: '선택한 셀',
-      empty: '지도나 산점도에서 셀을 클릭하면 그 셀에서 측정된 모든 값을 볼 수 있습니다.',
+      empty: '셀을 클릭하면 자세히 볼 수 있습니다.',
       clear: '선택 해제',
     },
     cell: {
@@ -355,7 +356,7 @@ export default {
       thresholdProximity: '구역 기준값(근접성)',
       thresholdOpportunity: '구역 기준값(기회)',
       time: '이동 시간',
-      velocity: '속도 점수',
+      velocity: '대중교통 속도',
       sociality: '사회성 점수',
       grid: 'H3 셀',
     },

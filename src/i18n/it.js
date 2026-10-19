@@ -179,7 +179,7 @@ export default {
       welcomeIntro:
         'Guarda i tempi di viaggio verso i servizi quotidiani da qualsiasi punto di qualsiasi città e confrontali con il riferimento dei 15 minuti.',
       legendUnit: 'Tempo mediano a piedi verso i servizi',
-      tooltip: '{name} · {time} a piedi verso i servizi (residente mediano)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -225,7 +225,7 @@ export default {
     },
     modes: { foot: 'A piedi', bike: 'In bicicletta' },
     hint: 'Tempo medio di viaggio da ogni cella ai servizi più vicini di questa categoria.',
-    summary: { median: 'Tempo di viaggio, residente mediano' },
+    summary: { median: 'Tempo di prossimità mediano' },
     categories: {
       average: 'Tempo di prossimità (media)',
       outdoor: 'Attività all’aperto',
@@ -245,6 +245,7 @@ export default {
   atlas: {
     label: 'Vista combinata',
     back: 'Torna all’Atlante',
+    people: 'persone',
     extent: {
       label: 'Confine',
       core: 'Città (core)',
@@ -293,8 +294,7 @@ export default {
       isochrone: 'Isocrone',
     },
     viewHint: {
-      velocity:
-        'Quanto velocemente il trasporto pubblico ti porta lontano da ogni cella a quest’ora — un punteggio simile a km/h.',
+      velocity: 'Quanto velocemente il trasporto pubblico ti porta lontano da ogni cella a quest’ora, in km/h.',
       sociality:
         'Quante persone il trasporto pubblico mette a portata di ogni cella a quest’ora — un punteggio, non un conteggio.',
       isochrone:
@@ -305,7 +305,7 @@ export default {
       sociality: 'Punteggio di socialità',
       isochrone: 'Minuti dalla cella selezionata',
     },
-    summary: { weightedV: 'Velocità per il residente medio' },
+    summary: { weightedV: 'Velocità TP mediana', weightedS: 'Socialità mediana' },
     // L'angolo della colonna dei controlli in cui il viewer ammette di poter
     // sbagliare. {contact} è l'indirizzo, reso come link.
     mistake: {
@@ -377,7 +377,7 @@ export default {
     // tutto quello che è stato misurato per una cella.
     selected: {
       title: 'Cella selezionata',
-      empty: 'Clicca su una cella, nella mappa o nel grafico a dispersione, per leggere tutto ciò che è stato misurato.',
+      empty: 'Clicca su una cella per esaminarla.',
       clear: 'Deseleziona',
     },
     cell: {
@@ -393,7 +393,7 @@ export default {
       thresholdProximity: 'Soglia di zona, prossimità',
       thresholdOpportunity: 'Soglia di zona, opportunità',
       time: 'Tempo di viaggio',
-      velocity: 'Punteggio di velocità',
+      velocity: 'Velocità TP',
       sociality: 'Punteggio di socialità',
       grid: 'Cella H3',
     },

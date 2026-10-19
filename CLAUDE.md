@@ -117,7 +117,7 @@ than each platform's own layout, and the rule lands ~10-14 m from theirs on a
 **A world-map marker is the city's median resident.** 15minCity's walk to
 services, CityChrone's velocity at 8:00 and Car Dependency's index are each
 the population-weighted median over the layer's cells (`describeLayer` in
-`bundle.mjs`), and the tooltip says so: the time as `m:ss`, the velocity as
+`bundle.mjs`), and the tooltip says so: 15minCity's as "Rome – 10:30 min", the velocity as
 km/h by public transport, the CDI as the median resident's. Car Dependency's
 used to be the weighted mean, which stays in its compare row as
 `weightedCdi`. When the method of a marker or a compare-row median changes, `npm run
@@ -461,9 +461,11 @@ nowhere on the legend. The isochrone ramp does the same past 120.
   contains two conflicting letter→category tables — if an old letter-keyed
   file ever resurfaces, do not take a letter's meaning from that file.
 - **CityChrone's scores carry no verified unit conversion.** `v_score` is
-  described as km/h-like and labelled that way after the upstream site;
-  `s_score` is a weighted count of reachable people and is called a score,
-  never a headcount. Hexcover `coord` is `[lat, lon]` — the one published
+  described as km/h-like by its authors, and the city view states it in
+  km/h; `s_score` is a weighted count of reachable people, called a score
+  and stated in "ppl" (`atlas.people`) in the city view, by the lab's
+  decision. Neither is a headcount or a measured speed, and copy that
+  explains them should still say so. Hexcover `coord` is `[lat, lon]` — the one published
   file on that order.
 
 ## Traps that have already cost time
@@ -983,8 +985,11 @@ under it. They share `Prose.css`.
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
-(`MapBox`) in its corners: the geometry switch top left, the city summary and
-the selected cell top right, opacity bottom left, full screen bottom right.
+(`MapBox`) in its corners: the layer picker and the geometry switch under it
+top left (the world map's `.aa-picker`, its styles in `global.css` and its
+dots from `scaleDot` in `map/layers.js`), and top right the city summary
+(closed by default, a small box to click), the legend and its "?", and the
+selected cell; opacity bottom left, full screen bottom right.
 Full screen hides the chrome and keeps the column, and Escape leaves it.
 
 **There is no bar above the map.** The column opens with "Back to the

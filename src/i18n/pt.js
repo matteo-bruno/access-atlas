@@ -168,7 +168,7 @@ export default {
       welcomeIntro:
         'Veja os tempos de deslocamento até os serviços do dia a dia a partir de qualquer lugar de qualquer cidade e compare-os com a referência dos 15 minutos.',
       legendUnit: 'Tempo mediano a pé até os serviços',
-      tooltip: '{name} · {time} a pé até os serviços (residente mediano)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -208,7 +208,7 @@ export default {
     },
     modes: { foot: 'A pé', bike: 'De bicicleta' },
     hint: 'Tempo médio de viagem de cada célula até os serviços mais próximos desta categoria.',
-    summary: { median: 'Tempo de viagem, residente mediano' },
+    summary: { median: 'Tempo de proximidade mediano' },
     categories: {
       average: 'Tempo de proximidade (média)',
       outdoor: 'Atividades ao ar livre',
@@ -226,6 +226,7 @@ export default {
   atlas: {
     label: 'Visão combinada',
     back: 'Voltar ao Atlas',
+    people: 'pess.',
     extent: {
       label: 'Limite',
       core: 'Cidade (núcleo)',
@@ -274,8 +275,7 @@ export default {
       isochrone: 'Isócronas',
     },
     viewHint: {
-      velocity:
-        'Com que rapidez o transporte público leva você para longe de cada célula neste horário: uma pontuação parecida com km/h.',
+      velocity: 'Quão rápido o transporte público leva você para longe de cada célula nesta hora, em km/h.',
       sociality:
         'Quantas pessoas o transporte público coloca ao alcance de cada célula neste horário: uma pontuação, não uma contagem de pessoas.',
       isochrone: 'Tempo de viagem por transporte público de uma célula escolhida até todas as outras.',
@@ -285,7 +285,7 @@ export default {
       sociality: 'Pontuação de sociabilidade',
       isochrone: 'Minutos a partir da célula selecionada',
     },
-    summary: { weightedV: 'Velocidade para o morador médio' },
+    summary: { weightedV: 'Velocidade TP mediana', weightedS: 'Sociabilidade mediana' },
     mistake: {
       title: 'Encontrou um erro?',
       body: 'Erros acontecem! Dados podem estar faltando ou ser enganosos. {contact} se você souber como corrigir.',
@@ -349,7 +349,7 @@ export default {
     },
     selected: {
       title: 'Célula selecionada',
-      empty: 'Clique em uma célula, no mapa ou no gráfico de dispersão, para ver tudo o que foi medido nela.',
+      empty: 'Clique numa célula para examiná-la.',
       clear: 'Limpar seleção',
     },
     cell: {
@@ -363,7 +363,7 @@ export default {
       thresholdProximity: 'Limiar da zona, proximidade',
       thresholdOpportunity: 'Limiar da zona, oportunidade',
       time: 'Tempo de viagem',
-      velocity: 'Pontuação de velocidade',
+      velocity: 'Velocidade TP',
       sociality: 'Pontuação de sociabilidade',
       grid: 'Célula H3',
     },

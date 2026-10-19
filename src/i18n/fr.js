@@ -169,7 +169,7 @@ export default {
       welcomeIntro:
         'Découvrez les temps de trajet vers les services du quotidien depuis n’importe quel lieu de n’importe quelle ville, et comparez-les à la référence des 15 minutes.',
       legendUnit: 'Temps médian à pied jusqu’aux services',
-      tooltip: '{name} · {time} à pied jusqu’aux services (habitant médian)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -209,7 +209,7 @@ export default {
     },
     modes: { foot: 'À pied', bike: 'À vélo' },
     hint: 'Temps de trajet moyen depuis chaque cellule jusqu’aux services les plus proches de cette catégorie.',
-    summary: { median: 'Temps de trajet, habitant médian' },
+    summary: { median: 'Temps de proximité médian' },
     categories: {
       average: 'Temps de proximité (moyenne)',
       outdoor: 'Activités de plein air',
@@ -227,6 +227,7 @@ export default {
   atlas: {
     label: 'Vue combinée',
     back: 'Retour à l’Atlas',
+    people: 'pers.',
     extent: {
       label: 'Périmètre',
       core: 'Ville (centre)',
@@ -275,8 +276,7 @@ export default {
       isochrone: 'Isochrones',
     },
     viewHint: {
-      velocity:
-        'À quelle vitesse les transports en commun vous éloignent de chaque cellule à cette heure : un score proche de km/h.',
+      velocity: 'La vitesse à laquelle les transports publics vous éloignent de chaque cellule à cette heure, en km/h.',
       sociality:
         'Combien de personnes les transports en commun mettent à portée de chaque cellule à cette heure : un score, pas un nombre de personnes.',
       isochrone: 'Temps de trajet en transports en commun depuis une cellule choisie vers toutes les autres.',
@@ -286,7 +286,7 @@ export default {
       sociality: 'Score de socialité',
       isochrone: 'Minutes depuis la cellule sélectionnée',
     },
-    summary: { weightedV: 'Vitesse pour l’habitant moyen' },
+    summary: { weightedV: 'Vitesse TC médiane', weightedS: 'Sociabilité médiane' },
     mistake: {
       title: 'Vous avez repéré une erreur ?',
       body: 'Les erreurs arrivent ! Des données peuvent manquer ou induire en erreur. {contact} si vous savez comment la corriger.',
@@ -350,7 +350,7 @@ export default {
     },
     selected: {
       title: 'Cellule sélectionnée',
-      empty: 'Cliquez sur une cellule, sur la carte ou dans le nuage de points, pour lire tout ce qui a été mesuré pour elle.',
+      empty: 'Cliquez sur une cellule pour l’examiner.',
       clear: 'Désélectionner',
     },
     cell: {
@@ -364,7 +364,7 @@ export default {
       thresholdProximity: 'Seuil de zone, proximité',
       thresholdOpportunity: 'Seuil de zone, opportunité',
       time: 'Temps de trajet',
-      velocity: 'Score de vitesse',
+      velocity: 'Vitesse TC',
       sociality: 'Score de socialité',
       grid: 'Cellule H3',
     },

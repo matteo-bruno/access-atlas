@@ -6,6 +6,7 @@ import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { DELTA_RAMPS, RAMPS, rampColor } from '../map/ramps.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
+import { scaleDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
@@ -117,7 +118,8 @@ function AtlasScreen({ cityId, view }) {
   // The map is the page; everything else can step out of its way.
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
-  const [summaryOpen, setSummaryOpen] = useState(true);
+  // Closed by default: a small box to open, so the map and its key come first.
+  const [summaryOpen, setSummaryOpen] = useState(false);
   const [selectedOpen, setSelectedOpen] = useState(true);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
@@ -737,7 +739,7 @@ function AtlasScreen({ cityId, view }) {
       });
       rows.push({
         label: t('city.cell.sociality'),
-        value: scores ? n(Math.round(scores.s)) : '—',
+        value: scores ? `${n(Math.round(scores.s))} ${t('atlas.people')}` : '—',
       });
       const minutes = Number.isFinite(p.cc) ? travelTimeAt(matrixRow, p.cc) : null;
       if (minutes != null) {
@@ -870,45 +872,6 @@ function AtlasScreen({ cityId, view }) {
               </>
             )}
 
-            {/* ── The switcher ─────────────────────────────────── */}
-            <Eyebrow>{t('atlas.controls.layer')}</Eyebrow>
-            <div className="aa-layers" role="group" aria-label={t('atlas.controls.layer')}>
-              {LAYER_ORDER.map((id) => {
-                const option = PLATFORMS_BY_ID[id];
-                const enabled = available.has(id);
-                return (
-                  <button
-                    key={id}
-                    type="button"
-                    className={`aa-layers__row${layer === id ? ' aa-layers__row--active' : ''}`}
-                    disabled={!enabled}
-                    aria-pressed={layer === id}
-                    title={enabled ? undefined : t('atlas.unavailable')}
-                    onClick={() => pickLayer(id)}
-                  >
-                    <span className="aa-layers__dot" style={{ background: option.accent }} />
-                    <span className="aa-layers__name">{option.name}</span>
-                    {!enabled && <span className="aa-layers__off">{t('atlas.unavailable')}</span>}
-                  </button>
-                );
-              })}
-              {/* Population is context rather than a fifth lens: it is what
-                  the other four are measured for, so it sits apart. */}
-              {hasPopulation && (
-                <button
-                  type="button"
-                  className={`aa-layers__row aa-layers__row--context${
-                    isPopulation ? ' aa-layers__row--active' : ''
-                  }`}
-                  aria-pressed={isPopulation}
-                  onClick={() => pickLayer(POPULATION_LAYER)}
-                >
-                  <span className="aa-layers__dot" style={{ background: BRAND.navy }} />
-                  <span className="aa-layers__name">{t('atlas.population.name')}</span>
-                </button>
-              )}
-            </div>
-
             {/* ── Scenarios of the open layer ──────────────────── */}
             {scenarios.length > 0 && (
               <>
@@ -1031,50 +994,6 @@ function AtlasScreen({ cityId, view }) {
                   </select>
                 </label>
               </>
-            )}
-
-            {/* ── Legend ───────────────────────────────────────── */}
-            <Explain label={legendTitle} body={legendExplain} />
-            {layer === 'pov' ? (
-              // The one categorical layer: four named classes, each with the
-              // share of covered cells that falls in it.
-              <div className="aa-bands">
-                {ZONES.map((zone, index) => {
-                  const shares = shown
-                    ? scenarioFigures?.zoneShares
-                    : unified
-                      ? atlas.data?.layers.pov.zoneShares
-                      : swapMesh.data?.stats?.zoneShares;
-                  const share = shares?.[index];
-                  return (
-                    <button
-                      key={zone.id}
-                      type="button"
-                      className={`aa-bands__row${activeZone === index ? ' aa-bands__row--active' : ''}`}
-                      aria-pressed={activeZone === index}
-                      onMouseEnter={() => setActiveZone(index)}
-                      onMouseLeave={() => setActiveZone(null)}
-                      onFocus={() => setActiveZone(index)}
-                      onBlur={() => setActiveZone(null)}
-                      onClick={() => setActiveZone((cur) => (cur === index ? null : index))}
-                    >
-                      <span className="aa-swatch" style={{ background: zone.color }} />
-                      <span className="aa-bands__label">{t(`city.zones.${zone.key}.name`)}</span>
-                      <span className="aa-mono aa-bands__pct">
-                        {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            ) : waiting ? null : (
-              <RampLegend
-                ramp={measure.ramp}
-                format={tickFormat}
-                // Both time ramps keep going past their bar; the tail carries
-                // the rest of the scale rather than a sentence about it.
-                tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
-              />
             )}
 
             {layer === 'cardep' && !diffShown && (
@@ -1202,9 +1121,48 @@ function AtlasScreen({ cityId, view }) {
               </div>
             )}
 
-            {/* ── Top left: the geometry ───────────────────────── */}
-            {unified && (
-              <div className="aa-mapui aa-mapui--tl aa-fadein">
+            {/* ── Top left: the layers, then the geometry ──────────
+                The same picker the world map opens with, so a layer is
+                chosen the same way on both screens; its dot is a miniature
+                of the scale the map is about to draw. */}
+            <div className="aa-mapui aa-mapui--tl aa-fadein">
+              <nav className="aa-card aa-picker aa-picker--inline" aria-label={t('atlas.controls.layer')}>
+                {LAYER_ORDER.map((id) => {
+                  const option = PLATFORMS_BY_ID[id];
+                  const enabled = available.has(id);
+                  return (
+                    <button
+                      key={id}
+                      type="button"
+                      className={`aa-picker__item${layer === id ? ' aa-picker__item--active' : ''}`}
+                      disabled={!enabled}
+                      aria-pressed={layer === id}
+                      title={enabled ? undefined : t('atlas.unavailable')}
+                      onClick={() => pickLayer(id)}
+                    >
+                      <span
+                        className="aa-picker__dot"
+                        style={{ backgroundImage: scaleDot(option.scale, { hard: !option.stops }) }}
+                      />
+                      {option.name}
+                    </button>
+                  );
+                })}
+                {/* Population is context rather than a fifth lens, so it
+                    comes last, after the four it is the denominator of. */}
+                {hasPopulation && (
+                  <button
+                    type="button"
+                    className={`aa-picker__item${isPopulation ? ' aa-picker__item--active' : ''}`}
+                    aria-pressed={isPopulation}
+                    onClick={() => pickLayer(POPULATION_LAYER)}
+                  >
+                    <span className="aa-picker__dot" style={{ background: BRAND.navy }} />
+                    {t('atlas.population.name')}
+                  </button>
+                )}
+              </nav>
+              {unified && (
                 <GeometryToggle
                   compact
                   value={geometryValue}
@@ -1213,12 +1171,13 @@ function AtlasScreen({ cityId, view }) {
                   derived={cartogramDerived}
                   loading={cartogramOn && cartogram.status === 'pending'}
                 />
-              </div>
-            )}
+              )}
+            </div>
 
             {/* ── Top right: what the city adds up to, and one cell ── */}
             <div className="aa-mapui aa-mapui--tr aa-fadein aa-fadein--slow">
               <MapBox
+                className={`aa-mapbox--summary${summaryOpen ? '' : ' aa-mapbox--closed'}`}
                 title={t('city.summary.title')}
                 open={summaryOpen}
                 onToggle={() => setSummaryOpen((open) => !open)}
@@ -1287,14 +1246,24 @@ function AtlasScreen({ cityId, view }) {
                     </>
                   )}
                   {layer === 'citychrone' && ccView !== 'isochrone' && (
-                    <SummaryRow
-                      label={t('atlas.summary.weightedV')}
-                      value={
-                        ccHourData?.weightedMedianV == null
-                          ? '—'
-                          : `${n(ccHourData.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
-                      }
-                    />
+                    <>
+                      <SummaryRow
+                        label={t('atlas.summary.weightedV')}
+                        value={
+                          ccHourData?.weightedMedianV == null
+                            ? '—'
+                            : `${n(ccHourData.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
+                        }
+                      />
+                      <SummaryRow
+                        label={t('atlas.summary.weightedS')}
+                        value={
+                          ccHourData?.weightedMedianS == null
+                            ? '—'
+                            : `${n(Math.round(ccHourData.weightedMedianS))} ${t('atlas.people')}`
+                        }
+                      />
+                    </>
                   )}
                   <SummaryRow
                     label={t('city.summary.population')}
@@ -1309,6 +1278,52 @@ function AtlasScreen({ cityId, view }) {
                   />
                 </dl>
               </MapBox>
+
+              {/* How to read the colours, under the figures they colour. */}
+              <div className="aa-mapbox aa-mapbox--legend">
+                <Explain label={legendTitle} body={legendExplain} />
+                {layer === 'pov' ? (
+                  // The one categorical layer: four named classes, each with the
+                  // share of covered cells that falls in it.
+                  <div className="aa-bands">
+                    {ZONES.map((zone, index) => {
+                      const shares = shown
+                        ? scenarioFigures?.zoneShares
+                        : unified
+                          ? atlas.data?.layers.pov.zoneShares
+                          : swapMesh.data?.stats?.zoneShares;
+                      const share = shares?.[index];
+                      return (
+                        <button
+                          key={zone.id}
+                          type="button"
+                          className={`aa-bands__row${activeZone === index ? ' aa-bands__row--active' : ''}`}
+                          aria-pressed={activeZone === index}
+                          onMouseEnter={() => setActiveZone(index)}
+                          onMouseLeave={() => setActiveZone(null)}
+                          onFocus={() => setActiveZone(index)}
+                          onBlur={() => setActiveZone(null)}
+                          onClick={() => setActiveZone((cur) => (cur === index ? null : index))}
+                        >
+                          <span className="aa-swatch" style={{ background: zone.color }} />
+                          <span className="aa-bands__label">{t(`city.zones.${zone.key}.name`)}</span>
+                          <span className="aa-mono aa-bands__pct">
+                            {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : waiting ? null : (
+                  <RampLegend
+                    ramp={measure.ramp}
+                    format={tickFormat}
+                    // Both time ramps keep going past their bar; the tail carries
+                    // the rest of the scale rather than a sentence about it.
+                    tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
+                  />
+                )}
+              </div>
 
               <MapBox
                 title={t('city.selected.title')}

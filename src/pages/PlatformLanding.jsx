@@ -5,7 +5,7 @@ import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
 import { WorldMap } from '../map/WorldMap.jsx';
 import { coverageFraming } from '../map/framing.js';
-import { cityMarkerStyle, coverageMarkerStyle } from '../map/layers.js';
+import { cityMarkerStyle, coverageMarkerStyle, scaleDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
 import {
@@ -37,28 +37,6 @@ const STATS_FOCUS = {
 // Layers whose welcome card has copy of its own, shorter than the `intro` the
 // "about this layer" dialog reads; the others introduce themselves with it.
 const WELCOME_INTRO = new Set(['fifteen']);
-
-/**
- * A picker dot is a miniature of the scale the map behind it draws with.
- *
- * Solid accents could not do this job: two of the four layers are navy and
- * two are terracotta, so half the list was two pairs of identical dots. A
- * scale is the one thing that is different for every layer *and* already on
- * screen a moment later, which makes the dot a preview rather than a label
- * needing to be learned. Continuous scales run as a gradient; P.O.V.'s four
- * zones are categorical and get hard quarters, because a zone is a class and
- * not a point on a ramp.
- *
- * @param {string[]} colors  the scale, in order
- * @param {boolean} [hard]   draw discrete wedges rather than a blend
- */
-function scaleDot(colors, { hard = false } = {}) {
-  if (!hard) return `linear-gradient(135deg, ${colors.join(', ')})`;
-  const step = 100 / colors.length;
-  return `conic-gradient(from -45deg, ${colors
-    .map((color, i) => `${color} ${i * step}% ${(i + 1) * step}%`)
-    .join(', ')})`;
-}
 
 /**
  * The world map. Without a slug it shows every published city across the four

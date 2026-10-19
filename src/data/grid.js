@@ -259,25 +259,30 @@ export function citychroneHourFromLayer(file, hour) {
   const byCc = new Map();
   for (let row = 0; row < v.length; row++) byCc.set(row, { v: v[row], s: s[row] });
 
-  const pairs = v
-    .map((value, i) => [value, Math.max(0, pop[i] || 0)])
-    .filter(([value]) => Number.isFinite(value))
-    .sort((a, b) => a[0] - b[0]);
-  const total = pairs.reduce((sum, [, w]) => sum + w, 0);
-  let acc = 0;
-  let weighted = pairs[pairs.length - 1]?.[0] ?? null;
-  for (const [value, w] of pairs) {
-    acc += w;
-    if (acc >= total / 2) {
-      weighted = value;
-      break;
+  // The median resident's score, weighted by the layer's own residents.
+  const median = (values) => {
+    const pairs = values
+      .map((value, i) => [value, Math.max(0, pop[i] || 0)])
+      .filter(([value]) => Number.isFinite(value))
+      .sort((a, b) => a[0] - b[0]);
+    const total = pairs.reduce((sum, [, w]) => sum + w, 0);
+    let acc = 0;
+    let weighted = pairs[pairs.length - 1]?.[0] ?? null;
+    for (const [value, w] of pairs) {
+      acc += w;
+      if (acc >= total / 2) {
+        weighted = value;
+        break;
+      }
     }
-  }
+    return weighted == null ? null : Math.round(weighted * 100) / 100;
+  };
 
   return {
     byCc,
     cells: v.length,
-    weightedMedianV: weighted == null ? null : Math.round(weighted * 100) / 100,
+    weightedMedianV: median(v),
+    weightedMedianS: median(s),
   };
 }
 

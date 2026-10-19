@@ -168,7 +168,7 @@ export default {
       welcomeIntro:
         'Consulta los tiempos de viaje a los servicios cotidianos desde cualquier lugar de cualquier ciudad y compáralos con la referencia de los 15 minutos.',
       legendUnit: 'Tiempo mediano a pie hasta los servicios',
-      tooltip: '{name} · {time} a pie hasta los servicios (residente mediano)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -208,7 +208,7 @@ export default {
     },
     modes: { foot: 'A pie', bike: 'En bicicleta' },
     hint: 'Tiempo medio de viaje desde cada celda hasta los servicios más cercanos de esta categoría.',
-    summary: { median: 'Tiempo de viaje, residente mediano' },
+    summary: { median: 'Tiempo de proximidad mediano' },
     categories: {
       average: 'Tiempo de proximidad (media)',
       outdoor: 'Actividades al aire libre',
@@ -226,6 +226,7 @@ export default {
   atlas: {
     label: 'Vista combinada',
     back: 'Volver al Atlas',
+    people: 'pers.',
     extent: {
       label: 'Límite',
       core: 'Ciudad (núcleo)',
@@ -274,8 +275,7 @@ export default {
       isochrone: 'Isócronas',
     },
     viewHint: {
-      velocity:
-        'Lo rápido que el transporte público te aleja de cada celda a esta hora: una puntuación parecida a km/h.',
+      velocity: 'Lo rápido que el transporte público te aleja de cada celda a esta hora, en km/h.',
       sociality:
         'Cuántas personas pone el transporte público al alcance de cada celda a esta hora: una puntuación, no un recuento de personas.',
       isochrone: 'Tiempo de viaje en transporte público desde una celda elegida hasta todas las demás.',
@@ -285,7 +285,7 @@ export default {
       sociality: 'Puntuación de socialidad',
       isochrone: 'Minutos desde la celda seleccionada',
     },
-    summary: { weightedV: 'Velocidad para el residente medio' },
+    summary: { weightedV: 'Velocidad TP mediana', weightedS: 'Sociabilidad mediana' },
     mistake: {
       title: '¿Has visto un error?',
       body: '¡Los errores ocurren! Puede que falten datos o que induzcan a error. {contact} si sabes cómo corregirlo.',
@@ -349,7 +349,7 @@ export default {
     },
     selected: {
       title: 'Celda seleccionada',
-      empty: 'Haz clic en una celda, en el mapa o en el gráfico de dispersión, para ver todo lo que se ha medido en ella.',
+      empty: 'Haz clic en una celda para examinarla.',
       clear: 'Quitar selección',
     },
     cell: {
@@ -363,7 +363,7 @@ export default {
       thresholdProximity: 'Umbral de zona, proximidad',
       thresholdOpportunity: 'Umbral de zona, oportunidad',
       time: 'Tiempo de viaje',
-      velocity: 'Puntuación de velocidad',
+      velocity: 'Velocidad TP',
       sociality: 'Puntuación de socialidad',
       grid: 'Celda H3',
     },

@@ -190,7 +190,7 @@ export default {
         'See the travel times to everyday services from any place in any city and see how it compares to the 15-minute benchmark.',
       legendUnit: 'Median walk to services',
       // The world map's tooltip: the median resident's figure.
-      tooltip: '{name} · {time} on foot to services (median resident)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -231,7 +231,7 @@ export default {
     },
     modes: { foot: 'On foot', bike: 'By bicycle' },
     hint: 'Average travel time from each cell to the nearest services in this category.',
-    summary: { median: 'Travel time, median resident' },
+    summary: { median: 'Median proximity time' },
     categories: {
       average: 'Proximity time (average)',
       outdoor: 'Outdoor activities',
@@ -251,6 +251,7 @@ export default {
   atlas: {
     label: 'Combined view',
     back: 'Back to the Atlas',
+    people: 'ppl',
     extent: {
       label: 'Boundary',
       core: 'City (core)',
@@ -299,8 +300,7 @@ export default {
       isochrone: 'Isochrones',
     },
     viewHint: {
-      velocity:
-        'How fast public transport moves you outward from each cell at this hour — a km/h-like score.',
+      velocity: 'How fast public transport moves you outward from each cell at this hour, in km/h.',
       sociality:
         'How many people public transport puts within reach of each cell at this hour — a score, not a headcount.',
       isochrone: 'Travel time by public transport from one chosen cell to everywhere else.',
@@ -310,7 +310,7 @@ export default {
       sociality: 'Sociality score',
       isochrone: 'Minutes from the selected cell',
     },
-    summary: { weightedV: 'Velocity for the average resident' },
+    summary: { weightedV: 'Median PT velocity score', weightedS: 'Median sociality score' },
     // The corner of the controls column where the viewer admits it can be
     // wrong. {contact} is the address, rendered as a link.
     mistake: {
@@ -382,7 +382,7 @@ export default {
     // everything measured for a cell is read.
     selected: {
       title: 'Selected cell',
-      empty: 'Click any cell — on the map or on the scatter — to read everything measured for it.',
+      empty: 'Click any cell to inspect it.',
       clear: 'Clear',
     },
     cell: {
@@ -398,7 +398,7 @@ export default {
       thresholdProximity: 'Zone threshold, proximity',
       thresholdOpportunity: 'Zone threshold, opportunity',
       time: 'Travel time',
-      velocity: 'Velocity score',
+      velocity: 'PT velocity score',
       sociality: 'Sociality score',
       grid: 'H3 cell',
     },

@@ -176,7 +176,7 @@ export default {
       welcomeIntro:
         'どの都市のどの場所からでも、日常的なサービスまでの移動時間を確認し、15分の基準と比べてみましょう。',
       legendUnit: 'サービスまでの徒歩時間（中央値）',
-      tooltip: '{name} · 徒歩でサービスまで {time}（中央値の住民）',
+      tooltip: '{name} – {time} 分',
       legend: ['0–3分', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -216,7 +216,7 @@ export default {
     },
     modes: { foot: '徒歩', bike: '自転車' },
     hint: '各セルから、このカテゴリーの最寄りのサービスまでの平均所要時間。',
-    summary: { median: '移動時間（中央値の住民）' },
+    summary: { median: '近接時間の中央値' },
     categories: {
       average: '近接時間（平均）',
       outdoor: '屋外活動',
@@ -234,6 +234,7 @@ export default {
   atlas: {
     label: '統合ビュー',
     back: 'アトラスに戻る',
+    people: '人',
     extent: {
       label: '範囲',
       core: '都市（中心部）',
@@ -282,8 +283,7 @@ export default {
       isochrone: '等時線',
     },
     viewHint: {
-      velocity:
-        'この時間帯に、公共交通が各セルからどれだけ速く外へ運んでくれるか。km/h に近いスコアです。',
+      velocity: 'この時間帯に、公共交通が各セルからどれだけ速く外へ運んでくれるか（km/h）。',
       sociality:
         'この時間帯に、公共交通が各セルからどれだけ多くの人に届かせてくれるか。人数ではなくスコアです。',
       isochrone: '選んだ1つのセルから他のすべての場所までの、公共交通での所要時間。',
@@ -293,7 +293,7 @@ export default {
       sociality: '社会性スコア',
       isochrone: '選択したセルからの所要分数',
     },
-    summary: { weightedV: '平均的な居住者にとっての速度' },
+    summary: { weightedV: '公共交通速度の中央値', weightedS: 'ソーシャリティ値の中央値' },
     mistake: {
       title: '間違いを見つけましたか？',
       body: '間違いは起こりえます。データが欠けていたり、誤解を招いたりすることもあります。修正できる点をご存じでしたら、{contact}。',
@@ -357,7 +357,7 @@ export default {
     },
     selected: {
       title: '選択したセル',
-      empty: '地図上または散布図上のセルをクリックすると、そのセルで測定されたすべての値を表示します。',
+      empty: 'セルをクリックすると詳細を表示します。',
       clear: '解除',
     },
     cell: {
@@ -371,7 +371,7 @@ export default {
       thresholdProximity: 'ゾーンの閾値（近接性）',
       thresholdOpportunity: 'ゾーンの閾値（機会）',
       time: '所要時間',
-      velocity: '速度スコア',
+      velocity: '公共交通速度',
       sociality: '社会性スコア',
       grid: 'H3 セル',
     },

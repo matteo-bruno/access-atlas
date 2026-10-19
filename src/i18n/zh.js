@@ -166,7 +166,7 @@ export default {
       welcomeIntro:
         '查看任意城市中任意地点前往日常服务的出行时间，并与15分钟基准进行比较。',
       legendUnit: '步行前往服务的中位时间',
-      tooltip: '{name} · 步行前往服务 {time}（中位居民）',
+      tooltip: '{name} – {time} 分钟',
       legend: ['0–3 分钟', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
@@ -205,7 +205,7 @@ export default {
     },
     modes: { foot: '步行', bike: '骑行' },
     hint: '从每个单元前往该类别最近服务的平均出行时间。',
-    summary: { median: '出行时间（中位居民）' },
+    summary: { median: '邻近时间中位数' },
     categories: {
       average: '邻近时间（平均）',
       outdoor: '户外活动',
@@ -223,6 +223,7 @@ export default {
   atlas: {
     label: '组合视图',
     back: '返回地图集',
+    people: '人',
     extent: {
       label: '范围',
       core: '城市（核心区）',
@@ -271,7 +272,7 @@ export default {
       isochrone: '等时线',
     },
     viewHint: {
-      velocity: '在这个时段，公共交通能以多快的速度把你从每个单元向外送出：一个类似 km/h 的得分。',
+      velocity: '此时段公共交通把你从每个网格向外送出的速度，单位 km/h。',
       sociality: '在这个时段，公共交通能让每个单元触及多少人：这是一个得分，而不是人数。',
       isochrone: '从选定单元乘坐公共交通前往其他所有单元的出行时间。',
     },
@@ -280,7 +281,7 @@ export default {
       sociality: '社会连接得分',
       isochrone: '距选定单元的分钟数',
     },
-    summary: { weightedV: '普通居民的速度' },
+    summary: { weightedV: '公共交通速度中位数', weightedS: '社交性得分中位数' },
     mistake: {
       title: '发现错误了吗？',
       body: '错误在所难免！数据可能缺失，也可能有误导性。如果您知道如何修正，请{contact}。',
@@ -341,7 +342,7 @@ export default {
     },
     selected: {
       title: '选定单元',
-      empty: '在地图或散点图上点击任意单元，即可查看该单元的全部测量结果。',
+      empty: '点击任意网格查看详情。',
       clear: '清除',
     },
     cell: {
@@ -355,7 +356,7 @@ export default {
       thresholdProximity: '区域阈值（邻近性）',
       thresholdOpportunity: '区域阈值（机会）',
       time: '出行时间',
-      velocity: '速度得分',
+      velocity: '公共交通速度',
       sociality: '社会连接得分',
       grid: 'H3 单元',
     },
