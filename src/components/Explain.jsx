@@ -47,8 +47,20 @@ function place(button, align) {
  * @param {string} [props.label]   heading text; omitted for a bare "?"
  * @param {string} [props.body]    the explanation, or pass children
  * @param {'left'|'right'} [props.align]  which edge the tooltip hangs from
+ * @param {React.ReactNode} [props.trigger]  the button's own content, for a
+ *        note opened from a line of text ("Notice a mistake?") rather than a
+ *        "?" beside a heading; it opens the same panel the same way
+ * @param {string} [props.triggerClassName]  the class of that button
  */
-export function Explain({ label, body, children, align = 'left', className = '' }) {
+export function Explain({
+  label,
+  body,
+  children,
+  align = 'left',
+  className = '',
+  trigger,
+  triggerClassName = '',
+}) {
   const [open, setOpen] = useState(false);
   const [at, setAt] = useState(null);
   const id = useId();
@@ -101,6 +113,24 @@ export function Explain({ label, body, children, align = 'left', className = '' 
         {typeof content === 'string' ? <span>{content}</span> : content}
       </span>
     ) : null;
+
+  if (trigger) {
+    return (
+      <div className={`aa-explain ${className}`.trim()}>
+        <button
+          ref={btnRef}
+          type="button"
+          className={triggerClassName}
+          aria-expanded={open}
+          aria-describedby={open ? id : undefined}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {trigger}
+        </button>
+        {tip && createPortal(tip, document.body)}
+      </div>
+    );
+  }
 
   return (
     <div className={`aa-explain ${className}`.trim()}>

@@ -378,11 +378,17 @@ export default {
     explain: {
       map: {
         pov: 'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana en ambos ejes, rojo por debajo en ambos y, entre medias, los dos casos mixtos. Los umbrales son las medianas ponderadas por población de esa ciudad, así que una zona compara lugares dentro de una ciudad y nunca una ciudad con otra: lo que se compara entre ciudades son las puntuaciones subyacentes.',
-        cardep: 'Azul donde el transporte público llega a más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche llega a más. La escala es fija para todas las ciudades en lugar de ajustarse a cada una, así que el mismo color es el mismo índice en todas partes: ninguna ciudad se recolorea para llenar la paleta.',
+        cardep:
+          'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más.',
         fifteen:
           'El color de las celdas representa el tiempo necesario para llegar a los servicios de la categoría seleccionada, a pie o en bicicleta. Las zonas azules son lugares de 15 minutos, donde la ciudad de 15 minutos se cumple; en las zonas rojas los servicios están de media a más de 15 minutos; las celdas blancas están cerca de la marca de los 15 minutos.',
         citychrone:
           'La puntuación de velocidad colorea una celda según lo rápido que es el transporte público desde esa zona, moviéndose en direcciones plausibles. La puntuación de sociabilidad indica a cuántas personas se puede llegar en un tiempo razonable usando solo el transporte público. Las isócronas muestran el tiempo necesario para ir de una celda de la ciudad a cualquier otra.',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        cardep:
+          'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más. Una zona blanca ofrece las mismas oportunidades y ya basta para vivir sin coche; una zona azul es menos común, y se da cuando el transporte público es óptimo y el tráfico, las zonas peatonales y el tiempo de aparcamiento hacen incómodo el coche.',
       },
       summary: {
         pov: 'Celdas cuenta lo que cubre el conjunto de datos publicado. Cada mediana es la puntuación del residente mediano: la mitad de los residentes de la ciudad vive en celdas con una puntuación más baja y la otra mitad, más alta. Las puntuaciones son recuentos ponderados de puntos de interés alcanzables, por eso ninguna lleva unidad: no son metros ni empleos. La población es la suma del propio conjunto de datos sobre sus celdas, no una cifra oficial de la ciudad.',
@@ -391,7 +397,7 @@ export default {
         atlas: 'Las cifras se recalculan para la capa en pantalla. «Celdas» es la malla unión, es decir, cada celda que mide al menos una plataforma: una capa que cubre menos lo indica en su propia fila.',
       },
       more: 'Explicación completa',
-      platformSite: 'El sitio de {name}',
+      platformSite: 'Sitio anterior de {name}',
       aboutTitle: 'Sobre {name}',
       sections: {
         measure: 'Qué mide',
@@ -419,7 +425,8 @@ export default {
       methodsTitle: 'Datos y métodos',
       methods: {
         pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
-        cardep: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos en coche y a pie con OSRM sobre OpenStreetMap, con un margen para aparcar y retrasos de tráfico propios de cada ciudad en el lado del coche; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de WorldPop.',
+        cardep:
+          'Celdas H3 de resolución 9. Tiempos en coche y a pie de OSRM sobre OpenStreetMap, con un tiempo de aparcamiento y retrasos de tráfico propios de cada ciudad en el lado del coche, del TomTom Traffic Index. Transporte público a partir de horarios GTFS. Puntuaciones de oportunidad calculadas con OSRM. Puntos de interés de OpenStreetMap. Población de WorldPop.',
         fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las nueve categorías que muestra el selector; población de WorldPop.',
         citychrone:
           'Celdas H3 de resolución 9. Transporte público a partir de horarios GTFS. Isócronas calculadas con OSRM. Se excluyen las celdas donde no vive nadie.',

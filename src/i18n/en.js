@@ -419,11 +419,17 @@ export default {
     explain: {
       map: {
         pov: 'Each cell takes the colour of the zone it falls in: green above the median on both axes, red below on both, and the two mixed cases between. The thresholds are that city’s own population-weighted medians, so a zone compares places within one city and never one city against another — the underlying scores are what compare across cities.',
-        cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
+        cardep:
+          'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more.',
         fifteen:
           'The colour of the cells represents the time needed to reach services belonging to the selected category, on foot or by bike. Blue areas are 15-minute places, where the 15-minute city is realized; in red areas services are on average further than 15 minutes away; white cells are near the 15-minute mark.',
         citychrone:
           'The velocity score colours a cell based on how fast public transport is from that specific area, moving in plausible directions. The sociality score tells us how many people one can meet in a reasonable time moving only by public transport. Isochrones show the times needed to go from a cell in the city to any other cell.',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        cardep:
+          'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. A white area gives equal opportunities and it is already sufficient to live without a car; a blue area is less common, and happens when public transport is optimal and traffic, pedestrian zones and parking times make a car inconvenient.',
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
@@ -432,7 +438,7 @@ export default {
         atlas: 'Figures are recomputed for the layer on screen. Cells is the union mesh — every cell any platform measures — so a layer that covers fewer says so on its own row.',
       },
       more: 'Full explanation',
-      platformSite: 'The {name} site',
+      platformSite: 'Previous {name} site',
       aboutTitle: 'About {name}',
       sections: {
         measure: 'What it measures',
@@ -460,7 +466,8 @@ export default {
       methodsTitle: 'Data & methods',
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
-        cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
+        cardep:
+          'H3 resolution-9 cells. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer time and city-specific traffic delays on the car side from TomTom Traffic Index. Public transport from GTFS schedules. Opportunity scores computed with OSRM. Points of interest from OpenStreetMap. Population from WorldPop.',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
         citychrone:
           'H3 resolution-9 cells. Public transport from GTFS schedules. Isochrones computed with OSRM. Cells where nobody lives are left out.',

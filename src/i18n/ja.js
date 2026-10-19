@@ -386,11 +386,17 @@ export default {
     explain: {
       map: {
         pov: '各セルは、属するゾーンの色で塗られます。両方の軸で中央値を上回れば緑、両方で下回れば赤、その中間が2つの混合ケースです。閾値はその都市自身の人口重み付き中央値なので、ゾーンは1つの都市の中の場所どうしを比べるものであり、都市どうしを比べるものではありません。都市間で比べられるのは、もとになるスコアの方です。',
-        cardep: '公共交通の方が車より多くの機会に到達できる場所は青、両者が釣り合う場所は白、車の方が多く到達できる場所は赤です。尺度は都市ごとに合わせず全都市で固定しているため、同じ色はどこでも同じ指数を意味します。パレットを埋めるために都市の色を塗り直すことはありません。',
+        cardep:
+          '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。',
         fifteen:
           'セルの色は、選んだカテゴリーのサービスに徒歩または自転車で到達するのにかかる時間を表します。青い地域は「15分の場所」で、15分都市が実現しています。赤い地域ではサービスが平均して15分より遠く、白いセルは15分の目安に近い場所です。',
         citychrone:
           '速度スコアは、その地域からもっともらしい方向へ移動するとき公共交通がどれだけ速いかでセルを色分けします。ソーシャリティスコアは、公共交通だけで妥当な時間内に何人に会えるかを示します。等時線は、市内のあるセルから他の任意のセルまでにかかる時間を示します。',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        cardep:
+          '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。白い地域は同じだけの機会があり、車なしでも十分に暮らせます。青い地域はより珍しく、公共交通が優れていて、渋滞や歩行者ゾーン、駐車時間のせいで車が不便な場所に現れます。',
       },
       summary: {
         pov: 'セル数は公開データセットがカバーする範囲です。各中央値は中央値の住民のスコアです。市の住民の半数はスコアがより低いセルに、残りの半数はより高いセルに住んでいます。スコアは到達可能な地点の重み付き件数なので、どちらにも単位はありません。メートルでも雇用数でもありません。人口はデータセットのセルの合計であり、市の公式な数字ではありません。',
@@ -399,7 +405,7 @@ export default {
         atlas: '数値は画面上のレイヤーについて再計算されます。セル数は統合メッシュ（いずれかのプラットフォームが測定するすべてのセル）なので、より少ない範囲しかカバーしないレイヤーはその行で示します。',
       },
       more: '詳しい説明',
-      platformSite: '{name} のサイト',
+      platformSite: '{name} の旧サイト',
       aboutTitle: '{name} について',
       sections: {
         measure: '何を測るか',
@@ -428,7 +434,8 @@ export default {
       // Technical notes: kept in English, as the platforms publish them.
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
-        cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
+        cardep:
+          'H3 解像度 9 のセル。車と徒歩の所要時間は OpenStreetMap 上の OSRM から。車側には駐車の余裕時間と、TomTom Traffic Index による都市ごとの渋滞遅延を加えています。公共交通は GTFS 時刻表から。機会スコアは OSRM で計算。POI は OpenStreetMap から。人口は WorldPop から。',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
         citychrone:
           'H3 解像度 9 のセル。公共交通は GTFS 時刻表から。等時線は OSRM で計算。誰も住んでいないセルは除外しています。',

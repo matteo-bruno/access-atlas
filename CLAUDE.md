@@ -648,7 +648,9 @@ the pointer can cross the gap into it. The long form — what the platform measu
 read, the two geometries, the panel's figures, the method, the sources — is
 one dialog behind "about this layer" (`PlatformAbout`), never a growing block
 in the panel. Both draw on the same `city.explain.*` copy, so a tooltip and
-the dialog cannot say different things, and the dialog's colour key is the
+the dialog cannot say different things (one exception: Car Dependency's
+legend "?" is `city.explain.legend.cardep`, the dialog's colours sentence
+followed by what a white and a blue area mean), and the dialog's colour key is the
 same `RampLegend` the map uses.
 
 The copy was ported from the two upstream viewers, **minus two claims of
@@ -996,7 +998,8 @@ under the pointer; full screen bottom right. There is no status bar under
 the map; a generated mesh says so in a note at the map's foot. The legend is in the column, right
 under the city's name and "About this layer". The foot of the column is
 the OSM date, "Notice a mistake?", the layer's paper and "City boundaries"
-(GHSL or the municipality), all in `MistakeNote`.
+(GHSL or the municipality), all in `MistakeNote`; the two notes open as the
+"?" panels do (`Explain` with a `trigger`).
 Full screen hides the chrome and keeps the column, and Escape leaves it.
 
 **There is no bar above the map.** The column opens with "Back to the
@@ -1055,8 +1058,8 @@ Two things that are easy to get wrong here:
 15-minute city's times are shown as a clock — `formatTime`, `m:ss` or `mm:ss`
 — everywhere a reader meets one: the map's tooltip, the inspector, the bars.
 Decimal minutes read as a quantity; nobody says "three point nine nine
-minutes to the shops". The legend keeps plain numbers, because it is a scale
-rather than a reading.
+minutes to the shops". The legend writes whole minutes as plain numbers and
+the half ones as a clock (`0 7:30 15 22:30 30`), never 7.5.
 
 ## Copy and i18n
 

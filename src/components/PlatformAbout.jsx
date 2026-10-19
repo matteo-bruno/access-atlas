@@ -93,21 +93,23 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
       <h3>{t('city.explain.methodsTitle')}</h3>
       <p>
         {t(`city.explain.methods.${platformId}`)} {t('city.explain.weighted')}
-        {paper && (
-          <>
-            {' '}
-            {t('city.explain.paperNote')}{' '}
-            <a href={paper.url} target="_blank" rel="noreferrer noopener">
-              {paper.title} ↗
-            </a>
-          </>
-        )}
       </p>
-      {platform?.url && (
+      {(paper || platform?.url) && (
         <p>
-          <a href={platform.url} target="_blank" rel="noreferrer noopener">
-            {t('city.explain.platformSite', { name })} ↗
-          </a>
+          {paper && (
+            <>
+              {t('city.explain.paperNote')}{' '}
+              <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                {paper.title} ↗
+              </a>
+            </>
+          )}
+          {paper && platform?.url && <br />}
+          {platform?.url && (
+            <a href={platform.url} target="_blank" rel="noreferrer noopener">
+              {t('city.explain.platformSite', { name })} ↗
+            </a>
+          )}
         </p>
       )}
     </Modal>

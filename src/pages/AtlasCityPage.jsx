@@ -803,7 +803,11 @@ function AtlasScreen({ cityId, view }) {
       ? (v) => (v === 0 ? '0' : signed(v, n))
       : ccView === 'sociality' && citychroneOn
         ? (v) => (v === 0 ? '0' : `${n(Math.round(v / 1000))}k`)
-        : (v) => n(v, { maximumFractionDigits: 1 });
+        : layer === 'fifteen'
+          // Minutes: whole ones as they are, half ones as a clock (7:30, not
+          // 7.5), the way the site writes every 15minCity time.
+          ? (v) => (Number.isInteger(v) ? n(v) : formatTime(v))
+          : (v) => n(v, { maximumFractionDigits: 1 });
 
   // How to read the colours of the layer on screen. The three cell-valued
   // platforms explain their own scale; CityChrone's changes with the measure
@@ -814,7 +818,11 @@ function AtlasScreen({ cityId, view }) {
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
-      : t(`city.explain.map.${layer}`);
+      : layer === 'cardep'
+        // Car Dependency's "?" says more than the dialog's "Reading the
+        // map": the same colours, then what a white and a blue area mean.
+        ? t('city.explain.legend.cardep')
+        : t(`city.explain.map.${layer}`);
 
   // What the info panel explains about the layer on screen.
   const infoBody = isPopulation
@@ -1452,25 +1460,24 @@ function AtlasScreen({ cityId, view }) {
  */
 function MistakeNote({ paper }) {
   const { t, lang } = useI18n();
-  const [open, setOpen] = useState(false);
-  const [boundariesOpen, setBoundariesOpen] = useState(false);
 
+  // Both notes open as the "?" panels do: on a click, in a panel over the
+  // page, closed by a click elsewhere or Escape.
   return (
-    <div className={`aa-mistake${open ? ' aa-mistake--open' : ''}`}>
+    <div className="aa-mistake">
       {/* How old the street and point-of-interest data under every layer is:
           the first thing to check when a cell looks out of date. */}
       <p className="aa-osmnote">{t('atlas.osmUpdate', { date: formatOsmDate(lang) })}</p>
-      <button
-        type="button"
-        className="aa-mistake__toggle"
-        aria-expanded={open}
-        onClick={() => setOpen((current) => !current)}
+      <Explain
+        triggerClassName="aa-mistake__toggle"
+        trigger={
+          <>
+            <Icon name="info" size={12} color="currentColor" />
+            {t('atlas.mistake.title')}
+          </>
+        }
       >
-        <Icon name="info" size={12} color="currentColor" />
-        {t('atlas.mistake.title')}
-      </button>
-      {open && (
-        <p className="aa-mistake__body">
+        <p>
           <Interpolate
             template={t('atlas.mistake.body')}
             values={{
@@ -1482,7 +1489,7 @@ function MistakeNote({ paper }) {
             }}
           />
         </p>
-      )}
+      </Explain>
       {/* The layer's paper, then where the city's outline comes from. */}
       {paper && (
         <a className="aa-mistake__toggle aa-mistake__paper" href={paper.url} target="_blank" rel="noreferrer noopener">
@@ -1490,17 +1497,16 @@ function MistakeNote({ paper }) {
           {t('platform.paper')}
         </a>
       )}
-      <button
-        type="button"
-        className="aa-mistake__toggle"
-        aria-expanded={boundariesOpen}
-        onClick={() => setBoundariesOpen((current) => !current)}
+      <Explain
+        triggerClassName="aa-mistake__toggle"
+        trigger={
+          <>
+            <Icon name="info" size={12} color="currentColor" />
+            {t('atlas.boundaries.title')}
+          </>
+        }
       >
-        <Icon name="info" size={12} color="currentColor" />
-        {t('atlas.boundaries.title')}
-      </button>
-      {boundariesOpen && (
-        <p className="aa-mistake__body">
+        <p>
           <Interpolate
             template={t('atlas.boundaries.body')}
             values={{
@@ -1517,7 +1523,7 @@ function MistakeNote({ paper }) {
             }}
           />
         </p>
-      )}
+      </Explain>
     </div>
   );
 }

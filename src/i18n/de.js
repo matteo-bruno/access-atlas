@@ -380,11 +380,17 @@ export default {
     explain: {
       map: {
         pov: 'Jede Zelle nimmt die Farbe ihrer Zone an: grün über dem Median auf beiden Achsen, rot darunter auf beiden, dazwischen die beiden gemischten Fälle. Die Schwellen sind die bevölkerungsgewichteten Mediane der jeweiligen Stadt. Eine Zone vergleicht also Orte innerhalb einer Stadt und nie eine Stadt mit einer anderen: Zwischen Städten vergleichbar sind die zugrunde liegenden Werte.',
-        cardep: 'Blau, wo der öffentliche Verkehr mehr Chancen erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Die Skala ist für alle Städte gleich, statt an jede angepasst zu werden: Dieselbe Farbe bedeutet überall denselben Index, und keine Stadt wird umgefärbt, um die Palette zu füllen.',
+        cardep:
+          'Blau, wo der öffentliche Verkehr mehr Gelegenheiten erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht.',
         fifteen:
           'Die Farbe der Zellen zeigt die Zeit, die man zu Fuß oder mit dem Fahrrad bis zu den Dienstleistungen der gewählten Kategorie braucht. Blaue Gebiete sind 15-Minuten-Orte, an denen die 15-Minuten-Stadt verwirklicht ist; in roten Gebieten liegen die Dienstleistungen im Mittel weiter als 15 Minuten entfernt; weiße Zellen liegen nahe an der 15-Minuten-Marke.',
         citychrone:
           'Der Geschwindigkeitswert färbt eine Zelle danach, wie schnell der öffentliche Verkehr von diesem Gebiet aus in plausible Richtungen ist. Der Sozialitätswert gibt an, wie viele Menschen man in angemessener Zeit allein mit dem öffentlichen Verkehr treffen kann. Isochronen zeigen die Zeit, die man von einer Zelle der Stadt zu jeder anderen braucht.',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        cardep:
+          'Blau, wo der öffentliche Verkehr mehr Gelegenheiten erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Ein weißes Gebiet bietet gleiche Gelegenheiten und reicht schon aus, um ohne Auto zu leben; ein blaues Gebiet ist seltener und entsteht, wenn der öffentliche Verkehr optimal ist und Verkehr, Fußgängerzonen und Parkzeiten das Auto unpraktisch machen.',
       },
       summary: {
         pov: 'Zellen zählt, was der veröffentlichte Datensatz abdeckt. Jeder Median ist der Wert des Median-Bewohners: Die Hälfte der Einwohner lebt in Zellen mit niedrigerem Wert, die andere Hälfte mit höherem. Die Werte sind gewichtete Zählungen erreichbarer Points of Interest, daher hat keiner eine Einheit: Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl für die Stadt.',
@@ -393,7 +399,7 @@ export default {
         atlas: 'Die Werte werden für die angezeigte Ebene neu berechnet. „Zellen“ ist das Vereinigungsnetz, also jede Zelle, die mindestens eine Plattform misst: Eine Ebene, die weniger abdeckt, weist das in ihrer eigenen Zeile aus.',
       },
       more: 'Ausführliche Erklärung',
-      platformSite: 'Website von {name}',
+      platformSite: 'Frühere Website von {name}',
       aboutTitle: 'Über {name}',
       sections: {
         measure: 'Was gemessen wird',
@@ -421,7 +427,8 @@ export default {
       methodsTitle: 'Daten und Methoden',
       methods: {
         pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
-        cardep: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Fahr- und Gehzeiten mit OSRM auf OpenStreetMap, auf der Autoseite mit einem Zuschlag für die Parkplatzsuche und stadtspezifischen Verkehrsverzögerungen; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus WorldPop.',
+        cardep:
+          'H3-Zellen der Auflösung 9. Fahr- und Gehzeiten aus OSRM auf OpenStreetMap, auf der Autoseite mit einer Parkzeit und stadtspezifischen Verkehrsverzögerungen aus dem TomTom Traffic Index. Öffentlicher Verkehr aus GTFS-Fahrplänen. Gelegenheitswerte mit OSRM berechnet. Points of Interest aus OpenStreetMap. Bevölkerung aus WorldPop.',
         fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die neun Kategorien der Auswahl; Bevölkerung aus WorldPop.',
         citychrone:
           'H3-Zellen der Auflösung 9. Öffentlicher Verkehr aus GTFS-Fahrplänen. Isochronen mit OSRM berechnet. Zellen, in denen niemand wohnt, sind ausgelassen.',

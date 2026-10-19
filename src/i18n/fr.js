@@ -379,11 +379,17 @@ export default {
     explain: {
       map: {
         pov: 'Chaque cellule prend la couleur de la zone où elle se trouve : vert au-dessus de la médiane sur les deux axes, rouge en dessous sur les deux, et entre les deux les deux cas mixtes. Les seuils sont les médianes de cette ville pondérées par la population : une zone compare donc des lieux au sein d’une même ville, jamais une ville à une autre. Ce sont les scores sous-jacents qui se comparent d’une ville à l’autre.',
-        cardep: 'Bleu là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint davantage. L’échelle est la même pour toutes les villes au lieu d’être ajustée à chacune : une même couleur correspond partout au même indice, et aucune ville n’est recolorée pour remplir la palette.',
+        cardep:
+          'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus.',
         fifteen:
           'La couleur des cellules représente le temps nécessaire pour atteindre les services de la catégorie choisie, à pied ou à vélo. Les zones bleues sont des lieux à 15 minutes, où la ville du quart d’heure est réalisée ; dans les zones rouges, les services sont en moyenne à plus de 15 minutes ; les cellules blanches sont proches du seuil des 15 minutes.',
         citychrone:
           'Le score de vitesse colore une cellule selon la rapidité des transports publics depuis cette zone, dans des directions plausibles. Le score de sociabilité indique combien de personnes on peut rencontrer en un temps raisonnable en se déplaçant uniquement en transports publics. Les isochrones montrent le temps nécessaire pour aller d’une cellule de la ville à n’importe quelle autre.',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        cardep:
+          'Bleu là où les transports publics atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint plus. Une zone blanche offre les mêmes opportunités et suffit déjà pour vivre sans voiture ; une zone bleue est plus rare, et apparaît quand les transports publics sont optimaux et que le trafic, les zones piétonnes et le temps de stationnement rendent la voiture peu pratique.',
       },
       summary: {
         pov: 'Cellules compte ce que couvre le jeu de données publié. Chaque médiane est le score de l’habitant médian : la moitié des habitants de la ville vit dans des cellules au score plus bas, l’autre moitié plus haut. Les scores sont des comptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité : ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, pas un chiffre officiel pour la ville.',
@@ -392,7 +398,7 @@ export default {
         atlas: 'Les chiffres sont recalculés pour la couche affichée. « Cellules » désigne le maillage union, c’est-à-dire toutes les cellules mesurées par au moins une plateforme : une couche qui en couvre moins l’indique sur sa propre ligne.',
       },
       more: 'Explication complète',
-      platformSite: 'Le site de {name}',
+      platformSite: 'Ancien site de {name}',
       aboutTitle: 'À propos de {name}',
       sections: {
         measure: 'Ce qui est mesuré',
@@ -420,7 +426,8 @@ export default {
       methodsTitle: 'Données et méthodes',
       methods: {
         pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
-        cardep: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps en voiture et à pied calculés avec OSRM sur OpenStreetMap, avec une marge pour le stationnement et des retards de circulation propres à chaque ville côté voiture ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue de WorldPop.',
+        cardep:
+          'Cellules H3 de résolution 9. Temps en voiture et à pied d’OSRM sur OpenStreetMap, avec un temps de stationnement et des retards de trafic propres à chaque ville côté voiture, d’après le TomTom Traffic Index. Transports publics d’après les horaires GTFS. Scores d’opportunité calculés avec OSRM. Points d’intérêt d’OpenStreetMap. Population de WorldPop.',
         fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les neuf catégories du sélecteur ; population issue de WorldPop.',
         citychrone:
           'Cellules H3 de résolution 9. Transports publics d’après les horaires GTFS. Isochrones calculées avec OSRM. Les cellules où personne ne vit sont exclues.',
