@@ -601,7 +601,7 @@ export default {
     about: 'CityChat은 아틀라스 지도의 결과와 의미에 대해 질문할 수 있는 LLM 기반 어시스턴트입니다. Gemini API로 작동하며, 한 도시에 대해 훨씬 더 깊이 알도록 조정할 수도 있습니다. 관심이 있다면 {ask}.',
     aboutAsk: '문의해 주세요',
     betaNote: 'CityChat은 베타 버전입니다. 오류가 있을 수 있고, 가끔 제대로 작동하지 않을 수 있습니다.',
-    phoneOff: 'CityChat은 휴대폰에서는 사용할 수 없습니다. 도시에 대해 아틀라스에 질문하려면 컴퓨터에서 열어 주세요.',
+    phoneOff: 'CityChat은 휴대폰에서 비활성화되어 있습니다. 도시에 대해 아틀라스에 질문하려면 컴퓨터에서 열어 주세요.',
     phoneBack: '지도 둘러보기',
     persona: {
       label: '질문하는 사람',
