@@ -344,10 +344,24 @@
 .aa-city__layerbar {
   position: absolute;
   top: 12px;
-  inset-inline-start: 12px;
+  inset-inline: 12px;
   z-index: 4;
   display: flex;
-  max-width: calc(100% - 24px);
+  justify-content: flex-start;
+  /* The strip spans the map, so it must not swallow the map's own drags and
+     clicks: only the bar itself takes the pointer. */
+  pointer-events: none;
+}
+
+/* Both edges are set above, so the strip has a definite width whatever the
+   browser makes of an absolutely positioned box with a scrolling child; the
+   bar takes its own width inside it, up to all of it. Without that, a
+   browser could shrink the strip to the bar's minimum, which for a
+   scrolling box is nothing, and the bar was a sliver. */
+.aa-city__layerbar .aa-picker {
+  pointer-events: auto;
+  width: max-content;
+  min-width: 0;
 }
 
 /* One row, always: it never wraps into a second line. Narrower than its
