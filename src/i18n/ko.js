@@ -566,58 +566,41 @@ export default {
   },
 
   about: {
-    eyebrow: '지속 가능한 도시',
-    headline: '데이터 기반 시나리오로',
-    headlineAccent: '더 지속 가능한 도시를 향해',
+    headline: '지속 가능한 도시를 위한',
+    headlineAccent: '시나리오',
     lede: '저희는 비영리 연구팀으로, Sony Computer Science Laboratories 로마의 연구 분야 중 하나입니다. 로마 라 사피엔차 대학교, 엔리코 페르미 연구센터(CREF) 등 여러 기관의 공동 연구자들과 함께 일합니다. 아틀라스는 이 연구에서 나온 결과물 중 하나입니다.',
     labLink: 'Sony CSL ↗',
     teamLink: '팀 소개 →',
 
-    doTitle: '하는 일',
+    doTitle: '우리가 하는 일',
     do: {
-      measure: {
-        tag: '측정',
-        title: '도시가 무엇에 닿게 해 주는지 측정합니다',
-        desc: '근접성, 기회, 그리고 정직하게 할 수 있는 경우 닿을 수 있는 것의 가치를, 도로망, 시간표, 서비스, 인구에 관한 공개 데이터로 셀마다 계산합니다.',
+      research: {
+        title: '연구',
+        desc: '최첨단 모델과 알고리즘으로 도시를 분석하고 이해하며 비교합니다. 그 최전선을 더 멀리 넓혀 갑니다.',
       },
-      compare: {
-        tag: '비교',
-        title: '도시를 비교할 수 있게 만듭니다',
-        desc: '모든 도시를 같은 방법, 같은 격자, 같은 척도로 측정합니다. 그래야 한 도시의 숫자가 다른 도시의 숫자 옆에서 의미를 가집니다.',
+      platform: {
+        title: '플랫폼',
+        desc: '연구를 여러 도시에서 재현하고, 연구를 발표하며 그 결과를 온라인 플랫폼으로 공개합니다.',
       },
-      publish: {
-        tag: '공개',
-        title: '방법과 데이터를 공개합니다',
-        desc: '동료 심사를 거친 논문, 내려받을 수 있는 데이터, 공개된 코드. 계획 결정의 근거가 되는 측정은 그 결정의 영향을 받는 사람들이 검증할 수 있어야 합니다.',
+      useCase: {
+        title: '활용 사례',
+        desc: '도시를 위해 플랫폼을 정교하게 다듬어, 근거에 기반한 도시·교통 계획에 쓰이도록 합니다.',
+        cta: '문의해 주세요.',
       },
     },
 
-    withTitle: '함께하는 곳',
-    withBody:
-      '저희 그룹은 Sony CSL 로마에 속해 있으며 CREF와의 공동 이니셔티브 안에서 활동합니다. 연구는 사피엔차 대학교를 비롯한 이탈리아 안팎의 대학과 연구소의 공동 연구자들과 함께 진행합니다. 박사과정생과 석사과정생은 이 틀 안에서 아틀라스 작업에 참여합니다.',
-    withBody2:
-      '도시 행정 기관, 연구 그룹, NGO와도 함께 일합니다. 대개 누군가 접근성에 관한 주장을 근거와 함께 펼쳐야 할 때입니다. 그런 경우라면 문의 페이지에서 시작해 주세요.',
-
-    projectsTitle: '다른 프로젝트',
-    projectsHint: '네 레이어 너머',
-    projects: {
-      whatif: {
-        tag: '플랫폼',
-        name: 'WhatIf',
-        desc: '연구실의 모듈형 도시 시뮬레이션 플랫폼으로, 15-minute city와 CityChrone의 원래 뷰어도 이곳에 있습니다.',
-      },
-      maps3d: {
-        tag: '온라인 지도',
-        name: '3D 지도',
-        desc: '도시 불평등을 3차원으로 읽습니다. 한 도시가 지닌 차이의 무게를 곡면으로 그립니다.',
-      },
-      bikeLanes: {
-        tag: '논문',
-        name: '자전거 도로 계획',
-        desc: '도로 폭을 고려한 네트워크 최적화. 들어가야 할 도로를 감안해 자전거 도로망이 다음에 어디로 뻗어야 하는지 찾습니다.',
-      },
+    topicsTitle: '주제',
+    topics: {
+      accessibility: '접근성과 이동성',
+      justice: '교통 정의',
+      sustainability: '지속 가능성과 배출',
+      green: '녹지',
+      walkability: '보행 친화성',
+      bikeability: '자전거 친화성',
     },
-    labCta: 'Sony CSL 방문하기',
+    topicsNote: '이 주제 중 관심 있는 것이 있나요? {research} 섹션에서 더 알아보거나 {contact}.',
+    topicsResearch: '연구',
+    topicsContact: '문의해 주세요',
   },
 
   citychat: {

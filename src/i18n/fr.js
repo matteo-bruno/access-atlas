@@ -577,58 +577,41 @@ export default {
   },
 
   about: {
-    eyebrow: 'Villes durables',
-    headline: 'Des scénarios fondés sur les données',
-    headlineAccent: 'pour des villes plus durables',
-    lede: 'Nous sommes une équipe de recherche à but non lucratif, l’un des axes de recherche de Sony Computer Science Laboratories – Rome, et nous travaillons avec des collaborateurs de l’Université Sapienza de Rome, du Centre de recherche Enrico Fermi (CREF) et d’autres instituts. L’Atlas est l’un des fruits de ce travail.',
+    headline: 'Des scénarios pour',
+    headlineAccent: 'des villes durables',
+    lede: 'Nous sommes une équipe de recherche à but non lucratif, l’un des axes de recherche de Sony Computer Science Laboratories - Rome, et nous travaillons avec des collaborateurs de l’Université Sapienza de Rome, du Centre de recherche Enrico Fermi (CREF) et d’autres instituts. L’Atlas est l’un des fruits de ce travail.',
     labLink: 'Sony CSL ↗',
     teamLink: 'L’équipe →',
 
     doTitle: 'Ce que nous faisons',
     do: {
-      measure: {
-        tag: 'Mesurer',
-        title: 'Nous mesurons ce à quoi une ville donne accès',
-        desc: 'La proximité, l’opportunité et, quand cela peut se faire honnêtement, la valeur de ce qui est accessible, calculées cellule par cellule à partir de données ouvertes sur les réseaux de rues, les horaires, les services et la population.',
+      research: {
+        title: 'Recherche',
+        desc: 'Nous employons des modèles et des algorithmes de pointe pour analyser, comprendre et comparer les villes. Nous repoussons la frontière.',
       },
-      compare: {
-        tag: 'Comparer',
-        title: 'Nous rendons les villes comparables',
-        desc: 'Chaque ville est mesurée de la même façon, sur la même grille, avec les mêmes échelles. C’est ce qui donne un sens au chiffre d’une ville à côté de celui d’une autre.',
+      platform: {
+        title: 'Plateforme',
+        desc: 'Nous reproduisons la recherche sur de nombreuses villes. Nous publions nos travaux et mettons les résultats à disposition sur des plateformes en ligne.',
       },
-      publish: {
-        tag: 'Publier',
-        title: 'Nous publions la méthode et les données',
-        desc: 'Articles évalués par les pairs, données téléchargeables et code ouvert. Une mesure qui éclaire une décision d’aménagement devrait pouvoir être vérifiée par les personnes sur qui cette décision retombe.',
+      useCase: {
+        title: 'Cas d’usage',
+        desc: 'Nous créons pour les villes des versions affinées de nos plateformes, au service d’une planification urbaine et des transports éclairée.',
+        cta: 'Parlons-en.',
       },
     },
 
-    withTitle: 'Avec qui nous travaillons',
-    withBody:
-      'Le groupe fait partie de Sony CSL Rome, au sein de l’initiative conjointe avec le CREF, et mène ses recherches avec des collaborateurs de la Sapienza et d’autres universités et instituts, en Italie et à l’étranger. Doctorantes, doctorants et étudiants de master travaillent sur l’Atlas dans ce cadre, et non à côté.',
-    withBody2:
-      'Nous travaillons aussi avec des collectivités, des groupes de recherche et des ONG, généralement parce que quelqu’un doit défendre un argument sur l’accès avec des données à l’appui. Si c’est votre cas, la page Contact est le point de départ.',
-
-    projectsTitle: 'Autres projets',
-    projectsHint: 'au-delà des quatre couches',
-    projects: {
-      whatif: {
-        tag: 'Plateforme',
-        name: 'WhatIf',
-        desc: 'La plateforme modulaire de simulation urbaine du laboratoire, qui héberge les visualiseurs d’origine de 15-minute city et de CityChrone.',
-      },
-      maps3d: {
-        tag: 'Carte en ligne',
-        name: 'Cartes 3D',
-        desc: 'Les inégalités urbaines lues en trois dimensions : le poids des différences d’une ville, dessiné comme une surface.',
-      },
-      bikeLanes: {
-        tag: 'Article',
-        name: 'Planification des pistes cyclables',
-        desc: 'Une optimisation du réseau qui tient compte de la largeur des rues : où le réseau cyclable devrait s’étendre, compte tenu des rues qui doivent l’accueillir.',
-      },
+    topicsTitle: 'Thèmes',
+    topics: {
+      accessibility: 'Accessibilité et mobilité',
+      justice: 'Justice dans les transports',
+      sustainability: 'Durabilité et émissions',
+      green: 'Espaces verts',
+      walkability: 'Marchabilité',
+      bikeability: 'Cyclabilité',
     },
-    labCta: 'Visiter Sony CSL',
+    topicsNote: 'L’un de ces thèmes vous intéresse ? Découvrez-en plus dans la section {research}, ou {contact}.',
+    topicsResearch: 'Recherche',
+    topicsContact: 'contactez-nous',
   },
 
   citychat: {

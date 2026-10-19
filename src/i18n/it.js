@@ -615,58 +615,41 @@ export default {
 
   // Chi siamo — la linea di ricerca di cui l'Atlante è uno dei risultati.
   about: {
-    eyebrow: 'Città sostenibili',
-    headline: 'Scenari basati sui dati',
-    headlineAccent: 'verso città più sostenibili',
-    lede: 'Siamo un gruppo di ricerca senza scopo di lucro, una delle linee di ricerca di Sony Computer Science Laboratories – Roma, e lavoriamo con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
+    headline: 'Scenari per',
+    headlineAccent: 'città sostenibili',
+    lede: 'Siamo un gruppo di ricerca senza scopo di lucro, una delle linee di ricerca di Sony Computer Science Laboratories - Roma, e lavoriamo con collaboratori della Sapienza Università di Roma, del Centro Ricerche Enrico Fermi (CREF) e di altri istituti. L’Atlante è una delle cose che nascono da questo lavoro.',
     labLink: 'Sony CSL ↗',
     teamLink: 'Le persone →',
 
     doTitle: 'Cosa facciamo',
     do: {
-      measure: {
-        tag: 'Misuriamo',
-        title: 'Misuriamo a cosa dà accesso una città',
-        desc: 'Prossimità, opportunità e — dove si può fare onestamente — il valore di ciò che è raggiungibile, calcolati cella per cella a partire da dati aperti su rete stradale, orari, servizi e popolazione.',
+      research: {
+        title: 'Ricerca',
+        desc: 'Usiamo modelli e algoritmi all’avanguardia per analizzare, comprendere e confrontare le città. Spingiamo la frontiera più in là.',
       },
-      compare: {
-        tag: 'Confrontiamo',
-        title: 'Rendiamo le città confrontabili',
-        desc: 'Ogni città è misurata allo stesso modo, sulla stessa griglia, con le stesse scale — è questo che permette a un numero di una città di significare qualcosa accanto al numero di un’altra.',
+      platform: {
+        title: 'Piattaforme',
+        desc: 'Replichiamo la ricerca su molte città. Pubblichiamo la nostra ricerca e rendiamo disponibili i risultati su piattaforme online.',
       },
-      publish: {
-        tag: 'Pubblichiamo',
-        title: 'Pubblichiamo metodo e dati',
-        desc: 'Articoli sottoposti a revisione, dataset scaricabili e codice aperto. Una misura che informa una decisione di pianificazione dovrebbe essere verificabile da chi quella decisione la subisce.',
+      useCase: {
+        title: 'Casi d’uso',
+        desc: 'Creiamo versioni raffinate delle nostre piattaforme per le città, da usare per una pianificazione urbana e dei trasporti informata.',
+        cta: 'Chiedici di più.',
       },
     },
 
-    withTitle: 'Con chi lavoriamo',
-    withBody:
-      'Il gruppo sta dentro Sony CSL Roma, ospitato nell’iniziativa congiunta con il CREF, e la sua ricerca procede con collaboratori della Sapienza e di altre università e istituti, in Italia e all’estero. Dottorande, dottorandi, tesiste e tesisti lavorano sull’Atlante all’interno di questo assetto, non al suo fianco.',
-    withBody2:
-      'Lavoriamo anche con amministrazioni cittadine, gruppi di ricerca e associazioni — di solito perché qualcuno deve sostenere una tesi sull’accesso con i dati alla mano. Se è il vostro caso, la pagina dei contatti è il punto da cui partire.',
-
-    projectsTitle: 'Altri progetti',
-    projectsHint: 'oltre i quattro livelli',
-    projects: {
-      whatif: {
-        tag: 'Piattaforma',
-        name: 'WhatIf',
-        desc: 'La piattaforma modulare di simulazione urbana del laboratorio, che ospita i viewer originali di 15-minute city e CityChrone.',
-      },
-      maps3d: {
-        tag: 'Mappa online',
-        name: 'Mappe 3D',
-        desc: 'La disuguaglianza urbana letta in tre dimensioni — il peso delle differenze di una città, disegnato come superficie.',
-      },
-      bikeLanes: {
-        tag: 'Articolo',
-        name: 'Pianificazione delle piste ciclabili',
-        desc: 'Ottimizzazione di rete che tiene conto della larghezza stradale: dove far crescere la rete ciclabile, date le strade in cui deve stare.',
-      },
+    topicsTitle: 'Temi',
+    topics: {
+      accessibility: 'Accessibilità e mobilità',
+      justice: 'Giustizia dei trasporti',
+      sustainability: 'Sostenibilità ed emissioni',
+      green: 'Aree verdi',
+      walkability: 'Pedonalità',
+      bikeability: 'Ciclabilità',
     },
-    labCta: 'Visita Sony CSL',
+    topicsNote: 'Ti interessa uno di questi temi? Trovi di più nella sezione {research}, oppure {contact}.',
+    topicsResearch: 'Ricerca',
+    topicsContact: 'contattaci',
   },
 
   citychat: {

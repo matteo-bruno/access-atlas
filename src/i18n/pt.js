@@ -575,58 +575,41 @@ export default {
   },
 
   about: {
-    eyebrow: 'Cidades sustentáveis',
-    headline: 'Cenários baseados em dados',
-    headlineAccent: 'rumo a cidades mais sustentáveis',
-    lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories – Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
+    headline: 'Cenários para',
+    headlineAccent: 'cidades sustentáveis',
+    lede: 'Somos uma equipe de pesquisa sem fins lucrativos, uma das linhas de pesquisa da Sony Computer Science Laboratories - Roma, e trabalhamos com colaboradores da Universidade Sapienza de Roma, do Centro de Pesquisa Enrico Fermi (CREF) e de outros institutos. O Atlas é um dos frutos desse trabalho.',
     labLink: 'Sony CSL ↗',
     teamLink: 'A equipe →',
 
     doTitle: 'O que fazemos',
     do: {
-      measure: {
-        tag: 'Medir',
-        title: 'Medimos a que uma cidade dá acesso',
-        desc: 'Proximidade, oportunidade e, onde dá para fazer com honestidade, o valor do que é alcançável, calculados célula por célula a partir de dados abertos sobre redes de ruas, horários, serviços e população.',
+      research: {
+        title: 'Pesquisa',
+        desc: 'Empregamos modelos e algoritmos de ponta para analisar, compreender e comparar cidades. Levamos a fronteira mais longe.',
       },
-      compare: {
-        tag: 'Comparar',
-        title: 'Tornamos as cidades comparáveis',
-        desc: 'Todas as cidades são medidas da mesma forma, na mesma grade, com as mesmas escalas. É isso que faz o número de uma cidade significar algo ao lado do número de outra.',
+      platform: {
+        title: 'Plataforma',
+        desc: 'Replicamos a pesquisa em várias cidades. Publicamos nossa pesquisa e disponibilizamos os resultados em plataformas online.',
       },
-      publish: {
-        tag: 'Publicar',
-        title: 'Publicamos o método e os dados',
-        desc: 'Artigos revisados por pares, dados para download e código aberto. Uma medição que orienta uma decisão de planejamento deveria poder ser verificada pelas pessoas afetadas por essa decisão.',
+      useCase: {
+        title: 'Caso de uso',
+        desc: 'Criamos versões refinadas das nossas plataformas para cidades, para um planejamento urbano e de transportes bem informado.',
+        cta: 'Fale com a gente.',
       },
     },
 
-    withTitle: 'Com quem trabalhamos',
-    withBody:
-      'O grupo faz parte da Sony CSL Roma, dentro da iniciativa conjunta com o CREF, e pesquisa com colaboradores da Sapienza e de outras universidades e institutos, na Itália e no exterior. Doutorandas, doutorandos e estudantes de mestrado trabalham no Atlas dentro desse arranjo, e não à parte dele.',
-    withBody2:
-      'Também trabalhamos com prefeituras, grupos de pesquisa e ONGs, em geral porque alguém precisa defender um argumento sobre acesso com dados que o sustentem. Se esse é o seu caso, a página de contato é o ponto de partida.',
-
-    projectsTitle: 'Outros projetos',
-    projectsHint: 'além das quatro camadas',
-    projects: {
-      whatif: {
-        tag: 'Plataforma',
-        name: 'WhatIf',
-        desc: 'A plataforma modular de simulação urbana do laboratório, onde ficam os visualizadores originais do 15-minute city e do CityChrone.',
-      },
-      maps3d: {
-        tag: 'Mapa on-line',
-        name: 'Mapas 3D',
-        desc: 'A desigualdade urbana lida em três dimensões: o peso das diferenças de uma cidade, desenhado como uma superfície.',
-      },
-      bikeLanes: {
-        tag: 'Artigo',
-        name: 'Planejamento de ciclovias',
-        desc: 'Otimização da rede que leva em conta a largura das ruas: onde a rede cicloviária deveria crescer, considerando as ruas em que precisa caber.',
-      },
+    topicsTitle: 'Temas',
+    topics: {
+      accessibility: 'Acessibilidade e mobilidade',
+      justice: 'Justiça no transporte',
+      sustainability: 'Sustentabilidade e emissões',
+      green: 'Áreas verdes',
+      walkability: 'Caminhabilidade',
+      bikeability: 'Ciclabilidade',
     },
-    labCta: 'Visite a Sony CSL',
+    topicsNote: 'Tem interesse em algum desses temas? Veja mais na seção {research}, ou {contact}.',
+    topicsResearch: 'Pesquisa',
+    topicsContact: 'fale conosco',
   },
 
   citychat: {

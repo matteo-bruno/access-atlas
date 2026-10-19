@@ -70,6 +70,103 @@
   color: var(--ink-2);
 }
 
+/* The intro with its links in the right-hand column, which was empty. */
+.aa-prose__intro--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 32px;
+}
+
+.aa-prose__links--side {
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 0;
+}
+
+/* What we do: three corners of one triangle, research on top, the platforms
+   and the use cases under it. The edges are an SVG behind the cards. */
+.aa-prose__triangle {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    'research research'
+    'platform useCase';
+  gap: 56px 64px;
+}
+
+.aa-prose__triangle-edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.aa-prose__triangle-edges polygon {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+
+.aa-prose__corner {
+  position: relative;
+}
+
+.aa-prose__corner--research {
+  grid-area: research;
+  justify-self: center;
+  width: min(100%, calc(50% - 32px));
+}
+
+.aa-prose__corner--platform {
+  grid-area: platform;
+}
+
+.aa-prose__corner--useCase {
+  grid-area: useCase;
+}
+
+.aa-prose__corner .aa-prose__cardtitle {
+  margin-top: 0;
+}
+
+.aa-prose__link {
+  color: var(--magenta);
+  border-bottom: 1px solid var(--magenta);
+}
+
+.aa-prose__link:hover {
+  color: var(--magenta-deep);
+  border-bottom-color: var(--magenta-deep);
+}
+
+/* Topics: labels, not links, so they carry no hover. */
+.aa-prose__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aa-prose__topic {
+  padding: 10px 16px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.aa-prose__topicsnote {
+  margin-top: 20px;
+}
+
 /* Outward links — the lab, the projects. Chips, so a list of them reads as a
    set of destinations rather than a paragraph of underlines. */
 .aa-prose__links {
@@ -133,6 +230,31 @@
 @media (max-width: 720px) {
   .aa-prose__headline {
     font-size: 38px;
+  }
+
+  .aa-prose__intro--split {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aa-prose__links--side {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .aa-prose__triangle {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'research' 'platform' 'useCase';
+    gap: 16px;
+  }
+
+  .aa-prose__triangle-edges {
+    display: none;
+  }
+
+  .aa-prose__corner--research {
+    width: auto;
+    justify-self: stretch;
   }
 
   .aa-prose__list {

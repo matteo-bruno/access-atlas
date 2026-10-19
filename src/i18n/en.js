@@ -625,58 +625,41 @@ export default {
 
   // Who we are — the research line the Atlas is one output of.
   about: {
-    eyebrow: 'Sustainable cities',
-    headline: 'Data-based scenarios',
-    headlineAccent: 'towards more sustainable cities',
-    lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories — Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
+    headline: 'Scenarios for',
+    headlineAccent: 'sustainable cities',
+    lede: 'We are a non-profit research team and a research line of Sony Computer Science Laboratories - Rome, working with collaborators at Sapienza University of Rome, the Enrico Fermi Research Centre (CREF) and other institutes. The Atlas is one of the things that comes out of that work.',
     labLink: 'Sony CSL ↗',
     teamLink: 'The people →',
 
     doTitle: 'What we do',
     do: {
-      measure: {
-        tag: 'Measure',
-        title: 'We measure what a city gives access to',
-        desc: 'Proximity, opportunity and — where it can be done honestly — the value of what is reachable, computed cell by cell from open data on street networks, timetables, services and population.',
+      research: {
+        title: 'Research',
+        desc: 'We employ frontier models and algorithms to analyse, understand and compare cities. We push the frontier further.',
       },
-      compare: {
-        tag: 'Compare',
-        title: 'We make cities comparable',
-        desc: 'Every city is measured the same way, on the same grid, with the same scales — which is what makes a figure from one city mean anything beside a figure from another.',
+      platform: {
+        title: 'Platform',
+        desc: 'We replicate the research on several cities. We publish our research and make the results available on online platforms.',
       },
-      publish: {
-        tag: 'Publish',
-        title: 'We publish the method and the data',
-        desc: 'Peer-reviewed papers, downloadable datasets and open code. A measurement that informs a planning decision should be checkable by the people that decision lands on.',
+      useCase: {
+        title: 'Use case',
+        desc: 'We create refined versions of our platforms for cities, to be used for informed urban and transport planning.',
+        cta: 'Ask us about it.',
       },
     },
 
-    withTitle: 'Who we work with',
-    withBody:
-      'The group sits inside Sony CSL Rome, hosted in the joint initiative with CREF, and its research runs with collaborators at Sapienza and other universities and institutes in Italy and abroad. Doctoral and master’s students work on the Atlas as part of that arrangement rather than alongside it.',
-    withBody2:
-      'We also work with city administrations, research groups and NGOs — usually because someone needs to make an argument about access with evidence behind it. If that is you, the contact page is the place to start.',
-
-    projectsTitle: 'Other projects',
-    projectsHint: 'beyond the four layers',
-    projects: {
-      whatif: {
-        tag: 'Platform',
-        name: 'WhatIf',
-        desc: 'The lab’s modular urban simulation platform, and the home of the upstream 15-minute city and CityChrone viewers.',
-      },
-      maps3d: {
-        tag: 'Live map',
-        name: '3D maps',
-        desc: 'Urban inequality read in three dimensions — the weight of a city’s differences, drawn as a surface.',
-      },
-      bikeLanes: {
-        tag: 'Paper',
-        name: 'Bike lane planning',
-        desc: 'Road-width-aware network optimisation: where a cycle network should grow next, given the streets it has to fit into.',
-      },
+    topicsTitle: 'Topics',
+    topics: {
+      accessibility: 'Accessibility and mobility',
+      justice: 'Transport Justice',
+      sustainability: 'Sustainability and emissions',
+      green: 'Green spaces',
+      walkability: 'Walkability',
+      bikeability: 'Bikeability',
     },
-    labCta: 'Visit Sony CSL',
+    topicsNote: 'Interested in one of these topics? See more in the {research} section or {contact} us.',
+    topicsResearch: 'research',
+    topicsContact: 'contact',
   },
 
   citychat: {

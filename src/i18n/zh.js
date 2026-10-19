@@ -566,58 +566,41 @@ export default {
   },
 
   about: {
-    eyebrow: '可持续城市',
-    headline: '以数据为基础的情景，',
-    headlineAccent: '迈向更可持续的城市',
+    headline: '面向可持续城市的',
+    headlineAccent: '发展情景',
     lede: '我们是一个非营利研究团队，是 Sony Computer Science Laboratories 罗马分部的研究方向之一，与罗马大学（Sapienza）、恩里科·费米研究中心（CREF）及其他研究机构的合作者共同开展研究。地图集是这项工作的成果之一。',
     labLink: 'Sony CSL ↗',
     teamLink: '团队成员 →',
 
     doTitle: '我们做什么',
     do: {
-      measure: {
-        tag: '测量',
-        title: '我们测量一座城市能让人获得什么',
-        desc: '邻近性、机会，以及在能够诚实做到时，可达事物的价值。这些都基于街道网络、时刻表、服务和人口的开放数据，逐个单元计算。',
+      research: {
+        title: '研究',
+        desc: '我们运用前沿的模型与算法来分析、理解和比较城市，并不断推进前沿。',
       },
-      compare: {
-        tag: '比较',
-        title: '我们让城市可以相互比较',
-        desc: '每座城市都用同样的方法、同样的网格、同样的色阶测量。正因如此，一座城市的数字放在另一座城市的数字旁边才有意义。',
+      platform: {
+        title: '平台',
+        desc: '我们在众多城市上复现研究，发表研究成果，并通过在线平台公开结果。',
       },
-      publish: {
-        tag: '公开',
-        title: '我们公开方法和数据',
-        desc: '同行评审的论文、可下载的数据和开源代码。为规划决策提供依据的测量结果，应当能被受该决策影响的人核查。',
+      useCase: {
+        title: '应用案例',
+        desc: '我们为城市打造平台的精细化版本，用于有据可依的城市与交通规划。',
+        cta: '欢迎咨询。',
       },
     },
 
-    withTitle: '我们的合作伙伴',
-    withBody:
-      '本团队隶属于 Sony CSL 罗马分部，设在其与 CREF 的联合项目之下，与罗马大学以及意大利国内外其他大学和研究机构的合作者共同开展研究。博士生和硕士生正是在这一合作框架内参与地图集的工作，而不是游离于其外。',
-    withBody2:
-      '我们也与城市政府、研究团队和非政府组织合作，通常是因为有人需要用证据来论证可达性问题。如果您正是这样，请从联系页面开始。',
-
-    projectsTitle: '其他项目',
-    projectsHint: '四个图层之外',
-    projects: {
-      whatif: {
-        tag: '平台',
-        name: 'WhatIf',
-        desc: '实验室的模块化城市模拟平台，也是 15-minute city 和 CityChrone 原始查看器的所在地。',
-      },
-      maps3d: {
-        tag: '在线地图',
-        name: '三维地图',
-        desc: '以三维方式解读城市不平等：把一座城市内部差异的分量绘制成一个曲面。',
-      },
-      bikeLanes: {
-        tag: '论文',
-        name: '自行车道规划',
-        desc: '考虑道路宽度的网络优化：结合所需容纳的街道，判断自行车网络下一步应向哪里延伸。',
-      },
+    topicsTitle: '主题',
+    topics: {
+      accessibility: '可达性与出行',
+      justice: '交通公平',
+      sustainability: '可持续性与排放',
+      green: '绿地',
+      walkability: '步行友好性',
+      bikeability: '骑行友好性',
     },
-    labCta: '访问 Sony CSL',
+    topicsNote: '对其中某个主题感兴趣？请查看{research}部分，或{contact}。',
+    topicsResearch: '研究',
+    topicsContact: '联系我们',
   },
 
   citychat: {
