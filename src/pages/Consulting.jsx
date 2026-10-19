@@ -32,36 +32,44 @@ export default function Consulting() {
   return (
     <div className="aa-page">
       <main className="aa-main" id="main">
-        <section className="aa-shell aa-prose__intro">
-          <h1 className="aa-prose__headline">
-            {t('consulting.headline')}
-            <br />
-            <span className="aa-accent">{t('consulting.headlineAccent')}</span>
-          </h1>
-          <p className="aa-prose__lede">{t('consulting.lede')}</p>
+        {/* The page on the left, what can be asked about running beside it. */}
+        <div className="aa-shell aa-consulting">
+          <div className="aa-consulting__main">
+            <section className="aa-prose__intro">
+              <h1 className="aa-prose__headline">
+                {t('consulting.headline')}
+                <br />
+                <span className="aa-accent">{t('consulting.headlineAccent')}</span>
+              </h1>
+              <p className="aa-prose__lede">{t('consulting.lede')}</p>
 
-          <div className="aa-prose__links aa-prose__links--contact">
-            <a className="aa-prose__cta aa-prose__cta--navy" href={mailto}>
-              {t('consulting.cta')}
-              <Icon name="arrow" size={13} color="#FBFAF4" />
-            </a>
-            <a className="aa-prose__link aa-prose__email" href={mailto}>
-              {CONTACT.general}
-            </a>
+              <div className="aa-prose__links aa-prose__links--contact">
+                <a className="aa-prose__cta aa-prose__cta--navy" href={mailto}>
+                  {t('consulting.cta')}
+                  <Icon name="arrow" size={13} color="#FBFAF4" />
+                </a>
+                <a className="aa-prose__link aa-prose__email" href={mailto}>
+                  {CONTACT.general}
+                </a>
+              </div>
+            </section>
+
+            <section className="aa-block">
+              <SectionHeading title={t('consulting.whoTitle')} />
+              <p className="aa-prose__p">{t('consulting.whoBody')}</p>
+            </section>
           </div>
-        </section>
 
-        <section className="aa-shell aa-block">
-          <SectionHeading title={t('consulting.whoTitle')} />
-          <p className="aa-prose__p aa-prose__whobody">{t('consulting.whoBody')}</p>
-          <ul className="aa-prose__topics">
-            {SERVICES.map((key) => (
-              <li key={key} className="aa-prose__topic">
-                {t(`consulting.services.${key}`)}
-              </li>
-            ))}
-          </ul>
-        </section>
+          <aside className="aa-consulting__aside">
+            <ul className="aa-consulting__services">
+              {SERVICES.map((key) => (
+                <li key={key} className="aa-consulting__service">
+                  {t(`consulting.services.${key}`)}
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
       </main>
 
       <Footer />

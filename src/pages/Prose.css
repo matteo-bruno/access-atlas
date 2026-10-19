@@ -73,15 +73,43 @@
 /* The intro with its links in the right-hand column, which was empty. */
 .aa-prose__intro--split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 700px) auto;
+  justify-content: start;
   align-items: end;
-  gap: 32px;
+  gap: 36px;
 }
 
 .aa-prose__links--side {
   flex-direction: column;
   align-items: stretch;
+  gap: 8px;
   margin-top: 0;
+  padding-bottom: 4px;
+}
+
+/* The two links beside the lede: small cards, so they read as places to go
+   rather than as tags. */
+.aa-prose__sidelink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.aa-prose__sidelink:hover {
+  border-color: var(--magenta);
+  color: var(--magenta-deep);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-1px);
 }
 
 /* What we do: three corners of one triangle, research on top, the platforms
@@ -207,8 +235,72 @@
   font-size: 15px;
 }
 
-.aa-prose__whobody {
-  margin-bottom: 20px;
+/* Consulting: the page and, beside it, the list of what can be asked about,
+   one under the other, running the height of the page. */
+.aa-consulting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px;
+  align-items: start;
+  padding-bottom: 72px;
+}
+
+.aa-consulting__aside {
+  padding-top: 76px;
+}
+
+.aa-consulting__services {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aa-consulting__service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.aa-consulting__service::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.aa-consulting__service:nth-child(3n + 2)::before {
+  background: var(--magenta);
+}
+
+.aa-consulting__service:nth-child(3n)::before {
+  background: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .aa-consulting {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aa-consulting__aside {
+    padding-top: 24px;
+  }
+
+  .aa-consulting__services {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /* "Nothing here yet", said once and plainly. */

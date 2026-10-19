@@ -200,6 +200,6 @@ export function citationFor(paper) {
   return `${paper.authors} (${paper.year}). ${paper.title}. ${paper.venue}.`;
 }
 
-export const ATLAS_URL = 'https://matteo-bruno.github.io/access-atlas/';
+export const ATLAS_URL = 'https://whatif.sonycsl.it/atlas/';
 
 export const ATLAS_CITATION = `Accessibility Atlas, Sustainable Cities team, Sony Computer Science Laboratories - Rome (2026). ${ATLAS_URL}`;

@@ -4,6 +4,7 @@ import { SectionHeading } from '../components/SectionHeading.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { LAB } from '../data/lab.js';
+import { Logo } from '../components/Logo.jsx';
 import './Prose.css';
 
 // What the group does, as three corners of one triangle: the research, the
@@ -38,10 +39,11 @@ export default function SustainableCities() {
           </div>
 
           <div className="aa-prose__links aa-prose__links--side">
-            <a className="aa-chip" href={LAB.url} target="_blank" rel="noreferrer noopener">
+            <a className="aa-prose__sidelink" href={LAB.url} target="_blank" rel="noreferrer noopener">
+              <Logo variant="symbol" tone="color" height={16} alt="" />
               {t('about.labLink')}
             </a>
-            <Link className="aa-chip" to="/contact">
+            <Link className="aa-prose__sidelink" to="/contact">
               {t('about.teamLink')}
             </Link>
           </div>
