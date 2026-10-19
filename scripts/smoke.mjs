@@ -1024,7 +1024,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       e.dataset.smoke = 'kept';
     });
 
-    await page.getByRole('link', { name: 'Atlas', exact: true }).click();
+    await page.locator('.aa-nav').getByRole('link', { name: 'Atlas', exact: true }).click();
     // Mid-fade: the platform map is not up yet, and the world must still be.
     await page.waitForTimeout(150);
     const midway = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
@@ -1032,7 +1032,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     const covered = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
     const stage = await page.locator('.aa-mapstage canvas').count();
 
-    await page.getByRole('link', { name: 'Research', exact: true }).click();
+    await page.locator('.aa-nav').getByRole('link', { name: 'Research', exact: true }).click();
     await page.waitForTimeout(1500);
     const back = await page.$eval('.aa-backdrop', (e) => getComputedStyle(e).visibility);
     const kept = await page.$eval('.aa-backdrop canvas', (e) => e.dataset.smoke === 'kept');
@@ -1081,7 +1081,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     });
     await client.send('Page.startScreencast', { format: 'jpeg', quality: 70, everyNthFrame: 1 });
 
-    await page.getByRole('link', { name: 'Atlas', exact: true }).click();
+    await page.locator('.aa-nav').getByRole('link', { name: 'Atlas', exact: true }).click();
     await page.waitForTimeout(2500);
     await page.fill('.aa-search__input', 'mila');
     await page.waitForTimeout(400);
@@ -1340,7 +1340,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     `${navVar} vs ${navBefore.height}px`,
   );
 
-  await page.getByRole('link', { name: 'Research' }).click();
+  await page.locator('.aa-nav').getByRole('link', { name: 'Research', exact: true }).click();
   // Mid-flight: out, swapped, or fading back in — but not yet arrived.
   await page.waitForTimeout(250);
   const midway = await page.evaluate(
