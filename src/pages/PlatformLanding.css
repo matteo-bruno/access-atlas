@@ -160,8 +160,11 @@
   color: var(--ink-3);
 }
 
-/* Which map you are looking at: all four platforms, or one of them. */
-.aa-picker {
+/* Which map you are looking at: all four platforms, or one of them.
+   Floating is this map's own: the rule is scoped to it, because this sheet
+   stays in the document after the reader steps into a city, and an
+   unscoped one lifted the city view's picker out of its column there. */
+.aa-picker--float {
   position: absolute;
   top: 24px;
   left: 50%;
@@ -274,7 +277,7 @@
 
 @media (max-width: 860px) {
   /* The picker leads on a phone: it is how you get to any other map. */
-  .aa-picker {
+  .aa-picker--float {
     position: static;
     transform: none;
     margin: var(--chrome-pad) var(--chrome-pad) 0;

@@ -411,6 +411,31 @@ for (const [route, name] of ROUTES) {
     /\/atlas\/rome/.test(page.url()),
     page.url().replace(BASE, '') || '(did not navigate)',
   );
+
+  // Stepped into from the world map, the world map's stylesheet is still in
+  // the document, and its floating picker rule once lifted the city's layer
+  // bar out of its column: the summary then rose up over it. Opening the
+  // city directly never showed it, so this is the path that has to be held.
+  await page.waitForSelector('.aa-city__layerbar .aa-picker', { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const layout = await page.evaluate(() => {
+    const bar = document.querySelector('.aa-city__layerbar .aa-picker');
+    const top = document.querySelector('.aa-city__top');
+    const summary = document.querySelector('.aa-city__top .aa-mapbox--summary');
+    if (!bar || !top || !summary) return null;
+    const b = bar.getBoundingClientRect();
+    return {
+      position: getComputedStyle(bar).position,
+      barBottom: Math.round(b.bottom),
+      summaryTop: Math.round(summary.getBoundingClientRect().top),
+      fromStart: Math.round(b.left - top.getBoundingClientRect().left),
+    };
+  });
+  check(
+    'The city’s layer bar keeps its place in the column after the world map',
+    layout && layout.position === 'static' && layout.barBottom <= layout.summaryTop && layout.fromStart <= 2,
+    JSON.stringify(layout),
+  );
   await page.close();
 }
 

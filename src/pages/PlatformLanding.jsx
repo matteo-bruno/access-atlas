@@ -274,7 +274,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
         {/* Which set of cities the map draws — the four platforms, or all of
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
-        <nav className="aa-card aa-picker aa-fadein" aria-label={t('platform.all.pick')}>
+        <nav className="aa-card aa-picker aa-picker--float aa-fadein" aria-label={t('platform.all.pick')}>
           {PLATFORMS.map((option) => (
             <Link
               key={option.id}

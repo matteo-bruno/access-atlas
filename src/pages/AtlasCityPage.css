@@ -349,15 +349,20 @@
   pointer-events: none;
 }
 
-/* The bar, centred as on the world map, thin. */
+/* The bar, at the start of the column, thin. */
 .aa-city__layerbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex: none;
   min-width: 0;
 }
 
+/* In the column's flow, always: the boxes on the right start where it ends,
+   which they cannot if a rule meant for the world map's picker floats it. */
 .aa-city__layerbar .aa-picker {
+  position: static;
+  transform: none;
+  margin: 0;
   pointer-events: auto;
   width: max-content;
   min-width: 0;
