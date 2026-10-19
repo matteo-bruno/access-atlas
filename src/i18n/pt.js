@@ -240,6 +240,11 @@ export default {
       fua: 'Região metropolitana (FUA)',
       about: 'Dois limites do Global Human Settlement Layer (GHS): o núcleo da cidade, seu Urban Centre, e sua região metropolitana, a Functional Urban Area, que acrescenta a zona de deslocamentos diários ao redor. Cada um é publicado e medido separadamente; o botão abre a mesma visão no outro.',
     },
+    socialityScale: {
+      toggle: "Escala absoluta",
+      about:
+        "A pontuação de sociabilidade conta as pessoas alcançáveis, por isso cresce com o tamanho da cidade. Por padrão, as cores cobrem as pontuações desta cidade ao longo do dia, sem os {share} mais baixos e mais altos de suas células: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades numa só escala, logarítmica de {low} a {high}, para comparar cores entre cidades.",
+    },
     scenario: {
       label: 'Cenário',
       current: 'Atual',

@@ -237,6 +237,11 @@ export default {
       fua: '광역권(FUA)',
       about: '두 경계 모두 GHS(Global Human Settlement Layer)에서 왔습니다. 도시의 핵심인 Urban Centre와, 주변 통근권을 더한 광역권인 Functional Urban Area입니다. 각각 따로 공개하고 측정하며, 전환하면 같은 보기를 다른 쪽에서 엽니다.',
     },
+    socialityScale: {
+      toggle: "절대 척도",
+      about:
+        "사회성 점수는 도달 가능한 사람 수를 세므로 도시 규모에 따라 커집니다. 기본적으로 색은 하루 전체에 걸친 이 도시의 점수 범위를 나타내며, 양 끝에서 셀의 {share}씩은 제외합니다. 도시를 가장 선명하게 보여 주지만, 같은 색이 다른 도시에서는 다른 점수를 뜻합니다. 절대 척도는 모든 도시를 {low}에서 {high}까지의 로그 척도 하나에 놓아 도시 간에 색을 비교할 수 있게 합니다.",
+    },
     scenario: {
       label: '시나리오',
       current: '현재',

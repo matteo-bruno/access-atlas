@@ -452,6 +452,16 @@ readable:
   published range, and the comment above it states the measurements it was
   checked against — update both together. 15minCity shares one scale across
   all nine categories and both modes for the same reason.
+  **One exception, by the lab's decision: CityChrone's sociality score.** It
+  counts people within reach, so it grows with the city, and Tokyo sat past
+  the end of a domain fitted to Milan. The city view fits it to the city
+  (`fitRamp` in `ramps.js`, `socialityDomain` in `citychrone.js`): the 5th to
+  95th percentile of its inhabited cells over all 24 hours together, so the
+  hour still never recolours a value, with `≤` / `≥` on the legend's ends.
+  `scale=abs` switches to `socialityAbsolute`, one logarithmic scale for
+  every city (10k to 10M), and the switch's "?" says what each means. A
+  logarithmic default was rejected: within one city the score is close to
+  linear, and the map lost its contrast.
 
 **A pale swatch needs an edge, and the edge is ink.** Every scale here runs
 pale at one end, and on this paper the palest step has no outline of its own:

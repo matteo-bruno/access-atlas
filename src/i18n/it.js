@@ -254,6 +254,11 @@ export default {
       fua: 'Area metropolitana (FUA)',
       about: 'Due confini dal Global Human Settlement Layer (GHS): il nucleo della città, il suo Urban Centre, e la sua area metropolitana, la Functional Urban Area, che aggiunge la zona dei pendolari intorno. Ciascuno è pubblicato e misurato per conto suo; il pulsante apre la stessa vista sull\'altro.',
     },
+    socialityScale: {
+      toggle: "Scala assoluta",
+      about:
+        "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escluso il {share} più basso e più alto delle sue celle: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+    },
     scenario: {
       label: 'Scenario',
       current: 'Attuale',

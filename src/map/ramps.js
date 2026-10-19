@@ -12,6 +12,13 @@
 // is a round number chosen to cover the published range, stated with the
 // measurements it was checked against.
 //
+// One exception, by the lab's decision: CityChrone's sociality score counts
+// people within reach, so it grows with the city, and one domain cannot
+// colour Zurich and Tokyo both. The city view fits it to the city
+// (`fitRamp`), its 5th to 95th percentile over all 24 hours, so the hour
+// still never recolours a value; `socialityAbsolute` is the shared scale,
+// one switch away.
+//
 // A ramp is `{ stops, unit, ticks, beyond }`:
 //   stops   [value, colour] pairs, ascending — the interpolation itself
 //   ticks   values to label on the legend bar (defaults to first/last)
@@ -80,6 +87,28 @@ export const RAMPS = {
       [700000, '#7fa9d0'],
     ],
     ticks: [0, 175000, 350000, 525000, 700000],
+  },
+
+  // The sociality score on one scale for every city, the city view's
+  // "absolute" option. The score counts people within reach, so it grows with
+  // the city: Milan's 24 hours top out at 666,987, a metro area of tens of
+  // millions reaches several million. One linear domain would leave either
+  // Tokyo or Zurich in a single colour, so this one is logarithmic, 10k to
+  // 10M, the same colours as `sociality`. Below 10k reads as the first.
+  socialityAbsolute: {
+    log: true,
+    stops: [
+      [1e4, '#d1596a'],
+      [2.4e4, '#e8785e'],
+      [5.6e4, '#f2a86b'],
+      [1.3e5, '#f7d894'],
+      [3.2e5, '#fbfbc0'],
+      [7.5e5, '#dcefa0'],
+      [1.8e6, '#b7e2a8'],
+      [4.2e6, '#8fd0b0'],
+      [1e7, '#7fa9d0'],
+    ],
+    ticks: [1e4, 1e5, 1e6, 1e7],
   },
 
   // Travel time from one cell, by public transport. Green near, yellow around
@@ -174,6 +203,30 @@ export const DELTA_RAMPS = {
     signed: true,
   },
 };
+
+// Rounded to two significant figures, down or up, so a fitted scale's ends
+// are numbers a legend can print.
+function roundSig(value, direction) {
+  if (!(value > 0)) return 0;
+  const step = 10 ** (Math.floor(Math.log10(value)) - 1);
+  return (direction < 0 ? Math.floor(value / step) : Math.ceil(value / step)) * step;
+}
+
+/**
+ * A linear ramp's colours spread evenly between `lo` and `hi`: the one place
+ * a domain is fitted rather than fixed (the sociality score per city, see
+ * `socialityDomain` in data/citychrone.js). Values outside take the end
+ * colours. Null when the range is empty, so the caller keeps the fixed ramp.
+ */
+export function fitRamp(ramp, lo, hi) {
+  const from = roundSig(lo, -1);
+  const to = roundSig(hi, 1);
+  if (!(to > from)) return null;
+  const last = ramp.stops.length - 1;
+  const stops = ramp.stops.map(([, color], i) => [from + ((to - from) * i) / last, color]);
+  const ticks = [0, 1, 2, 3, 4].map((i) => (i === 0 ? from : i === 4 ? to : roundSig(from + ((to - from) * i) / 4, 1)));
+  return { stops, ticks, fitted: true };
+}
 
 /** The value expression a ramp reads, wrapped for log ramps. */
 function rampInput(ramp, value) {

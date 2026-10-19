@@ -242,6 +242,11 @@ export default {
       fua: 'Metropolregion (FUA)',
       about: 'Zwei Abgrenzungen aus dem Global Human Settlement Layer (GHS): der Kern der Stadt, ihr Urban Centre, und ihre Metropolregion, die Functional Urban Area, die das Pendlergebiet ringsum hinzunimmt. Jede wird für sich veröffentlicht und gemessen; der Umschalter öffnet dieselbe Ansicht für die andere.',
     },
+    socialityScale: {
+      toggle: "Absolute Skala",
+      about:
+        "Der Sociality-Score zählt erreichbare Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Zellen: das klarste Bild der Stadt, aber dieselbe Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala legt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, damit Farben zwischen Städten vergleichbar sind.",
+    },
     scenario: {
       label: 'Szenario',
       current: 'Aktuell',
