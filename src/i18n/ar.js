@@ -661,7 +661,7 @@ export default {
     cell: 'خلية',
     unverified: 'تعذّر ربط هذه الأرقام بالبيانات وقد تكون خاطئة: {list}.',
     tools: {
-      list_cities: 'المدن المنشورة',
+      find_cities: 'البحث عن المدن',
       city_overview: 'لمحة عن المدينة',
       layer_detail: 'تفاصيل الطبقة',
       rank_cells: 'ترتيب الخلايا',

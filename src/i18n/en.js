@@ -717,7 +717,7 @@ export default {
     cell: 'cell',
     unverified: 'These figures could not be traced to the data and may be wrong: {list}.',
     tools: {
-      list_cities: 'published cities',
+      find_cities: 'city search',
       city_overview: 'city overview',
       layer_detail: 'layer detail',
       rank_cells: 'cell ranking',

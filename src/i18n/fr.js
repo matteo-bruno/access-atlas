@@ -669,7 +669,7 @@ export default {
     cell: 'cellule',
     unverified: 'Ces chiffres ne peuvent pas être rattachés aux données et peuvent être faux : {list}.',
     tools: {
-      list_cities: 'villes publiées',
+      find_cities: 'recherche de villes',
       city_overview: 'vue d’ensemble de la ville',
       layer_detail: 'détail de la couche',
       rank_cells: 'classement des cellules',

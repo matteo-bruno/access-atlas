@@ -658,7 +658,7 @@ export default {
     cell: '셀',
     unverified: '다음 수치는 데이터로 확인할 수 없으며 틀렸을 수 있습니다: {list}.',
     tools: {
-      list_cities: '공개 도시',
+      find_cities: '도시 검색',
       city_overview: '도시 개요',
       layer_detail: '레이어 상세',
       rank_cells: '셀 순위',

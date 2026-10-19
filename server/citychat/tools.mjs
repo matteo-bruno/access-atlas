@@ -15,6 +15,7 @@ import { gridFeatures, layerPositions, mergeLayer } from '../../src/data/grid.js
 import { CATEGORIES, MODES } from '../../src/data/fifteen.js';
 import { DEFAULT_HOUR } from '../../src/data/citychrone.js';
 import { PLATFORMS_BY_ID, ZONES } from '../../src/data/platforms.js';
+import { fold, searchCities, searchEntry } from '../../src/data/citySearch.js';
 
 const LAYERS = ['fifteen', 'citychrone', 'cardep', 'pov'];
 const UNREACHABLE = 99999;
@@ -36,6 +37,7 @@ export function createDataStore(dataDir) {
   const MAX_CITIES = 4;
 
   let cityList = null;
+  let cityIndex = null;
   const entries = new Map(); // id → atlas entry, read on first ask
 
   const getCatalogue = () => {
@@ -53,6 +55,12 @@ export function createDataStore(dataDir) {
     return cityList;
   };
 
+  // What find_cities searches: the site's own search rule over every city.
+  const getCityIndex = () => {
+    cityIndex ??= getCities().map(searchEntry);
+    return cityIndex;
+  };
+
   const atlasEntry = (cityId) => {
     const key = String(cityId ?? '').trim().toLowerCase();
     const found = getCities().find(
@@ -60,7 +68,7 @@ export function createDataStore(dataDir) {
     );
     if (!found) {
       throw new ToolInputError(
-        `Unknown city "${cityId}". Call list_cities for the published ids.`,
+        `Unknown city "${cityId}". Call find_cities with its name for the published id.`,
       );
     }
     // A version 3 catalogue keeps each city's full entry in its own file.
@@ -100,7 +108,7 @@ export function createDataStore(dataDir) {
     return rel ? read(rel).cities ?? [] : null;
   };
 
-  return { getCatalogue, getCities, atlasEntry, loadCity, summaryRows };
+  return { getCatalogue, getCities, getCityIndex, atlasEntry, loadCity, summaryRows };
 }
 
 // ── Helpers over one layer file ─────────────────────────────────────────
@@ -328,12 +336,34 @@ const FIFTEEN_METRIC_HELP =
   'For "citychrone": velocity | sociality. For "cardep": cdi | o_score_car | o_score_pt. ' +
   'For "pov": proximity | opportunity.';
 
+// Results a model reads whole, so bounded whatever the Atlas grows to: at
+// 11,000 cities the full list was ~1 MB, past a free key's tokens per minute
+// in one call, and every model in the chain then answered 429.
+const FIND_DEFAULT = 8;
+const FIND_MAX = 20;
+const COMPARE_DEFAULT = 10;
+const COMPARE_MAX = 25;
+const clampInt = (value, lo, hi, fallback) => {
+  const n = Number.parseInt(value, 10);
+  return Number.isFinite(n) ? Math.min(hi, Math.max(lo, n)) : fallback;
+};
+
 export const TOOL_DEFINITIONS = [
   {
-    name: 'list_cities',
+    name: 'find_cities',
     description:
-      'Lists every published city with its id, names, country and which layers it carries. Call this first whenever the user names a city, to get its id.',
-    parameters: { type: 'object', properties: {} },
+      'Finds published cities by name or country (accents ignored, English or Italian names), best match first, with each one\'s id, names, country, boundary (city core or metro area), residents and layers. ' +
+      'Call it whenever the user names a city, to get its id. The Atlas publishes thousands of cities, so it never lists them all: ' +
+      'it returns up to `limit` matches and how many there are in all, and with no query only how many cities each layer publishes.',
+    parameters: {
+      type: 'object',
+      properties: {
+        query: str('A city name, or the start of one ("Milano", "san fra"), or a country ("Italy").'),
+        layer: str('Only cities carrying this layer.', { enum: LAYERS }),
+        boundary: str('Only city cores or only metro areas.', { enum: ['core', 'metro'] }),
+        limit: int(`How many matches, 1 to ${FIND_MAX}. Default ${FIND_DEFAULT}.`),
+      },
+    },
   },
   {
     name: 'city_overview',
@@ -341,7 +371,7 @@ export const TOOL_DEFINITIONS = [
       'Headline figures for one city on every layer it carries: cells, area, population and each layer\'s summary (P.O.V. zone shares of cells and of residents, CDI median and for the average resident, 15-minute medians and shares within 15 minutes, CityChrone medians at 08:00).',
     parameters: {
       type: 'object',
-      properties: { city: str('City id from list_cities, e.g. "milan".') },
+      properties: { city: str('City id from find_cities, e.g. "milan".') },
       required: ['city'],
     },
   },
@@ -393,10 +423,22 @@ export const TOOL_DEFINITIONS = [
   {
     name: 'compare_cities',
     description:
-      'One row per published city for a platform, from its summary file. Available for "cardep" (CDI, shares of cells favouring car or transit) and "pov" (zone shares of cells and of residents, medians). For the other layers call city_overview per city.',
+      'Compare rows for a platform, one per city, from its summary file. Available for "cardep" (CDI, shares of cells favouring car or transit) and "pov" (zone shares of cells and of residents, medians). ' +
+      'Either name the cities (ids from find_cities) or rank them by one field; at most ' + COMPARE_MAX + ' rows come back, with how many cities the platform publishes. For the other layers call city_overview per city.',
     parameters: {
       type: 'object',
-      properties: { platform: str('Platform id.', { enum: ['cardep', 'pov'] }) },
+      properties: {
+        platform: str('Platform id.', { enum: ['cardep', 'pov'] }),
+        cities: { type: 'array', items: { type: 'string' }, description: 'City ids to compare. Omit to rank every city by sortBy.' },
+        sortBy: str(
+          'Field to rank by. cardep: medianCdi, weightedCdi, ptShare, carShare, population. ' +
+            'pov: medianProximity, medianOpportunity, weightedProximity, weightedOpportunity, population. Default population.',
+        ),
+        order: str('Which end. Default highest.', { enum: ['highest', 'lowest'] }),
+        country: str('Only cities of this country (name or ISO code).'),
+        minPopulation: num('Skip cities with fewer residents than this.'),
+        limit: int(`How many rows, 1 to ${COMPARE_MAX}. Default ${COMPARE_DEFAULT}.`),
+      },
       required: ['platform'],
     },
   },
@@ -409,18 +451,39 @@ const boundaryOf = (city) =>
     : 'city core (GHS Urban Centre)';
 
 export function createTools(store) {
-  const list_cities = () => {
-    return {
-      cities: store.getCities().map((c) => ({
-        id: c.id,
-        name: c.name,
-        nameIt: c.nameIt,
-        country: c.region,
-        // A metro area is published as a city of its own, named as its core.
-        boundary: boundaryOf(c),
-        layers: c.layers,
-      })),
+  const cityRow = (c) => ({
+    id: c.id,
+    name: c.name,
+    nameIt: c.nameIt,
+    country: c.region,
+    // A metro area is published as a city of its own, named as its core.
+    boundary: boundaryOf(c),
+    population: c.population ?? null,
+    layers: c.layers,
+  });
+
+  const find_cities = ({ query, layer, boundary, limit } = {}) => {
+    const all = store.getCities();
+    const keep = (c) =>
+      (!layer || c.layers?.includes(layer)) &&
+      (!boundary || (boundary === 'metro') === (c.extent === 'fua'));
+    const counts = {
+      publishedCities: all.length,
+      byLayer: Object.fromEntries(LAYERS.map((id) => [id, all.filter((c) => c.layers?.includes(id)).length])),
       platforms: LAYERS.map((id) => ({ id, name: PLATFORMS_BY_ID[id]?.name })),
+    };
+    if (!String(query ?? '').trim()) {
+      return { ...counts, note: 'Pass a query (a city name or a country) to find cities; the full list is too long to return.' };
+    }
+    const matches = searchCities(store.getCityIndex(), query).filter(keep);
+    const n = clampInt(limit, 1, FIND_MAX, FIND_DEFAULT);
+    return {
+      query,
+      matches: matches.length,
+      cities: matches.slice(0, n).map(cityRow),
+      ...(matches.length > n ? { note: `${matches.length - n} more match; narrow the query, or filter by layer or boundary.` } : {}),
+      ...(matches.length ? {} : { note: 'No published city matches. Check the spelling, or try the English or Italian name.' }),
+      publishedCities: counts.publishedCities,
     };
   };
 
@@ -587,14 +650,49 @@ export function createTools(store) {
     return out;
   };
 
-  const compare_cities = ({ platform }) => {
+  const COMPARE_FIELDS = {
+    cardep: ['medianCdi', 'weightedCdi', 'ptShare', 'carShare', 'population'],
+    pov: ['medianProximity', 'medianOpportunity', 'weightedProximity', 'weightedOpportunity', 'population'],
+  };
+
+  const compare_cities = ({ platform, cities: ids, sortBy = 'population', order = 'highest', country, minPopulation, limit } = {}) => {
     const rows = store.summaryRows(platform);
     if (!rows) throw new ToolInputError(`${platform} publishes no comparison summary.`);
-    const names = new Map(store.getCities().map((c) => [c.id, c.name]));
+    const byId = new Map(store.getCities().map((c) => [c.id, c]));
+    let picked;
+    if (Array.isArray(ids) && ids.length) {
+      const wanted = ids.slice(0, COMPARE_MAX).map((id) => String(id).trim().toLowerCase());
+      const rowById = new Map(rows.map((row) => [row.id, row]));
+      const missing = wanted.filter((id) => !rowById.has(id));
+      picked = wanted.filter((id) => rowById.has(id)).map((id) => rowById.get(id));
+      if (!picked.length) {
+        throw new ToolInputError(`None of ${wanted.join(', ')} publishes ${platform}. Use find_cities with layer "${platform}" for the ids.`);
+      }
+      if (missing.length) picked.missing = missing;
+    } else {
+      if (!COMPARE_FIELDS[platform].includes(sortBy)) {
+        throw new ToolInputError(`sortBy must be one of ${COMPARE_FIELDS[platform].join(', ')}.`);
+      }
+      const place = country ? fold(country) : null;
+      const sign = order === 'lowest' ? 1 : -1;
+      picked = rows
+        .filter((row) => {
+          const c = byId.get(row.id);
+          if (place && ![c?.region, c?.regionIt, c?.country].some((v) => v && fold(v) === place)) return false;
+          return !(minPopulation > 0) || (row.population ?? 0) >= minPopulation;
+        })
+        .filter((row) => Number.isFinite(row[sortBy]))
+        .sort((a, b) => sign * (a[sortBy] - b[sortBy]))
+        .slice(0, clampInt(limit, 1, COMPARE_MAX, COMPARE_DEFAULT));
+    }
     return {
       platform,
-      cities: rows.map(({ cdf, ...row }) => {
-        const out = { ...row, name: names.get(row.id) ?? row.id };
+      publishedCities: rows.length,
+      ...(picked.missing ? { notPublished: picked.missing } : {}),
+      ...(ids?.length ? {} : { rankedBy: sortBy, order }),
+      cities: picked.map(({ cdf, ...row }) => {
+        const c = byId.get(row.id);
+        const out = { ...row, name: c?.name ?? row.id, country: c?.region ?? null, boundary: c ? boundaryOf(c) : null };
         if (platform === 'pov') {
           // Zone arrays → named objects, so the model cannot misread an index.
           for (const key of ['zoneShares', 'zonePopulationShares']) {
@@ -611,7 +709,7 @@ export function createTools(store) {
     };
   };
 
-  const handlers = { list_cities, city_overview, layer_detail, rank_cells, cell_at, compare_cities };
+  const handlers = { find_cities, city_overview, layer_detail, rank_cells, cell_at, compare_cities };
 
   /** Run one tool call. Errors come back as results, so the model can recover. */
   return async function runTool(name, args = {}) {

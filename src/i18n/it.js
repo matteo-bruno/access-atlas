@@ -707,7 +707,7 @@ export default {
     cell: 'cella',
     unverified: 'Queste cifre non sono riconducibili ai dati e potrebbero essere sbagliate: {list}.',
     tools: {
-      list_cities: 'città pubblicate',
+      find_cities: 'ricerca città',
       city_overview: 'quadro della città',
       layer_detail: 'dettaglio del layer',
       rank_cells: 'classifica delle celle',

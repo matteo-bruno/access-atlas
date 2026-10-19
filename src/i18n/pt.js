@@ -667,7 +667,7 @@ export default {
     cell: 'célula',
     unverified: 'Estes números não puderam ser rastreados até os dados e podem estar errados: {list}.',
     tools: {
-      list_cities: 'cidades publicadas',
+      find_cities: 'busca de cidades',
       city_overview: 'visão geral da cidade',
       layer_detail: 'detalhe da camada',
       rank_cells: 'ranking de células',

@@ -669,7 +669,7 @@ export default {
     cell: 'Zelle',
     unverified: 'Diese Zahlen lassen sich nicht auf die Daten zurückführen und könnten falsch sein: {list}.',
     tools: {
-      list_cities: 'veröffentlichte Städte',
+      find_cities: 'Städtesuche',
       city_overview: 'Stadtüberblick',
       layer_detail: 'Ebenendetail',
       rank_cells: 'Zellen-Rangfolge',

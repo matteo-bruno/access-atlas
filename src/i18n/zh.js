@@ -658,7 +658,7 @@ export default {
     cell: '单元格',
     unverified: '以下数字无法追溯到数据，可能有误：{list}。',
     tools: {
-      list_cities: '已发布城市',
+      find_cities: '城市搜索',
       city_overview: '城市概览',
       layer_detail: '图层详情',
       rank_cells: '单元格排名',

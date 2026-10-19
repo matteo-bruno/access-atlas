@@ -677,7 +677,7 @@ export default {
     cell: 'セル',
     unverified: '次の数値はデータまでたどれず、誤っている可能性があります：{list}。',
     tools: {
-      list_cities: '公開都市',
+      find_cities: '都市検索',
       city_overview: '都市の概要',
       layer_detail: 'レイヤーの詳細',
       rank_cells: 'セルの順位',
