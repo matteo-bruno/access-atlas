@@ -184,7 +184,8 @@
 }
 
 .aa-mistake__toggle {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 6px;
   padding: 6px 8px;
@@ -200,19 +201,9 @@
 }
 
 .aa-mistake__toggle:hover,
-.aa-mistake--open .aa-mistake__toggle {
+.aa-mistake__toggle[aria-expanded='true'] {
   background: var(--paper-alt);
   color: var(--ink);
-}
-
-.aa-mistake__body {
-  margin-top: 6px;
-  padding: 10px 12px;
-  background: var(--paper-alt);
-  border-radius: var(--radius);
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--ink-2);
 }
 
 .aa-mistake__link {
@@ -293,4 +284,195 @@
 .aa-atlas__loadinghint {
   font-size: 11.5px;
   color: var(--ink-3);
+}
+
+/* ── The city's header, at the top of the controls column ─────────── */
+
+.aa-city__header {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.aa-city__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.aa-city__back:hover {
+  color: var(--ink);
+}
+
+.aa-city__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.aa-city__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.aa-city__links .aa-chip {
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+
+
+/* ── The top of the map: the layer bar, then the boxes on the right ─────
+   One column, so the summary and the selected cell start where the bar
+   ends rather than at a fixed offset (on a screen where the bar came out
+   taller, a fixed one let the two overlap). It stops above the full-screen
+   button, and the boxes scroll inside what is left. Only its children take
+   the pointer: the column itself must not swallow the map's drags. */
+.aa-city__top {
+  position: absolute;
+  top: 6px;
+  bottom: calc(34px + 46px);
+  inset-inline: 12px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+/* The bar, at the start of the column, thin. */
+.aa-city__layerbar {
+  display: flex;
+  justify-content: flex-start;
+  flex: none;
+  min-width: 0;
+}
+
+/* In the column's flow, always: the boxes on the right start where it ends,
+   which they cannot if a rule meant for the world map's picker floats it. */
+.aa-city__layerbar .aa-picker {
+  position: static;
+  transform: none;
+  margin: 0;
+  pointer-events: auto;
+  width: max-content;
+  min-width: 0;
+}
+
+/* One row, always: it never wraps into a second line. Narrower than its
+   five layers, it scrolls sideways under the pointer instead. */
+.aa-picker--inline {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 3px;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.aa-picker--inline::-webkit-scrollbar {
+  display: none;
+}
+
+.aa-picker--inline .aa-picker__item {
+  flex: 0 0 auto;
+  padding: 4px 9px;
+  font-size: 12px;
+}
+
+/* The boxes on the right, under the bar: no longer positioned on their
+   own, they take the rest of the column and scroll inside it. */
+.aa-city__top .aa-mapui--tr {
+  position: static;
+  align-self: flex-end;
+  min-height: 0;
+  max-height: none;
+  flex: 0 1 auto;
+}
+
+/* ── The legend, in the column under the city's name ─────────────── */
+.aa-city__legend {
+  margin-bottom: 18px;
+}
+
+/* ── Settings, bottom left: the geometry, then the opacity ───────── */
+.aa-mapbox--opacity .aa-geometry {
+  margin-bottom: 10px;
+}
+
+.aa-settings__label {
+  margin: 0 0 4px;
+}
+
+/* The paper link sits with the toggles at the foot of the column. */
+.aa-mistake__paper {
+  text-decoration: none;
+}
+
+/* Inside the settings box the switch is a row of the box, not a card. */
+.aa-mapbox--opacity .aa-geometry--compact {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* A note at the foot of the map rather than over the layer bar. */
+.aa-atlas__prompt--foot {
+  top: auto;
+  bottom: 34px;
+}
+
+/* ── A segmented switch: three options in one rounded box ──────────────
+   CityChrone's views were three bordered buttons that ran past the column;
+   one box with the options sharing it fits, and reads as one choice. */
+.aa-toggle--segmented {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.aa-toggle--segmented .aa-toggle__btn {
+  min-width: 0;
+  padding: 5px 4px;
+  border: 0;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aa-toggle--segmented .aa-toggle__btn:hover:not(:disabled):not(.aa-toggle__btn--active) {
+  background: var(--paper-alt);
+}
+
+.aa-toggle--segmented .aa-toggle__btn:disabled {
+  border-style: none;
+  opacity: 0.55;
+}
+
+
+/* Stacked, the map is short and the boxes go back to being blocks under
+   it, so the column is no longer laid over the map. */
+@media (max-width: 1080px) {
+  .aa-city__top {
+    position: static;
+    margin-top: 8px;
+  }
 }

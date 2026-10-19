@@ -26,8 +26,9 @@ const OWN_MAP = ['/platforms', '/atlas'];
  * starts below the nav rather than at the top of the viewport. Stepping from
  * the front door onto the platform tab then keeps the world still.
  *
- * A veil sits over it — the same one on every page and at every scroll
- * position, densest where the copy sits and nearly clear on the far side.
+ * A veil sits over it, the same one on every page and at every scroll
+ * position, and even across the page: the copy is centred now, so there is
+ * no side for it to be densest on.
  * Nothing above it paints it out: the map is the site's subject, so it is
  * visible from the first screen to the last, and what scrolls over it is
  * transparent between its own cards.
@@ -90,7 +91,19 @@ export function Backdrop() {
       }`}
       aria-hidden="true"
     >
-      <WorldMap frame={frame} cities={cities} markerStyle={markerStyle} label="" />
+      {/* The cities are drawn only under the screens that are a map. Behind a
+          page of copy the backdrop is the bare world: thousands of dots read
+          as specks in the text, and an atlas needs no more than the world to
+          say what it is. The frame is still the coverage's, and the dots fade
+          in when the platform screen is asked for, so the handover to its map
+          stays one world with the same dots in the same place. */}
+      <WorldMap
+        frame={frame}
+        cities={cities}
+        markerStyle={markerStyle}
+        markersHidden={!ownMap}
+        label=""
+      />
       <div className="aa-backdrop__veil" />
     </div>
   );

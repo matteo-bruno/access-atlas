@@ -5,7 +5,7 @@ import { Icon } from '../components/Icon.jsx';
 import { CitySearch } from '../components/CitySearch.jsx';
 import { WorldMap } from '../map/WorldMap.jsx';
 import { coverageFraming } from '../map/framing.js';
-import { cityMarkerStyle, coverageMarkerStyle } from '../map/layers.js';
+import { MARKER_RAMPS, cityMarkerStyle, coverageMarkerStyle, pickerDot, scaleDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
 import {
@@ -16,6 +16,7 @@ import {
   usePlatformHasSummary,
   useCityPageIds,
 } from '../data/useAtlasData.js';
+import { rampGradient } from '../map/ramps.js';
 import { paperForPlatform } from '../data/research.js';
 import { formatTime } from '../data/fifteen.js';
 // The floating-box chrome these pages share with the city view.
@@ -37,28 +38,6 @@ const STATS_FOCUS = {
 // Layers whose welcome card has copy of its own, shorter than the `intro` the
 // "about this layer" dialog reads; the others introduce themselves with it.
 const WELCOME_INTRO = new Set(['fifteen']);
-
-/**
- * A picker dot is a miniature of the scale the map behind it draws with.
- *
- * Solid accents could not do this job: two of the four layers are navy and
- * two are terracotta, so half the list was two pairs of identical dots. A
- * scale is the one thing that is different for every layer *and* already on
- * screen a moment later, which makes the dot a preview rather than a label
- * needing to be learned. Continuous scales run as a gradient; P.O.V.'s four
- * zones are categorical and get hard quarters, because a zone is a class and
- * not a point on a ramp.
- *
- * @param {string[]} colors  the scale, in order
- * @param {boolean} [hard]   draw discrete wedges rather than a blend
- */
-function scaleDot(colors, { hard = false } = {}) {
-  if (!hard) return `linear-gradient(135deg, ${colors.join(', ')})`;
-  const step = 100 / colors.length;
-  return `conic-gradient(from -45deg, ${colors
-    .map((color, i) => `${color} ${i * step}% ${(i + 1) * step}%`)
-    .join(', ')})`;
-}
 
 /**
  * The world map. Without a slug it shows every published city across the four
@@ -279,7 +258,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
         {/* Which set of cities the map draws — the four platforms, or all of
             them at once. Navigating rather than setting state keeps the
             choice in the URL. */}
-        <nav className="aa-card aa-picker aa-fadein" aria-label={t('platform.all.pick')}>
+        <nav className="aa-card aa-picker aa-picker--float aa-fadein" aria-label={t('platform.all.pick')}>
           {PLATFORMS.map((option) => (
             <Link
               key={option.id}
@@ -290,7 +269,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
             >
               <span
                 className="aa-picker__dot"
-                style={{ backgroundImage: scaleDot(option.scale, { hard: !option.stops }) }}
+                style={{ backgroundImage: pickerDot(option) }}
               />
               {option.name}
             </Link>
@@ -386,20 +365,38 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
               ))}
             </div>
           </fieldset>
-        ) : (
+        ) : platform?.id === 'pov' ? null : (
+        // P.O.V.'s map says where its cities are and nothing more: its zones
+        // compare places within a city, and a city has no zone of its own.
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>
           <Eyebrow>{t(`${copyKey}.legendUnit`)}</Eyebrow>
-          <div className="aa-legend__items">
-            {legend.map((entry, index) => (
-              <div key={entry} className="aa-legend__item">
-                <span
-                  className="aa-swatch"
-                  style={{ background: (platform ? platform.scale : COVERAGE_SCALE)[index] }}
-                />
-                <span>{entry}</span>
-              </div>
-            ))}
-          </div>
+          {platform && MARKER_RAMPS[platform.id] ? (
+            // The city view's own ramp, with words rather than numbers under
+            // it: a dot is the colour its median resident's cell would be.
+            <div className="aa-legend__ramp">
+              <span
+                className="aa-legend__bar"
+                style={{ backgroundImage: rampGradient(MARKER_RAMPS[platform.id]) }}
+              />
+              <span className="aa-legend__ends">
+                {legend.map((entry) => (
+                  <span key={entry}>{entry}</span>
+                ))}
+              </span>
+            </div>
+          ) : (
+            <div className="aa-legend__items">
+              {legend.map((entry, index) => (
+                <div key={entry} className="aa-legend__item">
+                  <span
+                    className="aa-swatch"
+                    style={{ background: (platform ? platform.scale : COVERAGE_SCALE)[index] }}
+                  />
+                  <span>{entry}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </section>
         )}
 
@@ -443,8 +440,7 @@ function coverageTooltip(properties, t, n) {
 
 // A city's figure on a layer's map is its median resident's, said as such:
 // 15minCity's time as a clock (m:ss, see formatTime), CityChrone's speed in
-// km/h by public transport, Car Dependency's index. P.O.V. colours by zone
-// and states no figure.
+// km/h by public transport, Car Dependency's index. P.O.V. names the city.
 function formatTooltip(platform, properties, t, n) {
   const name = properties.name;
   const value = {
@@ -452,6 +448,7 @@ function formatTooltip(platform, properties, t, n) {
     citychrone: properties.velocityScore,
     cardep: properties.cdi,
   }[platform.id];
+  if (platform.id === 'pov') return name;
   if (!Number.isFinite(value)) return name;
   switch (platform.id) {
     case 'fifteen':

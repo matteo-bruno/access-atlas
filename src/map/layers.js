@@ -9,6 +9,7 @@
 // The zoom is MapLibre's (`worldZoom` in map/framing.js): the sizes below
 // were tuned on MapLibre maps, and are kept the size they were.
 
+import { RAMPS, colorAt } from './ramps.js';
 import { ZONE_COLORS } from '../data/platforms.js';
 
 /** Piecewise-linear interpolation over `[x, y]` stops, clamped at both ends. */
@@ -102,6 +103,14 @@ function filledEdge(color, zoom) {
 }
 
 /**
+ * The layers whose world-map markers are coloured on the city view's own
+ * ramp, at the city's median: Car Dependency's index and CityChrone's
+ * velocity, so a city's dot is the colour its median resident's cell would
+ * be on its map. Their legends are that ramp, with three words under it.
+ */
+export const MARKER_RAMPS = { cardep: RAMPS.cdi, citychrone: RAMPS.velocity };
+
+/**
  * A platform's city markers, as `(city, zoom) => style`.
  *
  * `ring` platforms (Car Dependency, P.O.V.) draw a hollow marker with a soft
@@ -112,11 +121,24 @@ function filledEdge(color, zoom) {
  */
 export function cityMarkerStyle(platform) {
   const radii = platform.coversAllCities ? RADIUS_DENSE : RADIUS;
+  const ramp = MARKER_RAMPS[platform.id];
   return (city, zoom) => {
-    const index = scaleIndex(platform, city[platform.property]);
-    const color = index == null ? NO_VALUE : platform.scale[index];
+    const value = city[platform.property];
+    let color;
+    if (platform.markerColor) {
+      const plain = platform.markerColor;
+      return { radius: interpolate(radii, zoom), fill: plain, fillOpacity: 0.85, ...filledEdge(plain, zoom) };
+    }
+    if (ramp) {
+      color = Number.isFinite(value) ? colorAt(ramp, value) : NO_VALUE;
+    } else {
+      const index = scaleIndex(platform, value);
+      color = index == null ? NO_VALUE : platform.scale[index];
+    }
     const radius = interpolate(radii, zoom);
-    if (platform.markerStyle === 'ring') {
+    // A colour on a continuous ramp has to be read off the dot, so a ramp's
+    // markers are filled; a hollow ring at 18% read as grey.
+    if (platform.markerStyle === 'ring' && !ramp) {
       return {
         radius,
         fill: color,
@@ -148,4 +170,36 @@ export function coverageMarkerStyle(scale) {
       ...filledEdge(color, zoom),
     };
   };
+}
+
+/**
+ * A picker dot is a miniature of the scale the map behind it draws with.
+ *
+ * Solid accents could not do this job: two of the four layers are navy and
+ * two are terracotta, so half the list was two pairs of identical dots. A
+ * scale is the one thing that is different for every layer *and* already on
+ * screen a moment later, which makes the dot a preview rather than a label
+ * needing to be learned. Continuous scales run as a gradient; P.O.V.'s four
+ * zones are categorical and get hard quarters, because a zone is a class and
+ * not a point on a ramp.
+ *
+ * @param {string[]} colors  the scale, in order
+ * @param {boolean} [hard]   draw discrete wedges rather than a blend
+ */
+export function scaleDot(colors, { hard = false } = {}) {
+  if (!hard) return `linear-gradient(135deg, ${colors.join(', ')})`;
+  const step = 100 / colors.length;
+  return `conic-gradient(from -45deg, ${colors
+    .map((color, i) => `${color} ${i * step}% ${(i + 1) * step}%`)
+    .join(', ')})`;
+}
+
+/**
+ * The picker's dot for a layer: a miniature of the scale its world map
+ * draws with, which for a ramp layer is the ramp rather than the steps.
+ */
+export function pickerDot(platform) {
+  const ramp = MARKER_RAMPS[platform.id];
+  if (ramp) return scaleDot(ramp.stops.map(([, color]) => color));
+  return scaleDot(platform.scale, { hard: !platform.stops });
 }

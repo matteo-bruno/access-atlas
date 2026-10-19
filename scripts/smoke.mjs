@@ -42,15 +42,15 @@ const ROUTES = [
   ['/sustainable-cities', 'Sustainable cities — who we are'],
   ['/stats', 'Stats: ranking'],
   ['/stats?view=map', 'Stats: map'],
-  ['/stats?view=scatter&sel=rome,milan', 'Stats: scatter'],
-  ['/stats?view=matrix', 'Stats: matrix'],
+  ['/stats?view=curves&sel=rome,milan', 'Stats: cumulative curves'],
   ['/stats?view=curves&m=citychrone.velocity.08&sel=rome', 'Stats: CityChrone by hour'],
-  ['/stats?unit=country&m=cardep.cdi&s=share&t=1', 'Stats: countries'],
+  ['/stats?unit=country&s=share&t=1', 'Stats: countries'],
   ['/stats?view=focus&pop=0', 'Stats: focus, 15-minute city'],
   ['/stats?view=focus&pop=0&m=citychrone.velocity.08', 'Stats: focus, CityChrone'],
   ['/stats?view=focus&pop=0&m=cardep.cdi&s=mean', 'Stats: focus, Car Dependency'],
-  ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: focus, P.O.V.'],
-  ['/stats?view=focus&pop=0&m=corr.pov.opportunity~cardep.cdi&s=value', 'Stats: focus, across layers'],
+  // P.O.V. and the figures across layers are off the page for now: their
+  // addresses open on the default figure rather than break.
+  ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: a paused layer opens the default'],
   // No service behind it in the suites: the page has to say so, not break.
   ['/citychat', 'CityChat (beta), with no service running'],
   ['/consulting', 'Consulting'],
@@ -81,6 +81,26 @@ const check = (name, ok, detail = '') => {
   if (!ok) failures++;
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
 };
+
+// The city summary opens closed: a small box to click. Checks that read its
+// figures open it first.
+// Map/Cartogram and the opacity live in a "Settings" box, closed until
+// asked for. Checks that switch geometry open it first.
+async function openSettings(page) {
+  const toggle = page.locator('.aa-mapbox--opacity .aa-mapbox__toggle');
+  if ((await toggle.count()) && (await toggle.getAttribute('aria-expanded')) === 'false') {
+    await toggle.click();
+    await page.waitForTimeout(200);
+  }
+}
+
+async function openSummary(page) {
+  const toggle = page.locator('.aa-mapbox--summary .aa-mapbox__toggle');
+  if ((await toggle.count()) && (await toggle.getAttribute('aria-expanded')) === 'false') {
+    await toggle.click();
+    await page.waitForTimeout(200);
+  }
+}
 
 /**
  * Every published city marker, as the world maps draw them: one per city,
@@ -212,6 +232,7 @@ for (const [route, name] of ROUTES) {
   await page.waitForTimeout(4500);
 
   const zones = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -235,6 +256,7 @@ for (const [route, name] of ROUTES) {
   await page.goto(`${BASE}/atlas/rome?layer=cardep`, { waitUntil: 'load' });
   await page.waitForTimeout(4500);
 
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -269,6 +291,7 @@ for (const [route, name] of ROUTES) {
   // count beside a figure has to be the count that figure came from. 1,636
   // cells over 170 km² is P.O.V.'s mask, and neither is a figure the seed
   // data can produce — their presence is provenance, not luck.
+  await openSummary(page);
   const summary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -278,7 +301,7 @@ for (const [route, name] of ROUTES) {
     summary.join(' | '),
   );
 
-  const layers = await page.$$eval('.aa-layers__row', (els) =>
+  const layers = await page.$$eval('.aa-picker--inline .aa-picker__item', (els) =>
     els.map((e) => ({ text: e.textContent.trim(), disabled: e.disabled })),
   );
   // The four platforms, plus population as context — all enabled for a city
@@ -298,11 +321,12 @@ for (const [route, name] of ROUTES) {
     `${shares.join(' / ')} = ${total.toFixed(1)}`,
   );
 
-  await page.click('.aa-layers__row:has-text("CityChrone")');
+  await page.click('.aa-picker--inline .aa-picker__item:has-text("CityChrone")');
   await page.waitForTimeout(4000);
   // Continuous layers state their scale as a ramp, not as bands: the hourly
   // join has happened once the velocity figure is on the panel.
   const ticks = await page.$$eval('.aa-ramp__tick', (els) => els.map((e) => e.textContent.trim()));
+  await openSummary(page);
   const ccSummary = await page.$$eval('.aa-summary__row dd', (els) =>
     els.map((e) => e.textContent.trim()),
   );
@@ -315,7 +339,7 @@ for (const [route, name] of ROUTES) {
   );
 
   // Population is drawn from the union mesh rather than a platform dataset.
-  await page.click('.aa-layers__row:has-text("Population")');
+  await page.click('.aa-picker--inline .aa-picker__item:has-text("Population")');
   await page.waitForTimeout(3000);
   const popTicks = await page.$$eval('.aa-ramp__tick', (els) =>
     els.map((e) => e.textContent.trim()),
@@ -361,6 +385,16 @@ for (const [route, name] of ROUTES) {
       cdiLegend.join(' ') !== allLegend.join(' '),
     `${allLegend.join('/')} → ${cdiLegend.join('/')}`,
   );
+
+  // P.O.V.'s map is its cities and nothing more: no legend, no zones.
+  await page.click('.aa-picker__item:has-text("P.O.V.")');
+  await page.waitForTimeout(2500);
+  const povLegends = await page.$$eval('.aa-legend', (els) => els.length);
+  check(
+    'P.O.V.’s world map draws its cities with no legend',
+    page.url().endsWith('/platforms/accessibility-pov') && povLegends === 0,
+    `${page.url().replace(BASE, '')} · ${povLegends} legend(s)`,
+  );
   await page.close();
 }
 
@@ -386,6 +420,31 @@ for (const [route, name] of ROUTES) {
     'A marker the open layer does not cover still opens its city',
     /\/atlas\/rome/.test(page.url()),
     page.url().replace(BASE, '') || '(did not navigate)',
+  );
+
+  // Stepped into from the world map, the world map's stylesheet is still in
+  // the document, and its floating picker rule once lifted the city's layer
+  // bar out of its column: the summary then rose up over it. Opening the
+  // city directly never showed it, so this is the path that has to be held.
+  await page.waitForSelector('.aa-city__layerbar .aa-picker', { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const layout = await page.evaluate(() => {
+    const bar = document.querySelector('.aa-city__layerbar .aa-picker');
+    const top = document.querySelector('.aa-city__top');
+    const summary = document.querySelector('.aa-city__top .aa-mapbox--summary');
+    if (!bar || !top || !summary) return null;
+    const b = bar.getBoundingClientRect();
+    return {
+      position: getComputedStyle(bar).position,
+      barBottom: Math.round(b.bottom),
+      summaryTop: Math.round(summary.getBoundingClientRect().top),
+      fromStart: Math.round(b.left - top.getBoundingClientRect().left),
+    };
+  });
+  check(
+    'The city’s layer bar keeps its place in the column after the world map',
+    layout && layout.position === 'static' && layout.barBottom <= layout.summaryTop && layout.fromStart <= 2,
+    JSON.stringify(layout),
   );
   await page.close();
 }
@@ -468,6 +527,14 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     cityRequests.map((u) => u.split('/').pop()).join(' '),
   );
 
+  // The city view opens on the cartogram: start from the hexagons.
+  await openSettings(page);
+  const opensOnCartogram = await page
+    .getByRole('button', { name: 'Cartogram', exact: true })
+    .getAttribute('aria-pressed');
+  check('The city view opens on the cartogram', opensOnCartogram === 'true');
+  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.waitForTimeout(1500);
   const map = await canvasShot(page);
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2500);
@@ -497,6 +564,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   page.on('request', (r) => requested.push(r.url()));
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(2500);
+  await openSettings(page);
 
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
   await page.waitForTimeout(2000);
@@ -540,7 +608,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForTimeout(3200);
-  const opening = await page.locator('.aa-layers__row--active').innerText();
+  const opening = await page.locator('.aa-picker--inline .aa-picker__item--active').innerText();
+  await openSettings(page);
   const cartogramOffered = !(await page.getByRole('button', { name: /^Cartogram/ }).isDisabled());
   check(
     'The combined viewer opens on 15-minute city, with a cartogram to switch to',
@@ -640,6 +709,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const page = await context.newPage();
   await page.goto(`${BASE}/atlas/milan?layer=cardep`, { waitUntil: 'load' });
   await page.waitForTimeout(3200);
+  // The city view opens on the cartogram, where the cell under the centre
+  // may have shrunk away; the true hexagons tile the ground.
+  await openSettings(page);
+  await page.locator('.aa-geometry .aa-toggle__btn', { hasText: 'Map' }).click();
+  await page.waitForTimeout(600);
 
   const cell = await page.locator('canvas').boundingBox();
   await page.mouse.click(cell.x + cell.width / 2, cell.y + cell.height / 2);
@@ -689,27 +763,40 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 }
 
 // ── Explanations ─────────────────────────────────────────────────────
-// The "?" panels carry the method, so what is checked is the wording that has
-// been got wrong before: P.O.V.'s thresholds are population-weighted medians,
-// and the two upstream viewers both say "median" alone.
+// P.O.V.'s thresholds are population-weighted medians, and the two upstream
+// viewers both say "median" alone. The legend's "?" now explains the
+// framework the zones come from, so the weighting is checked where the
+// method is: in "About this layer".
 {
   const page = await context.newPage();
   await page.goto(`${BASE}/atlas/milan?layer=pov`, { waitUntil: 'load' });
   await page.waitForTimeout(3000);
 
-  // A tooltip follows the pointer's intent: it arrives on hover and leaves
-  // with it, so reading one costs nothing and dismissing it is not a second
-  // decision.
-  await page.locator('.aa-explain__btn').first().hover();
-  await page.waitForTimeout(400);
+  // An explanation is asked for with a click and stays until it is closed:
+  // another click, a click elsewhere, or Escape.
+  await page.locator('.aa-city__legend .aa-explain__btn').first().click();
+  await page.waitForTimeout(300);
   const tip = await page.locator('.aa-explain__tip').innerText();
   await page.mouse.move(10, 10);
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(300);
+  const stays = (await page.locator('.aa-explain__tip').count()) === 1;
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
   check(
-    'A legend explains itself on hover, and stops when the pointer leaves',
-    /population-weighted median/.test(tip) &&
+    'A legend explains itself on a click, stays while read, and closes on Escape',
+    /Inclusion/.test(tip) &&
+      stays &&
       (await page.locator('.aa-explain__tip').count()) === 0,
     tip.replace(/\s+/g, ' ').slice(0, 70),
+  );
+  await page.getByRole('button', { name: 'About this layer' }).click();
+  await page.waitForTimeout(400);
+  const about = await page.locator('.aa-modal__body').innerText().catch(() => '');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  check(
+    'P.O.V.\'s method says its medians are weighted by population',
+    /weighted by population/.test(about),
   );
 
   // A tooltip in the controls column is bounded by the window, not by the
@@ -717,7 +804,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // children paint outside it, so the half with the method in it was cut off
   // at the map's edge.
   const panelBox = await page.locator('.aa-city__panel').boundingBox();
-  await page.locator('.aa-city__panel .aa-explain__btn').first().hover();
+  await page.locator('.aa-city__panel .aa-explain__btn').first().click();
   await page.waitForTimeout(400);
   const tipBox = await page.locator('.aa-explain__tip').boundingBox();
   const viewport = page.viewportSize();
@@ -731,7 +818,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       panelBox.x + panelBox.width,
     )}px`,
   );
-  await page.mouse.move(10, 10);
+  await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
 
   // The column's handle is on the column's own edge, and says which way it
@@ -764,7 +851,8 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   check(
     'About this layer opens the full account, and states the method',
     /reading the map/.test(modal) &&
-      /connection scan/.test(modal) &&
+      /data & methods/.test(modal) &&
+      /gtfs/.test(modal) &&
       (await page.locator('.aa-modal').count()) === 0,
   );
   await page.close();
@@ -1131,13 +1219,13 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const veil = async (route) => {
     await page.goto(BASE + route, { waitUntil: 'load' });
     await page.waitForTimeout(1800);
-    return page.$eval('.aa-backdrop__veil', (e) => getComputedStyle(e).backgroundImage);
+    return page.$eval('.aa-backdrop__veil', (e) => getComputedStyle(e).backgroundColor);
   };
   const home = await veil('/');
   const elsewhere = await veil('/research');
   check(
     'The map is veiled the same everywhere',
-    home === elsewhere && home !== 'none',
+    home === elsewhere && !/^(transparent|rgba\(0, 0, 0, 0\))$/.test(home),
     home.slice(0, 60),
   );
   await page.close();
@@ -1298,9 +1386,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   // The h1 is the Atlas's name and is the same in both locales — the line
   // under it is what a locale swap has to change.
   const en = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  // Read every figure in the compare table, not just the first: only values
-  // above 999 pick up a thousands separator.
-  const enMetric = await page.$$eval('.aa-table__value', (els) =>
+  // Read every figure in the rankings: their shares carry a decimal
+  // separator, which is what a locale swap has to change.
+  const enMetric = await page.$$eval('.aa-rank__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
 
@@ -1312,7 +1400,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.click('.aa-nav__langbtn[data-lang="it"]');
   await page.waitForTimeout(700);
   const it = await page.$eval('.aa-landing__subtitle', (e) => e.textContent.trim());
-  const itMetric = await page.$$eval('.aa-table__value', (els) =>
+  const itMetric = await page.$$eval('.aa-rank__value', (els) =>
     els.map((e) => e.textContent.trim()).join(' '),
   );
   const lang = await page.evaluate(() => document.documentElement.lang);
@@ -1351,7 +1439,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const page = await context.newPage();
   const fetched = [];
   page.on('response', (r) => /\/data\/stats\/stats\.json/.test(r.url()) && fetched.push(r.status()));
-  await page.goto(`${BASE}/stats?m=pov.proximity&s=p50&pop=0`, { waitUntil: 'load' });
+  await page.goto(`${BASE}/stats?m=cardep.cdi&s=mean&pop=0`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-stats__rrow:not(.aa-stats__rrow--axis)', { timeout: 8000 }).catch(() => {});
   const drawn = await page.$$eval('.aa-stats__rrow:not(.aa-stats__rrow--axis)', (rows) => rows.length);
   const expected = await page.evaluate(async (base) => {
@@ -1363,9 +1451,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
     }
     const stats = JSON.parse(new TextDecoder().decode(body));
-    // Hidden cities (thin data) are off the page by default, and so are
-    // metro areas: the page opens on the cores.
-    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua').length;
+    // Hidden cities (thin data) are off the page by default. Car Dependency
+    // lists its metro areas among its cities, so they count too.
+    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden).length;
   }, BASE);
   check(
     'Stats page reads the published statistics',
@@ -1377,6 +1465,99 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.click('.aa-stats__rrow:not(.aa-stats__rrow--axis) .aa-stats__pick');
   await page.waitForTimeout(300);
   check('Stats highlight is kept in the URL', /[?&]sel=/.test(page.url()), page.url().replace(BASE, ''));
+
+  // Car Dependency has no boundary switch and no countries: its metro areas
+  // are among its cities, named "(FUA)", and only the 15-minute city pools
+  // countries. Theil and 90/10 are offered nowhere.
+  const sideFields = await page.$$eval('.aa-stats__fieldlabel', (els) => els.map((e) => e.textContent.trim()));
+  const names = await page.$$eval('.aa-stats__rrow .aa-stats__pickname', (els) => els.map((e) => e.textContent.trim()));
+  const statOptions = await page.$$eval('.aa-stats__side select option', (els) => els.map((e) => e.textContent.trim()));
+  const fuaInFile = await page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    let body = new Uint8Array(await (await fetch(`${base}/data/${catalogue.stats}`)).arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    const stats = JSON.parse(new TextDecoder().decode(body));
+    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden && stats.cities[i].extent === 'fua').length;
+  }, BASE);
+  check(
+    'Car Dependency lists its metro areas among its cities, with no boundary or countries',
+    !sideFields.some((f) => /boundary|compare|countries/i.test(f)) &&
+      names.filter((x) => /\(FUA\)$/.test(x)).length === fuaInFile &&
+      !statOptions.some((o) => /Theil|90\/10|nothing reachable/i.test(o)),
+    `${sideFields.join(' · ')} · ${fuaInFile} FUA in file: ${names.filter((x) => /FUA/.test(x)).join(', ')}`,
+  );
+
+  // CityChrone's velocity thresholds are speeds.
+  await page.goto(`${BASE}/stats?m=citychrone.velocity.08&s=share&t=1&pop=0`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-stats__headline', { timeout: 8000 }).catch(() => {});
+  const ccTitle = await page.$eval('.aa-stats__headline', (e) => e.textContent).catch(() => '');
+  check('CityChrone’s velocity thresholds are in km/h', /at least \d+ km\/h/.test(ccTitle), ccTitle);
+
+  // P.O.V. and the figures across layers are paused, and so are the scatter
+  // and the matrix: none is offered, and their addresses open on the rest.
+  const tabs = await page.$$eval('.aa-stats__layer, .aa-stats__segbtn', (els) => els.map((e) => e.textContent.trim()));
+  check(
+    'Stats offers no paused layer or view',
+    !tabs.some((x) => /P\.O\.V\.|Across layers|Scatter|Matrix/.test(x)) && tabs.includes('Curves'),
+    tabs.join(' · '),
+  );
+
+  // No subtitle under a focus: the charts carry their own titles.
+  await page.goto(`${BASE}/stats?view=focus`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-focus__board', { timeout: 8000 }).catch(() => {});
+  const ledes = await page.$$eval('.aa-stats__head p', (els) => els.length);
+  check('A focus has no subtitle', ledes === 0, `${ledes} paragraph(s) under the title`);
+
+  // The 15-minute city's focus ranks cities by size: two boards, each
+  // drawn from the statistics file, whatever the residents filter says.
+  await page.goto(`${BASE}/stats?view=focus`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-focus__board', { timeout: 8000 }).catch(() => {});
+  const boards = await page.$$eval('.aa-focus__boardtitle', (els) => els.map((e) => e.textContent.trim()));
+  const expectedBoard = await page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    const res = await fetch(`${base}/data/${catalogue.stats}`);
+    let body = new Uint8Array(await res.arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    const stats = JSON.parse(new TextDecoder().decode(body));
+    return stats.values['fifteen.proximity_time.foot'].filter(
+      (v, i) => v && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua' && stats.cities[i].population >= 1e6,
+    ).length;
+  }, BASE);
+  const firstBoard = await page.$$eval('.aa-focus__board', (els) => els[0]?.querySelectorAll('.aa-focus__item').length ?? 0);
+  check(
+    'The 15-minute focus ranks cities over one and ten million residents',
+    boards.length === 2 && /1 million/.test(boards[0]) && /10 million/.test(boards[1]) && firstBoard === Math.min(10, expectedBoard),
+    `${boards.join(' · ')} · ${firstBoard} rows, file has ${expectedBoard}`,
+  );
+
+  // The curves: a city is added by typing its name, keeps its slot in the
+  // URL, and a line under the pointer is named where the pointer is.
+  await page.goto(`${BASE}/stats?view=curves&pop=0&sel=rome`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-cpick__input', { timeout: 8000 }).catch(() => {});
+  await page.fill('.aa-cpick__input', 'zur');
+  await page.waitForSelector('.aa-cpick__option', { timeout: 3000 }).catch(() => {});
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(400);
+  const chips = await page.$$eval('.aa-cpick__chip .aa-cpick__name', (els) => els.map((e) => e.textContent.trim()));
+  const svgBox = await page.locator('.aa-curves__svg').boundingBox();
+  let named = '';
+  if (svgBox) {
+    for (let fx = 0.2; fx < 0.8 && !named; fx += 0.05) {
+      for (let fy = 0.1; fy < 0.9 && !named; fy += 0.02) {
+        await page.mouse.move(svgBox.x + svgBox.width * fx, svgBox.y + svgBox.height * fy);
+        named = await page.$eval('.aa-curves__hovername', (e) => e.textContent).catch(() => '');
+      }
+    }
+  }
+  check(
+    'Curves add a city by name and name the line under the pointer',
+    chips.join(',') === 'Rome,Zurich' && /[?&]sel=rome%2Czurich/.test(page.url()) && Boolean(named),
+    `${chips.join(',')} · ${page.url().replace(BASE, '')} · hovered "${named}"`,
+  );
   await page.close();
 }
 
@@ -1395,6 +1576,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.locator('.aa-toggle--wrap button', { hasText: 'Metro D' }).click().catch(() => {});
   await page.waitForTimeout(1500);
   const fetched = requested.filter((u) => /\/cities\/rome\/scenarios\/metro-d\/cardep\.json/.test(u)).length;
+  await openSummary(page);
   const summary = await page.$eval('.aa-summary', (el) => el.textContent).catch(() => '');
   check(
     'A scenario is offered with its layer and loaded from its own file, only when chosen',
@@ -1403,14 +1585,14 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   );
   await page.locator('.aa-toggle button', { hasText: 'Difference' }).click().catch(() => {});
   await page.waitForTimeout(1200);
-  const legend = await page.$eval('.aa-city__panel', (el) => el.textContent).catch(() => '');
+  const legend = await page.$eval('.aa-city__legend', (el) => el.textContent).catch(() => '');
   check(
     'The difference is drawn on its own scale, linkable',
     /minus current/i.test(legend) && /[?&]cmp=diff/.test(page.url()) && /[?&]sc=metro-d/.test(page.url()),
     page.url().replace(BASE, ''),
   );
   // A layer without the scenario drops it from the URL.
-  await page.locator('.aa-layers__row', { hasText: '15-minute city' }).click();
+  await page.locator('.aa-picker--inline .aa-picker__item', { hasText: '15-minute city' }).click();
   await page.waitForTimeout(500);
   check('A scenario does not follow to a layer without it', !/[?&]sc=/.test(page.url()), page.url().replace(BASE, ''));
   await page.close();
@@ -1427,8 +1609,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await control.click().catch(() => {});
   await page.waitForURL(/\/atlas\/tokyo-fua/, { timeout: 8000 }).catch(() => {});
   // Routes cross-fade, and the outgoing page stays on screen until it ends.
-  await page.waitForFunction(() => /Metro/.test(document.querySelector('.aa-city__region')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
-  const region = await page.$eval('.aa-city__region', (el) => el.textContent).catch(() => '');
+  // The title is the city and its country; the boundary on screen is the
+  // pressed half of the boundary switch.
+  const pressed = '.aa-city__panel .aa-toggle__btn[aria-pressed="true"]';
+  await page.waitForFunction((sel) => [...document.querySelectorAll(sel)].some((b) => /Metro/.test(b.textContent)), pressed, { timeout: 15000 }).catch(() => {});
+  const region = await page.$$eval(pressed, (els) => els.map((el) => el.textContent).join(' · ')).catch(() => '');
   check(
     'The city view switches to the metro area, keeping the view',
     /\/atlas\/tokyo-fua\?mode=bicycle/.test(page.url()) && /Metro \(FUA\)/.test(region),

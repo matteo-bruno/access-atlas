@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Eyebrow } from '../components/SectionHeading.jsx';
-import { Subhead } from '../components/Subhead.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
 import { DELTA_RAMPS, RAMPS, rampColor } from '../map/ramps.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
+import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
@@ -107,7 +107,9 @@ function AtlasScreen({ cityId, view }) {
   const [hoverCell, setHoverCell] = useState(null);
   const [opacity, setOpacity] = useState(DEFAULT_OPACITY);
   const [infoOpen, setInfoOpen] = useState(false);
-  const [geometry, setGeometry] = useState('geographic');
+  // The cartogram is the first view: where nobody lives shrinks away, so the
+  // map opens on the residents a measure is about.
+  const [geometry, setGeometry] = useState('cartogram');
   // Whether the city map has drawn its mesh yet: until it has, the loading
   // note stays over the paper rather than leaving an empty box.
   const [mapPainted, setMapPainted] = useState(false);
@@ -116,7 +118,9 @@ function AtlasScreen({ cityId, view }) {
   // The map is the page; everything else can step out of its way.
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
-  const [summaryOpen, setSummaryOpen] = useState(true);
+  // Closed by default: a small box to open, so the map and its key come first.
+  const [summaryOpen, setSummaryOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [selectedOpen, setSelectedOpen] = useState(true);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
@@ -736,7 +740,7 @@ function AtlasScreen({ cityId, view }) {
       });
       rows.push({
         label: t('city.cell.sociality'),
-        value: scores ? n(Math.round(scores.s)) : '—',
+        value: scores ? `${n(Math.round(scores.s))} ${t('atlas.people')}` : '—',
       });
       const minutes = Number.isFinite(p.cc) ? travelTimeAt(matrixRow, p.cc) : null;
       if (minutes != null) {
@@ -756,7 +760,23 @@ function AtlasScreen({ cityId, view }) {
     });
     // The one row that is the same under every layer: the cell's own name on
     // the shared grid, which is what makes the layers comparable at all.
-    if (p.h3) rows.push({ label: t('city.cell.grid'), value: p.h3 });
+    // It closes the box, under anything a layer adds below the rows.
+    if (p.h3) {
+      rows.footer = [
+        {
+          label: t('city.cell.grid'),
+          value: p.h3,
+          about: (
+            <p>
+              {t('city.cell.gridAbout')}{' '}
+              <a href="https://h3geo.org/" target="_blank" rel="noreferrer noopener">
+                h3geo.org ↗
+              </a>
+            </p>
+          ),
+        },
+      ];
+    }
     return rows;
   }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, ccHourData, matrixRow, t, n, shownId, scenarioName]);
 
@@ -783,7 +803,11 @@ function AtlasScreen({ cityId, view }) {
       ? (v) => (v === 0 ? '0' : signed(v, n))
       : ccView === 'sociality' && citychroneOn
         ? (v) => (v === 0 ? '0' : `${n(Math.round(v / 1000))}k`)
-        : (v) => n(v, { maximumFractionDigits: 1 });
+        : layer === 'fifteen'
+          // Minutes: whole ones as they are, half ones as a clock (7:30, not
+          // 7.5), the way the site writes every 15minCity time.
+          ? (v) => (Number.isInteger(v) ? n(v) : formatTime(v))
+          : (v) => n(v, { maximumFractionDigits: 1 });
 
   // How to read the colours of the layer on screen. The three cell-valued
   // platforms explain their own scale; CityChrone's changes with the measure
@@ -794,7 +818,12 @@ function AtlasScreen({ cityId, view }) {
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
-      : t(`city.explain.map.${layer}`);
+      : layer === 'cardep' || layer === 'pov'
+        // Car Dependency's and P.O.V.'s "?" say more than the dialog's
+        // "Reading the map": CDI what a white and a blue area mean, P.O.V.
+        // the framework its four zones come from.
+        ? t(`city.explain.legend.${layer}`)
+        : t(`city.explain.map.${layer}`);
 
   // What the info panel explains about the layer on screen.
   const infoBody = isPopulation
@@ -810,49 +839,84 @@ function AtlasScreen({ cityId, view }) {
         sidebarOpen ? '' : ' aa-atlas--nopanel'
       }`}
     >
-      {/* Full screen is the map and its controls: everything that is chrome
-          steps out rather than shrinking. */}
-      {!fullscreen && (
-        <>
-          <Subhead
-            accent={platform.accent}
-            label={t('atlas.label')}
-            title={cityName}
-            meta={
-              <span className="aa-city__region">
-                {t('city.region', {
-                  // Which boundary this is, wherever the city has two (or
-                  // only its metro area is published).
-                  region: bothExtents || extent === 'fua' ? `${region} · ${t(`atlas.extent.${extent}`)}` : region,
-                  count: layerCells != null ? n(layerCells) : '—',
-                })}
-              </span>
-            }
-          >
-            {/* Straight to the full account — there is no half-open state
-                between a tooltip and this. */}
-            {!isPopulation && (
-              <button
-                type="button"
-                className="aa-chip aa-chip--icon"
-                onClick={() => setAboutOpen(true)}
-              >
-                <Icon name="info" size={13} color="currentColor" />
-                {t('atlas.info')}
-              </button>
-            )}
-            {paper && (
-              <a className="aa-chip" href={paper.url} target="_blank" rel="noreferrer noopener">
-                {t('platform.paper')}
-              </a>
-            )}
-          </Subhead>
-        </>
-      )}
 
       <main className="aa-main aa-city aa-city--nochart" id="main">
         {sidebarOpen && (
           <aside className="aa-city__panel">
+            {/* ── The city, and the ways out of it ───────────────
+                What used to be a bar of its own above the map: the city
+                and its country as the title, the layer's long account and
+                its paper, and the way back to the world map. */}
+            <div className="aa-city__header">
+              <Link className="aa-city__back" to={`/platforms/${isPopulation ? 'all' : platform.slug}`}>
+                <Icon name="chevronLeft" size={13} />
+                {t('atlas.back')}
+              </Link>
+              <h1 className="aa-city__title">
+                {cityName}
+                {region && <span className="aa-accent"> – {region}</span>}
+              </h1>
+              {!isPopulation && (
+                <div className="aa-city__links">
+                  <button
+                    type="button"
+                    className="aa-chip aa-chip--icon"
+                    onClick={() => setAboutOpen(true)}
+                  >
+                    <Icon name="info" size={13} color="currentColor" />
+                    {t('atlas.info')}
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* ── The legend: how to read the colours, first thing
+                under the city's name. ───────────────────────────── */}
+            <div className="aa-city__legend">
+              <Explain label={legendTitle} body={legendExplain} />
+              {layer === 'pov' ? (
+                // The one categorical layer: four named classes, each with the
+                // share of covered cells that falls in it.
+                <div className="aa-bands">
+                  {ZONES.map((zone, index) => {
+                    const shares = shown
+                      ? scenarioFigures?.zoneShares
+                      : unified
+                        ? atlas.data?.layers.pov.zoneShares
+                        : swapMesh.data?.stats?.zoneShares;
+                    const share = shares?.[index];
+                    return (
+                      <button
+                        key={zone.id}
+                        type="button"
+                        className={`aa-bands__row${activeZone === index ? ' aa-bands__row--active' : ''}`}
+                        aria-pressed={activeZone === index}
+                        onMouseEnter={() => setActiveZone(index)}
+                        onMouseLeave={() => setActiveZone(null)}
+                        onFocus={() => setActiveZone(index)}
+                        onBlur={() => setActiveZone(null)}
+                        onClick={() => setActiveZone((cur) => (cur === index ? null : index))}
+                      >
+                        <span className="aa-swatch" style={{ background: zone.color }} />
+                        <span className="aa-bands__label">{t(`city.zones.${zone.key}.name`)}</span>
+                        <span className="aa-mono aa-bands__pct">
+                          {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : waiting ? null : (
+                <RampLegend
+                  ramp={measure.ramp}
+                  format={tickFormat}
+                  // Both time ramps keep going past their bar; the tail carries
+                  // the rest of the scale rather than a sentence about it.
+                  tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
+                />
+              )}
+            </div>
+
             {/* ── The boundary: the city's core or its metro area ── */}
             {bothExtents && (
               <>
@@ -872,45 +936,6 @@ function AtlasScreen({ cityId, view }) {
                 </div>
               </>
             )}
-
-            {/* ── The switcher ─────────────────────────────────── */}
-            <Eyebrow>{t('atlas.controls.layer')}</Eyebrow>
-            <div className="aa-layers" role="group" aria-label={t('atlas.controls.layer')}>
-              {LAYER_ORDER.map((id) => {
-                const option = PLATFORMS_BY_ID[id];
-                const enabled = available.has(id);
-                return (
-                  <button
-                    key={id}
-                    type="button"
-                    className={`aa-layers__row${layer === id ? ' aa-layers__row--active' : ''}`}
-                    disabled={!enabled}
-                    aria-pressed={layer === id}
-                    title={enabled ? undefined : t('atlas.unavailable')}
-                    onClick={() => pickLayer(id)}
-                  >
-                    <span className="aa-layers__dot" style={{ background: option.accent }} />
-                    <span className="aa-layers__name">{option.name}</span>
-                    {!enabled && <span className="aa-layers__off">{t('atlas.unavailable')}</span>}
-                  </button>
-                );
-              })}
-              {/* Population is context rather than a fifth lens: it is what
-                  the other four are measured for, so it sits apart. */}
-              {hasPopulation && (
-                <button
-                  type="button"
-                  className={`aa-layers__row aa-layers__row--context${
-                    isPopulation ? ' aa-layers__row--active' : ''
-                  }`}
-                  aria-pressed={isPopulation}
-                  onClick={() => pickLayer(POPULATION_LAYER)}
-                >
-                  <span className="aa-layers__dot" style={{ background: BRAND.navy }} />
-                  <span className="aa-layers__name">{t('atlas.population.name')}</span>
-                </button>
-              )}
-            </div>
 
             {/* ── Scenarios of the open layer ──────────────────── */}
             {scenarios.length > 0 && (
@@ -996,7 +1021,7 @@ function AtlasScreen({ cityId, view }) {
             {layer === 'citychrone' && (
               <>
                 <Eyebrow>{t('atlas.controls.view')}</Eyebrow>
-                <div className="aa-toggle" role="group" aria-label={t('atlas.controls.view')}>
+                <div className="aa-toggle aa-toggle--segmented" role="group" aria-label={t('atlas.controls.view')}>
                   {CITYCHRONE_VIEWS.map((option) => (
                     <button
                       key={option.key}
@@ -1036,50 +1061,6 @@ function AtlasScreen({ cityId, view }) {
               </>
             )}
 
-            {/* ── Legend ───────────────────────────────────────── */}
-            <Explain label={legendTitle} body={legendExplain} />
-            {layer === 'pov' ? (
-              // The one categorical layer: four named classes, each with the
-              // share of covered cells that falls in it.
-              <div className="aa-bands">
-                {ZONES.map((zone, index) => {
-                  const shares = shown
-                    ? scenarioFigures?.zoneShares
-                    : unified
-                      ? atlas.data?.layers.pov.zoneShares
-                      : swapMesh.data?.stats?.zoneShares;
-                  const share = shares?.[index];
-                  return (
-                    <button
-                      key={zone.id}
-                      type="button"
-                      className={`aa-bands__row${activeZone === index ? ' aa-bands__row--active' : ''}`}
-                      aria-pressed={activeZone === index}
-                      onMouseEnter={() => setActiveZone(index)}
-                      onMouseLeave={() => setActiveZone(null)}
-                      onFocus={() => setActiveZone(index)}
-                      onBlur={() => setActiveZone(null)}
-                      onClick={() => setActiveZone((cur) => (cur === index ? null : index))}
-                    >
-                      <span className="aa-swatch" style={{ background: zone.color }} />
-                      <span className="aa-bands__label">{t(`city.zones.${zone.key}.name`)}</span>
-                      <span className="aa-mono aa-bands__pct">
-                        {share == null ? '—' : `${n(share, { minimumFractionDigits: 1 })}%`}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            ) : waiting ? null : (
-              <RampLegend
-                ramp={measure.ramp}
-                format={tickFormat}
-                // Both time ramps keep going past their bar; the tail carries
-                // the rest of the scale rather than a sentence about it.
-                tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
-              />
-            )}
-
             {layer === 'cardep' && !diffShown && (
               <>
                 <Explain label={t('city.filter.title')} body={t('city.filter.about')} />
@@ -1100,7 +1081,7 @@ function AtlasScreen({ cityId, view }) {
                 better than the data does can say so. It sits under the
                 controls rather than beside a figure: the doubt is usually
                 about the layer as a whole, not one cell. */}
-            <MistakeNote />
+            <MistakeNote paper={paper} />
           </aside>
         )}
 
@@ -1205,23 +1186,57 @@ function AtlasScreen({ cityId, view }) {
               </div>
             )}
 
-            {/* ── Top left: the geometry ───────────────────────── */}
-            {unified && (
-              <div className="aa-mapui aa-mapui--tl aa-fadein">
-                <GeometryToggle
-                  compact
-                  value={geometryValue}
-                  onChange={setGeometry}
-                  available={{ geographic: true, cartogram: cartogramPublished }}
-                  derived={cartogramDerived}
-                  loading={cartogramOn && cartogram.status === 'pending'}
-                />
-              </div>
-            )}
+            {/* ── Top: the layers, then what the city adds up to ────
+                One column over the map, so the boxes on the right always
+                start below the bar, however tall the bar turns out on a
+                given screen: a fixed offset left them under it. */}
+            <div className="aa-city__top">
+            {/* The same picker the world map opens with, so a layer is
+                chosen the same way on both screens; its dot is a miniature
+                of the scale the map is about to draw. */}
+            <div className="aa-city__layerbar aa-fadein">
+              <nav className="aa-card aa-picker aa-picker--inline" aria-label={t('atlas.controls.layer')}>
+                {LAYER_ORDER.map((id) => {
+                  const option = PLATFORMS_BY_ID[id];
+                  const enabled = available.has(id);
+                  return (
+                    <button
+                      key={id}
+                      type="button"
+                      className={`aa-picker__item${layer === id ? ' aa-picker__item--active' : ''}`}
+                      disabled={!enabled}
+                      aria-pressed={layer === id}
+                      title={enabled ? undefined : t('atlas.unavailable')}
+                      onClick={() => pickLayer(id)}
+                    >
+                      <span
+                        className="aa-picker__dot"
+                        style={{ backgroundImage: pickerDot(option) }}
+                      />
+                      {option.name}
+                    </button>
+                  );
+                })}
+                {/* Population is context rather than a fifth lens, so it
+                    comes last, after the four it is the denominator of. */}
+                {hasPopulation && (
+                  <button
+                    type="button"
+                    className={`aa-picker__item${isPopulation ? ' aa-picker__item--active' : ''}`}
+                    aria-pressed={isPopulation}
+                    onClick={() => pickLayer(POPULATION_LAYER)}
+                  >
+                    <span className="aa-picker__dot" style={{ background: BRAND.navy }} />
+                    {t('atlas.population.name')}
+                  </button>
+                )}
+              </nav>
+            </div>
 
             {/* ── Top right: what the city adds up to, and one cell ── */}
             <div className="aa-mapui aa-mapui--tr aa-fadein aa-fadein--slow">
               <MapBox
+                className="aa-mapbox--summary"
                 title={t('city.summary.title')}
                 open={summaryOpen}
                 onToggle={() => setSummaryOpen((open) => !open)}
@@ -1290,14 +1305,24 @@ function AtlasScreen({ cityId, view }) {
                     </>
                   )}
                   {layer === 'citychrone' && ccView !== 'isochrone' && (
-                    <SummaryRow
-                      label={t('atlas.summary.weightedV')}
-                      value={
-                        ccHourData?.weightedMedianV == null
-                          ? '—'
-                          : `${n(ccHourData.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
-                      }
-                    />
+                    <>
+                      <SummaryRow
+                        label={t('atlas.summary.weightedV')}
+                        value={
+                          ccHourData?.weightedMedianV == null
+                            ? '—'
+                            : `${n(ccHourData.weightedMedianV, { maximumFractionDigits: 1 })} km/h`
+                        }
+                      />
+                      <SummaryRow
+                        label={t('atlas.summary.weightedS')}
+                        value={
+                          ccHourData?.weightedMedianS == null
+                            ? '—'
+                            : `${n(Math.round(ccHourData.weightedMedianS))} ${t('atlas.people')}`
+                        }
+                      />
+                    </>
                   )}
                   <SummaryRow
                     label={t('city.summary.population')}
@@ -1338,21 +1363,37 @@ function AtlasScreen({ cityId, view }) {
                   {layer === 'fifteen' &&
                     selectedCell != null &&
                     baseGeojson?.features?.[selectedCell] && (
-                      <>
-                        <p className="aa-catbars__title">{t('fifteen.barsTitle')}</p>
-                        <CategoryBars
-                          properties={shownProperties(baseGeojson.features[selectedCell].properties, shownId)}
-                          mode={mode}
-                        />
-                      </>
+                      <CategoryBars
+                        properties={shownProperties(baseGeojson.features[selectedCell].properties, shownId)}
+                        mode={mode}
+                      />
                     )}
                 </CellInspector>
               </MapBox>
             </div>
+            </div>
 
-            {/* ── Bottom left: how strongly the layer is painted ── */}
+            {/* ── Bottom left: settings, closed until asked for ──────
+                How strongly the layer is painted, and on which geometry. */}
             <div className="aa-mapui aa-mapui--bl aa-fadein">
-              <MapBox title={t('atlas.controls.opacity')} className="aa-mapbox--opacity">
+              <MapBox
+                title={t('atlas.settings')}
+                className="aa-mapbox--opacity"
+                opensUp
+                open={settingsOpen}
+                onToggle={() => setSettingsOpen((open) => !open)}
+              >
+                {unified && (
+                  <GeometryToggle
+                    compact
+                    value={geometryValue}
+                    onChange={setGeometry}
+                    available={{ geographic: true, cartogram: cartogramPublished }}
+                    derived={cartogramDerived}
+                    loading={cartogramOn && cartogram.status === 'pending'}
+                  />
+                )}
+                <p className="aa-eyebrow aa-settings__label">{t('atlas.controls.opacity')}</p>
                 <label className="aa-opacity">
                   <input
                     className="aa-opacity__input"
@@ -1380,6 +1421,11 @@ function AtlasScreen({ cityId, view }) {
               </button>
             </div>
 
+            {/* The bar under the map is gone; what it said that still
+                matters is that a generated mesh is not data. */}
+            {source === 'seed' && (
+              <div className="aa-atlas__prompt aa-atlas__prompt--foot">{t('city.seeded')}</div>
+            )}
             {citychroneOn && ccView === 'isochrone' && !isochronesPublished && (
               <div className="aa-atlas__prompt">{t('atlas.isochroneUnavailable')}</div>
             )}
@@ -1407,20 +1453,6 @@ function AtlasScreen({ cityId, view }) {
         />
       )}
 
-      {!fullscreen && (
-        <div className="aa-statusbar">
-          <span>
-            {source === 'seed'
-              ? t('city.seeded')
-              : unified
-                ? t('atlas.statusHint')
-                : t('atlas.legacyHint')}
-          </span>
-          <span className="aa-mono">
-            {formatCoord(profile.center[1], 'NS')} {formatCoord(profile.center[0], 'EW')}
-          </span>
-        </div>
-      )}
     </div>
   );
 }
@@ -1432,26 +1464,26 @@ function AtlasScreen({ cityId, view }) {
  * kind of wrong is likely (missing or misleading data) and hands over an
  * address. A form would promise a workflow that does not exist behind it.
  */
-function MistakeNote() {
+function MistakeNote({ paper }) {
   const { t, lang } = useI18n();
-  const [open, setOpen] = useState(false);
 
+  // Both notes open as the "?" panels do: on a click, in a panel over the
+  // page, closed by a click elsewhere or Escape.
   return (
-    <div className={`aa-mistake${open ? ' aa-mistake--open' : ''}`}>
+    <div className="aa-mistake">
       {/* How old the street and point-of-interest data under every layer is:
           the first thing to check when a cell looks out of date. */}
       <p className="aa-osmnote">{t('atlas.osmUpdate', { date: formatOsmDate(lang) })}</p>
-      <button
-        type="button"
-        className="aa-mistake__toggle"
-        aria-expanded={open}
-        onClick={() => setOpen((current) => !current)}
+      <Explain
+        triggerClassName="aa-mistake__toggle"
+        trigger={
+          <>
+            <Icon name="info" size={12} color="currentColor" />
+            {t('atlas.mistake.title')}
+          </>
+        }
       >
-        <Icon name="info" size={12} color="currentColor" />
-        {t('atlas.mistake.title')}
-      </button>
-      {open && (
-        <p className="aa-mistake__body">
+        <p>
           <Interpolate
             template={t('atlas.mistake.body')}
             values={{
@@ -1463,7 +1495,41 @@ function MistakeNote() {
             }}
           />
         </p>
+      </Explain>
+      {/* The layer's paper, then where the city's outline comes from. */}
+      {paper && (
+        <a className="aa-mistake__toggle aa-mistake__paper" href={paper.url} target="_blank" rel="noreferrer noopener">
+          <Icon name="paper" size={12} color="currentColor" />
+          {t('platform.paper')}
+        </a>
       )}
+      <Explain
+        triggerClassName="aa-mistake__toggle"
+        trigger={
+          <>
+            <Icon name="info" size={12} color="currentColor" />
+            {t('atlas.boundaries.title')}
+          </>
+        }
+      >
+        <p>
+          <Interpolate
+            template={t('atlas.boundaries.body')}
+            values={{
+              ghsl: (
+                <a
+                  className="aa-mistake__link"
+                  href="https://human-settlement.emergency.copernicus.eu/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {t('atlas.boundaries.ghsl')}
+                </a>
+              ),
+            }}
+          />
+        </p>
+      </Explain>
     </div>
   );
 }
@@ -1517,11 +1583,6 @@ function signed(value, n, digits = 2) {
 
 function signedOrDash(value, n) {
   return value == null ? '—' : signed(value, n);
-}
-
-function formatCoord(value, axes) {
-  const hemisphere = value >= 0 ? axes[0] : axes[1];
-  return `${Math.abs(value).toFixed(3)}°${hemisphere}`;
 }
 
 // The ground about a kilometre and a half either side of one cell: enough of

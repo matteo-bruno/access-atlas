@@ -19,7 +19,7 @@ import './CategoryBars.css';
  * @param {'foot'|'bicycle'} props.mode
  */
 export function CategoryBars({ properties, mode }) {
-  const { t, n } = useI18n();
+  const { t } = useI18n();
   const bands = BANDS[mode] ?? BANDS.foot;
   const axis = bands[bands.length - 1];
 
@@ -58,9 +58,6 @@ export function CategoryBars({ properties, mode }) {
           </span>
         </div>
       ))}
-      <p className="aa-catbars__axis">
-        {t('fifteen.barsAxis', { max: n(axis), unit: t('fifteen.minutes') })}
-      </p>
     </div>
   );
 }

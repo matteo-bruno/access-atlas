@@ -50,32 +50,49 @@ export const NEWS = [
   { key: 'cdi', kind: 'release', color: BRAND.magenta, count: 22 },
 ];
 
-// "Compare cities" on the home page: six cities, picked editorially, on
-// three P.O.V. figures read from its published compare rows (never written
-// here): the median resident's proximity and opportunity scores (weighted
-// counts of reachable points of interest, not minutes or jobs), and the
-// share of residents in the inclusion zone. A city with no P.O.V. row is
-// left out rather than shown with a number nobody computed.
-export const CITY_TABLE = ['paris', 'barcelona', 'berlin', 'vienna', 'new-york', 'rome'];
+// "Compare cities" on the home page: three rankings of the published
+// statistics (src/data/stats.js), the share of a city's residents within 5,
+// 10 and 15 minutes on foot of the services on average. Read from the same
+// figure objects the Stats page draws, so the two cannot disagree, and
+// filtered the way the Stats page opens: cores only (a metro area includes
+// its core's residents), never a city hidden for thin data, and at least
+// RANKING_MIN_POPULATION residents, so a small town at 100% does not top a
+// list of capitals.
+export const RANKING_MEASURE = 'fifteen.proximity_time.foot';
+export const RANKING_MINUTES = [5, 10, 15];
+export const RANKING_MIN_POPULATION = 1000000;
+export const RANKING_LENGTH = 5;
 
 /**
- * The table's rows from P.O.V.'s compare rows (`usePlatformSummary('pov')`),
- * in CITY_TABLE's order, and each meter's full width: just above the
- * largest value shown, so the widest bar nearly fills its track.
+ * One ranking per threshold in RANKING_MINUTES that the measure publishes:
+ * `{ minutes, index, rows: [{ id, name, nameIt, share }] }`, best first.
+ * `index` is the threshold's position in the measure's shares, which is
+ * also what the Stats page's `t=` names. Empty when nothing is published.
  */
-export function cityTableRows(summaryRows) {
-  const byId = new Map((summaryRows ?? []).map((row) => [row.id, row]));
-  const rows = CITY_TABLE.map((id) => byId.get(id))
-    .filter(Boolean)
-    .map((row) => ({
-      id: row.id,
-      profile: row.profile,
-      proximity: row.medianProximity,
-      opportunity: row.medianOpportunity,
-      inclusion: row.zonePopulationShares?.[0] ?? null,
+export function cityRankings(stats) {
+  const measure = stats?.measuresById?.[RANKING_MEASURE];
+  if (!measure) return [];
+  const column = stats.values[RANKING_MEASURE] ?? [];
+  const cities = stats.cities
+    .map((city, i) => ({ city, stat: column[i] }))
+    .filter(
+      ({ city, stat }) =>
+        stat &&
+        city.extent !== 'fua' &&
+        !city.hidden &&
+        (city.population ?? 0) >= RANKING_MIN_POPULATION,
+    );
+  return RANKING_MINUTES.map((minutes) => ({ minutes, index: measure.thresholds?.indexOf(minutes) ?? -1 }))
+    .filter(({ index }) => index >= 0)
+    .map(({ minutes, index }) => ({
+      minutes,
+      index,
+      rows: cities
+        .map(({ city, stat }) => ({ id: city.id, name: city.name, nameIt: city.nameIt, share: stat.shares?.[index] }))
+        .filter((row) => Number.isFinite(row.share))
+        .sort((a, b) => b.share - a.share)
+        .slice(0, RANKING_LENGTH),
     }));
-  const top = (key) => Math.max(1e-9, ...rows.map((row) => row[key] ?? 0)) * 1.03;
-  return { rows, scale: { proximity: top('proximity'), opportunity: top('opportunity'), inclusion: top('inclusion') } };
 }
 
 // Work in progress — the lines of research running alongside the four

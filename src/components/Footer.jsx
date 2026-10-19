@@ -4,6 +4,7 @@ import { Icon } from './Icon.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS } from '../data/platforms.js';
 import { CONTACT } from '../data/team.js';
+import { BLOG_LISTED } from '../data/blog.js';
 import './Footer.css';
 
 // The design shows four short link columns. A label with no destination is
@@ -14,6 +15,8 @@ export function Footer() {
   // Destinations by position, so the dictionaries stay pure labels and the
   // translations cannot drift away from the routes.
   const researchTo = ['/research', '/research', '/blog', '/faq'];
+  // The blog is kept off the footer while it is off the nav (BLOG_LISTED).
+  const hiddenTo = new Set(BLOG_LISTED ? [] : ['/blog']);
   const aboutTo = ['/sustainable-cities', '/contact', '/contact', '/consulting', '/work-with-us'];
   const touchHref = [CONTACT.codeUrl, null];
 
@@ -29,7 +32,9 @@ export function Footer() {
     {
       key: 'research',
       heading: t('footer.research'),
-      links: t('footer.researchLinks').map((label, i) => ({ label, to: researchTo[i] })),
+      links: t('footer.researchLinks')
+        .map((label, i) => ({ label, to: researchTo[i] }))
+        .filter((link) => !hiddenTo.has(link.to)),
     },
     {
       key: 'about',

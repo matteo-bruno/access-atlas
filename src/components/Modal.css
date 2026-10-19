@@ -101,3 +101,26 @@
   color: var(--ink);
   font-weight: 600;
 }
+.aa-about__categories {
+  margin: 8px 0 0;
+}
+.aa-about__categories div {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 10px;
+  padding: 5px 0;
+  border-top: 1px solid var(--hair-soft);
+}
+.aa-about__categories dt {
+  color: var(--ink);
+  font-weight: 500;
+}
+.aa-about__categories dd {
+  margin: 0;
+}
+@media (max-width: 560px) {
+  .aa-about__categories div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

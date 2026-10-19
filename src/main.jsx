@@ -5,15 +5,13 @@ import { BrowserRouter } from 'react-router-dom';
 // Self-hosted so the Atlas renders identically offline and behind a firewall.
 // Roboto is the site's working face — body, UI, everything that is read rather
 // than announced. Instrument Serif is the display face and ships one weight,
-// which is why every rule that uses it sets `font-weight: 400`. Roboto Mono
-// keeps the figures in columns.
+// which is why every rule that uses it sets `font-weight: 400`. Figures are
+// Roboto too, with tabular digits (see `--font-mono` in tokens.css).
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/roboto/400-italic.css';
-import '@fontsource/roboto-mono/400.css';
-import '@fontsource/roboto-mono/500.css';
 import '@fontsource/instrument-serif/400.css';
 import '@fontsource/instrument-serif/400-italic.css';
 

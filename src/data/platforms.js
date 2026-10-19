@@ -104,6 +104,9 @@ export const PLATFORMS = [
     stops: null,
     property: 'zone',
     markerStyle: 'ring',
+    // On the world map a city is one colour: P.O.V.'s zones describe places
+    // within a city, and a city has no zone of its own.
+    markerColor: BRAND.navy,
     coversAllCities: false,
     studyOnly: true,
   },

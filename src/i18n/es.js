@@ -74,6 +74,7 @@ export default {
     platforms: {
       title: 'Capas de accesibilidad',
       more: 'Más información',
+      explore: 'Explorar la capa',
       cityCount: '{count} ciudades',
       themes: {
         fifteen: 'Proximidad',
@@ -93,16 +94,10 @@ export default {
     },
     table: {
       title: 'Compara ciudades',
-      statsNote:
-        'Seis ciudades en tres medidas, a partir de los datos de P.O.V. La pantalla que compara todas las ciudades publicadas, en todas las medidas, es la pestaña Estadísticas.',
       statsCta: 'Abrir Estadísticas',
-      headers: {
-        city: 'Ciudad',
-        proximity: 'Puntuación mediana de proximidad',
-        opportunity: 'Puntuación mediana de oportunidad',
-        inclusion: 'Zona de inclusión',
-      },
-      note: 'La proximidad y la oportunidad son recuentos ponderados de puntos de interés alcanzables, comparables entre ciudades porque todas se miden de la misma manera. La inclusión es la proporción de celdas por encima de ambas medianas ponderadas por población.',
+      within: 'A {minutes} min o menos',
+      onFoot: 'a pie',
+      note: 'Proporción de residentes a ese tiempo o menos a pie de los servicios, en promedio entre todos. Ciudades de al menos {population} residentes.',
     },
     side: {
       title: 'Trabajo en curso',
@@ -173,13 +168,13 @@ export default {
       welcomeIntro:
         'Consulta los tiempos de viaje a los servicios cotidianos desde cualquier lugar de cualquier ciudad y compáralos con la referencia de los 15 minutos.',
       legendUnit: 'Tiempo mediano a pie hasta los servicios',
-      tooltip: '{name} · {time} a pie hasta los servicios (residente mediano)',
+      tooltip: '{name} – {time} min',
       legend: ['0–3 min', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: 'Acceso a oportunidades',
       intro:
-        'CityChrone sustituye la distancia métrica por el tiempo de viaje: el mapa se deforma para que dos lugares queden cerca cuando el transporte público los conecta rápido, por lejos que estén sobre el terreno.',
+        'CityChrone++ mide la velocidad del transporte público desde cualquier punto de la ciudad y a cualquier hora de un día laborable, en términos de velocidad absoluta (puntuación de velocidad) y de oportunidades sociales (puntuación de sociabilidad).',
       legendUnit: 'Velocidad del transporte público (km/h)',
       tooltip: '{name} · {value} km/h en transporte público (residente mediano)',
       legend: ['Lenta', 'Media', 'Rápida'],
@@ -190,12 +185,12 @@ export default {
         'El Car Dependency Index compara las oportunidades alcanzables en coche con las alcanzables en transporte público en el mismo tiempo: CDI = (O_coche − O_TP) / (O_coche + O_TP). Va de −1, donde el transporte público llega a más, pasando por 0, donde ambos se equilibran, hasta +1, donde el coche llega a todo y el transporte público casi a nada.',
       legendUnit: 'Car Dependency Index (residente mediano)',
       tooltip: '{name} · CDI {value} (residente mediano)',
-      legend: ['Favorable al transporte público', 'Equilibrado', 'Dependiente del coche', 'Muy dependiente del coche'],
+      legend: ['Favorable al transporte público', 'Equilibrado', 'Dependiente del coche'],
     },
     pov: {
       label: 'Proximidad · Oportunidad · Valor',
       intro:
-        'Cada celda recibe una puntuación en dos ejes (la proximidad, los servicios cotidianos alcanzables a pie, y la oportunidad, los destinos de escala urbana alcanzables en transporte público) y se clasifica frente a la mediana de la ciudad ponderada por población en cada eje. Un tercer eje, el valor de lo alcanzable, está planteado en el marco teórico pero aún no se ha cuantificado.',
+        'Uniendo Proximidad y Oportunidad, este marco combina la medida de un barrio activo (alta proximidad) con la de un nodo rápido de transporte público (alta oportunidad). Las puntuaciones miden a cuántos servicios tiene acceso una persona, en transporte público en un tiempo largo (puntuación de oportunidad) o a pie en un tiempo corto (puntuación de proximidad). Los lugares de alta densidad pueden tener ambas y se etiquetan como lugares de Inclusión, mientras que el aislamiento espacial en el transporte público o el aislamiento social de un barrio vacío siguen siendo mejores que el aislamiento total de los lugares desconectados del resto de la ciudad y con pocas oportunidades locales. Un tercer eje sería el esquivo Valor de los lugares.',
       legendUnit: 'Zona',
       legend: ['Inclusión', 'Aislamiento espacial', 'Aislamiento social', 'Aislamiento total'],
     },
@@ -204,8 +199,6 @@ export default {
   fifteen: {
     mapTitle: 'Tiempo de viaje hasta los servicios',
     minutes: 'min',
-    barsTitle: 'Todas las categorías, desde esta celda',
-    barsAxis: 'Las barras llegan hasta {max} {unit}; por encima, se llenan.',
     legendValue: 'Tiempo de proximidad',
     statusHint:
       'Elige un medio y una categoría · pasa el ratón por una franja de la leyenda para aislarla · desplázate y arrastra para navegar',
@@ -215,9 +208,9 @@ export default {
     },
     modes: { foot: 'A pie', bike: 'En bicicleta' },
     hint: 'Tiempo medio de viaje desde cada celda hasta los servicios más cercanos de esta categoría.',
-    summary: { median: 'Tiempo de viaje, residente mediano' },
+    summary: { median: 'Tiempo de proximidad mediano' },
     categories: {
-      average: 'Media de todos los servicios',
+      average: 'Tiempo de proximidad (media)',
       outdoor: 'Actividades al aire libre',
       learning: 'Educación',
       supplies: 'Compras',
@@ -232,6 +225,15 @@ export default {
 
   atlas: {
     label: 'Vista combinada',
+    back: 'Volver al Atlas',
+    people: 'pers.',
+    settings: 'Ajustes',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: 'Límites de la ciudad',
+      body: 'Los límites de la ciudad proceden del {ghsl} o del propio ayuntamiento.',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: 'Límite',
       core: 'Ciudad (núcleo)',
@@ -280,8 +282,7 @@ export default {
       isochrone: 'Isócronas',
     },
     viewHint: {
-      velocity:
-        'Lo rápido que el transporte público te aleja de cada celda a esta hora: una puntuación parecida a km/h.',
+      velocity: 'Lo rápido que el transporte público te aleja de cada celda a esta hora, en km/h.',
       sociality:
         'Cuántas personas pone el transporte público al alcance de cada celda a esta hora: una puntuación, no un recuento de personas.',
       isochrone: 'Tiempo de viaje en transporte público desde una celda elegida hasta todas las demás.',
@@ -291,7 +292,7 @@ export default {
       sociality: 'Puntuación de socialidad',
       isochrone: 'Minutos desde la celda seleccionada',
     },
-    summary: { weightedV: 'Velocidad para el residente medio' },
+    summary: { weightedV: 'Velocidad TP mediana', weightedS: 'Sociabilidad mediana' },
     mistake: {
       title: '¿Has visto un error?',
       body: '¡Los errores ocurren! Puede que falten datos o que induzcan a error. {contact} si sabes cómo corregirlo.',
@@ -322,7 +323,7 @@ export default {
     zones: {
       inclusion: {
         name: 'Inclusión',
-        desc: 'Por encima de la mediana en ambos ejes: con servicios cercanos y bien conectada con toda la ciudad',
+        desc: 'Por encima de la mediana en ambos ejes, bien servida localmente y conectada con toda la ciudad',
       },
       spatial: {
         name: 'Aislamiento espacial',
@@ -334,7 +335,7 @@ export default {
       },
       total: {
         name: 'Aislamiento total',
-        desc: 'Por debajo de la mediana en ambos ejes: normalmente la periferia',
+        desc: 'Por debajo de la mediana en ambos ejes, excluida de la vida de la ciudad',
       },
     },
     summary: {
@@ -355,7 +356,7 @@ export default {
     },
     selected: {
       title: 'Celda seleccionada',
-      empty: 'Haz clic en una celda, en el mapa o en el gráfico de dispersión, para ver todo lo que se ha medido en ella.',
+      empty: 'Haz clic en una celda para examinarla.',
       clear: 'Quitar selección',
     },
     cell: {
@@ -369,15 +370,28 @@ export default {
       thresholdProximity: 'Umbral de zona, proximidad',
       thresholdOpportunity: 'Umbral de zona, oportunidad',
       time: 'Tiempo de viaje',
-      velocity: 'Puntuación de velocidad',
+      velocity: 'Velocidad TP',
       sociality: 'Puntuación de socialidad',
       grid: 'Celda H3',
+      gridAbout: 'Un Standard Hexagonal Hierarchical Spatial Index (índice espacial jerárquico hexagonal).',
     },
     explain: {
       map: {
-        pov: 'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana en ambos ejes, rojo por debajo en ambos y, entre medias, los dos casos mixtos. Los umbrales son las medianas ponderadas por población de esa ciudad, así que una zona compara lugares dentro de una ciudad y nunca una ciudad con otra: lo que se compara entre ciudades son las puntuaciones subyacentes.',
-        cardep: 'Azul donde el transporte público llega a más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche llega a más. La escala es fija para todas las ciudades en lugar de ajustarse a cada una, así que el mismo color es el mismo índice en todas partes: ninguna ciudad se recolorea para llenar la paleta.',
-        fifteen: 'Las celdas se colorean según el tiempo que se tarda en llegar a la categoría elegida con el medio elegido. El blanco está en 15 minutos, la referencia que da nombre a la plataforma, y la escala sigue oscureciéndose más allá de 30 hasta el negro a 120. La leyenda nombra ese tramo final en lugar de estirarse hasta él, lo que aplastaría el intervalo en el que está casi cada celda. Una sola escala sirve para las nueve categorías y los dos medios, así que un color significa lo mismo sea cual sea la selección.',
+        pov:
+          'Cada celda toma el color de la zona en la que cae: verde por encima de la mediana de la ciudad en Proximidad y Oportunidad, rojo por debajo en ambas, y los dos casos mixtos en medio.',
+        cardep:
+          'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más.',
+        fifteen:
+          'El color de las celdas representa el tiempo necesario para llegar a los servicios de la categoría seleccionada, a pie o en bicicleta. Las zonas azules son lugares de 15 minutos, donde la ciudad de 15 minutos se cumple; en las zonas rojas los servicios están de media a más de 15 minutos; las celdas blancas están cerca de la marca de los 15 minutos.',
+        citychrone:
+          'La puntuación de velocidad colorea una celda según lo rápido que es el transporte público desde esa zona, moviéndose en direcciones plausibles. La puntuación de sociabilidad indica a cuántas personas se puede llegar en un tiempo razonable usando solo el transporte público. Las isócronas muestran el tiempo necesario para ir de una celda de la ciudad a cualquier otra.',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        pov:
+          'Uniendo Proximidad y Oportunidad, este marco combina la medida de un barrio activo (alta proximidad) con la de un nodo rápido de transporte público (alta oportunidad). Los lugares de alta densidad pueden tener ambas y se etiquetan como lugares de Inclusión, mientras que el aislamiento espacial en el transporte público o el aislamiento social de un barrio vacío siguen siendo mejores que el aislamiento total de los lugares desconectados del resto de la ciudad y con pocas oportunidades locales. Un tercer eje sería el esquivo Valor de los lugares.',
+        cardep:
+          'Azul donde el transporte público alcanza más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche alcanza más. Una zona blanca ofrece las mismas oportunidades y ya basta para vivir sin coche; una zona azul es menos común, y se da cuando el transporte público es óptimo y el tráfico, las zonas peatonales y el tiempo de aparcamiento hacen incómodo el coche.',
       },
       summary: {
         pov: 'Celdas cuenta lo que cubre el conjunto de datos publicado. Cada mediana es la puntuación del residente mediano: la mitad de los residentes de la ciudad vive en celdas con una puntuación más baja y la otra mitad, más alta. Las puntuaciones son recuentos ponderados de puntos de interés alcanzables, por eso ninguna lleva unidad: no son metros ni empleos. La población es la suma del propio conjunto de datos sobre sus celdas, no una cifra oficial de la ciudad.',
@@ -386,7 +400,7 @@ export default {
         atlas: 'Las cifras se recalculan para la capa en pantalla. «Celdas» es la malla unión, es decir, cada celda que mide al menos una plataforma: una capa que cubre menos lo indica en su propia fila.',
       },
       more: 'Explicación completa',
-      platformSite: 'El sitio de {name}',
+      platformSite: 'Sitio anterior de {name}',
       aboutTitle: 'Sobre {name}',
       sections: {
         measure: 'Qué mide',
@@ -395,12 +409,31 @@ export default {
         summary: 'Las cifras del panel',
         source: 'De dónde viene',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: 'Las nueve categorías',
+      categoriesIntro: 'Los servicios se agrupan en nueve categorías. El tiempo de una celda para una categoría es el tiempo medio de viaje, a pie o en bicicleta, hasta los 20 servicios más cercanos de ese tipo.',
+      categories: {
+        outdoor: 'parques, jardines, riberas, playas y similares',
+        learning: 'escuelas, universidades y similares',
+        supplies: 'supermercados, tiendas de alimentación y similares',
+        eating: 'bares, restaurantes, pubs y similares',
+        moving: 'las paradas de transporte público más cercanas',
+        cultural: 'teatros, cines y similares',
+        exercise: 'gimnasios, pistas e instalaciones deportivas',
+        services: 'oficinas de correos, bancos, oficinas públicas, el ayuntamiento y similares',
+        healthcare: 'hospitales, farmacias y similares',
+        average: 'la media simple de las nueve categorías',
+      },
+      weighted: 'Medianas y medias están ponderadas por la población.',
       methodsTitle: 'Datos y métodos',
       methods: {
-        pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
-        cardep: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos en coche y a pie con OSRM sobre OpenStreetMap, con un margen para aparcar y retrasos de tráfico propios de cada ciudad en el lado del coche; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de WorldPop.',
+        pov:
+          'Celdas H3 de resolución 9. Tiempos a pie de OSRM sobre OpenStreetMap. Transporte público a partir de horarios GTFS. Puntuaciones de oportunidad calculadas con OSRM. Puntos de interés de OpenStreetMap. Población de WorldPop.',
+        cardep:
+          'Celdas H3 de resolución 9. Tiempos en coche y a pie de OSRM sobre OpenStreetMap, con un tiempo de aparcamiento y retrasos de tráfico propios de cada ciudad en el lado del coche, del TomTom Traffic Index. Transporte público a partir de horarios GTFS. Puntuaciones de oportunidad calculadas con OSRM. Puntos de interés de OpenStreetMap. Población de WorldPop.',
         fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las nueve categorías que muestra el selector; población de WorldPop.',
-        citychrone: 'Celdas H3 de resolución 9, una exportación por cada hora del día. Transporte público a partir de horarios GTFS; las dos puntuaciones y las isócronas se definen en el artículo de la plataforma. Los tiempos de viaje están en minutos enteros; los de más de 120 son una sola clase, y las celdas donde no vive nadie quedan fuera.',
+        citychrone:
+          'Celdas H3 de resolución 9. Transporte público a partir de horarios GTFS. Isócronas calculadas con OSRM. Se excluyen las celdas donde no vive nadie.',
       },
       paperNote: 'El método se expone por completo en el artículo.',
     },
@@ -415,7 +448,8 @@ export default {
       unavailable: 'No hay cartograma publicado',
       about: {
         map: 'Cada celda es el hexágono que ocupa sobre el terreno, del mismo tamaño en todas partes, contenga lo que contenga. El área no dice nada de a cuántas personas afecta una medida, así que un borde de la ciudad poco poblado ocupa en la imagen tanto como el centro denso.',
-        cartogram: 'Cada celda está donde está de verdad, pero su área es su población residente y no el terreno que cubre: una celda con pocos habitantes se reduce a una fracción de hexágono y una muy poblada lo llena. Responde a otra pregunta: no dónde es baja una medida, sino para cuántas personas lo es.',
+        cartogram:
+          'Un cartograma deforma las celdas según la población residente, de modo que las celdas vacías se encogen hasta desaparecer. La accesibilidad mide su oferta de servicios, mientras que la población representa la demanda: en un cartograma las desigualdades son más evidentes.',
         derived: 'Este cartograma es del propio Atlas y se dibuja con una sola regla para todas las capas: el área es proporcional a la población residente de la celda y alcanza el hexágono completo en la población mediana de las celdas habitadas de la ciudad. La población es la que comparten todas las capas de la ciudad, de modo que una celda de una población dada se ve del mismo tamaño en cualquier capa.',
       },
     },
@@ -542,8 +576,8 @@ export default {
 
   about: {
     eyebrow: 'Ciudades sostenibles',
-    headline: 'Una línea de investigación sobre ciudades,',
-    headlineAccent: 'no un producto.',
+    headline: 'Escenarios basados en datos',
+    headlineAccent: 'hacia ciudades más sostenibles',
     lede: 'Somos un equipo de investigación sin ánimo de lucro, una de las líneas de investigación de Sony Computer Science Laboratories – Roma, y trabajamos con colaboradores de la Universidad Sapienza de Roma, el Centro de Investigación Enrico Fermi (CREF) y otros institutos. El Atlas es uno de los resultados de ese trabajo.',
     labLink: 'Sony CSL ↗',
     teamLink: 'El equipo →',
@@ -744,7 +778,6 @@ export default {
       city: 'Ciudades',
       country: 'Países',
       about: 'Los países agregan a los residentes de sus ciudades publicadas, por ahora solo para la ciudad de 15 minutos. Solo las medias y las proporciones de residentes se agregan de forma exacta, así que las demás estadísticas no se ofrecen para países.',
-      onlyFifteen: 'Por ahora los países solo se comparan en la ciudad de 15 minutos.',
     },
     countries: {
       label: 'Países',
@@ -857,7 +890,7 @@ export default {
       map: 'Dónde están las ciudades, coloreadas por el valor elegido en una escala fija y con tamaño según sus residentes. Haz clic en una ciudad para resaltarla.',
       scatter: 'Dos valores frente a frente, un punto por ciudad, con tamaño según sus residentes. Elige el segundo valor en la fila que aparece arriba.',
       matrix: 'Cada ciudad frente a los valores principales. El tono es la posición de la ciudad entre las mostradas, más oscuro es mejor, porque las columnas no comparten unidad; el valor está escrito en la celda. Haz clic en una columna para elegirla.',
-      curves: 'La proporción de residentes en cada umbral, o para CityChrone el valor en cada hora del día. Las ciudades resaltadas aparecen en color y con su nombre; el resto en gris.',
+      curves: 'Cada línea es una ciudad: para una distribución, la proporción de sus residentes en o por debajo de cada valor, a partir de sus percentiles y umbrales publicados; para CityChrone, la cifra a cada hora. Escribe un nombre para añadir una ciudad; pasa sobre una línea para ver su nombre.',
     },
     sidebar: {
       label: 'Valor y filtros',
@@ -866,18 +899,26 @@ export default {
     },
     focus: {
       more: 'Comparación completa',
+      showAll: 'Mostrar todas ({count})',
+      showFewer: 'Mostrar menos',
       fifteen: {
-        title: 'Cada servicio, ciudad por ciudad',
-        lede: 'Cuánto tardan los residentes en llegar a cada tipo de servicio y cuántos viven a menos de 15 minutos de lo que necesitan, a pie y en bicicleta.',
-        profile: 'Tiempo mediano a cada servicio, {mode}',
+        title: 'Servicios al alcance',
+        profile: 'Tiempo mediano a cada servicio',
         profileAbout: 'Cada celda es el tiempo que tarda el residente del medio de la ciudad en llegar al servicio más cercano de la categoría. El color es la escala de la ciudad de 15 minutos: blanco a 15 minutos, azul por debajo, rojo por encima.',
         within: 'Residentes a menos de 15 min',
         modes: 'Residentes a menos de 15 minutos, a pie y en bicicleta',
         modesAbout: 'La proporción de residentes que llega en promedio a los servicios de todas las categorías en menos de 15 minutos, caminando (azul) y en bicicleta (rojo). La distancia entre los dos puntos es lo que añade la bicicleta.',
+        rankings: 'Quién vive a menos de {value} de los servicios',
+        rankingsAbout: 'La proporción de residentes de cada ciudad que llega a los servicios de las nueve categorías dentro del tiempo elegido, en promedio. Cada clasificación ordena las ciudades de su tamaño, contadas sobre toda la ciudad tal como la publica el Atlas: el filtro de residentes de al lado no se aplica aquí; los países y el límite sí.',
+        over: 'Ciudades de más de {count} de residentes',
+        countries: 'Países',
+        cityCount: '{count} clasificadas',
+        noneOfSize: 'No hay ninguna ciudad de este tamaño en pantalla.',
+        curves: 'Residentes alcanzados, minuto a minuto',
+        curvesAbout: 'Cada línea es una ciudad: la proporción de sus residentes que llega a los servicios dentro del tiempo del eje, en promedio. Sus puntos son los percentiles publicados y las proporciones en cada umbral, y la línea solo los une. Las líneas grises son las demás ciudades que dejan los filtros: pasa sobre una para ver su nombre, haz clic para dibujarla en color.',
       },
       citychrone: {
         title: 'Un día de transporte público',
-        lede: 'Cómo sirve el transporte público a cada ciudad durante las 24 horas: las puntuaciones de velocidad y sociabilidad de su residente del medio, con la mitad central de sus residentes como banda.',
         day: 'El día, hora a hora',
         dayAbout: 'La línea es la puntuación del residente mediano en cada hora; la banda va del percentil 25 al 75. Todas las ciudades comparten una escala por puntuación, así que las curvas se comparan directamente.',
         peak: 'pico',
@@ -885,7 +926,6 @@ export default {
       },
       cardep: {
         title: 'Coche o transporte público',
-        lede: 'Si desde donde viven los residentes llega más lejos el coche o el transporte público: el índice del residente medio, cómo se reparten los residentes en él y los dos alcances que hay detrás.',
         index: 'El índice del residente medio',
         indexAbout: 'La media ponderada por población del índice de dependencia del coche: bajo cero el transporte público alcanza más, sobre cero el coche.',
         bands: 'Residentes por tramo del índice',
@@ -896,7 +936,6 @@ export default {
       },
       pov: {
         title: 'Proximidad y oportunidad',
-        lede: 'Lo que los residentes alcanzan a pie frente a lo que alcanzan en toda la ciudad, dividido en las cuatro zonas de acceso de P.O.V.',
         zones: 'Residentes por zona',
         zonesAbout: 'A la izquierda, las zonas sobre la mediana del Atlas: cada ciudad dividida en las mismas dos líneas, proximidad {proximity} y oportunidad {opportunity}, las medianas de los residentes de las {count} ciudades. A la derecha, las zonas propias de la plataforma, divididas en las medianas de cada ciudad.',
         scores: 'Proximidad mediana frente a oportunidad mediana',
@@ -905,7 +944,6 @@ export default {
       },
       cross: {
         title: 'Cómo van juntas las capas',
-        lede: 'Dentro de cada ciudad, cómo va la medida de una capa con la de otra, celda a celda.',
         about: 'La correlación de rangos de Spearman en las celdas habitadas que cubren ambas capas: azul donde bajan juntas, rojo donde una sube mientras la otra baja.',
       },
     },
@@ -921,10 +959,8 @@ export default {
     noPairs: 'Ninguna ciudad mostrada tiene ambos valores.',
     selection: {
       label: 'Resaltadas',
-      add: 'Resaltar una ciudad…',
-      addCountry: 'Resaltar un país…',
       remove: 'Dejar de resaltar {name}',
-      full: 'Cuatro como máximo: quita una antes.',
+      full: 'Ocho como máximo: quita una primero.',
       toggle: 'Resaltar en todas las vistas',
     },
     openCity: 'Abrir {name} en el mapa',
@@ -945,7 +981,8 @@ export default {
       countries: 'Un país son sus ciudades publicadas agregadas, no el país en su conjunto, y por ahora solo se agrega la ciudad de 15 minutos. Medianas, percentiles e índices de desigualdad no se agregan.',
       oneNumber: 'Un valor por ciudad: la dispersión de sus residentes está en la clasificación y en los tooltips.',
       matrix: 'El tono compara las ciudades mostradas, así que cambia con el filtro; los valores no.',
-      curvesThresholds: 'Medido solo en los umbrales: las líneas unen esos puntos y no dicen nada de lo que hay entre ellos.',
+      curvesThresholds: 'Cada línea une los puntos publicados de una ciudad: sus percentiles 10, 25, 50, 75 y 90 y su proporción en cada umbral. Entre ellos no se ha medido nada.',
+      curvesHours: 'Una cifra por hora, unidas por rectas: entre dos horas no se ha medido nada.',
       curvesNone: 'Una correlación no tiene umbrales ni horas a lo largo de los cuales trazar una curva.',
       hidden: '{count} ciudades con este valor quedan fuera: sus datos son demasiado escasos para comparar.',
     },
@@ -961,8 +998,23 @@ export default {
     },
     mapCaption: 'El tamaño del punto son los residentes.',
     matrixPick: 'Mostrar este valor en todas las vistas',
-    curvesTop: 'Los ocho más altos; resalta ciudades para seguirlas.',
-    curvesPick: 'Resalta algunas para ver su nombre',
+    picker: {
+      add: 'Añadir una ciudad por su nombre…',
+      addCountry: 'Añadir un país por su nombre…',
+      full: 'Ocho como máximo: quita una para añadir otra',
+      none: 'Nada con ese nombre tiene esta cifra.',
+      clickToAdd: 'Haz clic para dibujarla en color.',
+      suggested: 'Para empezar, las {count} ciudades más grandes en pantalla. Escribe un nombre para añadir una ciudad; × la quita.',
+      suggestedCountries: 'Para empezar, los {count} países más grandes en pantalla. Escribe un nombre para añadir un país; × lo quita.',
+    },
+    curves: {
+      title: 'Residentes, acumulados',
+      yAxis: {
+        atMost: 'Residentes a menos de',
+        atLeast: 'Residentes en o por encima de',
+        above: 'Residentes por encima de',
+      },
+    },
   },
 
   consulting: {

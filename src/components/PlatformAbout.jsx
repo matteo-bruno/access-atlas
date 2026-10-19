@@ -3,14 +3,21 @@ import { RampLegend } from './RampLegend.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import { paperForPlatform } from '../data/research.js';
 import { PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
+import { CATEGORIES } from '../data/fifteen.js';
+
+// The nine categories first, then the average they make: in the selector the
+// average leads, but here it is explained by the nine.
+const ABOUT_CATEGORIES = [
+  ...CATEGORIES.filter((c) => c.i18n !== 'average').map((c) => c.i18n),
+  'average',
+];
 
 /**
  * The long form of a platform's explanation, opened from "about this layer".
  *
  * The tooltips beside the controls answer the question in front of the
  * reader; this answers the ones behind it — what the measure is, how its
- * colours are meant to be read, what the panel's figures are, and how the
- * numbers were produced. Every paragraph is the copy the tooltips use, so the
+ * colours are meant to be read, and how the numbers were produced. Every paragraph is the copy the tooltips use, so the
  * two can never say different things, and the colour key is the same
  * component the legend draws, so it cannot drift from the map either.
  *
@@ -53,7 +60,9 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
           ))}
         </ul>
       ) : (
-        ramp && (
+        // CityChrone's three views each have their own scale, so the dialog
+        // describes them in words and leaves the scale to the map.
+        ramp && platformId !== 'citychrone' && (
           <RampLegend
             ramp={ramp}
             format={tickFormat}
@@ -62,33 +71,47 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
         )
       )}
 
-      <h3>{t('city.explain.sections.geometry')}</h3>
-      <p>{t('city.geometry.about.map')}</p>
-      <p>{t('city.geometry.about.cartogram')}</p>
+      {/* What the nine categories hold, and how a cell's time for one is
+          measured: the question every first reading of the map asks. */}
+      {platformId === 'fifteen' && (
+        <>
+          <h3>{t('city.explain.categoriesTitle')}</h3>
+          <p>{t('city.explain.categoriesIntro')}</p>
+          <dl className="aa-about__categories">
+            {ABOUT_CATEGORIES.map((key) => (
+              <div key={key}>
+                <dt>{t(`fifteen.categories.${key}`)}</dt>
+                <dd>{t(`city.explain.categories.${key}`)}</dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      )}
 
-      <h3>{t('city.explain.sections.summary')}</h3>
-      <p>{t(`city.explain.summary.${platformId}`)}</p>
-
+      {/* Method and sources are one section: how the figures were made ends
+          with where the method is set out in full. */}
       <h3>{t('city.explain.methodsTitle')}</h3>
-      <p>{t(`city.explain.methods.${platformId}`)}</p>
-
-      <h3>{t('city.explain.sections.source')}</h3>
       <p>
-        {paper && (
-          <>
-            {t('city.explain.paperNote')}{' '}
-            <a href={paper.url} target="_blank" rel="noreferrer noopener">
-              {paper.title} ↗
-            </a>
-            <br />
-          </>
-        )}
-        {platform?.url && (
-          <a href={platform.url} target="_blank" rel="noreferrer noopener">
-            {t('city.explain.platformSite', { name })} ↗
-          </a>
-        )}
+        {t(`city.explain.methods.${platformId}`)} {t('city.explain.weighted')}
       </p>
+      {(paper || platform?.url) && (
+        <p>
+          {paper && (
+            <>
+              {t('city.explain.paperNote')}{' '}
+              <a href={paper.url} target="_blank" rel="noreferrer noopener">
+                {paper.title} ↗
+              </a>
+            </>
+          )}
+          {paper && platform?.url && <br />}
+          {platform?.url && (
+            <a href={platform.url} target="_blank" rel="noreferrer noopener">
+              {t('city.explain.platformSite', { name })} ↗
+            </a>
+          )}
+        </p>
+      )}
     </Modal>
   );
 }

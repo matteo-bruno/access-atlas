@@ -82,6 +82,7 @@ export default {
     platforms: {
       title: 'アクセシビリティのレイヤー',
       more: '詳しく見る',
+      explore: 'レイヤーを見る',
       cityCount: '{count}都市',
       themes: {
         fifteen: '近接性',
@@ -101,16 +102,10 @@ export default {
     },
     table: {
       title: '都市を比較する',
-      statsNote:
-        'P.O.V. のデータセットから、6つの都市を3つの指標で比較しています。公開済みのすべての都市をすべての指標で比べる画面は「統計」タブです。',
       statsCta: '統計を開く',
-      headers: {
-        city: '都市',
-        proximity: '近接性スコアの中央値',
-        opportunity: '機会スコアの中央値',
-        inclusion: '包摂ゾーン',
-      },
-      note: '近接性と機会は、到達可能な地点（POI）の重み付き件数です。どの都市も同じ方法で測っているため、都市間で比較できます。包摂は、人口で重み付けした2つの中央値をともに上回るセルの割合です。',
+      within: '{minutes} 分以内',
+      onFoot: '徒歩',
+      note: '徒歩でその時間内にサービス（全サービスの平均）へ到達できる住民の割合。住民 {population} 人以上の都市。',
     },
     side: {
       title: '進行中の研究',
@@ -181,13 +176,13 @@ export default {
       welcomeIntro:
         'どの都市のどの場所からでも、日常的なサービスまでの移動時間を確認し、15分の基準と比べてみましょう。',
       legendUnit: 'サービスまでの徒歩時間（中央値）',
-      tooltip: '{name} · 徒歩でサービスまで {time}（中央値の住民）',
+      tooltip: '{name} – {time} 分',
       legend: ['0–3分', '3–6', '6–9', '9–12', '12–15', '15–18', '18–21', '21–24', '24–30'],
     },
     citychrone: {
       label: '機会アクセス',
       intro:
-        'CityChrone は距離の代わりに所要時間を使います。地上では離れていても、公共交通で素早く結ばれている2つの場所が近くに来るように、地図が変形します。',
+        'CityChrone++ は、平日のどの時間帯でも、市内のどの地点からでも公共交通の速さを測ります。絶対的な速さ（速度スコア）と社会的な機会（ソーシャリティスコア）の両面からです。',
       legendUnit: '公共交通の速度（km/h）',
       tooltip: '{name} · 公共交通で {value} km/h（中央値の住民）',
       legend: ['遅い', '中程度', '速い'],
@@ -198,22 +193,21 @@ export default {
         'Car Dependency Index（自動車依存指数）は、同じ時間内に車で到達できる機会と公共交通で到達できる機会を比べます：CDI = (O_car − O_PT) / (O_car + O_PT)。公共交通の方が多く到達できる −1から、両者が釣り合う0を経て、車ならすべてに届き公共交通ではほとんど届かない +1までの値をとります。',
       legendUnit: 'Car Dependency Index（中央値の住民）',
       tooltip: '{name} · CDI {value}（中央値の住民）',
-      legend: ['公共交通優位', '均衡', '自動車依存', '強い自動車依存'],
+      legend: ['公共交通優位', '均衡', '自動車依存'],
     },
     pov: {
       label: 'Proximity · Opportunity · Value',
       intro:
-        '各セルを2つの軸で評価します。徒歩で到達できる日常サービスである近接性と、公共交通で到達できる都市スケールの目的地である機会です。そのうえで、それぞれの軸について都市の人口重み付き中央値と比べて分類します。第3の軸である到達先の価値は、フレームワークでは定義されていますが、まだ数値化されていません。',
+        '近接性と機会をつなぐこの枠組みは、活気ある近隣（高い近接性）と速い公共交通の結節点（高い機会）の測定を組み合わせます。スコアは、人がどれだけのサービスにアクセスできるかを、公共交通で長めの時間（機会スコア）または徒歩で短い時間（近接性スコア）で測ります。高密度の場所は両方を備え「包摂」の場所とされます。公共交通での空間的孤立や、人のいない近隣の社会的孤立は、市の他の部分から切り離され地域の機会も乏しい場所の完全な孤立よりはまだましです。第三の軸は、捉えにくい場所の「価値」でしょう。',
       legendUnit: 'ゾーン',
       legend: ['包摂', '空間的孤立', '社会的孤立', '完全な孤立'],
+      // Under the world map's legend: what the zones are measured against.
     },
   },
 
   fifteen: {
     mapTitle: 'サービスまでの所要時間',
     minutes: '分',
-    barsTitle: 'このセルから見た全カテゴリー',
-    barsAxis: 'バーの最大は{max} {unit}。それより長い場合はバーがいっぱいになります。',
     legendValue: '近接時間',
     statusHint:
       '移動手段とカテゴリーを選択 · 凡例の帯にカーソルを合わせると強調表示 · スクロールとドラッグで移動',
@@ -223,9 +217,9 @@ export default {
     },
     modes: { foot: '徒歩', bike: '自転車' },
     hint: '各セルから、このカテゴリーの最寄りのサービスまでの平均所要時間。',
-    summary: { median: '移動時間（中央値の住民）' },
+    summary: { median: '近接時間の中央値' },
     categories: {
-      average: '全サービスの平均',
+      average: '近接時間（平均）',
       outdoor: '屋外活動',
       learning: '学習',
       supplies: '買い物',
@@ -240,6 +234,15 @@ export default {
 
   atlas: {
     label: '統合ビュー',
+    back: 'アトラスに戻る',
+    people: '人',
+    settings: '設定',
+    // Where a city's outline comes from, at the foot of the city view's column.
+    boundaries: {
+      title: '都市の境界',
+      body: '都市の境界は {ghsl} または各自治体のものです。',
+      ghsl: 'Global Human Settlement Layer (GHSL)',
+    },
     extent: {
       label: '範囲',
       core: '都市（中心部）',
@@ -288,8 +291,7 @@ export default {
       isochrone: '等時線',
     },
     viewHint: {
-      velocity:
-        'この時間帯に、公共交通が各セルからどれだけ速く外へ運んでくれるか。km/h に近いスコアです。',
+      velocity: 'この時間帯に、公共交通が各セルからどれだけ速く外へ運んでくれるか（km/h）。',
       sociality:
         'この時間帯に、公共交通が各セルからどれだけ多くの人に届かせてくれるか。人数ではなくスコアです。',
       isochrone: '選んだ1つのセルから他のすべての場所までの、公共交通での所要時間。',
@@ -299,7 +301,7 @@ export default {
       sociality: '社会性スコア',
       isochrone: '選択したセルからの所要分数',
     },
-    summary: { weightedV: '平均的な居住者にとっての速度' },
+    summary: { weightedV: '公共交通速度の中央値', weightedS: 'ソーシャリティ値の中央値' },
     mistake: {
       title: '間違いを見つけましたか？',
       body: '間違いは起こりえます。データが欠けていたり、誤解を招いたりすることもあります。修正できる点をご存じでしたら、{contact}。',
@@ -330,7 +332,7 @@ export default {
     zones: {
       inclusion: {
         name: '包摂',
-        desc: '両方の軸で中央値を上回る：身近にサービスがあり、都市全体ともつながっている',
+        desc: '両軸で中央値を上回り、地域で用が足り市全体ともつながっている',
       },
       spatial: {
         name: '空間的孤立',
@@ -342,7 +344,7 @@ export default {
       },
       total: {
         name: '完全な孤立',
-        desc: '両方の軸で中央値を下回る：多くは周縁部',
+        desc: '両軸で中央値を下回り、都市の生活から取り残されている',
       },
     },
     summary: {
@@ -363,7 +365,7 @@ export default {
     },
     selected: {
       title: '選択したセル',
-      empty: '地図上または散布図上のセルをクリックすると、そのセルで測定されたすべての値を表示します。',
+      empty: 'セルをクリックすると詳細を表示します。',
       clear: '解除',
     },
     cell: {
@@ -377,15 +379,28 @@ export default {
       thresholdProximity: 'ゾーンの閾値（近接性）',
       thresholdOpportunity: 'ゾーンの閾値（機会）',
       time: '所要時間',
-      velocity: '速度スコア',
+      velocity: '公共交通速度',
       sociality: '社会性スコア',
       grid: 'H3 セル',
+      gridAbout: '標準の六角形階層型空間インデックス（Standard Hexagonal Hierarchical Spatial Index）。',
     },
     explain: {
       map: {
-        pov: '各セルは、属するゾーンの色で塗られます。両方の軸で中央値を上回れば緑、両方で下回れば赤、その中間が2つの混合ケースです。閾値はその都市自身の人口重み付き中央値なので、ゾーンは1つの都市の中の場所どうしを比べるものであり、都市どうしを比べるものではありません。都市間で比べられるのは、もとになるスコアの方です。',
-        cardep: '公共交通の方が車より多くの機会に到達できる場所は青、両者が釣り合う場所は白、車の方が多く到達できる場所は赤です。尺度は都市ごとに合わせず全都市で固定しているため、同じ色はどこでも同じ指数を意味します。パレットを埋めるために都市の色を塗り直すことはありません。',
-        fifteen: 'セルは、選んだカテゴリーに選んだ移動手段で到達するのにかかる時間で色付けされます。プラットフォームの名前の由来である15分が白で、尺度は30分を過ぎても濃くなり続け、120分で黒になります。凡例はこの延長部分を伸ばさずに名前で示します。伸ばすと、ほぼすべてのセルが収まる範囲が押しつぶされてしまうからです。9つのカテゴリーと2つの移動手段で同じ尺度を使うため、何を選んでも同じ色は同じ意味です。',
+        pov:
+          '各セルは属するゾーンの色になります。近接性と機会の両方で市の中央値を上回れば緑、両方で下回れば赤、その間に二つの混合ケースがあります。',
+        cardep:
+          '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。',
+        fifteen:
+          'セルの色は、選んだカテゴリーのサービスに徒歩または自転車で到達するのにかかる時間を表します。青い地域は「15分の場所」で、15分都市が実現しています。赤い地域ではサービスが平均して15分より遠く、白いセルは15分の目安に近い場所です。',
+        citychrone:
+          '速度スコアは、その地域からもっともらしい方向へ移動するとき公共交通がどれだけ速いかでセルを色分けします。ソーシャリティスコアは、公共交通だけで妥当な時間内に何人に会えるかを示します。等時線は、市内のあるセルから他の任意のセルまでにかかる時間を示します。',
+      },
+      // The legend's "?": the colours, then what a white and a blue area mean.
+      legend: {
+        pov:
+          '近接性と機会をつなぐこの枠組みは、活気ある近隣（高い近接性）と速い公共交通の結節点（高い機会）の測定を組み合わせます。高密度の場所は両方を備え「包摂」の場所とされます。公共交通での空間的孤立や、人のいない近隣の社会的孤立は、市の他の部分から切り離され地域の機会も乏しい場所の完全な孤立よりはまだましです。第三の軸は、捉えにくい場所の「価値」でしょう。',
+        cardep:
+          '公共交通が車より多くの機会に届く場所は青、両者が釣り合う場所は白、車のほうが多く届く場所は赤です。白い地域は同じだけの機会があり、車なしでも十分に暮らせます。青い地域はより珍しく、公共交通が優れていて、渋滞や歩行者ゾーン、駐車時間のせいで車が不便な場所に現れます。',
       },
       summary: {
         pov: 'セル数は公開データセットがカバーする範囲です。各中央値は中央値の住民のスコアです。市の住民の半数はスコアがより低いセルに、残りの半数はより高いセルに住んでいます。スコアは到達可能な地点の重み付き件数なので、どちらにも単位はありません。メートルでも雇用数でもありません。人口はデータセットのセルの合計であり、市の公式な数字ではありません。',
@@ -394,7 +409,7 @@ export default {
         atlas: '数値は画面上のレイヤーについて再計算されます。セル数は統合メッシュ（いずれかのプラットフォームが測定するすべてのセル）なので、より少ない範囲しかカバーしないレイヤーはその行で示します。',
       },
       more: '詳しい説明',
-      platformSite: '{name} のサイト',
+      platformSite: '{name} の旧サイト',
       aboutTitle: '{name} について',
       sections: {
         measure: '何を測るか',
@@ -403,13 +418,32 @@ export default {
         summary: 'パネルの数値',
         source: '出典',
       },
+      // The 15-minute city's categories, in the "about this layer" dialog.
+      categoriesTitle: '9つのカテゴリー',
+      categoriesIntro: 'サービスは9つのカテゴリーに分けられています。あるカテゴリーにおけるセルの時間は、その種類で最も近い20か所のサービスまでの、徒歩または自転車での平均移動時間です。',
+      categories: {
+        outdoor: '公園、庭園、川沿い、海辺など',
+        learning: '学校、大学など',
+        supplies: 'スーパー、食料品店など',
+        eating: 'バー、レストラン、パブなど',
+        moving: '最寄りの公共交通の停留所',
+        cultural: '劇場、映画館など',
+        exercise: 'ジム、運動場、スポーツ施設',
+        services: '郵便局、銀行、公的機関、市役所など',
+        healthcare: '病院、薬局など',
+        average: '9つのカテゴリーの単純平均',
+      },
+      weighted: '中央値と平均値は人口で重み付けしています。',
       methodsTitle: 'データと手法',
       // Technical notes: kept in English, as the platforms publish them.
       methods: {
-        pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
-        cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
+        pov:
+          'H3 解像度 9 のセル。徒歩時間は OpenStreetMap 上の OSRM から。公共交通は GTFS 時刻表から。機会スコアは OSRM で計算。POI は OpenStreetMap から。人口は WorldPop から。',
+        cardep:
+          'H3 解像度 9 のセル。車と徒歩の所要時間は OpenStreetMap 上の OSRM から。車側には駐車の余裕時間と、TomTom Traffic Index による都市ごとの渋滞遅延を加えています。公共交通は GTFS 時刻表から。機会スコアは OSRM で計算。POI は OpenStreetMap から。人口は WorldPop から。',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
-        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are whole minutes; anything over 120 is one class, and cells where nobody lives are left out.',
+        citychrone:
+          'H3 解像度 9 のセル。公共交通は GTFS 時刻表から。等時線は OSRM で計算。誰も住んでいないセルは除外しています。',
       },
       paperNote: '手法の詳細は論文に記載されています。',
     },
@@ -424,7 +458,8 @@ export default {
       unavailable: 'カルトグラムは未公開',
       about: {
         map: '各セルは地上の六角形そのもので、何があっても大きさはどこでも同じです。面積は、ある指標が何人に影響するかを示しません。そのため、人口の少ない都市の縁も、密集した中心部と同じだけの面積を占めます。',
-        cartogram: '各セルは実際の位置にありますが、面積はカバーする土地ではなく居住人口を表します。居住者の少ないセルは六角形のごく一部に縮み、人の多いセルは六角形いっぱいになります。答える問いが違うのです。指標がどこで低いかではなく、何人にとって低いか。',
+        cartogram:
+          'カルトグラムは居住人口に応じてセルを変形させ、人のいないセルは縮んで消えます。アクセシビリティはセルが提供するサービスを、人口はその需要を表します。カルトグラムでは不平等がよりはっきり見えます。',
         derived: 'このカルトグラムはアトラス独自のもので、すべてのレイヤーに同じ規則を使っています。面積はセルの居住人口に比例し、その都市の居住セルの人口中央値で六角形の大きさに達します。人口は都市のすべてのレイヤーが共有するものなので、同じ人口のセルは、どのレイヤーでも同じ大きさに見えます。',
       },
     },
@@ -551,8 +586,8 @@ export default {
 
   about: {
     eyebrow: '持続可能な都市',
-    headline: '都市についての研究です。',
-    headlineAccent: '製品ではありません。',
+    headline: 'データに基づくシナリオで、',
+    headlineAccent: 'より持続可能な都市へ',
     lede: '私たちは非営利の研究チームであり、Sony Computer Science Laboratories（ローマ）の研究ラインの1つです。ローマ・ラ・サピエンツァ大学、エンリコ・フェルミ研究センター（CREF）などの研究機関の共同研究者とともに活動しています。アトラスは、その研究から生まれたものの1つです。',
     labLink: 'Sony CSL ↗',
     teamLink: 'メンバー →',
@@ -753,7 +788,6 @@ export default {
       city: '都市',
       country: '国',
       about: '国は公開済み都市の住民をまとめたもので、今のところ15分都市のみが対象です。正確にまとめられるのは平均と住民の割合だけなので、その他の統計は国では提供しません。',
-      onlyFifteen: '今のところ、国の比較は15分都市のみです。',
     },
     countries: {
       label: '国',
@@ -866,7 +900,7 @@ export default {
       map: '都市の位置を、選んだ値で固定の色スケールに塗り分け、住民数で大きさを変えて示します。都市をクリックすると強調表示されます。',
       scatter: '2つの値の比較。1都市1点で、大きさは住民数です。上に現れる行で2つ目の値を選びます。',
       matrix: '各都市と主要な値の一覧。列ごとに単位が異なるため、色の濃さは表示中の都市の中での位置を表し、濃いほど良好です。値はセルに書かれています。列をクリックすると選択できます。',
-      curves: '各しきい値での住民の割合、または CityChrone では1日の各時間帯の値。強調表示した都市は色と名前付きで、それ以外は灰色です。',
+      curves: '各線は1つの都市です。分布では、公表されたパーセンタイルとしきい値から、各値以内の住民の割合を示します。CityChrone では各時刻の値です。名前を入力して都市を追加し、線にポインタを合わせると名前が出ます。',
     },
     sidebar: {
       label: '値と絞り込み',
@@ -875,18 +909,26 @@ export default {
     },
     focus: {
       more: '詳しい比較',
+      showAll: 'すべて表示（{count}）',
+      showFewer: '少なく表示',
       fifteen: {
-        title: 'すべてのサービスを、都市ごとに',
-        lede: '住民が各種のサービスに到達するまでにかかる時間と、徒歩と自転車で必要なものに15分以内で届く住民の数。',
-        profile: '各サービスまでの所要時間の中央値、{mode}',
+        title: '手の届くサービス',
+        profile: '各サービスまでの所要時間の中央値',
         profileAbout: '各セルは、都市の真ん中の住民がそのカテゴリーの最寄りのサービスに到達するまでの時間です。色は15分都市のスケールで、15分が白、それより短いと青、長いと赤です。',
         within: '15分以内の住民',
         modes: '15分以内の住民、徒歩と自転車',
         modesAbout: '全カテゴリーのサービスに平均15分以内で到達できる住民の割合。徒歩（青）と自転車（赤）。2つの点の差が自転車による上乗せです。',
+        rankings: 'サービスまで {value} 以内に住む人',
+        rankingsAbout: '選んだ時間以内に9つのカテゴリーのサービスに平均して到達できる、各都市の住民の割合。各ランキングは同じ規模の都市を並べ、規模はアトラスが公開する都市全体で数えます。横の住民フィルターはここには適用されず、国と境界は適用されます。',
+        over: '人口{count}人超の都市',
+        countries: '国',
+        cityCount: '{count} 件',
+        noneOfSize: 'この規模の都市は画面上にありません。',
+        curves: '1分ごとに届く住民',
+        curvesAbout: '各線は1つの都市で、軸の時間以内に平均してサービスに到達できる住民の割合です。点は公表されたパーセンタイルと各しきい値での割合で、線はそれらを結んでいるだけです。灰色の線はフィルターで残った他の都市：ポインタを合わせると名前が出て、クリックすると色付きで描きます。',
       },
       citychrone: {
         title: '公共交通の一日',
-        lede: '公共交通が24時間を通じて各都市をどう支えているか。真ん中の住民の速度スコアと社会性スコアを、住民の中央の半分を帯として示します。',
         day: '一日を時間ごとに',
         dayAbout: '線は各時間の中央値の住民のスコア、帯は25〜75パーセンタイルです。スコアごとにすべての都市が同じ目盛りを共有するので、曲線を直接比べられます。',
         peak: 'ピーク',
@@ -894,7 +936,6 @@ export default {
       },
       cardep: {
         title: '自動車か公共交通か',
-        lede: '住民の住む場所から、自動車と公共交通のどちらがより多くに届くか。平均的な住民の指数、指数上の住民の分布、そしてその元になる2つの到達性。',
         index: '平均的な住民の指数',
         indexAbout: '自動車依存指数の人口加重平均。0未満なら公共交通、0を超えれば自動車のほうが多くに届きます。',
         bands: '指数の区間ごとの住民',
@@ -905,7 +946,6 @@ export default {
       },
       pov: {
         title: '近接性と機会',
-        lede: '住民が徒歩で届くものと都市全体で届くものを、P.O.V. の4つのアクセスゾーンに分けて示します。',
         zones: 'ゾーンごとの住民',
         zonesAbout: '左は Atlas 中央値によるゾーン：すべての都市を同じ2本の線、近接性 {proximity} と機会 {opportunity} で区切ったもので、全 {count} 都市の住民の中央値です。右はプラットフォーム独自のゾーンで、各都市の中央値で区切っています。',
         scores: '近接性の中央値と機会の中央値',
@@ -914,7 +954,6 @@ export default {
       },
       cross: {
         title: 'レイヤーどうしの連動',
-        lede: '各都市の中で、あるレイヤーの指標が別のレイヤーの指標とセルごとにどう連動するか。',
         about: '両レイヤーが覆う居住セルでのスピアマンの順位相関。青は一緒に下がるところ、赤は一方が上がると他方が下がるところ。',
       },
     },
@@ -930,10 +969,8 @@ export default {
     noPairs: '表示中の都市に両方の値を持つものはありません。',
     selection: {
       label: '強調表示',
-      add: '都市を強調表示…',
-      addCountry: '国を強調表示…',
       remove: '{name}の強調表示を解除',
-      full: '最大4つまでです。先に1つ外してください。',
+      full: '最大8つまで：先に1つ外してください。',
       toggle: 'すべてのビューで強調表示',
     },
     openCity: '{name}を地図で開く',
@@ -954,7 +991,8 @@ export default {
       countries: '国は公開済み都市をまとめたもので国全体ではなく、今のところ15分都市のみをまとめています。中央値、パーセンタイル、不平等指数はまとめられません。',
       oneNumber: '1都市に1つの値です。住民のばらつきはランキングとツールチップにあります。',
       matrix: '色の濃さは表示中の都市どうしを比べるため、絞り込みで変わります。値は変わりません。',
-      curvesThresholds: 'しきい値でのみ測定しています。線はそれらの点を結ぶだけで、その間については何も示しません。',
+      curvesThresholds: '各線は都市の公表値を結んだものです：10・25・50・75・90パーセンタイルと各しきい値での割合。その間は測定されていません。',
+      curvesHours: '1時間ごとの値を直線で結んでいます：時間と時間の間は測定されていません。',
       curvesNone: '相関には、曲線を描くためのしきい値や時間帯がありません。',
       hidden: 'この値を持つ {count} 都市は除外されています。データが薄すぎて比較できません。',
     },
@@ -970,8 +1008,23 @@ export default {
     },
     mapCaption: '点の大きさは住民数です。',
     matrixPick: 'この値をすべてのビューで表示',
-    curvesTop: '上位8つ。都市を強調表示すると追跡できます。',
-    curvesPick: '強調表示すると名前が出ます',
+    picker: {
+      add: '名前で都市を追加…',
+      addCountry: '名前で国を追加…',
+      full: '最大8つまで：追加するには1つ外してください',
+      none: 'その名前でこの数値を持つものはありません。',
+      clickToAdd: 'クリックすると色付きで描きます。',
+      suggested: 'まずは画面上で人口の多い {count} 都市。名前を入力して都市を追加、× で外せます。',
+      suggestedCountries: 'まずは画面上で人口の多い {count} か国。名前を入力して国を追加、× で外せます。',
+    },
+    curves: {
+      title: '住民の累積',
+      yAxis: {
+        atMost: '値以内の住民',
+        atLeast: '値以上の住民',
+        above: '値を超える住民',
+      },
+    },
   },
 
   consulting: {

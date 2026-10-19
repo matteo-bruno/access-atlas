@@ -165,54 +165,114 @@
 
 /* ── Compare cities ───────────────────────────────────────────── */
 
-.aa-table {
+.aa-rank {
   overflow: hidden;
 }
 
-.aa-table__head,
-.aa-table__row {
+.aa-rank__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.4fr;
-  gap: 16px;
-  padding: 14px 22px;
-  align-items: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.aa-table__head {
-  background: var(--paper-alt);
-  border-bottom: 1px solid var(--hair);
+.aa-rank__col {
+  padding: 18px 22px 16px;
+  min-width: 0;
+}
+
+.aa-rank__col + .aa-rank__col {
+  border-inline-start: 1px solid var(--hair-soft);
+}
+
+/* The column's heading is the way to the same figure on the Stats page. */
+.aa-rank__head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.aa-rank__head:hover .aa-rank__minutes {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aa-rank__minutes {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.aa-rank__mode {
   font-size: 12px;
   color: var(--ink-3);
 }
 
-.aa-table__row {
-  border-bottom: 1px solid var(--hair-soft);
+.aa-rank__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aa-rank__row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) 64px 46px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--hair-soft);
   font-size: 14px;
 }
 
-.aa-table__row:last-child {
-  border-bottom: 0;
+.aa-rank__pos {
+  font-size: 11px;
+  color: var(--ink-3);
 }
 
-.aa-table__city {
+.aa-rank__city {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 500;
   color: var(--ink);
 }
 
-.aa-table__cell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.aa-rank__city:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.aa-table__value {
-  min-width: 36px;
+.aa-rank__meter {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--paper-alt);
+  overflow: hidden;
+}
+
+.aa-rank__fill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.aa-rank__value {
   font-size: 12px;
+  text-align: end;
   color: var(--ink-2);
 }
 
-/* The foot of the table: what these six cities are a sample of, and the way
-   to the screen that will hold all of them. */
+@media (max-width: 860px) {
+  .aa-rank__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aa-rank__col + .aa-rank__col {
+    border-inline-start: 0;
+    border-top: 1px solid var(--hair);
+  }
+}
+
+/* The foot of the rankings: which cities they rank, and the way to the
+   screen that holds all of them. */
 .aa-table__foot {
   display: flex;
   flex-wrap: wrap;
@@ -320,19 +380,6 @@
 
   .aa-side {
     grid-template-columns: 1fr;
-  }
-
-  /* The meters need more room than a phone has — show the numbers only. */
-  .aa-table__head,
-  .aa-table__row {
-    grid-template-columns: 1.4fr repeat(3, 1fr);
-    gap: 8px;
-    padding: 12px 16px;
-    font-size: 12.5px;
-  }
-
-  .aa-table .aa-meter {
-    display: none;
   }
 }
 

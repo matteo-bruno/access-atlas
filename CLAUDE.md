@@ -117,7 +117,7 @@ than each platform's own layout, and the rule lands ~10-14 m from theirs on a
 **A world-map marker is the city's median resident.** 15minCity's walk to
 services, CityChrone's velocity at 8:00 and Car Dependency's index are each
 the population-weighted median over the layer's cells (`describeLayer` in
-`bundle.mjs`), and the tooltip says so: the time as `m:ss`, the velocity as
+`bundle.mjs`), and the tooltip says so: 15minCity's as "Rome – 10:30 min", the velocity as
 km/h by public transport, the CDI as the median resident's. Car Dependency's
 used to be the weighted mean, which stays in its compare row as
 `weightedCdi`. When the method of a marker or a compare-row median changes, `npm run
@@ -219,9 +219,27 @@ everything. Hashes are written last, after `test:data` passed.
 `/stats` is a dashboard over one file, `public/data/stats/stats.json.gz`,
 named as `stats` in the catalogue. Nothing on the page computes a figure from
 cells: `src/data/stats.js` picks one out of a published figure object, orders
-it and colours it, and `StatsViews.jsx` draws it five ways (ranking, map,
-scatter, matrix, curves), by city or by country. What is on screen lives in
-the query string.
+it and colours it, and the views draw it four ways (focus, ranking, map,
+curves), by city or by country. What is on screen lives in the query string.
+
+**Some of it is paused, not removed.** P.O.V. and the figures across layers
+are still computed and published, but off the page (`STATS_PAUSED` in
+`stats.js`; an address naming one opens on the default figure), and the
+scatter and the matrix are out of `VIEWS` in `Stats.jsx`. Their code stays:
+emptying the set and listing the views again brings all four back. The
+Theil index, the 90/10 ratio and the share with nothing reachable are in the
+file and offered nowhere (`statKeys`); the Gini is the one inequality index
+on the page.
+
+**Boundaries and countries are the 15-minute city's.** It is the layer that
+publishes whole countries on both boundaries, so it alone is compared one
+boundary at a time (`BOUNDARY_LAYERS` in `Stats.jsx`) and offers countries,
+as a unit and as a filter (only for a layer the file pools,
+`countryLayers`). Car Dependency and CityChrone have a metro area or two:
+they are listed among the cities, named "Paris (FUA)" (`rowName`, wherever
+the two boundaries share a list), with no boundary switch and no countries.
+CityChrone's velocity reads in km/h here as on the city view, thresholds
+included ("at least 4 km/h").
 
 **The page opens on the dashboard, nothing above it.** No eyebrow, headline
 or lede: the page's `<h1>` is the figure on screen (measure in ink, statistic
@@ -231,22 +249,49 @@ residents (`DEFAULTS` in `Stats.jsx`). **Only cities that have the figure are
 drawn anywhere**, on the map included: a city without the layer is not listed
 as missing. The layout is **one row of buttons on top** (the layers, then the
 views) and **a sidebar** with the figure, the filters and the highlighted
-cities. Countries are a menu, not a row of chips, and population is one
-logarithmic slider with two handles (min and max; the top end means no
-maximum) and a number box under each.
+cities (picked by typing a name, `CityPicker`). Countries are a menu, not a
+row of chips, and population is one logarithmic slider with two handles (min
+and max; the top end means no maximum) and a number box under each.
 
 **Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
 each platform is read with, from the same statistics file, so the filters
-and highlights apply. 15minCity: median time to every service, city by city,
-on the platform's own ramp, and residents within 15 minutes on foot against
-by bicycle. CityChrone: each city's 24 hours, median with the middle half as
-a band, one scale per score across cities. Car Dependency: the index for the
-average resident, residents by index band (from the shares above the CDI
-thresholds) and reach by car against by transit. P.O.V.: residents by zone,
-on the Atlas median beside the city's own, and median proximity against
-opportunity with the Atlas medians drawn as the quadrant lines. Across
-layers: every correlation, city by city. The per-platform compare pages for
-P.O.V. and CDI are linked from their focus, not listed under the dashboard.
+and highlights apply. Its title is the layer and what the focus is about,
+with no subtitle under it: each chart carries its own title and "?". Each
+chart is a sheet of its own, and a list longer
+than its first screen shows ten or twelve rows and "Show all". 15minCity,
+in order: **who lives within 5–30 minutes of the services**, ranked on two
+boards, cities over 1 and over 10 million residents (`SIZES`; the sizes are
+printed with `Intl`'s compact notation, so no number sits in a
+dictionary), which take the countries and the boundary but not the
+residents filter, since each board is its own size; **residents reached,
+minute by minute**, the cumulative curves below; the median time to every
+service on the platform's own ramp; and residents within 15 minutes on foot
+against by bicycle. CityChrone: each city's 24 hours, median with the
+middle half as a band, one scale per score across cities. Car Dependency:
+the index for the average resident and residents by index band (from the
+shares above the CDI thresholds); its reach scatter went with the scatter.
+(Paused: P.O.V.'s zones and scores, every correlation across layers.) The
+per-platform compare pages for P.O.V. and CDI are linked from their focus,
+not listed under the dashboard.
+
+**The curves are cumulative and drawn from published points only**
+(`StatsCurves.jsx`). For a distribution a city's line is
+`cumulativePoints` in `stats.js`: its five quantiles (a tenth of residents
+within the 10th percentile, …) and its share at every threshold, sorted
+along the measure, rising for a measure counted "at most" (a travel time),
+falling for one counted "above" or "at least". Nothing between the points
+is known, the line only joins them, and the note under the chart says so;
+a quantile rounded onto the wrong side of a threshold's share is dropped
+rather than moved, and "not reachable" is no point at all. Travel times run
+to the last threshold, like the platform's legend; other axes are fitted.
+CityChrone keeps its hours. Up to **eight cities in colour**, picked by
+typing a name (any city with the figure, whatever the filters leave; hidden
+ones never), named at their end and in the chips, and every other city the
+filters leave is a faint grey line, named under the pointer and added with
+a click. Nobody having picked any, the four largest cities on screen stand
+in, and the first edit makes them a choice; `sel=-` is a choice of none.
+The chart measures its container (`useFrame`) and draws at its true pixel
+size, so a phone gets legible figures rather than a scaled-down desktop.
 
 **Computed per city, only when its data changed, and never shown stale.**
 `npm run stats` (`scripts/build-stats.mjs`, method at the top of
@@ -322,10 +367,10 @@ What is easy to get wrong:
   (`cityFlags`). New copy that would apply everywhere belongs in the
   dialog, not as another standing note.
 - **Highlight colours follow the city, not its position.** `sel` in the URL
-  holds four slots, possibly empty, so removing one highlighted city never
-  repaints the others. The four are the first slots of the dataviz reference
-  palette, validated together for lines; two are below 3:1 contrast, which
-  is why every highlighted line and dot is also named.
+  holds eight slots, possibly empty, so removing one highlighted city never
+  repaints the others. The eight are the dataviz reference palette in its
+  order, validated together for lines on the card's paper; three are below
+  3:1 contrast, which is why every highlighted line and dot is also named.
 
 ## The grids — read this before touching the combined viewer
 
@@ -375,8 +420,11 @@ offline, and one job each.
   `-0.035em` the sans took: a serif closes up at that size on its own.
 - **`--font-sans` (Roboto) is everything else** — body, UI, ledes, card
   titles, the nav.
-- **`--font-mono` (Roboto Mono)** is only ever used for figures, coordinates
-  and counts, where digits have to line up column to column.
+- **`--font-mono`** is only ever used for figures, coordinates
+  and counts, where digits have to line up column to column. It is the
+  body face now (`var(--font-sans)`) with tabular digits from `.aa-mono`:
+  Roboto Mono read as machine output, and the token stays so every rule
+  that sets figures still says so.
 
 **Every title carries a coloured half** — `.aa-accent` in `global.css`, the
 brand magenta — split in the dictionaries as `headline` / `headlineAccent`
@@ -458,9 +506,11 @@ nowhere on the legend. The isochrone ramp does the same past 120.
   contains two conflicting letter→category tables — if an old letter-keyed
   file ever resurfaces, do not take a letter's meaning from that file.
 - **CityChrone's scores carry no verified unit conversion.** `v_score` is
-  described as km/h-like and labelled that way after the upstream site;
-  `s_score` is a weighted count of reachable people and is called a score,
-  never a headcount. Hexcover `coord` is `[lat, lon]` — the one published
+  described as km/h-like by its authors, and the city view states it in
+  km/h; `s_score` is a weighted count of reachable people, called a score
+  and stated in "ppl" (`atlas.people`) in the city view, by the lab's
+  decision. Neither is a headcount or a measured speed, and copy that
+  explains them should still say so. Hexcover `coord` is `[lat, lon]` — the one published
   file on that order.
 
 ## Traps that have already cost time
@@ -630,9 +680,10 @@ Locally: `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`, and build with
 ## Explaining the measures
 
 Two levels, and the split matters. Anything a reader could misread carries an
-`Explain` — a "?" that shows a **tooltip** on hover or focus and drops it when
-the pointer leaves, so reading one costs nothing and dismissing it is not a
-second decision. **The tooltip is drawn in a portal on the body, positioned
+`Explain` — a "?" that opens a small panel **on a click** and keeps it open
+until the reader closes it (the "?" again, a click elsewhere, or Escape). It
+used to open on hover; the lab preferred an explanation that is asked for
+and stays put while it is read. **The tooltip is drawn in a portal on the body, positioned
 against its button**: most of them live in the city view's controls column,
 which scrolls, and a scrolling box clips what its children paint outside it
 whatever their z-index — so the half with the method in it was cut off at the
@@ -642,7 +693,11 @@ the pointer can cross the gap into it. The long form — what the platform measu
 read, the two geometries, the panel's figures, the method, the sources — is
 one dialog behind "about this layer" (`PlatformAbout`), never a growing block
 in the panel. Both draw on the same `city.explain.*` copy, so a tooltip and
-the dialog cannot say different things, and the dialog's colour key is the
+the dialog cannot say different things (two exceptions: the legend "?" of Car Dependency and P.O.V. is
+`city.explain.legend.<layer>`, CDI's colours sentence followed by what a
+white and a blue area mean, P.O.V.'s the framework the zones come from;
+P.O.V.'s copy says "city median" and its method line says medians are
+weighted by population, which `smoke.mjs` checks in the dialog), and the dialog's colour key is the
 same `RampLegend` the map uses.
 
 The copy was ported from the two upstream viewers, **minus two claims of
@@ -748,9 +803,15 @@ that has not loaded. Opacity only, never transform — `.aa-picker` centres
 itself with `translateX`, and animating transform would throw it across the
 screen.
 
-One veil, the same on every page and at every scroll position: a gradient,
-densest where a page's copy sits and nearly clear on the far side. Nothing
-above it may paint it out — the map is the site's subject, not a watermark, so
+**Behind a page of copy the backdrop is the bare world, with no cities.**
+Thousands of dots read as specks in the text, so `Backdrop` draws its
+markers only on the screens that are a map (`markersHidden` off there), and
+they fade in as the platform screen is asked for, which keeps the handover
+one world with the same dots. The frame is still derived from the coverage.
+
+One veil, the same on every page and at every scroll position, and even from
+edge to edge (it was a left-to-right gradient when the copy sat on the
+left). Nothing above it may paint it out — the map is the site's subject, not a watermark, so
 what scrolls over it is transparent between its own cards and the map is as
 visible on a page of text as on the front door. If a block turns out to be
 unreadable over it, give that block a background; do not reach for the veil.
@@ -900,6 +961,17 @@ would show, and picking one shows the cities with at least that many
 (`?min=1..3`, absent for four). The frame still comes from every city, so
 the filter never moves the world.
 
+**A layer's dots are its city view's colours where that is a ramp.** Car
+Dependency and CityChrone colour each city on the city view's own ramp
+(`MARKER_RAMPS` in `map/layers.js`) at the median resident's value, filled,
+and their legend is that ramp with three words under it (transit-favoured,
+balanced, car-dependent; slow, medium, fast). **P.O.V.'s map is the cities
+and nothing more**: one colour (`markerColor`), no legend, the name in the
+tooltip. Its zones compare places within a city, so a city has no zone of
+its own: coloured by the zone most residents live in, the map was all
+green; coloured by the zone on the Atlas median, it was a categorisation
+the lab did not want on the world map.
+
 **Every marker opens its city, whatever the open layer covers.** The city
 view opens on the first layer that city actually carries, so a Car
 Dependency city needs no 15minCity to be worth a click. `useCityPageIds()`
@@ -944,8 +1016,10 @@ the path by `activeTab`. Three consequences to keep in mind:
 ## The home page
 
 Three sections under the landing, and none of them numbered: **Accessibility
-layers** (the four platform cards), **Compare cities** (the six-city table,
-which hands off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
+layers** (the four platform cards), **Compare cities** (three rankings from
+the statistics file, residents within 5, 10 and 15 minutes on foot,
+`cityRankings` in `src/data/home.js`, filtered as the Stats page opens, and
+a hand-off to `/stats`) and **Work in progress** (`WORK_IN_PROGRESS` in
 `src/data/home.js`). The coverage-map section that used to open the page went
 when the backdrop became the site's map — it was the same map twice — and the
 pull quote went when the premise moved onto the front door. The metrics strip
@@ -953,8 +1027,12 @@ went with the landing's copy of it, and `SectionHeading` no longer takes a
 `hint`: the italic note at the far right of a heading restated the section
 under it in three words.
 
+**The blog is unlisted for now** (`BLOG_LISTED` in `src/data/blog.js`): no
+nav tab, no footer link, and the platform cards open the layer's map. Its
+routes and posts are kept; turning the flag on restores all three.
+
 **A platform card opens the Atlas's own introduction to that layer, not the
-upstream viewer.** Each of the four has a post in `src/data/blog.js` carrying
+upstream viewer**, while the blog is listed. Each of the four has a post in `src/data/blog.js` carrying
 `layer: '<platform id>'`, which `postForLayer` resolves; a post's `links`
 block is where the platform and its paper are handed over. A card labelled
 "More info" that dropped a first-time reader straight into someone else's
@@ -968,9 +1046,46 @@ under it. They share `Prose.css`.
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
-(`MapBox`) in its corners: the geometry switch top left, the city summary and
-the selected cell top right, opacity bottom left, full screen bottom right.
+(`MapBox`) in its corners. Along the top, at the start of the column, the
+layer picker as one horizontal bar that never wraps (`.aa-city__layerbar`: the world map's
+`.aa-picker`, its styles in `global.css` and its dots from `scaleDot` in
+`map/layers.js`). It and the boxes on the right are one column over the
+map (`.aa-city__top`), so the boxes always start where the bar ends: a fixed
+offset let them overlap on a screen where the bar came out taller, and
+reserving their column beside the bar made "Population" wrap at 1280 px. **The world map's stylesheet is still loaded after a step into a city**
+(lazy chunks are never unloaded), so a rule there that floats its picker
+(`.aa-picker--float`) must stay scoped to it: unscoped, it lifted the city's
+bar out of the column and the summary rose over it, on that path only —
+opening a city directly never showed it. `smoke.mjs` checks it from the
+world map. Top right the city summary (closed by default, full width) and the selected
+cell; bottom left "Settings", closed by default, holding Map/Cartogram and
+the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
+under the pointer; full screen bottom right. There is no status bar under
+the map; a generated mesh says so in a note at the map's foot. The legend is in the column, right
+under the city's name and "About this layer". The foot of the column is
+the OSM date, "Notice a mistake?", the layer's paper and "City boundaries"
+(GHSL or the municipality), all in `MistakeNote`; the two notes open as the
+"?" panels do (`Explain` with a `trigger`).
 Full screen hides the chrome and keeps the column, and Escape leaves it.
+
+**There is no bar above the map.** The column opens with "Back to the
+Atlas" (to the open layer's world map), the title, which is the city and
+its country and nothing else ("Rome – Italy", the country in the accent),
+and "About this layer". The boundary on screen is the
+pressed half of the boundary switch, not part of the title. The top-right
+stack stops above the full-screen button and scrolls inside that room.
+
+**It opens on the cartogram**, on every layer that has one: where nobody
+lives shrinks away, so the first picture is of the residents a measure is
+about. The geometry's "?" explains the cartogram only.
+
+The selected cell's H3 index closes its box (`rows.footer` in
+`CellInspector`, with a "?" pointing to h3geo.org), under anything a layer adds below the rows, such as
+15minCity's bars. "About this layer" is the measure, the colours (the same
+`city.explain.map.*` the legend's "?" shows), for 15minCity the nine
+categories and how a time is measured, the method with one line on
+resident weighting, and the sources. The two geometries and "the figures
+in the panel" are no longer sections of it.
 
 **The column is closed from its own edge**, not from a button on the map: a
 small chevron (`.aa-city__panelbtn`) sits astride the seam between the column
@@ -1009,8 +1124,8 @@ Two things that are easy to get wrong here:
 15-minute city's times are shown as a clock — `formatTime`, `m:ss` or `mm:ss`
 — everywhere a reader meets one: the map's tooltip, the inspector, the bars.
 Decimal minutes read as a quantity; nobody says "three point nine nine
-minutes to the shops". The legend keeps plain numbers, because it is a scale
-rather than a reading.
+minutes to the shops". The legend writes whole minutes as plain numbers and
+the half ones as a clock (`0 7:30 15 22:30 30`), never 7.5.
 
 ## Copy and i18n
 

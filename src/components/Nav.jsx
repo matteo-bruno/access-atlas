@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Icon } from './Icon.jsx';
 import { Logo } from './Logo.jsx';
+import { BLOG_LISTED } from '../data/blog.js';
 import { LANGS, LANG_NAMES, isRtl, useI18n } from '../i18n/index.jsx';
 import './Nav.css';
-
-const GITHUB_URL = 'https://github.com/sony-csl-rome';
 
 export function Nav({ active = 'atlas', sticky = true }) {
   const { t, lang, setLang } = useI18n();
@@ -20,7 +19,7 @@ export function Nav({ active = 'atlas', sticky = true }) {
     { key: 'about', to: '/sustainable-cities', label: t('nav.about') },
     { key: 'consulting', to: '/consulting', label: t('nav.consulting') },
     { key: 'research', to: '/research', label: t('nav.research') },
-    { key: 'blog', to: '/blog', label: t('nav.blog') },
+    ...(BLOG_LISTED ? [{ key: 'blog', to: '/blog', label: t('nav.blog') }] : []),
     { key: 'faq', to: '/faq', label: t('nav.faq') },
     { key: 'contact', to: '/contact', label: t('nav.contact') },
   ];
@@ -68,16 +67,6 @@ export function Nav({ active = 'atlas', sticky = true }) {
       </nav>
 
       <div className="aa-nav__tools">
-        <a
-          className="aa-chip aa-nav__github"
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Icon name="github" size={14} />
-          {t('nav.github')}
-        </a>
-
         <LangMenu lang={lang} setLang={setLang} label={t('nav.language')} />
 
         <div className="aa-nav__menu" ref={menuRef}>
@@ -104,14 +93,6 @@ export function Nav({ active = 'atlas', sticky = true }) {
                   {item.badge && <span className="aa-nav__badge">{item.badge}</span>}
                 </NavLink>
               ))}
-              <a
-                className="aa-nav__draweritem"
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {t('nav.github')}
-              </a>
             </div>
           )}
         </div>
@@ -153,6 +134,7 @@ function LangMenu({ lang, setLang, label }) {
         aria-label={`${label}: ${LANG_NAMES[lang]}`}
         onClick={() => setOpen((value) => !value)}
       >
+        <Icon name="globe" size={15} />
         {lang.toUpperCase()}
         <Icon name="chevronDown" size={12} />
       </button>

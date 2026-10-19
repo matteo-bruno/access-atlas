@@ -54,20 +54,16 @@
   visibility: hidden;
 }
 
-/* One veil, the same on every page and at every scroll position: densest
-   where a page's copy sits, nearly clear on the far side. The map is meant to
-   be seen — it is the site's subject, not a watermark — so nothing above it
-   is allowed to paint it out. */
+/* One veil, the same on every page and at every scroll position, and even
+   from edge to edge. It used to run dense on the left and nearly clear on the
+   right, when a page's copy sat on the left; the copy is centred now, and
+   behind a page of copy the backdrop draws no cities, so a light even wash
+   is enough to read over. */
 .aa-backdrop__veil {
   position: absolute;
   inset: 0;
   transition: opacity 170ms ease;
-  background: linear-gradient(
-    100deg,
-    color-mix(in srgb, var(--paper) 90%, transparent) 0%,
-    color-mix(in srgb, var(--paper) 70%, transparent) 46%,
-    color-mix(in srgb, var(--paper) 10%, transparent) 100%
-  );
+  background: color-mix(in srgb, var(--paper) 55%, transparent);
 }
 
 /* The veil is the reading surface behind a page of copy, and the screens that

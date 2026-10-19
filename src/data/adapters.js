@@ -570,6 +570,7 @@ export function citychroneHour(collection) {
 
   const byCc = new Map();
   const vValues = [];
+  const sValues = [];
   const weights = [];
   for (const feature of features) {
     const p = feature?.properties ?? {};
@@ -578,25 +579,31 @@ export function citychroneHour(collection) {
     const s = Number(p.s_score);
     byCc.set(p.new_id, { v, s });
     vValues.push(v);
+    sValues.push(s);
     weights.push(Number(p.pop) || 0);
   }
 
-  let acc = 0;
-  const pairs = vValues.map((v, i) => [v, weights[i]]).sort((a, b) => a[0] - b[0]);
-  const totalWeight = pairs.reduce((s, [, w]) => s + w, 0);
-  let weightedMedianV = pairs[pairs.length - 1]?.[0] ?? null;
-  for (const [v, w] of pairs) {
-    acc += w;
-    if (acc >= totalWeight / 2) {
-      weightedMedianV = v;
-      break;
+  // The median resident's score.
+  const median = (values) => {
+    const pairs = values.map((v, i) => [v, weights[i]]).sort((a, b) => a[0] - b[0]);
+    const totalWeight = pairs.reduce((sum, [, w]) => sum + w, 0);
+    let acc = 0;
+    let weighted = pairs[pairs.length - 1]?.[0] ?? null;
+    for (const [v, w] of pairs) {
+      acc += w;
+      if (acc >= totalWeight / 2) {
+        weighted = v;
+        break;
+      }
     }
-  }
+    return Math.round(weighted * 100) / 100;
+  };
 
   return {
     byCc,
     cells: features.length,
-    weightedMedianV: Math.round(weightedMedianV * 100) / 100,
+    weightedMedianV: median(vValues),
+    weightedMedianS: median(sValues),
   };
 }
 
