@@ -1055,14 +1055,12 @@ export default {
   },
 
   contact: {
-    eyebrow: 'Contatti e collaborazioni',
     headline: 'Roma, Italia.',
     headlineAccent: 'Aperti a collaborare.',
     lede: 'Lavoriamo con amministrazioni cittadine, gruppi di ricerca, associazioni e chiunque voglia sostenere una tesi sull’accesso con i dati alla mano. Se la vostra città dovrebbe essere nell’Atlante, se volete riusare le mappe in un articolo, o se qui qualcosa vi sembra sbagliato — scriveteci.',
     fields: {
       address: 'Indirizzo',
       general: 'Generale',
-      code: 'Codice',
       phone: 'Telefono',
     },
     addressValue:
@@ -1163,18 +1161,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Ricerca aperta sull’accesso urbano dal team Città Sostenibili di Sony CSL — Roma. Metodi, mappe e dati, pubblicati e liberamente riutilizzabili.',
+    description: 'Ricerca aperta su accessibilità e mobilità urbana dal team Città Sostenibili di Sony CSL\u00a0-\u00a0Roma.',
     platforms: 'Piattaforma',
+    platformLinks: ['Atlante', 'CityChat', 'Statistiche'],
     research: 'Ricerca',
     researchLinks: ['Articoli', 'Dataset', 'Blog', 'FAQ'],
     about: 'Chi siamo',
-    aboutLinks: ['Città sostenibili', 'Team', 'Contatti', 'Consulenza', 'Lavora con noi'],
+    aboutLinks: ['Città sostenibili', 'Team', 'Consulenza'],
     touch: 'Resta in contatto',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Lavora con noi →',
+    touchLinks: ['Contatti', 'Lavora con noi'],
+    workCta: 'Lavora con noi',
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
-    version: 'Codice MIT · Dati CC BY-NC 4.0',
   },
 
   notFound: {

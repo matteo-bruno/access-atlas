@@ -1013,14 +1013,12 @@ export default {
   },
 
   contact: {
-    eyebrow: 'Kontakt und Zusammenarbeit',
     headline: 'Rom, Italien.',
     headlineAccent: 'Offen für Zusammenarbeit.',
     lede: 'Wir arbeiten mit Stadtverwaltungen, Forschungsgruppen, NGOs und allen, die ein Argument über Erreichbarkeit mit Belegen untermauern wollen. Wenn Ihre Stadt in den Atlas gehört, wenn Sie die Karten in einem Artikel verwenden möchten oder wenn Ihnen hier etwas falsch erscheint, schreiben Sie uns.',
     fields: {
       address: 'Adresse',
       general: 'Allgemein',
-      code: 'Code',
       phone: 'Telefon',
     },
     addressValue:
@@ -1118,18 +1116,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Offene Forschung zur städtischen Erreichbarkeit vom Team Nachhaltige Städte bei Sony CSL – Rom. Methoden, Karten und Daten, veröffentlicht und frei nachnutzbar.',
+    description: 'Offene Forschung zu städtischer Erreichbarkeit und Mobilität vom Team Nachhaltige Städte bei Sony CSL\u00a0-\u00a0Rom.',
     platforms: 'Plattform',
+    platformLinks: ['Atlas', 'CityChat', 'Statistiken'],
     research: 'Forschung',
     researchLinks: ['Artikel', 'Daten', 'Blog', 'FAQ'],
     about: 'Über uns',
-    aboutLinks: ['Nachhaltige Städte', 'Team', 'Kontakt', 'Beratung', 'Mit uns arbeiten'],
+    aboutLinks: ['Nachhaltige Städte', 'Team', 'Beratung'],
     touch: 'In Verbindung bleiben',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Mit uns arbeiten →',
+    touchLinks: ['Kontakt', 'Mit uns arbeiten'],
+    workCta: 'Mit uns arbeiten',
     copyright: '© 2026 Sony Computer Science Laboratories · Rom',
-    version: 'Code MIT · Daten CC BY-NC 4.0',
   },
 
   notFound: {

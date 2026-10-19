@@ -1011,14 +1011,12 @@ export default {
   },
 
   contact: {
-    eyebrow: 'Contacto y colaboraciones',
     headline: 'Roma, Italia.',
     headlineAccent: 'Abiertos a colaborar.',
     lede: 'Trabajamos con ayuntamientos, grupos de investigación, ONG y cualquiera que intente defender un argumento sobre el acceso con datos que lo respalden. Si tu ciudad debería estar en el Atlas, si quieres reutilizar los mapas en un artículo o si algo aquí te parece mal, escríbenos.',
     fields: {
       address: 'Dirección',
       general: 'General',
-      code: 'Código',
       phone: 'Teléfono',
     },
     addressValue:
@@ -1116,18 +1114,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Investigación abierta sobre el acceso urbano del equipo Ciudades Sostenibles de Sony CSL – Roma. Métodos, mapas y datos, publicados y libres para reutilizar.',
+    description: 'Investigación abierta sobre accesibilidad y movilidad urbanas del equipo Ciudades Sostenibles de Sony CSL\u00a0-\u00a0Roma.',
     platforms: 'Plataforma',
+    platformLinks: ['Atlas', 'CityChat', 'Estadísticas'],
     research: 'Investigación',
     researchLinks: ['Artículos', 'Datos', 'Blog', 'FAQ'],
     about: 'Quiénes somos',
-    aboutLinks: ['Ciudades sostenibles', 'Equipo', 'Contacto', 'Consultoría', 'Trabaja con nosotros'],
+    aboutLinks: ['Ciudades sostenibles', 'Equipo', 'Consultoría'],
     touch: 'Mantente en contacto',
-    touchLinks: ['GitHub', 'Boletín'],
-    workCta: 'Trabaja con nosotros →',
+    touchLinks: ['Contacto', 'Trabaja con nosotros'],
+    workCta: 'Trabaja con nosotros',
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
-    version: 'Código MIT · Datos CC BY-NC 4.0',
   },
 
   notFound: {

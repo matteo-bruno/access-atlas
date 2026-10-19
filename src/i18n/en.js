@@ -1065,14 +1065,12 @@ export default {
   },
 
   contact: {
-    eyebrow: 'Contact & collaborations',
     headline: 'Rome, Italy.',
     headlineAccent: 'Open for collab.',
     lede: 'We work with city administrations, research groups, NGOs and anyone trying to make an argument about access with evidence behind it. If your city should be on the Atlas, if you want to reuse the maps in a paper, or if something here looks wrong — write to us.',
     fields: {
       address: 'Address',
       general: 'General',
-      code: 'Code',
       phone: 'Phone',
     },
     addressValue:
@@ -1173,18 +1171,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Open research on urban access from the Sustainable Cities team at Sony CSL — Rome. Methods, maps and data, published and free to reuse.',
+    description: 'Open research on urban accessibility and mobility from the Sustainable Cities team at Sony CSL\u00a0-\u00a0Rome.',
     platforms: 'Platform',
+    platformLinks: ['Atlas', 'CityChat', 'Statistics'],
     research: 'Research',
     researchLinks: ['Papers', 'Datasets', 'Blog', 'FAQ'],
     about: 'About',
-    aboutLinks: ['Sustainable cities', 'Team', 'Contact', 'Consulting', 'Work with us'],
+    aboutLinks: ['Sustainable cities', 'Team', 'Consulting'],
     touch: 'Stay in touch',
-    touchLinks: ['GitHub', 'Newsletter'],
-    workCta: 'Work with us →',
+    touchLinks: ['Contact', 'Work with us'],
+    workCta: 'Work with us',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: 'Code MIT · Data CC BY-NC 4.0',
   },
 
   notFound: {

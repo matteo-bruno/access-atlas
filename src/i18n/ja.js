@@ -1021,14 +1021,12 @@ export default {
   },
 
   contact: {
-    eyebrow: 'お問い合わせと協働',
     headline: 'イタリア、ローマ。',
     headlineAccent: '協働を歓迎します。',
     lede: '私たちは、自治体、研究グループ、NGO、そしてアクセスについて根拠のある議論をしようとするすべての人と協働しています。あなたの都市をアトラスに載せたい、論文で地図を再利用したい、あるいはここに何か間違いがありそうだ。そんなときはご連絡ください。',
     fields: {
       address: '住所',
       general: '一般',
-      code: 'コード',
       phone: '電話',
     },
     // A postal address: kept as it is written, in English.
@@ -1128,18 +1126,17 @@ export default {
   },
 
   footer: {
-    description:
-      'Sony CSL（ローマ）の「持続可能な都市」チームによる、都市のアクセスについてのオープンな研究。手法、地図、データを公開し、自由に再利用できます。',
+    description: 'Sony CSL（ローマ）の「持続可能な都市」チームによる、都市のアクセシビリティとモビリティについてのオープンな研究。',
     platforms: 'プラットフォーム',
+    platformLinks: ['アトラス', 'CityChat', '統計'],
     research: '研究',
     researchLinks: ['論文', 'データセット', 'ブログ', 'FAQ'],
     about: '概要',
-    aboutLinks: ['持続可能な都市', 'チーム', '連絡先', 'コンサルティング', '一緒に働く'],
+    aboutLinks: ['持続可能な都市', 'チーム', 'コンサルティング'],
     touch: 'つながる',
-    touchLinks: ['GitHub', 'ニュースレター'],
-    workCta: '一緒に働く →',
+    touchLinks: ['連絡先', '一緒に働く'],
+    workCta: '一緒に働く',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: 'コード MIT · データ CC BY-NC 4.0',
   },
 
   notFound: {

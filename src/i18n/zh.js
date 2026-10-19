@@ -1002,14 +1002,12 @@ export default {
   },
 
   contact: {
-    eyebrow: '联系与合作',
     headline: '意大利，罗马。',
     headlineAccent: '欢迎合作。',
     lede: '我们与城市政府、研究团队、非政府组织，以及所有希望用证据来论证可达性问题的人合作。如果您的城市应该出现在地图集上，如果您想在文章中使用这些地图，或者觉得这里有什么不对，请写信给我们。',
     fields: {
       address: '地址',
       general: '一般事务',
-      code: '代码',
       phone: '电话',
     },
     addressValue:
@@ -1105,17 +1103,17 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性的开放研究。方法、地图和数据全部公开，可自由复用。',
+    description: 'Sony CSL 罗马分部可持续城市团队关于城市可达性与出行的开放研究。',
     platforms: '平台',
+    platformLinks: ['地图集', 'CityChat', '统计'],
     research: '研究',
     researchLinks: ['论文', '数据集', '博客', '常见问题'],
     about: '关于',
-    aboutLinks: ['可持续城市', '团队', '联系我们', '咨询', '加入我们'],
+    aboutLinks: ['可持续城市', '团队', '咨询'],
     touch: '保持联系',
-    touchLinks: ['GitHub', '订阅通讯'],
-    workCta: '加入我们 →',
+    touchLinks: ['联系我们', '加入我们'],
+    workCta: '加入我们',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: '代码 MIT · 数据 CC BY-NC 4.0',
   },
 
   notFound: {

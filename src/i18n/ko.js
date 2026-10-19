@@ -1002,14 +1002,12 @@ export default {
   },
 
   contact: {
-    eyebrow: '문의 및 협업',
     headline: '이탈리아, 로마.',
     headlineAccent: '협업을 환영합니다.',
     lede: '저희는 도시 행정 기관, 연구 그룹, NGO, 그리고 접근성에 관한 주장을 근거와 함께 펼치려는 모든 분과 함께 일합니다. 여러분의 도시가 아틀라스에 있어야 한다면, 논문에 지도를 다시 쓰고 싶다면, 또는 여기서 틀린 점이 보인다면 연락해 주세요.',
     fields: {
       address: '주소',
       general: '일반 문의',
-      code: '코드',
       phone: '전화',
     },
     addressValue:
@@ -1105,17 +1103,17 @@ export default {
   },
 
   footer: {
-    description: 'Sony CSL 로마의 지속 가능한 도시 팀이 수행하는 도시 접근성에 관한 개방형 연구. 방법, 지도, 데이터를 공개하며 자유롭게 재사용할 수 있습니다.',
+    description: 'Sony CSL 로마의 지속 가능한 도시 팀이 수행하는 도시 접근성과 이동성에 관한 개방형 연구.',
     platforms: '플랫폼',
+    platformLinks: ['아틀라스', 'CityChat', '통계'],
     research: '연구',
     researchLinks: ['논문', '데이터셋', '블로그', 'FAQ'],
     about: '소개',
-    aboutLinks: ['지속 가능한 도시', '팀', '문의', '컨설팅', '함께 일하기'],
+    aboutLinks: ['지속 가능한 도시', '팀', '컨설팅'],
     touch: '소식 받기',
-    touchLinks: ['GitHub', '뉴스레터'],
-    workCta: '함께 일하기 →',
+    touchLinks: ['문의', '함께 일하기'],
+    workCta: '함께 일하기',
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
-    version: '코드 MIT · 데이터 CC BY-NC 4.0',
   },
 
   notFound: {
