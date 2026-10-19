@@ -5,6 +5,9 @@ import { Logo } from '../components/Logo.jsx';
 import { HomeSections } from './Home.jsx';
 import { useI18n } from '../i18n/index.jsx';
 import './AtlasHome.css';
+// PROVISIONAL (showcase): the QR code beside the title. Remove this import,
+// the <ShowcaseQr /> line below, qr-atlas.svg and its block in AtlasHome.css.
+import showcaseQr from '../assets/qr-atlas.svg';
 
 /**
  * The front door: one viewport of the Atlas's own coverage map, with the
@@ -75,6 +78,8 @@ export default function AtlasHome() {
               </div>
             </div>
 
+            <ShowcaseQr />
+
             {/* Whose Atlas this is. The corner of the first screen, where a
                 credit belongs — not above the name. */}
             <div className="aa-landing__foot aa-fadein aa-fadein--slow">
@@ -95,5 +100,17 @@ export default function AtlasHome() {
 
       <Footer />
     </div>
+  );
+}
+
+// PROVISIONAL (showcase): a QR code to the public site, for visitors in the
+// room to open it on their phones.
+function ShowcaseQr() {
+  return (
+    <a className="aa-showcase-qr aa-fadein" href="https://whatif.sonycsl.it/atlas/">
+      <img src={showcaseQr} alt="QR code: whatif.sonycsl.it/atlas" width="148" height="148" />
+      <span className="aa-showcase-qr__text">Scan here to open it</span>
+      <span className="aa-showcase-qr__url">whatif.sonycsl.it/atlas</span>
+    </a>
   );
 }
