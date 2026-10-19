@@ -1012,7 +1012,7 @@ function AtlasScreen({ cityId, view }) {
             {layer === 'citychrone' && (
               <>
                 <Eyebrow>{t('atlas.controls.view')}</Eyebrow>
-                <div className="aa-toggle" role="group" aria-label={t('atlas.controls.view')}>
+                <div className="aa-toggle aa-toggle--segmented" role="group" aria-label={t('atlas.controls.view')}>
                   {CITYCHRONE_VIEWS.map((option) => (
                     <button
                       key={option.key}
@@ -1365,6 +1365,7 @@ function AtlasScreen({ cityId, view }) {
               <MapBox
                 title={t('atlas.settings')}
                 className="aa-mapbox--opacity"
+                opensUp
                 open={settingsOpen}
                 onToggle={() => setSettingsOpen((open) => !open)}
               >
@@ -1406,6 +1407,11 @@ function AtlasScreen({ cityId, view }) {
               </button>
             </div>
 
+            {/* The bar under the map is gone; what it said that still
+                matters is that a generated mesh is not data. */}
+            {source === 'seed' && (
+              <div className="aa-atlas__prompt aa-atlas__prompt--foot">{t('city.seeded')}</div>
+            )}
             {citychroneOn && ccView === 'isochrone' && !isochronesPublished && (
               <div className="aa-atlas__prompt">{t('atlas.isochroneUnavailable')}</div>
             )}
@@ -1433,20 +1439,6 @@ function AtlasScreen({ cityId, view }) {
         />
       )}
 
-      {!fullscreen && (
-        <div className="aa-statusbar">
-          <span>
-            {source === 'seed'
-              ? t('city.seeded')
-              : unified
-                ? t('atlas.statusHint')
-                : t('atlas.legacyHint')}
-          </span>
-          <span className="aa-mono">
-            {formatCoord(profile.center[1], 'NS')} {formatCoord(profile.center[0], 'EW')}
-          </span>
-        </div>
-      )}
     </div>
   );
 }
@@ -1579,11 +1571,6 @@ function signed(value, n, digits = 2) {
 
 function signedOrDash(value, n) {
   return value == null ? '—' : signed(value, n);
-}
-
-function formatCoord(value, axes) {
-  const hemisphere = value >= 0 ? axes[0] : axes[1];
-  return `${Math.abs(value).toFixed(3)}°${hemisphere}`;
 }
 
 // The ground about a kilometre and a half either side of one cell: enough of

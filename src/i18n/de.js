@@ -176,7 +176,7 @@ export default {
     citychrone: {
       label: 'Erreichbarkeit von Chancen',
       intro:
-        'CityChrone ersetzt die metrische Entfernung durch die Reisezeit: Die Karte verformt sich so, dass zwei Orte nah beieinander liegen, wenn der öffentliche Verkehr sie schnell verbindet, wie weit sie im Gelände auch auseinander liegen.',
+        'CityChrone++ misst die Geschwindigkeit des öffentlichen Verkehrs von jedem Punkt der Stadt aus und zu jeder Uhrzeit eines Werktags, als absolute Geschwindigkeit (Geschwindigkeitswert) und als soziale Gelegenheiten (Sozialitätswert).',
       legendUnit: 'Geschwindigkeit des ÖPNV (km/h)',
       tooltip: '{name} · {value} km/h mit dem ÖPNV (Median der Bewohner)',
       legend: ['Langsam', 'Mittel', 'Schnell'],
@@ -383,6 +383,8 @@ export default {
         cardep: 'Blau, wo der öffentliche Verkehr mehr Chancen erreicht als das Auto, weiß, wo beide ausgeglichen sind, rot, wo das Auto mehr erreicht. Die Skala ist für alle Städte gleich, statt an jede angepasst zu werden: Dieselbe Farbe bedeutet überall denselben Index, und keine Stadt wird umgefärbt, um die Palette zu füllen.',
         fifteen:
           'Die Farbe der Zellen zeigt die Zeit, die man zu Fuß oder mit dem Fahrrad bis zu den Dienstleistungen der gewählten Kategorie braucht. Blaue Gebiete sind 15-Minuten-Orte, an denen die 15-Minuten-Stadt verwirklicht ist; in roten Gebieten liegen die Dienstleistungen im Mittel weiter als 15 Minuten entfernt; weiße Zellen liegen nahe an der 15-Minuten-Marke.',
+        citychrone:
+          'Der Geschwindigkeitswert färbt eine Zelle danach, wie schnell der öffentliche Verkehr von diesem Gebiet aus in plausible Richtungen ist. Der Sozialitätswert gibt an, wie viele Menschen man in angemessener Zeit allein mit dem öffentlichen Verkehr treffen kann. Isochronen zeigen die Zeit, die man von einer Zelle der Stadt zu jeder anderen braucht.',
       },
       summary: {
         pov: 'Zellen zählt, was der veröffentlichte Datensatz abdeckt. Jeder Median ist der Wert des Median-Bewohners: Die Hälfte der Einwohner lebt in Zellen mit niedrigerem Wert, die andere Hälfte mit höherem. Die Werte sind gewichtete Zählungen erreichbarer Points of Interest, daher hat keiner eine Einheit: Es sind weder Meter noch Arbeitsplätze. Die Bevölkerung ist die Summe des Datensatzes über seine Zellen, keine amtliche Zahl für die Stadt.',
@@ -415,13 +417,14 @@ export default {
         healthcare: 'Krankenhäuser, Apotheken und Ähnliches',
         average: 'das einfache Mittel der neun Kategorien',
       },
-      weighted: 'Jeder Median und jeder Mittelwert im Panel ist der der Einwohner: Jede Zelle zählt so oft, wie Menschen in ihr leben, nie einmal pro Zelle der Karte.',
+      weighted: 'Mediane und Mittelwerte sind nach der Bevölkerung gewichtet.',
       methodsTitle: 'Daten und Methoden',
       methods: {
         pov: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Gehzeiten mit OSRM auf OpenStreetMap; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus den 100-m-Rastern von WorldPop, angepasst an UN-Schätzungen.',
         cardep: 'H3-Zellen der Auflösung 9, etwa 200 m breit. Fahr- und Gehzeiten mit OSRM auf OpenStreetMap, auf der Autoseite mit einem Zuschlag für die Parkplatzsuche und stadtspezifischen Verkehrsverzögerungen; öffentlicher Verkehr aus GTFS-Fahrplänen mit dem Connection Scan Algorithm; Orte von Interesse aus OpenStreetMap; Bevölkerung aus WorldPop.',
         fifteen: 'H3-Zellen der Auflösung 9. Geh- und Radzeiten mit OSRM auf OpenStreetMap; Dienste aus OpenStreetMap, gruppiert in die neun Kategorien der Auswahl; Bevölkerung aus WorldPop.',
-        citychrone: 'H3-Zellen der Auflösung 9, ein Export pro Tagesstunde. Öffentlicher Verkehr aus GTFS-Fahrplänen; beide Werte und die Isochronen sind im Artikel der Plattform definiert. Reisezeiten sind ganze Minuten; alles über 120 ist eine Klasse, und Zellen, in denen niemand wohnt, sind ausgelassen.',
+        citychrone:
+          'H3-Zellen der Auflösung 9. Öffentlicher Verkehr aus GTFS-Fahrplänen. Isochronen mit OSRM berechnet. Zellen, in denen niemand wohnt, sind ausgelassen.',
       },
       paperNote: 'Die Methode ist im Artikel vollständig beschrieben.',
     },

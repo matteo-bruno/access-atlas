@@ -991,7 +991,9 @@ one horizontal bar (`.aa-city__layerbar`: the world map's `.aa-picker`, its
 styles in `global.css` and its dots from `scaleDot` in `map/layers.js`); top
 right the city summary (closed by default, full width) and the selected
 cell; bottom left "Settings", closed by default, holding Map/Cartogram and
-the opacity; full screen bottom right. The legend is in the column, right
+the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
+under the pointer; full screen bottom right. There is no status bar under
+the map; a generated mesh says so in a note at the map's foot. The legend is in the column, right
 under the city's name and "About this layer". The foot of the column is
 the OSM date, "Notice a mistake?", the layer's paper and "City boundaries"
 (GHSL or the municipality), all in `MistakeNote`.

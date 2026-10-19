@@ -60,7 +60,9 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
           ))}
         </ul>
       ) : (
-        ramp && (
+        // CityChrone's three views each have their own scale, so the dialog
+        // describes them in words and leaves the scale to the map.
+        ramp && platformId !== 'citychrone' && (
           <RampLegend
             ramp={ramp}
             format={tickFormat}
@@ -86,27 +88,28 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
         </>
       )}
 
+      {/* Method and sources are one section: how the figures were made ends
+          with where the method is set out in full. */}
       <h3>{t('city.explain.methodsTitle')}</h3>
-      <p>{t(`city.explain.methods.${platformId}`)}</p>
-      <p>{t('city.explain.weighted')}</p>
-
-      <h3>{t('city.explain.sections.source')}</h3>
       <p>
+        {t(`city.explain.methods.${platformId}`)} {t('city.explain.weighted')}
         {paper && (
           <>
+            {' '}
             {t('city.explain.paperNote')}{' '}
             <a href={paper.url} target="_blank" rel="noreferrer noopener">
               {paper.title} ↗
             </a>
-            <br />
           </>
         )}
-        {platform?.url && (
+      </p>
+      {platform?.url && (
+        <p>
           <a href={platform.url} target="_blank" rel="noreferrer noopener">
             {t('city.explain.platformSite', { name })} ↗
           </a>
-        )}
-      </p>
+        </p>
+      )}
     </Modal>
   );
 }

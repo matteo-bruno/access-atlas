@@ -196,7 +196,7 @@ export default {
     citychrone: {
       label: 'Opportunity access',
       intro:
-        'CityChrone replaces metric distance with travel time: the map deforms so that two places sit close together when public transport connects them quickly, however far apart they are on the ground.',
+        'CityChrone++ measures the speed of public transport from any point in the city and at any time during a working day, in terms of absolute speed (velocity score) and of social opportunities (sociality score).',
       legendUnit: 'Public transport speed (km/h)',
       tooltip: '{name} · {value} km/h by public transport (median resident)',
       legend: ['Slow', 'Medium', 'Fast'],
@@ -422,6 +422,8 @@ export default {
         cardep: 'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. The scale is fixed across every city rather than fitted to each, so the same colour is the same index everywhere; a city is never recoloured to fill the palette.',
         fifteen:
           'The colour of the cells represents the time needed to reach services belonging to the selected category, on foot or by bike. Blue areas are 15-minute places, where the 15-minute city is realized; in red areas services are on average further than 15 minutes away; white cells are near the 15-minute mark.',
+        citychrone:
+          'The velocity score colours a cell based on how fast public transport is from that specific area, moving in plausible directions. The sociality score tells us how many people one can meet in a reasonable time moving only by public transport. Isochrones show the times needed to go from a cell in the city to any other cell.',
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
@@ -454,13 +456,14 @@ export default {
         healthcare: 'hospitals, pharmacies and the like',
         average: 'a simple average of the nine categories',
       },
-      weighted: 'Every median and every mean in the panel is the residents’: each cell counts as many times as people live in it, never once per cell of the map.',
+      weighted: 'Medians and means are weighted by population.',
       methodsTitle: 'Data & methods',
       methods: {
         pov: 'H3 resolution-9 cells, roughly 200 m across. Walking times from OSRM over OpenStreetMap; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop’s 100 m grids, adjusted to UN estimates.',
         cardep: 'H3 resolution-9 cells, roughly 200 m across. Driving and walking times from OSRM over OpenStreetMap, with a parking buffer and city-specific traffic delays on the car side; public transport from GTFS schedules with the Connection Scan Algorithm; points of interest from OpenStreetMap; population from WorldPop.',
         fifteen: 'H3 resolution-9 cells. Walking and cycling times from OSRM over OpenStreetMap; services from OpenStreetMap, grouped into the nine categories the selector lists; population from WorldPop.',
-        citychrone: 'H3 resolution-9 cells, one export per hour of the day. Public transport from GTFS schedules; both scores and the isochrones are defined in the platform’s paper. Travel times are whole minutes; anything over 120 is one class, and cells where nobody lives are left out.',
+        citychrone:
+          'H3 resolution-9 cells. Public transport from GTFS schedules. Isochrones computed with OSRM. Cells where nobody lives are left out.',
       },
       paperNote: 'The method is set out in full in the paper.',
     },

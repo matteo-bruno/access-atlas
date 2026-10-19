@@ -175,7 +175,7 @@ export default {
     citychrone: {
       label: 'Accès aux opportunités',
       intro:
-        'CityChrone remplace la distance métrique par le temps de trajet : la carte se déforme pour que deux lieux se rapprochent quand les transports en commun les relient rapidement, aussi éloignés soient-ils sur le terrain.',
+        'CityChrone++ mesure la vitesse des transports publics depuis n’importe quel point de la ville et à toute heure d’un jour ouvrable, en termes de vitesse absolue (score de vitesse) et d’opportunités sociales (score de sociabilité).',
       legendUnit: 'Vitesse des transports publics (km/h)',
       tooltip: '{name} · {value} km/h en transports publics (habitant médian)',
       legend: ['Lent', 'Moyen', 'Rapide'],
@@ -382,6 +382,8 @@ export default {
         cardep: 'Bleu là où les transports en commun atteignent plus d’opportunités que la voiture, blanc là où les deux s’équilibrent, rouge là où la voiture en atteint davantage. L’échelle est la même pour toutes les villes au lieu d’être ajustée à chacune : une même couleur correspond partout au même indice, et aucune ville n’est recolorée pour remplir la palette.',
         fifteen:
           'La couleur des cellules représente le temps nécessaire pour atteindre les services de la catégorie choisie, à pied ou à vélo. Les zones bleues sont des lieux à 15 minutes, où la ville du quart d’heure est réalisée ; dans les zones rouges, les services sont en moyenne à plus de 15 minutes ; les cellules blanches sont proches du seuil des 15 minutes.',
+        citychrone:
+          'Le score de vitesse colore une cellule selon la rapidité des transports publics depuis cette zone, dans des directions plausibles. Le score de sociabilité indique combien de personnes on peut rencontrer en un temps raisonnable en se déplaçant uniquement en transports publics. Les isochrones montrent le temps nécessaire pour aller d’une cellule de la ville à n’importe quelle autre.',
       },
       summary: {
         pov: 'Cellules compte ce que couvre le jeu de données publié. Chaque médiane est le score de l’habitant médian : la moitié des habitants de la ville vit dans des cellules au score plus bas, l’autre moitié plus haut. Les scores sont des comptes pondérés de points d’intérêt accessibles, d’où l’absence d’unité : ce ne sont ni des mètres ni des emplois. La population est la somme du jeu de données sur ses cellules, pas un chiffre officiel pour la ville.',
@@ -414,13 +416,14 @@ export default {
         healthcare: 'hôpitaux, pharmacies, etc.',
         average: 'la moyenne simple des neuf catégories',
       },
-      weighted: 'Chaque médiane et chaque moyenne du panneau est celle des résidents : chaque cellule compte autant de fois que de personnes y vivent, jamais une fois par cellule de la carte.',
+      weighted: 'Les médianes et les moyennes sont pondérées par la population.',
       methodsTitle: 'Données et méthodes',
       methods: {
         pov: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps de marche calculés avec OSRM sur OpenStreetMap ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue des grilles WorldPop à 100 m, ajustées aux estimations de l’ONU.',
         cardep: 'Cellules H3 de résolution 9, d’environ 200 m de large. Temps en voiture et à pied calculés avec OSRM sur OpenStreetMap, avec une marge pour le stationnement et des retards de circulation propres à chaque ville côté voiture ; transports en commun à partir des horaires GTFS avec le Connection Scan Algorithm ; points d’intérêt issus d’OpenStreetMap ; population issue de WorldPop.',
         fifteen: 'Cellules H3 de résolution 9. Temps à pied et à vélo calculés avec OSRM sur OpenStreetMap ; services issus d’OpenStreetMap, regroupés dans les neuf catégories du sélecteur ; population issue de WorldPop.',
-        citychrone: 'Cellules H3 de résolution 9, un export par heure de la journée. Transports en commun à partir des horaires GTFS ; les deux scores et les isochrones sont définis dans l’article de la plateforme. Les temps de trajet sont en minutes entières ; au-delà de 120, ils forment une seule classe, et les cellules où personne ne vit sont exclues.',
+        citychrone:
+          'Cellules H3 de résolution 9. Transports publics d’après les horaires GTFS. Isochrones calculées avec OSRM. Les cellules où personne ne vit sont exclues.',
       },
       paperNote: 'La méthode est exposée en détail dans l’article.',
     },

@@ -197,6 +197,12 @@ try {
     // shares as bands. The old per-platform page's `.aa-zones__pct` went with
     // that page, and so did its cell-level scatter.
     const zones = await page.$$eval('.aa-bands__pct', (els) => els.map((e) => e.textContent.trim()));
+    // The city summary opens closed: open it before reading its figures.
+    const summaryToggle = page.locator('.aa-mapbox--summary .aa-mapbox__toggle');
+    if ((await summaryToggle.count()) && (await summaryToggle.getAttribute('aria-expanded')) === 'false') {
+      await summaryToggle.click();
+      await page.waitForTimeout(200);
+    }
     const summary = await page.$$eval('.aa-summary__row dd', (els) =>
       els.map((e) => e.textContent.trim()),
     );

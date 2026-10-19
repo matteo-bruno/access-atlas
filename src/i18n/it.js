@@ -185,7 +185,7 @@ export default {
     citychrone: {
       label: 'Accesso alle opportunità',
       intro:
-        'CityChrone sostituisce la distanza metrica con il tempo di viaggio: la mappa si deforma così che due luoghi risultino vicini quando il trasporto pubblico li collega rapidamente, per quanto distanti siano sul terreno.',
+        'CityChrone++ misura la velocità del trasporto pubblico da qualsiasi punto della città e a qualsiasi ora di un giorno feriale, in termini di velocità assoluta (punteggio di velocità) e di opportunità sociali (punteggio di socialità).',
       legendUnit: 'Velocità del trasporto pubblico (km/h)',
       tooltip: '{name} · {value} km/h con il trasporto pubblico (residente mediano)',
       legend: ['Lento', 'Medio', 'Veloce'],
@@ -417,6 +417,8 @@ export default {
         cardep: 'Blu dove il trasporto pubblico raggiunge più opportunità dell’auto, bianco dove le due si equivalgono, rosso dove l’auto ne raggiunge di più. La scala è fissa per tutte le città invece di essere adattata a ciascuna, così lo stesso colore è lo stesso indice ovunque: una città non viene mai ricolorata per riempire la tavolozza.',
         fifteen:
           'Il colore delle celle rappresenta il tempo necessario per raggiungere i servizi della categoria selezionata, a piedi o in bicicletta. Le aree blu sono luoghi da 15 minuti, dove la città dei 15 minuti è realizzata; nelle aree rosse i servizi sono in media più lontani di 15 minuti; le celle bianche sono vicine alla soglia dei 15 minuti.',
+        citychrone:
+          'Il punteggio di velocità colora una cella in base a quanto è veloce il trasporto pubblico da quella zona, muovendosi in direzioni plausibili. Il punteggio di socialità dice quante persone si possono incontrare in un tempo ragionevole spostandosi solo con il trasporto pubblico. Le isocrone mostrano il tempo necessario per andare da una cella della città a qualsiasi altra cella.',
       },
       summary: {
         pov: 'Celle conta ciò che il dataset pubblicato copre. Ogni mediana è il punteggio del residente mediano: metà dei residenti della città vive in celle con un punteggio più basso, metà più alto. I punteggi sono conteggi pesati di punti di interesse raggiungibili, ed è per questo che nessuno dei due ha un’unità: non sono metri e non sono posti di lavoro. La popolazione è la somma del dataset sulle sue celle, non un dato ufficiale per la città.',
@@ -449,13 +451,14 @@ export default {
         healthcare: 'ospedali, farmacie e simili',
         average: 'la media semplice delle nove categorie',
       },
-      weighted: 'Ogni mediana e ogni media nel pannello è quella dei residenti: ogni cella conta tante volte quante sono le persone che ci vivono, mai una volta per cella della mappa.',
+      weighted: 'Mediane e medie sono pesate sulla popolazione.',
       methodsTitle: 'Dati e metodi',
       methods: {
         pov: 'Celle H3 di risoluzione 9, larghe circa 200 m. Tempi a piedi da OSRM su OpenStreetMap; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione dalle griglie WorldPop a 100 m, riscalate sulle stime ONU.',
         cardep: 'Celle H3 di risoluzione 9, larghe circa 200 m. Tempi in auto e a piedi da OSRM su OpenStreetMap, con un margine per il parcheggio e ritardi da traffico specifici per città sul lato auto; trasporto pubblico da orari GTFS con il Connection Scan Algorithm; punti di interesse da OpenStreetMap; popolazione da WorldPop.',
         fifteen: 'Celle H3 di risoluzione 9. Tempi a piedi e in bicicletta da OSRM su OpenStreetMap; servizi da OpenStreetMap, raggruppati nelle nove categorie elencate nel selettore; popolazione da WorldPop.',
-        citychrone: 'Celle H3 di risoluzione 9, un export per ogni ora del giorno. Trasporto pubblico da orari GTFS; entrambi i punteggi e le isocrone sono definiti nell’articolo della piattaforma. I tempi di viaggio sono in minuti interi; oltre i 120 sono un’unica classe, e le celle dove non vive nessuno sono escluse.',
+        citychrone:
+          'Celle H3 di risoluzione 9. Trasporto pubblico dagli orari GTFS. Isocrone calcolate con OSRM. Le celle dove non vive nessuno sono escluse.',
       },
       paperNote: 'Il metodo è esposto per esteso nell’articolo.',
     },

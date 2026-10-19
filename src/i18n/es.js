@@ -174,7 +174,7 @@ export default {
     citychrone: {
       label: 'Acceso a oportunidades',
       intro:
-        'CityChrone sustituye la distancia métrica por el tiempo de viaje: el mapa se deforma para que dos lugares queden cerca cuando el transporte público los conecta rápido, por lejos que estén sobre el terreno.',
+        'CityChrone++ mide la velocidad del transporte público desde cualquier punto de la ciudad y a cualquier hora de un día laborable, en términos de velocidad absoluta (puntuación de velocidad) y de oportunidades sociales (puntuación de sociabilidad).',
       legendUnit: 'Velocidad del transporte público (km/h)',
       tooltip: '{name} · {value} km/h en transporte público (residente mediano)',
       legend: ['Lenta', 'Media', 'Rápida'],
@@ -381,6 +381,8 @@ export default {
         cardep: 'Azul donde el transporte público llega a más oportunidades que el coche, blanco donde ambos se equilibran, rojo donde el coche llega a más. La escala es fija para todas las ciudades en lugar de ajustarse a cada una, así que el mismo color es el mismo índice en todas partes: ninguna ciudad se recolorea para llenar la paleta.',
         fifteen:
           'El color de las celdas representa el tiempo necesario para llegar a los servicios de la categoría seleccionada, a pie o en bicicleta. Las zonas azules son lugares de 15 minutos, donde la ciudad de 15 minutos se cumple; en las zonas rojas los servicios están de media a más de 15 minutos; las celdas blancas están cerca de la marca de los 15 minutos.',
+        citychrone:
+          'La puntuación de velocidad colorea una celda según lo rápido que es el transporte público desde esa zona, moviéndose en direcciones plausibles. La puntuación de sociabilidad indica a cuántas personas se puede llegar en un tiempo razonable usando solo el transporte público. Las isócronas muestran el tiempo necesario para ir de una celda de la ciudad a cualquier otra.',
       },
       summary: {
         pov: 'Celdas cuenta lo que cubre el conjunto de datos publicado. Cada mediana es la puntuación del residente mediano: la mitad de los residentes de la ciudad vive en celdas con una puntuación más baja y la otra mitad, más alta. Las puntuaciones son recuentos ponderados de puntos de interés alcanzables, por eso ninguna lleva unidad: no son metros ni empleos. La población es la suma del propio conjunto de datos sobre sus celdas, no una cifra oficial de la ciudad.',
@@ -413,13 +415,14 @@ export default {
         healthcare: 'hospitales, farmacias y similares',
         average: 'la media simple de las nueve categorías',
       },
-      weighted: 'Cada mediana y cada media del panel es la de los residentes: cada celda cuenta tantas veces como personas viven en ella, nunca una vez por celda del mapa.',
+      weighted: 'Medianas y medias están ponderadas por la población.',
       methodsTitle: 'Datos y métodos',
       methods: {
         pov: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos a pie con OSRM sobre OpenStreetMap; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de las cuadrículas de 100 m de WorldPop, ajustadas a las estimaciones de la ONU.',
         cardep: 'Celdas H3 de resolución 9, de unos 200 m de ancho. Tiempos en coche y a pie con OSRM sobre OpenStreetMap, con un margen para aparcar y retrasos de tráfico propios de cada ciudad en el lado del coche; transporte público a partir de horarios GTFS con el Connection Scan Algorithm; puntos de interés de OpenStreetMap; población de WorldPop.',
         fifteen: 'Celdas H3 de resolución 9. Tiempos a pie y en bicicleta con OSRM sobre OpenStreetMap; servicios de OpenStreetMap, agrupados en las nueve categorías que muestra el selector; población de WorldPop.',
-        citychrone: 'Celdas H3 de resolución 9, una exportación por cada hora del día. Transporte público a partir de horarios GTFS; las dos puntuaciones y las isócronas se definen en el artículo de la plataforma. Los tiempos de viaje están en minutos enteros; los de más de 120 son una sola clase, y las celdas donde no vive nadie quedan fuera.',
+        citychrone:
+          'Celdas H3 de resolución 9. Transporte público a partir de horarios GTFS. Isócronas calculadas con OSRM. Se excluyen las celdas donde no vive nadie.',
       },
       paperNote: 'El método se expone por completo en el artículo.',
     },

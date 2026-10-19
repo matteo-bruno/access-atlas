@@ -77,6 +77,13 @@
 .aa-mapbox__body {
   padding: 0 10px 10px;
 }
+/* Opening upward: the body sits above the title, so it pads from the top. */
+.aa-mapbox--up .aa-mapbox__body {
+  padding: 10px 10px 0;
+}
+.aa-mapbox__caret--up.aa-mapbox__caret--open {
+  transform: rotate(-90deg);
+}
 .aa-mapbox__body .aa-summary__row {
   padding: 3px 0;
   font-size: 12px;
