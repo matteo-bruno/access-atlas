@@ -990,8 +990,8 @@ under it. They share `Prose.css`.
 ## The map is the page
 
 The city view is a full-bleed map with a controls column and floating boxes
-(`MapBox`) in its corners. Along the top, from the left, the layer picker as
-one horizontal bar that never wraps (`.aa-city__layerbar`: the world map's
+(`MapBox`) in its corners. Along the top, centred as on the world map, the
+layer picker as one horizontal bar that never wraps (`.aa-city__layerbar`: the world map's
 `.aa-picker`, its styles in `global.css` and its dots from `scaleDot` in
 `map/layers.js`). It may use the map's whole width, so the boxes on the
 right start below it (`top: 62px`): reserving their column beside it made

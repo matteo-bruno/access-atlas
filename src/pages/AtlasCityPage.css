@@ -338,7 +338,8 @@
 }
 
 /* ── The layer picker: one row along the top of the map ───────────────
-   From the left, across the map's whole width if it needs it: the summary
+   Centred, as on the world map, and across the map's whole width if it
+   needs it: the summary
    and the selected cell start below it on the right, so the bar never has
    to wrap to make room for them. */
 .aa-city__layerbar {
@@ -347,7 +348,7 @@
   inset-inline: 12px;
   z-index: 4;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   /* The strip spans the map, so it must not swallow the map's own drags and
      clicks: only the bar itself takes the pointer. */
   pointer-events: none;
