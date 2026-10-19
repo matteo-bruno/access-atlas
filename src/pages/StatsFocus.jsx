@@ -12,11 +12,14 @@ import {
   formatThreshold,
   hourLabel,
   measureLabel,
+  orderRows,
   rowName,
+  statLabel,
   statRows,
   statValue,
 } from '../data/stats.js';
 import { Key, TipBody, niceTicks } from './StatsViews.jsx';
+import { CurvesView } from './StatsCurves.jsx';
 
 // The Focus view: one layer on its own terms, with the charts its platform is
 // read with, for every city the filters leave. Like the other views it only
@@ -29,13 +32,19 @@ function isDark(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.45;
 }
 
-function Section({ title, about, children, more }) {
+function Section({ title, about, badge, tools, more, children }) {
   return (
     <section className="aa-focus__section">
       <header className="aa-focus__head">
         <h2 className="aa-focus__title">{title}</h2>
-        {about && <Explain body={about} align="right" />}
-        {more}
+        {badge && <span className="aa-focus__badge">{badge}</span>}
+        {about && <Explain body={about} align="left" />}
+        {(tools || more) && (
+          <div className="aa-focus__tools">
+            {tools}
+            {more}
+          </div>
+        )}
       </header>
       {children}
     </section>
@@ -54,12 +63,15 @@ function Name({ row, slots, onToggle, ctx }) {
 
 /**
  * @param {object} props
- * @param {(row: object) => boolean} props.pass  the page's filters
+ * @param {(row: object) => boolean} props.pass       the page's filters
+ * @param {(row: object) => boolean} props.passPlace  the same less the population range
+ * @param {object} props.curves  the cities drawn as curves: `pool(measureId)`, `picked`, `onPick`, `suggested`
  */
-export function FocusView({ stats, unit, layer, pass, slots, onToggle, mode, ctx }) {
+export function FocusView({ stats, unit, layer, pass, passPlace, slots, onToggle, mode, curves, ctx }) {
   const rowsOf = (id) => statRows(stats, unit, id).filter((r) => r.stat && pass(r));
+  const placeRowsOf = (id) => statRows(stats, unit, id).filter((r) => r.stat && passPlace(r));
   const props = { stats, unit, rowsOf, slots, onToggle, ctx };
-  if (layer === 'fifteen') return <FifteenFocus {...props} mode={mode} />;
+  if (layer === 'fifteen') return <FifteenFocus {...props} placeRowsOf={placeRowsOf} mode={mode} curves={curves} />;
   if (layer === 'citychrone') return <CitychroneFocus {...props} />;
   if (layer === 'cardep') return <CardepFocus {...props} />;
   if (layer === 'pov') return <PovFocus {...props} />;
@@ -70,13 +82,23 @@ const Empty = ({ ctx }) => <p className="aa-stats__empty">{ctx.t('stats.noValues
 
 // ── 15-minute city ───────────────────────────────────────────────────
 
-function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
+// How many rows a long list shows before "show all": the Atlas publishes
+// thousands of cities, and a chart is read in its first screen.
+const BOARD = 10;
+const SHOWN = 12;
+// The sizes the rankings are drawn for, in residents of the whole city.
+const SIZES = [1e6, 1e7];
+
+function FifteenFocus({ stats, unit, rowsOf, placeRowsOf, slots, onToggle, mode, curves, ctx }) {
   const { t, n } = ctx;
   const { show, hide } = ctx.tipApi;
+  const [allHeat, setAllHeat] = useState(false);
+  const [allModes, setAllModes] = useState(false);
   const key = unit === 'country' ? 'mean' : 'p50';
   const lead = stats.measuresById[`fifteen.proximity_time.${mode}`];
-  const rows = rowsOf(lead?.id ?? '').sort((a, b) => (statValue(a.stat, key) ?? Infinity) - (statValue(b.stat, key) ?? Infinity));
+  const rows = lead ? rowsOf(lead.id).sort((a, b) => (statValue(a.stat, key) ?? Infinity) - (statValue(b.stat, key) ?? Infinity)) : [];
   if (!rows.length) return <Empty ctx={ctx} />;
+  const modeName = t(`fifteen.modes.${mode === 'bicycle' ? 'bike' : 'foot'}`);
 
   const categories = FIFTEEN_CATEGORIES.filter((c) => stats.measuresById[`fifteen.${c.key}.${mode}`]);
   const columns = categories.map((c) => {
@@ -91,10 +113,29 @@ function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
   const bikeById = new Map(bike ? rowsOf(bike.id).map((r) => [r.id, statValue(r.stat, 'share', at15(bike))]) : []);
   const byShare = [...rows].sort((a, b) => (footById.get(b.id) ?? -1) - (footById.get(a.id) ?? -1));
   const MODE_COLORS = { foot: '#2b5f86', bike: '#c96a4e' };
+  const heatRows = allHeat ? rows : rows.slice(0, SHOWN);
+  const modeRows = allModes ? byShare : byShare.slice(0, SHOWN);
 
   return (
     <div className="aa-focus">
-      <Section title={t('stats.focus.fifteen.profile', { mode: t(`fifteen.modes.${mode === 'bicycle' ? 'bike' : 'foot'}`) })} about={t('stats.focus.fifteen.profileAbout')}>
+      <FifteenRankings measure={lead} rows={placeRowsOf(lead.id)} unit={unit} slots={slots} onToggle={onToggle} mode={mode} modeName={modeName} ctx={ctx} />
+
+      <Section title={t('stats.focus.fifteen.curves')} badge={modeName} about={t('stats.focus.fifteen.curvesAbout')}>
+        <p className="aa-focus__intro">{t('stats.focus.fifteen.curvesIntro')}</p>
+        <CurvesView
+          stats={stats}
+          unit={unit}
+          rows={rows}
+          pool={curves.pool(lead.id)}
+          spec={{ measure: lead, key: 'share', index: 0 }}
+          picked={curves.picked}
+          onPick={curves.onPick}
+          suggested={curves.suggested}
+          ctx={ctx}
+        />
+      </Section>
+
+      <Section title={t('stats.focus.fifteen.profile')} badge={modeName} about={t('stats.focus.fifteen.profileAbout')}>
         <div className="aa-stats__matrixwrap">
           <table className="aa-focus__heat">
             <thead>
@@ -108,7 +149,7 @@ function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
               </tr>
             </thead>
             <tbody>
-              {rows.map((row) => (
+              {heatRows.map((row) => (
                 <tr key={row.id}>
                   <th scope="row">
                     <Name row={row} slots={slots} onToggle={onToggle} ctx={ctx} />
@@ -147,6 +188,7 @@ function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
             </tbody>
           </table>
         </div>
+        <ShowAll count={rows.length} all={allHeat} onToggle={() => setAllHeat((a) => !a)} limit={SHOWN} ctx={ctx} />
       </Section>
 
       {foot && bike && (
@@ -160,7 +202,18 @@ function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
             ))}
           </div>
           <div className="aa-focus__rows">
-            {byShare.map((row) => {
+            <div className="aa-focus__row aa-focus__row--axis" aria-hidden="true">
+              <span />
+              <span className="aa-focus__track">
+                {[0, 25, 50, 75, 100].map((g) => (
+                  <span key={g} className="aa-stats__tick aa-mono" style={{ left: `${g}%` }}>
+                    {n(g)}%
+                  </span>
+                ))}
+              </span>
+              <span />
+            </div>
+            {modeRows.map((row) => {
               const f = footById.get(row.id);
               const b = bikeById.get(row.id);
               const lo = Math.min(f ?? b ?? 0, b ?? f ?? 0);
@@ -183,9 +236,152 @@ function FifteenFocus({ stats, unit, rowsOf, slots, onToggle, mode, ctx }) {
               );
             })}
           </div>
+          <ShowAll count={byShare.length} all={allModes} onToggle={() => setAllModes((a) => !a)} limit={SHOWN} ctx={ctx} />
         </Section>
       )}
     </div>
+  );
+}
+
+/**
+ * Who lives within a few minutes of everything: the share of residents within
+ * the threshold picked, ranked among cities of a size. The page's population
+ * filter does not apply here, since each board is its own size; its
+ * countries, boundary and hidden cities do.
+ */
+function FifteenRankings({ measure, rows, unit, slots, onToggle, mode, modeName, ctx }) {
+  const { t, n } = ctx;
+  const thresholds = measure.thresholds ?? [];
+  const [index, setIndex] = useState(Math.max(0, thresholds.indexOf(15)));
+  const [worst, setWorst] = useState(false);
+  const boards =
+    unit === 'country'
+      ? [{ key: 'countries', title: t('stats.focus.fifteen.countries'), rows }]
+      : [
+          ...SIZES.map((size) => ({
+            key: String(size),
+            // "1 million", "100万": the reader's own words for the round number.
+            title: t('stats.focus.fifteen.over', { count: n(size, { notation: 'compact', compactDisplay: 'long' }) }),
+            rows: rows.filter((r) => (r.city?.population ?? 0) >= size),
+          })),
+        ];
+
+  return (
+    <Section
+      title={t('stats.focus.fifteen.rankings', { value: formatThreshold(measure, thresholds[index], n) })}
+      badge={modeName}
+      about={t('stats.focus.fifteen.rankingsAbout')}
+      tools={
+        <>
+          <div className="aa-stats__segment aa-focus__thresholds" role="group" aria-label={t('stats.threshold')}>
+            {thresholds.map((v, i) => (
+              <button
+                key={v}
+                type="button"
+                className={`aa-stats__segbtn${i === index ? ' aa-stats__segbtn--on' : ''}`}
+                aria-pressed={i === index}
+                onClick={() => setIndex(i)}
+              >
+                {formatThreshold(measure, v, n)}
+              </button>
+            ))}
+          </div>
+          <button type="button" className="aa-stats__link aa-focus__order" onClick={() => setWorst((w) => !w)}>
+            ⇅ {t(worst ? 'stats.order.worst' : 'stats.order.best')}
+          </button>
+        </>
+      }
+    >
+      <div className={`aa-focus__boards${boards.length === 1 ? ' aa-focus__boards--one' : ''}`}>
+        {boards.map((b) => (
+          <Board key={b.key} title={b.title} rows={b.rows} measure={measure} index={index} worst={worst} slots={slots} onToggle={onToggle} mode={mode} ctx={ctx} />
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/** One ranking: the first ten, best first, and the rest on request. */
+function Board({ title, rows, measure, index, worst, slots, onToggle, mode, ctx }) {
+  const { t, n } = ctx;
+  const { show, hide } = ctx.tipApi;
+  const [all, setAll] = useState(false);
+  const ordered = orderRows(rows, measure, 'share', index, worst);
+  const ranks = new Map();
+  ordered.forEach((row, i) => {
+    const previous = i ? ordered[i - 1] : null;
+    const same = previous && statValue(previous.stat, 'share', index) === statValue(row.stat, 'share', index);
+    ranks.set(row.id, same ? ranks.get(previous.id) : i + 1);
+  });
+  const shown = all ? ordered : ordered.slice(0, BOARD);
+  const label = statLabel(measure, 'share', index, t, n);
+
+  return (
+    <div className="aa-focus__board">
+      <header className="aa-focus__boardhead">
+        <h3 className="aa-focus__boardtitle">{title}</h3>
+        <span className="aa-focus__boardcount aa-mono">{t('stats.focus.fifteen.cityCount', { count: n(ordered.length) })}</span>
+      </header>
+      {ordered.length ? (
+        <ol className="aa-focus__list">
+          {shown.map((row) => {
+            const v = statValue(row.stat, 'share', index);
+            const name = rowName(row, ctx.lang);
+            const href = row.kind === 'city' ? `/atlas/${row.id}?layer=fifteen${mode === 'bicycle' ? '&mode=bicycle' : ''}` : null;
+            const tip = (
+              <TipBody
+                title={name}
+                lines={[
+                  [label, formatStat(measure, 'share', v, ctx)],
+                  ...(row.stat?.q ? [[t('stats.statLabels.p50'), formatStat(measure, 'p50', statValue(row.stat, 'p50'), ctx)]] : []),
+                  ...(row.stat?.population != null ? [[t('stats.tooltip.population'), n(row.stat.population)]] : []),
+                ]}
+              />
+            );
+            return (
+              <li
+                key={row.id}
+                className={`aa-focus__item${slots.has(row.id) ? ' aa-focus__item--on' : ''}`}
+                onPointerMove={(e) => show(e, tip)}
+                onPointerLeave={hide}
+              >
+                <span className="aa-focus__rank aa-mono">{ranks.get(row.id)}</span>
+                <span className="aa-focus__who">
+                  <Name row={row} slots={slots} onToggle={onToggle} ctx={ctx} />
+                  {row.kind === 'city' && <span className="aa-stats__sub aa-mono">{row.country}</span>}
+                </span>
+                <span className="aa-focus__meter" aria-hidden="true">
+                  <span style={{ width: `${Math.max(0, Math.min(100, v))}%`, background: colorAt(STAT_RAMPS.share, v) }} />
+                </span>
+                <span className="aa-focus__pct aa-mono">
+                  {href ? (
+                    <Link to={href} title={t('stats.openCity', { name })}>
+                      {formatStat(measure, 'share', v, ctx)}
+                    </Link>
+                  ) : (
+                    formatStat(measure, 'share', v, ctx)
+                  )}
+                </span>
+              </li>
+            );
+          })}
+        </ol>
+      ) : (
+        <p className="aa-focus__none">{t(rows.length ? 'stats.noValues' : 'stats.focus.fifteen.noneOfSize')}</p>
+      )}
+      <ShowAll count={ordered.length} all={all} onToggle={() => setAll((a) => !a)} limit={BOARD} ctx={ctx} />
+    </div>
+  );
+}
+
+/** "Show all 412" under a list cut short, and "Show fewer" once it is not. */
+function ShowAll({ count, all, onToggle, limit, ctx }) {
+  if (count <= limit) return null;
+  return (
+    <button type="button" className="aa-focus__showall" onClick={onToggle} aria-expanded={all}>
+      {all ? ctx.t('stats.focus.showFewer') : ctx.t('stats.focus.showAll', { count: ctx.n(count) })}
+      <span aria-hidden="true">{all ? ' ↑' : ' ↓'}</span>
+    </button>
   );
 }
 
@@ -320,10 +516,6 @@ function CardepFocus({ stats, rowsOf, slots, onToggle, ctx }) {
   };
   const label = (b) => `${formatThreshold(cdi, b.lo, n)} … ${formatThreshold(cdi, b.hi, n)}`;
 
-  const car = new Map(rowsOf('cardep.car').map((r) => [r.id, statValue(r.stat, 'mean')]));
-  const pt = new Map(rowsOf('cardep.pt').map((r) => [r.id, statValue(r.stat, 'mean')]));
-  const points = rows.filter((r) => car.get(r.id) != null && pt.get(r.id) != null).map((r) => ({ row: r, x: car.get(r.id), y: pt.get(r.id) }));
-
   return (
     <div className="aa-focus">
       <Section title={t('stats.focus.cardep.index')} about={t('stats.focus.cardep.indexAbout')} more={<More slug="car-dependency-index" ctx={ctx} />}>
@@ -373,21 +565,6 @@ function CardepFocus({ stats, rowsOf, slots, onToggle, ctx }) {
         </div>
       </Section>
 
-      {points.length > 0 && (
-        <Section title={t('stats.focus.cardep.reach')} about={t('stats.focus.cardep.reachAbout')}>
-          <FocusScatter
-            points={points}
-            fx={(v) => formatStat(stats.measuresById['cardep.car'], 'mean', v, ctx)}
-            fy={(v) => formatStat(stats.measuresById['cardep.pt'], 'mean', v, ctx)}
-            labelX={t('stats.measures.car')}
-            labelY={t('stats.measures.pt')}
-            diagonal={t('stats.focus.cardep.equal')}
-            slots={slots}
-            onToggle={onToggle}
-            ctx={ctx}
-          />
-        </Section>
-      )}
     </div>
   );
 }

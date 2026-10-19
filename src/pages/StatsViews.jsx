@@ -1,19 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { colorAt } from '../map/ramps.js';
 import { loadDataset } from '../map/loaders.js';
 import { dataUrl } from '../data/catalogue.js';
-import { ZONES } from '../data/platforms.js';
 import {
   HEADLINES,
   HIGHLIGHT,
-  ZONE_KEYS,
   cityFlags,
   formatStat,
-  formatThreshold,
-  hourLabel,
   isDistribution,
   measureLabel,
   orderRows,
@@ -29,7 +25,7 @@ import {
 // statistic picked, and draws it one way; none of them computes a figure.
 // Every mark answers hover with its numbers, and every number a tooltip
 // shows is also on the page somewhere without it (the ranking's values, the
-// matrix's cells).
+// matrix's cells). The curves are in StatsCurves.jsx.
 
 // ── the shared hover tooltip ─────────────────────────────────────────
 
@@ -624,196 +620,3 @@ const MATRIX_RAMP = {
     [1, '#2b4a86'],
   ],
 };
-
-// ── curves ───────────────────────────────────────────────────────────
-
-/**
- * How a figure changes along something the file measures it on: the share
- * of residents at each threshold, or (CityChrone) the hour of the day. Every
- * city is a faint line; the highlighted ones are coloured and named at
- * their end, so no line is identified by colour alone.
- */
-export function CurvesView({ stats, unit, rows, spec, slots, onToggle, ctx }) {
-  const { measure, key, index } = spec;
-  const { show, hide } = ctx.tipApi;
-  const svgRef = useRef(null);
-  const [hover, setHover] = useState(null);
-
-  if (measure.kind === 'zones') return <ZoneBars rows={rows} spec={spec} slots={slots} onToggle={onToggle} ctx={ctx} />;
-  if (measure.kind === 'correlation') return <p className="aa-stats__empty">{ctx.t('stats.note.curvesNone')}</p>;
-
-  const hourly = measure.layer === 'citychrone';
-  let xs;
-  let seriesOf;
-  let yKey;
-  if (hourly) {
-    xs = Array.from({ length: 24 }, (_, h) => h);
-    const byHour = xs.map((h) => {
-      const id = `citychrone.${measure.facets.score}.${String(h).padStart(2, '0')}`;
-      return new Map(statRows(stats, unit, id).map((r) => [r.id, r.stat]));
-    });
-    yKey = key;
-    seriesOf = (row) => xs.map((h, i) => statValue(byHour[i].get(row.id), key, index));
-  } else {
-    xs = measure.thresholds.map((_, i) => i);
-    yKey = 'share';
-    seriesOf = (row) => xs.map((i) => statValue(row.stat, 'share', i));
-  }
-
-  const series = rows.map((row) => ({ row, values: seriesOf(row) })).filter((s) => s.values.some((v) => v != null));
-  if (!series.length) return <p className="aa-stats__empty">{ctx.t('stats.noValues')}</p>;
-
-  const CW = 760;
-  const CH = 400;
-  const PAD = { left: 62, right: 120, top: 16, bottom: 44 };
-  const all = series.flatMap((s) => s.values).filter((v) => v != null);
-  let [y0, y1] = ['share', 'zone', 'unreachable'].includes(yKey)
-    ? [0, 100]
-    : ['gini', 'theil'].includes(yKey) || (!measure.signed && Math.min(...all) >= 0)
-      ? [0, Math.max(...all)]
-      : [Math.min(...all, 0), Math.max(...all, 0)];
-  // End the axis on a labelled tick rather than just past the data.
-  const yTicks = niceTicks(y0, y1);
-  if (yTicks.length > 1 && yTicks[yTicks.length - 1] < y1) {
-    yTicks.push(yTicks[yTicks.length - 1] + (yTicks[1] - yTicks[0]));
-    y1 = yTicks[yTicks.length - 1];
-  }
-  const px = (i) => PAD.left + (i / (xs.length - 1 || 1)) * (CW - PAD.left - PAD.right);
-  const py = (v) => CH - PAD.bottom - ((v - y0) / (y1 - y0 || 1)) * (CH - PAD.top - PAD.bottom);
-  const fy = (v) => formatStat(measure, yKey, v, ctx);
-  const xLabel = (i) => (hourly ? hourLabel(xs[i], ctx.t) : formatThreshold(measure, measure.thresholds[i], ctx.n));
-  const line = (values) =>
-    values
-      .map((v, i) => (v == null ? null : `${px(i).toFixed(1)},${py(v).toFixed(1)}`))
-      .reduce((acc, p) => {
-        if (!p) acc.push([]);
-        else acc[acc.length - 1].push(p);
-        return acc;
-      }, [[]])
-      .filter((seg) => seg.length)
-      .map((seg) => `M${seg.join('L')}`)
-      .join('');
-
-  const highlighted = series.filter((s) => slots.has(s.row.id));
-  const faint = series.filter((s) => !slots.has(s.row.id));
-  // End labels, nudged apart so two close lines do not print over each other.
-  const labels = highlighted
-    .map((s) => {
-      const last = s.values.map((v, i) => [v, i]).filter(([v]) => v != null).pop();
-      return { s, y: py(last[0]) };
-    })
-    .sort((a, b) => a.y - b.y);
-  for (let i = 1; i < labels.length; i++) labels[i].y = Math.max(labels[i].y, labels[i - 1].y + 13);
-
-  const onMove = (event) => {
-    const box = svgRef.current.getBoundingClientRect();
-    const fx = ((event.clientX - box.left) / box.width) * CW;
-    const i = Math.round(((fx - PAD.left) / (CW - PAD.left - PAD.right)) * (xs.length - 1));
-    if (i < 0 || i >= xs.length) {
-      setHover(null);
-      hide();
-      return;
-    }
-    setHover(i);
-    const shown = (highlighted.length ? highlighted : series)
-      .map((s) => [rowName(s.row, ctx.lang), s.values[i]])
-      .filter(([, v]) => v != null)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 8);
-    show(event, <TipBody title={xLabel(i)} lines={shown.map(([name, v]) => [name, fy(v)])} note={highlighted.length ? null : ctx.t('stats.curvesTop')} />);
-  };
-
-  return (
-    <svg
-      ref={svgRef}
-      viewBox={`0 0 ${CW} ${CH}`}
-      className="aa-stats__curves"
-      role="img"
-      aria-label={measureLabel(measure, ctx.t, stats.measuresById)}
-      onPointerMove={onMove}
-      onPointerLeave={() => {
-        setHover(null);
-        hide();
-      }}
-    >
-      {yTicks.map((v) => (
-        <g key={v}>
-          <line x1={PAD.left} x2={CW - PAD.right} y1={py(v)} y2={py(v)} stroke="var(--hair-soft)" />
-          <text x={PAD.left - 8} y={py(v) + 3} textAnchor="end" className="aa-stats__axis">
-            {fy(v)}
-          </text>
-        </g>
-      ))}
-      {xs.map((_, i) =>
-        !hourly || i % 3 === 0 ? (
-          <text key={i} x={px(i)} y={CH - PAD.bottom + 16} textAnchor="middle" className="aa-stats__axis">
-            {xLabel(i)}
-          </text>
-        ) : null,
-      )}
-      <text x={(PAD.left + CW - PAD.right) / 2} y={CH - 6} textAnchor="middle" className="aa-stats__axis aa-stats__axis--title">
-        {hourly ? ctx.t('stats.hour') : `${ctx.t('stats.threshold')} (${ctx.t(`stats.sideShort.${measure.side}`)})`}
-      </text>
-      {hover != null && <line x1={px(hover)} x2={px(hover)} y1={PAD.top} y2={CH - PAD.bottom} stroke="var(--ink-4)" strokeWidth="1" />}
-      {faint.map((s) => (
-        <path key={s.row.id} d={line(s.values)} fill="none" stroke="var(--ink-3)" strokeOpacity="0.35" strokeWidth="1.2" />
-      ))}
-      {highlighted.map((s) => (
-        <g key={s.row.id}>
-          <path d={line(s.values)} fill="none" stroke={HIGHLIGHT[slots.get(s.row.id)]} strokeWidth="2.2" />
-          {s.values.map((v, i) => (v == null ? null : <circle key={i} cx={px(i)} cy={py(v)} r={hourly ? 0 : 4} fill={HIGHLIGHT[slots.get(s.row.id)]} stroke="var(--card)" strokeWidth="2" />))}
-        </g>
-      ))}
-      {labels.map(({ s, y }) => (
-        <text key={s.row.id} x={CW - PAD.right + 8} y={y + 4} className="aa-stats__svglabel aa-stats__svglabel--on">
-          {rowName(s.row, ctx.lang)}
-        </text>
-      ))}
-      {!highlighted.length && (
-        <text x={CW - PAD.right + 8} y={PAD.top + 10} className="aa-stats__axis">
-          {ctx.t('stats.curvesPick')}
-        </text>
-      )}
-    </svg>
-  );
-}
-
-/** The four zones as one bar per city, residents rather than cells. */
-function ZoneBars({ rows, spec, slots, onToggle, ctx }) {
-  const { show, hide } = ctx.tipApi;
-  const ordered = orderRows(rows, spec.measure, 'zone', 0);
-  return (
-    <div className="aa-stats__zones">
-      <div className="aa-stats__zonekey">
-        {ZONES.map((zone) => (
-          <span key={zone.id}>
-            <span className="aa-swatch" style={{ background: zone.color }} />
-            {ctx.t(`city.zones.${zone.key}.name`)}
-          </span>
-        ))}
-      </div>
-      {ordered.map((row) => {
-        const slot = slots.get(row.id);
-        const name = rowName(row, ctx.lang);
-        return (
-          <div className="aa-stats__zrow" key={row.id}>
-            <button type="button" className="aa-stats__pick" onClick={() => onToggle(row.id)} aria-pressed={slot != null}>
-              <Key slot={slot} />
-              <span className="aa-stats__pickname">{name}</span>
-            </button>
-            <span className="aa-stats__stack">
-              {(row.stat?.shares ?? []).map((share, i) => (
-                <span
-                  key={ZONE_KEYS[i]}
-                  style={{ width: `${share}%`, background: ZONES[i].color }}
-                  onPointerMove={(e) => show(e, <TipBody title={name} lines={[[ctx.t(`city.zones.${ZONE_KEYS[i]}.name`), formatStat(spec.measure, 'zone', share, ctx)]]} />)}
-                  onPointerLeave={hide}
-                />
-              ))}
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  );
-}

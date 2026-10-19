@@ -42,15 +42,15 @@ const ROUTES = [
   ['/sustainable-cities', 'Sustainable cities — who we are'],
   ['/stats', 'Stats: ranking'],
   ['/stats?view=map', 'Stats: map'],
-  ['/stats?view=scatter&sel=rome,milan', 'Stats: scatter'],
-  ['/stats?view=matrix', 'Stats: matrix'],
+  ['/stats?view=curves&sel=rome,milan', 'Stats: cumulative curves'],
   ['/stats?view=curves&m=citychrone.velocity.08&sel=rome', 'Stats: CityChrone by hour'],
   ['/stats?unit=country&m=cardep.cdi&s=share&t=1', 'Stats: countries'],
   ['/stats?view=focus&pop=0', 'Stats: focus, 15-minute city'],
   ['/stats?view=focus&pop=0&m=citychrone.velocity.08', 'Stats: focus, CityChrone'],
   ['/stats?view=focus&pop=0&m=cardep.cdi&s=mean', 'Stats: focus, Car Dependency'],
-  ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: focus, P.O.V.'],
-  ['/stats?view=focus&pop=0&m=corr.pov.opportunity~cardep.cdi&s=value', 'Stats: focus, across layers'],
+  // P.O.V. and the figures across layers are off the page for now: their
+  // addresses open on the default figure rather than break.
+  ['/stats?view=focus&pop=0&m=pov.proximity&s=p50', 'Stats: a paused layer opens the default'],
   // No service behind it in the suites: the page has to say so, not break.
   ['/citychat', 'CityChat (beta), with no service running'],
   ['/consulting', 'Consulting'],
@@ -1404,7 +1404,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   const page = await context.newPage();
   const fetched = [];
   page.on('response', (r) => /\/data\/stats\/stats\.json/.test(r.url()) && fetched.push(r.status()));
-  await page.goto(`${BASE}/stats?m=pov.proximity&s=p50&pop=0`, { waitUntil: 'load' });
+  await page.goto(`${BASE}/stats?m=cardep.cdi&s=mean&pop=0`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-stats__rrow:not(.aa-stats__rrow--axis)', { timeout: 8000 }).catch(() => {});
   const drawn = await page.$$eval('.aa-stats__rrow:not(.aa-stats__rrow--axis)', (rows) => rows.length);
   const expected = await page.evaluate(async (base) => {
@@ -1418,7 +1418,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     const stats = JSON.parse(new TextDecoder().decode(body));
     // Hidden cities (thin data) are off the page by default, and so are
     // metro areas: the page opens on the cores.
-    return stats.values['pov.proximity'].filter((v, i) => v && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua').length;
+    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua').length;
   }, BASE);
   check(
     'Stats page reads the published statistics',
@@ -1430,6 +1430,64 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.click('.aa-stats__rrow:not(.aa-stats__rrow--axis) .aa-stats__pick');
   await page.waitForTimeout(300);
   check('Stats highlight is kept in the URL', /[?&]sel=/.test(page.url()), page.url().replace(BASE, ''));
+
+  // P.O.V. and the figures across layers are paused, and so are the scatter
+  // and the matrix: none is offered, and their addresses open on the rest.
+  const tabs = await page.$$eval('.aa-stats__layer, .aa-stats__segbtn', (els) => els.map((e) => e.textContent.trim()));
+  check(
+    'Stats offers no paused layer or view',
+    !tabs.some((x) => /P\.O\.V\.|Across layers|Scatter|Matrix/.test(x)) && tabs.includes('Curves'),
+    tabs.join(' · '),
+  );
+
+  // The 15-minute city's focus ranks cities by size: two boards, each
+  // drawn from the statistics file, whatever the residents filter says.
+  await page.goto(`${BASE}/stats?view=focus`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-focus__board', { timeout: 8000 }).catch(() => {});
+  const boards = await page.$$eval('.aa-focus__boardtitle', (els) => els.map((e) => e.textContent.trim()));
+  const expectedBoard = await page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    const res = await fetch(`${base}/data/${catalogue.stats}`);
+    let body = new Uint8Array(await res.arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    const stats = JSON.parse(new TextDecoder().decode(body));
+    return stats.values['fifteen.proximity_time.foot'].filter(
+      (v, i) => v && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua' && stats.cities[i].population >= 1e6,
+    ).length;
+  }, BASE);
+  const firstBoard = await page.$$eval('.aa-focus__board', (els) => els[0]?.querySelectorAll('.aa-focus__item').length ?? 0);
+  check(
+    'The 15-minute focus ranks cities over one and ten million residents',
+    boards.length === 2 && /1 million/.test(boards[0]) && /10 million/.test(boards[1]) && firstBoard === Math.min(10, expectedBoard),
+    `${boards.join(' · ')} · ${firstBoard} rows, file has ${expectedBoard}`,
+  );
+
+  // The curves: a city is added by typing its name, keeps its slot in the
+  // URL, and a line under the pointer is named where the pointer is.
+  await page.goto(`${BASE}/stats?view=curves&pop=0&sel=rome`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-cpick__input', { timeout: 8000 }).catch(() => {});
+  await page.fill('.aa-cpick__input', 'zur');
+  await page.waitForSelector('.aa-cpick__option', { timeout: 3000 }).catch(() => {});
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(400);
+  const chips = await page.$$eval('.aa-cpick__chip .aa-cpick__name', (els) => els.map((e) => e.textContent.trim()));
+  const svgBox = await page.locator('.aa-curves__svg').boundingBox();
+  let named = '';
+  if (svgBox) {
+    for (let fx = 0.2; fx < 0.8 && !named; fx += 0.05) {
+      for (let fy = 0.1; fy < 0.9 && !named; fy += 0.02) {
+        await page.mouse.move(svgBox.x + svgBox.width * fx, svgBox.y + svgBox.height * fy);
+        named = await page.$eval('.aa-curves__hovername', (e) => e.textContent).catch(() => '');
+      }
+    }
+  }
+  check(
+    'Curves add a city by name and name the line under the pointer',
+    chips.join(',') === 'Rome,Zurich' && /[?&]sel=rome%2Czurich/.test(page.url()) && Boolean(named),
+    `${chips.join(',')} · ${page.url().replace(BASE, '')} · hovered "${named}"`,
+  );
   await page.close();
 }
 

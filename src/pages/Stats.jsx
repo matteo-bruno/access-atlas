@@ -10,8 +10,8 @@ import { useStats } from '../data/useAtlasData.js';
 import {
   extentsOf,
   scopeStats,
-  HIGHLIGHT,
   MAX_HIGHLIGHT,
+  STATS_PAUSED,
   ZONE_KEYS,
   aboutKey,
   countryLayers,
@@ -31,7 +31,8 @@ import {
   statRows,
   statValue,
 } from '../data/stats.js';
-import { CurvesView, MapView, MatrixView, RankingView, ScatterView, Tip, useTip } from './StatsViews.jsx';
+import { MapView, MatrixView, RankingView, ScatterView, Tip, useTip } from './StatsViews.jsx';
+import { CityPicker, CurvesView } from './StatsCurves.jsx';
 import { FocusView } from './StatsFocus.jsx';
 import './Prose.css';
 import './Stats.css';
@@ -101,7 +102,11 @@ const DEFAULTS = {
   t2: '0',
   rev: '',
 };
-const VIEWS = ['focus', 'ranking', 'map', 'scatter', 'matrix', 'curves'];
+// Scatter and matrix are off the page for now; their views are kept, and
+// listing them here again brings them back.
+const VIEWS = ['focus', 'ranking', 'map', 'curves'];
+// How many cities the curves open on when nobody has picked any.
+const SUGGESTED = 4;
 const LAYER_DEFAULTS = {
   fifteen: 'fifteen.proximity_time.foot',
   citychrone: 'citychrone.velocity.08',
@@ -133,6 +138,8 @@ function useQuery() {
 /** The picked measure, statistic and threshold, made valid for what the file has. */
 function resolveSpec(stats, unit, m, s, t, fallback = DEFAULTS.m) {
   let measure = stats.measuresById[m] ?? stats.measuresById[fallback] ?? stats.measures[0];
+  // A layer that is off the page for now opens on the default figure.
+  if (STATS_PAUSED.has(measure.layer)) measure = stats.measuresById[DEFAULTS.m] ?? stats.measures.find((x) => !STATS_PAUSED.has(x.layer)) ?? measure;
   // Countries are pooled for some layers only (scripts/lib/stats.mjs).
   if (unit === 'country' && !countryLayers(stats).has(measure.layer)) {
     measure = stats.measuresById[DEFAULTS.m] ?? stats.measures.find((x) => countryLayers(stats).has(x.layer)) ?? measure;
@@ -172,19 +179,40 @@ function Dashboard({ stats: all }) {
   const countryFilter = new Set(query.get('c').split(',').filter(Boolean));
   const minPop = Math.max(0, Number(query.get('pop')) || 0);
   const maxPop = Math.max(0, Number(query.get('popmax')) || 0);
-  const sel = query.get('sel').split(',').slice(0, MAX_HIGHLIGHT);
-  const slots = new Map(sel.map((id, i) => [id, i]).filter(([id]) => id));
 
   // Every filter. Hidden cities never pass: their data is too thin to compare.
+  // The rankings by size on the 15-minute city's focus are their own
+  // population range, so they take the rest without it (`passPlace`).
+  const passPlace = (row) => (!countryFilter.size || countryFilter.has(row.country)) && (row.kind === 'country' || !row.city?.hidden);
   const pass = (row) =>
-    (!countryFilter.size || countryFilter.has(row.country)) &&
-    (row.kind === 'country' ||
-      (!row.city?.hidden &&
-        (row.city?.population ?? 0) >= minPop &&
-        (!maxPop || (row.city?.population ?? 0) <= maxPop)));
+    passPlace(row) &&
+    (row.kind === 'country' || ((row.city?.population ?? 0) >= minPop && (!maxPop || (row.city?.population ?? 0) <= maxPop)));
   const withFigure = statRows(stats, unit, spec.measure.id).filter((r) => statValue(r.stat, spec.key, spec.index) != null);
   const rows = withFigure.filter(pass);
   const hiddenHere = unit === 'city' ? withFigure.filter((r) => r.city?.hidden).length : 0;
+
+  // The highlighted cities, one per slot, so removing one never repaints the
+  // others. Where curves are drawn and nobody has picked any, the largest
+  // cities on screen stand in, and the first edit makes them a choice; "-"
+  // is a choice of none, so emptying the list does not bring them back.
+  const curvesOnScreen = view === 'curves' || (focus && layer === 'fifteen');
+  const rawSel = query.get('sel');
+  const suggested =
+    !rawSel && curvesOnScreen
+      ? [...rows]
+          .sort((a, b) => (b.population ?? 0) - (a.population ?? 0))
+          .slice(0, SUGGESTED)
+          .map((r) => r.id)
+      : null;
+  const sel = suggested ?? (rawSel === '-' ? [] : rawSel.split(',').slice(0, MAX_HIGHLIGHT));
+  const slots = new Map(sel.map((id, i) => [id, i]).filter(([id]) => id));
+  const setSel = (next) => {
+    const text = next.join(',').replace(/,+$/, '');
+    query.set({ sel: text || (curvesOnScreen ? '-' : '') });
+  };
+  // Any city with the figure can be picked by name, whatever the filters
+  // leave on screen; hidden ones never.
+  const poolOf = (measureId) => statRows(stats, unit, measureId).filter((r) => r.stat && (r.kind === 'country' || !r.city?.hidden));
 
   const rule = stats.hiddenRule;
   const ctx = { t, n, lang, tipApi, rule, layerName: (l) => layerName(l, t) };
@@ -203,8 +231,9 @@ function Dashboard({ stats: all }) {
       next[free] = id;
     }
     setFull(false);
-    query.set({ sel: next.join(',').replace(/,+$/, '') });
+    setSel(next);
   };
+  const curves = { pool: poolOf, picked: sel, onPick: setSel, suggested: Boolean(suggested) };
 
   const pickLayer = (next) => {
     const id = LAYER_DEFAULTS[next] ?? stats.measures.find((m) => m.layer === next)?.id;
@@ -219,10 +248,11 @@ function Dashboard({ stats: all }) {
   // Curves draw every threshold at once, so their title names none, and
   // CityChrone's draw every hour, so theirs names no hour. Focus is the
   // layer's own, so its title is the layer's.
+  const cumulative = view === 'curves' && layer !== 'citychrone' && isDistribution(spec.measure);
   const statTitle = focus
     ? t(`stats.focus.${layer}.title`)
-    : view === 'curves' && layer !== 'citychrone' && isDistribution(spec.measure)
-      ? t('stats.statLabels.share')
+    : cumulative
+      ? t('stats.curves.title')
       : statLabel(spec.measure, spec.key, spec.index, t, n);
   const measureTitle = focus
     ? layerName(layer, t)
@@ -279,7 +309,14 @@ function Dashboard({ stats: all }) {
                   </select>
                 </Field>
               ) : (
-                <MetricPicker stats={stats} unit={unit} spec={spec} onChange={(patch) => query.set({ m: patch.m, s: patch.s, t: patch.t })} />
+                <MetricPicker
+                  stats={stats}
+                  unit={unit}
+                  spec={spec}
+                  // A cumulative curve draws every percentile and threshold at once.
+                  measureOnly={cumulative}
+                  onChange={(patch) => query.set({ m: patch.m, s: patch.s, t: patch.t })}
+                />
               )}
             </SideSection>
           )}
@@ -334,44 +371,13 @@ function Dashboard({ stats: all }) {
             )}
           </SideSection>
 
-          <SideSection title={t('stats.selection.label')}>
-            <div className="aa-stats__selection">
-              {sel.map((id, slot) => {
-                if (!id) return null;
-                const row = statRows(stats, unit, spec.measure.id).find((r) => r.id === id);
-                if (!row) return null;
-                const name = rowName(row, lang);
-                return (
-                  <button key={id} type="button" className="aa-stats__selchip" onClick={() => toggle(id)} aria-label={t('stats.selection.remove', { name })}>
-                    <span className="aa-stats__key" style={{ background: HIGHLIGHT[slot] }} />
-                    {name}
-                    <span aria-hidden="true" className="aa-stats__selx">
-                      ×
-                    </span>
-                  </button>
-                );
-              })}
-              {slots.size < MAX_HIGHLIGHT && (
-                <select
-                  className="aa-stats__select aa-stats__select--ghost"
-                  value=""
-                  onChange={(e) => e.target.value && toggle(e.target.value)}
-                  aria-label={t(unit === 'country' ? 'stats.selection.addCountry' : 'stats.selection.add')}
-                >
-                  <option value="">+ {t(unit === 'country' ? 'stats.selection.addCountry' : 'stats.selection.add')}</option>
-                  {statRows(stats, unit, spec.measure.id)
-                    .filter((r) => pass(r) && !slots.has(r.id))
-                    .sort((a, b) => rowName(a, lang).localeCompare(rowName(b, lang), locale))
-                    .map((r) => (
-                      <option key={r.id} value={r.id}>
-                        {rowName(r, lang)}
-                      </option>
-                    ))}
-                </select>
-              )}
+          {/* Where curves are drawn, their own picker sits over them. */}
+          {!curvesOnScreen && (
+            <SideSection title={t('stats.selection.label')}>
+              <CityPicker pool={poolOf(spec.measure.id)} picked={sel} onChange={setSel} unit={unit} ctx={ctx} />
               {full && <span className="aa-stats__hint">{t('stats.selection.full')}</span>}
-            </div>
-          </SideSection>
+            </SideSection>
+          )}
         </aside>
 
         <div className="aa-card aa-stats__panel">
@@ -387,7 +393,7 @@ function Dashboard({ stats: all }) {
             {focus && <p className="aa-stats__lede">{t(`stats.focus.${layer}.lede`)}</p>}
           </header>
 
-          {!focus && <Kpis rows={rows} spec={spec} unit={unit} judged={judged} ctx={ctx} />}
+          {!focus && !cumulative && <Kpis rows={rows} spec={spec} unit={unit} judged={judged} ctx={ctx} />}
 
           {view === 'scatter' && (
             <div className="aa-stats__yaxis">
@@ -414,7 +420,18 @@ function Dashboard({ stats: all }) {
 
           <div className="aa-stats__view">
             {focus ? (
-              <FocusView stats={stats} unit={unit} layer={layer} pass={pass} slots={slots} onToggle={toggle} mode={fifteenMode} ctx={ctx} />
+              <FocusView
+                stats={stats}
+                unit={unit}
+                layer={layer}
+                pass={pass}
+                passPlace={passPlace}
+                slots={slots}
+                onToggle={toggle}
+                mode={fifteenMode}
+                curves={curves}
+                ctx={ctx}
+              />
             ) : rows.length === 0 ? (
               <p className="aa-stats__empty">{t('stats.noValues')}</p>
             ) : (
@@ -436,7 +453,19 @@ function Dashboard({ stats: all }) {
                     ctx={ctx}
                   />
                 )}
-                {view === 'curves' && <CurvesView stats={stats} unit={unit} rows={rows} spec={spec} slots={slots} onToggle={toggle} ctx={ctx} />}
+                {view === 'curves' && (
+                  <CurvesView
+                    stats={stats}
+                    unit={unit}
+                    rows={rows}
+                    pool={poolOf(spec.measure.id)}
+                    spec={spec}
+                    picked={sel}
+                    onPick={setSel}
+                    suggested={Boolean(suggested)}
+                    ctx={ctx}
+                  />
+                )}
               </>
             )}
           </div>
@@ -553,7 +582,7 @@ function contextNotes({ spec, unit, view, rows, t, n }) {
       }),
     );
   }
-  if (key === 'share') notes.push(t('stats.note.thresholds'));
+  if (key === 'share' || (view === 'curves' && measure.thresholds?.length)) notes.push(t('stats.note.thresholds'));
   if (measure.kind === 'correlation') notes.push(t('stats.note.correlation'));
   if (measure.layer === 'citychrone') notes.push(t('stats.note.citychrone'));
   if (rows.some((r) => r.stat?.unreachable > 0)) notes.push(t('stats.note.unreachable'));
@@ -562,6 +591,7 @@ function contextNotes({ spec, unit, view, rows, t, n }) {
   else if (isLevel(key)) notes.push(t('stats.note.oneNumber'));
   if (view === 'matrix') notes.push(t('stats.note.matrix'));
   if (view === 'curves' && measure.layer !== 'citychrone' && measure.thresholds?.length) notes.push(t('stats.note.curvesThresholds'));
+  if (view === 'curves' && measure.layer === 'citychrone') notes.push(t('stats.note.curvesHours'));
   return notes;
 }
 
@@ -604,7 +634,7 @@ function LayerTabs({ stats, current, enabled, onPick }) {
  * (`withLayer`) for the scatter's second axis. Stacked in the sidebar,
  * `inline` above the scatter.
  */
-function MetricPicker({ stats, unit, spec, onChange, label, withLayer = false, inline = false }) {
+function MetricPicker({ stats, unit, spec, onChange, label, withLayer = false, inline = false, measureOnly = false }) {
   const { t, n } = useI18n();
   const { measure, key, index } = spec;
   const pooled = countryLayers(stats);
@@ -706,7 +736,7 @@ function MetricPicker({ stats, unit, spec, onChange, label, withLayer = false, i
         </Field>
       )}
 
-      {keys.length > 1 && (
+      {!measureOnly && keys.length > 1 && (
         <Field label={t('stats.statistic')} about={t(`stats.statAbout.${key}`)}>
           <select className="aa-stats__select" value={key} onChange={(e) => pick(measure.id, { s: e.target.value })}>
             {keys.map((k) => (
@@ -717,7 +747,7 @@ function MetricPicker({ stats, unit, spec, onChange, label, withLayer = false, i
           </select>
         </Field>
       )}
-      {key === 'share' && (
+      {!measureOnly && key === 'share' && (
         <Field label={t('stats.threshold')}>
           <select className="aa-stats__select" value={index} onChange={(e) => pick(measure.id, { s: 'share', t: Number(e.target.value) })}>
             {measure.thresholds.map((value, i) => (
@@ -728,7 +758,7 @@ function MetricPicker({ stats, unit, spec, onChange, label, withLayer = false, i
           </select>
         </Field>
       )}
-      {key === 'zone' && (
+      {!measureOnly && key === 'zone' && (
         <Field label={t('stats.zone')} about={keys.length > 1 ? null : t('stats.statAbout.zone')}>
           <select className="aa-stats__select" value={index} onChange={(e) => pick(measure.id, { s: 'zone', t: Number(e.target.value) })}>
             {ZONE_KEYS.map((z, i) => (

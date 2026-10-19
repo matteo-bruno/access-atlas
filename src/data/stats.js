@@ -28,6 +28,8 @@ export function normaliseStats(raw) {
     countries: Array.isArray(raw.countries) ? raw.countries : [],
     omitted: Array.isArray(raw.omitted) ? raw.omitted : [],
     hiddenRule: raw.hiddenRule ?? { population: null, minutes: null },
+    // The share of residents each entry of a figure's `q` stands for.
+    quantiles: Array.isArray(raw.quantiles) && raw.quantiles.length ? raw.quantiles : [0.1, 0.25, 0.5, 0.75, 0.9],
     computedAt: computed.length ? computed[computed.length - 1] : null,
   };
 }
@@ -65,6 +67,11 @@ export function scopeStats(stats, extent) {
 // In the site's platform order, then the cross-layer figures.
 export const STATS_LAYERS = ['fifteen', 'citychrone', 'cardep', 'pov', 'cross'];
 
+// Computed and published, but off the page for now while their charts are
+// reworked: P.O.V. and the figures across layers. Emptying this set is all
+// it takes to bring them back; nothing else about them was removed.
+export const STATS_PAUSED = new Set(['pov', 'cross']);
+
 /** The layers countries are pooled for: those any country has a figure on. */
 export function countryLayers(stats) {
   const layers = new Set();
@@ -77,10 +84,10 @@ export function countryLayers(stats) {
   return layers;
 }
 
-/** The layers the file has any measure for, in the site's order. */
+/** The layers the file has any measure for and the page shows, in the site's order. */
 export function layersOf(stats) {
   const present = new Set(stats.measures.map((m) => m.layer));
-  return STATS_LAYERS.filter((l) => present.has(l));
+  return STATS_LAYERS.filter((l) => present.has(l) && !STATS_PAUSED.has(l));
 }
 
 const DISTRIBUTION = new Set(['score', 'index', 'minutes']);
@@ -186,6 +193,46 @@ function countryCentre(stats, country) {
   const total = members.reduce((s, c) => s + (c.population || 0), 0);
   if (!members.length || !total) return members[0]?.center ?? null;
   return [0, 1].map((k) => members.reduce((s, c) => s + c.center[k] * (c.population || 0), 0) / total);
+}
+
+/**
+ * A figure object as the points of a cumulative curve: the share of
+ * residents on the measure's own side of each value, `[value, share]`.
+ *
+ * Two kinds of point, both published: the quantiles (a tenth of residents at
+ * or within the 10th percentile, a quarter within the 25th, …) and the share
+ * at each threshold. Nothing between them is known, so a curve drawn through
+ * them is a line joining measurements, and the page says so. A measure
+ * counted "at most" (a travel time) rises: residents within x. One counted
+ * "above" or "at least" falls: residents at or above x. "Not reachable"
+ * (15minCity's sentinel) is longer than any value on the axis, so it is no
+ * point at all: the curve stops short of 100%.
+ */
+export function cumulativePoints(measure, stat, quantiles = [0.1, 0.25, 0.5, 0.75, 0.9]) {
+  if (!measure || !stat) return [];
+  const rising = !measure.side || measure.side === 'atMost';
+  const over = (v) => measure.sentinel != null && v >= measure.sentinel;
+  const points = [];
+  (stat.q ?? []).forEach((v, i) => {
+    if (!Number.isFinite(v) || over(v) || quantiles[i] == null) return;
+    const share = quantiles[i] * 100;
+    points.push([v, rising ? share : 100 - share]);
+  });
+  (measure.thresholds ?? []).forEach((value, i) => {
+    const share = stat.shares?.[i];
+    if (Number.isFinite(share)) points.push([value, share]);
+  });
+  points.sort((a, b) => a[0] - b[0] || (rising ? a[1] - b[1] : b[1] - a[1]));
+  // A quantile is rounded to the measure's decimals, which can put it a hair
+  // on the wrong side of a threshold's share; that point would turn the
+  // curve back on itself, and is left out rather than moved.
+  const out = [];
+  for (const point of points) {
+    const last = out[out.length - 1];
+    if (last && (rising ? point[1] < last[1] : point[1] > last[1])) continue;
+    out.push(point);
+  }
+  return out;
 }
 
 /** Rows that have a value, ordered best first (or highest first where nothing is better). */
@@ -363,12 +410,13 @@ export function statRamp(measure, key) {
 
 /**
  * Highlight colours, one per slot. A city keeps its slot while it is
- * highlighted, so removing one never repaints the others. The first four
- * slots of the reference categorical palette, validated together for lines
- * (worst adjacent CVD ΔE 9.1); the two below 3:1 contrast are why every
- * highlighted line carries its name.
+ * highlighted, so removing one never repaints the others. The eight slots of
+ * the reference categorical palette, in its order, validated together for
+ * lines on the card's paper (worst adjacent CVD ΔE 9.1, normal vision 19.6);
+ * the three below 3:1 contrast are why every highlighted line carries its
+ * name, and why no colour is ever the only way to tell two cities apart.
  */
-export const HIGHLIGHT = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100'];
+export const HIGHLIGHT = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6', '#e34948'];
 export const MAX_HIGHLIGHT = HIGHLIGHT.length;
 
 /** The measures the matrix shows by default, where published. */

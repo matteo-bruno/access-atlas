@@ -219,9 +219,14 @@ everything. Hashes are written last, after `test:data` passed.
 `/stats` is a dashboard over one file, `public/data/stats/stats.json.gz`,
 named as `stats` in the catalogue. Nothing on the page computes a figure from
 cells: `src/data/stats.js` picks one out of a published figure object, orders
-it and colours it, and `StatsViews.jsx` draws it five ways (ranking, map,
-scatter, matrix, curves), by city or by country. What is on screen lives in
-the query string.
+it and colours it, and the views draw it four ways (focus, ranking, map,
+curves), by city or by country. What is on screen lives in the query string.
+
+**Some of it is paused, not removed.** P.O.V. and the figures across layers
+are still computed and published, but off the page (`STATS_PAUSED` in
+`stats.js`; an address naming one opens on the default figure), and the
+scatter and the matrix are out of `VIEWS` in `Stats.jsx`. Their code stays:
+emptying the set and listing the views again brings all four back.
 
 **The page opens on the dashboard, nothing above it.** No eyebrow, headline
 or lede: the page's `<h1>` is the figure on screen (measure in ink, statistic
@@ -231,22 +236,47 @@ residents (`DEFAULTS` in `Stats.jsx`). **Only cities that have the figure are
 drawn anywhere**, on the map included: a city without the layer is not listed
 as missing. The layout is **one row of buttons on top** (the layers, then the
 views) and **a sidebar** with the figure, the filters and the highlighted
-cities. Countries are a menu, not a row of chips, and population is one
-logarithmic slider with two handles (min and max; the top end means no
-maximum) and a number box under each.
+cities (picked by typing a name, `CityPicker`). Countries are a menu, not a
+row of chips, and population is one logarithmic slider with two handles (min
+and max; the top end means no maximum) and a number box under each.
 
 **Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
 each platform is read with, from the same statistics file, so the filters
-and highlights apply. 15minCity: median time to every service, city by city,
-on the platform's own ramp, and residents within 15 minutes on foot against
-by bicycle. CityChrone: each city's 24 hours, median with the middle half as
-a band, one scale per score across cities. Car Dependency: the index for the
-average resident, residents by index band (from the shares above the CDI
-thresholds) and reach by car against by transit. P.O.V.: residents by zone,
-on the Atlas median beside the city's own, and median proximity against
-opportunity with the Atlas medians drawn as the quadrant lines. Across
-layers: every correlation, city by city. The per-platform compare pages for
-P.O.V. and CDI are linked from their focus, not listed under the dashboard.
+and highlights apply. Each chart is a sheet of its own, and a list longer
+than its first screen shows ten or twelve rows and "Show all". 15minCity,
+in order: **who lives within 5–30 minutes of the services**, ranked on two
+boards, cities over 1 and over 10 million residents (`SIZES`; the sizes are
+printed with `Intl`'s compact notation, so no number sits in a
+dictionary), which take the countries and the boundary but not the
+residents filter, since each board is its own size; **residents reached,
+minute by minute**, the cumulative curves below; the median time to every
+service on the platform's own ramp; and residents within 15 minutes on foot
+against by bicycle. CityChrone: each city's 24 hours, median with the
+middle half as a band, one scale per score across cities. Car Dependency:
+the index for the average resident and residents by index band (from the
+shares above the CDI thresholds); its reach scatter went with the scatter.
+(Paused: P.O.V.'s zones and scores, every correlation across layers.) The
+per-platform compare pages for P.O.V. and CDI are linked from their focus,
+not listed under the dashboard.
+
+**The curves are cumulative and drawn from published points only**
+(`StatsCurves.jsx`). For a distribution a city's line is
+`cumulativePoints` in `stats.js`: its five quantiles (a tenth of residents
+within the 10th percentile, …) and its share at every threshold, sorted
+along the measure, rising for a measure counted "at most" (a travel time),
+falling for one counted "above" or "at least". Nothing between the points
+is known, the line only joins them, and the note under the chart says so;
+a quantile rounded onto the wrong side of a threshold's share is dropped
+rather than moved, and "not reachable" is no point at all. Travel times run
+to the last threshold, like the platform's legend; other axes are fitted.
+CityChrone keeps its hours. Up to **eight cities in colour**, picked by
+typing a name (any city with the figure, whatever the filters leave; hidden
+ones never), named at their end and in the chips, and every other city the
+filters leave is a faint grey line, named under the pointer and added with
+a click. Nobody having picked any, the four largest cities on screen stand
+in, and the first edit makes them a choice; `sel=-` is a choice of none.
+The chart measures its container (`useFrame`) and draws at its true pixel
+size, so a phone gets legible figures rather than a scaled-down desktop.
 
 **Computed per city, only when its data changed, and never shown stale.**
 `npm run stats` (`scripts/build-stats.mjs`, method at the top of
@@ -322,10 +352,10 @@ What is easy to get wrong:
   (`cityFlags`). New copy that would apply everywhere belongs in the
   dialog, not as another standing note.
 - **Highlight colours follow the city, not its position.** `sel` in the URL
-  holds four slots, possibly empty, so removing one highlighted city never
-  repaints the others. The four are the first slots of the dataviz reference
-  palette, validated together for lines; two are below 3:1 contrast, which
-  is why every highlighted line and dot is also named.
+  holds eight slots, possibly empty, so removing one highlighted city never
+  repaints the others. The eight are the dataviz reference palette in its
+  order, validated together for lines on the card's paper; three are below
+  3:1 contrast, which is why every highlighted line and dot is also named.
 
 ## The grids — read this before touching the combined viewer
 
