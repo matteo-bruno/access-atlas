@@ -195,8 +195,6 @@ export default {
         'Indem es Nähe und Gelegenheit verbindet, kombiniert dieses Konzept die Messung eines lebendigen Viertels (hohe Nähe) mit der eines schnellen ÖV-Knotens (hohe Gelegenheit). Die Werte messen, zu wie vielen Diensten eine Person Zugang hat: mit dem öffentlichen Verkehr in längerer Zeit (Gelegenheitswert) oder zu Fuß in kurzer Zeit (Nähewert). Dicht besiedelte Orte können beides haben und gelten als Orte der Inklusion; räumliche Isolation im öffentlichen Verkehr oder soziale Isolation eines leeren Viertels sind immer noch besser als die totale Isolation von Orten, die vom Rest der Stadt abgeschnitten sind und wenige lokale Gelegenheiten haben. Eine dritte Achse wäre der schwer fassbare Wert von Orten.',
       legendUnit: 'Zone',
       legend: ['Inklusion', 'Räumliche Isolation', 'Soziale Isolation', 'Vollständige Isolation'],
-      // Under the world map's legend: what the zones are measured against.
-      legendNote: 'Der Median-Bewohner jeder Stadt im Vergleich zum Median aller Bewohner des Atlas, bei Nähe und bei Gelegenheit.',
     },
   },
 
@@ -782,7 +780,6 @@ export default {
       city: 'Städte',
       country: 'Länder',
       about: 'Länder fassen die Bewohner ihrer veröffentlichten Städte zusammen, vorerst nur für die 15-Minuten-Stadt. Nur Mittelwerte und Anteile der Bewohner lassen sich exakt zusammenfassen, daher werden die anderen Statistiken für Länder nicht angeboten.',
-      onlyFifteen: 'Länder werden vorerst nur in der 15-Minuten-Stadt verglichen.',
     },
     countries: {
       label: 'Länder',
@@ -908,7 +905,6 @@ export default {
       showFewer: 'Weniger anzeigen',
       fifteen: {
         title: 'Dienste in Reichweite',
-        lede: 'Welche Städte ihren Bewohnern das Nötige in wenigen Minuten bieten, wie dieser Anteil Minute für Minute wächst und wie lange der mittlere Bewohner zu jeder Art von Dienst braucht, zu Fuß und mit dem Fahrrad.',
         profile: 'Medianzeit zu jedem Dienst',
         profileAbout: 'Jede Zelle ist die Zeit, die die mittlere Bewohnerin der Stadt zum nächsten Dienst der Kategorie braucht. Die Farbe ist die Skala der 15-Minuten-Stadt: weiß bei 15 Minuten, blau darunter, rot darüber.',
         within: 'Bewohner innerhalb 15 Min',
@@ -922,11 +918,9 @@ export default {
         noneOfSize: 'Keine Stadt dieser Größe auf dem Bildschirm.',
         curves: 'Erreichte Bewohner, Minute für Minute',
         curvesAbout: 'Jede Linie ist eine Stadt: der Anteil ihrer Bewohner, die die Dienste im Durchschnitt innerhalb der Zeit auf der Achse erreichen. Ihre Punkte sind die veröffentlichten Perzentile und die Anteile an jeder Schwelle; die Linie verbindet sie nur. Die grauen Linien sind die übrigen Städte, die die Filter lassen: Zeigen Sie auf eine, um ihren Namen zu sehen, klicken Sie, um sie farbig zu zeichnen.',
-        curvesIntro: 'Je weiter links eine Kurve ansteigt, desto mehr Bewohner der Stadt leben nah an dem, was sie brauchen.',
       },
       citychrone: {
         title: 'Ein Tag öffentlicher Verkehr',
-        lede: 'Wie der ÖPNV jede Stadt über 24 Stunden bedient: Geschwindigkeits- und Sozialitätswert ihrer mittleren Bewohnerin, mit der mittleren Hälfte der Bewohner als Band.',
         day: 'Der Tag, Stunde für Stunde',
         dayAbout: 'Die Linie ist der Wert der medianen Bewohnerin zu jeder Stunde; das Band reicht vom 25. bis zum 75. Perzentil. Alle Städte teilen eine Skala je Wert, sodass sich die Kurven direkt vergleichen lassen.',
         peak: 'Spitze',
@@ -934,7 +928,6 @@ export default {
       },
       cardep: {
         title: 'Auto oder ÖPNV',
-        lede: 'Ob vom Wohnort der Bewohner aus das Auto oder der ÖPNV mehr erreicht: der Index der durchschnittlichen Bewohnerin, wie sich die Bewohner darüber verteilen, und die beiden Erreichbarkeiten dahinter.',
         index: 'Der Index der durchschnittlichen Bewohnerin',
         indexAbout: 'Der bevölkerungsgewichtete Mittelwert des Autoabhängigkeitsindex: unter null erreicht der ÖPNV mehr, über null das Auto.',
         bands: 'Bewohner nach Indexbereich',
@@ -945,7 +938,6 @@ export default {
       },
       pov: {
         title: 'Nähe und Möglichkeiten',
-        lede: 'Was Bewohner zu Fuß erreichen, gegenüber dem, was sie in der ganzen Stadt erreichen, aufgeteilt in die vier Zugangszonen von P.O.V.',
         zones: 'Bewohner nach Zone',
         zonesAbout: 'Links die Zonen am Atlas-Median: jede Stadt an denselben zwei Linien geteilt, Nähe {proximity} und Möglichkeiten {opportunity}, die Mediane der Bewohner aller {count} Städte. Rechts die Zonen der Plattform, an den Medianen jeder Stadt geteilt.',
         scores: 'Mediane Nähe gegenüber medianen Möglichkeiten',
@@ -954,7 +946,6 @@ export default {
       },
       cross: {
         title: 'Wie die Ebenen zusammenhängen',
-        lede: 'In jeder Stadt, wie die Messgröße einer Ebene mit der einer anderen zusammenhängt, Zelle für Zelle.',
         about: 'Spearmans Rangkorrelation über die bewohnten Zellen, die beide Ebenen abdecken: blau, wo beide gemeinsam fallen, rot, wo eine steigt, während die andere fällt.',
       },
     },

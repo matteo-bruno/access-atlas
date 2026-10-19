@@ -121,7 +121,6 @@ function FifteenFocus({ stats, unit, rowsOf, placeRowsOf, slots, onToggle, mode,
       <FifteenRankings measure={lead} rows={placeRowsOf(lead.id)} unit={unit} slots={slots} onToggle={onToggle} mode={mode} modeName={modeName} ctx={ctx} />
 
       <Section title={t('stats.focus.fifteen.curves')} badge={modeName} about={t('stats.focus.fifteen.curvesAbout')}>
-        <p className="aa-focus__intro">{t('stats.focus.fifteen.curvesIntro')}</p>
         <CurvesView
           stats={stats}
           unit={unit}

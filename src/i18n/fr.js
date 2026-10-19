@@ -195,7 +195,6 @@ export default {
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Isolement spatial', 'Isolement social', 'Isolement total'],
       // Under the world map's legend: what the zones are measured against.
-      legendNote: 'Le résident médian de chaque ville face à la médiane de tous les résidents de l’Atlas, en proximité et en opportunité.',
     },
   },
 
@@ -781,7 +780,6 @@ export default {
       city: 'Villes',
       country: 'Pays',
       about: 'Les pays regroupent les résidents de leurs villes publiées, pour l’instant pour la ville du quart d’heure seulement. Seules les moyennes et les parts de résidents se regroupent exactement, donc les autres statistiques ne sont pas proposées pour les pays.',
-      onlyFifteen: 'Pour l’instant, les pays ne se comparent que sur la ville du quart d’heure.',
     },
     countries: {
       label: 'Pays',
@@ -907,7 +905,6 @@ export default {
       showFewer: 'Afficher moins',
       fifteen: {
         title: 'Les services à portée',
-        lede: 'Quelles villes placent leurs résidents à quelques minutes de ce dont ils ont besoin, comment cette part croît minute après minute, et combien de temps le résident médian met pour atteindre chaque type de service, à pied et à vélo.',
         profile: 'Temps médian vers chaque service',
         profileAbout: 'Chaque case est le temps que met le résident du milieu de la ville pour atteindre le service le plus proche de la catégorie. La couleur est l’échelle de la ville du quart d’heure : blanc à 15 minutes, bleu en dessous, rouge au-dessus.',
         within: 'Résidents à moins de 15 min',
@@ -921,11 +918,9 @@ export default {
         noneOfSize: 'Aucune ville de cette taille à l’écran.',
         curves: 'Résidents atteints, minute après minute',
         curvesAbout: 'Chaque ligne est une ville : la part de ses résidents qui atteignent les services dans le temps porté sur l’axe, en moyenne. Ses points sont les centiles publiés et les parts à chaque seuil, et la ligne ne fait que les relier. Les lignes grises sont les autres villes laissées par les filtres : survolez-en une pour la nommer, cliquez pour la tracer en couleur.',
-        curvesIntro: 'Plus une courbe monte à gauche, plus les résidents de la ville vivent près de ce dont ils ont besoin.',
       },
       citychrone: {
         title: 'Une journée de transports publics',
-        lede: 'Comment les transports publics desservent chaque ville sur 24 heures : les scores de vitesse et de socialité de son résident du milieu, avec la moitié centrale de ses résidents en bande.',
         day: 'La journée, heure par heure',
         dayAbout: 'La ligne est le score du résident médian à chaque heure ; la bande va du 25e au 75e centile. Toutes les villes partagent une échelle par score, donc les courbes se comparent directement.',
         peak: 'pic',
@@ -933,7 +928,6 @@ export default {
       },
       cardep: {
         title: 'Voiture ou transports publics',
-        lede: 'Si, depuis l’endroit où vivent les résidents, la voiture ou les transports publics atteignent davantage : l’indice du résident moyen, la répartition des résidents le long de l’indice, et les deux accessibilités qui le fondent.',
         index: 'L’indice du résident moyen',
         indexAbout: 'La moyenne pondérée par la population de l’indice de dépendance à la voiture : sous zéro les transports publics atteignent davantage, au-dessus la voiture.',
         bands: 'Résidents par tranche de l’indice',
@@ -944,7 +938,6 @@ export default {
       },
       pov: {
         title: 'Proximité et opportunité',
-        lede: 'Ce que les résidents atteignent à pied face à ce qu’ils atteignent dans toute la ville, réparti dans les quatre zones d’accès de P.O.V.',
         zones: 'Résidents par zone',
         zonesAbout: 'À gauche, les zones sur la médiane de l’Atlas : chaque ville découpée aux deux mêmes lignes, proximité {proximity} et opportunité {opportunity}, les médianes des résidents des {count} villes. À droite, les zones de la plateforme, découpées aux médianes de chaque ville.',
         scores: 'Proximité médiane et opportunité médiane',
@@ -953,7 +946,6 @@ export default {
       },
       cross: {
         title: 'Comment les couches vont ensemble',
-        lede: 'Dans chaque ville, comment la mesure d’une couche va avec celle d’une autre, cellule par cellule.',
         about: 'La corrélation de rang de Spearman sur les cellules habitées que couvrent les deux couches : bleu là où elles baissent ensemble, rouge là où l’une monte quand l’autre baisse.',
       },
     },

@@ -193,8 +193,6 @@ export default {
         'Unindo Proximidade e Oportunidade, este modelo combina a medida de um bairro ativo (alta proximidade) com a de um nó rápido de transporte público (alta oportunidade). As pontuações medem a quantos serviços uma pessoa tem acesso, de transporte público em um tempo longo (pontuação de oportunidade) ou a pé em um tempo curto (pontuação de proximidade). Lugares de alta densidade podem ter as duas e são rotulados como lugares de Inclusão, enquanto o isolamento espacial no transporte público ou o isolamento social de um bairro vazio ainda são melhores que o isolamento total dos lugares desligados do resto da cidade e com poucas oportunidades locais. Um terceiro eixo seria o fugidio Valor dos lugares.',
       legendUnit: 'Zona',
       legend: ['Inclusão', 'Isolamento espacial', 'Isolamento social', 'Isolamento total'],
-      // Under the world map's legend: what the zones are measured against.
-      legendNote: 'O residente mediano de cada cidade comparado à mediana de todos os residentes do Atlas, em proximidade e em oportunidade.',
     },
   },
 
@@ -780,7 +778,6 @@ export default {
       city: 'Cidades',
       country: 'Países',
       about: 'Os países agregam os residentes das suas cidades publicadas, por enquanto só para a cidade de 15 minutos. Só médias e parcelas de residentes se agregam de forma exata, então as outras estatísticas não são oferecidas para países.',
-      onlyFifteen: 'Por enquanto os países só são comparados na cidade de 15 minutos.',
     },
     countries: {
       label: 'Países',
@@ -906,7 +903,6 @@ export default {
       showFewer: 'Mostrar menos',
       fifteen: {
         title: 'Serviços ao alcance',
-        lede: 'Quais cidades colocam seus residentes a poucos minutos do que precisam, como essa parcela cresce minuto a minuto e quanto tempo o residente mediano leva para chegar a cada tipo de serviço, a pé e de bicicleta.',
         profile: 'Tempo mediano até cada serviço',
         profileAbout: 'Cada célula é o tempo que o residente do meio da cidade leva até o serviço mais próximo da categoria. A cor é a escala da cidade de 15 minutos: branco em 15 minutos, azul abaixo, vermelho acima.',
         within: 'Residentes a até 15 min',
@@ -920,11 +916,9 @@ export default {
         noneOfSize: 'Nenhuma cidade deste porte na tela.',
         curves: 'Residentes alcançados, minuto a minuto',
         curvesAbout: 'Cada linha é uma cidade: a parcela de seus residentes que chega aos serviços dentro do tempo do eixo, em média. Seus pontos são os percentis publicados e as parcelas em cada limiar, e a linha apenas os une. As linhas cinzas são as outras cidades que os filtros deixam: passe sobre uma para ver o nome, clique para desenhá-la em cor.',
-        curvesIntro: 'Quanto mais à esquerda uma curva sobe, mais residentes da cidade vivem perto do que precisam.',
       },
       citychrone: {
         title: 'Um dia de transporte público',
-        lede: 'Como o transporte público serve cada cidade ao longo das 24 horas: as pontuações de velocidade e sociabilidade do seu residente do meio, com a metade central dos residentes como faixa.',
         day: 'O dia, hora a hora',
         dayAbout: 'A linha é a pontuação do residente mediano em cada hora; a faixa vai do percentil 25 ao 75. Todas as cidades compartilham uma escala por pontuação, então as curvas se comparam diretamente.',
         peak: 'pico',
@@ -932,7 +926,6 @@ export default {
       },
       cardep: {
         title: 'Carro ou transporte público',
-        lede: 'Se, de onde os residentes vivem, o carro ou o transporte público alcança mais: o índice do residente médio, como os residentes se distribuem nele e os dois alcances por trás.',
         index: 'O índice do residente médio',
         indexAbout: 'A média ponderada por população do índice de dependência do carro: abaixo de zero o transporte público alcança mais, acima de zero o carro.',
         bands: 'Residentes por faixa do índice',
@@ -943,7 +936,6 @@ export default {
       },
       pov: {
         title: 'Proximidade e oportunidade',
-        lede: 'O que os residentes alcançam a pé contra o que alcançam em toda a cidade, dividido nas quatro zonas de acesso do P.O.V.',
         zones: 'Residentes por zona',
         zonesAbout: 'À esquerda, as zonas na mediana do Atlas: cada cidade dividida nas mesmas duas linhas, proximidade {proximity} e oportunidade {opportunity}, as medianas dos residentes das {count} cidades. À direita, as zonas da própria plataforma, divididas nas medianas de cada cidade.',
         scores: 'Proximidade mediana e oportunidade mediana',
@@ -952,7 +944,6 @@ export default {
       },
       cross: {
         title: 'Como as camadas andam juntas',
-        lede: 'Dentro de cada cidade, como a medida de uma camada anda com a de outra, célula a célula.',
         about: 'A correlação de postos de Spearman nas células habitadas cobertas pelas duas camadas: azul onde caem juntas, vermelho onde uma sobe enquanto a outra cai.',
       },
     },

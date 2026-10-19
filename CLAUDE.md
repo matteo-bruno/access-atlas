@@ -226,7 +226,20 @@ curves), by city or by country. What is on screen lives in the query string.
 are still computed and published, but off the page (`STATS_PAUSED` in
 `stats.js`; an address naming one opens on the default figure), and the
 scatter and the matrix are out of `VIEWS` in `Stats.jsx`. Their code stays:
-emptying the set and listing the views again brings all four back.
+emptying the set and listing the views again brings all four back. The
+Theil index, the 90/10 ratio and the share with nothing reachable are in the
+file and offered nowhere (`statKeys`); the Gini is the one inequality index
+on the page.
+
+**Boundaries and countries are the 15-minute city's.** It is the layer that
+publishes whole countries on both boundaries, so it alone is compared one
+boundary at a time (`BOUNDARY_LAYERS` in `Stats.jsx`) and offers countries,
+as a unit and as a filter (only for a layer the file pools,
+`countryLayers`). Car Dependency and CityChrone have a metro area or two:
+they are listed among the cities, named "Paris (FUA)" (`rowName`, wherever
+the two boundaries share a list), with no boundary switch and no countries.
+CityChrone's velocity reads in km/h here as on the city view, thresholds
+included ("at least 4 km/h").
 
 **The page opens on the dashboard, nothing above it.** No eyebrow, headline
 or lede: the page's `<h1>` is the figure on screen (measure in ink, statistic
@@ -242,7 +255,9 @@ and max; the top end means no maximum) and a number box under each.
 
 **Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
 each platform is read with, from the same statistics file, so the filters
-and highlights apply. Each chart is a sheet of its own, and a list longer
+and highlights apply. Its title is the layer and what the focus is about,
+with no subtitle under it: each chart carries its own title and "?". Each
+chart is a sheet of its own, and a list longer
 than its first screen shows ten or twelve rows and "Show all". 15minCity,
 in order: **who lives within 5–30 minutes of the services**, ranked on two
 boards, cities over 1 and over 10 million residents (`SIZES`; the sizes are
@@ -950,13 +965,12 @@ the filter never moves the world.
 Dependency and CityChrone colour each city on the city view's own ramp
 (`MARKER_RAMPS` in `map/layers.js`) at the median resident's value, filled,
 and their legend is that ramp with three words under it (transit-favoured,
-balanced, car-dependent; slow, medium, fast). P.O.V. colours a city by its
-zone **on the Atlas median** (`useAtlasZones` in `PlatformLanding.jsx`):
-its median resident's proximity and opportunity against `zoneThresholds`
-from the statistics file. Its own zones are at its own medians, so the zone
-most of its residents live in was Inclusion nearly everywhere and the map
-was all green. Its markers wait for the statistics rather than paint in one
-colour and change.
+balanced, car-dependent; slow, medium, fast). **P.O.V.'s map is the cities
+and nothing more**: one colour (`markerColor`), no legend, the name in the
+tooltip. Its zones compare places within a city, so a city has no zone of
+its own: coloured by the zone most residents live in, the map was all
+green; coloured by the zone on the Atlas median, it was a categorisation
+the lab did not want on the world map.
 
 **Every marker opens its city, whatever the open layer covers.** The city
 view opens on the first layer that city actually carries, so a Car

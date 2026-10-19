@@ -102,11 +102,10 @@ export function statKeys(measure, unit = 'city') {
   if (!measure) return [];
   if (measure.kind === 'zones') return ['zone'];
   if (measure.kind === 'correlation') return unit === 'city' ? ['value'] : [];
-  const keys =
-    unit === 'country'
-      ? ['mean', 'share']
-      : ['p50', 'mean', 'p10', 'p25', 'p75', 'p90', 'share', 'gini', 'theil', 'ratio'];
-  if (measure.sentinel != null) keys.push('unreachable');
+  // The Theil index, the 90/10 ratio and the share with nothing reachable
+  // are still in the file, and off the page: the Gini says the first two's
+  // story more plainly, and the third is near zero in every city shown.
+  const keys = unit === 'country' ? ['mean', 'share'] : ['p50', 'mean', 'p10', 'p25', 'p75', 'p90', 'share', 'gini'];
   return keys.filter((k) => k !== 'share' || measure.thresholds?.length);
 }
 
@@ -174,11 +173,15 @@ export function statRows(stats, unit, measureId) {
       population: c.values?.[measureId]?.population ?? null,
     }));
   }
+  // Where cores and metro areas share a list, a metro area says so: it is
+  // named as its core, and Paris beside Paris would be two of one city.
+  const mixed = extentsOf(stats).length > 1;
   return stats.cities.map((c, i) => ({
     id: c.id,
     kind: 'city',
     name: c.name,
     nameIt: c.nameIt,
+    fua: mixed && extentOf(c) === 'fua',
     country: c.country,
     stat: column[i] ?? null,
     city: c,
@@ -245,10 +248,11 @@ export function orderRows(rows, measure, key, index, reverse = false) {
 
 // ── names ────────────────────────────────────────────────────────────
 
-/** A city's name: Italian where the catalogue has one, English otherwise. */
+/** A city's name: Italian where the catalogue has one, English otherwise; "(FUA)" after a metro area among cities. */
 export function rowName(row, lang) {
   if (row.kind === 'country') return countryName(row.country, lang, row);
-  return lang === 'it' ? row.nameIt ?? row.name : row.name;
+  const name = lang === 'it' ? row.nameIt ?? row.name : row.name;
+  return row.fua ? `${name} (FUA)` : name;
 }
 
 const displayNames = new Map();
@@ -303,9 +307,13 @@ export function measureLabel(measure, t, byId = {}) {
   return t(`stats.measures.${MEASURE_KEYS[measure.id]}`);
 }
 
-/** A threshold as a reader meets it: minutes, a signed index, a score. */
+/** CityChrone's velocity score, which the city view states in km/h (CLAUDE.md). */
+const inKmh = (measure) => measure?.layer === 'citychrone' && measure.facets?.score === 'velocity';
+
+/** A threshold as a reader meets it: minutes, a signed index, a speed, a score. */
 export function formatThreshold(measure, value, n) {
   if (measure.kind === 'minutes') return `${n(value)} min`;
+  if (inKmh(measure)) return `${n(value)} km/h`;
   if (measure.signed) return signed(value, n, 1);
   return n(value);
 }
@@ -349,7 +357,8 @@ export function formatStat(measure, key, value, { n, t }) {
   }
   if (measure.signed) return signed(value, n, key === 'mean' ? 3 : 2);
   const digits = Math.min(measure.decimals ?? 1, value >= 1000 ? 0 : 2);
-  return n(value, { maximumFractionDigits: digits });
+  const text = n(value, { maximumFractionDigits: digits });
+  return inKmh(measure) ? `${text} km/h` : text;
 }
 
 // ── colour ───────────────────────────────────────────────────────────

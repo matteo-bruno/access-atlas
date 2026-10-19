@@ -107,6 +107,9 @@ const DEFAULTS = {
 const VIEWS = ['focus', 'ranking', 'map', 'curves'];
 // How many cities the curves open on when nobody has picked any.
 const SUGGESTED = 4;
+// The layers compared one boundary at a time; the rest list their metro
+// areas among their cities.
+const BOUNDARY_LAYERS = new Set(['fifteen']);
 const LAYER_DEFAULTS = {
   fifteen: 'fifteen.proximity_time.foot',
   citychrone: 'citychrone.velocity.08',
@@ -158,25 +161,31 @@ const layerName = (layer, t) => (layer === 'cross' ? t('stats.layers.cross') : P
 function Dashboard({ stats: all }) {
   const { t, n, lang, locale } = useI18n();
   const query = useQuery();
-  // One boundary at a time (GHS core or metro area): a metro area includes
-  // its core, so the two never share a chart. Everything below reads the
-  // chosen boundary's cities as if they were the whole file.
-  const extents = extentsOf(all);
-  const extent = extents.includes(query.get('ext')) ? query.get('ext') : extents[0];
-  const stats = useMemo(() => scopeStats(all, extent), [all, extent]);
+  // The 15-minute city is compared one boundary at a time (GHS core or metro
+  // area), because it publishes whole countries of both and pools them by
+  // country. Every other layer has a metro area or two, listed among the
+  // cities and named "(FUA)" (`rowName`). Everything below reads the cities
+  // on offer as if they were the whole file.
+  const onLayer = resolveSpec(all, 'city', query.get('m'), query.get('s'), query.get('t')).measure.layer;
+  const extents = BOUNDARY_LAYERS.has(onLayer) ? extentsOf(all) : [];
+  const extent = extents.includes(query.get('ext')) ? query.get('ext') : (extents[0] ?? null);
+  const stats = useMemo(() => (extent ? scopeStats(all, extent) : all), [all, extent]);
   const tipApi = useTip();
   const [about, setAbout] = useState(false);
   const [full, setFull] = useState(false);
 
+  // Countries, as a unit and as a filter, only for a layer the file pools
+  // by country: elsewhere there is nothing to compare them on.
   const pooled = countryLayers(stats);
-  const unit = query.get('unit') === 'country' && pooled.size ? 'country' : 'city';
+  const withCountries = pooled.has(onLayer);
+  const unit = query.get('unit') === 'country' && withCountries ? 'country' : 'city';
   const spec = resolveSpec(stats, unit, query.get('m'), query.get('s'), query.get('t'));
   const specY = resolveSpec(stats, unit, query.get('m2'), query.get('s2'), query.get('t2'), DEFAULTS.m2);
   const view = VIEWS.includes(query.get('view')) ? query.get('view') : 'ranking';
   const focus = view === 'focus';
   const layer = spec.measure.layer;
 
-  const countryFilter = new Set(query.get('c').split(',').filter(Boolean));
+  const countryFilter = new Set(withCountries ? query.get('c').split(',').filter(Boolean) : []);
   const minPop = Math.max(0, Number(query.get('pop')) || 0);
   const maxPop = Math.max(0, Number(query.get('popmax')) || 0);
 
@@ -238,8 +247,9 @@ function Dashboard({ stats: all }) {
   const pickLayer = (next) => {
     const id = LAYER_DEFAULTS[next] ?? stats.measures.find((m) => m.layer === next)?.id;
     const measure = stats.measuresById[id];
-    const keys = statKeys(measure, unit);
-    query.set({ m: id, s: keys.includes(spec.key) ? spec.key : defaultStat(measure, unit), t: spec.index });
+    const nextUnit = pooled.has(next) ? unit : 'city';
+    const keys = statKeys(measure, nextUnit);
+    query.set({ m: id, s: keys.includes(spec.key) ? spec.key : defaultStat(measure, nextUnit), t: spec.index });
   };
 
   const direction = statDirection(spec.measure, spec.key, spec.index);
@@ -269,7 +279,7 @@ function Dashboard({ stats: all }) {
     <section className="aa-shell aa-stats">
       {/* One row: the layer, then the view. */}
       <div className="aa-card aa-stats__topbar">
-        <LayerTabs stats={stats} current={layer} enabled={(l) => unit === 'city' || pooled.has(l)} onPick={pickLayer} />
+        <LayerTabs stats={stats} current={layer} onPick={pickLayer} />
         <div className="aa-stats__viewbar">
           <div className="aa-stats__segment" role="tablist" aria-label={t('stats.views.label')}>
             {VIEWS.map((key) => (
@@ -340,25 +350,28 @@ function Dashboard({ stats: all }) {
                 </div>
               </Field>
             )}
-            <Field label={t('stats.unit.label')} about={t('stats.unit.about')}>
-              <div className="aa-stats__segment aa-stats__segment--full" role="group" aria-label={t('stats.unit.label')}>
-                {['city', 'country'].map((key) => (
-                  <button
-                    key={key}
-                    type="button"
-                    className={`aa-stats__segbtn${unit === key ? ' aa-stats__segbtn--on' : ''}`}
-                    aria-pressed={unit === key}
-                    disabled={key === 'country' && !pooled.size}
-                    onClick={() => query.set({ unit: key, sel: '' })}
-                  >
-                    {t(`stats.unit.${key}`)}
-                  </button>
-                ))}
-              </div>
-            </Field>
-            <Field label={t('stats.countries.label')}>
-              <CountryMenu stats={stats} selected={countryFilter} onChange={(next) => query.set({ c: [...next].sort().join(',') })} />
-            </Field>
+            {withCountries && (
+              <>
+                <Field label={t('stats.unit.label')} about={t('stats.unit.about')}>
+                  <div className="aa-stats__segment aa-stats__segment--full" role="group" aria-label={t('stats.unit.label')}>
+                    {['city', 'country'].map((key) => (
+                      <button
+                        key={key}
+                        type="button"
+                        className={`aa-stats__segbtn${unit === key ? ' aa-stats__segbtn--on' : ''}`}
+                        aria-pressed={unit === key}
+                        onClick={() => query.set({ unit: key, sel: '' })}
+                      >
+                        {t(`stats.unit.${key}`)}
+                      </button>
+                    ))}
+                  </div>
+                </Field>
+                <Field label={t('stats.countries.label')}>
+                  <CountryMenu stats={stats} selected={countryFilter} onChange={(next) => query.set({ c: [...next].sort().join(',') })} />
+                </Field>
+              </>
+            )}
             {unit === 'city' && (
               <Field label={t('stats.filters.population')} about={t('stats.filters.populationAbout')}>
                 <PopulationRange
@@ -390,7 +403,6 @@ function Dashboard({ stats: all }) {
               </span>
               <span className="aa-accent">{statTitle}</span>
             </h1>
-            {focus && <p className="aa-stats__lede">{t(`stats.focus.${layer}.lede`)}</p>}
           </header>
 
           {!focus && !cumulative && <Kpis rows={rows} spec={spec} unit={unit} judged={judged} ctx={ctx} />}
@@ -600,21 +612,18 @@ const isLevel = (key) => ['p10', 'p25', 'p50', 'p75', 'p90', 'mean'].includes(ke
 // ── picking a figure ─────────────────────────────────────────────────
 
 /** The layers, as tabs: each with its platform's colour. */
-function LayerTabs({ stats, current, enabled, onPick }) {
+function LayerTabs({ stats, current, onPick }) {
   const { t } = useI18n();
   return (
     <div className="aa-stats__layers" role="tablist" aria-label={t('stats.layer')}>
       {layersOf(stats).map((l) => {
         const on = l === current;
-        const usable = enabled(l);
         return (
           <button
             key={l}
             type="button"
             role="tab"
             aria-selected={on}
-            disabled={!usable}
-            title={usable ? undefined : t('stats.unit.onlyFifteen')}
             className={`aa-stats__layer${on ? ' aa-stats__layer--on' : ''}`}
             onClick={() => onPick(l)}
           >

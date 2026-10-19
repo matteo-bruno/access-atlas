@@ -7,7 +7,7 @@ import { WorldMap } from '../map/WorldMap.jsx';
 import { coverageFraming } from '../map/framing.js';
 import { MARKER_RAMPS, cityMarkerStyle, coverageMarkerStyle, pickerDot, scaleDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
-import { platformBySlug, PLATFORMS, COVERAGE_SCALE, ZONES } from '../data/platforms.js';
+import { platformBySlug, PLATFORMS, COVERAGE_SCALE } from '../data/platforms.js';
 import {
   useAllCoverage,
   useAtlasCities,
@@ -15,9 +15,7 @@ import {
   useCityCoverage,
   usePlatformHasSummary,
   useCityPageIds,
-  useStats,
 } from '../data/useAtlasData.js';
-import { statValue } from '../data/stats.js';
 import { rampGradient } from '../map/ramps.js';
 import { paperForPlatform } from '../data/research.js';
 import { formatTime } from '../data/fifteen.js';
@@ -135,25 +133,11 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
     else next.set('min', String(count));
     setParams(next, { replace: true });
   };
-  // P.O.V.'s zones are each city's own, at its own medians, so on a map of
-  // cities the zone most residents live in was Inclusion nearly everywhere.
-  // Across cities the comparable split is the Stats page's "zones on the
-  // Atlas median": a city takes the zone of its median resident's proximity
-  // and opportunity against the medians of every Atlas resident together.
-  const povZones = useAtlasZones(platform?.id === 'pov');
-  const cities = useMemo(() => {
-    if (!platform) return shownAll;
-    if (platform.id !== 'pov') return single.cities;
-    if (!povZones) return [];
-    return single.cities.map((city) => ({ ...city, zone: povZones.get(city.id) ?? null }));
-  }, [platform, shownAll, single.cities, povZones]);
+  const cities = platform ? single.cities : shownAll;
   // Off while fading out, and after a switch until the new layer's cities are
   // in, so they fade on rather than pop. Not on the screen's first paint: the
   // backdrop hands over to this map with the same dots in the same place.
-  const markersHidden =
-    leaving ||
-    (switched.current && !!platform && single.source === 'pending') ||
-    (platform?.id === 'pov' && !povZones);
+  const markersHidden = leaving || (switched.current && !!platform && single.source === 'pending');
   // Always the merged coverage, never the open tab's — see the WorldMap props.
   const worldFrame = useMemo(() => coverageFraming(all.cities), [all.cities]);
   const markerStyle = useMemo(
@@ -381,7 +365,9 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
               ))}
             </div>
           </fieldset>
-        ) : (
+        ) : platform?.id === 'pov' ? null : (
+        // P.O.V.'s map says where its cities are and nothing more: its zones
+        // compare places within a city, and a city has no zone of its own.
         <section className="aa-card aa-legend aa-fadein aa-fadein--slow" aria-label={t(`${copyKey}.legendUnit`)}>
           <Eyebrow>{t(`${copyKey}.legendUnit`)}</Eyebrow>
           {platform && MARKER_RAMPS[platform.id] ? (
@@ -411,7 +397,6 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
               ))}
             </div>
           )}
-          {platform?.id === 'pov' && <p className="aa-legend__note">{t('platform.pov.legendNote')}</p>}
         </section>
         )}
 
@@ -455,8 +440,7 @@ function coverageTooltip(properties, t, n) {
 
 // A city's figure on a layer's map is its median resident's, said as such:
 // 15minCity's time as a clock (m:ss, see formatTime), CityChrone's speed in
-// km/h by public transport, Car Dependency's index. P.O.V. colours by zone
-// and states no figure.
+// km/h by public transport, Car Dependency's index. P.O.V. names the city.
 function formatTooltip(platform, properties, t, n) {
   const name = properties.name;
   const value = {
@@ -464,10 +448,7 @@ function formatTooltip(platform, properties, t, n) {
     citychrone: properties.velocityScore,
     cardep: properties.cdi,
   }[platform.id];
-  if (platform.id === 'pov') {
-    const zone = ZONES[properties.zone];
-    return zone ? `${name} – ${t(`city.zones.${zone.key}.name`)}` : name;
-  }
+  if (platform.id === 'pov') return name;
   if (!Number.isFinite(value)) return name;
   switch (platform.id) {
     case 'fifteen':
@@ -479,33 +460,4 @@ function formatTooltip(platform, properties, t, n) {
     default:
       return name;
   }
-}
-
-/**
- * Each P.O.V. city's zone on the Atlas median, from the published
- * statistics: its median resident's proximity and opportunity against the
- * medians of every Atlas resident together (`zoneThresholds` of
- * `pov.zonesCommon`). Null until the statistics are in, or when off.
- */
-function useAtlasZones(on) {
-  const { stats } = useStats();
-  return useMemo(() => {
-    if (!on || !stats) return null;
-    const thresholds = stats.measuresById['pov.zonesCommon']?.zoneThresholds;
-    const prox = stats.values['pov.proximity'];
-    const opp = stats.values['pov.opportunity'];
-    if (!thresholds || !prox || !opp) return new Map();
-    const zones = new Map();
-    stats.cities.forEach((city, i) => {
-      const p = statValue(prox[i], 'p50');
-      const o = statValue(opp[i], 'p50');
-      if (p == null || o == null) return;
-      const nearby = p >= thresholds.proximity;
-      const connected = o >= thresholds.opportunity;
-      // The four zones in ZONES order: inclusion, spatial isolation (services
-      // nearby, weak transit), social isolation (transit, few services), total.
-      zones.set(city.id, nearby && connected ? 0 : nearby ? 1 : connected ? 2 : 3);
-    });
-    return zones;
-  }, [on, stats]);
 }

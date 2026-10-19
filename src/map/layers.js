@@ -125,6 +125,10 @@ export function cityMarkerStyle(platform) {
   return (city, zoom) => {
     const value = city[platform.property];
     let color;
+    if (platform.markerColor) {
+      const plain = platform.markerColor;
+      return { radius: interpolate(radii, zoom), fill: plain, fillOpacity: 0.85, ...filledEdge(plain, zoom) };
+    }
     if (ramp) {
       color = Number.isFinite(value) ? colorAt(ramp, value) : NO_VALUE;
     } else {

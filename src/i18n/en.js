@@ -215,8 +215,6 @@ export default {
         'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). Scores are computed by measuring how many services a person has access to, by public transport in a long time (opportunity score) or by walking in a short time (proximity score). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
-      // Under the world map's legend: what the zones are measured against.
-      legendNote: 'Each city’s median resident against the median of every Atlas resident, on proximity and on opportunity.',
     },
   },
 
@@ -833,7 +831,6 @@ export default {
       city: 'Cities',
       country: 'Countries',
       about: 'Countries pool the residents of their published cities, for the 15-minute city only for now. Only means and shares of residents pool exactly, so the other statistics are not offered for countries.',
-      onlyFifteen: 'Countries are compared on the 15-minute city only, for now.',
     },
     countries: {
       label: 'Countries',
@@ -959,7 +956,6 @@ export default {
       showFewer: 'Show fewer',
       fifteen: {
         title: 'Services within reach',
-        lede: 'Which cities put their residents within a few minutes of what they need, how that share grows minute by minute, and how long the middle resident takes to reach each kind of service, on foot and by bicycle.',
         profile: 'Median time to each service',
         profileAbout: 'Each cell is the time the middle resident of the city takes to reach the nearest service of the category. The colour is the 15-minute city’s own scale: white at 15 minutes, blue below, red above.',
         within: 'Residents within 15 min',
@@ -973,11 +969,9 @@ export default {
         noneOfSize: 'No city of this size is on screen.',
         curves: 'Residents reached, minute by minute',
         curvesAbout: 'Each line is a city: the share of its residents who reach the services within the time on the axis, on average. Its points are the published percentiles and the shares at each threshold, and the line only joins them. The grey lines are the other cities the filters leave: hover one to name it, click it to draw it in colour.',
-        curvesIntro: 'The further left a curve climbs, the more of a city’s residents live close to what they need.',
       },
       citychrone: {
         title: 'A day of public transport',
-        lede: 'How public transport serves each city through the 24 hours: the velocity and sociality scores of its middle resident, with the middle half of its residents as a band.',
         day: 'The day, hour by hour',
         dayAbout: 'The line is the median resident’s score at each hour; the band runs from the 25th to the 75th percentile. Every city shares one scale per score, so the curves compare directly.',
         peak: 'peak',
@@ -985,7 +979,6 @@ export default {
       },
       cardep: {
         title: 'Car or public transport',
-        lede: 'Whether a car or public transport reaches more from where residents live: the index for the average resident, how residents spread across it, and the two reaches behind it.',
         index: 'The index for the average resident',
         indexAbout: 'The population-weighted mean of the Car Dependency Index: below zero public transport reaches more, above zero the car does.',
         bands: 'Residents by index band',
@@ -996,7 +989,6 @@ export default {
       },
       pov: {
         title: 'Proximity and opportunity',
-        lede: 'What residents reach on foot against what they reach across the city, split into P.O.V.’s four zones of access.',
         zones: 'Residents by zone',
         zonesAbout: 'Left, the zones on the Atlas median: every city split at the same two lines, proximity {proximity} and opportunity {opportunity}, the medians of all {count} cities’ residents. Right, the platform’s own zones, split at each city’s medians.',
         scores: 'Median proximity against median opportunity',
@@ -1005,7 +997,6 @@ export default {
       },
       cross: {
         title: 'How the layers go together',
-        lede: 'Within each city, how one layer’s measure goes with another’s, cell by cell.',
         about: 'Spearman’s rank correlation over the inhabited cells both layers cover: blue where the two fall together, red where one rises as the other falls.',
       },
     },

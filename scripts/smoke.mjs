@@ -44,7 +44,7 @@ const ROUTES = [
   ['/stats?view=map', 'Stats: map'],
   ['/stats?view=curves&sel=rome,milan', 'Stats: cumulative curves'],
   ['/stats?view=curves&m=citychrone.velocity.08&sel=rome', 'Stats: CityChrone by hour'],
-  ['/stats?unit=country&m=cardep.cdi&s=share&t=1', 'Stats: countries'],
+  ['/stats?unit=country&s=share&t=1', 'Stats: countries'],
   ['/stats?view=focus&pop=0', 'Stats: focus, 15-minute city'],
   ['/stats?view=focus&pop=0&m=citychrone.velocity.08', 'Stats: focus, CityChrone'],
   ['/stats?view=focus&pop=0&m=cardep.cdi&s=mean', 'Stats: focus, Car Dependency'],
@@ -384,6 +384,16 @@ for (const [route, name] of ROUTES) {
     page.url().endsWith('/platforms/car-dependency-index') &&
       cdiLegend.join(' ') !== allLegend.join(' '),
     `${allLegend.join('/')} → ${cdiLegend.join('/')}`,
+  );
+
+  // P.O.V.'s map is its cities and nothing more: no legend, no zones.
+  await page.click('.aa-picker__item:has-text("P.O.V.")');
+  await page.waitForTimeout(2500);
+  const povLegends = await page.$$eval('.aa-legend', (els) => els.length);
+  check(
+    'P.O.V.’s world map draws its cities with no legend',
+    page.url().endsWith('/platforms/accessibility-pov') && povLegends === 0,
+    `${page.url().replace(BASE, '')} · ${povLegends} legend(s)`,
   );
   await page.close();
 }
@@ -1441,9 +1451,9 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
     }
     const stats = JSON.parse(new TextDecoder().decode(body));
-    // Hidden cities (thin data) are off the page by default, and so are
-    // metro areas: the page opens on the cores.
-    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden && stats.cities[i].extent !== 'fua').length;
+    // Hidden cities (thin data) are off the page by default. Car Dependency
+    // lists its metro areas among its cities, so they count too.
+    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden).length;
   }, BASE);
   check(
     'Stats page reads the published statistics',
@@ -1456,6 +1466,35 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(300);
   check('Stats highlight is kept in the URL', /[?&]sel=/.test(page.url()), page.url().replace(BASE, ''));
 
+  // Car Dependency has no boundary switch and no countries: its metro areas
+  // are among its cities, named "(FUA)", and only the 15-minute city pools
+  // countries. Theil and 90/10 are offered nowhere.
+  const sideFields = await page.$$eval('.aa-stats__fieldlabel', (els) => els.map((e) => e.textContent.trim()));
+  const names = await page.$$eval('.aa-stats__rrow .aa-stats__pickname', (els) => els.map((e) => e.textContent.trim()));
+  const statOptions = await page.$$eval('.aa-stats__side select option', (els) => els.map((e) => e.textContent.trim()));
+  const fuaInFile = await page.evaluate(async (base) => {
+    const catalogue = await (await fetch(`${base}/data/index.json`)).json();
+    let body = new Uint8Array(await (await fetch(`${base}/data/${catalogue.stats}`)).arrayBuffer());
+    if (body[0] === 0x1f && body[1] === 0x8b) {
+      body = new Uint8Array(await new Response(new Blob([body]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    const stats = JSON.parse(new TextDecoder().decode(body));
+    return stats.values['cardep.cdi'].filter((v, i) => v?.mean != null && !stats.cities[i].hidden && stats.cities[i].extent === 'fua').length;
+  }, BASE);
+  check(
+    'Car Dependency lists its metro areas among its cities, with no boundary or countries',
+    !sideFields.some((f) => /boundary|compare|countries/i.test(f)) &&
+      names.filter((x) => /\(FUA\)$/.test(x)).length === fuaInFile &&
+      !statOptions.some((o) => /Theil|90\/10|nothing reachable/i.test(o)),
+    `${sideFields.join(' · ')} · ${fuaInFile} FUA in file: ${names.filter((x) => /FUA/.test(x)).join(', ')}`,
+  );
+
+  // CityChrone's velocity thresholds are speeds.
+  await page.goto(`${BASE}/stats?m=citychrone.velocity.08&s=share&t=1&pop=0`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-stats__headline', { timeout: 8000 }).catch(() => {});
+  const ccTitle = await page.$eval('.aa-stats__headline', (e) => e.textContent).catch(() => '');
+  check('CityChrone’s velocity thresholds are in km/h', /at least \d+ km\/h/.test(ccTitle), ccTitle);
+
   // P.O.V. and the figures across layers are paused, and so are the scatter
   // and the matrix: none is offered, and their addresses open on the rest.
   const tabs = await page.$$eval('.aa-stats__layer, .aa-stats__segbtn', (els) => els.map((e) => e.textContent.trim()));
@@ -1464,6 +1503,12 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     !tabs.some((x) => /P\.O\.V\.|Across layers|Scatter|Matrix/.test(x)) && tabs.includes('Curves'),
     tabs.join(' · '),
   );
+
+  // No subtitle under a focus: the charts carry their own titles.
+  await page.goto(`${BASE}/stats?view=focus`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-focus__board', { timeout: 8000 }).catch(() => {});
+  const ledes = await page.$$eval('.aa-stats__head p', (els) => els.length);
+  check('A focus has no subtitle', ledes === 0, `${ledes} paragraph(s) under the title`);
 
   // The 15-minute city's focus ranks cities by size: two boards, each
   // drawn from the statistics file, whatever the residents filter says.
