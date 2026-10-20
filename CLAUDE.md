@@ -362,9 +362,10 @@ What is easy to get wrong:
   meaningless, so those are null where anyone lives in such a cell.
 - **The caveats are part of the page, not decoration.** One standing note
   and the "Method and limits" dialog, notes under the view that apply only to
-  what is on screen (`contextNotes` in `Stats.jsx`), and a `!` beside a row
-  for a layer covering under nine in ten of its city's residents
-  (`cityFlags`). New copy that would apply everywhere belongs in the
+  what is on screen (`contextNotes` in `Stats.jsx`). The `!` that sat beside a
+  row for a layer covering under nine in ten of its city's residents is off
+  the ranking by the lab's decision; `cityFlags` in `stats.js` still computes
+  it, and the view bar has no "?" of its own any more. New copy that would apply everywhere belongs in the
   dialog, not as another standing note.
 - **Highlight colours follow the city, not its position.** `sel` in the URL
   holds eight slots, possibly empty, so removing one highlighted city never
@@ -1449,7 +1450,10 @@ landing map routes city clicks to `/atlas/:cityId?layer=citychrone`.
   layer file, so the hour selector recomputes rather than fetches. Hourly
   values are joined onto the mesh as MapLibre feature-state at runtime, never
   baked into the features. The isochrone origin in the URL (`from=`) is a
-  layer row, i.e. grid order.
+  layer row, i.e. grid order. Pressing "Isochrones" with no origin picks one
+  at random among the inhabited cells nearest the centre of CityChrone's own
+  residents (`centralOrigin` in `AtlasCityPage.jsx`), not the catalogue's
+  `center`, which is the whole grid's and sits 7 km off in Milan.
 - **The travel times are read one origin at a time.** The view draws one row
   of an hour's matrix, and a metro area's matrix is gigabytes, so the
   importer rewrites each hour as `timesHH.bin` (`src/data/times.js` has the

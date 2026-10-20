@@ -8,7 +8,6 @@ import { dataUrl } from '../data/catalogue.js';
 import {
   HEADLINES,
   HIGHLIGHT,
-  cityFlags,
   formatStat,
   isDistribution,
   measureLabel,
@@ -92,36 +91,6 @@ function distributionLines(measure, stat, ctx) {
 export function Key({ slot }) {
   if (slot == null) return null;
   return <span className="aa-stats__key" style={{ background: HIGHLIGHT[slot] }} aria-hidden="true" />;
-}
-
-/** A warning beside a row, explained on hover. */
-function Flags({ flags, ctx, name, show, hide }) {
-  if (!flags.length) return <span />;
-  const text = flags.map((f) =>
-    ctx.t(`stats.flag.${f.key}`, {
-      share: f.share != null ? ctx.n(f.share) : '',
-      name,
-      population: ctx.rule?.population != null ? ctx.n(ctx.rule.population) : '',
-      minutes: ctx.rule?.minutes != null ? ctx.n(ctx.rule.minutes) : '',
-    }),
-  );
-  return (
-    <button
-      type="button"
-      className="aa-stats__flag"
-      aria-label={text.join(' ')}
-      onPointerEnter={(e) => show(e, <TipBody title={name} note={text.join(' ')} />)}
-      onPointerMove={(e) => show(e, <TipBody title={name} note={text.join(' ')} />)}
-      onPointerLeave={hide}
-      onFocus={(e) => {
-        const r = e.currentTarget.getBoundingClientRect();
-        show({ clientX: r.left, clientY: r.bottom }, <TipBody title={name} note={text.join(' ')} />);
-      }}
-      onBlur={hide}
-    >
-      !
-    </button>
-  );
 }
 
 const cityHref = (row, layer) =>
@@ -212,7 +181,6 @@ export function RankingView({ rows, spec, unit, slots, onToggle, reverse, ctx })
           ))}
         </span>
         <span />
-        <span />
       </div>
       {ordered.map((row) => {
         const value = statValue(row.stat, key, index);
@@ -281,7 +249,6 @@ export function RankingView({ rows, spec, unit, slots, onToggle, reverse, ctx })
                 fmt(value)
               )}
             </span>
-            <Flags flags={cityFlags(row, measure.layer)} ctx={ctx} name={name} show={show} hide={hide} />
           </div>
         );
       })}

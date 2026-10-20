@@ -47,6 +47,49 @@ import './AtlasCityPage.css';
 const LAYER_ORDER = PLATFORMS.map((platform) => platform.id);
 const POPULATION_LAYER = 'population';
 const POPULATED = ['!=', ['coalesce', ['get', 'population'], -1], 0];
+
+// How many of the inhabited cells nearest the centre the isochrone view may
+// open on, picked at random: a sensible first origin, not a claim about
+// where the centre is.
+const CENTRAL_ORIGINS = 12;
+
+/**
+ * A feature to open the isochrone view on: one at random among the
+ * inhabited CityChrone cells nearest the centre of its residents (their
+ * population-weighted mean position). Not the catalogue's `center`, which
+ * is the whole grid's: in Milan 15minCity's metro-wide cells pull it 7 km
+ * north of CityChrone's. Only cells with
+ * residents of their own are origins, since a travel-time file keeps no
+ * other row. Measured on the true hexagons' vertex means, which is close
+ * enough to choose a cell near the middle.
+ */
+function centralOrigin(features, ccOf, popKey) {
+  const cells = [];
+  for (const feature of features ?? []) {
+    const cc = ccOf(feature);
+    const pop = feature.properties?.[popKey];
+    const ring = feature.geometry?.coordinates?.[0];
+    // A mesh with no population of the layer's own counts every cell.
+    if (!Number.isFinite(cc) || (pop != null && !(pop > 0)) || !ring?.length) continue;
+    let lon = 0;
+    let lat = 0;
+    for (const [x, y] of ring) {
+      lon += x;
+      lat += y;
+    }
+    cells.push({ feature, cc, pop: pop ?? 1, lon: lon / ring.length, lat: lat / ring.length });
+  }
+  if (!cells.length) return null;
+  const total = cells.reduce((sum, c) => sum + c.pop, 0);
+  const cx = cells.reduce((sum, c) => sum + c.lon * c.pop, 0) / total;
+  const cy = cells.reduce((sum, c) => sum + c.lat * c.pop, 0) / total;
+  const k = Math.cos((cy * Math.PI) / 180);
+  const near = cells
+    .map((c) => ({ c, d: ((c.lon - cx) * k) ** 2 + (c.lat - cy) ** 2 }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, CENTRAL_ORIGINS);
+  return near[Math.floor(Math.random() * near.length)].c;
+}
 const isPopulationLayer = (id) => id === 'population';
 const NO_CELLS = { type: 'FeatureCollection', features: [] };
 // 15minCity's "not reachable": no difference can be taken from it.
@@ -1119,7 +1162,23 @@ function AtlasScreen({ cityId, view }) {
                       title={option.key === 'isochrone' && !isochronesPublished ? t('atlas.isochroneUnavailable') : undefined}
                       onClick={() => {
                         setActiveZone(null);
-                        setParam('view', option.key === CITYCHRONE_VIEWS[0].key ? null : option.key);
+                        // The isochrones open on a cell near the centre
+                        // rather than on an empty map, unless an origin is
+                        // already chosen.
+                        const origin =
+                          option.key === 'isochrone' && originCc == null
+                            ? centralOrigin(
+                                baseGeojson?.features,
+                                ccForFeature,
+                                unified ? layerPopulationKey('citychrone') : 'population',
+                              )
+                            : null;
+                        const next = new URLSearchParams(params);
+                        if (option.key === CITYCHRONE_VIEWS[0].key) next.delete('view');
+                        else next.set('view', option.key);
+                        if (origin) next.set('from', String(origin.cc));
+                        setParams(next, { replace: true });
+                        if (origin) setSelectedCell(origin.feature.id);
                       }}
                     >
                       {t(`atlas.views.${option.key}`)}

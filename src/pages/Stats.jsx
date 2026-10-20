@@ -296,7 +296,6 @@ function Dashboard({ stats: all }) {
               </button>
             ))}
           </div>
-          <Explain body={t(`stats.viewAbout.${view}`)} align="right" />
         </div>
       </div>
 
