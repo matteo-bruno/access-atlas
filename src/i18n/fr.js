@@ -140,6 +140,7 @@ export default {
     welcome: 'Bienvenue sur {name}',
     dismiss: 'Fermer',
     learnMore: 'En savoir plus →',
+    featured: 'Ouvrir une ville',
     attribution: 'Fond de carte : Natural Earth · Données © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} villes',
     zoomIn: 'Zoom avant',

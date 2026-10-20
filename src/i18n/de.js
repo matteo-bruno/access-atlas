@@ -141,6 +141,7 @@ export default {
     welcome: 'Willkommen bei {name}',
     dismiss: 'Schließen',
     learnMore: 'Mehr erfahren →',
+    featured: 'Stadt öffnen',
     attribution: 'Grundkarte: Natural Earth · Daten © Sony CSL Rom · CC BY-NC 4.0',
     cityCount: '{count} Städte',
     zoomIn: 'Vergrößern',

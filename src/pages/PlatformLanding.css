@@ -105,6 +105,69 @@
   color: var(--ink);
 }
 
+/* A few cities a click away, centred at the foot of the map between the two
+   corner actions and level with them. Centred with `left: 50%` and a
+   translate, which is why it never animates transform (see .aa-fadein). */
+.aa-featured {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 2px;
+  height: 36px;
+  padding: 3px;
+  align-items: stretch;
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+
+.aa-featured__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 0;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.aa-featured__item:hover,
+.aa-featured__item:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* On a phone the two corner actions fill the foot, so the cities sit on a
+   row of their own just above them. */
+@media (max-width: 860px) {
+  .aa-featured {
+    bottom: 64px;
+    height: 34px;
+    max-width: calc(100% - 2 * var(--chrome-pad));
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .aa-featured__item {
+    padding: 0 10px;
+    font-size: 12.5px;
+  }
+
+  /* The legend and the welcome card sit on that row otherwise: one row up. */
+  .aa-mapstage--featured .aa-legend,
+  .aa-mapstage--featured .aa-welcome {
+    bottom: 106px;
+  }
+}
+
 /* Legend. The top right belongs to the search now, so it sits under it —
    the scale is read against the map, not against the chrome. */
 .aa-legend {

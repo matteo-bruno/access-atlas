@@ -148,6 +148,7 @@ export default {
     welcome: 'Benvenuti in {name}',
     dismiss: 'Chiudi',
     learnMore: 'Scopri di più →',
+    featured: 'Apri una città',
     attribution: 'Cartografia di base: Natural Earth · Dati © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} città',
     zoomIn: 'Ingrandisci',

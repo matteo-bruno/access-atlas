@@ -147,6 +147,7 @@ export default {
     welcome: '{name} へようこそ',
     dismiss: '閉じる',
     learnMore: '詳しく見る →',
+    featured: '都市を開く',
     attribution: 'ベースマップ：Natural Earth · データ © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count}都市',
     zoomIn: '拡大',
