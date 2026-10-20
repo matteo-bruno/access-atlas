@@ -32,7 +32,16 @@
 #   scripts/deploy.sh --skip-build    publish the dist/ already on disk
 #   scripts/deploy.sh --verify-only   just re-run the checks against the host
 #   scripts/deploy.sh --skip-data-check   build without running test:data first
+#   scripts/deploy.sh --ui-only       publish the interface, leave the server's data/ as it is
 #   scripts/deploy.sh --help
+#
+# --ui-only uploads and installs everything but data/, which on the server is
+# left exactly as the last full deploy put it (rsync neither copies nor
+# deletes an excluded path). Use it when only code changed: the staging
+# directory is removed after every deploy, so a full one sends the whole data
+# tree again. The checks at the end still compare the server's catalogue,
+# coverage and statistics with this build's, so a ui-only deploy over data
+# that has changed since the last full one fails loudly rather than quietly.
 #
 # Every setting is overridable from the environment, so a second host needs no
 # edit to this file:
@@ -67,12 +76,14 @@ cd "$root"
 do_build=1
 do_publish=1
 do_data_check=1
+ui_only=0
 
 for arg in "$@"; do
   case "$arg" in
     --skip-build)  do_build=0 ;;
     --skip-data-check) do_data_check=0 ;;
     --verify-only) do_build=0; do_publish=0 ;;
+    --ui-only)     ui_only=1 ;;
     -h|--help)     awk 'NR>2 && /^#/ { sub(/^# ?/, ""); print; next } NR>2 { exit }' "${BASH_SOURCE[0]}"; exit 0 ;;
     *) echo "deploy: unknown argument: $arg" >&2; exit 2 ;;
   esac
@@ -162,8 +173,16 @@ if [ "$do_publish" = 1 ]; then
   safe_path "$AA_TARGET" || fail "AA_TARGET ($AA_TARGET) is too shallow to mirror into with --delete"
   safe_path "$AA_STAGE"  || fail "AA_STAGE ($AA_STAGE) is too shallow to mirror into with --delete"
 
+  # Anchored to the transfer's root: only the top-level data/, never a
+  # directory of that name deeper in the build.
+  exclude=()
+  if [ "$ui_only" = 1 ]; then
+    exclude=(--exclude=/data/)
+    say "Uploading the interface only (data/ on the server is kept as it is)"
+  fi
+
   say "Uploading to $AA_SSH:$AA_STAGE"
-  rsync -az --delete dist/ "$AA_SSH:$AA_STAGE/"
+  rsync -az --delete ${exclude[@]+"${exclude[@]}"} dist/ "$AA_SSH:$AA_STAGE/"
 
   # Two rsyncs rather than one: the login user can write the staging directory,
   # and only the second half needs privileges. `ssh -t` so sudo can prompt.
@@ -173,10 +192,12 @@ if [ "$do_publish" = 1 ]; then
   # is put in place at the end, together, so a visitor mid-deploy does not
   # get a new catalogue pointing at files that are still the old ones.
   say "Installing into $AA_TARGET (sudo on $AA_SSH)"
+  remote_exclude=""
+  [ "$ui_only" = 1 ] && remote_exclude="--exclude=/data/"
   remote=$(cat <<EOF
 set -e
 sudo mkdir -p "$AA_TARGET"
-sudo rsync -a --checksum --delay-updates --delete "$AA_STAGE/" "$AA_TARGET/"
+sudo rsync -a --checksum --delay-updates --delete $remote_exclude "$AA_STAGE/" "$AA_TARGET/"
 sudo chown -R "$AA_OWNER" "$AA_TARGET"
 sudo find "$AA_TARGET" -type d -exec chmod 755 {} +
 sudo find "$AA_TARGET" -type f -exec chmod 644 {} +

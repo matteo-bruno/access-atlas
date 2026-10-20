@@ -330,6 +330,7 @@ once per deploy is the failure mode rather than the safeguard.
 scripts/deploy.sh                 # build, upload, install, verify
 scripts/deploy.sh --skip-build    # publish the dist/ already on disk
 scripts/deploy.sh --verify-only   # re-run the checks against the live URL
+scripts/deploy.sh --ui-only       # publish the interface only, keep the data on the server
 scripts/deploy.sh --skip-data-check   # build without running test:data first
 ```
 
