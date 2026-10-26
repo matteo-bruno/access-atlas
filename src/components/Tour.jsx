@@ -10,7 +10,10 @@ import './Tour.css';
  *
  * Shown once per reader: whether it has been seen is kept in localStorage
  * under `tour:<id>`, and in memory for a browser that keeps nothing, so a
- * private window does not replay it on every screen.
+ * private window does not replay it on every screen. A tour can be several
+ * put together (the city view's own, then the open layer's): the caller
+ * passes the steps still to show and every id they stand for (`marks`), and
+ * all of them are marked seen when the tour closes.
  *
  * A step:
  *   { title, body,                     // what the card says (strings or nodes)
@@ -104,12 +107,13 @@ function tagStyle(hole) {
 
 /**
  * @param {object} props
- * @param {string} props.id        what "seen" is remembered under
+ * @param {(string|null)[]} props.marks  what "seen" is remembered under
  * @param {boolean} props.ready    start once the screen is laid out
  * @param {object[]} props.steps
  * @param {number} [props.replay]  raise it to show the tour again, seen or not
+ * @param {() => void} [props.onClose]
  */
-export function Tour({ id, ready, steps, replay = 0 }) {
+export function Tour({ marks, ready, steps, replay = 0, onClose }) {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -117,13 +121,16 @@ export function Tour({ id, ready, steps, replay = 0 }) {
   const titleId = useId();
   const primaryRef = useRef(null);
 
-  // Started once, the first time the screen is ready and it was never seen.
+  // Started when the screen is ready and something in it was never seen.
+  const ids = marks.filter(Boolean);
+  const marksKey = ids.join(' ');
   useEffect(() => {
-    if (ready && !open && !tourSeen(id)) {
+    if (ready && !open && steps.length > 0 && ids.some((id) => !tourSeen(id))) {
       setIndex(0);
       setOpen(true);
     }
-  }, [ready, id, open]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, open, marksKey, steps.length]);
 
   // Asked for again (the "?" beside the map): from the first step.
   useEffect(() => {
@@ -133,7 +140,7 @@ export function Tour({ id, ready, steps, replay = 0 }) {
     }
   }, [replay]);
 
-  const step = open ? steps[index] : null;
+  const step = open && steps.length ? steps[Math.min(index, steps.length - 1)] : null;
 
   // Measured every frame while open: the lit parts move when the page lays
   // itself out (a box fading in, a font arriving, a resize).
@@ -155,9 +162,10 @@ export function Tour({ id, ready, steps, replay = 0 }) {
   }, [step]);
 
   const close = useCallback(() => {
-    markSeen(id);
+    for (const id of marksKey.split(' ')) if (id) markSeen(id);
     setOpen(false);
-  }, [id]);
+    onClose?.();
+  }, [marksKey, onClose]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -175,7 +183,7 @@ export function Tour({ id, ready, steps, replay = 0 }) {
   }, [open, index]);
 
   if (!step || !layout) return null;
-  const last = index === steps.length - 1;
+  const last = index >= steps.length - 1;
   const { holes, vw, vh } = layout;
 
   return createPortal(

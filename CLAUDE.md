@@ -449,7 +449,9 @@ serif is a bug in the other.
 readable:
 
 - **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
-  categorical. A step scale invents boundaries the data does not have — two
+  categorical. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
+  the zones stay the default) on soft sequential ramps, logarithmic because
+  they span two orders of magnitude between cities. A step scale invents boundaries the data does not have — two
   cells either side of an edge look further apart than two at opposite ends of
   one band. The legend is `RampLegend`, a gradient with its values under it;
   it cannot show a share per band, so figures that mattered (the 15minCity
@@ -467,7 +469,12 @@ readable:
   95th percentile of its inhabited cells over all 24 hours together, so the
   hour still never recolours a value, with `≤` / `≥` on the legend's ends.
   `scale=abs` switches to `socialityAbsolute`, one logarithmic scale for
-  every city (10k to 10M), and the switch's "?" says what each means. A
+  every city (10k to 10M), and the switch's "?" says what each means.
+  **P.O.V.'s opportunity score is the same exception**, for the same reason
+  (it counts places reachable by transit, so it grows with the city): fitted
+  to the city's inhabited cells by default, `povOpportunityAbsolute` (1k to
+  100k, logarithmic) with `scale=abs`. Its proximity score has one fixed
+  logarithmic scale, 300 to 30k. A
   logarithmic default was rejected: within one city the score is close to
   linear, and the map lost its contrast.
 
@@ -1036,11 +1043,17 @@ the path by `activeTab`. Three consequences to keep in mind:
 A first visit to the world map and to a city view gets a short tour
 (`Tour` in `components/Tour.jsx`): the page goes dark but for what a step is
 about, with a tag on each lit part and a card. The world map has two steps
-(the layer picker; click a city), the city view two (the four areas around
-the map in one step, then the four layers, Population left out). Seen is
-remembered in localStorage (`tour:atlas-v1`, `tour:city-v1`; bump the id to
-show a changed tour again), and a small button brings it back (the round "?"
-above the zoom, "Guide" beside full screen). The city tour does not run on a
+(the layer picker; click a city or search for it), the city view three (the
+four areas around the map in one step, the four layers with Population left
+out, click a cell). **Each layer has a one-screen tour of its own**, shown
+the first time that layer is opened; on a first visit it follows the city's,
+in one tour, so opening Rome on CityChrone explains the screen and then
+CityChrone. What a layer's screen lights is marked in the panel with
+`.aa-tourctl`. Seen is remembered in localStorage (`tour:atlas-v2`,
+`tour:city-v2`, `tour:layer-<id>-v1`; bump an id to show a changed tour
+again), and a small button brings it back (the round "?" above the zoom,
+"Guide" beside full screen): on a city it replays the city's steps and the
+open layer's, and leaves the other layers' as they were. The city tour does not run on a
 phone, where the column is a sheet and "on the left" is wrong. The browser
 suites run as a returning reader (`skipTours` in `smoke.mjs`): a page opened
 in a context of its own needs it too, or the tour dims the map it measures.
@@ -1093,8 +1106,8 @@ reserving their column beside the bar made "Population" wrap at 1280 px. **The w
 bar out of the column and the summary rose over it, on that path only —
 opening a city directly never showed it. `smoke.mjs` checks it from the
 world map. Top right the city summary (closed by default, full width) and the selected
-cell; bottom left "Settings", closed by default, holding Map/Cartogram and
-the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
+cell; bottom left "Settings", open by default (closed on a phone), small and
+grey so it stays quiet, holding Map/Cartogram and the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
 under the pointer; full screen bottom right. There is no status bar under
 the map; a generated mesh says so in a note at the map's foot. The legend is in the column, right
 under the city's name and "About this layer". The foot of the column is

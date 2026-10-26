@@ -418,7 +418,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
 
         {/* The first visit explains the screen in two steps, once. */}
         <Tour
-          id="atlas-v1"
+          marks={['atlas-v2']}
           ready={interactive && cities.length > 0 && !markersHidden}
           replay={tourReplay}
           steps={[
@@ -431,6 +431,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
             {
               title: t('tour.atlas.cities.title'),
               body: <p>{t('tour.atlas.cities.body')}</p>,
+              targets: [{ selector: '.aa-mapstage__tools .aa-search', tag: t('tour.atlas.cities.tag'), tagAt: 'below' }],
               within: '.aa-mapstage',
             },
           ]}

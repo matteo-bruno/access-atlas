@@ -264,6 +264,22 @@ export default {
       about:
         "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escluso il {share} più basso e più alto delle sue celle: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
     },
+    opportunityScale: {
+      about: 'Il punteggio di opportunità conta i servizi raggiungibili con i mezzi pubblici, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto delle sue celle abitate: l\'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un\'altra città. La scala assoluta mette tutte le città su un\'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.',
+    },
+    povViews: {
+      zones: 'Zone',
+      proximity: 'Prossimità',
+      opportunity: 'Opportunità',
+    },
+    povLegend: {
+      proximity: 'Punteggio di prossimità',
+      opportunity: 'Punteggio di opportunità',
+    },
+    povHint: {
+      proximity: 'Quanti servizi ogni cella raggiunge a piedi in poco tempo: ciò che è vicino. Un punteggio pesato, non un conteggio di luoghi.',
+      opportunity: 'Quanti servizi ogni cella raggiunge con i mezzi pubblici in un tempo più lungo: ciò che è più lontano ma raggiungibile. Un punteggio pesato, non un conteggio di luoghi.',
+    },
     scenario: {
       label: 'Scenario',
       current: 'Attuale',
@@ -1193,16 +1209,17 @@ export default {
       },
       cities: {
         title: 'Apri una città',
-        body: 'Ogni punto è una città. Cliccane una per aprirne la mappa nel dettaglio.',
+        body: 'Ogni punto è una città. Cliccane una sulla mappa per aprirla nel dettaglio, oppure cercala per nome nella barra di ricerca.',
+        tag: 'Ricerca',
       },
     },
     city: {
       intro: {
         title: 'Questa è la mappa di {city}',
         body: 'Intorno alla mappa:',
-        panel: 'A sinistra, cosa misura il livello, la sua legenda e “Informazioni su questo livello” per saperne di più.',
+        panel: 'A sinistra, le spiegazioni e i filtri: cosa misura il livello, la sua legenda, le opzioni che offre e “Informazioni su questo livello” per saperne di più.',
         details: 'A destra, il riepilogo della città e i dettagli della cella che clicchi.',
-        settings: 'In basso a sinistra, i controlli: mappa o cartogramma, e opacità.',
+        settings: 'In basso a sinistra, i controlli: cambia la forma della mappa (mappa o cartogramma) e la sua trasparenza.',
         layers: 'In alto, i livelli.',
       },
       tags: {
@@ -1218,6 +1235,36 @@ export default {
         citychrone: 'quanto è veloce il trasporto pubblico.',
         cardep: 'se muoversi in città dipende dall’auto.',
         pov: 'diversi aspetti dell’accessibilità insieme.',
+      },
+      cell: {
+        title: 'Clicca una cella',
+        body: 'Clicca una qualsiasi cella della mappa per aprire qui il dettaglio delle sue misure, per quell’area.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Scegli una categoria di servizi e se ti sposti a piedi o in bicicletta.',
+        colors: 'La barra dei colori è il tempo di prossimità: i minuti per raggiungere il servizio più vicino di quel tipo, o la media su tutte le categorie.',
+        cell: 'Clicca una cella e il riquadro a destra mostra i tempi di tutte e nove le categorie.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Punteggio di velocità: quanto velocemente ci si muove con i mezzi pubblici da ogni cella.',
+        sociality: 'Punteggio di socialità: quante persone si raggiungono con i mezzi pubblici.',
+        isochrone: 'Isocrone: i tempi di spostamento con i mezzi pubblici da un’area a tutte le altre.',
+        hour: 'Il filtro per ora mostra ogni misura in un diverso momento della giornata.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Stai vedendo la differenza normalizzata tra le opportunità raggiungibili con i mezzi pubblici e in auto.',
+        blue: 'I posti blu, dove vincono i mezzi pubblici, sono rari: l’auto è spesso più veloce.',
+        filter: 'Il filtro mostra solo le celle in un intervallo dell’indice.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Prossimità e opportunità: i servizi accessibili vicini (a piedi) e lontani (con i mezzi pubblici).',
+        zones: 'Zone: la classificazione rispetto alla mediana della città stessa, quindi dice quali posti sono più o meno serviti della media della città.',
       },
     },
   },

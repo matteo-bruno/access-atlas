@@ -4,7 +4,7 @@
 // coloured by interpolation rather than cut into bands: a step scale invents
 // boundaries the data does not have, and makes two cells either side of an
 // edge look further apart than two cells at opposite ends of one band.
-// P.O.V. keeps its four categories, which are genuinely categorical.
+// P.O.V.'s four zones are genuinely categorical; its two scores are not.
 //
 // **Domains are fixed, not fitted to the data.** A ramp rescaled per city or
 // per hour would recolour the same value differently depending on what else is
@@ -12,12 +12,13 @@
 // is a round number chosen to cover the published range, stated with the
 // measurements it was checked against.
 //
-// One exception, by the lab's decision: CityChrone's sociality score counts
-// people within reach, so it grows with the city, and one domain cannot
-// colour Zurich and Tokyo both. The city view fits it to the city
-// (`fitRamp`), its 5th to 95th percentile over all 24 hours, so the hour
-// still never recolours a value; `socialityAbsolute` is the shared scale,
-// one switch away.
+// Two exceptions, by the lab's decision: CityChrone's sociality score counts
+// people within reach, and P.O.V.'s opportunity score places, so both grow
+// with the city, and one domain cannot colour Zurich and Tokyo both. The
+// city view fits each to the city (`fitRamp`), its 5th to 95th percentile
+// (the sociality score's over all 24 hours, so the hour still never
+// recolours a value); `socialityAbsolute` and `povOpportunityAbsolute` are
+// the shared scales, one switch away.
 //
 // A ramp is `{ stops, unit, ticks, beyond }`:
 //   stops   [value, colour] pairs, ascending — the interpolation itself
@@ -147,6 +148,59 @@ export const RAMPS = {
       [3500, BRAND.navy],
     ],
     ticks: [0, 50, 500, 3500],
+  },
+
+  // P.O.V.'s two scores, weighted counts of reachable points of interest:
+  // sequential and soft, so a pale cell reads as "little within reach" and
+  // nothing shouts. Both span two orders of magnitude between cities (Rome's
+  // median resident's proximity is 2,590, Paris's 18,160), so the shared
+  // scales are logarithmic.
+  //
+  // Proximity: what is close by. Published cities run 0.3 to 30,738
+  // (residents' 5th percentile 418 in Rome, 95th 28,414 in Paris); 300 to
+  // 30,000 covers them, and below 300 reads as the first colour.
+  povProximity: {
+    log: true,
+    stops: [
+      [300, '#f3f1e4'],
+      [1000, '#d6e6c6'],
+      [3000, '#a8d0ae'],
+      [6000, '#73b39f'],
+      [12000, '#4a8f8c'],
+      [30000, '#2f6b78'],
+    ],
+    ticks: [300, 1000, 3000, 10000, 30000],
+  },
+
+  // Opportunity: what public transport puts within reach. Like the sociality
+  // score it grows with the city, so the city view fits it to the city by
+  // default (`fitRamp` on these colours, 5th to 95th percentile of the
+  // layer's inhabited cells) and `povOpportunityAbsolute` is the switch.
+  povOpportunity: {
+    stops: [
+      [0, '#f4f0e8'],
+      [0.2, '#e6d5e2'],
+      [0.4, '#cdb0d3'],
+      [0.6, '#a98cc0'],
+      [0.8, '#8069a8'],
+      [1, '#5a4d8c'],
+    ],
+  },
+
+  // The one scale every city shares: logarithmic, 1,000 to 100,000. Published
+  // cities run 0 to 74,880 (residents' 5th percentile 1,737 in Rome, 95th
+  // 61,446 in Paris); below 1,000 reads as the first colour.
+  povOpportunityAbsolute: {
+    log: true,
+    stops: [
+      [1000, '#f4f0e8'],
+      [2500, '#e6d5e2'],
+      [6300, '#cdb0d3'],
+      [16000, '#a98cc0'],
+      [40000, '#8069a8'],
+      [100000, '#5a4d8c'],
+    ],
+    ticks: [1000, 3000, 10000, 30000, 100000],
   },
 
   // Car Dependency Index, bounded by its definition at ±1. Diverging about 0,

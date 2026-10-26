@@ -252,6 +252,22 @@ export default {
       about:
         "Le score de sociabilité compte les personnes accessibles, il croît donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses cellules : l'image la plus lisible de la ville, mais une couleur désigne un autre score dans une autre ville. L'échelle absolue place toutes les villes sur une seule échelle, logarithmique de {low} à {high}, pour comparer les couleurs d'une ville à l'autre.",
     },
+    opportunityScale: {
+      about: 'Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses cellules habitées : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.',
+    },
+    povViews: {
+      zones: 'Zones',
+      proximity: 'Proximité',
+      opportunity: 'Opportunité',
+    },
+    povLegend: {
+      proximity: 'Score de proximité',
+      opportunity: 'Score d’opportunité',
+    },
+    povHint: {
+      proximity: 'Combien de services chaque cellule atteint à pied en peu de temps : ce qui est proche. Un score pondéré, pas un nombre de lieux.',
+      opportunity: 'Combien de services chaque cellule atteint en transports en commun en un temps plus long : ce qui est plus loin mais accessible. Un score pondéré, pas un nombre de lieux.',
+    },
     scenario: {
       label: 'Scénario',
       current: 'Actuel',
@@ -1148,16 +1164,17 @@ export default {
       },
       cities: {
         title: 'Ouvrez une ville',
-        body: 'Chaque point est une ville. Cliquez sur l’une d’elles pour ouvrir sa carte en détail.',
+        body: 'Chaque point est une ville. Cliquez sur l’une d’elles sur la carte pour l’ouvrir en détail, ou cherchez-la par son nom dans la barre de recherche.',
+        tag: 'Recherche',
       },
     },
     city: {
       intro: {
         title: 'Voici la carte de {city}',
         body: 'Autour de la carte :',
-        panel: 'À gauche, ce que mesure la couche, sa légende et « À propos de cette couche » pour en savoir plus.',
+        panel: 'À gauche, les explications et les filtres : ce que mesure la couche, sa légende, les options qu’elle offre et « À propos de cette couche » pour en savoir plus.',
         details: 'À droite, le résumé de la ville et le détail de la cellule sur laquelle vous cliquez.',
-        settings: 'En bas à gauche, les réglages : carte ou cartogramme, et opacité.',
+        settings: 'En bas à gauche, les réglages : changez la forme de la carte (carte ou cartogramme) et sa transparence.',
         layers: 'En haut, les couches.',
       },
       tags: {
@@ -1173,6 +1190,36 @@ export default {
         citychrone: 'la vitesse des transports en commun.',
         cardep: 'si se déplacer en ville dépend de la voiture.',
         pov: 'plusieurs aspects de l’accessibilité à la fois.',
+      },
+      cell: {
+        title: 'Cliquez sur une cellule',
+        body: 'Cliquez sur n’importe quelle cellule de la carte pour ouvrir ici le détail de ses mesures, pour cette zone.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Choisissez une catégorie de services et si vous vous déplacez à pied ou à vélo.',
+        colors: 'La barre de couleurs est le temps de proximité : les minutes pour atteindre le service le plus proche de ce type, ou la moyenne sur toutes les catégories.',
+        cell: 'Cliquez sur une cellule et l’encadré à droite donne les temps des neuf catégories.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Score de vitesse : à quelle vitesse les transports en commun vous déplacent depuis chaque cellule.',
+        sociality: 'Score de sociabilité : combien de personnes vous atteignez en transports en commun.',
+        isochrone: 'Isochrones : les temps de trajet en transports en commun d’une zone vers toutes les autres.',
+        hour: 'Le filtre horaire montre chaque mesure à un autre moment de la journée.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Vous voyez la différence normalisée entre les opportunités accessibles en transports en commun et en voiture.',
+        blue: 'Les lieux bleus, où les transports en commun l’emportent, sont rares : la voiture est souvent plus rapide.',
+        filter: 'Le filtre ne montre que les cellules dans une plage de l’indice.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Proximité et opportunité : les services accessibles près (à pied) et loin (en transports en commun).',
+        zones: 'Zones : la classification par rapport à la médiane de la ville elle-même, elle dit donc quels lieux sont mieux ou moins bien desservis que la moyenne de la ville.',
       },
     },
   },

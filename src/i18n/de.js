@@ -252,6 +252,22 @@ export default {
       about:
         "Der Sociality-Score zählt erreichbare Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Zellen: das klarste Bild der Stadt, aber dieselbe Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala legt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, damit Farben zwischen Städten vergleichbar sind.",
     },
+    opportunityScale: {
+      about: 'Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer bewohnten Zellen: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.',
+    },
+    povViews: {
+      zones: 'Zonen',
+      proximity: 'Nähe',
+      opportunity: 'Gelegenheit',
+    },
+    povLegend: {
+      proximity: 'Nähe-Score',
+      opportunity: 'Gelegenheits-Score',
+    },
+    povHint: {
+      proximity: 'Wie viele Dienstleistungen jede Zelle zu Fuß in kurzer Zeit erreicht: was in der Nähe ist. Ein gewichteter Score, keine Anzahl von Orten.',
+      opportunity: 'Wie viele Dienstleistungen jede Zelle mit dem öffentlichen Verkehr in längerer Zeit erreicht: was weiter weg, aber erreichbar ist. Ein gewichteter Score, keine Anzahl von Orten.',
+    },
     scenario: {
       label: 'Szenario',
       current: 'Aktuell',
@@ -1148,16 +1164,17 @@ export default {
       },
       cities: {
         title: 'Öffnen Sie eine Stadt',
-        body: 'Jeder Punkt ist eine Stadt. Klicken Sie auf eine, um ihre Karte im Detail zu öffnen.',
+        body: 'Jeder Punkt ist eine Stadt. Klicken Sie auf der Karte auf eine, um sie im Detail zu öffnen, oder suchen Sie sie in der Suchleiste nach Namen.',
+        tag: 'Suche',
       },
     },
     city: {
       intro: {
         title: 'Das ist die Karte von {city}',
         body: 'Rund um die Karte:',
-        panel: 'Links, was die Ebene misst, ihre Legende und „Über diese Ebene“ für mehr.',
+        panel: 'Links die Erklärungen und Filter: was die Ebene misst, ihre Legende, ihre Optionen und „Über diese Ebene“ für mehr.',
         details: 'Rechts die Übersicht der Stadt und die Details der Zelle, die Sie anklicken.',
-        settings: 'Unten links die Einstellungen: Karte oder Kartogramm und Deckkraft.',
+        settings: 'Unten links die Einstellungen: Form der Karte (Karte oder Kartogramm) und Transparenz ändern.',
         layers: 'Oben die Ebenen.',
       },
       tags: {
@@ -1173,6 +1190,36 @@ export default {
         citychrone: 'wie schnell der öffentliche Verkehr ist.',
         cardep: 'ob man in der Stadt auf das Auto angewiesen ist.',
         pov: 'mehrere Aspekte der Erreichbarkeit zusammen.',
+      },
+      cell: {
+        title: 'Klicken Sie auf eine Zelle',
+        body: 'Klicken Sie auf eine beliebige Zelle der Karte, um hier die Details ihrer Messwerte für dieses Gebiet zu öffnen.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Wählen Sie eine Kategorie von Dienstleistungen und ob Sie zu Fuß oder mit dem Fahrrad unterwegs sind.',
+        colors: 'Die Farbleiste ist die Nähezeit: die Minuten bis zur nächsten Dienstleistung dieser Art oder der Durchschnitt über alle Kategorien.',
+        cell: 'Klicken Sie auf eine Zelle, und das Feld rechts zeigt die Zeiten aller neun Kategorien.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Geschwindigkeits-Score: wie schnell der öffentliche Verkehr Sie von jeder Zelle aus bewegt.',
+        sociality: 'Sozialitäts-Score: wie viele Menschen Sie mit dem öffentlichen Verkehr erreichen.',
+        isochrone: 'Isochronen: Reisezeiten mit dem öffentlichen Verkehr von einem Gebiet zu allen anderen.',
+        hour: 'Der Stundenfilter zeigt jede Messung zu einer anderen Tageszeit.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Sie sehen die normalisierte Differenz zwischen den mit öffentlichem Verkehr und mit dem Auto erreichbaren Gelegenheiten.',
+        blue: 'Blaue Orte, an denen der öffentliche Verkehr gewinnt, sind selten: Das Auto ist oft schneller.',
+        filter: 'Der Filter zeigt nur die Zellen in einem Bereich des Index.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Nähe und Gelegenheit: die erreichbaren Dienstleistungen in der Nähe (zu Fuß) und weiter weg (mit dem öffentlichen Verkehr).',
+        zones: 'Zonen: die Einteilung relativ zum Median der Stadt selbst; sie zeigt also, welche Orte besser oder schlechter versorgt sind als die Stadt im Durchschnitt.',
       },
     },
   },

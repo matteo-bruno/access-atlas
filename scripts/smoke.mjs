@@ -144,8 +144,7 @@ const browser = await chromium.launch({
 // here but the one about them runs as a returning reader.
 const skipTours = () => {
   try {
-    localStorage.setItem('tour:atlas-v1', '1');
-    localStorage.setItem('tour:city-v1', '1');
+    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v1', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
   } catch {
     // No storage: the tours would show, and the checks would say so.
   }
@@ -870,51 +869,75 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 }
 
 // ── The guided tours, on a first visit ───────────────────────────────
-// A fresh reader gets two steps on the world map and two on the first city
-// opened, each lighting what it describes; finishing one is remembered.
+// A fresh reader gets two steps on the world map, and on the first city
+// opened the city's three and then the open layer's own, each lighting what
+// it describes. Another layer opened later explains itself in one screen;
+// "Guide" replays the city's and the open layer's. Finishing is remembered.
 {
   const fresh = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page = await fresh.newPage();
+  const title = () => page.locator('.aa-tour__title').innerText().catch(() => '');
+  const next = () => page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
   await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-tour', { timeout: 15000 }).catch(() => {});
-  const atlasFirst = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const atlasFirst = await title();
   const atlasHoles = await page.locator('.aa-tour__ring').count();
-  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
-  const atlasSecond = await page.locator('.aa-tour__title').innerText().catch(() => '');
-  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  await next();
+  const atlasSecond = await title();
+  const searchLit = await page.locator('.aa-tour__tag').count();
+  await next();
   const atlasGone = (await page.locator('.aa-tour').count()) === 0;
   check(
-    'The world map explains itself once: layers, then cities',
-    /layer/i.test(atlasFirst) && atlasHoles === 1 && /city/i.test(atlasSecond) && atlasGone,
-    `${atlasFirst} (${atlasHoles} lit) → ${atlasSecond} → closed=${atlasGone}`,
+    'The world map explains itself once: layers, then cities and the search',
+    /layer/i.test(atlasFirst) && atlasHoles === 1 && /city/i.test(atlasSecond) && searchLit === 1 && atlasGone,
+    `${atlasFirst} (${atlasHoles} lit) → ${atlasSecond} (${searchLit} tag) → closed=${atlasGone}`,
   );
 
   await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-tour', { timeout: 30000 }).catch(() => {});
-  const cityTitle = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const cityTitle = await title();
+  const steps = await page.locator('.aa-tour__count').innerText().catch(() => '');
   const tags = await page.locator('.aa-tour__tag').count();
-  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  await next();
   const layerItems = await page.locator('.aa-tour__list li').count();
-  const layerHoles = await page.locator('.aa-tour__ring').count();
-  await page.keyboard.press('Escape');
+  await next();
+  const cellTitle = await title();
+  await next();
+  const fifteenTitle = await title();
+  await next();
   const cityGone = (await page.locator('.aa-tour').count()) === 0;
   await page.reload({ waitUntil: 'load' });
   await page.waitForTimeout(4000);
   const notAgain = (await page.locator('.aa-tour').count()) === 0;
-  // Seen, and still one click away.
+  check(
+    'The first city explains its screen, the layers, a cell, then its layer, once',
+    /Milan/.test(cityTitle) && /of 4/i.test(steps) && tags === 4 && layerItems === 4 && /cell/i.test(cellTitle) &&
+      /15-minute/.test(fifteenTitle) && cityGone && notAgain,
+    `${cityTitle} (${steps}) · tags=${tags} · layers=${layerItems} · ${cellTitle} · ${fifteenTitle} · closed=${cityGone} · again=${!notAgain}`,
+  );
+
+  // A layer opened for the first time: its own screen alone.
+  await page.locator('[data-tour-layer="citychrone"]').click().catch(() => {});
+  await page.waitForSelector('.aa-tour', { timeout: 15000 }).catch(() => {});
+  const ccTitle = await title();
+  const ccSteps = await page.locator('.aa-tour__count').innerText().catch(() => '');
+  await next();
+  // Seen, and still one click away: the city's steps, then this layer's.
   await page.locator('.aa-mapui--br .aa-mapbtn', { hasText: 'Guide' }).click().catch(() => {});
-  const replayed = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const replayed = await title();
+  const replaySteps = await page.locator('.aa-tour__count').innerText().catch(() => '');
   await page.keyboard.press('Escape');
   check(
-    'The first city explains its screen, then the four layers, once',
-    /Milan/.test(cityTitle) && tags === 4 && layerItems === 4 && layerHoles === 1 && cityGone && notAgain && /Milan/.test(replayed),
-    `${cityTitle} · tags=${tags} · layers=${layerItems} lit=${layerHoles} · closed=${cityGone} · again=${!notAgain} · replay=${replayed}`,
+    'A new layer explains itself, and "Guide" replays the city with that layer',
+    /CityChrone/.test(ccTitle) && /1 of 1/i.test(ccSteps) && /Milan/.test(replayed) && /of 4/i.test(replaySteps),
+    `${ccTitle} (${ccSteps}) · replay=${replayed} (${replaySteps})`,
   );
+
   await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
   await page.waitForTimeout(2500);
   const atlasQuiet = (await page.locator('.aa-tour').count()) === 0;
   await page.locator('.aa-tourbtn').click().catch(() => {});
-  const atlasReplayed = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const atlasReplayed = await title();
   check(
     'A seen tour stays away, and the "?" brings it back',
     atlasQuiet && /layer/i.test(atlasReplayed),

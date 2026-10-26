@@ -275,6 +275,22 @@ export default {
       about:
         "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
     },
+    opportunityScale: {
+      about: 'The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city\'s own scores, leaving out the lowest and highest {share} of its inhabited cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.',
+    },
+    povViews: {
+      zones: 'Zones',
+      proximity: 'Proximity',
+      opportunity: 'Opportunity',
+    },
+    povLegend: {
+      proximity: 'Proximity score',
+      opportunity: 'Opportunity score',
+    },
+    povHint: {
+      proximity: 'How many services each cell reaches on foot in a short time: what is close by. A weighted score, not a count of places.',
+      opportunity: 'How many services each cell reaches by public transport in a longer time: what is further away but within reach. A weighted score, not a count of places.',
+    },
     scenario: {
       label: 'Scenario',
       current: 'Current',
@@ -1203,16 +1219,17 @@ export default {
       },
       cities: {
         title: 'Open a city',
-        body: 'Every dot is a city. Click one to open its map in detail.',
+        body: 'Every dot is a city. Click one on the map to open it in detail, or look it up by name in the search bar.',
+        tag: 'Search',
       },
     },
     city: {
       intro: {
         title: 'This is the map of {city}',
         body: 'Around the map:',
-        panel: 'On the left, what the layer measures, its legend and “About this layer” for more.',
+        panel: 'On the left, the explanations and the filters: what the layer measures, its legend, the options it offers and “About this layer” for more.',
         details: 'On the right, the city summary and the details of the cell you click.',
-        settings: 'Bottom left, the controls: map or cartogram, and opacity.',
+        settings: 'Bottom left, the controls: change the shape of the map (map or cartogram) and its transparency.',
         layers: 'At the top, the layers.',
       },
       tags: {
@@ -1228,6 +1245,36 @@ export default {
         citychrone: 'how fast public transport takes you around.',
         cardep: 'whether getting around the city depends on the car.',
         pov: 'several aspects of accessibility together.',
+      },
+      cell: {
+        title: 'Click a cell',
+        body: 'Click any cell of the map to open the details of its measures here, for that area.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Choose a service category and whether you go on foot or by bicycle.',
+        colors: 'The colour bar is the proximity time: the minutes to reach the nearest service of that type, or the average over all categories.',
+        cell: 'Click a cell and the box on the right gives the times for all nine categories.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Velocity score: how fast public transport moves you around from each cell.',
+        sociality: 'Sociality score: how many people you reach by public transport.',
+        isochrone: 'Isochrones: travel times by public transport from one area to all the others.',
+        hour: 'The hour filter shows each measure at a different time of day.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'You are seeing the normalised difference between the opportunities reachable by public transport and by car.',
+        blue: 'Blue places, where public transport wins, are rare: the car is often faster.',
+        filter: 'The filter shows only the cells within a range of the index.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport).',
+        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average.',
       },
     },
   },
