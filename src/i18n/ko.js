@@ -137,7 +137,6 @@ export default {
     welcome: '{name}에 오신 것을 환영합니다',
     dismiss: '닫기',
     learnMore: '자세히 보기 →',
-    featured: '도시 열기',
     attribution: '기본 지도: Natural Earth · 데이터 © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count}개 도시',
     zoomIn: '확대',

@@ -155,7 +155,6 @@ export default {
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',
     learnMore: 'Learn more →',
-    featured: 'Open a city',
     attribution: 'Basemap: Natural Earth · Data © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} cities',
     zoomIn: 'Zoom in',

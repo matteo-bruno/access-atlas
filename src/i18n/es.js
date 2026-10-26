@@ -139,7 +139,6 @@ export default {
     welcome: 'Te damos la bienvenida a {name}',
     dismiss: 'Cerrar',
     learnMore: 'Más información →',
-    featured: 'Abrir una ciudad',
     attribution: 'Mapa base: Natural Earth · Datos © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} ciudades',
     zoomIn: 'Acercar',

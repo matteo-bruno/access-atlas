@@ -137,7 +137,6 @@ export default {
     welcome: '欢迎来到 {name}',
     dismiss: '关闭',
     learnMore: '了解更多 →',
-    featured: '打开城市',
     attribution: '底图：Natural Earth · 数据 © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} 座城市',
     zoomIn: '放大',

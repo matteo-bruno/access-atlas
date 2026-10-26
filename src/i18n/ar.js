@@ -139,7 +139,6 @@ export default {
     welcome: 'مرحبًا بك في {name}',
     dismiss: 'إغلاق',
     learnMore: 'اعرف المزيد ←',
-    featured: 'افتح مدينة',
     attribution: 'الخريطة الأساسية: Natural Earth · البيانات © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} مدينة',
     zoomIn: 'تكبير',
