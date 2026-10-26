@@ -1611,6 +1611,17 @@ are wider still, up to ~1340 px, and there the tagline ends in an ellipsis
 rather than running under the first tab: a drawer at 1340 px for every
 language would have hidden the tabs on ordinary laptops.
 
+## Visit statistics
+
+Matomo, self-hosted by the lab, in `src/analytics.js`; the deploy settings
+are in the README ("Visit statistics"). Three things to keep: **off unless
+the build names a Matomo** (`VITE_MATOMO_URL` and `VITE_MATOMO_SITE_ID`), so
+dev, CI and the suites load nothing from another host; **no cookies**
+(`disableCookies`), which is the reason the site has no consent banner, so a
+feature that needs one (heatmaps, user ids) needs a banner first; and **one
+page view per path**, never per query string, or every control on the city
+view would count as a page.
+
 ## Open, and needing the lab rather than more code
 - **The Italian is a first draft** and wants a native review. So do the
   other eight translations, which were machine-drafted; Arabic most of all,

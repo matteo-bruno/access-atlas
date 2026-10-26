@@ -343,6 +343,8 @@ variable, so a second host needs no edit to the file.
 | `AA_URL` | public URL, trailing slash required |
 | `AA_BASE` | its path component, which is what `VITE_BASE` is set to |
 | `AA_BASEMAP` | MapLibre style for the city basemap |
+| `AA_MATOMO_URL` | the Matomo that counts visits (empty: no statistics) |
+| `AA_MATOMO_SITE_ID` | the site's id in that Matomo |
 | `AA_SSH` | ssh destination |
 | `AA_STAGE` | staging directory, writable without privileges |
 | `AA_TARGET` | final location, under the vhost's DocumentRoot |
@@ -461,6 +463,22 @@ repository name and deploys `dist/`. It only takes effect once **Settings →
 Pages → Source** is set to **GitHub Actions** — the default "Deploy from a
 branch" publishes the repository source instead, which serves an `index.html`
 pointing at `/src/main.jsx` and renders a blank page.
+
+### Visit statistics
+
+The site counts visits with [Matomo](https://matomo.org), installed on a
+server of the lab's (PHP and MySQL, beside the Atlas on Apache). It is off
+unless the build is given both `VITE_MATOMO_URL` (where Matomo is served,
+e.g. `https://whatif.sonycsl.it/matomo/`) and `VITE_MATOMO_SITE_ID` (the
+site's id in it): `AA_MATOMO_URL` / `AA_MATOMO_SITE_ID` for `deploy.sh`, the
+repository variables `MATOMO_URL` / `MATOMO_SITE_ID` for GitHub Pages. Dev,
+CI and the browser suites build without them and load nothing.
+
+`src/analytics.js` sets no cookies (`disableCookies`), so the site needs no
+consent banner, and counts one page view per **path**: the query string,
+where the city view keeps its layer, hour and cell, is neither counted nor
+sent. In Matomo, also turn on IP anonymisation (2 bytes) and set a retention
+for raw data (Administration → Privacy).
 
 ## Verification
 

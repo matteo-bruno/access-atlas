@@ -58,6 +58,10 @@ AA_URL="${AA_URL:-https://whatif.sonycsl.it/atlas/}"
 AA_BASE="${AA_BASE:-/atlas/}"
 # MapLibre style for the city basemap. `none` publishes with paper only.
 AA_BASEMAP="${AA_BASEMAP:-https://tiles.openfreemap.org/styles/positron}"
+# Visit statistics: the Matomo's URL and the site's id in it. Both empty (the
+# default) builds with no statistics at all; see src/analytics.js.
+AA_MATOMO_URL="${AA_MATOMO_URL:-}"
+AA_MATOMO_SITE_ID="${AA_MATOMO_SITE_ID:-}"
 
 # ssh destination, and where the build lands on it.
 AA_SSH="${AA_SSH:-whatif.sonycsl.it}"
@@ -135,7 +139,14 @@ fi
 
 if [ "$do_build" = 1 ]; then
   say "Building with VITE_BASE=$AA_BASE"
-  VITE_BASE="$AA_BASE" VITE_BASEMAP_STYLE="$AA_BASEMAP" npm run build
+  if [[ -n "$AA_MATOMO_URL" && -n "$AA_MATOMO_SITE_ID" ]]; then
+    say "Visit statistics: Matomo at $AA_MATOMO_URL, site $AA_MATOMO_SITE_ID"
+  else
+    say "Visit statistics: off (AA_MATOMO_URL and AA_MATOMO_SITE_ID not both set)"
+  fi
+  VITE_BASE="$AA_BASE" VITE_BASEMAP_STYLE="$AA_BASEMAP" \
+    VITE_MATOMO_URL="$AA_MATOMO_URL" VITE_MATOMO_SITE_ID="$AA_MATOMO_SITE_ID" \
+    npm run build
 fi
 
 # --- check what was built ---------------------------------------------------

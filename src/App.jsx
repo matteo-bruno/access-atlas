@@ -13,6 +13,7 @@ import { I18nProvider } from './i18n/index.jsx';
 import { useRouteFading } from './map/backdrop.js';
 import { Nav } from './components/Nav.jsx';
 import { Backdrop } from './components/Backdrop.jsx';
+import { trackPageView } from './analytics.js';
 import AtlasHome from './pages/AtlasHome.jsx';
 
 // The map routes pull in MapLibre; splitting them keeps it off the FAQ and
@@ -191,10 +192,20 @@ function ScrollToTop() {
   return null;
 }
 
+// One page view per path, when the build names a Matomo (src/analytics.js).
+function PageViews() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <I18nProvider>
       <ScrollToTop />
+      <PageViews />
       <Backdrop />
       <Chrome />
       <FadingRoutes>
