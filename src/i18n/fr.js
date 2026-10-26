@@ -241,6 +241,11 @@ export default {
       core: 'Ville (centre)',
       fua: 'Aire métropolitaine (FUA)',
       about: 'Deux périmètres du Global Human Settlement Layer (GHS) : le cœur de la ville, son Urban Centre, et son aire métropolitaine, la Functional Urban Area, qui y ajoute la zone de navettes alentour. Chacun est publié et mesuré séparément ; le bouton ouvre la même vue sur l’autre.',
+      unavailable: '{name} n’est pas publié sur ce périmètre',
+      opens: {
+        core: 'Publié pour la ville (core) : s’ouvre là',
+        fua: 'Publié pour l’aire métropolitaine (FUA) : s’ouvre là',
+      },
     },
     socialityScale: {
       toggle: "Échelle absolue",
@@ -777,15 +782,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Villes',
-      countries: 'Pays',
-      best: 'Meilleure',
-      worst: 'Moins bonne',
-      highest: 'La plus haute',
-      lowest: 'La plus basse',
-      residents: 'Résidents mesurés',
-    },
     layer: 'Couche',
     measure: 'Mesure',
     statistic: 'Statistique',
@@ -1138,6 +1134,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: 'Guide',
+    step: 'Étape {n} sur {total}',
+    next: 'Suivant',
+    back: 'Retour',
+    skip: 'Passer',
+    done: 'Compris',
+    atlas: {
+      layers: {
+        title: 'Choisissez une couche',
+        body: 'Chaque couche mesure l’accessibilité d’une façon différente. Passez de l’une à l’autre ici pour changer ce que montre la carte.',
+      },
+      cities: {
+        title: 'Ouvrez une ville',
+        body: 'Chaque point est une ville. Cliquez sur l’une d’elles pour ouvrir sa carte en détail.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Voici la carte de {city}',
+        body: 'Autour de la carte :',
+        panel: 'À gauche, ce que mesure la couche, sa légende et « À propos de cette couche » pour en savoir plus.',
+        details: 'À droite, le résumé de la ville et le détail de la cellule sur laquelle vous cliquez.',
+        settings: 'En bas à gauche, les réglages : carte ou cartogramme, et opacité.',
+        layers: 'En haut, les couches.',
+      },
+      tags: {
+        panel: 'Explications',
+        details: 'Détails',
+        settings: 'Réglages',
+        layers: 'Couches',
+      },
+      layers: {
+        title: 'Quatre couches',
+        body: 'Cliquez sur l’une d’elles pour changer ce que montre la carte :',
+        fifteen: 'la proximité des services à pied.',
+        citychrone: 'la vitesse des transports en commun.',
+        cardep: 'si se déplacer en ville dépend de la voiture.',
+        pov: 'plusieurs aspects de l’accessibilité à la fois.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Erreur 404',
     headline: 'Hors de la',

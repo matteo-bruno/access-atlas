@@ -241,6 +241,11 @@ export default {
       core: 'Stadt (Kern)',
       fua: 'Metropolregion (FUA)',
       about: 'Zwei Abgrenzungen aus dem Global Human Settlement Layer (GHS): der Kern der Stadt, ihr Urban Centre, und ihre Metropolregion, die Functional Urban Area, die das Pendlergebiet ringsum hinzunimmt. Jede wird für sich veröffentlicht und gemessen; der Umschalter öffnet dieselbe Ansicht für die andere.',
+      unavailable: '{name} ist für diese Abgrenzung nicht veröffentlicht',
+      opens: {
+        core: 'Für die Stadt (Kern) veröffentlicht: öffnet sie dort',
+        fua: 'Für die Metropolregion (FUA) veröffentlicht: öffnet sie dort',
+      },
     },
     socialityScale: {
       toggle: "Absolute Skala",
@@ -777,15 +782,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Städte',
-      countries: 'Länder',
-      best: 'Beste',
-      worst: 'Schlechteste',
-      highest: 'Höchste',
-      lowest: 'Niedrigste',
-      residents: 'Gemessene Bewohner',
-    },
     layer: 'Ebene',
     measure: 'Messgröße',
     statistic: 'Statistik',
@@ -1138,6 +1134,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rom',
   },
 
+  tour: {
+    replay: 'Anleitung',
+    step: 'Schritt {n} von {total}',
+    next: 'Weiter',
+    back: 'Zurück',
+    skip: 'Überspringen',
+    done: 'Verstanden',
+    atlas: {
+      layers: {
+        title: 'Wählen Sie eine Ebene',
+        body: 'Jede Ebene misst Erreichbarkeit auf eine andere Weise. Wechseln Sie hier zwischen ihnen, um zu ändern, was die Karte zeigt.',
+      },
+      cities: {
+        title: 'Öffnen Sie eine Stadt',
+        body: 'Jeder Punkt ist eine Stadt. Klicken Sie auf eine, um ihre Karte im Detail zu öffnen.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Das ist die Karte von {city}',
+        body: 'Rund um die Karte:',
+        panel: 'Links, was die Ebene misst, ihre Legende und „Über diese Ebene“ für mehr.',
+        details: 'Rechts die Übersicht der Stadt und die Details der Zelle, die Sie anklicken.',
+        settings: 'Unten links die Einstellungen: Karte oder Kartogramm und Deckkraft.',
+        layers: 'Oben die Ebenen.',
+      },
+      tags: {
+        panel: 'Erklärungen',
+        details: 'Details',
+        settings: 'Einstellungen',
+        layers: 'Ebenen',
+      },
+      layers: {
+        title: 'Vier Ebenen',
+        body: 'Klicken Sie auf eine, um zu ändern, was die Karte zeigt:',
+        fifteen: 'wie nah Dienstleistungen zu Fuß sind.',
+        citychrone: 'wie schnell der öffentliche Verkehr ist.',
+        cardep: 'ob man in der Stadt auf das Auto angewiesen ist.',
+        pov: 'mehrere Aspekte der Erreichbarkeit zusammen.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Fehler 404',
     headline: 'Nicht auf',

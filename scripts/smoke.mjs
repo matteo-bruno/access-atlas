@@ -140,7 +140,18 @@ const browser = await chromium.launch({
   executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined,
   args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--no-sandbox'],
 });
+// The guided tours open on a first visit and cover the page; every check
+// here but the one about them runs as a returning reader.
+const skipTours = () => {
+  try {
+    localStorage.setItem('tour:atlas-v1', '1');
+    localStorage.setItem('tour:city-v1', '1');
+  } catch {
+    // No storage: the tours would show, and the checks would say so.
+  }
+};
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+await context.addInitScript(skipTours);
 
 // ── Every route renders without console or network errors ────────────
 for (const [route, name] of ROUTES) {
@@ -858,6 +869,60 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.close();
 }
 
+// ── The guided tours, on a first visit ───────────────────────────────
+// A fresh reader gets two steps on the world map and two on the first city
+// opened, each lighting what it describes; finishing one is remembered.
+{
+  const fresh = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  const page = await fresh.newPage();
+  await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-tour', { timeout: 15000 }).catch(() => {});
+  const atlasFirst = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const atlasHoles = await page.locator('.aa-tour__ring').count();
+  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  const atlasSecond = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  const atlasGone = (await page.locator('.aa-tour').count()) === 0;
+  check(
+    'The world map explains itself once: layers, then cities',
+    /layer/i.test(atlasFirst) && atlasHoles === 1 && /city/i.test(atlasSecond) && atlasGone,
+    `${atlasFirst} (${atlasHoles} lit) → ${atlasSecond} → closed=${atlasGone}`,
+  );
+
+  await page.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await page.waitForSelector('.aa-tour', { timeout: 30000 }).catch(() => {});
+  const cityTitle = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  const tags = await page.locator('.aa-tour__tag').count();
+  await page.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  const layerItems = await page.locator('.aa-tour__list li').count();
+  const layerHoles = await page.locator('.aa-tour__ring').count();
+  await page.keyboard.press('Escape');
+  const cityGone = (await page.locator('.aa-tour').count()) === 0;
+  await page.reload({ waitUntil: 'load' });
+  await page.waitForTimeout(4000);
+  const notAgain = (await page.locator('.aa-tour').count()) === 0;
+  // Seen, and still one click away.
+  await page.locator('.aa-mapui--br .aa-mapbtn', { hasText: 'Guide' }).click().catch(() => {});
+  const replayed = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  await page.keyboard.press('Escape');
+  check(
+    'The first city explains its screen, then the four layers, once',
+    /Milan/.test(cityTitle) && tags === 4 && layerItems === 4 && layerHoles === 1 && cityGone && notAgain && /Milan/.test(replayed),
+    `${cityTitle} · tags=${tags} · layers=${layerItems} lit=${layerHoles} · closed=${cityGone} · again=${!notAgain} · replay=${replayed}`,
+  );
+  await page.goto(`${BASE}/platforms`, { waitUntil: 'load' });
+  await page.waitForTimeout(2500);
+  const atlasQuiet = (await page.locator('.aa-tour').count()) === 0;
+  await page.locator('.aa-tourbtn').click().catch(() => {});
+  const atlasReplayed = await page.locator('.aa-tour__title').innerText().catch(() => '');
+  check(
+    'A seen tour stays away, and the "?" brings it back',
+    atlasQuiet && /layer/i.test(atlasReplayed),
+    `quiet=${atlasQuiet} · replay=${atlasReplayed}`,
+  );
+  await fresh.close();
+}
+
 // ── Phone width ──────────────────────────────────────────────────────
 // A page that scrolls sideways on a phone is broken, and the ways to cause it
 // are subtle: a flex item's automatic minimum is its min-content width, auto
@@ -870,6 +935,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     isMobile: true,
     hasTouch: true,
   });
+  await phone.addInitScript(skipTours);
   const wide = [];
   for (const route of [
     '/platforms/car-dependency-index/compare',
@@ -1633,6 +1699,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
 // the ramp's colours, which neither the paper nor the placeholder paint.
 {
   const page = await browser.newPage({ viewport: { width: 1100, height: 700 } });
+  await page.addInitScript(skipTours);
   await page.goto(`${BASE}/atlas/tokyo-fua`, { waitUntil: 'load' });
   await page.waitForSelector('.aa-ramp, .aa-city__summary, .aa-summary', { timeout: 30000 }).catch(() => {});
   let coloured = 0;

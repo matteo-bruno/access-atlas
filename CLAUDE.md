@@ -178,7 +178,11 @@ can be published on its GHS core (Urban Centre, the default) and its metro
 area (Functional Urban Area). The metro area is a city of its own, id
 `<city>-fua`, imported from `<City>_FUA.<ext>`: own grid, layers, record and
 statistics, **named as its core** ("Tokyo", not "Tokyo Fua"; `cityMeta` takes
-the core's names when it has none). Its catalogue entry says
+the core's names when it has none). The switch is offered only where the
+open layer exists on the other boundary (it never lands on another layer),
+and the layer picker keeps a layer only the other boundary publishes, opening
+it there (Rome's metro area → Rome for CityChrone); `useAtlasView` reads the
+other boundary's entry for both (`otherLayers`). Its catalogue entry says
 `extent: 'fua', core: '<city>'`, derived from the id (`extentOf` in
 `bundle.mjs`); the city view offers "City (core) / Metro (FUA)" wherever both
 exist and keeps the query string across, less `from` (a CityChrone row of
@@ -252,6 +256,9 @@ views) and **a sidebar** with the figure, the filters and the highlighted
 cities (picked by typing a name, `CityPicker`). Countries are a menu, not a
 row of chips, and population is one logarithmic slider with two handles (min
 and max; the top end means no maximum) and a number box under each.
+
+There is no strip of figures under the title (count, best, worst, residents):
+it was removed for every layer, and the chart is what follows the figure.
 
 **Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
 each platform is read with, from the same statistics file, so the filters
@@ -1023,6 +1030,23 @@ the path by `activeTab`. Three consequences to keep in mind:
   bar scroll away with it.
 - A page cannot unmount what it does not own, so the city view's full screen
   marks the document (`.aa-chromeless`) and the shell's own rule answers.
+
+## The guided tours
+
+A first visit to the world map and to a city view gets a short tour
+(`Tour` in `components/Tour.jsx`): the page goes dark but for what a step is
+about, with a tag on each lit part and a card. The world map has two steps
+(the layer picker; click a city), the city view two (the four areas around
+the map in one step, then the four layers, Population left out). Seen is
+remembered in localStorage (`tour:atlas-v1`, `tour:city-v1`; bump the id to
+show a changed tour again), and a small button brings it back (the round "?"
+above the zoom, "Guide" beside full screen). The city tour does not run on a
+phone, where the column is a sheet and "on the left" is wrong. The browser
+suites run as a returning reader (`skipTours` in `smoke.mjs`): a page opened
+in a context of its own needs it too, or the tour dims the map it measures.
+
+The showcase QR code beside the landing's title is off (`SHOWCASE_QR` in
+`AtlasHome.jsx`), kept for the next showcase.
 
 ## The home page
 

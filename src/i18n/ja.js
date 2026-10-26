@@ -248,6 +248,11 @@ export default {
       core: '都市（中心部）',
       fua: '都市圏（FUA）',
       about: 'どちらも Global Human Settlement Layer（GHS）による二つの範囲です。都市の中心部である Urban Centre と、周辺の通勤圏を加えた都市圏 Functional Urban Area。それぞれ別に公開・測定されており、切り替えると同じ表示をもう一方で開きます。',
+      unavailable: '{name} はこの境界では公開されていません',
+      opens: {
+        core: '都市（コア）で公開：そちらで開きます',
+        fua: '都市圏（FUA）で公開：そちらで開きます',
+      },
     },
     socialityScale: {
       toggle: "絶対スケール",
@@ -785,15 +790,6 @@ export default {
       popMin: '最小',
       popMax: '最大',
     },
-    kpi: {
-      cities: '都市',
-      countries: '国',
-      best: '最良',
-      worst: '最下位',
-      highest: '最高',
-      lowest: '最低',
-      residents: '対象の住民',
-    },
     layer: 'レイヤー',
     measure: '指標',
     statistic: '統計量',
@@ -1148,6 +1144,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: 'ガイド',
+    step: 'ステップ {n} / {total}',
+    next: '次へ',
+    back: '戻る',
+    skip: 'スキップ',
+    done: 'わかりました',
+    atlas: {
+      layers: {
+        title: 'レイヤーを選ぶ',
+        body: 'レイヤーごとにアクセシビリティの測り方が異なります。ここで切り替えると、地図の表示が変わります。',
+      },
+      cities: {
+        title: '都市を開く',
+        body: '点はそれぞれ都市です。クリックすると、その都市の詳細な地図が開きます。',
+      },
+    },
+    city: {
+      intro: {
+        title: '{city} の地図です',
+        body: '地図のまわりには：',
+        panel: '左側：レイヤーが測るもの、凡例、詳しくは「このレイヤーについて」。',
+        details: '右側：都市の概要と、クリックしたセルの詳細。',
+        settings: '左下：操作。地図かカルトグラムか、そして不透明度。',
+        layers: '上部：レイヤー。',
+      },
+      tags: {
+        panel: '説明',
+        details: '詳細',
+        settings: '操作',
+        layers: 'レイヤー',
+      },
+      layers: {
+        title: '4つのレイヤー',
+        body: 'クリックすると地図の表示が変わります：',
+        fifteen: '徒歩でサービスにどれだけ近いか。',
+        citychrone: '公共交通がどれだけ速いか。',
+        cardep: '街での移動が車に依存しているか。',
+        pov: 'アクセシビリティの複数の側面をまとめて。',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'エラー404',
     headline: '地図の',

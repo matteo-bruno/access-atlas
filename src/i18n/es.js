@@ -239,6 +239,11 @@ export default {
       core: 'Ciudad (núcleo)',
       fua: 'Área metropolitana (FUA)',
       about: 'Dos límites del Global Human Settlement Layer (GHS): el núcleo de la ciudad, su Urban Centre, y su área metropolitana, la Functional Urban Area, que añade la zona de desplazamientos diarios a su alrededor. Cada uno se publica y se mide por separado; el cambio abre la misma vista sobre el otro.',
+      unavailable: '{name} no está publicado en este límite',
+      opens: {
+        core: 'Publicado para la ciudad (core): se abre allí',
+        fua: 'Publicado para el área metropolitana (FUA): se abre allí',
+      },
     },
     socialityScale: {
       toggle: "Escala absoluta",
@@ -775,15 +780,6 @@ export default {
       popMin: 'Mín',
       popMax: 'Máx',
     },
-    kpi: {
-      cities: 'Ciudades',
-      countries: 'Países',
-      best: 'Mejor',
-      worst: 'Peor',
-      highest: 'Más alto',
-      lowest: 'Más bajo',
-      residents: 'Residentes medidos',
-    },
     layer: 'Capa',
     measure: 'Medida',
     statistic: 'Estadística',
@@ -1136,6 +1132,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
   },
 
+  tour: {
+    replay: 'Guía',
+    step: 'Paso {n} de {total}',
+    next: 'Siguiente',
+    back: 'Atrás',
+    skip: 'Omitir',
+    done: 'Entendido',
+    atlas: {
+      layers: {
+        title: 'Elige una capa',
+        body: 'Cada capa mide la accesibilidad de una forma distinta. Cambia entre ellas aquí para cambiar lo que muestra el mapa.',
+      },
+      cities: {
+        title: 'Abre una ciudad',
+        body: 'Cada punto es una ciudad. Haz clic en una para abrir su mapa en detalle.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Este es el mapa de {city}',
+        body: 'Alrededor del mapa:',
+        panel: 'A la izquierda, lo que mide la capa, su leyenda y “Sobre esta capa” para saber más.',
+        details: 'A la derecha, el resumen de la ciudad y los detalles de la celda en la que haces clic.',
+        settings: 'Abajo a la izquierda, los controles: mapa o cartograma, y opacidad.',
+        layers: 'Arriba, las capas.',
+      },
+      tags: {
+        panel: 'Explicaciones',
+        details: 'Detalles',
+        settings: 'Controles',
+        layers: 'Capas',
+      },
+      layers: {
+        title: 'Cuatro capas',
+        body: 'Haz clic en una para cambiar lo que muestra el mapa:',
+        fifteen: 'qué tan cerca están los servicios a pie.',
+        citychrone: 'qué tan rápido te lleva el transporte público.',
+        cardep: 'si moverse por la ciudad depende del coche.',
+        pov: 'varios aspectos de la accesibilidad a la vez.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Error 404',
     headline: 'Fuera del',

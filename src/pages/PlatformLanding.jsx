@@ -19,6 +19,7 @@ import {
 import { rampGradient } from '../map/ramps.js';
 import { paperForPlatform } from '../data/research.js';
 import { formatTime } from '../data/fifteen.js';
+import { Tour } from '../components/Tour.jsx';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
@@ -156,6 +157,8 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
   const atlasCityIds = useAtlasCityIds();
   const atlasCities = useAtlasCities();
   const [searched, setSearched] = useState(null);
+  // Raised by the "?" button to show the tour again.
+  const [tourReplay, setTourReplay] = useState(0);
 
   // What the search looks through: every published city, not the open
   // tab's, with the catalogue's names in both languages, its region and its
@@ -412,6 +415,36 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
         )}
 
         </div>
+
+        {/* The first visit explains the screen in two steps, once. */}
+        <Tour
+          id="atlas-v1"
+          ready={interactive && cities.length > 0 && !markersHidden}
+          replay={tourReplay}
+          steps={[
+            {
+              title: t('tour.atlas.layers.title'),
+              body: <p>{t('tour.atlas.layers.body')}</p>,
+              targets: [{ selector: '.aa-mapstage .aa-picker' }],
+              anchor: '.aa-mapstage .aa-picker',
+            },
+            {
+              title: t('tour.atlas.cities.title'),
+              body: <p>{t('tour.atlas.cities.body')}</p>,
+              within: '.aa-mapstage',
+            },
+          ]}
+        />
+
+        <button
+          type="button"
+          className="aa-tourbtn aa-fadein"
+          aria-label={t('tour.replay')}
+          title={t('tour.replay')}
+          onClick={() => setTourReplay((n) => n + 1)}
+        >
+          <Icon name="help" size={16} color="var(--ink-2)" />
+        </button>
 
         <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>

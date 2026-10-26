@@ -253,6 +253,11 @@ export default {
       core: 'Città (core)',
       fua: 'Area metropolitana (FUA)',
       about: 'Due confini dal Global Human Settlement Layer (GHS): il nucleo della città, il suo Urban Centre, e la sua area metropolitana, la Functional Urban Area, che aggiunge la zona dei pendolari intorno. Ciascuno è pubblicato e misurato per conto suo; il pulsante apre la stessa vista sull\'altro.',
+      unavailable: '{name} non è pubblicato su questo confine',
+      opens: {
+        core: 'Pubblicato per la città (core): si apre lì',
+        fua: 'Pubblicato per l’area metropolitana (FUA): si apre lì',
+      },
     },
     socialityScale: {
       toggle: "Scala assoluta",
@@ -818,15 +823,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Città',
-      countries: 'Paesi',
-      best: 'Migliore',
-      worst: 'Peggiore',
-      highest: 'Più alto',
-      lowest: 'Più basso',
-      residents: 'Residenti misurati',
-    },
     layer: 'Livello',
     measure: 'Misura',
     statistic: 'Statistica',
@@ -1183,6 +1179,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
   },
 
+  tour: {
+    replay: 'Guida',
+    step: 'Passo {n} di {total}',
+    next: 'Avanti',
+    back: 'Indietro',
+    skip: 'Salta',
+    done: 'Ho capito',
+    atlas: {
+      layers: {
+        title: 'Scegli un livello',
+        body: 'Ogni livello misura l’accessibilità in modo diverso. Passa dall’uno all’altro qui per cambiare cosa mostra la mappa.',
+      },
+      cities: {
+        title: 'Apri una città',
+        body: 'Ogni punto è una città. Cliccane una per aprirne la mappa nel dettaglio.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Questa è la mappa di {city}',
+        body: 'Intorno alla mappa:',
+        panel: 'A sinistra, cosa misura il livello, la sua legenda e “Informazioni su questo livello” per saperne di più.',
+        details: 'A destra, il riepilogo della città e i dettagli della cella che clicchi.',
+        settings: 'In basso a sinistra, i controlli: mappa o cartogramma, e opacità.',
+        layers: 'In alto, i livelli.',
+      },
+      tags: {
+        panel: 'Spiegazioni',
+        details: 'Dettagli',
+        settings: 'Controlli',
+        layers: 'Livelli',
+      },
+      layers: {
+        title: 'Quattro livelli',
+        body: 'Cliccane uno per cambiare cosa mostra la mappa:',
+        fifteen: 'quanto sono vicini i servizi a piedi.',
+        citychrone: 'quanto è veloce il trasporto pubblico.',
+        cardep: 'se muoversi in città dipende dall’auto.',
+        pov: 'diversi aspetti dell’accessibilità insieme.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Errore 404',
     headline: 'Fuori',

@@ -236,6 +236,11 @@ export default {
       core: '도시(핵심)',
       fua: '광역권(FUA)',
       about: '두 경계 모두 GHS(Global Human Settlement Layer)에서 왔습니다. 도시의 핵심인 Urban Centre와, 주변 통근권을 더한 광역권인 Functional Urban Area입니다. 각각 따로 공개하고 측정하며, 전환하면 같은 보기를 다른 쪽에서 엽니다.',
+      unavailable: '{name}은(는) 이 경계에서 공개되지 않았습니다',
+      opens: {
+        core: '도시(핵심부)에 공개됨: 그곳에서 엽니다',
+        fua: '대도시권(FUA)에 공개됨: 그곳에서 엽니다',
+      },
     },
     socialityScale: {
       toggle: "절대 척도",
@@ -766,15 +771,6 @@ export default {
       popMin: '최소',
       popMax: '최대',
     },
-    kpi: {
-      cities: '도시',
-      countries: '나라',
-      best: '최고',
-      worst: '최저',
-      highest: '가장 높음',
-      lowest: '가장 낮음',
-      residents: '측정된 거주자',
-    },
     layer: '레이어',
     measure: '지표',
     statistic: '통계량',
@@ -1125,6 +1121,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: '가이드',
+    step: '{total}단계 중 {n}단계',
+    next: '다음',
+    back: '이전',
+    skip: '건너뛰기',
+    done: '확인',
+    atlas: {
+      layers: {
+        title: '레이어 선택',
+        body: '레이어마다 접근성을 다른 방식으로 측정합니다. 여기서 전환하면 지도에 표시되는 내용이 바뀝니다.',
+      },
+      cities: {
+        title: '도시 열기',
+        body: '각 점은 도시입니다. 하나를 클릭하면 그 도시의 상세 지도가 열립니다.',
+      },
+    },
+    city: {
+      intro: {
+        title: '{city}의 지도입니다',
+        body: '지도 주변:',
+        panel: '왼쪽: 레이어가 측정하는 것, 범례, 더 알아보려면 “이 레이어에 대하여”.',
+        details: '오른쪽: 도시 요약과 클릭한 셀의 세부 정보.',
+        settings: '왼쪽 아래: 컨트롤. 지도 또는 카토그램, 그리고 불투명도.',
+        layers: '위쪽: 레이어.',
+      },
+      tags: {
+        panel: '설명',
+        details: '세부 정보',
+        settings: '컨트롤',
+        layers: '레이어',
+      },
+      layers: {
+        title: '네 개의 레이어',
+        body: '하나를 클릭하면 지도에 표시되는 내용이 바뀝니다:',
+        fifteen: '걸어서 서비스까지 얼마나 가까운지.',
+        citychrone: '대중교통이 얼마나 빠른지.',
+        cardep: '도시에서 이동할 때 자동차에 의존하는지.',
+        pov: '접근성의 여러 측면을 함께.',
+      },
+    },
+  },
   notFound: {
     eyebrow: '오류 404',
     headline: '지도 밖으로',

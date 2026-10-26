@@ -239,6 +239,11 @@ export default {
       core: 'Cidade (núcleo)',
       fua: 'Região metropolitana (FUA)',
       about: 'Dois limites do Global Human Settlement Layer (GHS): o núcleo da cidade, seu Urban Centre, e sua região metropolitana, a Functional Urban Area, que acrescenta a zona de deslocamentos diários ao redor. Cada um é publicado e medido separadamente; o botão abre a mesma visão no outro.',
+      unavailable: '{name} não está publicado neste limite',
+      opens: {
+        core: 'Publicado para a cidade (core): abre lá',
+        fua: 'Publicado para a área metropolitana (FUA): abre lá',
+      },
     },
     socialityScale: {
       toggle: "Escala absoluta",
@@ -775,15 +780,6 @@ export default {
       popMin: 'Mín',
       popMax: 'Máx',
     },
-    kpi: {
-      cities: 'Cidades',
-      countries: 'Países',
-      best: 'Melhor',
-      worst: 'Pior',
-      highest: 'Mais alto',
-      lowest: 'Mais baixo',
-      residents: 'Residentes medidos',
-    },
     layer: 'Camada',
     measure: 'Medida',
     statistic: 'Estatística',
@@ -1136,6 +1132,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
   },
 
+  tour: {
+    replay: 'Guia',
+    step: 'Passo {n} de {total}',
+    next: 'Próximo',
+    back: 'Voltar',
+    skip: 'Pular',
+    done: 'Entendi',
+    atlas: {
+      layers: {
+        title: 'Escolha uma camada',
+        body: 'Cada camada mede a acessibilidade de um jeito diferente. Alterne entre elas aqui para mudar o que o mapa mostra.',
+      },
+      cities: {
+        title: 'Abra uma cidade',
+        body: 'Cada ponto é uma cidade. Clique em uma para abrir o mapa dela em detalhe.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Este é o mapa de {city}',
+        body: 'Ao redor do mapa:',
+        panel: 'À esquerda, o que a camada mede, sua legenda e “Sobre esta camada” para saber mais.',
+        details: 'À direita, o resumo da cidade e os detalhes da célula em que você clicar.',
+        settings: 'Embaixo à esquerda, os controles: mapa ou cartograma, e opacidade.',
+        layers: 'No alto, as camadas.',
+      },
+      tags: {
+        panel: 'Explicações',
+        details: 'Detalhes',
+        settings: 'Controles',
+        layers: 'Camadas',
+      },
+      layers: {
+        title: 'Quatro camadas',
+        body: 'Clique em uma para mudar o que o mapa mostra:',
+        fifteen: 'quão perto ficam os serviços a pé.',
+        citychrone: 'quão rápido o transporte público leva você.',
+        cardep: 'se circular pela cidade depende do carro.',
+        pov: 'vários aspectos da acessibilidade juntos.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Erro 404',
     headline: 'Fora do',

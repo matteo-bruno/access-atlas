@@ -264,6 +264,11 @@ export default {
       core: 'City (core)',
       fua: 'Metro (FUA)',
       about: 'Two boundaries from the Global Human Settlement Layer (GHS): the city\'s core, its Urban Centre, and its metro area, the Functional Urban Area, which adds the commuting zone around it. Each is published and measured on its own; switching opens the same view on the other.',
+      unavailable: '{name} is not published on this boundary',
+      opens: {
+        core: 'Published for the city (core): opens it there',
+        fua: 'Published for the metro area (FUA): opens it there',
+      },
     },
     socialityScale: {
       toggle: "Absolute scale",
@@ -828,15 +833,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Cities',
-      countries: 'Countries',
-      best: 'Best',
-      worst: 'Worst',
-      highest: 'Highest',
-      lowest: 'Lowest',
-      residents: 'Residents measured',
-    },
     layer: 'Layer',
     measure: 'Measure',
     statistic: 'Statistic',
@@ -1193,6 +1189,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: 'Guide',
+    step: 'Step {n} of {total}',
+    next: 'Next',
+    back: 'Back',
+    skip: 'Skip',
+    done: 'Got it',
+    atlas: {
+      layers: {
+        title: 'Choose a layer',
+        body: 'Each layer measures accessibility in a different way. Switch between them here to change what the map shows.',
+      },
+      cities: {
+        title: 'Open a city',
+        body: 'Every dot is a city. Click one to open its map in detail.',
+      },
+    },
+    city: {
+      intro: {
+        title: 'This is the map of {city}',
+        body: 'Around the map:',
+        panel: 'On the left, what the layer measures, its legend and “About this layer” for more.',
+        details: 'On the right, the city summary and the details of the cell you click.',
+        settings: 'Bottom left, the controls: map or cartogram, and opacity.',
+        layers: 'At the top, the layers.',
+      },
+      tags: {
+        panel: 'Explanations',
+        details: 'Details',
+        settings: 'Controls',
+        layers: 'Layers',
+      },
+      layers: {
+        title: 'Four layers',
+        body: 'Click one to change what the map shows:',
+        fifteen: 'how close services are on foot.',
+        citychrone: 'how fast public transport takes you around.',
+        cardep: 'whether getting around the city depends on the car.',
+        pov: 'several aspects of accessibility together.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Error 404',
     headline: 'Off the',

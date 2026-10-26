@@ -62,6 +62,15 @@ const context = await browser.newContext({
   viewport: { width: 1600, height: 1000 },
   deviceScaleFactor: SCALE,
 });
+// No guided tour over the stills.
+await context.addInitScript(() => {
+  try {
+    localStorage.setItem('tour:atlas-v1', '1');
+    localStorage.setItem('tour:city-v1', '1');
+  } catch {
+    // Nothing kept: the tour would show in the still.
+  }
+});
 
 let failures = 0;
 

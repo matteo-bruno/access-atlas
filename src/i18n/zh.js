@@ -236,6 +236,11 @@ export default {
       core: '城市（核心区）',
       fua: '都市区（FUA）',
       about: '两种范围均来自全球人类住区图层（GHS）：城市的核心区，即其 Urban Centre；以及其都市区，即 Functional Urban Area，后者加上周边的通勤区。两者各自发布、各自测量；切换会在另一个范围上打开同样的视图。',
+      unavailable: '{name} 在此边界上未发布',
+      opens: {
+        core: '已为城市（核心区）发布：在那里打开',
+        fua: '已为都市区（FUA）发布：在那里打开',
+      },
     },
     socialityScale: {
       toggle: "绝对色阶",
@@ -766,15 +771,6 @@ export default {
       popMin: '最小',
       popMax: '最大',
     },
-    kpi: {
-      cities: '城市',
-      countries: '国家',
-      best: '最好',
-      worst: '最差',
-      highest: '最高',
-      lowest: '最低',
-      residents: '测量的居民',
-    },
     layer: '图层',
     measure: '指标',
     statistic: '统计量',
@@ -1125,6 +1121,48 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: '指南',
+    step: '第 {n} 步，共 {total} 步',
+    next: '下一步',
+    back: '上一步',
+    skip: '跳过',
+    done: '知道了',
+    atlas: {
+      layers: {
+        title: '选择一个图层',
+        body: '每个图层以不同方式衡量可达性。在这里切换图层，改变地图显示的内容。',
+      },
+      cities: {
+        title: '打开一个城市',
+        body: '每个点都是一个城市。点击即可打开它的详细地图。',
+      },
+    },
+    city: {
+      intro: {
+        title: '这是 {city} 的地图',
+        body: '地图周围：',
+        panel: '左侧：图层衡量的内容、图例，以及“关于此图层”的更多信息。',
+        details: '右侧：城市概况，以及你点击的单元格的详情。',
+        settings: '左下角：控制项，地图或变形地图，以及不透明度。',
+        layers: '顶部：图层。',
+      },
+      tags: {
+        panel: '说明',
+        details: '详情',
+        settings: '控制',
+        layers: '图层',
+      },
+      layers: {
+        title: '四个图层',
+        body: '点击其中一个，改变地图显示的内容：',
+        fifteen: '步行到达各类服务有多近。',
+        citychrone: '公共交通有多快。',
+        cardep: '在城市中出行是否依赖汽车。',
+        pov: '同时呈现可达性的多个方面。',
+      },
+    },
+  },
   notFound: {
     eyebrow: '错误 404',
     headline: '超出了',

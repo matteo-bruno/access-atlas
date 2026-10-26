@@ -21,6 +21,12 @@ const PATHS = {
       <path d="M12 11v5M12 7.6v.6" />
     </>
   ),
+  help: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.7M12 16.8v.4" />
+    </>
+  ),
   plus: <path d="M12 5v14M5 12h14" />,
   minus: <path d="M5 12h14" />,
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,

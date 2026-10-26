@@ -21,6 +21,7 @@ import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
 import { MapBox } from '../components/MapBox.jsx';
+import { Tour } from '../components/Tour.jsx';
 import { CategoryBars } from '../components/CategoryBars.jsx';
 import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
@@ -153,7 +154,7 @@ export default function AtlasCityPage() {
 
 function AtlasScreen({ cityId, view }) {
   const { t, n, lang } = useI18n();
-  const { unified, profile, platformProfiles, available, extents } = view;
+  const { unified, profile, platformProfiles, available, extents, otherLayers } = view;
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const [activeZone, setActiveZone] = useState(null);
@@ -181,6 +182,8 @@ function AtlasScreen({ cityId, view }) {
   // it shows the city and the legend; open, every control.
   const phone = useMediaQuery(PHONE_QUERY);
   const [sheetOpen, setSheetOpen] = useState(false);
+  // Raised by the "Guide" button to show the tour again.
+  const [tourReplay, setTourReplay] = useState(0);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
   // than declining to render it.
@@ -289,14 +292,28 @@ function AtlasScreen({ cityId, view }) {
   // only makes sense on this city's grid.
   const extent = profile.extent === 'fua' ? 'fua' : 'core';
   const bothExtents = Boolean(extents?.core && extents?.fua);
-  const pickExtent = (key) => {
+  const otherExtent = extent === 'core' ? 'fua' : 'core';
+  // `nextLayer` opens the other boundary on another layer: the picker's way
+  // to a layer only that boundary publishes.
+  const pickExtent = (key, nextLayer = null) => {
     const target = extents?.[key];
     if (!target || target === cityId) return;
     const next = new URLSearchParams(params);
     for (const name of GRID_BOUND_PARAMS) next.delete(name);
+    if (nextLayer) {
+      next.set('layer', nextLayer);
+      next.delete('sc');
+      next.delete('cmp');
+    }
     const query = next.toString();
     navigate(`/atlas/${target}${query ? `?${query}` : ''}`);
   };
+  // Whether the other boundary publishes a layer. Unknown while its entry
+  // loads, and then the switch stays as it was.
+  const otherHas = (id) => id === POPULATION_LAYER || !otherLayers || otherLayers.has(id);
+  // The switch opens the same view on the other boundary, so it is offered
+  // only where the open layer exists there: it never lands on another layer.
+  const extentOpen = (key) => key === extent || otherHas(layer);
 
   // ── Scenario ───────────────────────────────────────────────────────
   // Alternative runs of the open layer, on the same cells (`sc=<id>`), shown
@@ -1058,6 +1075,8 @@ function AtlasScreen({ cityId, view }) {
                       type="button"
                       className={`aa-toggle__btn${extent === key ? ' aa-toggle__btn--active' : ''}`}
                       aria-pressed={extent === key}
+                      disabled={!extentOpen(key)}
+                      title={extentOpen(key) ? undefined : t('atlas.extent.unavailable', { name: platform.name })}
                       onClick={() => pickExtent(key)}
                     >
                       {t(`atlas.extent.${key}`)}
@@ -1352,16 +1371,27 @@ function AtlasScreen({ cityId, view }) {
               >
                 {LAYER_ORDER.map((id) => {
                   const option = PLATFORMS_BY_ID[id];
-                  const enabled = available.has(id);
+                  // A layer only the other boundary publishes stays offered,
+                  // and opens there (Rome's metro area → Rome for CityChrone).
+                  const here = available.has(id);
+                  const elsewhere = !here && bothExtents && Boolean(otherLayers?.has(id));
+                  const enabled = here || elsewhere;
                   return (
                     <button
                       key={id}
                       type="button"
+                      data-tour-layer={id}
                       className={`aa-picker__item${layer === id ? ' aa-picker__item--active' : ''}`}
                       disabled={!enabled}
                       aria-pressed={layer === id}
-                      title={enabled ? undefined : t('atlas.unavailable')}
-                      onClick={() => pickLayer(id)}
+                      title={
+                        here
+                          ? undefined
+                          : elsewhere
+                            ? t(`atlas.extent.opens.${otherExtent}`)
+                            : t('atlas.unavailable')
+                      }
+                      onClick={() => (here ? pickLayer(id) : pickExtent(otherExtent, id))}
                     >
                       <span
                         className="aa-picker__dot"
@@ -1565,6 +1595,21 @@ function AtlasScreen({ cityId, view }) {
             </div>
 
             <div className="aa-mapui aa-mapui--br aa-fadein">
+              {/* The tour again, for whoever skipped it. Not on a phone,
+                  where it does not run. */}
+              {!phone && !fullscreen && (
+                <button
+                  type="button"
+                  className="aa-mapbtn"
+                  onClick={() => {
+                    setSidebarOpen(true);
+                    setTourReplay((n) => n + 1);
+                  }}
+                >
+                  <Icon name="help" size={13} color="currentColor" />
+                  {t('tour.replay')}
+                </button>
+              )}
               <button
                 type="button"
                 className="aa-mapbtn"
@@ -1607,6 +1652,60 @@ function AtlasScreen({ cityId, view }) {
         />
       )}
 
+      {/* The first city a reader opens explains the screen, once. Not on a
+          phone, where the column is a sheet and "on the left" is wrong. */}
+      <Tour
+        id="city-v1"
+        ready={mapPainted && !phone && !fullscreen && sidebarOpen}
+        replay={tourReplay}
+        steps={[
+          {
+            title: t('tour.city.intro.title', { city: cityName }),
+            body: (
+              <>
+                <p>{t('tour.city.intro.body')}</p>
+                <ul className="aa-tour__list">
+                  {['panel', 'details', 'settings', 'layers'].map((key) => (
+                    <li key={key}>
+                      <span className="aa-tour__dot" style={{ background: 'var(--magenta)' }} />
+                      <span>{t(`tour.city.intro.${key}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ),
+            targets: [
+              { selector: '.aa-atlas .aa-city__panel', tag: t('tour.city.tags.panel') },
+              { selector: '.aa-city__top .aa-mapui--tr', tag: t('tour.city.tags.details'), tagAt: 'below' },
+              { selector: '.aa-atlas .aa-mapui--bl', tag: t('tour.city.tags.settings'), tagAt: 'above' },
+              { selector: '.aa-city__layerbar .aa-picker', tag: t('tour.city.tags.layers'), tagAt: 'below' },
+            ],
+            within: '.aa-city__canvas',
+          },
+          {
+            title: t('tour.city.layers.title'),
+            body: (
+              <>
+                <p>{t('tour.city.layers.body')}</p>
+                <ul className="aa-tour__list">
+                  {LAYER_ORDER.map((id) => (
+                    <li key={id}>
+                      <span className="aa-tour__dot" style={{ backgroundImage: pickerDot(PLATFORMS_BY_ID[id]) }} />
+                      <span>
+                        <strong>{PLATFORMS_BY_ID[id].name}</strong>
+                        {': '}
+                        {t(`tour.city.layers.${id}`)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ),
+            targets: [{ selector: '.aa-city__layerbar [data-tour-layer]', all: true }],
+            anchor: '.aa-city__layerbar .aa-picker',
+          },
+        ]}
+      />
     </div>
   );
 }
