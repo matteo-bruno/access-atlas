@@ -262,13 +262,32 @@ export default {
     socialityScale: {
       toggle: "Scala assoluta",
       about:
-        "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escluso il {share} più basso e più alto dei suoi residenti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+        "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escludendo il {lowShare} dei residenti con i punteggi più bassi e il {highShare} con i più alti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
     },
     opportunityScale: {
-      about: "Il punteggio di opportunità conta i servizi raggiungibili con i mezzi pubblici, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto dei suoi residenti: l'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+      about: "Il punteggio di opportunità conta i servizi raggiungibili con i mezzi pubblici, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {lowShare} dei residenti con i punteggi più bassi e il {highShare} con i più alti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
     },
     proximityScale: {
-      about: "Il punteggio di prossimità conta i servizi raggiungibili con una breve camminata, quindi è più alto nelle città più grandi e dense. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto dei suoi residenti: l'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+      about: "Il punteggio di prossimità conta i servizi raggiungibili con una breve camminata, quindi è più alto nelle città più grandi e dense. Di default i colori coprono i punteggi di questa città, escludendo il {lowShare} dei residenti con i punteggi più bassi e il {highShare} con i più alti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+    },
+    carScale: {
+      about: "Il punteggio di opportunità in auto somma i punti di interesse, di molti tipi, raggiungibili da ogni cella in auto nel tempo a disposizione, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {lowShare} dei residenti con i punteggi più bassi e il {highShare} con i più alti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città, e i due mezzi, su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città e tra auto e mezzi pubblici.",
+    },
+    transitScale: {
+      about: "Il punteggio di opportunità con i mezzi pubblici somma i punti di interesse, di molti tipi, raggiungibili da ogni cella con i mezzi pubblici nel tempo a disposizione, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {lowShare} dei residenti con i punteggi più bassi e il {highShare} con i più alti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città, e i due mezzi, su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città e tra auto e mezzi pubblici.",
+    },
+    cdiViews: {
+      index: "Indice",
+      car: "Auto",
+      transit: "Mezzi pubblici",
+    },
+    cdiLegend: {
+      car: "Opportunità in auto",
+      transit: "Opportunità con i mezzi pubblici",
+    },
+    cdiHint: {
+      car: "Quanti punti di interesse, di molti tipi, si raggiungono da ogni cella in auto nel tempo a disposizione, sommati: uno dei due punteggi di opportunità che l’indice confronta.",
+      transit: "Quanti punti di interesse, di molti tipi, si raggiungono da ogni cella con i mezzi pubblici nel tempo a disposizione, sommati: uno dei due punteggi di opportunità che l’indice confronta.",
     },
     povViews: {
       zones: 'Zone',
@@ -1262,6 +1281,7 @@ export default {
         title: 'Car Dependency Index',
         colors: 'Stai vedendo la differenza normalizzata tra le opportunità raggiungibili con i mezzi pubblici e in auto.',
         blue: 'I posti blu, dove vincono i mezzi pubblici, sono rari: l’auto è spesso più veloce.',
+        views: "Puoi vedere anche i due punteggi di opportunità che l’indice confronta: i punti di interesse raggiungibili in auto e con i mezzi pubblici.",
         filter: 'Il filtro mostra solo le celle in un intervallo dell’indice.',
       },
       pov: {

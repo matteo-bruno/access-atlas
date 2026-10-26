@@ -273,13 +273,32 @@ export default {
     socialityScale: {
       toggle: "Absolute scale",
       about:
-        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
     },
     opportunityScale: {
-      about: "The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+      about: "The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
     },
     proximityScale: {
-      about: "The proximity score counts services within a short walk, so it runs higher in larger, denser cities. By default the colours span this city's own scores, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+      about: "The proximity score counts services within a short walk, so it runs higher in larger, denser cities. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
+    carScale: {
+      about: "The opportunity score by car adds up the points of interest, of many kinds, reachable from each cell by car in the time budget, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city, and both modes, on one scale, logarithmic from {low} to {high}, so colours compare across cities and between car and transit.",
+    },
+    transitScale: {
+      about: "The opportunity score by transit adds up the points of interest, of many kinds, reachable from each cell by public transport in the time budget, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city, and both modes, on one scale, logarithmic from {low} to {high}, so colours compare across cities and between car and transit.",
+    },
+    cdiViews: {
+      index: "Index",
+      car: "Car",
+      transit: "Transit",
+    },
+    cdiLegend: {
+      car: "Opportunities by car",
+      transit: "Opportunities by transit",
+    },
+    cdiHint: {
+      car: "How many points of interest, of many kinds, can be reached from each cell by car within the time budget, added up: one of the two opportunity scores the index compares.",
+      transit: "How many points of interest, of many kinds, can be reached from each cell by public transport within the time budget, added up: one of the two opportunity scores the index compares.",
     },
     povViews: {
       zones: 'Zones',
@@ -1272,6 +1291,7 @@ export default {
         title: 'Car Dependency Index',
         colors: 'You are seeing the normalised difference between the opportunities reachable by public transport and by car.',
         blue: 'Blue places, where public transport wins, are rare: the car is often faster.',
+        views: "You can also see the two opportunity scores the index compares: the points of interest reachable by car and by public transport.",
         filter: 'The filter shows only the cells within a range of the index.',
       },
       pov: {

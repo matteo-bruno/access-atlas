@@ -250,13 +250,32 @@ export default {
     socialityScale: {
       toggle: "Absolute Skala",
       about:
-        "Der Sozialitäts-Score zählt die erreichbaren Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+        "Der Sozialitäts-Score zählt die erreichbaren Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
     },
     opportunityScale: {
-      about: "Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+      about: "Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
     },
     proximityScale: {
-      about: "Der Nähe-Score zählt die Dienstleistungen in kurzer Gehentfernung und ist daher in größeren, dichteren Städten höher. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+      about: "Der Nähe-Score zählt die Dienstleistungen in kurzer Gehentfernung und ist daher in größeren, dichteren Städten höher. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+    },
+    carScale: {
+      about: "Der Gelegenheits-Score mit dem Auto summiert die Orte von Interesse vieler Arten, die von jeder Zelle aus mit dem Auto im Zeitbudget erreichbar sind, und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte und beide Verkehrsmittel auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten und zwischen Auto und öffentlichem Verkehr vergleichen lassen.",
+    },
+    transitScale: {
+      about: "Der Gelegenheits-Score mit dem öffentlichen Verkehr summiert die Orte von Interesse vieler Arten, die von jeder Zelle aus mit dem öffentlichen Verkehr im Zeitbudget erreichbar sind, und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte und beide Verkehrsmittel auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten und zwischen Auto und öffentlichem Verkehr vergleichen lassen.",
+    },
+    cdiViews: {
+      index: "Index",
+      car: "Auto",
+      transit: "ÖPNV",
+    },
+    cdiLegend: {
+      car: "Gelegenheiten mit dem Auto",
+      transit: "Gelegenheiten mit dem ÖPNV",
+    },
+    cdiHint: {
+      car: "Wie viele Orte von Interesse vieler Arten von jeder Zelle aus mit dem Auto im Zeitbudget erreichbar sind, aufsummiert: einer der beiden Gelegenheits-Scores, die der Index vergleicht.",
+      transit: "Wie viele Orte von Interesse vieler Arten von jeder Zelle aus mit dem öffentlichen Verkehr im Zeitbudget erreichbar sind, aufsummiert: einer der beiden Gelegenheits-Scores, die der Index vergleicht.",
     },
     povViews: {
       zones: 'Zonen',
@@ -1217,6 +1236,7 @@ export default {
         title: 'Car Dependency Index',
         colors: 'Sie sehen die normalisierte Differenz zwischen den mit öffentlichem Verkehr und mit dem Auto erreichbaren Gelegenheiten.',
         blue: 'Blaue Orte, an denen der öffentliche Verkehr gewinnt, sind selten: Das Auto ist oft schneller.',
+        views: "Sie können auch die beiden Gelegenheits-Scores sehen, die der Index vergleicht: die mit dem Auto und mit dem öffentlichen Verkehr erreichbaren Orte von Interesse.",
         filter: 'Der Filter zeigt nur die Zellen in einem Bereich des Index.',
       },
       pov: {

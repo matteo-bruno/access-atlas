@@ -250,13 +250,32 @@ export default {
     socialityScale: {
       toggle: "Échelle absolue",
       about:
-        "Le score de sociabilité compte les personnes accessibles, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+        "Le score de sociabilité compte les personnes accessibles, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
     },
     opportunityScale: {
-      about: "Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+      about: "Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
     },
     proximityScale: {
-      about: "Le score de proximité compte les services à courte distance à pied, il est donc plus élevé dans les villes plus grandes et plus denses. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+      about: "Le score de proximité compte les services à courte distance à pied, il est donc plus élevé dans les villes plus grandes et plus denses. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+    },
+    carScale: {
+      about: "Le score d’opportunité en voiture additionne les points d’intérêt, de nombreux types, accessibles depuis chaque cellule en voiture dans le temps imparti, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes, et les deux modes, sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent entre villes et entre voiture et transports en commun.",
+    },
+    transitScale: {
+      about: "Le score d’opportunité en transports en commun additionne les points d’intérêt, de nombreux types, accessibles depuis chaque cellule en transports en commun dans le temps imparti, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes, et les deux modes, sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent entre villes et entre voiture et transports en commun.",
+    },
+    cdiViews: {
+      index: "Indice",
+      car: "Voiture",
+      transit: "Transports",
+    },
+    cdiLegend: {
+      car: "Opportunités en voiture",
+      transit: "Opportunités en transports en commun",
+    },
+    cdiHint: {
+      car: "Combien de points d’intérêt, de nombreux types, sont accessibles depuis chaque cellule en voiture dans le temps imparti, additionnés : l’un des deux scores d’opportunité que compare l’indice.",
+      transit: "Combien de points d’intérêt, de nombreux types, sont accessibles depuis chaque cellule en transports en commun dans le temps imparti, additionnés : l’un des deux scores d’opportunité que compare l’indice.",
     },
     povViews: {
       zones: 'Zones',
@@ -1217,6 +1236,7 @@ export default {
         title: 'Car Dependency Index',
         colors: 'Vous voyez la différence normalisée entre les opportunités accessibles en transports en commun et en voiture.',
         blue: 'Les lieux bleus, où les transports en commun l’emportent, sont rares : la voiture est souvent plus rapide.',
+        views: "Vous pouvez aussi voir les deux scores d’opportunité que compare l’indice : les points d’intérêt accessibles en voiture et en transports en commun.",
         filter: 'Le filtre ne montre que les cellules dans une plage de l’indice.',
       },
       pov: {

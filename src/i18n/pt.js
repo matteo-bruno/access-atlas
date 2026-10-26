@@ -248,13 +248,32 @@ export default {
     socialityScale: {
       toggle: "Escala absoluta",
       about:
-        "A pontuação de sociabilidade conta as pessoas ao alcance, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade ao longo do dia, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
+        "A pontuação de sociabilidade conta as pessoas ao alcance, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade ao longo do dia, deixando de fora os {lowShare} dos moradores com as pontuações mais baixas e os {highShare} com as mais altas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
     },
     opportunityScale: {
-      about: "A pontuação de oportunidade conta os serviços ao alcance de transporte público, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
+      about: "A pontuação de oportunidade conta os serviços ao alcance de transporte público, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {lowShare} dos moradores com as pontuações mais baixas e os {highShare} com as mais altas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
     },
     proximityScale: {
-      about: "A pontuação de proximidade conta os serviços a uma curta caminhada, então é maior nas cidades maiores e mais densas. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
+      about: "A pontuação de proximidade conta os serviços a uma curta caminhada, então é maior nas cidades maiores e mais densas. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {lowShare} dos moradores com as pontuações mais baixas e os {highShare} com as mais altas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
+    },
+    carScale: {
+      about: "A pontuação de oportunidade de carro soma os pontos de interesse, de muitos tipos, alcançáveis de cada célula de carro no tempo disponível, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {lowShare} dos moradores com as pontuações mais baixas e os {highShare} com as mais altas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades, e os dois modos, em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades e entre carro e transporte público.",
+    },
+    transitScale: {
+      about: "A pontuação de oportunidade de transporte público soma os pontos de interesse, de muitos tipos, alcançáveis de cada célula de transporte público no tempo disponível, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {lowShare} dos moradores com as pontuações mais baixas e os {highShare} com as mais altas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades, e os dois modos, em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades e entre carro e transporte público.",
+    },
+    cdiViews: {
+      index: "Índice",
+      car: "Carro",
+      transit: "Transporte",
+    },
+    cdiLegend: {
+      car: "Oportunidades de carro",
+      transit: "Oportunidades de transporte público",
+    },
+    cdiHint: {
+      car: "Quantos pontos de interesse, de muitos tipos, se alcançam de cada célula de carro no tempo disponível, somados: uma das duas pontuações de oportunidade que o índice compara.",
+      transit: "Quantos pontos de interesse, de muitos tipos, se alcançam de cada célula de transporte público no tempo disponível, somados: uma das duas pontuações de oportunidade que o índice compara.",
     },
     povViews: {
       zones: 'Zonas',
@@ -1215,6 +1234,7 @@ export default {
         title: 'Car Dependency Index',
         colors: 'Você está vendo a diferença normalizada entre as oportunidades alcançáveis de transporte público e de carro.',
         blue: 'Lugares azuis, onde o transporte público vence, são raros: o carro costuma ser mais rápido.',
+        views: "Você também pode ver as duas pontuações de oportunidade que o índice compara: os pontos de interesse alcançáveis de carro e de transporte público.",
         filter: 'O filtro mostra apenas as células dentro de uma faixa do índice.',
       },
       pov: {

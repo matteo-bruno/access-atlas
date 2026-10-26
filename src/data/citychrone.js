@@ -28,8 +28,13 @@ export const CITYCHRONE_BANDS = {
   isochrone: [10, 20, 30, 45, 60, 75, 90, 120, 180],
 };
 
+// The resident percentiles a fitted scale spans: from the 5th, so a few
+// cells with next to nothing do not wash the city out, to the 99th, so the
+// best served places keep colours of their own.
+export const RESIDENT_DOMAIN = [0.05, 0.99];
+
 /**
- * The 5th and 95th percentile of `values`, each weighted by its residents:
+ * The 5th and 99th percentile of `values`, each weighted by its residents:
  * the range a city view fits a scale to, so the colours span where people
  * live rather than the many thinly settled outer cells. A value with no
  * residents counts for nothing; with no weights at all every value counts
@@ -55,7 +60,7 @@ export function residentDomain(values, weights) {
     }
     return pairs[pairs.length - 1][0];
   };
-  return [at(0.05), at(0.95)];
+  return [at(RESIDENT_DOMAIN[0]), at(RESIDENT_DOMAIN[1])];
 }
 
 /**

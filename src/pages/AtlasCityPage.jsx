@@ -10,7 +10,7 @@ import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
-import { CITYCHRONE_VIEWS, DEFAULT_HOUR, residentDomain, socialityDomain } from '../data/citychrone.js';
+import { CITYCHRONE_VIEWS, DEFAULT_HOUR, RESIDENT_DOMAIN, residentDomain, socialityDomain } from '../data/citychrone.js';
 import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
@@ -101,11 +101,25 @@ const measured = (v) => Number.isFinite(v) && v < UNREACHABLE;
 const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
 
 // What "seen" is remembered under for the city view's own tour; each layer's
-// is `layer-<id>-v1`.
+// is `layer-<id>-v<version>`.
 const CITY_TOUR = 'city-v2';
 
 // What the P.O.V. layer can draw: the zones, then the two scores.
 const POV_VIEWS = ['zones', 'proximity', 'opportunity'];
+
+// What the Car Dependency layer can draw: the index, then the two
+// opportunity scores it is computed from.
+const CDI_VIEWS = ['index', 'car', 'transit'];
+
+// The scores drawn on a scale fitted to the city, with a shared logarithmic
+// one behind `scale=abs` (see ramps.js): the field each reads, and its two
+// ramps.
+const SCORES = {
+  proximity: { field: 'proximity', fitted: RAMPS.povProximity, absolute: RAMPS.povProximityAbsolute },
+  opportunity: { field: 'opportunity', fitted: RAMPS.povOpportunity, absolute: RAMPS.povOpportunityAbsolute },
+  car: { field: 'o_score_car', fitted: RAMPS.cdiCar, absolute: RAMPS.cdiCarAbsolute },
+  transit: { field: 'o_score_pt', fitted: RAMPS.cdiTransit, absolute: RAMPS.cdiTransitAbsolute },
+};
 
 const DEFAULT_OPACITY = 0.8;
 
@@ -258,6 +272,13 @@ function AtlasScreen({ cityId, view }) {
   // drawn from (`pov=proximity|opportunity`).
   const povView = POV_VIEWS.includes(params.get('pov')) ? params.get('pov') : POV_VIEWS[0];
   const povZones = layer === 'pov' && povView === 'zones';
+  // Car Dependency: its index (the default), or the opportunities reachable
+  // by car or by transit that the index compares (`cdi=car|transit`).
+  const cdiView = CDI_VIEWS.includes(params.get('cdi')) ? params.get('cdi') : CDI_VIEWS[0];
+  const cdiIndex = layer === 'cardep' && cdiView === 'index';
+  // The score on screen, where the layer draws one: a key of SCORES.
+  const scoreView =
+    layer === 'pov' && !povZones ? povView : layer === 'cardep' && !cdiIndex ? cdiView : null;
   const hourParam = Number.parseInt(params.get('hour'), 10);
   const hours = platformProfiles.citychrone?.hourly?.hours ?? 24;
   // A city can publish CityChrone's scores without its travel times; its
@@ -337,7 +358,8 @@ function AtlasScreen({ cityId, view }) {
   // categories, so it is offered where a delta ramp is defined.
   const scenarios = unified && layer !== POPULATION_LAYER ? layerScenarios(profile, layer) : [];
   const scenario = scenarios.find((s) => s.id === params.get('sc')) ?? null;
-  const diffAvailable = Boolean(scenario && DELTA_RAMPS[layer]);
+  // The difference is of the index or the zones, not of a score.
+  const diffAvailable = Boolean(scenario && DELTA_RAMPS[layer]) && !scoreView;
   const diffOn = diffAvailable && params.get('cmp') === 'diff';
   const pickScenario = (id) => {
     const next = new URLSearchParams(params);
@@ -386,7 +408,7 @@ function AtlasScreen({ cityId, view }) {
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone', originCc);
 
   // The sociality score grows with the city, so by default its scale is the
-  // city's own: the 5th to 95th percentile of its residents, over every hour
+  // city's own: the 5th to 99th percentile of its residents, over every hour
   // together (`socialityDomain`); `scale=abs` puts it on the one scale every
   // city shares.
   const socialityAbsolute = params.get('scale') === 'abs';
@@ -486,31 +508,28 @@ function AtlasScreen({ cityId, view }) {
   useEffect(() => {
     if (focusId != null) setSelectedCell(focusId);
   }, [focusId]);
-  // P.O.V.'s two scores grow with the city as the sociality score does, and
-  // are scaled the same way: the city's own 5th to 95th percentile of the
-  // layer's residents by default, one shared logarithmic scale with
-  // `scale=abs`. Measured on the baseline, so a scenario is read on the
-  // city's scale.
-  const povFitted = useMemo(() => {
-    if (layer !== 'pov' || !baseGeojson?.features) return null;
-    const popKey = unified ? layerPopulationKey('pov') : 'population';
-    const fit = (name) => {
-      const values = [];
-      const weights = [];
-      for (const feature of baseGeojson.features) {
-        const p = feature.properties;
-        if (!Number.isFinite(p?.[name])) continue;
-        values.push(p[name]);
-        weights.push(p[popKey]);
-      }
-      const domain = residentDomain(values, weights);
-      return domain ? fitRamp(name === 'proximity' ? RAMPS.povProximity : RAMPS.povOpportunity, domain[0], domain[1]) : null;
-    };
-    return { proximity: fit('proximity'), opportunity: fit('opportunity') };
-  }, [layer, baseGeojson, unified]);
-  const povAbsoluteOf = (name) => (name === 'proximity' ? RAMPS.povProximityAbsolute : RAMPS.povOpportunityAbsolute);
-  const povRamp = (name) => (socialityAbsolute ? povAbsoluteOf(name) : povFitted?.[name] ?? povAbsoluteOf(name));
-  const povAbsolute = povAbsoluteOf(povView);
+  // P.O.V.'s and Car Dependency's scores grow with the city as the
+  // sociality score does, and are scaled the same way: the city's own 5th
+  // to 99th percentile of the layer's residents by default, one shared
+  // logarithmic scale with `scale=abs`. Measured on the baseline, so a
+  // scenario is read on the city's scale.
+  const scoreFitted = useMemo(() => {
+    if (!scoreView || !baseGeojson?.features) return null;
+    const popKey = unified ? layerPopulationKey(layer) : 'population';
+    const { field, fitted } = SCORES[scoreView];
+    const values = [];
+    const weights = [];
+    for (const feature of baseGeojson.features) {
+      const p = feature.properties;
+      if (!Number.isFinite(p?.[field])) continue;
+      values.push(p[field]);
+      weights.push(p[popKey]);
+    }
+    const domain = residentDomain(values, weights);
+    return domain ? fitRamp(fitted, domain[0], domain[1]) : null;
+  }, [scoreView, layer, baseGeojson, unified]);
+  const scoreAbsolute = scoreView ? SCORES[scoreView].absolute : null;
+  const scoreRamp = scoreView ? (socialityAbsolute ? scoreAbsolute : scoreFitted ?? scoreAbsolute) : null;
 
   const bounds = useMemo(() => {
     const cell = focusId != null ? baseGeojson?.features?.[focusId] : null;
@@ -541,15 +560,15 @@ function AtlasScreen({ cityId, view }) {
       ],
       format,
     });
-    if (layer === 'pov') {
-      // The zones are categorical, handled separately; the scores are not.
-      if (povView === 'zones') return null;
+    if (scoreView) {
       return {
-        ramp: povRamp(povView),
-        value: ['get', key(povView)],
+        ramp: scoreRamp,
+        value: ['get', key(SCORES[scoreView].field)],
         format: (v) => n(Math.round(v)),
       };
     }
+    // P.O.V.'s zones are categorical, handled separately.
+    if (layer === 'pov') return null;
     if (layer === 'cardep') {
       if (diffShown) return delta('cdi', DELTA_RAMPS.cardep, (v) => signed(v, n, 3));
       return { ramp: RAMPS.cdi, value: ['get', key('cdi')], format: (v) => signed(v, n) };
@@ -595,7 +614,7 @@ function AtlasScreen({ cityId, view }) {
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, povView, povFitted, socialityAbsolute]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, scoreView, scoreRamp]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -624,7 +643,7 @@ function AtlasScreen({ cityId, view }) {
 
   // ── Paint ──────────────────────────────────────────────────────────
   // The index filter reads the index, not a difference of two.
-  const rangeOn = layer === 'cardep' && !diffShown && (range[0] > -1 || range[1] < 1);
+  const rangeOn = cdiIndex && !diffShown && (range[0] > -1 || range[1] < 1);
 
   // The last city's mesh, kept on screen while this one's grid loads.
   const gridLoading = unified && atlas.status === 'pending';
@@ -791,6 +810,10 @@ function AtlasScreen({ cityId, view }) {
         .map((v) => n(v, { maximumFractionDigits: 1 }))
         .join(' · ')}`;
     }
+    if (layer === 'cardep' && !cdiIndex) {
+      const value = at(SCORES[cdiView].field);
+      return Number.isFinite(value) ? `${t(`atlas.cdiLegend.${cdiView}`)} ${measure.format(value)}` : t('atlas.noValue');
+    }
     if (layer === 'cardep') {
       if (diffShown) {
         if (!Number.isFinite(p.cdi) || !Number.isFinite(at('cdi'))) return t('atlas.noValue');
@@ -944,9 +967,11 @@ function AtlasScreen({ cityId, view }) {
         ? t('city.zoneType')
         : t(`atlas.povLegend.${povView}`)
       : layer === 'cardep'
-        ? // The index itself, per cell: the world map's legend title says
-          // "median resident", which is a city's figure, not a cell's.
-          platform.name
+        ? cdiIndex
+          ? // The index itself, per cell: the world map's legend title says
+            // "median resident", which is a city's figure, not a cell's.
+            platform.name
+          : t(`atlas.cdiLegend.${cdiView}`)
         : layer === 'fifteen'
           ? t('fifteen.legendValue')
           : t(`atlas.legend.${ccView}`);
@@ -956,14 +981,14 @@ function AtlasScreen({ cityId, view }) {
     ? (v) => (v === 0 ? '0' : `${v < 0 ? '−' : '+'}${n(Math.abs(v), { maximumFractionDigits: 1 })}`)
     : isPopulation
     ? (v) => (v >= 1000 ? `${n(v / 1000, { maximumFractionDigits: 1 })}k` : n(v))
-    : layer === 'cardep'
+    : cdiIndex
       ? (v) => (v === 0 ? '0' : signed(v, n))
-      : (ccView === 'sociality' && citychroneOn) || (layer === 'pov' && !povZones)
+      : (ccView === 'sociality' && citychroneOn) || scoreView
         ? (v) => {
             const text = compactCount(v, n);
-            // A fitted scale stops at the city's 5th and 95th percentile, and
+            // A fitted scale stops at the city's 5th and 99th percentile, and
             // the cells past either end take its colour: the ends say so.
-            const ramp = layer === 'pov' ? measure.ramp : socialityRamp;
+            const ramp = scoreView ? measure.ramp : socialityRamp;
             if (!ramp.fitted) return text;
             const ticks = ramp.ticks;
             return v === ticks[0] && v > 0 ? `≤${text}` : v === ticks[ticks.length - 1] ? `≥${text}` : text;
@@ -985,6 +1010,8 @@ function AtlasScreen({ cityId, view }) {
       ? t(`atlas.viewHint.${ccView}`)
       : layer === 'pov' && !povZones
         ? t(`atlas.povHint.${povView}`)
+      : layer === 'cardep' && !cdiIndex
+        ? t(`atlas.cdiHint.${cdiView}`)
       : layer === 'cardep' || layer === 'pov'
         // Car Dependency's and P.O.V.'s "?" say more than the dialog's
         // "Reading the map": CDI what a white and a blue area mean, P.O.V.
@@ -1058,11 +1085,12 @@ function AtlasScreen({ cityId, view }) {
       targets: [controls, legendBox, { selector: '.aa-mapbox--selected' }],
     },
     citychrone: { bullets: ['velocity', 'sociality', 'isochrone', 'hour'], targets: [controls] },
-    cardep: { bullets: ['colors', 'blue', 'filter'], targets: [legendBox, controls] },
+    cardep: { bullets: ['colors', 'blue', 'views', 'filter'], targets: [legendBox, controls], version: 2 },
     pov: { bullets: ['scores', 'zones'], targets: [controls, legendBox] },
   };
   const layerTour = layerTours[layer] ?? null;
-  const layerTourId = layerTour ? `layer-${layer}-v1` : null;
+  // Bumped when a layer's screen changes, so a reader who saw it sees it again.
+  const layerTourId = layerTour ? `layer-${layer}-v${layerTour.version ?? 1}` : null;
   const cityTourDue = tourForced || !tourSeen(CITY_TOUR);
   const layerTourDue = Boolean(layerTour) && (tourForced || !tourSeen(layerTourId));
   const tourSteps = [
@@ -1187,7 +1215,7 @@ function AtlasScreen({ cityId, view }) {
               {/* The sociality score's scale: the city's own by default, one
                   switch away from the scale every city shares. Kept small,
                   under the legend it changes. */}
-              {((citychroneOn && ccView === 'sociality') || (layer === 'pov' && !povZones)) && !waiting && (
+              {((citychroneOn && ccView === 'sociality') || scoreView) && !waiting && (
                 <div className="aa-scaleswitch">
                   <label className="aa-scaleswitch__label">
                     <input
@@ -1201,19 +1229,12 @@ function AtlasScreen({ cityId, view }) {
                     {t('atlas.socialityScale.toggle')}
                   </label>
                   <Explain
-                    body={
-                      layer === 'pov'
-                        ? t(`atlas.${povView}Scale.about`, {
-                            share: n(0.05, { style: 'percent' }),
-                            low: compactCount(povAbsolute.ticks[0], n),
-                            high: compactCount(povAbsolute.ticks.at(-1), n),
-                          })
-                        : t('atlas.socialityScale.about', {
-                            share: n(0.05, { style: 'percent' }),
-                            low: compactCount(RAMPS.socialityAbsolute.ticks[0], n),
-                            high: compactCount(RAMPS.socialityAbsolute.ticks.at(-1), n),
-                          })
-                    }
+                    body={t(`atlas.${scoreView ?? 'sociality'}Scale.about`, {
+                      lowShare: n(RESIDENT_DOMAIN[0], { style: 'percent' }),
+                      highShare: n(1 - RESIDENT_DOMAIN[1], { style: 'percent' }),
+                      low: compactCount((scoreAbsolute ?? RAMPS.socialityAbsolute).ticks[0], n),
+                      high: compactCount((scoreAbsolute ?? RAMPS.socialityAbsolute).ticks.at(-1), n),
+                    })}
                   />
                 </div>
               )}
@@ -1406,7 +1427,33 @@ function AtlasScreen({ cityId, view }) {
               </>
             )}
 
-            {layer === 'cardep' && !diffShown && (
+            {layer === 'cardep' && (
+              <>
+                <Eyebrow className="aa-tourctl">{t('atlas.controls.view')}</Eyebrow>
+                <div className="aa-toggle aa-toggle--segmented aa-toggle--fit aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
+                  {CDI_VIEWS.map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={`aa-toggle__btn${cdiView === key ? ' aa-toggle__btn--active' : ''}`}
+                      aria-pressed={cdiView === key}
+                      onClick={() => {
+                        const next = new URLSearchParams(params);
+                        if (key === CDI_VIEWS[0]) next.delete('cdi');
+                        else next.set('cdi', key);
+                        // The difference is the index's: a score has none.
+                        if (key !== CDI_VIEWS[0]) next.delete('cmp');
+                        setParams(next, { replace: true });
+                      }}
+                    >
+                      {t(`atlas.cdiViews.${key}`)}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {cdiIndex && !diffShown && (
               <>
                 <Explain className="aa-tourctl" label={t('city.filter.title')} body={t('city.filter.about')} />
                 <RangeFilter

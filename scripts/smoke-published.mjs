@@ -157,7 +157,7 @@ const browser = await chromium.launch({
 // here but the one about them runs as a returning reader.
 const skipTours = () => {
   try {
-    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v1', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
+    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v2', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
   } catch {
     // No storage: the tours would show, and the checks would say so.
   }

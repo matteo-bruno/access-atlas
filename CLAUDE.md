@@ -450,8 +450,11 @@ readable:
 
 - **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
   categorical. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
-  the zones stay the default) on soft sequential ramps, scaled like the
-  sociality score (below). A step scale invents boundaries the data does not have — two
+  the zones stay the default), and Car Dependency the two opportunity scores
+  its index compares (`cdi=car|transit`, the index stays the default: the
+  points of interest of many kinds reachable in the time budget, added up),
+  each on a soft sequential ramp of its own and scaled like the sociality
+  score (below). A score view has no difference ramp and no index filter. A step scale invents boundaries the data does not have — two
   cells either side of an edge look further apart than two at opposite ends of
   one band. The legend is `RampLegend`, a gradient with its values under it;
   it cannot show a share per band, so figures that mattered (the 15minCity
@@ -466,17 +469,22 @@ readable:
   counts people within reach, so it grows with the city, and Tokyo sat past
   the end of a domain fitted to Milan. The city view fits it to the city
   (`fitRamp` in `ramps.js`, `socialityDomain` in `citychrone.js`): the 5th to
-  95th percentile of its **residents** (`residentDomain`, weighted by the
-  layer's own population, like every other figure about a city) over all 24
+  99th percentile of its **residents** (`residentDomain`, `RESIDENT_DOMAIN`,
+  weighted by the layer's own population, like every other figure about a
+  city; the top end was raised from the 95th so the best served places keep
+  colours of their own) over all 24
   hours together, so the hour still never recolours a value, with `≤` / `≥`
   on the legend's ends.
   `scale=abs` switches to `socialityAbsolute`, one logarithmic scale for
   every city (10k to 10M), and the switch's "?" says what each means.
-  **P.O.V.'s two scores are the same exception**, for the same reason
-  (they count places within reach, so they grow with the city): fitted to
-  the city's residents by default, linear, and with `scale=abs`
-  `povProximityAbsolute` (300 to 30k) or `povOpportunityAbsolute` (1k to
-  100k), both logarithmic. A
+  **P.O.V.'s two scores and Car Dependency's two opportunity scores are the
+  same exception**, for the same reason (they count places within reach, so
+  they grow with the city): fitted to the city's residents by default,
+  linear, and with `scale=abs` a shared logarithmic scale
+  (`povProximityAbsolute` 300 to 30k, `povOpportunityAbsolute` 1k to 100k,
+  `cdiCarAbsolute` and `cdiTransitAbsolute` one domain, 100 to 10k, so car
+  and transit read against each other). `SCORES` in `AtlasCityPage.jsx`
+  lists them. A
   logarithmic default was rejected: within one city the score is close to
   linear, and the map lost its contrast.
 
@@ -1052,8 +1060,8 @@ the first time that layer is opened; on a first visit it follows the city's,
 in one tour, so opening Rome on CityChrone explains the screen and then
 CityChrone. What a layer's screen lights is marked in the panel with
 `.aa-tourctl`. Seen is remembered in localStorage (`tour:atlas-v2`,
-`tour:city-v2`, `tour:layer-<id>-v1`; bump an id to show a changed tour
-again), and a small button brings it back (the round "?" above the zoom,
+`tour:city-v2`, `tour:layer-<id>-v<version>`, Car Dependency's at v2 since
+its views; bump an id to show a changed tour again), and a small button brings it back (the round "?" above the zoom,
 "Guide" beside full screen): on a city it replays the city's steps and the
 open layer's, and leaves the other layers' as they were. The city tour does not run on a
 phone, where the column is a sheet and "on the left" is wrong. The browser
