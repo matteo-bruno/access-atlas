@@ -209,6 +209,8 @@ function AtlasScreen({ cityId, view }) {
   // tour holds the city's steps and the open layer's, seen or not.
   const [tourReplay, setTourReplay] = useState(0);
   const [tourForced, setTourForced] = useState(false);
+  // Whether the tour opened the phone's sheet, so it closes it again after.
+  const tourOpenedSheet = useRef(false);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
   // than declining to render it.
@@ -1030,18 +1032,33 @@ function AtlasScreen({ cityId, view }) {
       ))}
     </ul>
   );
+  // On a phone the screen is laid out otherwise (the column is a sheet at
+  // the foot, the layer bar scrolls sideways, a cell is tapped), so the copy
+  // that says where things are has a phone version, and the sheet is closed
+  // for the city's steps and opened for the layer's, whose controls are in it.
+  const tourSheet = (open) => () => {
+    if (!phone) return;
+    if (open) tourOpenedSheet.current = true;
+    setSheetOpen(open);
+  };
   const cityTour = [
     {
       title: t('tour.city.intro.title', { city: cityName }),
       body: (
         <>
           <p>{t('tour.city.intro.body')}</p>
-          {bullets(['panel', 'details', 'settings', 'layers'].map((key) => `tour.city.intro.${key}`))}
+          {bullets(
+            ['panel', 'details', 'settings', 'layers'].map((key) =>
+              phone ? `tour.city.introPhone.${key}` : `tour.city.intro.${key}`,
+            ),
+          )}
         </>
       ),
+      onEnter: tourSheet(false),
       targets: [
         { selector: '.aa-atlas .aa-city__panel', tag: t('tour.city.tags.panel') },
-        { selector: '.aa-city__top .aa-mapui--tr', tag: t('tour.city.tags.details'), tagAt: 'below' },
+        // On a phone the card sits right under these boxes, so their tag goes inside.
+        { selector: '.aa-city__top .aa-mapui--tr', tag: t('tour.city.tags.details'), tagAt: phone ? 'inside' : 'below' },
         { selector: '.aa-atlas .aa-mapui--bl', tag: t('tour.city.tags.settings'), tagAt: 'above' },
         { selector: '.aa-city__layerbar .aa-picker', tag: t('tour.city.tags.layers'), tagAt: 'below' },
       ],
@@ -1051,7 +1068,7 @@ function AtlasScreen({ cityId, view }) {
       title: t('tour.city.layers.title'),
       body: (
         <>
-          <p>{t('tour.city.layers.body')}</p>
+          <p>{t(phone ? 'tour.city.layersPhone.body' : 'tour.city.layers.body')}</p>
           <ul className="aa-tour__list">
             {LAYER_ORDER.map((id) => (
               <li key={id}>
@@ -1068,10 +1085,12 @@ function AtlasScreen({ cityId, view }) {
       ),
       targets: [{ selector: '.aa-city__layerbar [data-tour-layer]', all: true }],
       anchor: '.aa-city__layerbar .aa-picker',
+      onEnter: tourSheet(false),
     },
     {
-      title: t('tour.city.cell.title'),
-      body: <p>{t('tour.city.cell.body')}</p>,
+      title: t(phone ? 'tour.city.cellPhone.title' : 'tour.city.cell.title'),
+      body: <p>{t(phone ? 'tour.city.cellPhone.body' : 'tour.city.cell.body')}</p>,
+      onEnter: tourSheet(false),
       targets: [{ selector: '.aa-mapbox--selected', tag: t('tour.city.tags.details'), tagAt: 'below' }],
       within: '.aa-city__canvas',
     },
@@ -1081,7 +1100,7 @@ function AtlasScreen({ cityId, view }) {
   const legendBox = { selector: '.aa-city__legend' };
   const layerTours = {
     fifteen: {
-      bullets: ['controls', 'colors', 'cell'],
+      bullets: ['controls', 'colors', phone ? 'cellPhone' : 'cell'],
       targets: [controls, legendBox, { selector: '.aa-mapbox--selected' }],
     },
     citychrone: { bullets: ['velocity', 'sociality', 'isochrone', 'hour'], targets: [controls] },
@@ -1102,6 +1121,7 @@ function AtlasScreen({ cityId, view }) {
             body: bullets(layerTour.bullets.map((key) => `tour.layer.${layer}.${key}`)),
             targets: layerTour.targets,
             within: '.aa-city__canvas',
+            onEnter: tourSheet(true),
           },
         ]
       : []),
@@ -1820,9 +1840,8 @@ function AtlasScreen({ cityId, view }) {
             </div>
 
             <div className="aa-mapui aa-mapui--br aa-fadein">
-              {/* The tour again, for whoever skipped it. Not on a phone,
-                  where it does not run. */}
-              {!phone && !fullscreen && (
+              {/* The tour again, for whoever skipped it. */}
+              {!fullscreen && (
                 <button
                   type="button"
                   className="aa-mapbtn"
@@ -1881,13 +1900,17 @@ function AtlasScreen({ cityId, view }) {
       {/* The first city a reader opens explains the screen, and the first
           time each layer is opened, that layer: on a first visit the two
           run as one tour. "Guide" replays both for the open layer, and
-          leaves the other layers' as they were. Not on a phone, where the
-          column is a sheet and "on the left" is wrong. */}
+          leaves the other layers' as they were. A phone gets the same steps,
+          told and lit for its own layout. */}
       <Tour
         marks={tourMarks}
-        ready={mapPainted && !phone && !fullscreen && sidebarOpen && !waiting}
+        ready={mapPainted && !fullscreen && (phone || sidebarOpen) && !waiting}
         replay={tourReplay}
-        onClose={() => setTourForced(false)}
+        onClose={() => {
+          setTourForced(false);
+          if (tourOpenedSheet.current) setSheetOpen(false);
+          tourOpenedSheet.current = false;
+        }}
         steps={tourSteps}
       />
     </div>

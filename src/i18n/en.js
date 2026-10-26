@@ -1272,6 +1272,19 @@ export default {
         title: 'Click a cell',
         body: 'Click any cell of the map to open the details of its measures here, for that area.',
       },
+      introPhone: {
+        panel: 'At the bottom, the explanations and the filters: pull up the handle to see them all.',
+        details: 'At the top, the city summary and the details of the cell you tap.',
+        settings: 'Above them, on the left, the controls: the shape of the map and its transparency.',
+        layers: 'At the top, the layers: swipe the bar to see them all.',
+      },
+      layersPhone: {
+        body: 'Tap one to change what the map shows:',
+      },
+      cellPhone: {
+        title: 'Tap a cell',
+        body: 'Tap any cell of the map to open the details of its measures at the top, for that area.',
+      },
     },
     layer: {
       fifteen: {
@@ -1279,6 +1292,7 @@ export default {
         controls: 'Choose a service category and whether you go on foot or by bicycle.',
         colors: 'The colour bar is the proximity time: the minutes to reach the nearest service of that type, or the average over all categories.',
         cell: 'Click a cell and the box on the right gives the times for all nine categories.',
+        cellPhone: 'Tap a cell and the box at the top gives the times for all nine categories.',
       },
       citychrone: {
         title: 'CityChrone++',

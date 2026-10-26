@@ -20,6 +20,7 @@ import './Tour.css';
  *     targets: [{ selector, tag?, tagAt?: 'inside'|'below'|'above', all? }],
  *     anchor?: selector,               // the card goes under this
  *     within?: selector,               // or centred in this; else in the window
+ *     onEnter?: () => void,            // run as the step opens (e.g. open a panel)
  *   }
  * `all` lights the box around every element the selector matches (a row of
  * buttons). A target that is not on screen is simply not lit.
@@ -58,10 +59,13 @@ function rectOf(target) {
     .map((node) => node.getBoundingClientRect())
     .filter((r) => r.width > 0 && r.height > 0);
   if (rects.length === 0) return null;
-  const left = Math.min(...rects.map((r) => r.left)) - PAD;
-  const top = Math.min(...rects.map((r) => r.top)) - PAD;
-  const right = Math.max(...rects.map((r) => r.right)) + PAD;
-  const bottom = Math.max(...rects.map((r) => r.bottom)) + PAD;
+  // Kept on screen: a row that scrolls sideways (the layer bar on a phone)
+  // or a panel taller than the window lights only what can be seen.
+  const left = Math.max(Math.min(...rects.map((r) => r.left)) - PAD, 2);
+  const top = Math.max(Math.min(...rects.map((r) => r.top)) - PAD, 2);
+  const right = Math.min(Math.max(...rects.map((r) => r.right)) + PAD, window.innerWidth - 2);
+  const bottom = Math.min(Math.max(...rects.map((r) => r.bottom)) + PAD, window.innerHeight - 2);
+  if (right <= left || bottom <= top) return null;
   return { left, top, width: right - left, height: bottom - top };
 }
 
@@ -77,20 +81,22 @@ function measure(step) {
   return { holes, anchor: box(step.anchor), within: box(step.within), vw: window.innerWidth, vh: window.innerHeight };
 }
 
-function cardStyle({ anchor, within, vw, vh }) {
+// `height` is the card's own, measured once drawn, so it is kept on screen
+// on a phone too.
+function cardStyle({ anchor, within, vw, vh }, height) {
   const width = Math.min(CARD_W, vw - 32);
+  const fit = (top) => Math.max(16, Math.min(top, vh - height - 16));
   if (!anchor) {
     const area = within ?? { left: 0, top: 0, width: vw, height: vh };
     return {
       width,
       left: Math.min(Math.max(16, area.left + area.width / 2 - width / 2), vw - width - 16),
-      top: Math.max(16, area.top + area.height / 2 - 140),
+      top: fit(area.top + area.height / 2 - height / 2),
     };
   }
   // Under the anchor, centred on it and kept on screen.
   const left = Math.min(Math.max(16, anchor.left + anchor.width / 2 - width / 2), vw - width - 16);
-  const top = Math.min(anchor.bottom + PAD + GAP, vh - 220);
-  return { width, left, top: Math.max(16, top) };
+  return { width, left, top: fit(anchor.bottom + PAD + GAP) };
 }
 
 function tagStyle(hole) {
@@ -120,6 +126,12 @@ export function Tour({ marks, ready, steps, replay = 0, onClose }) {
   const [layout, setLayout] = useState(null);
   const titleId = useId();
   const primaryRef = useRef(null);
+  const cardRef = useRef(null);
+  const [cardHeight, setCardHeight] = useState(280);
+  useLayoutEffect(() => {
+    const h = cardRef.current?.offsetHeight;
+    if (h && Math.abs(h - cardHeight) > 1) setCardHeight(h);
+  });
 
   // Started when the screen is ready and something in it was never seen.
   const ids = marks.filter(Boolean);
@@ -179,7 +191,10 @@ export function Tour({ marks, ready, steps, replay = 0, onClose }) {
   }, [open, close, steps.length]);
 
   useEffect(() => {
-    if (open) primaryRef.current?.focus({ preventScroll: true });
+    if (!open) return;
+    steps[Math.min(index, steps.length - 1)]?.onEnter?.();
+    primaryRef.current?.focus({ preventScroll: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, index]);
 
   if (!step || !layout) return null;
@@ -224,7 +239,7 @@ export function Tour({ marks, ready, steps, replay = 0, onClose }) {
         ) : null,
       )}
 
-      <section className="aa-tour__card" style={cardStyle(layout)}>
+      <section ref={cardRef} className="aa-tour__card" style={cardStyle(layout, cardHeight)}>
         <p className="aa-tour__count aa-mono">
           {t('tour.step', { n: index + 1, total: steps.length })}
         </p>
