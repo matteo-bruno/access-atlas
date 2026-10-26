@@ -141,7 +141,6 @@ export default {
     welcome: 'Willkommen bei {name}',
     dismiss: 'Schließen',
     learnMore: 'Mehr erfahren →',
-    featured: 'Stadt öffnen',
     attribution: 'Grundkarte: Natural Earth · Daten © Sony CSL Rom · CC BY-NC 4.0',
     cityCount: '{count} Städte',
     zoomIn: 'Vergrößern',
@@ -242,11 +241,54 @@ export default {
       core: 'Stadt (Kern)',
       fua: 'Metropolregion (FUA)',
       about: 'Zwei Abgrenzungen aus dem Global Human Settlement Layer (GHS): der Kern der Stadt, ihr Urban Centre, und ihre Metropolregion, die Functional Urban Area, die das Pendlergebiet ringsum hinzunimmt. Jede wird für sich veröffentlicht und gemessen; der Umschalter öffnet dieselbe Ansicht für die andere.',
+      unavailable: '{name} ist für diese Abgrenzung nicht veröffentlicht',
+      opens: {
+        core: 'Für die Stadt (Kern) veröffentlicht: öffnet sie dort',
+        fua: 'Für die Metropolregion (FUA) veröffentlicht: öffnet sie dort',
+      },
     },
     socialityScale: {
       toggle: "Absolute Skala",
       about:
-        "Der Sociality-Score zählt erreichbare Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Zellen: das klarste Bild der Stadt, aber dieselbe Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala legt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, damit Farben zwischen Städten vergleichbar sind.",
+        "Der Sozialitäts-Score zählt die erreichbaren Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+    },
+    opportunityScale: {
+      about: "Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+    },
+    proximityScale: {
+      about: "Der Nähe-Score zählt die Dienstleistungen in kurzer Gehentfernung und ist daher in größeren, dichteren Städten höher. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+    },
+    carScale: {
+      about: "Der Gelegenheits-Score mit dem Auto summiert die Orte von Interesse vieler Arten, die von jeder Zelle aus mit dem Auto im Zeitbudget erreichbar sind, und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte und beide Verkehrsmittel auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten und zwischen Auto und öffentlichem Verkehr vergleichen lassen.",
+    },
+    transitScale: {
+      about: "Der Gelegenheits-Score mit dem öffentlichen Verkehr summiert die Orte von Interesse vieler Arten, die von jeder Zelle aus mit dem öffentlichen Verkehr im Zeitbudget erreichbar sind, und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die {lowShare} ihrer Einwohner mit den niedrigsten und die {highShare} mit den höchsten Werten: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte und beide Verkehrsmittel auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten und zwischen Auto und öffentlichem Verkehr vergleichen lassen.",
+    },
+    cdiViews: {
+      index: "Index",
+      car: "Auto",
+      transit: "ÖPNV",
+    },
+    cdiLegend: {
+      car: "Gelegenheiten mit dem Auto",
+      transit: "Gelegenheiten mit dem ÖPNV",
+    },
+    cdiHint: {
+      car: "Wie viele Orte von Interesse vieler Arten von jeder Zelle aus mit dem Auto im Zeitbudget erreichbar sind, aufsummiert: einer der beiden Gelegenheits-Scores, die der Index vergleicht.",
+      transit: "Wie viele Orte von Interesse vieler Arten von jeder Zelle aus mit dem öffentlichen Verkehr im Zeitbudget erreichbar sind, aufsummiert: einer der beiden Gelegenheits-Scores, die der Index vergleicht.",
+    },
+    povViews: {
+      zones: 'Zonen',
+      proximity: 'Nähe',
+      opportunity: 'Gelegenheit',
+    },
+    povLegend: {
+      proximity: 'Nähe-Score',
+      opportunity: 'Gelegenheits-Score',
+    },
+    povHint: {
+      proximity: 'Wie viele Dienstleistungen jede Zelle zu Fuß in kurzer Zeit erreicht: was in der Nähe ist. Ein gewichteter Score, keine Anzahl von Orten.',
+      opportunity: 'Wie viele Dienstleistungen jede Zelle mit dem öffentlichen Verkehr in längerer Zeit erreicht: was weiter weg, aber erreichbar ist. Ein gewichteter Score, keine Anzahl von Orten.',
     },
     scenario: {
       label: 'Szenario',
@@ -778,15 +820,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Städte',
-      countries: 'Länder',
-      best: 'Beste',
-      worst: 'Schlechteste',
-      highest: 'Höchste',
-      lowest: 'Niedrigste',
-      residents: 'Gemessene Bewohner',
-    },
     layer: 'Ebene',
     measure: 'Messgröße',
     statistic: 'Statistik',
@@ -1139,6 +1172,80 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rom',
   },
 
+  tour: {
+    replay: 'Anleitung',
+    step: 'Schritt {n} von {total}',
+    next: 'Weiter',
+    back: 'Zurück',
+    skip: 'Überspringen',
+    done: 'Verstanden',
+    atlas: {
+      layers: {
+        title: 'Wählen Sie eine Ebene',
+        body: 'Jede Ebene misst Erreichbarkeit auf eine andere Weise. Wechseln Sie hier zwischen ihnen, um zu ändern, was die Karte zeigt.',
+      },
+      cities: {
+        title: 'Öffnen Sie eine Stadt',
+        body: 'Jeder Punkt ist eine Stadt. Klicken Sie auf der Karte auf eine, um sie im Detail zu öffnen, oder suchen Sie sie in der Suchleiste nach Namen.',
+        tag: 'Suche',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Das ist die Karte von {city}',
+        body: 'Rund um die Karte:',
+        panel: 'Links die Erklärungen und Filter: was die Ebene misst, ihre Legende, ihre Optionen und „Über diese Ebene“ für mehr.',
+        details: 'Rechts die Übersicht der Stadt und die Details der Zelle, die Sie anklicken.',
+        settings: 'Unten links die Einstellungen: Form der Karte (Karte oder Kartogramm) und Transparenz ändern.',
+        layers: 'Oben die Ebenen.',
+      },
+      tags: {
+        panel: 'Erklärungen',
+        details: 'Details',
+        settings: 'Einstellungen',
+        layers: 'Ebenen',
+      },
+      layers: {
+        title: 'Vier Ebenen',
+        body: 'Klicken Sie auf eine, um zu ändern, was die Karte zeigt:',
+        fifteen: 'wie nah Dienstleistungen zu Fuß sind.',
+        citychrone: 'wie schnell der öffentliche Verkehr ist.',
+        cardep: 'ob man in der Stadt auf das Auto angewiesen ist.',
+        pov: 'mehrere Aspekte der Erreichbarkeit zusammen.',
+      },
+      cell: {
+        title: 'Klicken Sie auf eine Zelle',
+        body: 'Klicken Sie auf eine beliebige Zelle der Karte, um hier die Details ihrer Messwerte für dieses Gebiet zu öffnen.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Wählen Sie eine Kategorie von Dienstleistungen und ob Sie zu Fuß oder mit dem Fahrrad unterwegs sind.',
+        colors: 'Die Farbleiste ist die Nähezeit: die Minuten bis zur nächsten Dienstleistung dieser Art oder der Durchschnitt über alle Kategorien.',
+        cell: 'Klicken Sie auf eine Zelle, und das Feld rechts zeigt die Zeiten aller neun Kategorien.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Geschwindigkeits-Score: wie schnell der öffentliche Verkehr Sie von jeder Zelle aus bewegt.',
+        sociality: 'Sozialitäts-Score: wie viele Menschen Sie mit dem öffentlichen Verkehr erreichen.',
+        isochrone: 'Isochronen: Reisezeiten mit dem öffentlichen Verkehr von einem Gebiet zu allen anderen.',
+        hour: 'Der Stundenfilter zeigt jede Messung zu einer anderen Tageszeit.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Sie sehen die normalisierte Differenz zwischen den mit öffentlichem Verkehr und mit dem Auto erreichbaren Gelegenheiten.',
+        blue: 'Blaue Orte, an denen der öffentliche Verkehr gewinnt, sind selten: Das Auto ist oft schneller.',
+        views: "Sie können auch die beiden Gelegenheits-Scores sehen, die der Index vergleicht: die mit dem Auto und mit dem öffentlichen Verkehr erreichbaren Orte von Interesse.",
+        filter: 'Der Filter zeigt nur die Zellen in einem Bereich des Index.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Nähe und Gelegenheit: die erreichbaren Dienstleistungen in der Nähe (zu Fuß) und weiter weg (mit dem öffentlichen Verkehr).',
+        zones: 'Zonen: die Einteilung relativ zum Median der Stadt selbst; sie zeigt also, welche Orte besser oder schlechter versorgt sind als die Stadt im Durchschnitt.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Fehler 404',
     headline: 'Nicht auf',

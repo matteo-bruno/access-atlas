@@ -155,7 +155,6 @@ export default {
     welcome: 'Welcome to {name}',
     dismiss: 'Dismiss',
     learnMore: 'Learn more →',
-    featured: 'Open a city',
     attribution: 'Basemap: Natural Earth · Data © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} cities',
     zoomIn: 'Zoom in',
@@ -265,11 +264,54 @@ export default {
       core: 'City (core)',
       fua: 'Metro (FUA)',
       about: 'Two boundaries from the Global Human Settlement Layer (GHS): the city\'s core, its Urban Centre, and its metro area, the Functional Urban Area, which adds the commuting zone around it. Each is published and measured on its own; switching opens the same view on the other.',
+      unavailable: '{name} is not published on this boundary',
+      opens: {
+        core: 'Published for the city (core): opens it there',
+        fua: 'Published for the metro area (FUA): opens it there',
+      },
     },
     socialityScale: {
       toggle: "Absolute scale",
       about:
-        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
+    opportunityScale: {
+      about: "The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
+    proximityScale: {
+      about: "The proximity score counts services within a short walk, so it runs higher in larger, denser cities. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
+    carScale: {
+      about: "The opportunity score by car adds up the points of interest, of many kinds, reachable from each cell by car in the time budget, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city, and both modes, on one scale, logarithmic from {low} to {high}, so colours compare across cities and between car and transit.",
+    },
+    transitScale: {
+      about: "The opportunity score by transit adds up the points of interest, of many kinds, reachable from each cell by public transport in the time budget, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the {lowShare} of its residents with the lowest scores and the {highShare} with the highest: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city, and both modes, on one scale, logarithmic from {low} to {high}, so colours compare across cities and between car and transit.",
+    },
+    cdiViews: {
+      index: "Index",
+      car: "Car",
+      transit: "Transit",
+    },
+    cdiLegend: {
+      car: "Opportunities by car",
+      transit: "Opportunities by transit",
+    },
+    cdiHint: {
+      car: "How many points of interest, of many kinds, can be reached from each cell by car within the time budget, added up: one of the two opportunity scores the index compares.",
+      transit: "How many points of interest, of many kinds, can be reached from each cell by public transport within the time budget, added up: one of the two opportunity scores the index compares.",
+    },
+    povViews: {
+      zones: 'Zones',
+      proximity: 'Proximity',
+      opportunity: 'Opportunity',
+    },
+    povLegend: {
+      proximity: 'Proximity score',
+      opportunity: 'Opportunity score',
+    },
+    povHint: {
+      proximity: 'How many services each cell reaches on foot in a short time: what is close by. A weighted score, not a count of places.',
+      opportunity: 'How many services each cell reaches by public transport in a longer time: what is further away but within reach. A weighted score, not a count of places.',
     },
     scenario: {
       label: 'Scenario',
@@ -829,15 +871,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Cities',
-      countries: 'Countries',
-      best: 'Best',
-      worst: 'Worst',
-      highest: 'Highest',
-      lowest: 'Lowest',
-      residents: 'Residents measured',
-    },
     layer: 'Layer',
     measure: 'Measure',
     statistic: 'Statistic',
@@ -1194,6 +1227,80 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: 'Guide',
+    step: 'Step {n} of {total}',
+    next: 'Next',
+    back: 'Back',
+    skip: 'Skip',
+    done: 'Got it',
+    atlas: {
+      layers: {
+        title: 'Choose a layer',
+        body: 'Each layer measures accessibility in a different way. Switch between them here to change what the map shows.',
+      },
+      cities: {
+        title: 'Open a city',
+        body: 'Every dot is a city. Click one on the map to open it in detail, or look it up by name in the search bar.',
+        tag: 'Search',
+      },
+    },
+    city: {
+      intro: {
+        title: 'This is the map of {city}',
+        body: 'Around the map:',
+        panel: 'On the left, the explanations and the filters: what the layer measures, its legend, the options it offers and “About this layer” for more.',
+        details: 'On the right, the city summary and the details of the cell you click.',
+        settings: 'Bottom left, the controls: change the shape of the map (map or cartogram) and its transparency.',
+        layers: 'At the top, the layers.',
+      },
+      tags: {
+        panel: 'Explanations',
+        details: 'Details',
+        settings: 'Controls',
+        layers: 'Layers',
+      },
+      layers: {
+        title: 'Four layers',
+        body: 'Click one to change what the map shows:',
+        fifteen: 'how close services are on foot.',
+        citychrone: 'how fast public transport takes you around.',
+        cardep: 'whether getting around the city depends on the car.',
+        pov: 'several aspects of accessibility together.',
+      },
+      cell: {
+        title: 'Click a cell',
+        body: 'Click any cell of the map to open the details of its measures here, for that area.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Choose a service category and whether you go on foot or by bicycle.',
+        colors: 'The colour bar is the proximity time: the minutes to reach the nearest service of that type, or the average over all categories.',
+        cell: 'Click a cell and the box on the right gives the times for all nine categories.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Velocity score: how fast public transport moves you around from each cell.',
+        sociality: 'Sociality score: how many people you reach by public transport.',
+        isochrone: 'Isochrones: travel times by public transport from one area to all the others.',
+        hour: 'The hour filter shows each measure at a different time of day.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'You are seeing the normalised difference between the opportunities reachable by public transport and by car.',
+        blue: 'Blue places, where public transport wins, are rare: the car is often faster.',
+        views: "You can also see the two opportunity scores the index compares: the points of interest reachable by car and by public transport.",
+        filter: 'The filter shows only the cells within a range of the index.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport).',
+        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Error 404',
     headline: 'Off the',

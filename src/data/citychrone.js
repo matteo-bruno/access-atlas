@@ -28,25 +28,57 @@ export const CITYCHRONE_BANDS = {
   isochrone: [10, 20, 30, 45, 60, 75, 90, 120, 180],
 };
 
+// The resident percentiles a fitted scale spans: from the 5th, so a few
+// cells with next to nothing do not wash the city out, to the 99th, so the
+// best served places keep colours of their own.
+export const RESIDENT_DOMAIN = [0.05, 0.99];
+
 /**
- * The city's own range of sociality scores, for the scale the city view fits
- * to it: the 5th and 95th percentile of every cell where the layer has
- * residents, over every published hour together, so moving the hour never
- * recolours a value. `hours` is the layer file's `hourly.s` (one array per
- * hour) or a single hour's values; `population` the layer's residents per row.
+ * The 5th and 99th percentile of `values`, each weighted by its residents:
+ * the range a city view fits a scale to, so the colours span where people
+ * live rather than the many thinly settled outer cells. A value with no
+ * residents counts for nothing; with no weights at all every value counts
+ * once. Null when nothing is left.
+ */
+export function residentDomain(values, weights) {
+  const pairs = [];
+  let total = 0;
+  for (let i = 0; i < values.length; i++) {
+    const value = values[i];
+    const weight = weights ? weights[i] : 1;
+    if (!Number.isFinite(value) || !(weight > 0)) continue;
+    pairs.push([value, weight]);
+    total += weight;
+  }
+  if (!pairs.length) return null;
+  pairs.sort((a, b) => a[0] - b[0]);
+  const at = (q) => {
+    let acc = 0;
+    for (const [value, weight] of pairs) {
+      acc += weight;
+      if (acc >= q * total) return value;
+    }
+    return pairs[pairs.length - 1][0];
+  };
+  return [at(RESIDENT_DOMAIN[0]), at(RESIDENT_DOMAIN[1])];
+}
+
+/**
+ * The city's own range of sociality scores: `residentDomain` over every
+ * published hour together, so moving the hour never recolours a value.
+ * `hours` is the layer file's `hourly.s` (one array per hour) or a single
+ * hour's values; `population` the layer's residents per row.
  */
 export function socialityDomain(hours, population) {
   const values = [];
+  const weights = population ? [] : null;
   for (const hour of hours) {
     for (let row = 0; row < hour.length; row++) {
-      const value = hour[row];
-      if (Number.isFinite(value) && (!population || population[row] > 0)) values.push(value);
+      values.push(hour[row]);
+      if (weights) weights.push(population[row]);
     }
   }
-  if (!values.length) return null;
-  const sorted = Float64Array.from(values).sort();
-  const at = (q) => sorted[Math.min(sorted.length - 1, Math.floor(q * (sorted.length - 1)))];
-  return [at(0.05), at(0.95)];
+  return residentDomain(values, weights);
 }
 
 /** Share of cells per band for one hour's values. */

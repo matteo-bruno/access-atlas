@@ -19,7 +19,7 @@ import {
 import { rampGradient } from '../map/ramps.js';
 import { paperForPlatform } from '../data/research.js';
 import { formatTime } from '../data/fifteen.js';
-import { cityLabel } from '../data/catalogue.js';
+import { Tour } from '../components/Tour.jsx';
 // The floating-box chrome these pages share with the city view.
 import '../components/MapBox.css';
 import './PlatformLanding.css';
@@ -40,11 +40,6 @@ const STATS_FOCUS = {
 // Layers whose welcome card has copy of its own, shorter than the `intro` the
 // "about this layer" dialog reads; the others introduce themselves with it.
 const WELCOME_INTRO = new Set(['fifteen']);
-
-// The cities offered as a shortcut at the foot of the map, on every layer.
-// Each opens on the open layer when it has it, and on its first layer when
-// not, like a marker; one that is not published is left out.
-const FEATURED_CITIES = ['tokyo', 'rome', 'paris', 'new-york'];
 
 /**
  * The world map. Without a slug it shows every published city across the four
@@ -88,7 +83,7 @@ export default function PlatformLanding() {
  * @param {React.ReactNode} [props.children]  drawn over the map
  */
 export function PlatformExplorer({ platform: requested, chrome = true, interactive = true, children }) {
-  const { t, n, lang } = useI18n();
+  const { t, n } = useI18n();
   const navigate = useNavigate();
   const mapRef = useRef(null);
   const searchRef = useRef(null);
@@ -162,6 +157,8 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
   const atlasCityIds = useAtlasCityIds();
   const atlasCities = useAtlasCities();
   const [searched, setSearched] = useState(null);
+  // Raised by the "?" button to show the tour again.
+  const [tourReplay, setTourReplay] = useState(0);
 
   // What the search looks through: every published city, not the open
   // tab's, with the catalogue's names in both languages, its region and its
@@ -192,10 +189,6 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
     () => new Map(searchable.map((city) => [city.id, city.layers])),
     [searchable],
   );
-  const featured = useMemo(() => {
-    const meta = new Map(atlasCities.map((city) => [city.id, city]));
-    return FEATURED_CITIES.map((id) => meta.get(id)).filter(Boolean);
-  }, [atlasCities]);
   const paper = platform ? paperForPlatform(platform.id) : null;
   const copyKey = platform ? `platform.${platform.id}` : 'platform.all';
   const legend = t(`${copyKey}.legend`);
@@ -230,7 +223,7 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
     : t('platform.all.label');
 
   return (
-    <div className={`aa-mapstage${chrome && featured.length > 0 ? ' aa-mapstage--featured' : ''}`}>
+    <div className="aa-mapstage">
       {/* The map first, and always: it is what the landing holds behind its
           words, and what this screen is built around. */}
       <WorldMap
@@ -423,22 +416,36 @@ export function PlatformExplorer({ platform: requested, chrome = true, interacti
 
         </div>
 
-        {/* A few cities a click away, whatever the layer: the screen's own,
-            like the picker, so a layer switch leaves them in place. */}
-        {featured.length > 0 && (
-          <nav className="aa-card aa-featured aa-fadein" aria-label={t('platform.featured')}>
-            {featured.map((city) => (
-              <button
-                key={city.id}
-                type="button"
-                className="aa-featured__item"
-                onClick={() => openCity(city)}
-              >
-                {cityLabel(city, lang)}
-              </button>
-            ))}
-          </nav>
-        )}
+        {/* The first visit explains the screen in two steps, once. */}
+        <Tour
+          marks={['atlas-v2']}
+          ready={interactive && cities.length > 0 && !markersHidden}
+          replay={tourReplay}
+          steps={[
+            {
+              title: t('tour.atlas.layers.title'),
+              body: <p>{t('tour.atlas.layers.body')}</p>,
+              targets: [{ selector: '.aa-mapstage .aa-picker' }],
+              anchor: '.aa-mapstage .aa-picker',
+            },
+            {
+              title: t('tour.atlas.cities.title'),
+              body: <p>{t('tour.atlas.cities.body')}</p>,
+              targets: [{ selector: '.aa-mapstage__tools .aa-search', tag: t('tour.atlas.cities.tag'), tagAt: 'below' }],
+              within: '.aa-mapstage',
+            },
+          ]}
+        />
+
+        <button
+          type="button"
+          className="aa-tourbtn aa-fadein"
+          aria-label={t('tour.replay')}
+          title={t('tour.replay')}
+          onClick={() => setTourReplay((n) => n + 1)}
+        >
+          <Icon name="help" size={16} color="var(--ink-2)" />
+        </button>
 
         <div className="aa-zoom aa-fadein">
           <button type="button" aria-label={t('platform.zoomIn')} onClick={() => mapRef.current?.zoomIn()}>

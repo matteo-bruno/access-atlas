@@ -137,7 +137,6 @@ export default {
     welcome: '欢迎来到 {name}',
     dismiss: '关闭',
     learnMore: '了解更多 →',
-    featured: '打开城市',
     attribution: '底图：Natural Earth · 数据 © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} 座城市',
     zoomIn: '放大',
@@ -237,11 +236,54 @@ export default {
       core: '城市（核心区）',
       fua: '都市区（FUA）',
       about: '两种范围均来自全球人类住区图层（GHS）：城市的核心区，即其 Urban Centre；以及其都市区，即 Functional Urban Area，后者加上周边的通勤区。两者各自发布、各自测量；切换会在另一个范围上打开同样的视图。',
+      unavailable: '{name} 在此边界上未发布',
+      opens: {
+        core: '已为城市（核心区）发布：在那里打开',
+        fua: '已为都市区（FUA）发布：在那里打开',
+      },
     },
     socialityScale: {
       toggle: "绝对色阶",
       about:
-        "社交性得分统计可到达的人数，因此会随城市规模增长。默认情况下，颜色覆盖本城市全天的得分，去掉其单元格中最低和最高的 {share}：这是本城市最清晰的图景，但同一颜色在另一座城市代表不同的得分。绝对色阶将所有城市放在同一色阶上，从 {low} 到 {high} 的对数刻度，便于跨城市比较颜色。",
+        "社交得分统计可到达的人数，因此会随城市规模增长。默认情况下，颜色覆盖本城市全天的得分范围，去掉得分最低的 {lowShare} 居民和得分最高的 {highShare} 居民：这能最清晰地呈现该城市，但同一颜色在另一城市代表不同得分。绝对刻度让所有城市使用同一刻度，从 {low} 到 {high} 的对数刻度，便于跨城市比较颜色。",
+    },
+    opportunityScale: {
+      about: "机会得分统计乘公共交通可到达的服务，因此会随城市规模增长。默认情况下，颜色覆盖本城市的得分范围，去掉得分最低的 {lowShare} 居民和得分最高的 {highShare} 居民：这能最清晰地呈现该城市，但同一颜色在另一城市代表不同得分。绝对刻度让所有城市使用同一刻度，从 {low} 到 {high} 的对数刻度，便于跨城市比较颜色。",
+    },
+    proximityScale: {
+      about: "邻近性得分统计短距离步行可到达的服务，因此在更大、更密集的城市中更高。默认情况下，颜色覆盖本城市的得分范围，去掉得分最低的 {lowShare} 居民和得分最高的 {highShare} 居民：这能最清晰地呈现该城市，但同一颜色在另一城市代表不同得分。绝对刻度让所有城市使用同一刻度，从 {low} 到 {high} 的对数刻度，便于跨城市比较颜色。",
+    },
+    carScale: {
+      about: "驾车机会得分累计在时间预算内从每个单元格驾车可到达的各类兴趣点，因此会随城市规模增长。默认情况下，颜色覆盖本城市的得分范围，去掉得分最低的 {lowShare} 居民和得分最高的 {highShare} 居民：这能最清晰地呈现该城市，但同一颜色在另一城市代表不同得分。绝对刻度让所有城市和两种出行方式使用同一刻度，从 {low} 到 {high} 的对数刻度，便于跨城市以及在汽车与公共交通之间比较颜色。",
+    },
+    transitScale: {
+      about: "公共交通机会得分累计在时间预算内从每个单元格乘公共交通可到达的各类兴趣点，因此会随城市规模增长。默认情况下，颜色覆盖本城市的得分范围，去掉得分最低的 {lowShare} 居民和得分最高的 {highShare} 居民：这能最清晰地呈现该城市，但同一颜色在另一城市代表不同得分。绝对刻度让所有城市和两种出行方式使用同一刻度，从 {low} 到 {high} 的对数刻度，便于跨城市以及在汽车与公共交通之间比较颜色。",
+    },
+    cdiViews: {
+      index: "指数",
+      car: "汽车",
+      transit: "公共交通",
+    },
+    cdiLegend: {
+      car: "驾车机会",
+      transit: "公共交通机会",
+    },
+    cdiHint: {
+      car: "在时间预算内从每个单元格驾车可到达的各类兴趣点总数：指数所比较的两个机会得分之一。",
+      transit: "在时间预算内从每个单元格乘公共交通可到达的各类兴趣点总数：指数所比较的两个机会得分之一。",
+    },
+    povViews: {
+      zones: '分区',
+      proximity: '邻近性',
+      opportunity: '机会',
+    },
+    povLegend: {
+      proximity: '邻近性得分',
+      opportunity: '机会得分',
+    },
+    povHint: {
+      proximity: '每个单元格在短时间内步行可到达多少服务：附近有什么。这是加权得分，而非地点数量。',
+      opportunity: '每个单元格在较长时间内乘公共交通可到达多少服务：较远但可达的地方。这是加权得分，而非地点数量。',
     },
     scenario: {
       label: '情景',
@@ -767,15 +809,6 @@ export default {
       popMin: '最小',
       popMax: '最大',
     },
-    kpi: {
-      cities: '城市',
-      countries: '国家',
-      best: '最好',
-      worst: '最差',
-      highest: '最高',
-      lowest: '最低',
-      residents: '测量的居民',
-    },
     layer: '图层',
     measure: '指标',
     statistic: '统计量',
@@ -1126,6 +1159,80 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: '指南',
+    step: '第 {n} 步，共 {total} 步',
+    next: '下一步',
+    back: '上一步',
+    skip: '跳过',
+    done: '知道了',
+    atlas: {
+      layers: {
+        title: '选择一个图层',
+        body: '每个图层以不同方式衡量可达性。在这里切换图层，改变地图显示的内容。',
+      },
+      cities: {
+        title: '打开一个城市',
+        body: '每个点都是一个城市。在地图上点击即可打开详细信息，或在搜索栏中按名称查找。',
+        tag: '搜索',
+      },
+    },
+    city: {
+      intro: {
+        title: '这是 {city} 的地图',
+        body: '地图周围：',
+        panel: '左侧：说明和筛选，包括图层衡量的内容、图例、可用选项，以及“关于此图层”的更多信息。',
+        details: '右侧：城市概况，以及你点击的单元格的详情。',
+        settings: '左下角：控制项，可更改地图的形式（地图或变形地图）及其透明度。',
+        layers: '顶部：图层。',
+      },
+      tags: {
+        panel: '说明',
+        details: '详情',
+        settings: '控制',
+        layers: '图层',
+      },
+      layers: {
+        title: '四个图层',
+        body: '点击其中一个，改变地图显示的内容：',
+        fifteen: '步行到达各类服务有多近。',
+        citychrone: '公共交通有多快。',
+        cardep: '在城市中出行是否依赖汽车。',
+        pov: '同时呈现可达性的多个方面。',
+      },
+      cell: {
+        title: '点击单元格',
+        body: '点击地图上任意单元格，即可在此打开该区域各项指标的详情。',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: '选择一类服务，以及步行还是骑自行车。',
+        colors: '色条表示邻近时间：到达该类最近服务所需的分钟数，或所有类别的平均值。',
+        cell: '点击一个单元格，右侧方框会显示全部九个类别的时间。',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: '速度得分：从每个单元格出发，公共交通能让你移动多快。',
+        sociality: '社交得分：乘公共交通可以到达多少人。',
+        isochrone: '等时线：从一个区域乘公共交通到其他所有区域的出行时间。',
+        hour: '时段筛选可查看一天中不同时间的各项指标。',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: '你看到的是公共交通与汽车可到达机会之间的归一化差值。',
+        blue: '蓝色区域（公共交通占优）很少见：汽车往往更快。',
+        views: "你还可以查看指数所比较的两个机会得分：驾车和乘公共交通可到达的兴趣点。",
+        filter: '筛选器只显示指数在某一范围内的单元格。',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: '邻近性与机会：附近（步行）和较远（公共交通）可到达的服务。',
+        zones: '分区：相对于城市自身中位数的分类，因此显示哪些地方的服务优于或劣于城市平均水平。',
+      },
+    },
+  },
   notFound: {
     eyebrow: '错误 404',
     headline: '超出了',

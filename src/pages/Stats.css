@@ -518,43 +518,6 @@
   gap: 8px;
 }
 
-/* Four figures over the chart. */
-.aa-stats__kpis {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  margin: 20px 0 6px;
-}
-.aa-stats__kpi {
-  display: grid;
-  align-content: start;
-  gap: 3px;
-  padding: 12px 14px 13px;
-  border: 1px solid var(--hair-soft);
-  border-radius: 10px;
-  background: linear-gradient(180deg, #fffefb 0%, color-mix(in srgb, var(--paper) 35%, var(--card)) 100%);
-}
-.aa-stats__kpilabel {
-  color: var(--ink-3);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.aa-stats__kpivalue {
-  color: var(--ink);
-  font-size: 23px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.aa-stats__kpisub {
-  overflow: hidden;
-  color: var(--ink-2);
-  font-size: 12.5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .aa-stats__yaxis {
   margin-top: 14px;
   padding: 14px 16px;
@@ -1686,8 +1649,6 @@
     .aa-stats__collayer,
     .aa-stats__selchip,
     .aa-stats__layer,
-    .aa-stats__kpivalue,
-    .aa-stats__kpisub,
     .aa-stats__popname,
     .aa-cpick__name,
     .aa-cpick__optname,
@@ -1774,12 +1735,6 @@
     max-width: 100%;
     overflow-x: auto;
     scrollbar-width: none;
-  }
-  .aa-stats__kpis {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .aa-stats__kpivalue {
-    font-size: 18px;
   }
   /* A row is two lines on a phone: the name and the value, then the track
      the full width under them, so the marks keep a width worth reading. */

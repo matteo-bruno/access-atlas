@@ -16,14 +16,12 @@ import {
   aboutKey,
   countryLayers,
   defaultStat,
-  formatStat,
   formatThreshold,
   hourLabel,
   isDistribution,
   isJudged,
   layersOf,
   measureLabel,
-  orderRows,
   rowName,
   statDirection,
   statKeys,
@@ -404,7 +402,6 @@ function Dashboard({ stats: all }) {
             </h1>
           </header>
 
-          {!focus && !cumulative && <Kpis rows={rows} spec={spec} unit={unit} judged={judged} ctx={ctx} />}
 
           {view === 'scatter' && (
             <div className="aa-stats__yaxis">
@@ -532,50 +529,6 @@ function SideSection({ title, children }) {
       <h2 className="aa-stats__sidetitle">{title}</h2>
       {children}
     </section>
-  );
-}
-
-/**
- * Four figures over the chart: how many are shown, the two ends of the
- * order, and how many residents the figure is about. All read off the rows
- * on screen, so they move with every filter.
- */
-function Kpis({ rows, spec, unit, judged, ctx }) {
-  const { t, n, lang } = ctx;
-  const ordered = orderRows(rows, spec.measure, spec.key, spec.index);
-  const first = ordered[0];
-  const last = ordered.length > 1 ? ordered[ordered.length - 1] : null;
-  const residents = rows.reduce((s, r) => s + (r.stat?.population ?? 0), 0);
-  const fmt = (row) => formatStat(spec.measure, spec.key, statValue(row.stat, spec.key, spec.index), ctx);
-  const compact = (v) => (v >= 1e6 ? `${n(v / 1e6, { maximumFractionDigits: 1 })} M` : v >= 1e3 ? `${n(Math.round(v / 1e3))} k` : n(v));
-
-  return (
-    <div className="aa-stats__kpis">
-      <div className="aa-stats__kpi">
-        <span className="aa-stats__kpilabel">{t(unit === 'country' ? 'stats.kpi.countries' : 'stats.kpi.cities')}</span>
-        <span className="aa-stats__kpivalue aa-mono">{n(rows.length)}</span>
-      </div>
-      {first && (
-        <div className="aa-stats__kpi">
-          <span className="aa-stats__kpilabel">{t(judged ? 'stats.kpi.best' : 'stats.kpi.highest')}</span>
-          <span className="aa-stats__kpivalue aa-mono">{fmt(first)}</span>
-          <span className="aa-stats__kpisub">{rowName(first, lang)}</span>
-        </div>
-      )}
-      {last && (
-        <div className="aa-stats__kpi">
-          <span className="aa-stats__kpilabel">{t(judged ? 'stats.kpi.worst' : 'stats.kpi.lowest')}</span>
-          <span className="aa-stats__kpivalue aa-mono">{fmt(last)}</span>
-          <span className="aa-stats__kpisub">{rowName(last, lang)}</span>
-        </div>
-      )}
-      {residents > 0 && (
-        <div className="aa-stats__kpi">
-          <span className="aa-stats__kpilabel">{t('stats.kpi.residents')}</span>
-          <span className="aa-stats__kpivalue aa-mono">{compact(residents)}</span>
-        </div>
-      )}
-    </div>
   );
 }
 

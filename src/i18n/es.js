@@ -139,7 +139,6 @@ export default {
     welcome: 'Te damos la bienvenida a {name}',
     dismiss: 'Cerrar',
     learnMore: 'Más información →',
-    featured: 'Abrir una ciudad',
     attribution: 'Mapa base: Natural Earth · Datos © Sony CSL Roma · CC BY-NC 4.0',
     cityCount: '{count} ciudades',
     zoomIn: 'Acercar',
@@ -240,11 +239,54 @@ export default {
       core: 'Ciudad (núcleo)',
       fua: 'Área metropolitana (FUA)',
       about: 'Dos límites del Global Human Settlement Layer (GHS): el núcleo de la ciudad, su Urban Centre, y su área metropolitana, la Functional Urban Area, que añade la zona de desplazamientos diarios a su alrededor. Cada uno se publica y se mide por separado; el cambio abre la misma vista sobre el otro.',
+      unavailable: '{name} no está publicado en este límite',
+      opens: {
+        core: 'Publicado para la ciudad (core): se abre allí',
+        fua: 'Publicado para el área metropolitana (FUA): se abre allí',
+      },
     },
     socialityScale: {
       toggle: "Escala absoluta",
       about:
-        "La puntuación de sociabilidad cuenta las personas alcanzables, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad a lo largo del día, sin el {share} más bajo y más alto de sus celdas: la imagen más clara de la ciudad, pero un color indica una puntuación distinta en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para comparar colores entre ciudades.",
+        "La puntuación de sociabilidad cuenta las personas al alcance, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad a lo largo del día, dejando fuera el {lowShare} de sus residentes con las puntuaciones más bajas y el {highShare} con las más altas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
+    },
+    opportunityScale: {
+      about: "La puntuación de oportunidad cuenta los servicios al alcance en transporte público, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {lowShare} de sus residentes con las puntuaciones más bajas y el {highShare} con las más altas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
+    },
+    proximityScale: {
+      about: "La puntuación de proximidad cuenta los servicios a un corto paseo, así que es más alta en las ciudades más grandes y densas. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {lowShare} de sus residentes con las puntuaciones más bajas y el {highShare} con las más altas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
+    },
+    carScale: {
+      about: "La puntuación de oportunidad en coche suma los puntos de interés, de muchos tipos, alcanzables desde cada celda en coche dentro del tiempo disponible, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {lowShare} de sus residentes con las puntuaciones más bajas y el {highShare} con las más altas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades, y los dos modos, en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades y entre coche y transporte público.",
+    },
+    transitScale: {
+      about: "La puntuación de oportunidad en transporte público suma los puntos de interés, de muchos tipos, alcanzables desde cada celda en transporte público dentro del tiempo disponible, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {lowShare} de sus residentes con las puntuaciones más bajas y el {highShare} con las más altas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades, y los dos modos, en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades y entre coche y transporte público.",
+    },
+    cdiViews: {
+      index: "Índice",
+      car: "Coche",
+      transit: "Transporte",
+    },
+    cdiLegend: {
+      car: "Oportunidades en coche",
+      transit: "Oportunidades en transporte público",
+    },
+    cdiHint: {
+      car: "Cuántos puntos de interés, de muchos tipos, se alcanzan desde cada celda en coche dentro del tiempo disponible, sumados: una de las dos puntuaciones de oportunidad que compara el índice.",
+      transit: "Cuántos puntos de interés, de muchos tipos, se alcanzan desde cada celda en transporte público dentro del tiempo disponible, sumados: una de las dos puntuaciones de oportunidad que compara el índice.",
+    },
+    povViews: {
+      zones: 'Zonas',
+      proximity: 'Proximidad',
+      opportunity: 'Oportunidad',
+    },
+    povLegend: {
+      proximity: 'Puntuación de proximidad',
+      opportunity: 'Puntuación de oportunidad',
+    },
+    povHint: {
+      proximity: 'Cuántos servicios alcanza cada celda a pie en poco tiempo: lo que está cerca. Una puntuación ponderada, no un recuento de lugares.',
+      opportunity: 'Cuántos servicios alcanza cada celda en transporte público en más tiempo: lo que está más lejos pero al alcance. Una puntuación ponderada, no un recuento de lugares.',
     },
     scenario: {
       label: 'Escenario',
@@ -776,15 +818,6 @@ export default {
       popMin: 'Mín',
       popMax: 'Máx',
     },
-    kpi: {
-      cities: 'Ciudades',
-      countries: 'Países',
-      best: 'Mejor',
-      worst: 'Peor',
-      highest: 'Más alto',
-      lowest: 'Más bajo',
-      residents: 'Residentes medidos',
-    },
     layer: 'Capa',
     measure: 'Medida',
     statistic: 'Estadística',
@@ -1137,6 +1170,80 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Roma',
   },
 
+  tour: {
+    replay: 'Guía',
+    step: 'Paso {n} de {total}',
+    next: 'Siguiente',
+    back: 'Atrás',
+    skip: 'Omitir',
+    done: 'Entendido',
+    atlas: {
+      layers: {
+        title: 'Elige una capa',
+        body: 'Cada capa mide la accesibilidad de una forma distinta. Cambia entre ellas aquí para cambiar lo que muestra el mapa.',
+      },
+      cities: {
+        title: 'Abre una ciudad',
+        body: 'Cada punto es una ciudad. Haz clic en una en el mapa para abrirla en detalle, o búscala por su nombre en la barra de búsqueda.',
+        tag: 'Búsqueda',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Este es el mapa de {city}',
+        body: 'Alrededor del mapa:',
+        panel: 'A la izquierda, las explicaciones y los filtros: lo que mide la capa, su leyenda, las opciones que ofrece y “Sobre esta capa” para saber más.',
+        details: 'A la derecha, el resumen de la ciudad y los detalles de la celda en la que haces clic.',
+        settings: 'Abajo a la izquierda, los controles: cambia la forma del mapa (mapa o cartograma) y su transparencia.',
+        layers: 'Arriba, las capas.',
+      },
+      tags: {
+        panel: 'Explicaciones',
+        details: 'Detalles',
+        settings: 'Controles',
+        layers: 'Capas',
+      },
+      layers: {
+        title: 'Cuatro capas',
+        body: 'Haz clic en una para cambiar lo que muestra el mapa:',
+        fifteen: 'qué tan cerca están los servicios a pie.',
+        citychrone: 'qué tan rápido te lleva el transporte público.',
+        cardep: 'si moverse por la ciudad depende del coche.',
+        pov: 'varios aspectos de la accesibilidad a la vez.',
+      },
+      cell: {
+        title: 'Haz clic en una celda',
+        body: 'Haz clic en cualquier celda del mapa para abrir aquí el detalle de sus medidas, para esa zona.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Elige una categoría de servicios y si vas a pie o en bicicleta.',
+        colors: 'La barra de colores es el tiempo de proximidad: los minutos hasta el servicio más cercano de ese tipo, o la media de todas las categorías.',
+        cell: 'Haz clic en una celda y el recuadro de la derecha da los tiempos de las nueve categorías.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Puntuación de velocidad: qué tan rápido te mueves en transporte público desde cada celda.',
+        sociality: 'Puntuación de sociabilidad: a cuántas personas llegas en transporte público.',
+        isochrone: 'Isócronas: tiempos de viaje en transporte público de una zona a todas las demás.',
+        hour: 'El filtro de hora muestra cada medida en otro momento del día.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Estás viendo la diferencia normalizada entre las oportunidades alcanzables en transporte público y en coche.',
+        blue: 'Los lugares azules, donde gana el transporte público, son raros: el coche suele ser más rápido.',
+        views: "También puedes ver las dos puntuaciones de oportunidad que compara el índice: los puntos de interés alcanzables en coche y en transporte público.",
+        filter: 'El filtro muestra solo las celdas dentro de un rango del índice.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Proximidad y oportunidad: los servicios accesibles cerca (a pie) y lejos (en transporte público).',
+        zones: 'Zonas: la clasificación respecto a la mediana de la propia ciudad, así que dice qué lugares están mejor o peor servidos que la media de la ciudad.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Error 404',
     headline: 'Fuera del',

@@ -25,6 +25,7 @@ import { PLATFORMS } from './platforms.js';
  *   platformProfiles: object,         // platformId → published city entry
  *   available: Set<string>,           // platform ids with data for this city
  *   extents: { core, fua },           // the city's ids on each boundary, or null
+ *   otherLayers: Set<string>|null,    // the other boundary's layers, null until known
  * }}
  */
 export function useAtlasView(cityId) {
@@ -82,14 +83,28 @@ export function useAtlasView(cityId) {
           return;
         }
 
+        const extents = cityExtents(catalogue, cityId);
         setState({
           status: 'ready',
           unified: Boolean(entry),
           profile: entry ?? Object.values(platformProfiles)[0],
           platformProfiles,
           available,
-          extents: cityExtents(catalogue, cityId),
+          extents,
+          otherLayers: null,
         });
+
+        // The other boundary's layers (its entry is a small file), so the
+        // boundary switch can say where the open layer exists and the layer
+        // picker can offer a layer only the other boundary publishes. Asked
+        // after the page is ready: the city never waits on it.
+        const otherId = extents.core === cityId ? extents.fua : extents.fua === cityId ? extents.core : null;
+        if (otherId) {
+          const other = await provider.city(otherId, catalogue, { signal: controller.signal });
+          if (cancelled) return;
+          const layers = (other ?? atlasCity(catalogue, otherId))?.layers ?? [];
+          setState((current) => (current.status === 'ready' ? { ...current, otherLayers: new Set(layers) } : current));
+        }
       } catch (error) {
         if (error?.name === 'AbortError' || cancelled) return;
         setState({

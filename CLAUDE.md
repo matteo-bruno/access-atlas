@@ -178,7 +178,11 @@ can be published on its GHS core (Urban Centre, the default) and its metro
 area (Functional Urban Area). The metro area is a city of its own, id
 `<city>-fua`, imported from `<City>_FUA.<ext>`: own grid, layers, record and
 statistics, **named as its core** ("Tokyo", not "Tokyo Fua"; `cityMeta` takes
-the core's names when it has none). Its catalogue entry says
+the core's names when it has none). The switch is offered only where the
+open layer exists on the other boundary (it never lands on another layer),
+and the layer picker keeps a layer only the other boundary publishes, opening
+it there (Rome's metro area → Rome for CityChrone); `useAtlasView` reads the
+other boundary's entry for both (`otherLayers`). Its catalogue entry says
 `extent: 'fua', core: '<city>'`, derived from the id (`extentOf` in
 `bundle.mjs`); the city view offers "City (core) / Metro (FUA)" wherever both
 exist and keeps the query string across, less `from` (a CityChrone row of
@@ -252,6 +256,9 @@ views) and **a sidebar** with the figure, the filters and the highlighted
 cities (picked by typing a name, `CityPicker`). Countries are a menu, not a
 row of chips, and population is one logarithmic slider with two handles (min
 and max; the top end means no maximum) and a number box under each.
+
+There is no strip of figures under the title (count, best, worst, residents):
+it was removed for every layer, and the chart is what follows the figure.
 
 **Focus is the first view, one per layer** (`StatsFocus.jsx`): the charts
 each platform is read with, from the same statistics file, so the filters
@@ -442,7 +449,12 @@ serif is a bug in the other.
 readable:
 
 - **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
-  categorical. A step scale invents boundaries the data does not have — two
+  categorical. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
+  the zones stay the default), and Car Dependency the two opportunity scores
+  its index compares (`cdi=car|transit`, the index stays the default: the
+  points of interest of many kinds reachable in the time budget, added up),
+  each on a soft sequential ramp of its own and scaled like the sociality
+  score (below). A score view has no difference ramp and no index filter. A step scale invents boundaries the data does not have — two
   cells either side of an edge look further apart than two at opposite ends of
   one band. The legend is `RampLegend`, a gradient with its values under it;
   it cannot show a share per band, so figures that mattered (the 15minCity
@@ -457,10 +469,22 @@ readable:
   counts people within reach, so it grows with the city, and Tokyo sat past
   the end of a domain fitted to Milan. The city view fits it to the city
   (`fitRamp` in `ramps.js`, `socialityDomain` in `citychrone.js`): the 5th to
-  95th percentile of its inhabited cells over all 24 hours together, so the
-  hour still never recolours a value, with `≤` / `≥` on the legend's ends.
+  99th percentile of its **residents** (`residentDomain`, `RESIDENT_DOMAIN`,
+  weighted by the layer's own population, like every other figure about a
+  city; the top end was raised from the 95th so the best served places keep
+  colours of their own) over all 24
+  hours together, so the hour still never recolours a value, with `≤` / `≥`
+  on the legend's ends.
   `scale=abs` switches to `socialityAbsolute`, one logarithmic scale for
-  every city (10k to 10M), and the switch's "?" says what each means. A
+  every city (10k to 10M), and the switch's "?" says what each means.
+  **P.O.V.'s two scores and Car Dependency's two opportunity scores are the
+  same exception**, for the same reason (they count places within reach, so
+  they grow with the city): fitted to the city's residents by default,
+  linear, and with `scale=abs` a shared logarithmic scale
+  (`povProximityAbsolute` 300 to 30k, `povOpportunityAbsolute` 1k to 100k,
+  `cdiCarAbsolute` and `cdiTransitAbsolute` one domain, 100 to 10k, so car
+  and transit read against each other). `SCORES` in `AtlasCityPage.jsx`
+  lists them. A
   logarithmic default was rejected: within one city the score is close to
   linear, and the map lost its contrast.
 
@@ -1024,6 +1048,29 @@ the path by `activeTab`. Three consequences to keep in mind:
 - A page cannot unmount what it does not own, so the city view's full screen
   marks the document (`.aa-chromeless`) and the shell's own rule answers.
 
+## The guided tours
+
+A first visit to the world map and to a city view gets a short tour
+(`Tour` in `components/Tour.jsx`): the page goes dark but for what a step is
+about, with a tag on each lit part and a card. The world map has two steps
+(the layer picker; click a city or search for it), the city view three (the
+four areas around the map in one step, the four layers with Population left
+out, click a cell). **Each layer has a one-screen tour of its own**, shown
+the first time that layer is opened; on a first visit it follows the city's,
+in one tour, so opening Rome on CityChrone explains the screen and then
+CityChrone. What a layer's screen lights is marked in the panel with
+`.aa-tourctl`. Seen is remembered in localStorage (`tour:atlas-v2`,
+`tour:city-v2`, `tour:layer-<id>-v<version>`, Car Dependency's at v2 since
+its views; bump an id to show a changed tour again), and a small button brings it back (the round "?" above the zoom,
+"Guide" beside full screen): on a city it replays the city's steps and the
+open layer's, and leaves the other layers' as they were. The city tour does not run on a
+phone, where the column is a sheet and "on the left" is wrong. The browser
+suites run as a returning reader (`skipTours` in `smoke.mjs`): a page opened
+in a context of its own needs it too, or the tour dims the map it measures.
+
+The showcase QR code beside the landing's title is off (`SHOWCASE_QR` in
+`AtlasHome.jsx`), kept for the next showcase.
+
 ## The home page
 
 Three sections under the landing, and none of them numbered: **Accessibility
@@ -1069,8 +1116,8 @@ reserving their column beside the bar made "Population" wrap at 1280 px. **The w
 bar out of the column and the summary rose over it, on that path only —
 opening a city directly never showed it. `smoke.mjs` checks it from the
 world map. Top right the city summary (closed by default, full width) and the selected
-cell; bottom left "Settings", closed by default, holding Map/Cartogram and
-the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
+cell; bottom left "Settings", open by default (closed on a phone), small and
+grey so it stays quiet, holding Map/Cartogram and the opacity, and opening upward (`opensUp` on `MapBox`) so its title stays
 under the pointer; full screen bottom right. There is no status bar under
 the map; a generated mesh says so in a note at the map's foot. The legend is in the column, right
 under the city's name and "About this layer". The foot of the column is

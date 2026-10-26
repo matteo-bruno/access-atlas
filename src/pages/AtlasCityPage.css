@@ -213,8 +213,25 @@
 
 /* Opacity is a slider and a number, on one line, in the smallest box that
    holds them. */
+/* Settings: open from the start, so it is kept small and grey, a quieter
+   box than the city's figures on the other side. */
 .aa-mapbox--opacity {
-  min-width: 150px;
+  min-width: 132px;
+  background: color-mix(in srgb, var(--paper-alt) 92%, transparent);
+  color: var(--ink-2);
+}
+.aa-mapbox--opacity .aa-mapbox__head {
+  padding: 6px 8px;
+}
+.aa-mapbox--opacity.aa-mapbox--up .aa-mapbox__body {
+  padding: 8px 8px 0;
+}
+.aa-mapbox--opacity .aa-toggle__btn {
+  padding: 3px 7px;
+  font-size: 11px;
+}
+.aa-mapbox--opacity .aa-opacity__value {
+  font-size: 11px;
 }
 .aa-mapbox--opacity .aa-opacity {
   display: flex;
@@ -451,6 +468,11 @@
   background: var(--card);
 }
 
+/* P.O.V.'s measures differ in length ("Opportunity" is twice "Zones"), so
+   each column takes its label's width and the room left is shared. */
+.aa-toggle--segmented.aa-toggle--fit {
+  grid-template-columns: repeat(3, auto);
+}
 .aa-toggle--segmented .aa-toggle__btn {
   min-width: 0;
   padding: 5px 4px;

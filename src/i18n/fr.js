@@ -140,7 +140,6 @@ export default {
     welcome: 'Bienvenue sur {name}',
     dismiss: 'Fermer',
     learnMore: 'En savoir plus →',
-    featured: 'Ouvrir une ville',
     attribution: 'Fond de carte : Natural Earth · Données © Sony CSL Rome · CC BY-NC 4.0',
     cityCount: '{count} villes',
     zoomIn: 'Zoom avant',
@@ -242,11 +241,54 @@ export default {
       core: 'Ville (centre)',
       fua: 'Aire métropolitaine (FUA)',
       about: 'Deux périmètres du Global Human Settlement Layer (GHS) : le cœur de la ville, son Urban Centre, et son aire métropolitaine, la Functional Urban Area, qui y ajoute la zone de navettes alentour. Chacun est publié et mesuré séparément ; le bouton ouvre la même vue sur l’autre.',
+      unavailable: '{name} n’est pas publié sur ce périmètre',
+      opens: {
+        core: 'Publié pour la ville (core) : s’ouvre là',
+        fua: 'Publié pour l’aire métropolitaine (FUA) : s’ouvre là',
+      },
     },
     socialityScale: {
       toggle: "Échelle absolue",
       about:
-        "Le score de sociabilité compte les personnes accessibles, il croît donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses cellules : l'image la plus lisible de la ville, mais une couleur désigne un autre score dans une autre ville. L'échelle absolue place toutes les villes sur une seule échelle, logarithmique de {low} à {high}, pour comparer les couleurs d'une ville à l'autre.",
+        "Le score de sociabilité compte les personnes accessibles, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+    },
+    opportunityScale: {
+      about: "Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+    },
+    proximityScale: {
+      about: "Le score de proximité compte les services à courte distance à pied, il est donc plus élevé dans les villes plus grandes et plus denses. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+    },
+    carScale: {
+      about: "Le score d’opportunité en voiture additionne les points d’intérêt, de nombreux types, accessibles depuis chaque cellule en voiture dans le temps imparti, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes, et les deux modes, sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent entre villes et entre voiture et transports en commun.",
+    },
+    transitScale: {
+      about: "Le score d’opportunité en transports en commun additionne les points d’intérêt, de nombreux types, accessibles depuis chaque cellule en transports en commun dans le temps imparti, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {lowShare} de ses habitants aux scores les plus bas ni les {highShare} aux scores les plus hauts : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes, et les deux modes, sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent entre villes et entre voiture et transports en commun.",
+    },
+    cdiViews: {
+      index: "Indice",
+      car: "Voiture",
+      transit: "Transports",
+    },
+    cdiLegend: {
+      car: "Opportunités en voiture",
+      transit: "Opportunités en transports en commun",
+    },
+    cdiHint: {
+      car: "Combien de points d’intérêt, de nombreux types, sont accessibles depuis chaque cellule en voiture dans le temps imparti, additionnés : l’un des deux scores d’opportunité que compare l’indice.",
+      transit: "Combien de points d’intérêt, de nombreux types, sont accessibles depuis chaque cellule en transports en commun dans le temps imparti, additionnés : l’un des deux scores d’opportunité que compare l’indice.",
+    },
+    povViews: {
+      zones: 'Zones',
+      proximity: 'Proximité',
+      opportunity: 'Opportunité',
+    },
+    povLegend: {
+      proximity: 'Score de proximité',
+      opportunity: 'Score d’opportunité',
+    },
+    povHint: {
+      proximity: 'Combien de services chaque cellule atteint à pied en peu de temps : ce qui est proche. Un score pondéré, pas un nombre de lieux.',
+      opportunity: 'Combien de services chaque cellule atteint en transports en commun en un temps plus long : ce qui est plus loin mais accessible. Un score pondéré, pas un nombre de lieux.',
     },
     scenario: {
       label: 'Scénario',
@@ -778,15 +820,6 @@ export default {
       popMin: 'Min',
       popMax: 'Max',
     },
-    kpi: {
-      cities: 'Villes',
-      countries: 'Pays',
-      best: 'Meilleure',
-      worst: 'Moins bonne',
-      highest: 'La plus haute',
-      lowest: 'La plus basse',
-      residents: 'Résidents mesurés',
-    },
     layer: 'Couche',
     measure: 'Mesure',
     statistic: 'Statistique',
@@ -1139,6 +1172,80 @@ export default {
     copyright: '© 2026 Sony Computer Science Laboratories · Rome',
   },
 
+  tour: {
+    replay: 'Guide',
+    step: 'Étape {n} sur {total}',
+    next: 'Suivant',
+    back: 'Retour',
+    skip: 'Passer',
+    done: 'Compris',
+    atlas: {
+      layers: {
+        title: 'Choisissez une couche',
+        body: 'Chaque couche mesure l’accessibilité d’une façon différente. Passez de l’une à l’autre ici pour changer ce que montre la carte.',
+      },
+      cities: {
+        title: 'Ouvrez une ville',
+        body: 'Chaque point est une ville. Cliquez sur l’une d’elles sur la carte pour l’ouvrir en détail, ou cherchez-la par son nom dans la barre de recherche.',
+        tag: 'Recherche',
+      },
+    },
+    city: {
+      intro: {
+        title: 'Voici la carte de {city}',
+        body: 'Autour de la carte :',
+        panel: 'À gauche, les explications et les filtres : ce que mesure la couche, sa légende, les options qu’elle offre et « À propos de cette couche » pour en savoir plus.',
+        details: 'À droite, le résumé de la ville et le détail de la cellule sur laquelle vous cliquez.',
+        settings: 'En bas à gauche, les réglages : changez la forme de la carte (carte ou cartogramme) et sa transparence.',
+        layers: 'En haut, les couches.',
+      },
+      tags: {
+        panel: 'Explications',
+        details: 'Détails',
+        settings: 'Réglages',
+        layers: 'Couches',
+      },
+      layers: {
+        title: 'Quatre couches',
+        body: 'Cliquez sur l’une d’elles pour changer ce que montre la carte :',
+        fifteen: 'la proximité des services à pied.',
+        citychrone: 'la vitesse des transports en commun.',
+        cardep: 'si se déplacer en ville dépend de la voiture.',
+        pov: 'plusieurs aspects de l’accessibilité à la fois.',
+      },
+      cell: {
+        title: 'Cliquez sur une cellule',
+        body: 'Cliquez sur n’importe quelle cellule de la carte pour ouvrir ici le détail de ses mesures, pour cette zone.',
+      },
+    },
+    layer: {
+      fifteen: {
+        title: '15-minute city',
+        controls: 'Choisissez une catégorie de services et si vous vous déplacez à pied ou à vélo.',
+        colors: 'La barre de couleurs est le temps de proximité : les minutes pour atteindre le service le plus proche de ce type, ou la moyenne sur toutes les catégories.',
+        cell: 'Cliquez sur une cellule et l’encadré à droite donne les temps des neuf catégories.',
+      },
+      citychrone: {
+        title: 'CityChrone++',
+        velocity: 'Score de vitesse : à quelle vitesse les transports en commun vous déplacent depuis chaque cellule.',
+        sociality: 'Score de sociabilité : combien de personnes vous atteignez en transports en commun.',
+        isochrone: 'Isochrones : les temps de trajet en transports en commun d’une zone vers toutes les autres.',
+        hour: 'Le filtre horaire montre chaque mesure à un autre moment de la journée.',
+      },
+      cardep: {
+        title: 'Car Dependency Index',
+        colors: 'Vous voyez la différence normalisée entre les opportunités accessibles en transports en commun et en voiture.',
+        blue: 'Les lieux bleus, où les transports en commun l’emportent, sont rares : la voiture est souvent plus rapide.',
+        views: "Vous pouvez aussi voir les deux scores d’opportunité que compare l’indice : les points d’intérêt accessibles en voiture et en transports en commun.",
+        filter: 'Le filtre ne montre que les cellules dans une plage de l’indice.',
+      },
+      pov: {
+        title: 'Urban Accessibility P.O.V.',
+        scores: 'Proximité et opportunité : les services accessibles près (à pied) et loin (en transports en commun).',
+        zones: 'Zones : la classification par rapport à la médiane de la ville elle-même, elle dit donc quels lieux sont mieux ou moins bien desservis que la moyenne de la ville.',
+      },
+    },
+  },
   notFound: {
     eyebrow: 'Erreur 404',
     headline: 'Hors de la',

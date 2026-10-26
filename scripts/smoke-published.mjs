@@ -153,7 +153,17 @@ const browser = await chromium.launch({
   executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined,
   args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--no-sandbox'],
 });
+// The guided tours open on a first visit and cover the page; every check
+// here but the one about them runs as a returning reader.
+const skipTours = () => {
+  try {
+    for (const id of ['atlas-v2', 'city-v2', 'layer-fifteen-v1', 'layer-citychrone-v1', 'layer-cardep-v2', 'layer-pov-v1']) localStorage.setItem(`tour:${id}`, '1');
+  } catch {
+    // No storage: the tours would show, and the checks would say so.
+  }
+};
 const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+await context.addInitScript(skipTours);
 
 try {
   // The city page reads the published mesh, not the generated one.

@@ -10,7 +10,7 @@ import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
-import { CITYCHRONE_VIEWS, DEFAULT_HOUR, socialityDomain } from '../data/citychrone.js';
+import { CITYCHRONE_VIEWS, DEFAULT_HOUR, RESIDENT_DOMAIN, residentDomain, socialityDomain } from '../data/citychrone.js';
 import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
@@ -21,6 +21,7 @@ import { GeometryToggle } from '../components/GeometryToggle.jsx';
 import { Explain } from '../components/Explain.jsx';
 import { CellInspector } from '../components/CellInspector.jsx';
 import { MapBox } from '../components/MapBox.jsx';
+import { Tour, tourSeen } from '../components/Tour.jsx';
 import { CategoryBars } from '../components/CategoryBars.jsx';
 import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
@@ -99,6 +100,27 @@ const measured = (v) => Number.isFinite(v) && v < UNREACHABLE;
 // Every layer the URL may name, and where its values come from.
 const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
 
+// What "seen" is remembered under for the city view's own tour; each layer's
+// is `layer-<id>-v<version>`.
+const CITY_TOUR = 'city-v2';
+
+// What the P.O.V. layer can draw: the zones, then the two scores.
+const POV_VIEWS = ['zones', 'proximity', 'opportunity'];
+
+// What the Car Dependency layer can draw: the index, then the two
+// opportunity scores it is computed from.
+const CDI_VIEWS = ['index', 'car', 'transit'];
+
+// The scores drawn on a scale fitted to the city, with a shared logarithmic
+// one behind `scale=abs` (see ramps.js): the field each reads, and its two
+// ramps.
+const SCORES = {
+  proximity: { field: 'proximity', fitted: RAMPS.povProximity, absolute: RAMPS.povProximityAbsolute },
+  opportunity: { field: 'opportunity', fitted: RAMPS.povOpportunity, absolute: RAMPS.povOpportunityAbsolute },
+  car: { field: 'o_score_car', fitted: RAMPS.cdiCar, absolute: RAMPS.cdiCarAbsolute },
+  transit: { field: 'o_score_pt', fitted: RAMPS.cdiTransit, absolute: RAMPS.cdiTransitAbsolute },
+};
+
 const DEFAULT_OPACITY = 0.8;
 
 // A city is "large" for the loading note from this many cells in any of its
@@ -153,7 +175,7 @@ export default function AtlasCityPage() {
 
 function AtlasScreen({ cityId, view }) {
   const { t, n, lang } = useI18n();
-  const { unified, profile, platformProfiles, available, extents } = view;
+  const { unified, profile, platformProfiles, available, extents, otherLayers } = view;
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const [activeZone, setActiveZone] = useState(null);
@@ -173,7 +195,9 @@ function AtlasScreen({ cityId, view }) {
   const [fullscreen, setFullscreen] = useState(false);
   // Closed by default: a small box to open, so the map and its key come first.
   const [summaryOpen, setSummaryOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
+  // Open from the start (small and grey, so it stays quiet), except on a
+  // phone, where the map comes first.
+  const [settingsOpen, setSettingsOpen] = useState(() => !isPhoneNow());
   // On a phone the selected cell's box starts closed, like the summary, and
   // opens when a cell is tapped: the map comes first.
   const [selectedOpen, setSelectedOpen] = useState(() => !isPhoneNow());
@@ -181,6 +205,10 @@ function AtlasScreen({ cityId, view }) {
   // it shows the city and the legend; open, every control.
   const phone = useMediaQuery(PHONE_QUERY);
   const [sheetOpen, setSheetOpen] = useState(false);
+  // Raised by the "Guide" button to show the tour again; while forced, the
+  // tour holds the city's steps and the open layer's, seen or not.
+  const [tourReplay, setTourReplay] = useState(0);
+  const [tourForced, setTourForced] = useState(false);
 
   // The nav belongs to the shell now, so full screen asks for it to go rather
   // than declining to render it.
@@ -240,6 +268,17 @@ function AtlasScreen({ cityId, view }) {
   const ccView = CITYCHRONE_VIEWS.some((v) => v.key === params.get('view'))
     ? params.get('view')
     : CITYCHRONE_VIEWS[0].key;
+  // P.O.V.: its four zones (the default), or one of the two scores they are
+  // drawn from (`pov=proximity|opportunity`).
+  const povView = POV_VIEWS.includes(params.get('pov')) ? params.get('pov') : POV_VIEWS[0];
+  const povZones = layer === 'pov' && povView === 'zones';
+  // Car Dependency: its index (the default), or the opportunities reachable
+  // by car or by transit that the index compares (`cdi=car|transit`).
+  const cdiView = CDI_VIEWS.includes(params.get('cdi')) ? params.get('cdi') : CDI_VIEWS[0];
+  const cdiIndex = layer === 'cardep' && cdiView === 'index';
+  // The score on screen, where the layer draws one: a key of SCORES.
+  const scoreView =
+    layer === 'pov' && !povZones ? povView : layer === 'cardep' && !cdiIndex ? cdiView : null;
   const hourParam = Number.parseInt(params.get('hour'), 10);
   const hours = platformProfiles.citychrone?.hourly?.hours ?? 24;
   // A city can publish CityChrone's scores without its travel times; its
@@ -289,14 +328,28 @@ function AtlasScreen({ cityId, view }) {
   // only makes sense on this city's grid.
   const extent = profile.extent === 'fua' ? 'fua' : 'core';
   const bothExtents = Boolean(extents?.core && extents?.fua);
-  const pickExtent = (key) => {
+  const otherExtent = extent === 'core' ? 'fua' : 'core';
+  // `nextLayer` opens the other boundary on another layer: the picker's way
+  // to a layer only that boundary publishes.
+  const pickExtent = (key, nextLayer = null) => {
     const target = extents?.[key];
     if (!target || target === cityId) return;
     const next = new URLSearchParams(params);
     for (const name of GRID_BOUND_PARAMS) next.delete(name);
+    if (nextLayer) {
+      next.set('layer', nextLayer);
+      next.delete('sc');
+      next.delete('cmp');
+    }
     const query = next.toString();
     navigate(`/atlas/${target}${query ? `?${query}` : ''}`);
   };
+  // Whether the other boundary publishes a layer. Unknown while its entry
+  // loads, and then the switch stays as it was.
+  const otherHas = (id) => id === POPULATION_LAYER || !otherLayers || otherLayers.has(id);
+  // The switch opens the same view on the other boundary, so it is offered
+  // only where the open layer exists there: it never lands on another layer.
+  const extentOpen = (key) => key === extent || otherHas(layer);
 
   // ── Scenario ───────────────────────────────────────────────────────
   // Alternative runs of the open layer, on the same cells (`sc=<id>`), shown
@@ -305,7 +358,8 @@ function AtlasScreen({ cityId, view }) {
   // categories, so it is offered where a delta ramp is defined.
   const scenarios = unified && layer !== POPULATION_LAYER ? layerScenarios(profile, layer) : [];
   const scenario = scenarios.find((s) => s.id === params.get('sc')) ?? null;
-  const diffAvailable = Boolean(scenario && DELTA_RAMPS[layer]);
+  // The difference is of the index or the zones, not of a score.
+  const diffAvailable = Boolean(scenario && DELTA_RAMPS[layer]) && !scoreView;
   const diffOn = diffAvailable && params.get('cmp') === 'diff';
   const pickScenario = (id) => {
     const next = new URLSearchParams(params);
@@ -354,8 +408,9 @@ function AtlasScreen({ cityId, view }) {
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone', originCc);
 
   // The sociality score grows with the city, so by default its scale is the
-  // city's own (5th to 95th percentile over every hour, `socialityDomain`);
-  // `scale=abs` puts it on the one scale every city shares.
+  // city's own: the 5th to 99th percentile of its residents, over every hour
+  // together (`socialityDomain`); `scale=abs` puts it on the one scale every
+  // city shares.
   const socialityAbsolute = params.get('scale') === 'abs';
   const socialityFitted = useMemo(() => {
     const domain = ccLayerFile?.hourly?.s
@@ -453,6 +508,29 @@ function AtlasScreen({ cityId, view }) {
   useEffect(() => {
     if (focusId != null) setSelectedCell(focusId);
   }, [focusId]);
+  // P.O.V.'s and Car Dependency's scores grow with the city as the
+  // sociality score does, and are scaled the same way: the city's own 5th
+  // to 99th percentile of the layer's residents by default, one shared
+  // logarithmic scale with `scale=abs`. Measured on the baseline, so a
+  // scenario is read on the city's scale.
+  const scoreFitted = useMemo(() => {
+    if (!scoreView || !baseGeojson?.features) return null;
+    const popKey = unified ? layerPopulationKey(layer) : 'population';
+    const { field, fitted } = SCORES[scoreView];
+    const values = [];
+    const weights = [];
+    for (const feature of baseGeojson.features) {
+      const p = feature.properties;
+      if (!Number.isFinite(p?.[field])) continue;
+      values.push(p[field]);
+      weights.push(p[popKey]);
+    }
+    const domain = residentDomain(values, weights);
+    return domain ? fitRamp(fitted, domain[0], domain[1]) : null;
+  }, [scoreView, layer, baseGeojson, unified]);
+  const scoreAbsolute = scoreView ? SCORES[scoreView].absolute : null;
+  const scoreRamp = scoreView ? (socialityAbsolute ? scoreAbsolute : scoreFitted ?? scoreAbsolute) : null;
+
   const bounds = useMemo(() => {
     const cell = focusId != null ? baseGeojson?.features?.[focusId] : null;
     return cell ? aroundCell(cell) : meshBounds(baseGeojson);
@@ -482,7 +560,15 @@ function AtlasScreen({ cityId, view }) {
       ],
       format,
     });
-    if (layer === 'pov') return null; // categorical — handled separately
+    if (scoreView) {
+      return {
+        ramp: scoreRamp,
+        value: ['get', key(SCORES[scoreView].field)],
+        format: (v) => n(Math.round(v)),
+      };
+    }
+    // P.O.V.'s zones are categorical, handled separately.
+    if (layer === 'pov') return null;
     if (layer === 'cardep') {
       if (diffShown) return delta('cdi', DELTA_RAMPS.cardep, (v) => signed(v, n, 3));
       return { ramp: RAMPS.cdi, value: ['get', key('cdi')], format: (v) => signed(v, n) };
@@ -528,7 +614,7 @@ function AtlasScreen({ cityId, view }) {
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, scoreView, scoreRamp]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -557,7 +643,7 @@ function AtlasScreen({ cityId, view }) {
 
   // ── Paint ──────────────────────────────────────────────────────────
   // The index filter reads the index, not a difference of two.
-  const rangeOn = layer === 'cardep' && !diffShown && (range[0] > -1 || range[1] < 1);
+  const rangeOn = cdiIndex && !diffShown && (range[0] > -1 || range[1] < 1);
 
   // The last city's mesh, kept on screen while this one's grid loads.
   const gridLoading = unified && atlas.status === 'pending';
@@ -571,7 +657,7 @@ function AtlasScreen({ cityId, view }) {
     }
     // P.O.V. is the one genuinely categorical layer: four named classes, not a
     // quantity, so it keeps discrete colours and band isolation.
-    if (layer === 'pov') {
+    if (povZones) {
       const zone = ['coalesce', ['get', shownId ? scenarioKey(shownId, 'zone') : 'zone'], -1];
       const covered = ['>=', zone, 0];
       return {
@@ -624,7 +710,7 @@ function AtlasScreen({ cityId, view }) {
       'fill-color': rampColor(ramp, ['coalesce', value, 0]),
       'fill-opacity': ['case', covered, opacityFor, 0],
     };
-  }, [layer, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range, waiting, shownId]);
+  }, [layer, povZones, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range, waiting, shownId]);
 
   // A cell where nobody lives has no one for a measure to describe, so every
   // layer but Population leaves it out. Dropped by the layer filter rather
@@ -716,9 +802,17 @@ function AtlasScreen({ cityId, view }) {
     if (layer === 'pov') {
       const zone = at('zone');
       if (!Number.isFinite(zone)) return t('atlas.noValue');
+      if (!povZones) {
+        const value = at(povView);
+        return Number.isFinite(value) ? `${t(`city.cell.${povView}`)} ${measure.format(value)}` : t('atlas.noValue');
+      }
       return `${t(`city.zones.${ZONES[zone].key}.name`)} · ${[at('proximity'), at('opportunity')]
         .map((v) => n(v, { maximumFractionDigits: 1 }))
         .join(' · ')}`;
+    }
+    if (layer === 'cardep' && !cdiIndex) {
+      const value = at(SCORES[cdiView].field);
+      return Number.isFinite(value) ? `${t(`atlas.cdiLegend.${cdiView}`)} ${measure.format(value)}` : t('atlas.noValue');
     }
     if (layer === 'cardep') {
       if (diffShown) {
@@ -869,11 +963,15 @@ function AtlasScreen({ cityId, view }) {
     : isPopulation
     ? t('atlas.population.legend')
     : layer === 'pov'
-      ? t('city.zoneType')
+      ? povZones
+        ? t('city.zoneType')
+        : t(`atlas.povLegend.${povView}`)
       : layer === 'cardep'
-        ? // The index itself, per cell: the world map's legend title says
-          // "median resident", which is a city's figure, not a cell's.
-          platform.name
+        ? cdiIndex
+          ? // The index itself, per cell: the world map's legend title says
+            // "median resident", which is a city's figure, not a cell's.
+            platform.name
+          : t(`atlas.cdiLegend.${cdiView}`)
         : layer === 'fifteen'
           ? t('fifteen.legendValue')
           : t(`atlas.legend.${ccView}`);
@@ -883,15 +981,16 @@ function AtlasScreen({ cityId, view }) {
     ? (v) => (v === 0 ? '0' : `${v < 0 ? '−' : '+'}${n(Math.abs(v), { maximumFractionDigits: 1 })}`)
     : isPopulation
     ? (v) => (v >= 1000 ? `${n(v / 1000, { maximumFractionDigits: 1 })}k` : n(v))
-    : layer === 'cardep'
+    : cdiIndex
       ? (v) => (v === 0 ? '0' : signed(v, n))
-      : ccView === 'sociality' && citychroneOn
+      : (ccView === 'sociality' && citychroneOn) || scoreView
         ? (v) => {
             const text = compactCount(v, n);
-            // A fitted scale stops at the city's 5th and 95th percentile, and
+            // A fitted scale stops at the city's 5th and 99th percentile, and
             // the cells past either end take its colour: the ends say so.
-            if (!socialityRamp.fitted) return text;
-            const ticks = socialityRamp.ticks;
+            const ramp = scoreView ? measure.ramp : socialityRamp;
+            if (!ramp.fitted) return text;
+            const ticks = ramp.ticks;
             return v === ticks[0] && v > 0 ? `≤${text}` : v === ticks[ticks.length - 1] ? `≥${text}` : text;
           }
         : layer === 'fifteen'
@@ -909,12 +1008,105 @@ function AtlasScreen({ cityId, view }) {
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
+      : layer === 'pov' && !povZones
+        ? t(`atlas.povHint.${povView}`)
+      : layer === 'cardep' && !cdiIndex
+        ? t(`atlas.cdiHint.${cdiView}`)
       : layer === 'cardep' || layer === 'pov'
         // Car Dependency's and P.O.V.'s "?" say more than the dialog's
         // "Reading the map": CDI what a white and a blue area mean, P.O.V.
         // the framework its four zones come from.
         ? t(`city.explain.legend.${layer}`)
         : t(`city.explain.map.${layer}`);
+
+  // ── The guided tour ────────────────────────────────────────────────
+  const bullets = (keys) => (
+    <ul className="aa-tour__list">
+      {keys.map((key) => (
+        <li key={key}>
+          <span className="aa-tour__dot" style={{ background: 'var(--magenta)' }} />
+          <span>{t(key)}</span>
+        </li>
+      ))}
+    </ul>
+  );
+  const cityTour = [
+    {
+      title: t('tour.city.intro.title', { city: cityName }),
+      body: (
+        <>
+          <p>{t('tour.city.intro.body')}</p>
+          {bullets(['panel', 'details', 'settings', 'layers'].map((key) => `tour.city.intro.${key}`))}
+        </>
+      ),
+      targets: [
+        { selector: '.aa-atlas .aa-city__panel', tag: t('tour.city.tags.panel') },
+        { selector: '.aa-city__top .aa-mapui--tr', tag: t('tour.city.tags.details'), tagAt: 'below' },
+        { selector: '.aa-atlas .aa-mapui--bl', tag: t('tour.city.tags.settings'), tagAt: 'above' },
+        { selector: '.aa-city__layerbar .aa-picker', tag: t('tour.city.tags.layers'), tagAt: 'below' },
+      ],
+      within: '.aa-city__canvas',
+    },
+    {
+      title: t('tour.city.layers.title'),
+      body: (
+        <>
+          <p>{t('tour.city.layers.body')}</p>
+          <ul className="aa-tour__list">
+            {LAYER_ORDER.map((id) => (
+              <li key={id}>
+                <span className="aa-tour__dot" style={{ backgroundImage: pickerDot(PLATFORMS_BY_ID[id]) }} />
+                <span>
+                  <strong>{PLATFORMS_BY_ID[id].name}</strong>
+                  {': '}
+                  {t(`tour.city.layers.${id}`)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ),
+      targets: [{ selector: '.aa-city__layerbar [data-tour-layer]', all: true }],
+      anchor: '.aa-city__layerbar .aa-picker',
+    },
+    {
+      title: t('tour.city.cell.title'),
+      body: <p>{t('tour.city.cell.body')}</p>,
+      targets: [{ selector: '.aa-mapbox--selected', tag: t('tour.city.tags.details'), tagAt: 'below' }],
+      within: '.aa-city__canvas',
+    },
+  ];
+  // One screen per layer: its controls and its colours, lit where they are.
+  const controls = { selector: '.aa-city__panel .aa-tourctl, .aa-city__panel .aa-range', all: true };
+  const legendBox = { selector: '.aa-city__legend' };
+  const layerTours = {
+    fifteen: {
+      bullets: ['controls', 'colors', 'cell'],
+      targets: [controls, legendBox, { selector: '.aa-mapbox--selected' }],
+    },
+    citychrone: { bullets: ['velocity', 'sociality', 'isochrone', 'hour'], targets: [controls] },
+    cardep: { bullets: ['colors', 'blue', 'views', 'filter'], targets: [legendBox, controls], version: 2 },
+    pov: { bullets: ['scores', 'zones'], targets: [controls, legendBox] },
+  };
+  const layerTour = layerTours[layer] ?? null;
+  // Bumped when a layer's screen changes, so a reader who saw it sees it again.
+  const layerTourId = layerTour ? `layer-${layer}-v${layerTour.version ?? 1}` : null;
+  const cityTourDue = tourForced || !tourSeen(CITY_TOUR);
+  const layerTourDue = Boolean(layerTour) && (tourForced || !tourSeen(layerTourId));
+  const tourSteps = [
+    ...(cityTourDue ? cityTour : []),
+    ...(layerTourDue
+      ? [
+          {
+            title: t(`tour.layer.${layer}.title`),
+            body: bullets(layerTour.bullets.map((key) => `tour.layer.${layer}.${key}`)),
+            targets: layerTour.targets,
+            within: '.aa-city__canvas',
+          },
+        ]
+      : []),
+  ];
+  const tourMarks = [cityTourDue ? CITY_TOUR : null, layerTourDue ? layerTourId : null];
 
   // What the info panel explains about the layer on screen.
   const infoBody = isPopulation
@@ -979,7 +1171,7 @@ function AtlasScreen({ cityId, view }) {
                 under the city's name. ───────────────────────────── */}
             <div className="aa-city__legend">
               <Explain label={legendTitle} body={legendExplain} />
-              {layer === 'pov' ? (
+              {povZones ? (
                 // The one categorical layer: four named classes, each with the
                 // share of covered cells that falls in it.
                 <div className="aa-bands">
@@ -1023,7 +1215,7 @@ function AtlasScreen({ cityId, view }) {
               {/* The sociality score's scale: the city's own by default, one
                   switch away from the scale every city shares. Kept small,
                   under the legend it changes. */}
-              {citychroneOn && ccView === 'sociality' && !waiting && (
+              {((citychroneOn && ccView === 'sociality') || scoreView) && !waiting && (
                 <div className="aa-scaleswitch">
                   <label className="aa-scaleswitch__label">
                     <input
@@ -1037,10 +1229,11 @@ function AtlasScreen({ cityId, view }) {
                     {t('atlas.socialityScale.toggle')}
                   </label>
                   <Explain
-                    body={t('atlas.socialityScale.about', {
-                      share: n(0.05, { style: 'percent' }),
-                      low: compactCount(RAMPS.socialityAbsolute.ticks[0], n),
-                      high: compactCount(RAMPS.socialityAbsolute.ticks.at(-1), n),
+                    body={t(`atlas.${scoreView ?? 'sociality'}Scale.about`, {
+                      lowShare: n(RESIDENT_DOMAIN[0], { style: 'percent' }),
+                      highShare: n(1 - RESIDENT_DOMAIN[1], { style: 'percent' }),
+                      low: compactCount((scoreAbsolute ?? RAMPS.socialityAbsolute).ticks[0], n),
+                      high: compactCount((scoreAbsolute ?? RAMPS.socialityAbsolute).ticks.at(-1), n),
                     })}
                   />
                 </div>
@@ -1058,6 +1251,8 @@ function AtlasScreen({ cityId, view }) {
                       type="button"
                       className={`aa-toggle__btn${extent === key ? ' aa-toggle__btn--active' : ''}`}
                       aria-pressed={extent === key}
+                      disabled={!extentOpen(key)}
+                      title={extentOpen(key) ? undefined : t('atlas.extent.unavailable', { name: platform.name })}
                       onClick={() => pickExtent(key)}
                     >
                       {t(`atlas.extent.${key}`)}
@@ -1112,8 +1307,8 @@ function AtlasScreen({ cityId, view }) {
             {/* ── Per-layer controls ───────────────────────────── */}
             {layer === 'fifteen' && (
               <>
-                <Eyebrow>{t('fifteen.controls.mode')}</Eyebrow>
-                <div className="aa-toggle" role="group" aria-label={t('fifteen.controls.mode')}>
+                <Eyebrow className="aa-tourctl">{t('fifteen.controls.mode')}</Eyebrow>
+                <div className="aa-toggle aa-tourctl" role="group" aria-label={t('fifteen.controls.mode')}>
                   {MODES.map((m) => (
                     <button
                       key={m.key}
@@ -1126,7 +1321,7 @@ function AtlasScreen({ cityId, view }) {
                     </button>
                   ))}
                 </div>
-                <label className="aa-field">
+                <label className="aa-field aa-tourctl">
                   <Eyebrow>{t('fifteen.controls.category')}</Eyebrow>
                   <select
                     className="aa-select"
@@ -1148,10 +1343,32 @@ function AtlasScreen({ cityId, view }) {
               </>
             )}
 
+            {layer === 'pov' && (
+              <>
+                <Eyebrow className="aa-tourctl">{t('atlas.controls.view')}</Eyebrow>
+                <div className="aa-toggle aa-toggle--segmented aa-toggle--fit aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
+                  {POV_VIEWS.map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={`aa-toggle__btn${povView === key ? ' aa-toggle__btn--active' : ''}`}
+                      aria-pressed={povView === key}
+                      onClick={() => {
+                        setActiveZone(null);
+                        setParam('pov', key === POV_VIEWS[0] ? null : key);
+                      }}
+                    >
+                      {t(`atlas.povViews.${key}`)}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
             {layer === 'citychrone' && (
               <>
-                <Eyebrow>{t('atlas.controls.view')}</Eyebrow>
-                <div className="aa-toggle aa-toggle--segmented" role="group" aria-label={t('atlas.controls.view')}>
+                <Eyebrow className="aa-tourctl">{t('atlas.controls.view')}</Eyebrow>
+                <div className="aa-toggle aa-toggle--segmented aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
                   {CITYCHRONE_VIEWS.map((option) => (
                     <button
                       key={option.key}
@@ -1185,7 +1402,7 @@ function AtlasScreen({ cityId, view }) {
                     </button>
                   ))}
                 </div>
-                <label className="aa-field">
+                <label className="aa-field aa-tourctl">
                   <Eyebrow>{t('atlas.controls.hour')}</Eyebrow>
                   <select
                     className="aa-select"
@@ -1210,9 +1427,35 @@ function AtlasScreen({ cityId, view }) {
               </>
             )}
 
-            {layer === 'cardep' && !diffShown && (
+            {layer === 'cardep' && (
               <>
-                <Explain label={t('city.filter.title')} body={t('city.filter.about')} />
+                <Eyebrow className="aa-tourctl">{t('atlas.controls.view')}</Eyebrow>
+                <div className="aa-toggle aa-toggle--segmented aa-toggle--fit aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
+                  {CDI_VIEWS.map((key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={`aa-toggle__btn${cdiView === key ? ' aa-toggle__btn--active' : ''}`}
+                      aria-pressed={cdiView === key}
+                      onClick={() => {
+                        const next = new URLSearchParams(params);
+                        if (key === CDI_VIEWS[0]) next.delete('cdi');
+                        else next.set('cdi', key);
+                        // The difference is the index's: a score has none.
+                        if (key !== CDI_VIEWS[0]) next.delete('cmp');
+                        setParams(next, { replace: true });
+                      }}
+                    >
+                      {t(`atlas.cdiViews.${key}`)}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {cdiIndex && !diffShown && (
+              <>
+                <Explain className="aa-tourctl" label={t('city.filter.title')} body={t('city.filter.about')} />
                 <RangeFilter
                   value={range}
                   onChange={setRange}
@@ -1352,16 +1595,27 @@ function AtlasScreen({ cityId, view }) {
               >
                 {LAYER_ORDER.map((id) => {
                   const option = PLATFORMS_BY_ID[id];
-                  const enabled = available.has(id);
+                  // A layer only the other boundary publishes stays offered,
+                  // and opens there (Rome's metro area → Rome for CityChrone).
+                  const here = available.has(id);
+                  const elsewhere = !here && bothExtents && Boolean(otherLayers?.has(id));
+                  const enabled = here || elsewhere;
                   return (
                     <button
                       key={id}
                       type="button"
+                      data-tour-layer={id}
                       className={`aa-picker__item${layer === id ? ' aa-picker__item--active' : ''}`}
                       disabled={!enabled}
                       aria-pressed={layer === id}
-                      title={enabled ? undefined : t('atlas.unavailable')}
-                      onClick={() => pickLayer(id)}
+                      title={
+                        here
+                          ? undefined
+                          : elsewhere
+                            ? t(`atlas.extent.opens.${otherExtent}`)
+                            : t('atlas.unavailable')
+                      }
+                      onClick={() => (here ? pickLayer(id) : pickExtent(otherExtent, id))}
                     >
                       <span
                         className="aa-picker__dot"
@@ -1493,6 +1747,7 @@ function AtlasScreen({ cityId, view }) {
               </MapBox>
 
               <MapBox
+                className="aa-mapbox--selected"
                 title={t('city.selected.title')}
                 open={selectedOpen}
                 onToggle={() => setSelectedOpen((open) => !open)}
@@ -1565,6 +1820,22 @@ function AtlasScreen({ cityId, view }) {
             </div>
 
             <div className="aa-mapui aa-mapui--br aa-fadein">
+              {/* The tour again, for whoever skipped it. Not on a phone,
+                  where it does not run. */}
+              {!phone && !fullscreen && (
+                <button
+                  type="button"
+                  className="aa-mapbtn"
+                  onClick={() => {
+                    setSidebarOpen(true);
+                    setTourForced(true);
+                    setTourReplay((n) => n + 1);
+                  }}
+                >
+                  <Icon name="help" size={13} color="currentColor" />
+                  {t('tour.replay')}
+                </button>
+              )}
               <button
                 type="button"
                 className="aa-mapbtn"
@@ -1607,6 +1878,18 @@ function AtlasScreen({ cityId, view }) {
         />
       )}
 
+      {/* The first city a reader opens explains the screen, and the first
+          time each layer is opened, that layer: on a first visit the two
+          run as one tour. "Guide" replays both for the open layer, and
+          leaves the other layers' as they were. Not on a phone, where the
+          column is a sheet and "on the left" is wrong. */}
+      <Tour
+        marks={tourMarks}
+        ready={mapPainted && !phone && !fullscreen && sidebarOpen && !waiting}
+        replay={tourReplay}
+        onClose={() => setTourForced(false)}
+        steps={tourSteps}
+      />
     </div>
   );
 }
