@@ -450,8 +450,8 @@ readable:
 
 - **Continuous measures get continuous ramps.** Only P.O.V.'s four zones are
   categorical. P.O.V. also draws its two scores (`pov=proximity|opportunity`,
-  the zones stay the default) on soft sequential ramps, logarithmic because
-  they span two orders of magnitude between cities. A step scale invents boundaries the data does not have — two
+  the zones stay the default) on soft sequential ramps, scaled like the
+  sociality score (below). A step scale invents boundaries the data does not have — two
   cells either side of an edge look further apart than two at opposite ends of
   one band. The legend is `RampLegend`, a gradient with its values under it;
   it cannot show a share per band, so figures that mattered (the 15minCity
@@ -466,15 +466,17 @@ readable:
   counts people within reach, so it grows with the city, and Tokyo sat past
   the end of a domain fitted to Milan. The city view fits it to the city
   (`fitRamp` in `ramps.js`, `socialityDomain` in `citychrone.js`): the 5th to
-  95th percentile of its inhabited cells over all 24 hours together, so the
-  hour still never recolours a value, with `≤` / `≥` on the legend's ends.
+  95th percentile of its **residents** (`residentDomain`, weighted by the
+  layer's own population, like every other figure about a city) over all 24
+  hours together, so the hour still never recolours a value, with `≤` / `≥`
+  on the legend's ends.
   `scale=abs` switches to `socialityAbsolute`, one logarithmic scale for
   every city (10k to 10M), and the switch's "?" says what each means.
-  **P.O.V.'s opportunity score is the same exception**, for the same reason
-  (it counts places reachable by transit, so it grows with the city): fitted
-  to the city's inhabited cells by default, `povOpportunityAbsolute` (1k to
-  100k, logarithmic) with `scale=abs`. Its proximity score has one fixed
-  logarithmic scale, 300 to 30k. A
+  **P.O.V.'s two scores are the same exception**, for the same reason
+  (they count places within reach, so they grow with the city): fitted to
+  the city's residents by default, linear, and with `scale=abs`
+  `povProximityAbsolute` (300 to 30k) or `povOpportunityAbsolute` (1k to
+  100k), both logarithmic. A
   logarithmic default was rejected: within one city the score is close to
   linear, and the map lost its contrast.
 

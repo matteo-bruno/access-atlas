@@ -248,10 +248,13 @@ export default {
     socialityScale: {
       toggle: "Escala absoluta",
       about:
-        "A pontuação de sociabilidade conta as pessoas alcançáveis, por isso cresce com o tamanho da cidade. Por padrão, as cores cobrem as pontuações desta cidade ao longo do dia, sem os {share} mais baixos e mais altos de suas células: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades numa só escala, logarítmica de {low} a {high}, para comparar cores entre cidades.",
+        "A pontuação de sociabilidade conta as pessoas ao alcance, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade ao longo do dia, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
     },
     opportunityScale: {
-      about: 'A pontuação de oportunidade conta os serviços ao alcance de transporte público, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {share} mais baixos e mais altos das suas células habitadas: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.',
+      about: "A pontuação de oportunidade conta os serviços ao alcance de transporte público, então cresce com o tamanho da cidade. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
+    },
+    proximityScale: {
+      about: "A pontuação de proximidade conta os serviços a uma curta caminhada, então é maior nas cidades maiores e mais densas. Por padrão as cores cobrem as pontuações desta cidade, deixando de fora os {share} mais baixos e mais altos dos seus moradores: a imagem mais clara da cidade, mas uma cor indica outra pontuação em outra cidade. A escala absoluta coloca todas as cidades em uma só escala, logarítmica de {low} a {high}, para que as cores se comparem entre cidades.",
     },
     povViews: {
       zones: 'Zonas',

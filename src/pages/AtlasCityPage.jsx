@@ -10,7 +10,7 @@ import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
 import { PLATFORMS, PLATFORMS_BY_ID, ZONES } from '../data/platforms.js';
 import { CATEGORIES, MODES, formatTime, measureKey } from '../data/fifteen.js';
-import { CITYCHRONE_VIEWS, DEFAULT_HOUR, socialityDomain } from '../data/citychrone.js';
+import { CITYCHRONE_VIEWS, DEFAULT_HOUR, residentDomain, socialityDomain } from '../data/citychrone.js';
 import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
@@ -386,8 +386,9 @@ function AtlasScreen({ cityId, view }) {
   const times = useTravelTimes(cityId, hour, citychroneOn && ccView === 'isochrone', originCc);
 
   // The sociality score grows with the city, so by default its scale is the
-  // city's own (5th to 95th percentile over every hour, `socialityDomain`);
-  // `scale=abs` puts it on the one scale every city shares.
+  // city's own: the 5th to 95th percentile of its residents, over every hour
+  // together (`socialityDomain`); `scale=abs` puts it on the one scale every
+  // city shares.
   const socialityAbsolute = params.get('scale') === 'abs';
   const socialityFitted = useMemo(() => {
     const domain = ccLayerFile?.hourly?.s
@@ -485,25 +486,31 @@ function AtlasScreen({ cityId, view }) {
   useEffect(() => {
     if (focusId != null) setSelectedCell(focusId);
   }, [focusId]);
-  // P.O.V.'s opportunity score grows with the city as the sociality score
-  // does, and is scaled the same way: the city's own 5th to 95th percentile
-  // over the layer's inhabited cells by default, one shared scale with
+  // P.O.V.'s two scores grow with the city as the sociality score does, and
+  // are scaled the same way: the city's own 5th to 95th percentile of the
+  // layer's residents by default, one shared logarithmic scale with
   // `scale=abs`. Measured on the baseline, so a scenario is read on the
   // city's scale.
-  const opportunityFitted = useMemo(() => {
+  const povFitted = useMemo(() => {
     if (layer !== 'pov' || !baseGeojson?.features) return null;
     const popKey = unified ? layerPopulationKey('pov') : 'population';
-    const values = [];
-    for (const feature of baseGeojson.features) {
-      const p = feature.properties;
-      if (Number.isFinite(p?.opportunity) && !(p[popKey] <= 0)) values.push(p.opportunity);
-    }
-    const domain = socialityDomain([values]);
-    return domain ? fitRamp(RAMPS.povOpportunity, domain[0], domain[1]) : null;
+    const fit = (name) => {
+      const values = [];
+      const weights = [];
+      for (const feature of baseGeojson.features) {
+        const p = feature.properties;
+        if (!Number.isFinite(p?.[name])) continue;
+        values.push(p[name]);
+        weights.push(p[popKey]);
+      }
+      const domain = residentDomain(values, weights);
+      return domain ? fitRamp(name === 'proximity' ? RAMPS.povProximity : RAMPS.povOpportunity, domain[0], domain[1]) : null;
+    };
+    return { proximity: fit('proximity'), opportunity: fit('opportunity') };
   }, [layer, baseGeojson, unified]);
-  const opportunityRamp = socialityAbsolute
-    ? RAMPS.povOpportunityAbsolute
-    : opportunityFitted ?? RAMPS.povOpportunityAbsolute;
+  const povAbsoluteOf = (name) => (name === 'proximity' ? RAMPS.povProximityAbsolute : RAMPS.povOpportunityAbsolute);
+  const povRamp = (name) => (socialityAbsolute ? povAbsoluteOf(name) : povFitted?.[name] ?? povAbsoluteOf(name));
+  const povAbsolute = povAbsoluteOf(povView);
 
   const bounds = useMemo(() => {
     const cell = focusId != null ? baseGeojson?.features?.[focusId] : null;
@@ -538,7 +545,7 @@ function AtlasScreen({ cityId, view }) {
       // The zones are categorical, handled separately; the scores are not.
       if (povView === 'zones') return null;
       return {
-        ramp: povView === 'proximity' ? RAMPS.povProximity : opportunityRamp,
+        ramp: povRamp(povView),
         value: ['get', key(povView)],
         format: (v) => n(Math.round(v)),
       };
@@ -588,7 +595,7 @@ function AtlasScreen({ cityId, view }) {
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, povView, opportunityRamp]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, povView, povFitted, socialityAbsolute]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -1180,7 +1187,7 @@ function AtlasScreen({ cityId, view }) {
               {/* The sociality score's scale: the city's own by default, one
                   switch away from the scale every city shares. Kept small,
                   under the legend it changes. */}
-              {((citychroneOn && ccView === 'sociality') || (layer === 'pov' && povView === 'opportunity')) && !waiting && (
+              {((citychroneOn && ccView === 'sociality') || (layer === 'pov' && !povZones)) && !waiting && (
                 <div className="aa-scaleswitch">
                   <label className="aa-scaleswitch__label">
                     <input
@@ -1196,10 +1203,10 @@ function AtlasScreen({ cityId, view }) {
                   <Explain
                     body={
                       layer === 'pov'
-                        ? t('atlas.opportunityScale.about', {
+                        ? t(`atlas.${povView}Scale.about`, {
                             share: n(0.05, { style: 'percent' }),
-                            low: compactCount(RAMPS.povOpportunityAbsolute.ticks[0], n),
-                            high: compactCount(RAMPS.povOpportunityAbsolute.ticks.at(-1), n),
+                            low: compactCount(povAbsolute.ticks[0], n),
+                            high: compactCount(povAbsolute.ticks.at(-1), n),
                           })
                         : t('atlas.socialityScale.about', {
                             share: n(0.05, { style: 'percent' }),

@@ -262,10 +262,13 @@ export default {
     socialityScale: {
       toggle: "Scala assoluta",
       about:
-        "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escluso il {share} più basso e più alto delle sue celle: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+        "Il sociality score conta le persone raggiungibili, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città nell'arco della giornata, escluso il {share} più basso e più alto dei suoi residenti: è il quadro più leggibile della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
     },
     opportunityScale: {
-      about: 'Il punteggio di opportunità conta i servizi raggiungibili con i mezzi pubblici, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto delle sue celle abitate: l\'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un\'altra città. La scala assoluta mette tutte le città su un\'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.',
+      about: "Il punteggio di opportunità conta i servizi raggiungibili con i mezzi pubblici, quindi cresce con la dimensione della città. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto dei suoi residenti: l'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
+    },
+    proximityScale: {
+      about: "Il punteggio di prossimità conta i servizi raggiungibili con una breve camminata, quindi è più alto nelle città più grandi e dense. Di default i colori coprono i punteggi di questa città, escludendo il {share} più basso e più alto dei suoi residenti: l'immagine più chiara della città, ma lo stesso colore indica un punteggio diverso in un'altra città. La scala assoluta mette tutte le città su un'unica scala, logaritmica da {low} a {high}, così i colori si confrontano tra città.",
     },
     povViews: {
       zones: 'Zone',

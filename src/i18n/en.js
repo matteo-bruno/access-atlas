@@ -273,10 +273,13 @@ export default {
     socialityScale: {
       toggle: "Absolute scale",
       about:
-        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+        "The sociality score counts people within reach, so it grows with the size of the city. By default the colours span this city's own scores over the whole day, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
     },
     opportunityScale: {
-      about: 'The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city\'s own scores, leaving out the lowest and highest {share} of its inhabited cells: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.',
+      about: "The opportunity score counts services within reach by public transport, so it grows with the size of the city. By default the colours span this city's own scores, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
+    },
+    proximityScale: {
+      about: "The proximity score counts services within a short walk, so it runs higher in larger, denser cities. By default the colours span this city's own scores, leaving out the lowest and highest {share} of its residents: the clearest picture of the city, but a colour stands for a different score in another city. The absolute scale puts every city on one scale, logarithmic from {low} to {high}, so colours compare across cities.",
     },
     povViews: {
       zones: 'Zones',

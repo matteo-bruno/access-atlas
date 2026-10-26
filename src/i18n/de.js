@@ -250,10 +250,13 @@ export default {
     socialityScale: {
       toggle: "Absolute Skala",
       about:
-        "Der Sociality-Score zählt erreichbare Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Zellen: das klarste Bild der Stadt, aber dieselbe Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala legt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, damit Farben zwischen Städten vergleichbar sind.",
+        "Der Sozialitäts-Score zählt die erreichbaren Menschen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt über den ganzen Tag, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
     },
     opportunityScale: {
-      about: 'Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer bewohnten Zellen: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.',
+      about: "Der Gelegenheits-Score zählt die mit dem öffentlichen Verkehr erreichbaren Dienstleistungen und wächst daher mit der Größe der Stadt. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
+    },
+    proximityScale: {
+      about: "Der Nähe-Score zählt die Dienstleistungen in kurzer Gehentfernung und ist daher in größeren, dichteren Städten höher. Standardmäßig umfassen die Farben die Werte dieser Stadt, ohne die niedrigsten und höchsten {share} ihrer Einwohner: das klarste Bild der Stadt, aber eine Farbe steht in einer anderen Stadt für einen anderen Wert. Die absolute Skala stellt alle Städte auf eine Skala, logarithmisch von {low} bis {high}, sodass sich die Farben zwischen Städten vergleichen lassen.",
     },
     povViews: {
       zones: 'Zonen',

@@ -248,10 +248,13 @@ export default {
     socialityScale: {
       toggle: "Escala absoluta",
       about:
-        "La puntuación de sociabilidad cuenta las personas alcanzables, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad a lo largo del día, sin el {share} más bajo y más alto de sus celdas: la imagen más clara de la ciudad, pero un color indica una puntuación distinta en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para comparar colores entre ciudades.",
+        "La puntuación de sociabilidad cuenta las personas al alcance, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad a lo largo del día, dejando fuera el {share} más bajo y más alto de sus residentes: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
     },
     opportunityScale: {
-      about: 'La puntuación de oportunidad cuenta los servicios al alcance en transporte público, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {share} más bajo y más alto de sus celdas habitadas: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.',
+      about: "La puntuación de oportunidad cuenta los servicios al alcance en transporte público, así que crece con el tamaño de la ciudad. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {share} más bajo y más alto de sus residentes: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
+    },
+    proximityScale: {
+      about: "La puntuación de proximidad cuenta los servicios a un corto paseo, así que es más alta en las ciudades más grandes y densas. Por defecto los colores abarcan las puntuaciones de esta ciudad, dejando fuera el {share} más bajo y más alto de sus residentes: la imagen más clara de la ciudad, pero un color indica otra puntuación en otra ciudad. La escala absoluta pone todas las ciudades en una sola escala, logarítmica de {low} a {high}, para que los colores se comparen entre ciudades.",
     },
     povViews: {
       zones: 'Zonas',

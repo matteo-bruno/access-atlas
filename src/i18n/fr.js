@@ -250,10 +250,13 @@ export default {
     socialityScale: {
       toggle: "Échelle absolue",
       about:
-        "Le score de sociabilité compte les personnes accessibles, il croît donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses cellules : l'image la plus lisible de la ville, mais une couleur désigne un autre score dans une autre ville. L'échelle absolue place toutes les villes sur une seule échelle, logarithmique de {low} à {high}, pour comparer les couleurs d'une ville à l'autre.",
+        "Le score de sociabilité compte les personnes accessibles, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville sur toute la journée, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
     },
     opportunityScale: {
-      about: 'Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses cellules habitées : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.',
+      about: "Le score d’opportunité compte les services accessibles en transports en commun, il augmente donc avec la taille de la ville. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
+    },
+    proximityScale: {
+      about: "Le score de proximité compte les services à courte distance à pied, il est donc plus élevé dans les villes plus grandes et plus denses. Par défaut, les couleurs couvrent les scores de cette ville, sans les {share} les plus bas et les plus hauts de ses habitants : l’image la plus nette de la ville, mais une couleur correspond à un autre score dans une autre ville. L’échelle absolue place toutes les villes sur une même échelle, logarithmique de {low} à {high}, pour que les couleurs se comparent d’une ville à l’autre.",
     },
     povViews: {
       zones: 'Zones',
