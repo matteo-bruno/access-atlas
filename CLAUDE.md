@@ -1063,8 +1063,12 @@ CityChrone. What a layer's screen lights is marked in the panel with
 `tour:city-v2`, `tour:layer-<id>-v<version>`, Car Dependency's at v2 since
 its views; bump an id to show a changed tour again), and a small button brings it back (the round "?" above the zoom,
 "Guide" beside full screen): on a city it replays the city's steps and the
-open layer's, and leaves the other layers' as they were. The city tour does not run on a
-phone, where the column is a sheet and "on the left" is wrong. The browser
+open layer's, and leaves the other layers' as they were. **A phone gets
+the same tours, told for its layout**: the copy that says where things are
+has a phone version (`tour.city.introPhone`, `cellPhone`, …), the sheet is
+closed for the city's steps and opened for the layer's, whose controls are in
+it (a step's `onEnter`), and closed again after; a lit part is clipped to the
+screen and the card is measured and kept on it. The browser
 suites run as a returning reader (`skipTours` in `smoke.mjs`): a page opened
 in a context of its own needs it too, or the tour dims the map it measures.
 

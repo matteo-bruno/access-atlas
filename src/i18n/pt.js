@@ -1215,6 +1215,19 @@ export default {
         title: 'Clique em uma célula',
         body: 'Clique em qualquer célula do mapa para abrir aqui o detalhe das medidas dessa área.',
       },
+      introPhone: {
+        panel: 'Embaixo, as explicações e os filtros: puxe a alça para cima para ver tudo.',
+        details: 'No alto, o resumo da cidade e os detalhes da célula que você tocar.',
+        settings: 'Acima, à esquerda, os controles: a forma do mapa e a transparência.',
+        layers: 'No alto, as camadas: deslize a barra para ver todas.',
+      },
+      layersPhone: {
+        body: 'Toque em uma para mudar o que o mapa mostra:',
+      },
+      cellPhone: {
+        title: 'Toque em uma célula',
+        body: 'Toque em qualquer célula do mapa para abrir no alto o detalhe das medidas dessa área.',
+      },
     },
     layer: {
       fifteen: {
@@ -1222,6 +1235,7 @@ export default {
         controls: 'Escolha uma categoria de serviços e se você vai a pé ou de bicicleta.',
         colors: 'A barra de cores é o tempo de proximidade: os minutos até o serviço mais próximo daquele tipo, ou a média de todas as categorias.',
         cell: 'Clique em uma célula e o quadro à direita mostra os tempos das nove categorias.',
+        cellPhone: 'Toque em uma célula e o quadro no alto mostra os tempos das nove categorias.',
       },
       citychrone: {
         title: 'CityChrone++',

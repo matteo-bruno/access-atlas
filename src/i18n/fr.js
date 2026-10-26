@@ -1217,6 +1217,19 @@ export default {
         title: 'Cliquez sur une cellule',
         body: 'Cliquez sur n’importe quelle cellule de la carte pour ouvrir ici le détail de ses mesures, pour cette zone.',
       },
+      introPhone: {
+        panel: 'En bas, les explications et les filtres : tirez la poignée vers le haut pour tout voir.',
+        details: 'En haut, le résumé de la ville et le détail de la cellule que vous touchez.',
+        settings: 'Au-dessus, à gauche, les réglages : la forme de la carte et sa transparence.',
+        layers: 'En haut, les couches : faites glisser la barre pour toutes les voir.',
+      },
+      layersPhone: {
+        body: 'Touchez-en une pour changer ce que montre la carte :',
+      },
+      cellPhone: {
+        title: 'Touchez une cellule',
+        body: 'Touchez n’importe quelle cellule de la carte pour ouvrir en haut le détail de ses mesures, pour cette zone.',
+      },
     },
     layer: {
       fifteen: {
@@ -1224,6 +1237,7 @@ export default {
         controls: 'Choisissez une catégorie de services et si vous vous déplacez à pied ou à vélo.',
         colors: 'La barre de couleurs est le temps de proximité : les minutes pour atteindre le service le plus proche de ce type, ou la moyenne sur toutes les catégories.',
         cell: 'Cliquez sur une cellule et l’encadré à droite donne les temps des neuf catégories.',
+        cellPhone: 'Touchez une cellule et l’encadré en haut donne les temps des neuf catégories.',
       },
       citychrone: {
         title: 'CityChrone++',

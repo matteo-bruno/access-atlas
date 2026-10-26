@@ -1217,6 +1217,19 @@ export default {
         title: 'Klicken Sie auf eine Zelle',
         body: 'Klicken Sie auf eine beliebige Zelle der Karte, um hier die Details ihrer Messwerte für dieses Gebiet zu öffnen.',
       },
+      introPhone: {
+        panel: 'Unten die Erklärungen und Filter: Ziehen Sie den Griff hoch, um alles zu sehen.',
+        details: 'Oben die Übersicht der Stadt und die Details der Zelle, die Sie antippen.',
+        settings: 'Darüber, links, die Einstellungen: Form der Karte und Transparenz.',
+        layers: 'Oben die Ebenen: Wischen Sie über die Leiste, um alle zu sehen.',
+      },
+      layersPhone: {
+        body: 'Tippen Sie auf eine, um zu ändern, was die Karte zeigt:',
+      },
+      cellPhone: {
+        title: 'Tippen Sie auf eine Zelle',
+        body: 'Tippen Sie auf eine beliebige Zelle der Karte, um oben die Details ihrer Messwerte für dieses Gebiet zu öffnen.',
+      },
     },
     layer: {
       fifteen: {
@@ -1224,6 +1237,7 @@ export default {
         controls: 'Wählen Sie eine Kategorie von Dienstleistungen und ob Sie zu Fuß oder mit dem Fahrrad unterwegs sind.',
         colors: 'Die Farbleiste ist die Nähezeit: die Minuten bis zur nächsten Dienstleistung dieser Art oder der Durchschnitt über alle Kategorien.',
         cell: 'Klicken Sie auf eine Zelle, und das Feld rechts zeigt die Zeiten aller neun Kategorien.',
+        cellPhone: 'Tippen Sie auf eine Zelle, und das Feld oben zeigt die Zeiten aller neun Kategorien.',
       },
       citychrone: {
         title: 'CityChrone++',

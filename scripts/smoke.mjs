@@ -944,6 +944,38 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     `quiet=${atlasQuiet} · replay=${atlasReplayed}`,
   );
   await fresh.close();
+
+  // On a phone the same tour, told for the phone's layout: the sheet stays
+  // closed for the city's steps, opens for the layer's (its controls are in
+  // it) and closes again after; "Guide" is there to replay it.
+  const phoneCtx = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  const ph = await phoneCtx.newPage();
+  await ph.goto(`${BASE}/atlas/milan`, { waitUntil: 'load' });
+  await ph.waitForSelector('.aa-tour', { timeout: 30000 }).catch(() => {});
+  const phTitle = await ph.locator('.aa-tour__title').innerText().catch(() => '');
+  const phBody = await ph.locator('.aa-tour__body').innerText().catch(() => '');
+  const phNext = () => ph.locator('.aa-tour__card .aa-btn--solid').click().catch(() => {});
+  await phNext();
+  await phNext();
+  await phNext();
+  await ph.waitForTimeout(500);
+  const phLayer = await ph.locator('.aa-tour__title').innerText().catch(() => '');
+  const sheetOpen = await ph.locator('.aa-city__panel--open').count();
+  const cardInside = await ph.evaluate(() => {
+    const r = document.querySelector('.aa-tour__card')?.getBoundingClientRect();
+    return Boolean(r) && r.top >= 0 && r.bottom <= window.innerHeight;
+  });
+  await phNext();
+  await ph.waitForTimeout(300);
+  const sheetAfter = await ph.locator('.aa-city__panel--open').count();
+  const phGuide = await ph.locator('.aa-mapui--br .aa-mapbtn', { hasText: 'Guide' }).count();
+  check(
+    'On a phone the city tour runs for its layout, and Guide is there',
+    /Milan/.test(phTitle) && /pull up|bottom/i.test(phBody) && /15-minute/.test(phLayer) &&
+      sheetOpen === 1 && cardInside && sheetAfter === 0 && phGuide === 1,
+    `${phTitle} · ${phLayer} · sheet ${sheetOpen}→${sheetAfter} · card on screen=${cardInside} · guide=${phGuide}`,
+  );
+  await phoneCtx.close();
 }
 
 // ── Phone width ──────────────────────────────────────────────────────
