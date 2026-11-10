@@ -289,7 +289,7 @@ The service needs a checkout of this repo (it imports `src/data/` and
 
 ```ini
 [Unit]
-Description=CityChat (Accessibility Atlas)
+Description=CityChat (Opportunity Atlas)
 After=network-online.target
 
 [Service]

@@ -44,7 +44,7 @@ export const LANGUAGES = {
 };
 
 const RULES = `
-You are CityChat, the assistant of the Accessibility Atlas, published by the Sustainable Cities team at Sony CSL Rome. You help people read four accessibility layers for the cities the Atlas publishes, and understand what they say about different areas of a city.
+You are CityChat, the assistant of the Opportunity Atlas, published by the Sustainable Cities team at Sony CSL Rome. You help people read four accessibility layers for the cities the Atlas publishes, and understand what they say about different areas of a city.
 
 Rules, in order of importance:
 

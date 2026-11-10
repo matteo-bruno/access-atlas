@@ -1,4 +1,4 @@
-# Accessibility Atlas
+# Opportunity Atlas
 
 An atlas that measures how accessible cities are — the public site for the
 Sustainable Cities team's research at **Sony CSL Rome**.

@@ -15,7 +15,7 @@ export default {
   },
 
   nav: {
-    title: 'Accessibility Atlas',
+    title: 'Opportunity Atlas',
     tagline: 'Sony CSL · Rome — Sustainable Cities',
     atlas: 'Home',
     platforms: 'Atlas',
@@ -37,7 +37,7 @@ export default {
     hero: {
       eyebrow: 'Open research platforms · Sony CSL Rome',
       // The landing: the Atlas's name, and one line saying what it does.
-      title: 'Accessibility',
+      title: 'Opportunity',
       // The coloured half of the name; see .aa-accent in global.css.
       titleAccent: 'Atlas',
       subtitle: 'Mapping urban access, city by city.',
@@ -167,7 +167,7 @@ export default {
       name: 'All layers',
       // The merged map is the Atlas itself rather than one of its layers, so
       // it introduces itself by name instead of through `platform.welcome`.
-      welcome: 'Welcome to the Accessibility Atlas',
+      welcome: 'Welcome to the Opportunity Atlas',
       label: 'Published coverage',
       pick: 'Choose a map',
       intro:

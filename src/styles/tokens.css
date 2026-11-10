@@ -30,10 +30,13 @@
   --map-graticule: rgba(0, 0, 0, 0.05);
 
   /* Type — two faces with one job each.
-     `--font-serif` is the display face: it carries the titles and nothing
-     else, and ships a single weight, so every rule that reaches for it also
+     `--font-serif` is the display face, Newsreader: it carries the titles
+     and nothing else, always at 400, so every rule that reaches for it also
      sets `font-weight: 400` (see the title rules in global.css and the page
-     stylesheets — 600 on a 400-only face is a synthesised bold).
+     stylesheets). It is variable in optical size, and the browser picks the
+     cut from the font size (`font-optical-sizing: auto`, the default), so a
+     page title is drawn in its display cut. It stands in for Chronicle
+     Display, which the lab chose and which is licensed, not open.
      `--font-sans` is everything that is read rather than announced.
      `--font-mono` is only ever used for figures, coordinates and counts.
      It used to be Roboto Mono, which read as machine output; it is now the
@@ -41,7 +44,7 @@
      that lining figures up column to column needs. */
   --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-sans);
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'Newsreader Variable', Georgia, serif;
 
   /* Geometry */
   --radius: 6px;
@@ -55,7 +58,7 @@
   --shadow-lift: 0 18px 44px rgba(20, 20, 15, 0.08);
 }
 
-/* Japanese. Roboto and Instrument Serif carry no kana or kanji, so each face
+/* Japanese. Roboto and Newsreader carry no kana or kanji, so each face
    gets the system's Japanese faces behind it: Latin letters and figures still
    come from the Atlas's own fonts, and only the glyphs they lack fall
    through. Nothing extra is downloaded. A mincho stands behind the serif, so
@@ -63,7 +66,7 @@
 :root:lang(ja) {
   --font-sans: 'Roboto', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
     'Yu Gothic', Meiryo, system-ui, sans-serif;
-  --font-serif: 'Instrument Serif', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP',
+  --font-serif: 'Newsreader Variable', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP',
     'Noto Serif CJK JP', serif;
 }
 
@@ -79,19 +82,19 @@
 :root:lang(zh) {
   --font-sans: 'Roboto', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Noto Sans CJK SC',
     'Microsoft YaHei', system-ui, sans-serif;
-  --font-serif: 'Instrument Serif', 'Songti SC', 'Noto Serif SC', 'Noto Serif CJK SC', serif;
+  --font-serif: 'Newsreader Variable', 'Songti SC', 'Noto Serif SC', 'Noto Serif CJK SC', serif;
 }
 
 :root:lang(ko) {
   --font-sans: 'Roboto', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR',
     'Malgun Gothic', system-ui, sans-serif;
-  --font-serif: 'Instrument Serif', 'AppleMyungjo', 'Noto Serif KR', 'Noto Serif CJK KR', serif;
+  --font-serif: 'Newsreader Variable', 'AppleMyungjo', 'Noto Serif KR', 'Noto Serif CJK KR', serif;
 }
 
 /* Arabic. The same fallback arrangement, with a naskh behind the serif. */
 :root:lang(ar) {
   --font-sans: 'Roboto', 'Geeza Pro', 'Noto Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif;
-  --font-serif: 'Instrument Serif', 'Noto Naskh Arabic', 'Amiri', 'Times New Roman', serif;
+  --font-serif: 'Newsreader Variable', 'Noto Naskh Arabic', 'Amiri', 'Times New Roman', serif;
 }
 
 /* Arabic is joined script: any letter-spacing pulls the letters of a word

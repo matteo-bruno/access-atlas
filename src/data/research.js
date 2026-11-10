@@ -202,4 +202,4 @@ export function citationFor(paper) {
 
 export const ATLAS_URL = 'https://whatif.sonycsl.it/atlas/';
 
-export const ATLAS_CITATION = `Accessibility Atlas, Sustainable Cities team, Sony Computer Science Laboratories - Rome (2026). ${ATLAS_URL}`;
+export const ATLAS_CITATION = `Opportunity Atlas, Sustainable Cities team, Sony Computer Science Laboratories - Rome (2026). ${ATLAS_URL}`;

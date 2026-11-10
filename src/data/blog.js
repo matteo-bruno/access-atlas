@@ -379,7 +379,7 @@ export const POSTS = [
           p: 'Almost every claim made about a city is, underneath, a claim about access. That a neighbourhood is liveable. That a transport project is worth its cost. That a district has been left behind. These are statements about what the people who live somewhere can reach, and how easily. They are made constantly, and usually without numbers.',
         },
         {
-          p: 'The Accessibility Atlas is an attempt to put numbers under them. It gathers four research platforms built by the Sustainable Cities team at Sony CSL Rome, each measuring a different facet of access, all sharing one framework and one spatial grid. This post is a plain description of what that framework claims, what the maps actually show, and — just as important — what they do not.',
+          p: 'The Opportunity Atlas is an attempt to put numbers under them. It gathers four research platforms built by the Sustainable Cities team at Sony CSL Rome, each measuring a different facet of access, all sharing one framework and one spatial grid. This post is a plain description of what that framework claims, what the maps actually show, and — just as important — what they do not.',
         },
 
         { h2: 'Access is three things, not one' },
