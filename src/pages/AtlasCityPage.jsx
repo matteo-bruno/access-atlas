@@ -4,7 +4,8 @@ import { Eyebrow } from '../components/SectionHeading.jsx';
 import { Icon } from '../components/Icon.jsx';
 import { RampLegend } from '../components/RampLegend.jsx';
 import { AtlasMap, GeoJSONLayer } from '../map/AtlasMap.jsx';
-import { DELTA_RAMPS, RAMPS, fitRamp, rampColor } from '../map/ramps.js';
+import { DELTA_RAMPS, RAMPS, colorAt, fitRamp, rampColor } from '../map/ramps.js';
+import { bivariateAxis, bivariateColor, bivariateExpression, rankExpression, rankOn } from '../map/bivariate.js';
 import { cityZoom, meshBounds } from '../map/framing.js';
 import { pickerDot } from '../map/layers.js';
 import { useI18n } from '../i18n/index.jsx';
@@ -14,7 +15,7 @@ import { CITYCHRONE_VIEWS, DEFAULT_HOUR, RESIDENT_DOMAIN, residentDomain, social
 import { TIMES_MAX, TIMES_NONE } from '../data/times.js';
 import { paperForPlatform } from '../data/research.js';
 import { BRAND } from '../data/brand.js';
-import { summariseMeasure, weightedMean, withGeometry, zoneSharesOf } from '../data/adapters.js';
+import { summariseMeasure, weightedMean, weightedMedian, withGeometry, zoneSharesOf } from '../data/adapters.js';
 import { citychroneHourFromLayer, layerPopulationKey, scenarioKey } from '../data/grid.js';
 import { layerScenarios, timesHours } from '../data/catalogue.js';
 import { GeometryToggle } from '../components/GeometryToggle.jsx';
@@ -25,6 +26,8 @@ import { Tour, tourSeen } from '../components/Tour.jsx';
 import { CategoryBars } from '../components/CategoryBars.jsx';
 import { PlatformAbout } from '../components/PlatformAbout.jsx';
 import { RangeFilter } from '../components/RangeFilter.jsx';
+import { BivariateLegend } from '../components/BivariateLegend.jsx';
+import { PovScatter } from '../components/PovScatter.jsx';
 import { Interpolate } from '../components/Interpolate.jsx';
 import { CONTACT } from '../data/team.js';
 import { formatOsmDate } from '../data/osm.js';
@@ -104,8 +107,9 @@ const ALL_LAYERS = [...LAYER_ORDER, POPULATION_LAYER];
 // is `layer-<id>-v<version>`.
 const CITY_TOUR = 'city-v2';
 
-// What the P.O.V. layer can draw: the zones, then the two scores.
-const POV_VIEWS = ['zones', 'proximity', 'opportunity'];
+// What Close & Connected (P.O.V.) can draw: the zones, the two scores
+// together on one bivariate colour (`both`), then each score on its own.
+const POV_VIEWS = ['zones', 'both', 'proximity', 'opportunity'];
 
 // What the Car Dependency layer can draw: the index, then the two
 // opportunity scores it is computed from.
@@ -185,6 +189,9 @@ function AtlasScreen({ cityId, view }) {
   // The cartogram is the first view: where nobody lives shrinks away, so the
   // map opens on the residents a measure is about.
   const [geometry, setGeometry] = useState('cartogram');
+  // Close & Connected's third view: every cell placed by its two scores. Held
+  // apart from the geometry, so leaving it returns to the map it covered.
+  const [scatter, setScatter] = useState(false);
   // Whether the city map has drawn its mesh yet: until it has, the loading
   // note stays over the paper rather than leaving an empty box.
   const [mapPainted, setMapPainted] = useState(false);
@@ -270,17 +277,18 @@ function AtlasScreen({ cityId, view }) {
   const ccView = CITYCHRONE_VIEWS.some((v) => v.key === params.get('view'))
     ? params.get('view')
     : CITYCHRONE_VIEWS[0].key;
-  // P.O.V.: its four zones (the default), or one of the two scores they are
-  // drawn from (`pov=proximity|opportunity`).
+  // Close & Connected: its four zones (the default), the two scores they are
+  // drawn from together (`pov=both`), or one of them (`pov=proximity|opportunity`).
   const povView = POV_VIEWS.includes(params.get('pov')) ? params.get('pov') : POV_VIEWS[0];
   const povZones = layer === 'pov' && povView === 'zones';
+  const povBoth = layer === 'pov' && povView === 'both';
   // Car Dependency: its index (the default), or the opportunities reachable
   // by car or by transit that the index compares (`cdi=car|transit`).
   const cdiView = CDI_VIEWS.includes(params.get('cdi')) ? params.get('cdi') : CDI_VIEWS[0];
   const cdiIndex = layer === 'cardep' && cdiView === 'index';
   // The score on screen, where the layer draws one: a key of SCORES.
   const scoreView =
-    layer === 'pov' && !povZones ? povView : layer === 'cardep' && !cdiIndex ? cdiView : null;
+    layer === 'pov' && !povZones && !povBoth ? povView : layer === 'cardep' && !cdiIndex ? cdiView : null;
   const hourParam = Number.parseInt(params.get('hour'), 10);
   const hours = platformProfiles.citychrone?.hourly?.hours ?? 24;
   // A city can publish CityChrone's scores without its travel times; its
@@ -387,6 +395,9 @@ function AtlasScreen({ cityId, view }) {
   const shown = scenario && scenarioStatus === 'ready' ? scenario : null;
   const diffShown = diffOn && Boolean(shown);
   const scenarioName = shown ? (lang === 'it' ? shown.nameIt ?? shown.name : shown.name) : null;
+  // Car Dependency's index read as the ratio of its two scores, car over
+  // transit (`ratio=1`). The difference stays the index's.
+  const cdiRatio = cdiIndex && !diffShown && params.get('ratio') === '1';
   // The key a measure is read from on screen: the scenario's where one is
   // shown, the plain one otherwise.
   const keyOf = (name) => (shown ? scenarioKey(shown.id, name) : name);
@@ -438,6 +449,11 @@ function AtlasScreen({ cityId, view }) {
   // The choice is remembered across layers but only honoured where that
   // layer has a cartogram.
   const geometryValue = cartogramOn ? 'cartogram' : 'geographic';
+  // The scatter covers the map rather than replacing it: the map stays
+  // mounted underneath, so leaving the scatter is instant. Not on a phone:
+  // under the sheet and the boxes, the plot would be a strip a few dots tall.
+  const scatterOffered = layer === 'pov' && unified && !phone;
+  const scatterOn = scatter && scatterOffered;
   const cartogram = useAtlasCartogram(cityId, cartogramLayer, cartogramOn);
 
   const meshData = unified ? atlas.data : swapMesh.data;
@@ -530,6 +546,25 @@ function AtlasScreen({ cityId, view }) {
     const domain = residentDomain(values, weights);
     return domain ? fitRamp(fitted, domain[0], domain[1]) : null;
   }, [scoreView, layer, baseGeojson, unified]);
+  // The bivariate view's two axes: each score ranked among the layer's own
+  // residents, measured on the baseline so a scenario is read on the city's
+  // ranks, as a score is on the city's scale. The scatter colours by them too.
+  const bivariateAxes = useMemo(() => {
+    if (layer !== 'pov' || povView !== 'both' || !baseGeojson?.features) return null;
+    const popKey = unified ? layerPopulationKey('pov') : 'population';
+    const proximity = [];
+    const opportunity = [];
+    const weights = [];
+    for (const feature of baseGeojson.features) {
+      const p = feature.properties;
+      if (!Number.isFinite(p?.proximity) || !Number.isFinite(p?.opportunity)) continue;
+      proximity.push(p.proximity);
+      opportunity.push(p.opportunity);
+      weights.push(p[popKey]);
+    }
+    const axes = { proximity: bivariateAxis(proximity, weights), opportunity: bivariateAxis(opportunity, weights) };
+    return axes.proximity && axes.opportunity ? axes : null;
+  }, [layer, povView, baseGeojson, unified]);
   const scoreAbsolute = scoreView ? SCORES[scoreView].absolute : null;
   const scoreRamp = scoreView ? (socialityAbsolute ? scoreAbsolute : scoreFitted ?? scoreAbsolute) : null;
 
@@ -569,10 +604,23 @@ function AtlasScreen({ cityId, view }) {
         format: (v) => n(Math.round(v)),
       };
     }
-    // P.O.V.'s zones are categorical, handled separately.
+    // P.O.V.'s zones are categorical, and its two scores together are
+    // bivariate: both handled separately.
     if (layer === 'pov') return null;
     if (layer === 'cardep') {
       if (diffShown) return delta('cdi', DELTA_RAMPS.cardep, (v) => signed(v, n, 3));
+      if (cdiRatio) {
+        // The ratio from the index, (1 + CDI) / (1 − CDI): the index is on
+        // every cell the layer covers, and the filter still reads it.
+        const cdi = ['get', key('cdi')];
+        return {
+          ramp: RAMPS.cdiRatio,
+          value: ['/', ['+', 1, cdi], ['max', ['-', 1, cdi], 1e-6]],
+          covered: ['has', key('cdi')],
+          filterValue: cdi,
+          format: (v) => formatRatio(v, n),
+        };
+      }
       return { ramp: RAMPS.cdi, value: ['get', key('cdi')], format: (v) => signed(v, n) };
     }
     if (layer === POPULATION_LAYER) {
@@ -616,7 +664,7 @@ function AtlasScreen({ cityId, view }) {
           value: ['feature-state', state],
           format: (v) => n(Math.round(v)),
         };
-  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, scoreView, scoreRamp]);
+  }, [layer, fifteenKey, ccView, n, t, shownId, diffShown, socialityRamp, scoreView, scoreRamp, cdiRatio]);
 
   // The one figure the legend no longer carries: a continuous ramp states the
   // scale, not what the city sits at, so the median is quoted in the summary.
@@ -683,6 +731,19 @@ function AtlasScreen({ cityId, view }) {
       };
     }
 
+    // Both scores at once: each ranked among the city's residents, mixed on
+    // one colour square (map/bivariate.js).
+    if (povBoth) {
+      if (!bivariateAxes) return { 'fill-color': '#cfd9da', 'fill-opacity': opacity * 0.4 };
+      const name = (field) => (shownId ? scenarioKey(shownId, field) : field);
+      const covered = ['all', ['has', name('proximity')], ['has', name('opportunity')]];
+      const rank = (field) => rankExpression(bivariateAxes[field], ['coalesce', ['get', name(field)], 0]);
+      return {
+        'fill-color': ['case', covered, bivariateExpression(rank('proximity'), rank('opportunity')), 'rgba(0,0,0,0)'],
+        'fill-opacity': ['case', covered, opacity, 0],
+      };
+    }
+
     // Before an isochrone origin is chosen there is no value to colour by —
     // show the cells that *can* be chosen, faintly, so there is a target.
     if (citychroneOn && ccView === 'isochrone' && !matrixRow) {
@@ -700,10 +761,11 @@ function AtlasScreen({ cityId, view }) {
       (value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false));
     // Filtered-out cells are dimmed rather than dropped, so the slice is read
     // against the city it was taken from.
+    const filtered = measure.filterValue ?? value;
     const opacityFor = rangeOn
       ? [
           'case',
-          ['all', ['>=', ['coalesce', value, 0], range[0]], ['<=', ['coalesce', value, 0], range[1]]],
+          ['all', ['>=', ['coalesce', filtered, 0], range[0]], ['<=', ['coalesce', filtered, 0], range[1]]],
           opacity,
           opacity * 0.1,
         ]
@@ -712,7 +774,7 @@ function AtlasScreen({ cityId, view }) {
       'fill-color': rampColor(ramp, ['coalesce', value, 0]),
       'fill-opacity': ['case', covered, opacityFor, 0],
     };
-  }, [layer, povZones, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range, waiting, shownId]);
+  }, [layer, povZones, povBoth, bivariateAxes, activeZone, opacity, measure, citychroneOn, ccView, matrixRow, rangeOn, range, waiting, shownId]);
 
   // A cell where nobody lives has no one for a measure to describe, so every
   // layer but Population leaves it out. Dropped by the layer filter rather
@@ -750,6 +812,78 @@ function AtlasScreen({ cityId, view }) {
   const selectedPaint = useMemo(
     () => ({ 'line-color': 'rgba(21,23,26,0.95)', 'line-width': 2.6 }),
     [],
+  );
+
+  // ── The scatter ────────────────────────────────────────────────────
+  // Every cell where people live, placed by its two scores and coloured as
+  // the map would paint it. The medians are the ones the zones were split
+  // at, as published with the layer, so each quarter is one zone.
+  const scatterData = useMemo(() => {
+    if (!scatterOn || !layerLoaded || !baseGeojson?.features) return null;
+    const points = [];
+    const pops = [];
+    const zonesOn = povView === 'zones';
+    for (const feature of baseGeojson.features) {
+      const p = shownProperties(feature.properties ?? {}, shownId);
+      // The grid's residents, as the cartogram sizes a cell: the same cell
+      // is the same size whichever view it is in.
+      const pop = feature.properties?.population;
+      if (!Number.isFinite(p.proximity) || !Number.isFinite(p.opportunity) || !(pop > 0)) continue;
+      let color = null;
+      if (zonesOn) color = Number.isFinite(p.zone) ? ZONES[p.zone].color : null;
+      else if (povView === 'both' && bivariateAxes) {
+        color = bivariateColor(rankOn(bivariateAxes.proximity, p.proximity), rankOn(bivariateAxes.opportunity, p.opportunity));
+      } else if (scoreRamp && scoreView) color = colorAt(scoreRamp, p[SCORES[scoreView].field]);
+      points.push({
+        id: feature.id,
+        x: p.opportunity,
+        y: p.proximity,
+        pop,
+        color,
+        dim: zonesOn && activeZone != null && p.zone !== activeZone,
+      });
+      pops.push(pop);
+    }
+    pops.sort((a, b) => a - b);
+    const file = atlas.data?.files?.[shownId ? `${shownId}:pov` : 'pov'];
+    const published = file?.meta?.thresholds;
+    const popKey = layerPopulationKey('pov', shownId);
+    const medians =
+      published && Number.isFinite(published.proximity) && Number.isFinite(published.opportunity)
+        ? { x: published.opportunity, y: published.proximity }
+        : {
+            x: weightedMedian(baseGeojson.features.map((f) => f.properties?.[keyOf('opportunity')]), baseGeojson.features.map((f) => f.properties?.[popKey])),
+            y: weightedMedian(baseGeojson.features.map((f) => f.properties?.[keyOf('proximity')]), baseGeojson.features.map((f) => f.properties?.[popKey])),
+          };
+    return {
+      points,
+      refPop: pops.length ? pops[pops.length >> 1] : 1,
+      medians: Number.isFinite(medians.x) && Number.isFinite(medians.y) ? medians : null,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scatterOn, layerLoaded, baseGeojson, shownId, povView, bivariateAxes, scoreRamp, scoreView, activeZone, atlas.data]);
+  const scatterLabels = useMemo(
+    () => ({
+      x: t('atlas.scatter.x'),
+      y: t('atlas.scatter.y'),
+      median: t('atlas.scatter.median'),
+      note: t('atlas.scatter.note'),
+      quarters: {
+        both: t('city.zones.inclusion.name'),
+        proximity: t('city.zones.spatial.name'),
+        opportunity: t('city.zones.social.name'),
+        neither: t('city.zones.total.name'),
+      },
+    }),
+    [t],
+  );
+  // Room for what floats over the map: the layer bar above, the boxes on
+  // the right, the settings and full-screen buttons below. The settings box
+  // open would cover the plot's low corner, which is where most residents of
+  // most cities are, so the plot rises above it while it is open.
+  const scatterInset = useMemo(
+    () => ({ top: 52, right: 322, bottom: settingsOpen ? 130 : 58, left: 8 }),
+    [settingsOpen],
   );
 
   // ── Presentation helpers ───────────────────────────────────────────
@@ -804,6 +938,9 @@ function AtlasScreen({ cityId, view }) {
     if (layer === 'pov') {
       const zone = at('zone');
       if (!Number.isFinite(zone)) return t('atlas.noValue');
+      if (povBoth) {
+        return `${t('city.cell.proximity')} ${n(Math.round(at('proximity')))} · ${t('city.cell.opportunity')} ${n(Math.round(at('opportunity')))}`;
+      }
       if (!povZones) {
         const value = at(povView);
         return Number.isFinite(value) ? `${t(`city.cell.${povView}`)} ${measure.format(value)}` : t('atlas.noValue');
@@ -817,6 +954,10 @@ function AtlasScreen({ cityId, view }) {
       return Number.isFinite(value) ? `${t(`atlas.cdiLegend.${cdiView}`)} ${measure.format(value)}` : t('atlas.noValue');
     }
     if (layer === 'cardep') {
+      if (cdiRatio) {
+        const ratio = ratioOf(p, keyOf);
+        return ratio == null ? t('atlas.noValue') : `${t('atlas.cdiRatio.short')} ${formatRatio(ratio, n)} · CDI ${signed(at('cdi'), n)}`;
+      }
       if (diffShown) {
         if (!Number.isFinite(p.cdi) || !Number.isFinite(at('cdi'))) return t('atlas.noValue');
         return `${t('atlas.scenario.change')} ${measure.format(at('cdi') - p.cdi)} · CDI ${signed(p.cdi, n)} → ${signed(at('cdi'), n)}`;
@@ -900,6 +1041,8 @@ function AtlasScreen({ cityId, view }) {
     } else if (layer === 'cardep') {
       rows.push({ label: named(t('city.cell.cdi')), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' });
       versus('cdi', (v) => signed(v, n), (v) => signed(v, n, 3));
+      const ratio = ratioOf(p);
+      rows.push({ label: t('city.cell.ratio'), value: ratio == null ? '—' : formatRatio(ratio, n) });
       rows.push({ label: t('city.cell.byCar'), value: score(p.o_score_car) });
       rows.push({ label: t('city.cell.byTransit'), value: score(p.o_score_pt) });
     } else if (layer === 'fifteen') {
@@ -969,7 +1112,9 @@ function AtlasScreen({ cityId, view }) {
         ? t('city.zoneType')
         : t(`atlas.povLegend.${povView}`)
       : layer === 'cardep'
-        ? cdiIndex
+        ? cdiRatio
+          ? t('atlas.cdiRatio.legend')
+          : cdiIndex
           ? // The index itself, per cell: the world map's legend title says
             // "median resident", which is a city's figure, not a cell's.
             platform.name
@@ -983,6 +1128,14 @@ function AtlasScreen({ cityId, view }) {
     ? (v) => (v === 0 ? '0' : `${v < 0 ? '−' : '+'}${n(Math.abs(v), { maximumFractionDigits: 1 })}`)
     : isPopulation
     ? (v) => (v >= 1000 ? `${n(v / 1000, { maximumFractionDigits: 1 })}k` : n(v))
+    : cdiRatio
+      ? (v) => {
+          // The ends hold every cell past them, a cell where transit
+          // reaches nothing included.
+          const ticks = RAMPS.cdiRatio.ticks;
+          const text = `${n(v)}×`;
+          return v === ticks[0] ? `≤${text}` : v === ticks[ticks.length - 1] ? `≥${text}` : text;
+        }
     : cdiIndex
       ? (v) => (v === 0 ? '0' : signed(v, n))
       : (ccView === 'sociality' && citychroneOn) || scoreView
@@ -1010,6 +1163,8 @@ function AtlasScreen({ cityId, view }) {
     ? t('atlas.population.about')
     : layer === 'citychrone'
       ? t(`atlas.viewHint.${ccView}`)
+      : cdiRatio
+        ? t('atlas.cdiRatio.about')
       : layer === 'pov' && !povZones
         ? t(`atlas.povHint.${povView}`)
       : layer === 'cardep' && !cdiIndex
@@ -1223,6 +1378,8 @@ function AtlasScreen({ cityId, view }) {
                     );
                   })}
                 </div>
+              ) : povBoth ? (
+                <BivariateLegend />
               ) : waiting ? null : (
                 <RampLegend
                   ramp={measure.ramp}
@@ -1231,6 +1388,24 @@ function AtlasScreen({ cityId, view }) {
                   // the rest of the scale rather than a sentence about it.
                   tailLabel={measure.ramp.beyond ? `${n(measure.ramp.beyond.label ?? measure.ramp.beyond.value)}+` : undefined}
                 />
+              )}
+              {/* Car Dependency's index or the ratio it is made of: the
+                  same switch, under the bar it relabels. */}
+              {cdiIndex && !diffShown && !waiting && (
+                <div className="aa-scaleswitch">
+                  <label className="aa-scaleswitch__label">
+                    <input
+                      type="checkbox"
+                      role="switch"
+                      className="aa-scaleswitch__input"
+                      checked={cdiRatio}
+                      onChange={(event) => setParam('ratio', event.target.checked ? '1' : null)}
+                    />
+                    <span className="aa-scaleswitch__track" aria-hidden="true" />
+                    {t('atlas.cdiRatio.toggle')}
+                  </label>
+                  <Explain body={t('atlas.cdiRatio.toggleAbout')} />
+                </div>
               )}
               {/* The sociality score's scale: the city's own by default, one
                   switch away from the scale every city shares. Kept small,
@@ -1366,7 +1541,8 @@ function AtlasScreen({ cityId, view }) {
             {layer === 'pov' && (
               <>
                 <Eyebrow className="aa-tourctl">{t('atlas.controls.view')}</Eyebrow>
-                <div className="aa-toggle aa-toggle--segmented aa-toggle--fit aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
+                {/* Four views, two by two: one row of four does not fit the column. */}
+                <div className="aa-toggle aa-toggle--segmented aa-toggle--two aa-tourctl" role="group" aria-label={t('atlas.controls.view')}>
                   {POV_VIEWS.map((key) => (
                     <button
                       key={key}
@@ -1484,7 +1660,15 @@ function AtlasScreen({ cityId, view }) {
                   step={0.01}
                   label={t('city.filter.title')}
                   resetLabel={t('city.filter.reset')}
-                  format={(v) => (v === 0 ? '0' : signed(v, n))}
+                  // The filter is on the index; in ratio units its ends are 0
+                  // and no ratio at all.
+                  format={(v) =>
+                    cdiRatio
+                      ? formatRatio(v >= 1 ? Infinity : (1 + v) / (1 - v), n)
+                      : v === 0
+                        ? '0'
+                        : signed(v, n)
+                  }
                 />
               </>
             )}
@@ -1584,6 +1768,27 @@ function AtlasScreen({ cityId, view }) {
                   </span>
                 )}
               </div>
+            )}
+
+            {scatterOn && scatterData && (
+              <PovScatter
+                points={scatterData.points}
+                medians={scatterData.medians}
+                refPop={scatterData.refPop}
+                inset={scatterInset}
+                labels={scatterLabels}
+                format={(v) => compactCount(v, n)}
+                tooltip={(id) => {
+                  const feature = baseGeojson?.features?.[id];
+                  return feature ? tooltip(feature) : null;
+                }}
+                selectedId={selectedCell}
+                onHover={(id) => setHoverCell(id)}
+                onSelect={(id) => {
+                  setSelectedCell((current) => (current === id ? null : id));
+                  if (phone) setSelectedOpen(true);
+                }}
+              />
             )}
 
             {/* The grid is drawn; a layer, or a scenario of it, is still on
@@ -1815,9 +2020,21 @@ function AtlasScreen({ cityId, view }) {
                 {unified && (
                   <GeometryToggle
                     compact
-                    value={geometryValue}
-                    onChange={setGeometry}
-                    available={{ geographic: true, cartogram: cartogramPublished }}
+                    value={scatterOn ? 'scatter' : geometryValue}
+                    onChange={(key) => {
+                      if (key === 'scatter') {
+                        setScatter(true);
+                        return;
+                      }
+                      setScatter(false);
+                      setGeometry(key);
+                    }}
+                    available={{
+                      geographic: true,
+                      cartogram: cartogramPublished,
+                      // Only Close & Connected has a third view.
+                      ...(scatterOffered ? { scatter: true } : {}),
+                    }}
                     derived={cartogramDerived}
                     loading={cartogramOn && cartogram.status === 'pending'}
                   />
@@ -2043,6 +2260,31 @@ function signed(value, n, digits = 2) {
 
 function signedOrDash(value, n) {
   return value == null ? '—' : signed(value, n);
+}
+
+/**
+ * Car over transit for one cell: the ratio of its two opportunity scores
+ * where both are published, else from its index, (1 + CDI) / (1 − CDI).
+ * Infinity where transit reaches nothing and a car something; null where
+ * there is nothing to divide.
+ */
+function ratioOf(properties, keyOf = (name) => name) {
+  const car = properties[keyOf('o_score_car')];
+  const transit = properties[keyOf('o_score_pt')];
+  if (Number.isFinite(car) && Number.isFinite(transit)) {
+    if (transit > 0) return car / transit;
+    return car > 0 ? Infinity : null;
+  }
+  const cdi = properties[keyOf('cdi')];
+  if (!Number.isFinite(cdi)) return null;
+  return cdi >= 1 ? Infinity : (1 + cdi) / (1 - cdi);
+}
+
+// A ratio to two significant figures (0.64×, 1.8×, 12×), or ∞.
+function formatRatio(value, n) {
+  if (value === Infinity) return '∞';
+  if (!Number.isFinite(value)) return '—';
+  return `${n(value, { maximumSignificantDigits: 2 })}×`;
 }
 
 // The ground about a kilometre and a half either side of one cell: enough of

@@ -23,6 +23,9 @@
 //
 // A ramp is `{ stops, unit, ticks, beyond }`:
 //   stops   [value, colour] pairs, ascending — the interpolation itself
+//   log     coloured on log10(1 + value): counts that start at zero
+//   ratio   coloured on log10(value): a ratio, where 2 and 1/2 are equally
+//           far from 1
 //   ticks   values to label on the legend bar (defaults to first/last)
 //   legendTo  clip the *legend* below the last stop, where the tail is real
 //             but rare and would otherwise squash the informative part
@@ -30,6 +33,9 @@
 //           `solid` when it is one class rather than a range (`label+`)
 
 import { BRAND } from '../data/brand.js';
+
+// Car Dependency's diverging colours, transit end first; see `cdi` below.
+const CDI_COLORS = ['#01665e', '#80cdc1', '#ffffff', '#fdb863', '#e08214', '#7f3b08'];
 
 export const RAMPS = {
   // 15minCity — one scale for every category and mode, so a colour means the
@@ -217,27 +223,27 @@ export const RAMPS = {
   // Car Dependency's two opportunity scores, the cumulative count of points
   // of interest of many kinds reachable from a cell in the time budget, by
   // car and by public transport: what the index compares. Two sequential
-  // ramps, warm for the car and cool for transit after the index's own two
-  // ends, soft so neither shouts. Fitted to the city by default like the
-  // P.O.V. scores; the shared scale below, one switch away.
+  // ramps after the index's own two arms, orange for the car and teal-green
+  // for transit, soft so neither shouts. Fitted to the city by default like
+  // the P.O.V. scores; the shared scale below, one switch away.
   cdiCar: {
     stops: [
-      [0, '#f6f0e6'],
-      [0.2, '#efd9c4'],
-      [0.4, '#e2b597'],
-      [0.6, '#cf8f6e'],
-      [0.8, '#b2694f'],
-      [1, '#8a4a39'],
+      [0, '#f7f1e8'],
+      [0.2, '#fbe0b8'],
+      [0.4, '#f6c07a'],
+      [0.6, '#e5953a'],
+      [0.8, '#c06a14'],
+      [1, '#7f3b08'],
     ],
   },
   cdiTransit: {
     stops: [
-      [0, '#f1f3f0'],
-      [0.2, '#d5e3ea'],
-      [0.4, '#aecbdc'],
-      [0.6, '#83abc9'],
-      [0.8, '#5a87b0'],
-      [1, '#3d6690'],
+      [0, '#f0f5f3'],
+      [0.2, '#d3ece6'],
+      [0.4, '#a8dbd1'],
+      [0.6, '#6dbcae'],
+      [0.8, '#2f8f84'],
+      [1, '#01665e'],
     ],
   },
 
@@ -249,41 +255,69 @@ export const RAMPS = {
   cdiCarAbsolute: {
     log: true,
     stops: [
-      [100, '#f6f0e6'],
-      [250, '#efd9c4'],
-      [630, '#e2b597'],
-      [1600, '#cf8f6e'],
-      [4000, '#b2694f'],
-      [10000, '#8a4a39'],
+      [100, '#f7f1e8'],
+      [250, '#fbe0b8'],
+      [630, '#f6c07a'],
+      [1600, '#e5953a'],
+      [4000, '#c06a14'],
+      [10000, '#7f3b08'],
     ],
     ticks: [100, 300, 1000, 3000, 10000],
   },
   cdiTransitAbsolute: {
     log: true,
     stops: [
-      [100, '#f1f3f0'],
-      [250, '#d5e3ea'],
-      [630, '#aecbdc'],
-      [1600, '#83abc9'],
-      [4000, '#5a87b0'],
-      [10000, '#3d6690'],
+      [100, '#f0f5f3'],
+      [250, '#d3ece6'],
+      [630, '#a8dbd1'],
+      [1600, '#6dbcae'],
+      [4000, '#2f8f84'],
+      [10000, '#01665e'],
     ],
     ticks: [100, 300, 1000, 3000, 10000],
   },
 
   // Car Dependency Index, bounded by its definition at ±1. Diverging about 0,
-  // where a car and public transport reach the same amount.
+  // where a car and public transport reach the same amount: teal-green where
+  // transit reaches more, white where the two are balanced, orange where the
+  // car does. A plain green against orange is one colour to red-green colour
+  // blindness (in a Machado simulation the two ends are ΔE 19 to 20 apart at
+  // the same lightness); a green leaning to blue keeps them apart, ΔE 39 to
+  // 58 at every matched step. The arms are ColorBrewer's BrBG and PuOr.
   cdi: {
     stops: [
-      [-1, '#2b5f86'],
-      [-0.3, '#8fb0cc'],
-      [0, '#eae6da'],
-      [0.3, '#c26a52'],
-      [0.6, '#a04640'],
-      [1, '#5e1a0d'],
+      [-1, CDI_COLORS[0]],
+      [-0.3, CDI_COLORS[1]],
+      [0, CDI_COLORS[2]],
+      [0.3, CDI_COLORS[3]],
+      [0.6, CDI_COLORS[4]],
+      [1, CDI_COLORS[5]],
     ],
     ticks: [-1, -0.5, 0, 0.5, 1],
     signed: true,
+  },
+
+  // The same two opportunity scores as a ratio, car over transit: 1 where
+  // they are equal, 2 where the car reaches twice as much, ½ where transit
+  // does. The index is (R − 1) / (R + 1) of it, so the two say the same
+  // thing in different units. Coloured on log10 of the ratio, so twice as
+  // much either way is the same step from white, and on the index's own
+  // colours at the index's own stops read as powers of ten: −1, −0.3, 0,
+  // 0.3, 0.6 and 1 are 0.1, ½, 1, 2, 4 and 10. Published residents run from
+  // 0.70 (Paris's 5th percentile) to 18.8 (Rome's 99th) and past 10 in a
+  // few cities; a cell where transit reaches nothing has no finite ratio and
+  // takes the last colour.
+  cdiRatio: {
+    ratio: true,
+    stops: [
+      [0.1, CDI_COLORS[0]],
+      [0.5, CDI_COLORS[1]],
+      [1, CDI_COLORS[2]],
+      [2, CDI_COLORS[3]],
+      [4, CDI_COLORS[4]],
+      [10, CDI_COLORS[5]],
+    ],
+    ticks: [0.1, 0.5, 1, 2, 4, 10],
   },
 };
 
@@ -291,7 +325,8 @@ export const RAMPS = {
  * Differences between a scenario and the current measurement, per layer.
  * Diverging about zero, which is white: a cell the scenario leaves alone is
  * drawn as nothing. The side that is better takes the colour the layer's own
- * ramp gives the better end (transit-blue for CDI, near-blue for minutes).
+ * ramp gives the better end (transit teal-green for CDI, near-blue for
+ * minutes).
  */
 export const DELTA_RAMPS = {
   // CDI. Rome's Metro D against today, the one scenario published: Δ runs
@@ -300,11 +335,11 @@ export const DELTA_RAMPS = {
   // beside the new stations, which saturate rather than squash the rest.
   cardep: {
     stops: [
-      [-0.2, '#2b5f86'],
-      [-0.1, '#8fb0cc'],
+      [-0.2, CDI_COLORS[0]],
+      [-0.1, CDI_COLORS[1]],
       [0, '#ffffff'],
-      [0.1, '#c26a52'],
-      [0.2, '#8a2c1c'],
+      [0.1, CDI_COLORS[3]],
+      [0.2, CDI_COLORS[5]],
     ],
     ticks: [-0.2, -0.1, 0, 0.1, 0.2],
     signed: true,
@@ -350,17 +385,25 @@ export function fitRamp(ramp, lo, hi) {
   return { stops, ticks, fitted: true };
 }
 
-/** The value expression a ramp reads, wrapped for log ramps. */
+// The smallest ratio a ratio ramp reads: zero has no logarithm.
+const RATIO_FLOOR = 1e-6;
+
+/** Where a value sits on a ramp's own axis: linear, log10(1 + x) or log10(x). */
+function project(ramp, value) {
+  if (ramp.ratio) return Math.log10(Math.max(value, RATIO_FLOOR));
+  return ramp.log ? Math.log10(1 + Math.max(value, 0)) : value;
+}
+
+/** The value expression a ramp reads, wrapped for log and ratio ramps. */
 function rampInput(ramp, value) {
+  if (ramp.ratio) return ['log10', ['max', value, RATIO_FLOOR]];
   // log10(1 + x) keeps zero-population cells on the scale instead of sending
   // them to −Infinity.
   return ramp.log ? ['log10', ['+', 1, ['max', value, 0]]] : value;
 }
 
 function rampStops(ramp) {
-  return ramp.log
-    ? ramp.stops.map(([v, color]) => [Math.log10(1 + Math.max(v, 0)), color])
-    : ramp.stops;
+  return ramp.log || ramp.ratio ? ramp.stops.map(([v, color]) => [project(ramp, v), color]) : ramp.stops;
 }
 
 /**
@@ -384,10 +427,9 @@ export function rampColor(ramp, value) {
  */
 export function rampPosition(ramp, value) {
   const [from, to] = legendRange(ramp);
-  if (!ramp.log) return ((value - from) / ((to - from) || 1)) * 100;
-  const lf = Math.log10(1 + Math.max(from, 0));
-  const lt = Math.log10(1 + Math.max(to, 0));
-  return ((Math.log10(1 + Math.max(value, 0)) - lf) / ((lt - lf) || 1)) * 100;
+  const lf = project(ramp, from);
+  const lt = project(ramp, to);
+  return ((project(ramp, value) - lf) / ((lt - lf) || 1)) * 100;
 }
 
 /** CSS gradient mirroring a ramp over the range its legend bar shows. */
@@ -434,7 +476,7 @@ export function legendRange(ramp) {
 /** Linear interpolation of a ramp's colour at one value, for the legend. */
 export function colorAt(ramp, value) {
   const stops = rampStops(ramp);
-  const x = ramp.log ? Math.log10(1 + Math.max(value, 0)) : value;
+  const x = project(ramp, value);
   if (x <= stops[0][0]) return stops[0][1];
   for (let i = 1; i < stops.length; i++) {
     const [x1, c1] = stops[i];
