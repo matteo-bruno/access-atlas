@@ -54,7 +54,13 @@ export function PlatformAbout({ platformId, name, ramp, tickFormat, onClose }) {
           {ZONES.map((zone) => (
             <li key={zone.id}>
               <span className="aa-swatch" style={{ background: zone.color }} />
-              <strong>{t(`city.zones.${zone.key}.name`)}</strong>
+              <strong>
+                {t(`city.zones.${zone.key}.name`)}
+                {/* The paper's name, where the layer's own differs. */}
+                {t(`city.zones.${zone.key}.old`) !== t(`city.zones.${zone.key}.name`) && (
+                  <span className="aa-about__oldname"> ({t(`city.zones.${zone.key}.old`)})</span>
+                )}
+              </strong>
               <span>{t(`city.zones.${zone.key}.desc`)}</span>
             </li>
           ))}

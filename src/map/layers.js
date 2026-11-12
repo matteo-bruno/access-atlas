@@ -9,7 +9,7 @@
 // The zoom is MapLibre's (`worldZoom` in map/framing.js): the sizes below
 // were tuned on MapLibre maps, and are kept the size they were.
 
-import { RAMPS, colorAt } from './ramps.js';
+import { RAMPS, colorAt, ratioOfCdi } from './ramps.js';
 import { ZONE_COLORS } from '../data/platforms.js';
 
 /** Piecewise-linear interpolation over `[x, y]` stops, clamped at both ends. */
@@ -108,7 +108,13 @@ function filledEdge(color, zoom) {
  * velocity, so a city's dot is the colour its median resident's cell would
  * be on its map. Their legends are that ramp, with three words under it.
  */
-export const MARKER_RAMPS = { cardep: RAMPS.cdi, citychrone: RAMPS.velocity };
+export const MARKER_RAMPS = { cardep: RAMPS.cdiRatio, citychrone: RAMPS.velocity };
+
+// What a marker's ramp reads from the city's published figure: Car
+// Dependency's dot is its median resident's index as a ratio, car over
+// transit, the form the city view opens on. The ratio is monotonic in the
+// normalised index, so the median of one is the other's.
+const MARKER_VALUES = { cardep: (cdi) => ratioOfCdi(cdi) };
 
 /**
  * A platform's city markers, as `(city, zoom) => style`.
@@ -123,14 +129,16 @@ export function cityMarkerStyle(platform) {
   const radii = platform.coversAllCities ? RADIUS_DENSE : RADIUS;
   const ramp = MARKER_RAMPS[platform.id];
   return (city, zoom) => {
-    const value = city[platform.property];
+    const raw = city[platform.property];
+    const value = MARKER_VALUES[platform.id] ? MARKER_VALUES[platform.id](raw) : raw;
     let color;
     if (platform.markerColor) {
       const plain = platform.markerColor;
       return { radius: interpolate(radii, zoom), fill: plain, fillOpacity: 0.85, ...filledEdge(plain, zoom) };
     }
     if (ramp) {
-      color = Number.isFinite(value) ? colorAt(ramp, value) : NO_VALUE;
+      // A ratio can be infinite (transit reaching nothing): the last colour.
+      color = value != null && !Number.isNaN(value) ? colorAt(ramp, value) : NO_VALUE;
     } else {
       const index = scaleIndex(platform, value);
       color = index == null ? NO_VALUE : platform.scale[index];

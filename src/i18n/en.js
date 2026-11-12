@@ -204,7 +204,7 @@ export default {
     cardep: {
       label: 'Car vs. public transport',
       intro:
-        'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = (O_car − O_PT) / (O_car + O_PT). It runs from −1, where transit reaches more, through 0 where the two are balanced, to +1 where the car reaches everything and transit almost nothing.',
+        'The Car Dependency Index compares the opportunities reachable by car with those reachable by public transport in the same time budget: CDI = O_car / O_PT. It is 1 where the two are balanced, below 1 where transit reaches more, and 2 where a car reaches twice as much. Its normalised form, (O_car − O_PT) / (O_car + O_PT), runs from −1 to +1 with 0 where the two are balanced.',
       legendUnit: 'Car Dependency Index (median resident)',
       tooltip: '{name} · CDI {value} (median resident)',
       legend: ['Transit-favoured', 'Balanced', 'Car-dependent'],
@@ -212,9 +212,9 @@ export default {
     pov: {
       label: 'Proximity + opportunity',
       intro:
-        'Close & Connected puts the Atlas’s two dimensions side by side: proximity, what is close by on foot, the dimension of the 15-minute city, and opportunity, what public transport connects you to across the city, the dimension of CityChrone. Both are scored on the same cells by the P.O.V. framework, counting how many services a person reaches by walking in a short time (proximity score) or by public transport in a longer one (opportunity score). Places with both are Inclusion places; the spatial isolation of a lively neighbourhood that transit leaves out, or the social isolation of a well-connected but empty one, are still better than the total isolation of places with neither. A third axis would be the elusive Value of places.',
+        'Close & Connected puts the Atlas’s two dimensions side by side: proximity, what is close by on foot, the dimension of the 15-minute city, and opportunity, what public transport connects you to across the city, the dimension of CityChrone. Both are scored on the same cells by the P.O.V. framework, counting how many services a person reaches by walking in a short time (proximity score) or by public transport in a longer one (opportunity score). Places with both are Close & Connected; a lively neighbourhood that transit leaves out is Close, a well-connected but empty one is Connected, and either is still better than the total isolation of places with neither. A third axis would be the elusive Value of places.',
       legendUnit: 'Zone',
-      legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
+      legend: ['Close & Connected', 'Close', 'Connected', 'Total isolation'],
     },
   },
 
@@ -327,8 +327,10 @@ export default {
     },
     // The scatter, Close & Connected's third view.
     scatter: {
-      toggle: 'Show as a scatter plot',
-      about: 'The scatter places every cell by its two scores instead of where it is: opportunity along the bottom, proximity up the side, each dot sized by its residents and coloured as the map would colour it. The dashed lines are the city’s medians, so each quarter of the plot is one zone. Hover a dot to read it, click it to select its cell on the map too.',
+      label: 'Show as',
+      map: 'Map',
+      plot: 'Plot',
+      about: 'The plot places every cell by its two scores instead of where it is: opportunity along the bottom, proximity up the side, each dot sized by its residents and coloured as the map would colour it. The dashed lines are the city’s medians, so each quarter of the plot is one zone. Hover a dot to read it, click it to select its cell on the map too.',
       x: 'Opportunity score →',
       y: 'Proximity score →',
       median: 'City median',
@@ -336,12 +338,11 @@ export default {
     },
     // Car Dependency's index read as a ratio, car over transit.
     cdiRatio: {
-      toggle: 'Show as a ratio, car ÷ transit',
-      filter: 'Filter by ratio',
-      legend: 'Opportunities by car ÷ by transit',
-      short: 'Car ÷ transit',
-      about: 'The opportunities a car reaches divided by those public transport reaches, in the same time budget: 1 where the two are equal, 2 where a car reaches twice as much, ½ where transit does. The scale is logarithmic, so twice as much either way is the same step from white. A cell where public transport reaches nothing has no finite ratio and takes the last colour.',
-      toggleAbout: 'The index and the ratio say the same thing in different units: the index is (car − transit) ÷ (car + transit), from −1 to +1, the ratio car ÷ transit, from 0 up, with 1 where the two are balanced.',
+      toggle: 'Normalised measure',
+      legend: 'Car Dependency Index (CDI)',
+      legendNormalised: 'Car Dependency Index, normalised',
+      about: 'The Car Dependency Index: the opportunities a car reaches divided by those public transport reaches, in the same time budget. 1 where the two are equal, 2 where a car reaches twice as much, ½ where transit does. The scale is logarithmic, so twice as much either way is the same step from white. A cell where public transport reaches nothing has no finite index and takes the last colour.',
+      toggleAbout: 'The same index in another form: (car − transit) ÷ (car + transit), from −1 where only transit reaches anything, through 0 where the two are balanced, to +1 where only a car does. The ratio runs from 0 up, with 1 where the two are balanced.',
     },
     scenario: {
       label: 'Scenario',
@@ -427,20 +428,26 @@ export default {
     cdiHint:
       'Negative where public transport reaches more than a car, positive where the car reaches more. The index is a normalised difference bounded at ±1, not a ratio.',
     zones: {
+      // The layer's own names; `old` is the P.O.V. paper's, which the
+      // "about this layer" dialog keeps in brackets.
       inclusion: {
-        name: 'Inclusion',
+        name: 'Close & Connected',
+        old: 'Inclusion',
         desc: 'Above the median on both axes, served locally and connected city-wide',
       },
       spatial: {
-        name: 'Spatial isolation',
+        name: 'Close',
+        old: 'Spatial isolation',
         desc: 'Services nearby, but weak transit reach to the wider city',
       },
       social: {
-        name: 'Social isolation',
+        name: 'Connected',
+        old: 'Social isolation',
         desc: 'Good transit reach, but few services within walking distance',
       },
       total: {
         name: 'Total isolation',
+        old: 'Total isolation',
         desc: 'Below the median on both axes, excluded from the city’s life',
       },
     },
@@ -474,7 +481,7 @@ export default {
       zone: 'Zone',
       proximity: 'Proximity score',
       opportunity: 'Opportunity score',
-      cdi: 'Car Dependency Index',
+      cdi: 'CDI, normalised',
       byCar: 'Reachable by car',
       byTransit: 'Reachable by transit',
       population: 'Residents',
@@ -485,7 +492,7 @@ export default {
       time: 'Travel time',
       velocity: 'PT velocity score',
       sociality: 'Sociality score',
-      ratio: 'Car ÷ transit',
+      ratio: 'Car Dependency Index',
       grid: 'H3 cell',
       gridAbout: 'A Standard Hexagonal Hierarchical Spatial Index.',
     },
@@ -509,7 +516,7 @@ export default {
       // The legend's "?": the colours, then what a white and a blue area mean.
       legend: {
         pov:
-          'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
+          'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). High density places can have both and are Close & Connected, while a place only Close (isolated from public transport) or only Connected (an empty neighbourhood on a good line) is still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
         cardep:
           'Green where public transport reaches more opportunities than a car, white where the two are balanced, orange where the car reaches more. A white area gives equal opportunities and it is already sufficient to live without a car; a green area is less common, and happens when public transport is optimal and traffic, pedestrian zones and parking times make a car inconvenient.',
       },
@@ -617,7 +624,7 @@ export default {
       weightedCdi: 'Index for the average resident',
       medianCdi: 'Index for the median resident',
       ptShare: 'Transit-favoured cells',
-      inclusion: 'Inclusion',
+      inclusion: 'Close & Connected',
       proximity: 'Median proximity',
       opportunity: 'Median opportunity',
     },
@@ -649,9 +656,9 @@ export default {
       carCells: 'Car cells',
       proximity: 'Med. proximity',
       opportunity: 'Med. opportunity',
-      inclusion: 'Inclusion',
-      spatial: 'Spatial isol.',
-      social: 'Social isol.',
+      inclusion: 'Close & Conn.',
+      spatial: 'Close',
+      social: 'Connected',
       total: 'Total isol.',
     },
     loading: 'Loading the published cities…',
@@ -714,6 +721,13 @@ export default {
         title: 'Use case',
         desc: 'We create refined versions of our platforms for cities, to be used for informed urban and transport planning.',
         cta: 'Ask us about it.',
+      },
+      // The edges of the triangle, read as a cycle, and what sits inside it.
+      cycle: {
+        replicate: 'replicate',
+        refine: 'refine',
+        questions: 'new questions',
+        centre: 'Cities',
       },
     },
 
@@ -1334,7 +1348,7 @@ export default {
       },
       cardep: {
         title: 'Car Dependency Index',
-        colors: 'You are seeing the normalised difference between the opportunities reachable by public transport and by car.',
+        colors: 'You are seeing the opportunities reachable by car divided by those reachable by public transport: 1 where they are balanced. “Normalised measure” shows the same index from −1 to +1.',
         blue: 'Green places, where public transport wins, are rare: the car is often faster.',
         views: "You can also see the two opportunity scores the index compares: the points of interest reachable by car and by public transport.",
         filter: 'The filter shows only the cells within a range of the index.',
@@ -1342,7 +1356,7 @@ export default {
       pov: {
         title: 'Close & Connected',
         scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport). “Both” draws the two at once on one colour square.',
-        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. “Show as a scatter plot” places every cell by its two scores instead.',
+        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. “Plot” places every cell by its two scores instead of on the map.',
       },
     },
   },

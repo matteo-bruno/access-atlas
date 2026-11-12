@@ -958,7 +958,7 @@ function AtlasScreen({ cityId, view }) {
     if (layer === 'cardep') {
       if (cdiRatio) {
         const ratio = ratioOf(p, keyOf);
-        return ratio == null ? t('atlas.noValue') : `${t('atlas.cdiRatio.short')} ${formatRatio(ratio, n)} · CDI ${signed(at('cdi'), n)}`;
+        return ratio == null ? t('atlas.noValue') : `CDI ${formatRatio(ratio, n)}`;
       }
       if (diffShown) {
         if (!Number.isFinite(p.cdi) || !Number.isFinite(at('cdi'))) return t('atlas.noValue');
@@ -1041,10 +1041,19 @@ function AtlasScreen({ cityId, view }) {
       rows.push({ label: t('city.cell.proximity'), value: score(p.proximity) });
       rows.push({ label: t('city.cell.opportunity'), value: score(p.opportunity) });
     } else if (layer === 'cardep') {
-      rows.push({ label: named(t('city.cell.cdi')), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' });
-      versus('cdi', (v) => signed(v, n), (v) => signed(v, n, 3));
+      // The index, then its normalised form; the one on screen first.
       const ratio = ratioOf(p);
-      rows.push({ label: t('city.cell.ratio'), value: ratio == null ? '—' : formatRatio(ratio, n) });
+      const ratioRow = { label: named(t('city.cell.ratio')), value: ratio == null ? '—' : formatRatio(ratio, n) };
+      const normRow = { label: named(t('city.cell.cdi')), value: Number.isFinite(p.cdi) ? signed(p.cdi, n) : '—' };
+      if (cdiIndex && !cdiRatio) {
+        rows.push(normRow);
+        versus('cdi', (v) => signed(v, n), (v) => signed(v, n, 3));
+        rows.push(ratioRow);
+      } else {
+        rows.push(ratioRow);
+        rows.push(normRow);
+        versus('cdi', (v) => signed(v, n), (v) => signed(v, n, 3));
+      }
       rows.push({ label: t('city.cell.byCar'), value: score(p.o_score_car) });
       rows.push({ label: t('city.cell.byTransit'), value: score(p.o_score_pt) });
     } else if (layer === 'fifteen') {
@@ -1103,7 +1112,7 @@ function AtlasScreen({ cityId, view }) {
       ];
     }
     return rows;
-  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, ccHourData, matrixRow, t, n, shownId, scenarioName]);
+  }, [selectedCell, baseGeojson, layer, category, mode, fifteenKey, ccHourData, matrixRow, t, n, shownId, scenarioName, cdiIndex, cdiRatio]);
 
   const legendTitle = diffShown
     ? t('atlas.scenario.legendDiff', { scenario: scenarioName })
@@ -1119,7 +1128,7 @@ function AtlasScreen({ cityId, view }) {
           : cdiIndex
           ? // The index itself, per cell: the world map's legend title says
             // "median resident", which is a city's figure, not a cell's.
-            platform.name
+            t('atlas.cdiRatio.legendNormalised')
           : t(`atlas.cdiLegend.${cdiView}`)
         : layer === 'fifteen'
           ? t('fifteen.legendValue')
@@ -1400,11 +1409,11 @@ function AtlasScreen({ cityId, view }) {
                       type="checkbox"
                       role="switch"
                       className="aa-scaleswitch__input"
-                      checked={cdiRatio}
+                      checked={!cdiRatio}
                       onChange={(event) => {
                         // The filter's thumbs mean another axis on the other side.
                         setRange([-1, 1]);
-                        setParam('ratio', event.target.checked ? null : '0');
+                        setParam('ratio', event.target.checked ? '0' : null);
                       }}
                     />
                     <span className="aa-scaleswitch__track" aria-hidden="true" />
@@ -1567,20 +1576,26 @@ function AtlasScreen({ cityId, view }) {
                 {/* The third view, every cell by its two scores, under the
                     measures it is coloured by. */}
                 {scatterOffered && (
-                  <div className="aa-scaleswitch aa-scaleswitch--block aa-tourctl">
-                    <label className="aa-scaleswitch__label">
-                      <input
-                        type="checkbox"
-                        role="switch"
-                        className="aa-scaleswitch__input"
-                        checked={scatterOn}
-                        onChange={(event) => setScatter(event.target.checked)}
-                      />
-                      <span className="aa-scaleswitch__track" aria-hidden="true" />
-                      {t('atlas.scatter.toggle')}
-                    </label>
-                    <Explain body={t('atlas.scatter.about')} />
-                  </div>
+                  <>
+                    <Explain className="aa-tourctl" label={t('atlas.scatter.label')} body={t('atlas.scatter.about')} />
+                    <div
+                      className="aa-toggle aa-toggle--segmented aa-toggle--two aa-tourctl"
+                      role="group"
+                      aria-label={t('atlas.scatter.label')}
+                    >
+                      {['map', 'plot'].map((key) => (
+                        <button
+                          key={key}
+                          type="button"
+                          className={`aa-toggle__btn${(scatterOn ? 'plot' : 'map') === key ? ' aa-toggle__btn--active' : ''}`}
+                          aria-pressed={(scatterOn ? 'plot' : 'map') === key}
+                          onClick={() => setScatter(key === 'plot')}
+                        >
+                          {t(`atlas.scatter.${key}`)}
+                        </button>
+                      ))}
+                    </div>
+                  </>
                 )}
               </>
             )}
@@ -1677,7 +1692,7 @@ function AtlasScreen({ cityId, view }) {
               <>
                 <Explain
                   className="aa-tourctl"
-                  label={t(cdiRatio ? 'atlas.cdiRatio.filter' : 'city.filter.title')}
+                  label={t('city.filter.title')}
                   body={t('city.filter.about')}
                 />
                 <RangeFilter
@@ -1686,7 +1701,7 @@ function AtlasScreen({ cityId, view }) {
                   min={-1}
                   max={1}
                   step={0.01}
-                  label={t(cdiRatio ? 'atlas.cdiRatio.filter' : 'city.filter.title')}
+                  label={t('city.filter.title')}
                   resetLabel={t('city.filter.reset')}
                   // As a ratio the filter runs along the colours' own
                   // logarithmic axis, 0.1× to 10×, each end open.

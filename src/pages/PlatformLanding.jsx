@@ -16,7 +16,7 @@ import {
   usePlatformHasSummary,
   useCityPageIds,
 } from '../data/useAtlasData.js';
-import { rampGradient } from '../map/ramps.js';
+import { ratioOfCdi, rampGradient } from '../map/ramps.js';
 import { paperForPlatform } from '../data/research.js';
 import { formatTime } from '../data/fifteen.js';
 import { Tour } from '../components/Tour.jsx';
@@ -500,8 +500,12 @@ function formatTooltip(platform, properties, t, n) {
       return t('platform.fifteen.tooltip', { name, time: formatTime(value) });
     case 'citychrone':
       return t('platform.citychrone.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
-    case 'cardep':
-      return t('platform.cardep.tooltip', { name, value: n(value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) });
+    case 'cardep': {
+      // The ratio, car over transit, as the dot is coloured.
+      const ratio = ratioOfCdi(value);
+      const text = ratio === Infinity ? '∞' : `${n(ratio, { maximumSignificantDigits: 2 })}×`;
+      return t('platform.cardep.tooltip', { name, value: text });
+    }
     default:
       return name;
   }

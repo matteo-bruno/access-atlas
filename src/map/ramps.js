@@ -322,6 +322,15 @@ export const RAMPS = {
 };
 
 /**
+ * The Car Dependency Index as a ratio, car over transit, from its normalised
+ * form: (1 + CDI) / (1 − CDI). Infinity where transit reaches nothing.
+ */
+export function ratioOfCdi(cdi) {
+  if (!Number.isFinite(cdi)) return null;
+  return cdi >= 1 ? Infinity : (1 + cdi) / (1 - cdi);
+}
+
+/**
  * Differences between a scenario and the current measurement, per layer.
  * Diverging about zero, which is white: a cell the scenario leaves alone is
  * drawn as nothing. The side that is better takes the colour the layer's own

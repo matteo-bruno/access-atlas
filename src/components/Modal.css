@@ -92,7 +92,7 @@
 }
 .aa-about__zones li {
   display: grid;
-  grid-template-columns: 12px 128px 1fr;
+  grid-template-columns: 12px 150px 1fr;
   align-items: baseline;
   gap: 8px;
   padding: 3px 0;
@@ -100,6 +100,13 @@
 .aa-about__zones strong {
   color: var(--ink);
   font-weight: 600;
+}
+/* The paper's name for the zone, under the layer's own. */
+.aa-about__oldname {
+  display: block;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--ink-3);
 }
 .aa-about__categories {
   margin: 8px 0 0;
