@@ -393,12 +393,17 @@ function Dashboard({ stats: all }) {
         <div className="aa-card aa-stats__panel">
           <header className="aa-stats__head">
             <div className="aa-eyebrow">{focus ? t('stats.views.focus') : layerName(layer, t)}</div>
+            {/* One line per part: the measure, the mode it is taken by, and
+                the statistic, in the accent. */}
             <h1 className="aa-stats__headline">
-              {measureTitle}
-              <span className="aa-stats__headsep" aria-hidden="true">
-                {' / '}
-              </span>
-              <span className="aa-accent">{statTitle}</span>
+              {String(measureTitle)
+                .split(' · ')
+                .map((part, index) => (
+                  <span key={index} className="aa-stats__headline-line">
+                    {part}
+                  </span>
+                ))}
+              <span className="aa-stats__headline-line aa-accent">{statTitle}</span>
             </h1>
           </header>
 

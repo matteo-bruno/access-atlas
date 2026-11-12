@@ -21,7 +21,7 @@ export default {
     platforms: 'Atlas',
     citychat: 'CityChat',
     stats: 'Stats',
-    about: 'Sustainable cities',
+    about: 'Mission',
     consulting: 'Consulting',
     research: 'Research',
     blog: 'Blog',

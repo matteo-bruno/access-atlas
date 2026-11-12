@@ -17,10 +17,9 @@
 import { BRAND } from './brand.js';
 
 // Whether the site points readers at the blog: the nav tab, the footer link
-// and the home page's layer cards. Off for now. The routes and the posts are
-// kept, so a direct link still opens, and turning this back on restores all
-// three.
-export const BLOG_LISTED = false;
+// and the home page's layer cards. Turning it off hides all three; the
+// routes and the posts stay, so a direct link still opens.
+export const BLOG_LISTED = true;
 
 export const POSTS = [
   {
