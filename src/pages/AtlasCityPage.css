@@ -473,6 +473,9 @@
 .aa-toggle--segmented.aa-toggle--fit {
   grid-template-columns: repeat(3, auto);
 }
+.aa-toggle--segmented.aa-toggle--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .aa-toggle--segmented .aa-toggle__btn {
   min-width: 0;
   padding: 5px 4px;
@@ -799,4 +802,12 @@
 .aa-scaleswitch__input:focus-visible + .aa-scaleswitch__track {
   outline: 2px solid var(--ink-2);
   outline-offset: 2px;
+}
+
+/* The scatter's switch, under Close & Connected's measures: a control of the
+   column, so a shade stronger than the scale switches under a legend. */
+.aa-scaleswitch--block {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-2);
 }

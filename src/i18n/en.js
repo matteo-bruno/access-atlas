@@ -103,7 +103,7 @@ export default {
           'Travel-time geography — the city redrawn so that distance is measured in minutes of public transport.',
         cardep:
           'How far opportunity access by car exceeds access by public transport, cell by cell.',
-        pov: 'Proximity against opportunity, splitting the city into four zones of access.',
+        pov: 'Proximity and opportunity together: what is close by on foot and what public transport connects you to, splitting the city into four zones.',
       },
     },
     table: {
@@ -210,9 +210,9 @@ export default {
       legend: ['Transit-favoured', 'Balanced', 'Car-dependent'],
     },
     pov: {
-      label: 'Proximity · Opportunity · Value',
+      label: 'Proximity + opportunity',
       intro:
-        'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). Scores are computed by measuring how many services a person has access to, by public transport in a long time (opportunity score) or by walking in a short time (proximity score). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
+        'Close & Connected puts the Atlas’s two dimensions side by side: proximity, what is close by on foot, the dimension of the 15-minute city, and opportunity, what public transport connects you to across the city, the dimension of CityChrone. Both are scored on the same cells by the P.O.V. framework, counting how many services a person reaches by walking in a short time (proximity score) or by public transport in a longer one (opportunity score). Places with both are Inclusion places; the spatial isolation of a lively neighbourhood that transit leaves out, or the social isolation of a well-connected but empty one, are still better than the total isolation of places with neither. A third axis would be the elusive Value of places.',
       legendUnit: 'Zone',
       legend: ['Inclusion', 'Spatial isolation', 'Social isolation', 'Total isolation'],
     },
@@ -302,16 +302,46 @@ export default {
     },
     povViews: {
       zones: 'Zones',
+      both: 'Both',
       proximity: 'Proximity',
       opportunity: 'Opportunity',
     },
     povLegend: {
+      both: 'Proximity and opportunity',
       proximity: 'Proximity score',
       opportunity: 'Opportunity score',
     },
     povHint: {
+      both: 'Both scores at once, without the zones’ four edges: light blue where a place has more close by than most of the city, pink where public transport connects it to more, deep indigo where it has both, pale where it has little of either. Each score is ranked among the city’s residents, so the dashed lines across the square are the city’s medians, where the zones split it. Like the zones, the colours compare places within the city, not cities.',
       proximity: 'How many services each cell reaches on foot in a short time: what is close by. A weighted score, not a count of places.',
       opportunity: 'How many services each cell reaches by public transport in a longer time: what is further away but within reach. A weighted score, not a count of places.',
+    },
+    // The bivariate key, beside the square.
+    bivariate: {
+      axisX: 'Opportunity →',
+      axisY: 'Proximity →',
+      both: 'High on both',
+      proximity: 'Proximity only',
+      opportunity: 'Opportunity only',
+      neither: 'Low on both',
+    },
+    // The scatter, Close & Connected's third view.
+    scatter: {
+      toggle: 'Show as a scatter plot',
+      about: 'The scatter places every cell by its two scores instead of where it is: opportunity along the bottom, proximity up the side, each dot sized by its residents and coloured as the map would colour it. The dashed lines are the city’s medians, so each quarter of the plot is one zone. Hover a dot to read it, click it to select its cell on the map too.',
+      x: 'Opportunity score →',
+      y: 'Proximity score →',
+      median: 'City median',
+      note: 'Each dot is a cell where people live, sized by its residents. The dashed lines are the city’s medians, so each quarter is one zone. Click a dot to select its cell.',
+    },
+    // Car Dependency's index read as a ratio, car over transit.
+    cdiRatio: {
+      toggle: 'Show as a ratio, car ÷ transit',
+      filter: 'Filter by ratio',
+      legend: 'Opportunities by car ÷ by transit',
+      short: 'Car ÷ transit',
+      about: 'The opportunities a car reaches divided by those public transport reaches, in the same time budget: 1 where the two are equal, 2 where a car reaches twice as much, ½ where transit does. The scale is logarithmic, so twice as much either way is the same step from white. A cell where public transport reaches nothing has no finite ratio and takes the last colour.',
+      toggleAbout: 'The index and the ratio say the same thing in different units: the index is (car − transit) ÷ (car + transit), from −1 to +1, the ratio car ÷ transit, from 0 up, with 1 where the two are balanced.',
     },
     scenario: {
       label: 'Scenario',
@@ -321,7 +351,7 @@ export default {
       legendDiff: 'Change: {scenario} minus current',
       change: 'Change',
       diffAbout: {
-        cardep: 'Below zero the scenario makes a cell less car dependent: public transport reaches relatively more of what a car does. White cells do not change.',
+        cardep: 'Below zero (green) the scenario makes a cell less car dependent: public transport reaches relatively more of what a car does. White cells do not change.',
         fifteen: 'Below zero the scenario brings the services closer: minutes saved. Above zero they are further away. White cells do not change.',
       },
     },
@@ -455,6 +485,7 @@ export default {
       time: 'Travel time',
       velocity: 'PT velocity score',
       sociality: 'Sociality score',
+      ratio: 'Car ÷ transit',
       grid: 'H3 cell',
       gridAbout: 'A Standard Hexagonal Hierarchical Spatial Index.',
     },
@@ -469,7 +500,7 @@ export default {
         pov:
           'Each cell takes the colour of the zone it falls in: green above the city median on both Proximity and Opportunity, red below on both, and the two mixed cases between.',
         cardep:
-          'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more.',
+          'Green where public transport reaches more opportunities than a car, white where the two are balanced, orange where the car reaches more.',
         fifteen:
           'The colour of the cells represents the time needed to reach services belonging to the selected category, on foot or by bike. Blue areas are 15-minute places, where the 15-minute city is realized; in red areas services are on average further than 15 minutes away; white cells are near the 15-minute mark.',
         citychrone:
@@ -480,7 +511,7 @@ export default {
         pov:
           'Bridging Proximity and Opportunity, this framework combines the measurement of an active neighbourhood (high proximity) with a fast public transit node (high opportunity). High density places can have both and are labeled as Inclusion places, while spatial isolation in public transport or social isolation of an empty neighbourhood are still better than the total isolation of places disconnected from the rest of the city and with few local opportunities. A third axis would be the elusive Value of places.',
         cardep:
-          'Blue where public transport reaches more opportunities than a car, white where the two are balanced, red where the car reaches more. A white area gives equal opportunities and it is already sufficient to live without a car; a blue area is less common, and happens when public transport is optimal and traffic, pedestrian zones and parking times make a car inconvenient.',
+          'Green where public transport reaches more opportunities than a car, white where the two are balanced, orange where the car reaches more. A white area gives equal opportunities and it is already sufficient to live without a car; a green area is less common, and happens when public transport is optimal and traffic, pedestrian zones and parking times make a car inconvenient.',
       },
       summary: {
         pov: 'Cells counts what the published dataset covers. Each median is the median resident’s score: half the city’s residents live in cells scoring lower, half higher. The scores are weighted counts of reachable points of interest, which is why neither carries a unit: they are not metres and not jobs. Population is the dataset’s own sum over its cells, not an official figure for the city.',
@@ -1266,7 +1297,7 @@ export default {
         fifteen: 'how close services are on foot.',
         citychrone: 'how fast public transport takes you around.',
         cardep: 'whether getting around the city depends on the car.',
-        pov: 'several aspects of accessibility together.',
+        pov: 'what is close by and what transit connects you to, together.',
       },
       cell: {
         title: 'Click a cell',
@@ -1304,14 +1335,14 @@ export default {
       cardep: {
         title: 'Car Dependency Index',
         colors: 'You are seeing the normalised difference between the opportunities reachable by public transport and by car.',
-        blue: 'Blue places, where public transport wins, are rare: the car is often faster.',
+        blue: 'Green places, where public transport wins, are rare: the car is often faster.',
         views: "You can also see the two opportunity scores the index compares: the points of interest reachable by car and by public transport.",
         filter: 'The filter shows only the cells within a range of the index.',
       },
       pov: {
-        title: 'Urban Accessibility P.O.V.',
-        scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport).',
-        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average.',
+        title: 'Close & Connected',
+        scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport). “Both” draws the two at once on one colour square.',
+        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. “Show as a scatter plot” places every cell by its two scores instead.',
       },
     },
   },

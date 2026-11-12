@@ -75,7 +75,9 @@ export const PLATFORMS = [
     url: 'https://mat701.github.io/CDI',
     previewCity: 'rome',
     published: true,
-    scale: ['#4a7fb8', '#cfd2c8', '#a04640', '#7a2e29'],
+    // The city view's colours (RAMPS.cdi): transit teal-green, balanced
+    // white, car orange.
+    scale: ['#80cdc1', '#f4efe6', '#e08214', '#7f3b08'],
     // CDI = (O_car − O_PT) / (O_car + O_PT), bounded in [−1, +1]: negative
     // where transit reaches more, 0 where the two are balanced, positive where
     // the car wins. It is a normalised difference, not a ratio — an earlier
@@ -90,9 +92,13 @@ export const PLATFORMS = [
   },
   {
     id: 'pov',
+    // The slug keeps the platform's old name, so links already out there
+    // still open it.
     slug: 'accessibility-pov',
     tag: '04',
-    name: 'Urban Accessibility P.O.V.',
+    // Proximity (close by on foot) and opportunity (connected by transit)
+    // together. The framework and its paper keep their name, P.O.V.
+    name: 'Close & Connected',
     theme: 'Synthesis',
     themeKey: 'synthesis',
     accent: BRAND.navy,
