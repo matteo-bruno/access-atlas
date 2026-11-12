@@ -312,7 +312,7 @@ export default {
       opportunity: 'Opportunity score',
     },
     povHint: {
-      both: 'Both scores at once, without the zones’ four edges: green where a place has more close by than most of the city, violet where public transport connects it to more, deep indigo where it has both, pale where it has little of either. Each score is ranked among the city’s residents, so the dashed lines across the square are the city’s medians, where the zones split it. Like the zones, the colours compare places within the city, not cities.',
+      both: 'Both scores at once, without the zones’ four edges: light blue where a place has more close by than most of the city, pink where public transport connects it to more, deep indigo where it has both, pale where it has little of either. Each score is ranked among the city’s residents, so the dashed lines across the square are the city’s medians, where the zones split it. Like the zones, the colours compare places within the city, not cities.',
       proximity: 'How many services each cell reaches on foot in a short time: what is close by. A weighted score, not a count of places.',
       opportunity: 'How many services each cell reaches by public transport in a longer time: what is further away but within reach. A weighted score, not a count of places.',
     },
@@ -327,6 +327,8 @@ export default {
     },
     // The scatter, Close & Connected's third view.
     scatter: {
+      toggle: 'Show as a scatter plot',
+      about: 'The scatter places every cell by its two scores instead of where it is: opportunity along the bottom, proximity up the side, each dot sized by its residents and coloured as the map would colour it. The dashed lines are the city’s medians, so each quarter of the plot is one zone. Hover a dot to read it, click it to select its cell on the map too.',
       x: 'Opportunity score →',
       y: 'Proximity score →',
       median: 'City median',
@@ -335,6 +337,7 @@ export default {
     // Car Dependency's index read as a ratio, car over transit.
     cdiRatio: {
       toggle: 'Show as a ratio, car ÷ transit',
+      filter: 'Filter by ratio',
       legend: 'Opportunities by car ÷ by transit',
       short: 'Car ÷ transit',
       about: 'The opportunities a car reaches divided by those public transport reaches, in the same time budget: 1 where the two are equal, 2 where a car reaches twice as much, ½ where transit does. The scale is logarithmic, so twice as much either way is the same step from white. A cell where public transport reaches nothing has no finite ratio and takes the last colour.',
@@ -561,7 +564,6 @@ export default {
       label: 'Geometry',
       map: 'Map',
       cartogram: 'Cartogram',
-      scatter: 'Scatter',
       mapTitle: 'Map · cells where they are',
       mapCaption: 'Cell area is the ground it covers',
       cartogramCaption: 'Cell area is its resident population',
@@ -571,8 +573,6 @@ export default {
         map: 'Every cell is the hexagon it is on the ground, the same size everywhere whatever lives in it. Area says nothing about how many people a measure affects, so a thinly populated edge of the city takes up as much of the picture as the dense centre does.',
         cartogram:
           'A cartogram deforms the cells according to the resident population, so that empty cells shrink until they disappear. Accessibility measures their offer of services, while population represents the demand: in a cartogram inequalities are more evident.',
-        scatter:
-          'The scatter places every cell by its two scores instead of where it is: opportunity along the bottom, proximity up the side, each dot sized by its residents. The dashed lines are the city’s medians, so each quarter of the plot is one zone.',
         derived: 'This cartogram is the Atlas’s own, drawn by one rule for every layer: the area is proportional to the cell’s resident population, reaching the full hexagon at the median population of the city’s inhabited cells. The population is the one every layer of the city shares, so a cell of a given population looks the same size whichever layer you are on.',
       },
     },
@@ -1342,7 +1342,7 @@ export default {
       pov: {
         title: 'Close & Connected',
         scores: 'Proximity and opportunity: the services within reach close by (on foot) and further away (by public transport). “Both” draws the two at once on one colour square.',
-        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. Under Settings, “Scatter” plots every cell by its two scores.',
+        zones: 'Zones: the classification relative to the city’s own median, so it says which places are better or worse served than the city on average. “Show as a scatter plot” places every cell by its two scores instead.',
       },
     },
   },

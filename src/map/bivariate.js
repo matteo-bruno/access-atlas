@@ -11,11 +11,11 @@
 //
 // The colour is the bilinear mix of four corners. Low on both is the paper's
 // own pale, so a place with little within reach recedes; proximity alone is
-// green and opportunity alone violet, after the two score views' own
-// ramps; both together is deep indigo. Checked for colour blindness with
-// Machado et al.'s (2009) simulation: the two one-score corners stay ΔE 51
-// apart for deuteranopia and 59 for protanopia (a teal against a pink, the
-// usual bivariate pair, falls to 6 to 17).
+// light blue and opportunity alone pink, two hues far apart so the mixed
+// cases read; both together is deep indigo, where the two meet. Checked for
+// colour blindness with Machado et al.'s (2009) simulation: the two
+// one-score corners stay ΔE 40 apart for deuteranopia and 20 for
+// protanopia, where they differ mostly in lightness.
 //
 // Ranks, like the zones, compare places within a city, not cities: the
 // same colour in two cities is the same rank, not the same score.
@@ -23,7 +23,7 @@
 import { colorAt } from './ramps.js';
 
 // [low on both, proximity only, opportunity only, high on both]
-export const BIVARIATE_CORNERS = ['#f3f1e4', '#6aa77c', '#8a7ac4', '#2c3367'];
+export const BIVARIATE_CORNERS = ['#f3f1e4', '#2fa4dc', '#e8609f', '#2f2a6e'];
 
 // How finely an axis follows the residents: a point every 5% of them.
 const STEPS = 20;

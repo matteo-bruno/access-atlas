@@ -396,8 +396,9 @@ function AtlasScreen({ cityId, view }) {
   const diffShown = diffOn && Boolean(shown);
   const scenarioName = shown ? (lang === 'it' ? shown.nameIt ?? shown.name : shown.name) : null;
   // Car Dependency's index read as the ratio of its two scores, car over
-  // transit (`ratio=1`). The difference stays the index's.
-  const cdiRatio = cdiIndex && !diffShown && params.get('ratio') === '1';
+  // transit, on a logarithmic scale: the default, by the lab's decision;
+  // `ratio=0` is the index from −1 to +1. The difference stays the index's.
+  const cdiRatio = cdiIndex && !diffShown && params.get('ratio') !== '0';
   // The key a measure is read from on screen: the scenario's where one is
   // shown, the plain one otherwise.
   const keyOf = (name) => (shown ? scenarioKey(shown.id, name) : name);
@@ -611,13 +612,15 @@ function AtlasScreen({ cityId, view }) {
       if (diffShown) return delta('cdi', DELTA_RAMPS.cardep, (v) => signed(v, n, 3));
       if (cdiRatio) {
         // The ratio from the index, (1 + CDI) / (1 − CDI): the index is on
-        // every cell the layer covers, and the filter still reads it.
+        // every cell the layer covers. The filter reads its logarithm, the
+        // axis the colours are on.
         const cdi = ['get', key('cdi')];
+        const ratio = ['/', ['+', 1, cdi], ['max', ['-', 1, cdi], 1e-6]];
         return {
           ramp: RAMPS.cdiRatio,
-          value: ['/', ['+', 1, cdi], ['max', ['-', 1, cdi], 1e-6]],
+          value: ratio,
           covered: ['has', key('cdi')],
-          filterValue: cdi,
+          filterValue: ['log10', ['max', ratio, 1e-6]],
           format: (v) => formatRatio(v, n),
         };
       }
@@ -761,15 +764,14 @@ function AtlasScreen({ cityId, view }) {
       (value[0] === 'feature-state' ? present(value[1], true) : present(value[1], false));
     // Filtered-out cells are dimmed rather than dropped, so the slice is read
     // against the city it was taken from.
-    const filtered = measure.filterValue ?? value;
-    const opacityFor = rangeOn
-      ? [
-          'case',
-          ['all', ['>=', ['coalesce', filtered, 0], range[0]], ['<=', ['coalesce', filtered, 0], range[1]]],
-          opacity,
-          opacity * 0.1,
-        ]
-      : opacity;
+    // A thumb at either end is no bound at all: on the ratio's axis the ends
+    // are ≤0.1× and ≥10×, and the cells past them stay in.
+    const filtered = ['coalesce', measure.filterValue ?? value, 0];
+    const bounds = [
+      ...(range[0] > -1 ? [['>=', filtered, range[0]]] : []),
+      ...(range[1] < 1 ? [['<=', filtered, range[1]]] : []),
+    ];
+    const opacityFor = rangeOn ? ['case', ['all', ...bounds], opacity, opacity * 0.1] : opacity;
     return {
       'fill-color': rampColor(ramp, ['coalesce', value, 0]),
       'fill-opacity': ['case', covered, opacityFor, 0],
@@ -1399,7 +1401,11 @@ function AtlasScreen({ cityId, view }) {
                       role="switch"
                       className="aa-scaleswitch__input"
                       checked={cdiRatio}
-                      onChange={(event) => setParam('ratio', event.target.checked ? '1' : null)}
+                      onChange={(event) => {
+                        // The filter's thumbs mean another axis on the other side.
+                        setRange([-1, 1]);
+                        setParam('ratio', event.target.checked ? null : '0');
+                      }}
                     />
                     <span className="aa-scaleswitch__track" aria-hidden="true" />
                     {t('atlas.cdiRatio.toggle')}
@@ -1558,6 +1564,24 @@ function AtlasScreen({ cityId, view }) {
                     </button>
                   ))}
                 </div>
+                {/* The third view, every cell by its two scores, under the
+                    measures it is coloured by. */}
+                {scatterOffered && (
+                  <div className="aa-scaleswitch aa-scaleswitch--block aa-tourctl">
+                    <label className="aa-scaleswitch__label">
+                      <input
+                        type="checkbox"
+                        role="switch"
+                        className="aa-scaleswitch__input"
+                        checked={scatterOn}
+                        onChange={(event) => setScatter(event.target.checked)}
+                      />
+                      <span className="aa-scaleswitch__track" aria-hidden="true" />
+                      {t('atlas.scatter.toggle')}
+                    </label>
+                    <Explain body={t('atlas.scatter.about')} />
+                  </div>
+                )}
               </>
             )}
 
@@ -1651,20 +1675,28 @@ function AtlasScreen({ cityId, view }) {
 
             {cdiIndex && !diffShown && (
               <>
-                <Explain className="aa-tourctl" label={t('city.filter.title')} body={t('city.filter.about')} />
+                <Explain
+                  className="aa-tourctl"
+                  label={t(cdiRatio ? 'atlas.cdiRatio.filter' : 'city.filter.title')}
+                  body={t('city.filter.about')}
+                />
                 <RangeFilter
                   value={range}
                   onChange={setRange}
                   min={-1}
                   max={1}
                   step={0.01}
-                  label={t('city.filter.title')}
+                  label={t(cdiRatio ? 'atlas.cdiRatio.filter' : 'city.filter.title')}
                   resetLabel={t('city.filter.reset')}
-                  // The filter is on the index; in ratio units its ends are 0
-                  // and no ratio at all.
+                  // As a ratio the filter runs along the colours' own
+                  // logarithmic axis, 0.1× to 10×, each end open.
                   format={(v) =>
                     cdiRatio
-                      ? formatRatio(v >= 1 ? Infinity : (1 + v) / (1 - v), n)
+                      ? v <= -1
+                        ? `≤${formatRatio(0.1, n)}`
+                        : v >= 1
+                          ? `≥${formatRatio(10, n)}`
+                          : formatRatio(10 ** v, n)
                       : v === 0
                         ? '0'
                         : signed(v, n)
@@ -2020,21 +2052,14 @@ function AtlasScreen({ cityId, view }) {
                 {unified && (
                   <GeometryToggle
                     compact
-                    value={scatterOn ? 'scatter' : geometryValue}
+                    value={geometryValue}
                     onChange={(key) => {
-                      if (key === 'scatter') {
-                        setScatter(true);
-                        return;
-                      }
+                      // Map and cartogram are what the scatter covers: picking
+                      // one is asking for the map back.
                       setScatter(false);
                       setGeometry(key);
                     }}
-                    available={{
-                      geographic: true,
-                      cartogram: cartogramPublished,
-                      // Only Close & Connected has a third view.
-                      ...(scatterOffered ? { scatter: true } : {}),
-                    }}
+                    available={{ geographic: true, cartogram: cartogramPublished }}
                     derived={cartogramDerived}
                     loading={cartogramOn && cartogram.status === 'pending'}
                   />
