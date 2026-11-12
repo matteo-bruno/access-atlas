@@ -16,7 +16,7 @@ export default {
 
   nav: {
     title: 'Opportunity Atlas',
-    tagline: 'Sony CSL · Rome — Sustainable Cities',
+    tagline: 'Sony CSL · Rome',
     atlas: 'Home',
     platforms: 'Atlas',
     citychat: 'CityChat',

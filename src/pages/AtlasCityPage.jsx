@@ -1332,7 +1332,9 @@ function AtlasScreen({ cityId, view }) {
                 its paper, and the way back to the world map. */}
             <div className="aa-city__header">
               <Link className="aa-city__back" to={`/platforms/${isPopulation ? 'all' : platform.slug}`}>
-                <Icon name="chevronLeft" size={13} />
+                <span className="aa-city__backicon" aria-hidden="true">
+                  <Icon name="chevronLeft" size={12} color="currentColor" />
+                </span>
                 <span className="aa-city__backlabel">{t('atlas.back')}</span>
               </Link>
               <h1 className="aa-city__title">
