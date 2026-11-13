@@ -575,7 +575,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
     .getByRole('button', { name: 'Cartogram', exact: true })
     .getAttribute('aria-pressed');
   check('The city view opens on the cartogram', opensOnCartogram === 'true');
-  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.getByRole('group', { name: 'Geometry' }).getByRole('button', { name: 'Map', exact: true }).click();
   await page.waitForTimeout(1500);
   const map = await canvasShot(page);
   await page.getByRole('button', { name: 'Cartogram', exact: true }).click();
@@ -590,11 +590,11 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       requested.filter((u) => /\/cities\/milan\//.test(u)).length === layerFiles.length,
   );
 
-  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.getByRole('group', { name: 'Geometry' }).getByRole('button', { name: 'Map', exact: true }).click();
   await page.waitForTimeout(800);
   check(
     'And back to the hexagons',
-    (await page.getByRole('button', { name: 'Map', exact: true }).getAttribute('aria-pressed')) ===
+    (await page.getByRole('group', { name: 'Geometry' }).getByRole('button', { name: 'Map', exact: true }).getAttribute('aria-pressed')) ===
       'true',
   );
   await page.close();
@@ -628,7 +628,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
       !fifteenCartogram.equals(await canvasShot(page)),
     files.join(' '),
   );
-  await page.getByRole('button', { name: 'Map', exact: true }).click();
+  await page.getByRole('group', { name: 'Geometry' }).getByRole('button', { name: 'Map', exact: true }).click();
   await page.getByRole('button', { name: '15-minute city' }).click();
   await page.waitForTimeout(1500);
   check(
