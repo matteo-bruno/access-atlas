@@ -429,7 +429,7 @@ for (const [route, name] of ROUTES) {
   );
 
   // P.O.V.'s map is its cities and nothing more: no legend, no zones.
-  await page.click('.aa-picker__item:has-text("P.O.V.")');
+  await page.click('.aa-picker__item:has-text("Close & Connected")');
   await page.waitForTimeout(2500);
   const povLegends = await page.$$eval('.aa-legend', (els) => els.length);
   check(
@@ -826,7 +826,7 @@ const canvasShot = (page) => page.locator('.aa-city__canvas canvas').first().scr
   await page.waitForTimeout(300);
   check(
     'A legend explains itself on a click, stays while read, and closes on Escape',
-    /Inclusion/.test(tip) &&
+    /Close & Connected/.test(tip) &&
       stays &&
       (await page.locator('.aa-explain__tip').count()) === 0,
     tip.replace(/\s+/g, ' ').slice(0, 70),
