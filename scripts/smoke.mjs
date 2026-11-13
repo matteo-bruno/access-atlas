@@ -208,16 +208,13 @@ for (const [route, name] of ROUTES) {
   await page.close();
 }
 
-// ── A blog post reads its numbers and maps from the figures file ─────
-// Provenance, not values: the file was fetched, no number is the "…" that
-// stands in for a missing one, and the maps arrived as images (a wrong path
-// would be index.html with a 200, decoded as a broken image).
+// ── A blog post shows its images ─────────────────────────────────────
+// Provenance, not values: every image of a Markdown post arrived as an
+// image (a wrong path would be index.html with a 200, a broken image).
 {
   const page = await context.newPage();
-  const fetched = [];
-  page.on('response', (r) => r.url().includes('/blog-figures/') && fetched.push(`${r.status()} ${r.url()}`));
   await page.goto(`${BASE}/blog/layer-car-dependency`, { waitUntil: 'load' });
-  await page.waitForSelector('.aa-bfig__body img', { timeout: 15000 }).catch(() => {});
+  await page.waitForSelector('.aa-post__figure img', { timeout: 15000 }).catch(() => {});
   await page.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 600) {
       window.scrollTo(0, y);
@@ -226,15 +223,14 @@ for (const [route, name] of ROUTES) {
   });
   await page.waitForTimeout(1500);
   const info = await page.evaluate(() => ({
-    text: document.querySelector('.aa-post__body')?.innerText ?? '',
-    images: [...document.querySelectorAll('.aa-bfig__body img')].map((img) => img.complete && img.naturalWidth > 0),
-    charts: document.querySelectorAll('.aa-bfig__body svg').length,
+    images: [...document.querySelectorAll('.aa-post__figure img')].map((img) => img.complete && img.naturalWidth > 0),
+    tables: document.querySelectorAll('.aa-post__table').length,
+    headline: document.querySelector('.aa-post__headline .aa-accent')?.textContent ?? '',
   }));
-  const file = fetched.find((f) => f.includes('figures.json'));
   check(
-    'Blog post: numbers and maps come from the figures file',
-    Boolean(file?.startsWith('200')) && !info.text.includes('…') && info.images.length > 0 && info.images.every(Boolean) && info.charts > 0,
-    `${file ?? 'figures.json not fetched'} · ${info.images.filter(Boolean).length}/${info.images.length} maps · ${info.charts} charts`,
+    'Blog post: a Markdown post shows its images, tables and coloured title',
+    info.images.length > 0 && info.images.every(Boolean) && info.tables > 0 && info.headline.length > 0,
+    `${info.images.filter(Boolean).length}/${info.images.length} images · ${info.tables} tables · “${info.headline}”`,
   );
   await page.close();
 }

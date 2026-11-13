@@ -1155,8 +1155,6 @@ export default {
     backToBlog: 'كل المقالات →',
     published: 'نُشر في',
     postsLabel: 'المقالات',
-    figuresFailed: 'تعذّر تحميل أشكال هذه المقالة، لذا تظهر أرقامها على هيئة “…”.',
-    figuresAsOf: 'أرقام محسوبة من بيانات الأطلس بتاريخ {date}.',
   },
 
   work: {

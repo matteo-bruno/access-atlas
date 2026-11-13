@@ -13,7 +13,8 @@
 // prefix.
 
 import en from '../../src/i18n/en.js';
-import { POSTS } from '../../src/data/blog.js';
+import { readPosts } from '../../scripts/lib/blog-posts.mjs';
+import { postPlainText } from '../../src/data/blogMarkdown.js';
 import { PLATFORMS } from '../../src/data/platforms.js';
 
 const PERSONAS = {
@@ -52,7 +53,7 @@ Rules, in order of importance:
 2. Say what a figure counts. A share of cells and a share of residents are different stories (isolated cells are large and thinly populated), so name which one it is. A layer's figures describe that layer's own cells and population.
 3. Units. P.O.V. proximity and opportunity are weighted counts of reachable points of interest: call them scores, never metres or jobs. CityChrone's velocity is "km/h-like" and its sociality is a score, not a headcount. 15-minute city times are minutes; write them as the site does, as a clock (m:ss, so 8.8 minutes is 8:48), or in words ("under nine minutes").
 4. The Car Dependency Index is published in two forms of the same comparison. The site shows it as the ratio O_car / O_PT (1 balanced, 2 where a car reaches twice as much, below 1 where transit reaches more); its normalised form is (O_car − O_PT) / (O_car + O_PT), bounded in [−1, +1], with 0 balanced. Tool results give the normalised form: say which form a figure is in, and convert with ratio = (1 + CDI) / (1 − CDI) only when asked.
-5. P.O.V. zones are decided against that city's population-weighted medians (not plain medians), so zones compare places within one city, never between cities. The underlying scores are what compare across cities.
+5. Close & Connected (the P.O.V. framework; its zones are Close & Connected, Close, Connected and Total isolation, the paper's inclusion, spatial, social and total isolation) zones are decided against that city's population-weighted medians (not plain medians), so zones compare places within one city, never between cities. The underlying scores are what compare across cities.
 6. The cartograms scale each cell's area by its population; cells keep their true position. They are not Dorling cartograms.
 7. The data are H3 cells about 200 m across, not named neighbourhoods. When a tool returns cells, describe them by coordinates or, if you know it, the area they fall in, and say that this placement is your reading of the coordinates. When you turn a place name into coordinates yourself, say the location is approximate.
 8. Do not write URLs. When a tool result carries a mapUrl, the interface shows it as a "show on map" button beside your answer; you may say the reader can open it on the map.
@@ -60,19 +61,6 @@ Rules, in order of importance:
 10. Answer in the language the user writes in. Be concise: a few short paragraphs or a short list. Use **bold** sparingly and simple "- " lists; no tables, no headings.
 11. You are not a source of advice on where to live or invest, nor of facts about a city beyond these layers. Stay on accessibility and on what the Atlas measures.
 `.trim();
-
-function blockText(block) {
-  if (block.h2) return `\n${block.h2}\n`;
-  if (block.p) return block.p;
-  if (block.note) return block.note;
-  if (block.ul) return block.ul.map((item) => `- ${typeof item === 'string' ? item : item.text ?? ''}`).join('\n');
-  return '';
-}
-
-function postText(post) {
-  const body = post.en.body.map(blockText).filter(Boolean).join('\n');
-  return `### ${post.en.title}\n${post.en.lede ?? ''}\n${body}`;
-}
 
 /** Nested dictionary → "key.path: text" lines, so the model can cite a label. */
 function flatten(node, prefix = '', out = []) {
@@ -88,7 +76,7 @@ let cached = null;
 function corpus() {
   if (cached) return cached;
   const platforms = PLATFORMS.map((p) => `- ${p.id}: ${p.name}`).join('\n');
-  const layerPosts = POSTS.filter((p) => p.layer).map(postText);
+  const layerPosts = readPosts().filter((p) => p.layer && !p.draft).map(postPlainText);
   const copy = [
     ...flatten(en.platform, 'platform'),
     ...flatten(en.fifteen, 'fifteen'),

@@ -1163,8 +1163,6 @@ export default {
     backToBlog: '← Tous les articles',
     published: 'Publié le',
     postsLabel: 'Articles',
-    figuresFailed: 'Les figures de cet article n’ont pas pu être chargées : ses chiffres s’affichent comme « … ».',
-    figuresAsOf: 'Chiffres calculés à partir des données de l’Atlas du {date}.',
   },
 
   work: {

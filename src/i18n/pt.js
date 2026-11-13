@@ -1161,8 +1161,6 @@ export default {
     backToBlog: '← Todos os textos',
     published: 'Publicado em',
     postsLabel: 'Textos',
-    figuresFailed: 'Não foi possível carregar as figuras deste texto, então seus números aparecem como “…”.',
-    figuresAsOf: 'Números calculados com os dados do Atlas de {date}.',
   },
 
   work: {

@@ -1119,26 +1119,34 @@ under it in three words.
 the footer link, and the platform cards open the layer's post. Turning the
 flag off hides all three and keeps the routes and the posts.
 
-**The blog is four posts, one per layer, in English only**, and nothing in
-them is typed by hand. The prose is in `src/data/blog.js`; every number it
-quotes is a `{key}` and every map, chart and table a `{ figure: id }`, both
-from `public/blog-figures/figures.json`, which `npm run blog`
-(`scripts/build-blog.mjs`) computes from the published files and the
-statistics, with the maps drawn as the city view draws them (MapLibre in
-Chromium over the site's basemap, the site's own ramps and bivariate
-colours) and saved as WebP beside it. The charts are SVG strings
-(`scripts/lib/blog-charts.mjs`) styled by `.aa-bfig` in `Blog.css`, whose
-class names are the contract between the two. Re-run it after a data
-change: the post says what date its figures are from, `test:data` fails if
-a post names a key or a figure the file does not have or a map is missing
-from disk, and `smoke.mjs` checks a post fetched the file and its images.
-The maps need Playwright and the basemap host; `--no-maps` recomputes the
-rest and keeps them. Its assets are under `blog-figures/`, not `blog/`: a
-directory named like a route makes a server answer the route with the
-directory. Examples are chosen by a rule, never by hand-picking the
-extreme (the most populated cell in a band of distance, not the slowest),
-because the extreme was what a first draft picked. The general post on
-what the Atlas measures was retired.
+**A blog post is a Markdown file**, `content/blog/<slug>.md`, in English
+only: adding one is creating a file, and its address is its name. The
+header (`title`, `accent` for the coloured half, `kicker`, `lede`, `date`,
+`layer` for the home card it answers, `color`, `draft`) and the Markdown a
+post may use are documented at the top of `src/data/blogMarkdown.js`, the
+one parser, which the site (`src/data/blog.js`, through Vite's
+`import.meta.glob`) and Node (`scripts/lib/blog-posts.mjs`, for CityChat
+and `test:data`) share. Images live in `public/blog-images/` and sit on a
+line of their own, `![description](dir/file.webp "caption") {wide}`.
+Rendering builds React elements, never HTML from the file. The glob is
+guarded by `import.meta.env`, not by `typeof import.meta.glob`: Vite
+replaces the call, so in the browser the second test would be false and the
+blog empty.
+
+**Numbers in a post are written by hand, by the lab's choice**, so the
+site's rule is kept by whoever writes them: a figure in a post is one the
+published data gives (the city view, the Stats page), checked when written
+and dated by the post. The four layer posts were first generated from the
+data by a script, retired for this; their maps and charts are images now,
+and recomputing them means redrawing them. Examples there were chosen by a
+rule, never by hand-picking the extreme (the most populated cell in a band
+of distance, not the slowest), because the extreme was what a first draft
+picked: keep the rule when replacing one. `test:data` checks every post
+parses, every image is on disk with a description, and no two posts claim
+one layer; `smoke.mjs` that a post's images actually load. Image folders
+are under `blog-images/`, not `blog/`: a directory named like a route makes
+a server answer the route with the directory. The general post on what the
+Atlas measures was retired.
 
 **A platform card opens the Atlas's own introduction to that layer, not the
 upstream viewer**, while the blog is listed. Each of the four has a post in `src/data/blog.js` carrying

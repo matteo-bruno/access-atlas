@@ -189,18 +189,6 @@
   font-weight: 600;
 }
 
-/* Sources and citations sit apart from the argument. */
-.aa-post__note {
-  margin: 0 0 22px;
-  padding: 14px 18px;
-  border-inline-start: 2px solid var(--hair);
-  background: var(--card);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-3);
-}
-
 @media (max-width: 900px) {
   .aa-blog {
     grid-template-columns: 1fr;
@@ -224,75 +212,39 @@
   }
 }
 
-/* The chips a post ends on: the platform it introduces, the paper it rests
-   on. Wrapping, because a citation makes a long label. */
-.aa-post__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 28px 0 8px;
-}
-
-.aa-post__links .aa-chip {
-  white-space: normal;
-  line-height: 1.4;
-}
-
-/* ── Posts with figures ──────────────────────────────────────────────
-   The maps and charts are drawn by scripts/build-blog.mjs; the class names
-   below are its contract (see scripts/lib/blog-charts.mjs). */
+/* ── Post bodies: Markdown (content/blog/*.md) ─────────────────────── */
 
 .aa-post__kickerdot {
   margin-inline-end: 8px;
   vertical-align: 1px;
 }
 
-.aa-post__badge {
-  display: inline-block;
-  margin-inline-end: 10px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: var(--magenta);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 11px;
+.aa-post__h3 {
+  margin: 32px 0 12px;
+  font-size: 19px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  vertical-align: 3px;
+  line-height: 1.3;
+  color: var(--ink);
 }
 
-.aa-post__facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 28px 0;
-}
-.aa-post__fact {
-  padding: 14px 16px;
-  background: var(--card);
-  border: 1px solid var(--hair);
-  border-radius: 12px;
-}
-.aa-post__fact b {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 38px;
-  font-weight: 400;
-  line-height: 1;
+.aa-post__body a {
   color: var(--navy);
-}
-.aa-post__fact span {
-  display: block;
-  margin-top: 8px;
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--ink-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
+.aa-post__body code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--paper-alt);
+  font-size: 0.9em;
+}
+
+/* A `>` quote is set large: a sentence the post wants remembered. */
 .aa-post__pull {
   margin: 34px 0;
-  padding: 4px 0 4px 20px;
+  padding: 4px 0;
+  padding-inline-start: 20px;
   border-inline-start: 3px solid var(--magenta);
   font-family: var(--font-serif);
   font-size: 28px;
@@ -302,392 +254,58 @@
   color: var(--navy);
 }
 
-.aa-post__formula {
-  margin: 0 0 18px;
-  text-align: center;
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.aa-post__links .aa-chip--solid {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: #fff;
-}
-
-.aa-post__source {
-  margin: 36px 0 0;
-  font-size: 12px;
-  color: var(--ink-3);
-}
-
-/* A figure: a card with a title, the body the script drew, a caption. */
-.aa-bfig {
-  margin: 30px 0;
-  padding: 18px;
-  background: var(--card);
-  border: 1px solid var(--hair);
-  border-radius: 14px;
-}
-.aa-bfig--bare {
-  padding: 0;
-  background: none;
+.aa-post__hr {
+  margin: 40px 0;
   border: 0;
+  border-top: 1px solid var(--hair);
 }
-/* Wide figures leave the column for the page's width. */
-.aa-bfig--wide {
+
+/* An image on a line of its own, with its caption. `{wide}` lets it leave
+   the column for the page's width. */
+.aa-post__figure {
+  margin: 30px 0;
+}
+.aa-post__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.aa-post__figure--wide {
   margin-inline: calc(50% - min(540px, 50vw - var(--page-pad, 16px)));
 }
-.aa-bfig__title {
-  margin: 0 0 2px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--ink);
-}
-.aa-bfig__sub {
-  margin: 0 0 12px;
-  font-size: 13px;
-  color: var(--ink-3);
-}
-.aa-bfig figcaption {
-  margin-top: 12px;
+.aa-post__figure figcaption {
+  margin-top: 10px;
   font-size: 13px;
   line-height: 1.55;
   color: var(--ink-3);
 }
-.aa-bfig__body--pending {
-  min-height: 220px;
-  border-radius: 10px;
-  background: var(--paper-alt);
-}
 
-/* Maps: an image, a scale bar, the city's name under it. */
-.aa-bfig .mf__img {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #f2f3f0;
-  box-shadow: 0 0 0 1px rgba(21, 23, 26, 0.08);
+/* Tables: figures line up column to column; a wide one scrolls on its own
+   rather than the page sideways. */
+.aa-post__tablewrap {
+  margin: 0 0 22px;
+  overflow-x: auto;
 }
-.aa-bfig .mf__img img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.aa-bfig .mf__img::after {
-  content: '© OpenFreeMap © OpenMapTiles © OpenStreetMap';
-  position: absolute;
-  inset-inline-end: 6px;
-  bottom: 4px;
-  padding: 0 4px;
-  border-radius: 3px;
-  background: rgba(242, 243, 240, 0.8);
-  font-size: 9px;
-  color: var(--ink-3);
-}
-.aa-bfig .mf--s .mf__img::after {
-  content: '© OSM';
-}
-.aa-bfig .mf__name {
-  display: flex;
-  flex-direction: column;
-  padding: 8px 2px 0;
-  line-height: 1.1;
-}
-.aa-bfig .mf__name span {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  font-weight: 400;
-}
-.aa-bfig .mf--s .mf__name span {
-  font-size: 21px;
-}
-.aa-bfig .mf__name small {
-  margin-top: 3px;
-  font-size: 12px;
-  color: var(--ink-2);
-}
-.aa-bfig .mf__bar {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 42%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-size: 11px;
-  color: var(--ink-2);
-  text-shadow: 0 0 4px #fff, 0 0 2px #fff;
-}
-.aa-bfig .mf__bar i {
-  display: block;
-  height: 5px;
-  border: 1.5px solid var(--ink-2);
-  border-top: 0;
-}
-.aa-bfig .mf__bar b {
-  margin-top: 2px;
-  font-weight: 500;
-}
-.aa-bfig .hm {
-  position: relative;
-}
-.aa-bfig .hm .mf__img {
-  border-radius: 16px;
-}
-.aa-bfig .hm__leg {
-  position: absolute;
-  right: 14px;
-  bottom: 62px;
-  width: min(320px, 46%);
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: rgba(251, 250, 244, 0.92);
-  box-shadow: var(--shadow-soft);
-  font-size: 12px;
-  color: var(--ink-2);
-}
-.aa-bfig .hm__leg > b {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink);
-}
-.aa-bfig .grid2,
-.aa-bfig .grid3,
-.aa-bfig .grid4 {
-  display: grid;
-  gap: 12px;
-}
-.aa-bfig .grid2 { grid-template-columns: repeat(2, 1fr); }
-.aa-bfig .grid3 { grid-template-columns: repeat(3, 1fr); }
-.aa-bfig .grid4 { grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.aa-bfig .lgu {
-  max-width: 420px;
-  margin-top: 16px;
-}
-.aa-bfig .grid2.lgu {
-  max-width: none;
-  align-items: start;
-}
-.aa-bfig .lgu--mid {
-  align-items: center;
-}
-
-/* Legends: the site's ramps, with a compressed tail where the map has one. */
-.aa-bfig .lg__bar {
-  display: flex;
-  height: 10px;
-  overflow: hidden;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 0.5px rgba(21, 23, 26, 0.5);
-}
-.aa-bfig .lg__bar svg {
-  flex: 1;
-  display: block;
-  height: 10px;
-}
-.aa-bfig .lg__tail {
-  display: block;
-  width: 20%;
-}
-.aa-bfig .lg__t {
-  position: relative;
-  height: 18px;
-  margin-top: 3px;
-  font-size: 11px;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
-}
-.aa-bfig .lg__t span {
-  position: absolute;
-  transform: translateX(-50%);
-}
-.aa-bfig .lg__t span:first-child {
-  transform: none;
-}
-.aa-bfig .zk {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 14px;
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--ink-3);
-}
-.aa-bfig .zk i,
-.aa-bfig .kl i {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-inline-end: 6px;
-  vertical-align: -1px;
-  border-radius: 2px;
-}
-.aa-bfig .zk b {
-  font-weight: 500;
-  color: var(--ink);
-}
-.aa-bfig .kl {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  margin: 0 0 10px;
-  font-size: 13px;
-  color: var(--ink-2);
-}
-.aa-bfig .kl i {
-  border-radius: 50%;
-}
-.aa-bfig .bk {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 22px;
-}
-.aa-bfig .bk__sq {
-  position: relative;
-  padding: 0 0 18px 18px;
-}
-.aa-bfig .bk__sq svg {
-  display: block;
-  border-radius: 3px;
-}
-.aa-bfig .bk__x,
-.aa-bfig .bk__y {
-  position: absolute;
-  font-size: 11px;
-  color: var(--ink-3);
-  white-space: nowrap;
-}
-.aa-bfig .bk__x {
-  left: 18px;
-  bottom: 0;
-}
-.aa-bfig .bk__y {
-  left: 0;
-  bottom: 18px;
-  transform: rotate(-90deg) translateY(12px);
-  transform-origin: left bottom;
-}
-.aa-bfig .bk ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 13px;
-  color: var(--ink-2);
-}
-.aa-bfig .bk li {
-  margin: 4px 0;
-}
-.aa-bfig .bk li i {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-inline-end: 8px;
-  vertical-align: -1px;
-  border-radius: 2px;
-  box-shadow: inset 0 0 0 0.5px rgba(21, 23, 26, 0.4);
-}
-
-/* Tables: figures line up column to column. */
-.aa-bfig table {
+.aa-post__table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
   font-variant-numeric: tabular-nums;
 }
-.aa-bfig th,
-.aa-bfig td {
+.aa-post__table th,
+.aa-post__table td {
   padding: 7px 8px;
   border-bottom: 1px solid var(--hair);
-  text-align: end;
   vertical-align: middle;
 }
-.aa-bfig th:first-child,
-.aa-bfig td:first-child {
-  text-align: start;
-}
-.aa-bfig th {
+.aa-post__table th {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
-.aa-bfig table.ratio td:first-child {
-  font-family: var(--font-serif);
-  font-size: 22px;
-}
-.aa-bfig .tb {
-  display: inline-block;
-  width: 90px;
-  height: 8px;
-  margin-inline-start: 8px;
-  overflow: hidden;
-  vertical-align: middle;
-  border-radius: 4px;
-  background: var(--paper-alt);
-  box-shadow: inset 0 0 0 0.5px rgba(21, 23, 26, 0.25);
-}
-.aa-bfig .tb i {
-  display: block;
-  height: 100%;
-}
-
-/* Charts: SVG, sized by their box. Charts are not mirrored in Arabic, so
-   their axes keep growing to the right. */
-.aa-bfig svg.ch,
-.aa-bfig svg.quad {
-  display: block;
-  width: 100%;
-  height: auto;
-  direction: ltr;
-}
-.aa-bfig svg.quad {
-  max-width: 520px;
-  margin: auto;
-}
-.aa-bfig svg text {
-  font-family: var(--font-sans);
-}
-.aa-bfig .gr { stroke: #e8e3d6; }
-.aa-bfig .ref { stroke: var(--ink); stroke-opacity: 0.45; stroke-dasharray: 3 3; }
-.aa-bfig .tk { font-size: 12px; fill: var(--ink-3); font-variant-numeric: tabular-nums; }
-.aa-bfig .ax { font-size: 12px; fill: var(--ink-3); }
-.aa-bfig .nm { font-size: 13px; font-weight: 500; fill: var(--ink); }
-.aa-bfig .lb { font-size: 13px; fill: var(--ink-2); }
-.aa-bfig .lb--hi { font-weight: 700; fill: var(--ink); }
-.aa-bfig .vl { font-size: 12px; fill: var(--ink); font-variant-numeric: tabular-nums; }
-.aa-bfig .in { font-size: 11px; font-weight: 500; fill: #fff; }
-.aa-bfig .qn,
-.aa-bfig .sw-l {
-  paint-order: stroke;
-  stroke: var(--card);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-}
-.aa-bfig .qn { font-size: 13px; font-weight: 700; }
-.aa-bfig .sw-l { font-size: 12px; }
-.aa-bfig .yl { display: none; }
-
-@media (max-width: 860px) {
-  .aa-post__facts { grid-template-columns: 1fr; }
-  .aa-bfig .grid3,
-  .aa-bfig .grid4 { grid-template-columns: repeat(2, 1fr); }
-  .aa-bfig .hm__leg {
-    position: static;
-    width: auto;
-    margin-top: 8px;
-  }
-  .aa-bfig .zk { grid-template-columns: 1fr; }
-  .aa-bfig .hm__leg .zk { grid-template-columns: 1fr 1fr; }
-  .aa-bfig .grid2.lgu { grid-template-columns: 1fr; }
-}
-@media (max-width: 520px) {
-  .aa-bfig .grid2 { grid-template-columns: 1fr; }
-  .aa-bfig { padding: 12px; }
-  .aa-bfig--bare { padding: 0; }
-  .aa-bfig .tb { width: 40px; }
+.aa-post__table td {
+  color: var(--ink-2);
 }

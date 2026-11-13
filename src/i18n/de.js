@@ -1163,8 +1163,6 @@ export default {
     backToBlog: '← Alle Beiträge',
     published: 'Veröffentlicht',
     postsLabel: 'Beiträge',
-    figuresFailed: 'Die Abbildungen dieses Beitrags konnten nicht geladen werden, daher erscheinen seine Zahlen als „…“.',
-    figuresAsOf: 'Zahlen berechnet aus den Daten des Atlas vom {date}.',
   },
 
   work: {

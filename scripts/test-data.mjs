@@ -806,31 +806,33 @@ if (catalogue.stats) {
   }
 }
 
-// The blog's posts name their numbers and figures by key, from the file
-// `npm run blog` writes (scripts/build-blog.mjs). A key a post names and the
-// file lacks would print "…" on the page; a map the file names and the disk
-// lacks would be a broken image behind the SPA fallback's 200.
+// The blog's posts are Markdown files (content/blog/*.md). Each must parse
+// (its header names a title, a lede and a date), every image it shows must
+// be on disk (a wrong path is index.html with a 200 behind the SPA fallback,
+// and a broken image on the page), and no two posts may claim one layer's
+// card on the home page.
 {
-  const { POSTS } = await import('../src/data/blog.js');
-  const file = path.join(process.cwd(), 'public', 'blog-figures', 'figures.json');
-  const doc = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
-  check('Blog figures file is there', Boolean(doc?.values && doc?.figures), 'run npm run blog');
-  if (doc) {
-    const missing = [];
-    const strings = (node) => (typeof node === 'string' ? [node] : node && typeof node === 'object' ? Object.values(node).flatMap(strings) : []);
-    for (const post of POSTS) {
-      for (const block of post.en.body) {
-        if (block.figure && !doc.figures[block.figure]) missing.push(`${post.slug}: figure ${block.figure}`);
-        for (const text of strings(block)) for (const [, key] of text.matchAll(/\{([\w.-]+)\}/g)) if (!(key in doc.values)) missing.push(`${post.slug}: value ${key}`);
-      }
-    }
-    check('Every value and figure a blog post names is in the figures file', !missing.length, missing.slice(0, 4).join(' | '));
-    const maps = Object.values(doc.maps ?? {});
-    const absent = maps.filter((name) => !fs.existsSync(path.join(path.dirname(file), 'maps', name)));
-    const named = Object.values(doc.figures).join('').match(/blog-figures\/maps\/[^"]+/g) ?? [];
-    const unlisted = named.filter((src) => !maps.includes(src.split('/').pop()));
-    check('Every blog map is on disk', !absent.length && !unlisted.length, [...absent, ...unlisted].slice(0, 4).join(' | '));
+  const { readPosts, IMAGES_DIR } = await import('./lib/blog-posts.mjs');
+  let posts = [];
+  try {
+    posts = readPosts();
+    check('Every blog post parses', posts.length > 0, `${posts.length} posts`);
+  } catch (error) {
+    check('Every blog post parses', false, error.message);
   }
+  const missing = [];
+  for (const post of posts) {
+    for (const block of post.en.body) {
+      if (block.type !== 'image' || /^(https?:)?\/\//.test(block.src)) continue;
+      const file = block.src.startsWith('/') ? path.join(process.cwd(), 'public', block.src) : path.join(IMAGES_DIR, block.src);
+      if (!fs.existsSync(file)) missing.push(`${post.slug}: ${block.src}`);
+      if (!block.alt) missing.push(`${post.slug}: ${block.src} has no description`);
+    }
+  }
+  check('Every image a blog post shows is on disk, with a description', !missing.length, missing.slice(0, 4).join(' | '));
+  const layers = posts.filter((p) => p.layer && !p.draft).map((p) => p.layer);
+  const twice = layers.filter((l, i) => layers.indexOf(l) !== i);
+  check('At most one blog post per layer', !twice.length, twice.join(', '));
 }
 
 console.log(failures ? `\n${failures} check(s) failed` : '\nAll data checks passed');

@@ -1173,8 +1173,6 @@ export default {
     backToBlog: '← すべての記事',
     published: '公開日',
     postsLabel: '記事',
-    figuresFailed: 'この記事の図を読み込めなかったため、数値は「…」と表示されています。',
-    figuresAsOf: '数値は {date} 時点の Atlas のデータから計算しています。',
   },
 
   work: {

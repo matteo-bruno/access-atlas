@@ -68,17 +68,6 @@ npm run stats                    # recompute the cities whose data changed
 npm run stats -- --status        # just list them
 ```
 
-The blog's numbers, charts and maps are computed from the same files, by
-one more script. Re-run it when the data a post quotes has changed, and
-commit `public/blog-figures/` with the data. Its maps are drawn in Chromium
-over the OpenFreeMap basemap, so it needs Playwright (as the browser suites
-do) and that host; `--no-maps` recomputes the rest and keeps the maps.
-
-```bash
-npm run blog                     # every number, chart and map the posts show
-npm run blog -- --no-maps        # numbers and charts only
-```
-
 Cities whose data is too thin to compare (fewer than 10,000 residents, or a
 median walk to services over 60 minutes) stay published but are hidden by
 default from the world maps and the Stats page; every run says how many.

@@ -1161,8 +1161,6 @@ export default {
     backToBlog: '← Todas las entradas',
     published: 'Publicado',
     postsLabel: 'Entradas',
-    figuresFailed: 'No se pudieron cargar las figuras de este artículo, así que sus cifras aparecen como «…».',
-    figuresAsOf: 'Cifras calculadas con los datos del Atlas del {date}.',
   },
 
   work: {

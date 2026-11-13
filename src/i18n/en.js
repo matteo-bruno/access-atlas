@@ -1224,8 +1224,6 @@ export default {
     backToBlog: '← All posts',
     published: 'Published',
     postsLabel: 'Posts',
-    figuresFailed: 'The figures of this post could not be loaded, so its numbers show as “…”.',
-    figuresAsOf: 'Figures computed from the Atlas data of {date}.',
   },
 
   work: {

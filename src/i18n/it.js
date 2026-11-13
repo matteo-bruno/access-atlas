@@ -1208,8 +1208,6 @@ export default {
     backToBlog: '← Tutti gli articoli',
     published: 'Pubblicato',
     postsLabel: 'Articoli',
-    figuresFailed: 'Non è stato possibile caricare le figure di questo articolo, quindi i suoi numeri appaiono come “…”.',
-    figuresAsOf: 'Cifre calcolate dai dati dell’Atlante del {date}.',
   },
 
   work: {

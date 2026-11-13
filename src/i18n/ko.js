@@ -1152,8 +1152,6 @@ export default {
     backToBlog: '← 모든 글',
     published: '게시일',
     postsLabel: '글',
-    figuresFailed: '이 글의 그림을 불러오지 못해 숫자가 ‘…’로 표시됩니다.',
-    figuresAsOf: '숫자는 {date} 기준 Atlas 데이터로 계산했습니다.',
   },
 
   work: {

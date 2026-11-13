@@ -1152,8 +1152,6 @@ export default {
     backToBlog: '← 全部文章',
     published: '发布于',
     postsLabel: '文章',
-    figuresFailed: '本文的图表无法加载，因此其中的数字显示为“…”。',
-    figuresAsOf: '数字根据 {date} 的 Atlas 数据计算。',
   },
 
   work: {
